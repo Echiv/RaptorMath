@@ -150,7 +150,6 @@ namespace RaptorMath
                 MatDri_ResponseLbl.Visible = true;
                 this.MatDri_InputType.Focus();
             }
-
             else
             {
                 MatDri_ResponseLbl.ForeColor = Color.Red;
@@ -190,8 +189,7 @@ namespace RaptorMath
             // Case: Ask if user wants to skip
             if (MessageBox.Show("Are you sure you want to skip this problem?", "Raptor Math", 
                 MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
-                this.MatDri_InputType.Focus();
+            {     
                 MatDri_InputType.Clear();
                 localManager.currentStudent.curDrill.IncrementSkipped();
                 localManager.currentStudent.curDrill.IncrementWrong();
@@ -209,6 +207,7 @@ namespace RaptorMath
                 
                 MatDri_CurrentNumLbl.Text = localManager.UpdateCurrentNumber();
             }
+            this.MatDri_InputType.Focus();
         }
 
         //------------------------------------------------------------------//

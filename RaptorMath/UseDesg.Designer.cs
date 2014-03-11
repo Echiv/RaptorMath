@@ -39,6 +39,7 @@
             this.UseDesg_WindowLbl = new System.Windows.Forms.Label();
             this.UseDesg_ButtonBox = new System.Windows.Forms.GroupBox();
             this.UseDesg_UserInfoBox = new System.Windows.Forms.GroupBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.UseDesg_LoginBox.SuspendLayout();
             this.UseDesg_ButtonBox.SuspendLayout();
             this.UseDesg_UserInfoBox.SuspendLayout();
@@ -182,6 +183,7 @@
         private System.Windows.Forms.Label UseDesg_WindowLbl;
         private System.Windows.Forms.GroupBox UseDesg_ButtonBox;
         private System.Windows.Forms.GroupBox UseDesg_UserInfoBox;
+        private System.Windows.Forms.ToolTip toolTip1;
 
     }
 }

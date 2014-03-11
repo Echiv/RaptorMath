@@ -66,7 +66,7 @@
             this.MatDri_InputType.Name = "MatDri_InputType";
             this.MatDri_InputType.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.MatDri_InputType.Size = new System.Drawing.Size(81, 43);
-            this.MatDri_InputType.TabIndex = 1;
+            this.MatDri_InputType.TabIndex = 2;
             this.MatDri_InputType.Text = "";
             this.MatDri_InputType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MatDri_InputType_KeyPress);
             // 
@@ -76,7 +76,7 @@
             this.MatDri_SkipBtn.Location = new System.Drawing.Point(22, 219);
             this.MatDri_SkipBtn.Name = "MatDri_SkipBtn";
             this.MatDri_SkipBtn.Size = new System.Drawing.Size(81, 31);
-            this.MatDri_SkipBtn.TabIndex = 3;
+            this.MatDri_SkipBtn.TabIndex = 5;
             this.MatDri_SkipBtn.Text = "Skip";
             this.MatDri_SkipBtn.UseVisualStyleBackColor = true;
             this.MatDri_SkipBtn.Click += new System.EventHandler(this.MatDri_SkipBtn_Click);
@@ -87,7 +87,7 @@
             this.MatDri_EndDrillBtn.Location = new System.Drawing.Point(231, 219);
             this.MatDri_EndDrillBtn.Name = "MatDri_EndDrillBtn";
             this.MatDri_EndDrillBtn.Size = new System.Drawing.Size(81, 31);
-            this.MatDri_EndDrillBtn.TabIndex = 4;
+            this.MatDri_EndDrillBtn.TabIndex = 6;
             this.MatDri_EndDrillBtn.Text = "End Drill";
             this.MatDri_EndDrillBtn.UseVisualStyleBackColor = true;
             this.MatDri_EndDrillBtn.Click += new System.EventHandler(this.MatDri_EndDrillBtn_Click);
@@ -98,7 +98,7 @@
             this.MatDri_SubmitBtn.Location = new System.Drawing.Point(111, 92);
             this.MatDri_SubmitBtn.Name = "MatDri_SubmitBtn";
             this.MatDri_SubmitBtn.Size = new System.Drawing.Size(81, 31);
-            this.MatDri_SubmitBtn.TabIndex = 2;
+            this.MatDri_SubmitBtn.TabIndex = 3;
             this.MatDri_SubmitBtn.Text = "Submit";
             this.MatDri_SubmitBtn.UseVisualStyleBackColor = true;
             this.MatDri_SubmitBtn.Click += new System.EventHandler(this.MatDri_SubmitBtn_Click);
@@ -215,7 +215,7 @@
             this.MatDri_UserInfoBox.Location = new System.Drawing.Point(12, 3);
             this.MatDri_UserInfoBox.Name = "MatDri_UserInfoBox";
             this.MatDri_UserInfoBox.Size = new System.Drawing.Size(310, 66);
-            this.MatDri_UserInfoBox.TabIndex = 27;
+            this.MatDri_UserInfoBox.TabIndex = 0;
             this.MatDri_UserInfoBox.TabStop = false;
             // 
             // MatDri_ButtonBox
@@ -223,7 +223,7 @@
             this.MatDri_ButtonBox.Location = new System.Drawing.Point(12, 205);
             this.MatDri_ButtonBox.Name = "MatDri_ButtonBox";
             this.MatDri_ButtonBox.Size = new System.Drawing.Size(310, 54);
-            this.MatDri_ButtonBox.TabIndex = 28;
+            this.MatDri_ButtonBox.TabIndex = 4;
             this.MatDri_ButtonBox.TabStop = false;
             // 
             // MatDri_ProblemBox
@@ -239,7 +239,7 @@
             this.MatDri_ProblemBox.Location = new System.Drawing.Point(12, 65);
             this.MatDri_ProblemBox.Name = "MatDri_ProblemBox";
             this.MatDri_ProblemBox.Size = new System.Drawing.Size(310, 134);
-            this.MatDri_ProblemBox.TabIndex = 29;
+            this.MatDri_ProblemBox.TabIndex = 1;
             this.MatDri_ProblemBox.TabStop = false;
             // 
             // MatDri_Form

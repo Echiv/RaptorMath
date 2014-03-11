@@ -33,12 +33,12 @@
             this.UseRep_AdminNameLbl = new System.Windows.Forms.Label();
             this.UseRep_DateLbl = new System.Windows.Forms.Label();
             this.UseRep_SearchBox = new System.Windows.Forms.GroupBox();
+            this.UseRep_StudentNameLbl = new System.Windows.Forms.Label();
             this.UseRep_SearchBtn = new System.Windows.Forms.Button();
             this.UseRep_StartDate = new System.Windows.Forms.DateTimePicker();
             this.UseRep_EndDate = new System.Windows.Forms.DateTimePicker();
             this.UseRep_EndDateLbl = new System.Windows.Forms.Label();
             this.UseRep_StartDateLbl = new System.Windows.Forms.Label();
-            this.UseRep_StudentNameLbl = new System.Windows.Forms.Label();
             this.UseRep_Timer = new System.Windows.Forms.Timer(this.components);
             this.UseRep_TimeLbl = new System.Windows.Forms.Label();
             this.UseRep_DataDisplay = new System.Windows.Forms.DataGridView();
@@ -65,7 +65,7 @@
             this.UseRep_CloseBtn.Location = new System.Drawing.Point(330, 13);
             this.UseRep_CloseBtn.Name = "UseRep_CloseBtn";
             this.UseRep_CloseBtn.Size = new System.Drawing.Size(56, 26);
-            this.UseRep_CloseBtn.TabIndex = 1;
+            this.UseRep_CloseBtn.TabIndex = 6;
             this.UseRep_CloseBtn.Text = "Close";
             this.UseRep_CloseBtn.UseVisualStyleBackColor = true;
             this.UseRep_CloseBtn.Click += new System.EventHandler(this.UseRep_CloseBtn_Click);
@@ -100,16 +100,25 @@
             this.UseRep_SearchBox.Location = new System.Drawing.Point(15, 94);
             this.UseRep_SearchBox.Name = "UseRep_SearchBox";
             this.UseRep_SearchBox.Size = new System.Drawing.Size(407, 134);
-            this.UseRep_SearchBox.TabIndex = 19;
+            this.UseRep_SearchBox.TabIndex = 1;
             this.UseRep_SearchBox.TabStop = false;
             this.UseRep_SearchBox.Text = "Record Search";
+            // 
+            // UseRep_StudentNameLbl
+            // 
+            this.UseRep_StudentNameLbl.AutoSize = true;
+            this.UseRep_StudentNameLbl.Location = new System.Drawing.Point(160, 16);
+            this.UseRep_StudentNameLbl.Name = "UseRep_StudentNameLbl";
+            this.UseRep_StudentNameLbl.Size = new System.Drawing.Size(87, 13);
+            this.UseRep_StudentNameLbl.TabIndex = 20;
+            this.UseRep_StudentNameLbl.Text = "<Student Name>";
             // 
             // UseRep_SearchBtn
             // 
             this.UseRep_SearchBtn.Location = new System.Drawing.Point(163, 96);
             this.UseRep_SearchBtn.Name = "UseRep_SearchBtn";
             this.UseRep_SearchBtn.Size = new System.Drawing.Size(75, 23);
-            this.UseRep_SearchBtn.TabIndex = 0;
+            this.UseRep_SearchBtn.TabIndex = 4;
             this.UseRep_SearchBtn.Text = "Search";
             this.UseRep_SearchBtn.UseVisualStyleBackColor = true;
             this.UseRep_SearchBtn.Click += new System.EventHandler(this.UseRep_SearchBtn_Click);
@@ -119,7 +128,7 @@
             this.UseRep_StartDate.Location = new System.Drawing.Point(124, 44);
             this.UseRep_StartDate.Name = "UseRep_StartDate";
             this.UseRep_StartDate.Size = new System.Drawing.Size(199, 20);
-            this.UseRep_StartDate.TabIndex = 26;
+            this.UseRep_StartDate.TabIndex = 2;
             this.UseRep_StartDate.ValueChanged += new System.EventHandler(this.UseRep_StartDate_ValueChanged);
             // 
             // UseRep_EndDate
@@ -127,7 +136,7 @@
             this.UseRep_EndDate.Location = new System.Drawing.Point(124, 70);
             this.UseRep_EndDate.Name = "UseRep_EndDate";
             this.UseRep_EndDate.Size = new System.Drawing.Size(199, 20);
-            this.UseRep_EndDate.TabIndex = 25;
+            this.UseRep_EndDate.TabIndex = 3;
             this.UseRep_EndDate.ValueChanged += new System.EventHandler(this.UseRep_EndDate_ValueChanged);
             // 
             // UseRep_EndDateLbl
@@ -147,15 +156,6 @@
             this.UseRep_StartDateLbl.Size = new System.Drawing.Size(55, 13);
             this.UseRep_StartDateLbl.TabIndex = 22;
             this.UseRep_StartDateLbl.Text = "Start Date";
-            // 
-            // UseRep_StudentNameLbl
-            // 
-            this.UseRep_StudentNameLbl.AutoSize = true;
-            this.UseRep_StudentNameLbl.Location = new System.Drawing.Point(160, 16);
-            this.UseRep_StudentNameLbl.Name = "UseRep_StudentNameLbl";
-            this.UseRep_StudentNameLbl.Size = new System.Drawing.Size(87, 13);
-            this.UseRep_StudentNameLbl.TabIndex = 20;
-            this.UseRep_StudentNameLbl.Text = "<Student Name>";
             // 
             // UseRep_Timer
             // 
@@ -191,7 +191,9 @@
             this.UseRep_DataDisplay.Name = "UseRep_DataDisplay";
             this.UseRep_DataDisplay.RowHeadersVisible = false;
             this.UseRep_DataDisplay.Size = new System.Drawing.Size(396, 202);
-            this.UseRep_DataDisplay.TabIndex = 0;
+            this.UseRep_DataDisplay.StandardTab = true;
+            this.UseRep_DataDisplay.TabIndex = 8;
+            this.UseRep_DataDisplay.TabStop = false;
             // 
             // DateTaken
             // 
@@ -266,7 +268,7 @@
             this.UseRep_ButtonBox.Location = new System.Drawing.Point(14, 455);
             this.UseRep_ButtonBox.Name = "UseRep_ButtonBox";
             this.UseRep_ButtonBox.Size = new System.Drawing.Size(408, 45);
-            this.UseRep_ButtonBox.TabIndex = 34;
+            this.UseRep_ButtonBox.TabIndex = 5;
             this.UseRep_ButtonBox.TabStop = false;
             // 
             // UseRep_RecordBox
@@ -274,7 +276,7 @@
             this.UseRep_RecordBox.Location = new System.Drawing.Point(12, 228);
             this.UseRep_RecordBox.Name = "UseRep_RecordBox";
             this.UseRep_RecordBox.Size = new System.Drawing.Size(410, 228);
-            this.UseRep_RecordBox.TabIndex = 35;
+            this.UseRep_RecordBox.TabIndex = 7;
             this.UseRep_RecordBox.TabStop = false;
             this.UseRep_RecordBox.Text = "Drill Records";
             // 
@@ -285,7 +287,7 @@
             this.UseRep_UserInfoBox.Location = new System.Drawing.Point(12, 3);
             this.UseRep_UserInfoBox.Name = "UseRep_UserInfoBox";
             this.UseRep_UserInfoBox.Size = new System.Drawing.Size(410, 81);
-            this.UseRep_UserInfoBox.TabIndex = 36;
+            this.UseRep_UserInfoBox.TabIndex = 0;
             this.UseRep_UserInfoBox.TabStop = false;
             // 
             // UseRep_Form

@@ -58,6 +58,7 @@
             this.AdminHome_WindowLbl = new System.Windows.Forms.Label();
             this.AdminHome_DateLbl = new System.Windows.Forms.Label();
             this.AdminHome_UserInfoBox = new System.Windows.Forms.GroupBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.AdminHome_OperandBox.SuspendLayout();
             this.AdminHome_RangeBox.SuspendLayout();
             this.AdminHome_ButtonBox.SuspendLayout();
@@ -73,8 +74,9 @@
             this.AdminHome_LogoutBtn.Margin = new System.Windows.Forms.Padding(2);
             this.AdminHome_LogoutBtn.Name = "AdminHome_LogoutBtn";
             this.AdminHome_LogoutBtn.Size = new System.Drawing.Size(56, 26);
-            this.AdminHome_LogoutBtn.TabIndex = 25;
+            this.AdminHome_LogoutBtn.TabIndex = 15;
             this.AdminHome_LogoutBtn.Text = "Logout";
+            this.toolTip1.SetToolTip(this.AdminHome_LogoutBtn, "Return to the user login window");
             this.AdminHome_LogoutBtn.UseVisualStyleBackColor = true;
             this.AdminHome_LogoutBtn.Click += new System.EventHandler(this.AdminHome_LogoutBtn_Click);
             // 
@@ -85,7 +87,7 @@
             this.AdminHome_SaveSettingsBtn.Margin = new System.Windows.Forms.Padding(2);
             this.AdminHome_SaveSettingsBtn.Name = "AdminHome_SaveSettingsBtn";
             this.AdminHome_SaveSettingsBtn.Size = new System.Drawing.Size(92, 26);
-            this.AdminHome_SaveSettingsBtn.TabIndex = 24;
+            this.AdminHome_SaveSettingsBtn.TabIndex = 14;
             this.AdminHome_SaveSettingsBtn.Text = "Save Settings";
             this.AdminHome_SaveSettingsBtn.UseVisualStyleBackColor = true;
             this.AdminHome_SaveSettingsBtn.Click += new System.EventHandler(this.AdminHome_SaveSettingsBtn_Click);
@@ -97,7 +99,7 @@
             this.AdminHome_SetSize.Margin = new System.Windows.Forms.Padding(2);
             this.AdminHome_SetSize.Name = "AdminHome_SetSize";
             this.AdminHome_SetSize.Size = new System.Drawing.Size(93, 20);
-            this.AdminHome_SetSize.TabIndex = 23;
+            this.AdminHome_SetSize.TabIndex = 12;
             // 
             // AdminHome_NumQuestionsLbl
             // 
@@ -117,7 +119,7 @@
             this.AdminHome_AddRdo.Margin = new System.Windows.Forms.Padding(2);
             this.AdminHome_AddRdo.Name = "AdminHome_AddRdo";
             this.AdminHome_AddRdo.Size = new System.Drawing.Size(63, 17);
-            this.AdminHome_AddRdo.TabIndex = 0;
+            this.AdminHome_AddRdo.TabIndex = 9;
             this.AdminHome_AddRdo.TabStop = true;
             this.AdminHome_AddRdo.Text = "Addition";
             this.AdminHome_AddRdo.UseVisualStyleBackColor = true;
@@ -138,7 +140,7 @@
             this.AdminHome_MaxOperand.Margin = new System.Windows.Forms.Padding(2);
             this.AdminHome_MaxOperand.Name = "AdminHome_MaxOperand";
             this.AdminHome_MaxOperand.Size = new System.Drawing.Size(93, 20);
-            this.AdminHome_MaxOperand.TabIndex = 3;
+            this.AdminHome_MaxOperand.TabIndex = 7;
             // 
             // AdminHome_MinOperand
             // 
@@ -146,7 +148,7 @@
             this.AdminHome_MinOperand.Margin = new System.Windows.Forms.Padding(2);
             this.AdminHome_MinOperand.Name = "AdminHome_MinOperand";
             this.AdminHome_MinOperand.Size = new System.Drawing.Size(91, 20);
-            this.AdminHome_MinOperand.TabIndex = 2;
+            this.AdminHome_MinOperand.TabIndex = 6;
             // 
             // AdminHome_SubRdo
             // 
@@ -155,7 +157,7 @@
             this.AdminHome_SubRdo.Margin = new System.Windows.Forms.Padding(2);
             this.AdminHome_SubRdo.Name = "AdminHome_SubRdo";
             this.AdminHome_SubRdo.Size = new System.Drawing.Size(79, 17);
-            this.AdminHome_SubRdo.TabIndex = 1;
+            this.AdminHome_SubRdo.TabIndex = 10;
             this.AdminHome_SubRdo.TabStop = true;
             this.AdminHome_SubRdo.Text = "Subtraction";
             this.AdminHome_SubRdo.UseVisualStyleBackColor = true;
@@ -170,7 +172,7 @@
             this.AdminHome_OperandBox.Name = "AdminHome_OperandBox";
             this.AdminHome_OperandBox.Padding = new System.Windows.Forms.Padding(2);
             this.AdminHome_OperandBox.Size = new System.Drawing.Size(150, 92);
-            this.AdminHome_OperandBox.TabIndex = 21;
+            this.AdminHome_OperandBox.TabIndex = 8;
             this.AdminHome_OperandBox.TabStop = false;
             this.AdminHome_OperandBox.Text = "Operator Type";
             // 
@@ -191,7 +193,7 @@
             this.AdminHome_ExitBtn.Margin = new System.Windows.Forms.Padding(2);
             this.AdminHome_ExitBtn.Name = "AdminHome_ExitBtn";
             this.AdminHome_ExitBtn.Size = new System.Drawing.Size(56, 26);
-            this.AdminHome_ExitBtn.TabIndex = 26;
+            this.AdminHome_ExitBtn.TabIndex = 16;
             this.AdminHome_ExitBtn.Text = "Exit";
             this.AdminHome_ExitBtn.UseVisualStyleBackColor = true;
             this.AdminHome_ExitBtn.Click += new System.EventHandler(this.AdminHome_ExitBtn_Click);
@@ -209,7 +211,7 @@
             this.AdminHome_RangeBox.Name = "AdminHome_RangeBox";
             this.AdminHome_RangeBox.Padding = new System.Windows.Forms.Padding(2);
             this.AdminHome_RangeBox.Size = new System.Drawing.Size(320, 111);
-            this.AdminHome_RangeBox.TabIndex = 20;
+            this.AdminHome_RangeBox.TabIndex = 5;
             this.AdminHome_RangeBox.TabStop = false;
             this.AdminHome_RangeBox.Text = "Operand Range";
             // 
@@ -231,7 +233,7 @@
             this.AdminHome_RecordsBtn.Margin = new System.Windows.Forms.Padding(2);
             this.AdminHome_RecordsBtn.Name = "AdminHome_RecordsBtn";
             this.AdminHome_RecordsBtn.Size = new System.Drawing.Size(143, 25);
-            this.AdminHome_RecordsBtn.TabIndex = 19;
+            this.AdminHome_RecordsBtn.TabIndex = 3;
             this.AdminHome_RecordsBtn.Text = "View Records";
             this.AdminHome_RecordsBtn.UseVisualStyleBackColor = true;
             this.AdminHome_RecordsBtn.Click += new System.EventHandler(this.studentRecordsButton_Click);
@@ -245,7 +247,7 @@
             this.AdminHome_StudentSelection.MaxDropDownItems = 100;
             this.AdminHome_StudentSelection.Name = "AdminHome_StudentSelection";
             this.AdminHome_StudentSelection.Size = new System.Drawing.Size(144, 21);
-            this.AdminHome_StudentSelection.TabIndex = 18;
+            this.AdminHome_StudentSelection.TabIndex = 2;
             this.AdminHome_StudentSelection.SelectionChangeCommitted += new System.EventHandler(this.AdminHome_StudentSelection_SelectionChangeCommitted);
             // 
             // AdminHome_Timer
@@ -262,7 +264,7 @@
             this.AdminHome_ButtonBox.Location = new System.Drawing.Point(14, 455);
             this.AdminHome_ButtonBox.Name = "AdminHome_ButtonBox";
             this.AdminHome_ButtonBox.Size = new System.Drawing.Size(408, 45);
-            this.AdminHome_ButtonBox.TabIndex = 33;
+            this.AdminHome_ButtonBox.TabIndex = 13;
             this.AdminHome_ButtonBox.TabStop = false;
             // 
             // AdminHome_SettingsBox
@@ -273,7 +275,7 @@
             this.AdminHome_SettingsBox.Location = new System.Drawing.Point(12, 190);
             this.AdminHome_SettingsBox.Name = "AdminHome_SettingsBox";
             this.AdminHome_SettingsBox.Size = new System.Drawing.Size(410, 259);
-            this.AdminHome_SettingsBox.TabIndex = 35;
+            this.AdminHome_SettingsBox.TabIndex = 4;
             this.AdminHome_SettingsBox.TabStop = false;
             this.AdminHome_SettingsBox.Text = "Settings";
             // 
@@ -287,7 +289,7 @@
             this.AdminHome_QuestionsBox.Name = "AdminHome_QuestionsBox";
             this.AdminHome_QuestionsBox.Padding = new System.Windows.Forms.Padding(2);
             this.AdminHome_QuestionsBox.Size = new System.Drawing.Size(150, 92);
-            this.AdminHome_QuestionsBox.TabIndex = 22;
+            this.AdminHome_QuestionsBox.TabIndex = 11;
             this.AdminHome_QuestionsBox.TabStop = false;
             this.AdminHome_QuestionsBox.Text = "Question Settings";
             // 
@@ -296,7 +298,7 @@
             this.AdminHome_StudentBox.Location = new System.Drawing.Point(13, 92);
             this.AdminHome_StudentBox.Name = "AdminHome_StudentBox";
             this.AdminHome_StudentBox.Size = new System.Drawing.Size(409, 92);
-            this.AdminHome_StudentBox.TabIndex = 36;
+            this.AdminHome_StudentBox.TabIndex = 1;
             this.AdminHome_StudentBox.TabStop = false;
             this.AdminHome_StudentBox.Text = "Select a Student";
             // 
@@ -381,7 +383,7 @@
             this.AdminHome_UserInfoBox.Location = new System.Drawing.Point(12, 3);
             this.AdminHome_UserInfoBox.Name = "AdminHome_UserInfoBox";
             this.AdminHome_UserInfoBox.Size = new System.Drawing.Size(410, 81);
-            this.AdminHome_UserInfoBox.TabIndex = 34;
+            this.AdminHome_UserInfoBox.TabIndex = 0;
             this.AdminHome_UserInfoBox.TabStop = false;
             // 
             // AdminHome_Form
@@ -445,6 +447,7 @@
         private System.Windows.Forms.Label AdminHome_WindowLbl;
         private System.Windows.Forms.Label AdminHome_DateLbl;
         private System.Windows.Forms.GroupBox AdminHome_UserInfoBox;
+        private System.Windows.Forms.ToolTip toolTip1;
 
     }
 }
