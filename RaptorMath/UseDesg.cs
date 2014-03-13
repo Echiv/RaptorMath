@@ -97,11 +97,14 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void UseDesg_LoginBtn_Click(object sender, EventArgs e)
         {
-            if (localManager.UserIsAdmin() == true)
-                localManager.SetWindow(Window.adminHome);
+            localManager.currentPassword = UseDesg_passwordBox.Text;
+            if (localManager.grantAccess() != true)
+            {
+                MessageBox.Show("Wrong password, Try again!");
+                UseDesg_passwordBox.Text = string.Empty;
+            }
             else
-                localManager.SetWindow(Window.stuHome);
-            this.Close();
+                this.Close();            
         }
       
         //------------------------------------------------------------------//
@@ -111,7 +114,19 @@ namespace RaptorMath
         private void UseDesg_LoginDdl_SelectionChangeCommitted(object sender, EventArgs e)
         {
             localManager.currentUser = UseDesg_LoginDdl.Text;
-            UseDesg_LoginBtn.Enabled = true;
+            if(UseDesg_passwordBox.Text.Length > 0)
+            {
+                UseDesg_LoginBtn.Enabled = true;
+            }
+        }
+
+        private void passwordBox_TextChanged(object sender, EventArgs e)
+        {
+            if((localManager.currentUser != string.Empty) && (UseDesg_passwordBox.Text.Length > 0))
+                UseDesg_LoginBtn.Enabled = true;
+            else
+                UseDesg_LoginBtn.Enabled = false;
+            Console.WriteLine("Hello");
         }
     }
 }

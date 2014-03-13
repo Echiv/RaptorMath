@@ -30,6 +30,7 @@ namespace RaptorMath
         Window form = Window.authUser;
         bool programRunning = true;
         public string currentUser = string.Empty;
+        public string currentPassword = string.Empty;
         public string currentUserLogin = string.Empty;
         public string operand = string.Empty;
         public int currentProblemNumber = 1;
@@ -102,7 +103,7 @@ namespace RaptorMath
         // Date: 2/26/2014                                                  //
         // Checks if the selected user is an admin, returns bool            //
         //------------------------------------------------------------------//
-        public bool UserIsAdmin()
+        public bool isAdmin()
         {
             if (currentUser.StartsWith("<Admin>"))
             {
@@ -111,18 +112,57 @@ namespace RaptorMath
                 // Check if it's finding the admin
                 //                if (FindAdmin(currentUser) == null)
 
-
                 currentAdmin = FindAdmin(currentUser);
                 currentUser = String.Concat("<Admin> ", currentUser);
                 return true;
             }
-            else
-            {
-                currentStudent = FindStudent(currentUser);
-                return false;
-            }
+            return false;
         }
 
+        public bool isCorrectAdminPassword()
+        {
+            if (currentAdmin.Password == currentPassword)
+                return true;
+            return false;
+        }
+
+        public bool isStudent()
+        {
+            if (!currentUser.StartsWith("<Admin>"))
+            {
+                currentStudent = FindStudent(currentUser);
+                return true;
+            }
+            return false;
+        }
+
+        public bool isCorrectStudentPassword()
+        {
+            if (currentStudent.Password == currentPassword)
+                return true;
+            return false;
+        }
+
+        public bool grantAccess()
+        {
+            if (isAdmin() == true)
+                if (isCorrectAdminPassword() == true)
+                {
+                    SetWindow(Window.adminHome);
+                    return true;
+                }
+                else
+                    ClearAdminUser();
+            else if (isStudent() == true)
+                if (isCorrectStudentPassword() == true)
+                {
+                    SetWindow(Window.stuHome);
+                    return true;
+                }
+                else
+                    ClearStudentUser();
+            return false;
+        }
         //------------------------------------------------------------------//
         // Harvey Kreitzer                                                  //
         // Date: 2/26/2014                                                  //
@@ -141,7 +181,6 @@ namespace RaptorMath
                     break;
                 }
             }
-
             return aStudent;
         }
 
@@ -162,6 +201,8 @@ namespace RaptorMath
                     adminList.Remove(admin);
                     break;
                 }
+                else
+                    continue;
             }
 
             return aAdmin;

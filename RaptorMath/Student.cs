@@ -25,6 +25,7 @@ namespace RaptorMath
     public class Student
     {
         private string loginName;
+        private string password;
         private string lastLogin;
         private string filePath;
         public Drill curDrill = new Drill();
@@ -35,6 +36,12 @@ namespace RaptorMath
         {
             get { return this.loginName; }
             set { this.loginName = value; }
+        }
+
+        public string Password
+        {
+            get { return this.password; }
+            set { this.password = value; }
         }
 
         public string LastLogin
@@ -56,6 +63,7 @@ namespace RaptorMath
         public Student()
         {
             loginName = "Unknown";
+            password = "Unknown";
             lastLogin = "Unknown";
             filePath = "Unknown";
         }
@@ -64,10 +72,11 @@ namespace RaptorMath
         // Harvey Kreitzer                                                  //
         // Date: 2/17/2014                                                  //
         //------------------------------------------------------------------//
-        public Student(string name, string login, string stID,
+        public Student(string name, string pwd, string login, string stID,
             string cQuestions, string cRangeSt, string cRangeEnd, string cOp, string aPath)
         {
             loginName = name;
+            password = pwd;
             lastLogin = login;
             filePath = aPath;
         }

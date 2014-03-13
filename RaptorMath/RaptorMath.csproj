@@ -53,6 +53,7 @@
       <DependentUpon>AdminHome.cs</DependentUpon>
     </Compile>
     <Compile Include="Drill.cs" />
+    <Compile Include="XMLNewParser.cs" />
     <Compile Include="XMLParser.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="MathDrill.cs">

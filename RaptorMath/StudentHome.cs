@@ -121,6 +121,7 @@ namespace RaptorMath
             {
                 // Save date you want to write out into class
                 localManager.ClearStudentUser();
+                localManager.currentUser = string.Empty;
                 localManager.SetWindow(Window.authUser);
                 this.Close();
             }

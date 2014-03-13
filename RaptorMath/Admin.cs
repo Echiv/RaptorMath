@@ -24,6 +24,7 @@ namespace RaptorMath
     public class Admin
     {
         private string loginName;
+        private string password;
         private string lastLogin;
         private string filePath;
         public List<Student> adminStudents = new List<Student>();
@@ -32,6 +33,12 @@ namespace RaptorMath
         {
             get { return this.loginName; }
             set { this.loginName = value; }
+        }
+
+        public string Password
+        {
+            get { return this.password; }
+            set { this.password = value; }
         }
 
         public string LastLogin
@@ -53,6 +60,7 @@ namespace RaptorMath
         public Admin()
         {
             loginName = "Unknown";
+            password = "Unknown";
             lastLogin = "Unknown";
             filePath = "Unknown";
         }
@@ -61,9 +69,10 @@ namespace RaptorMath
         // Harvey Kreitzer                                                  //
         // Date: 2/16/2014                                                  //
         //------------------------------------------------------------------//
-        public Admin(string name, string login, string pathLoc)
+        public Admin(string name, string pwd, string login, string pathLoc)
         {
             loginName = name;
+            password = pwd;
             lastLogin = login;
             filePath = pathLoc;
         }

@@ -59,6 +59,7 @@ namespace RaptorMath
                 {
                     Admin administrator = new Admin();
                     administrator.LoginName = admin.Element("loginName").Value;
+                    administrator.Password = admin.Element("password").Value;
                     administrator.LastLogin = admin.Element("lastLogin").Value;
                     administrator.FilePath = admin.Element("path").Value;
                     administrator.adminStudents = studentList;
@@ -69,7 +70,17 @@ namespace RaptorMath
                 }
             }
         }
+        //TODO: figure out how to store and read things from app data
+        private void InitializeDefaultAdmin(List<Admin> adminList)
+        {
 
+            Admin administrator = new Admin();
+            administrator.LoginName = "Admin";
+            administrator.Password = "Admin";
+            administrator.LastLogin = DateTime.Now.ToString("M/d/yyyy");
+            administrator.FilePath = "FilePathToStudentXMLS";
+            adminList.Add(administrator);
+        }
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //
         // Date: 2/26/2014                                                  //
@@ -131,6 +142,17 @@ namespace RaptorMath
             newRecord.Wrong = recordNode.Element("wrong").Value;
             newRecord.Percent = recordNode.Element("percent").Value;
             newRecord.Skipped = recordNode.Element("skipped").Value;
+            
+            /*//How to call Record(IEnumerable<XElement> elements)
+            IEnumerable<XElement> elements = recordNode.Elements();
+            Record testing = new Record(elements);
+            Dictionary<string, string> recordDictionary = testing.recordDictionary;
+            for (int i = 0; i < recordDictionary.Count(); i++)
+            {
+                Console.WriteLine(recordDictionary.ElementAt(i).Key.ToString());
+                Console.WriteLine(recordDictionary.ElementAt(i).Value.ToString());
+            }*/
+            
             return newRecord;
         }
 

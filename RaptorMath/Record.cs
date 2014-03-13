@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace RaptorMath
 {
@@ -29,6 +30,9 @@ namespace RaptorMath
         private string wrong;
         private string percent;
         private string skipped;
+        
+        
+        public Dictionary<string, string> recordDictionary; 
 
         public string DateTaken
         {
@@ -109,6 +113,19 @@ namespace RaptorMath
             wrong = stWrong;
             percent = stPercent;
             skipped = stSkipped;
+        }
+
+        //Given the elements of a record node and the order described in singleRecordList
+        //add this to the recordDictionary
+        public Record(IEnumerable<XElement> elements)
+        {
+            List<string> singleRecordList = new List<string>() { "dateTaken", "question"
+            , "rangeStart", "rangeEnd", "op", "wrong", "percent", "skipped" };
+            int iter = 0;
+            recordDictionary = new Dictionary<string, string>();
+            foreach (XElement e in elements)
+                recordDictionary.Add(singleRecordList[iter++], e.Value.ToString());
+            
         }
     }
 }
