@@ -24,24 +24,24 @@ namespace RaptorMath
     //------------------------------------------------------------------//
     public class Student
     {
+        private string group;
         private string loginName;
-        private string password;
         private string lastLogin;
-        private string filePath;
-        public Drill curDrill = new Drill();
+        private string recordsPath;
+        private string drillsPath;
+        //public Drill curDrill = new Drill();
 
         public List<Record> reportList = new List<Record>();
 
+        public string Group
+        {
+            get { return this.group; }
+            set { this.group = value; }
+        }
         public string LoginName
         {
             get { return this.loginName; }
             set { this.loginName = value; }
-        }
-
-        public string Password
-        {
-            get { return this.password; }
-            set { this.password = value; }
         }
 
         public string LastLogin
@@ -50,10 +50,16 @@ namespace RaptorMath
             set { this.lastLogin = value; }
         }
 
-        public string FilePath
+        public string RecordsPath
         {
-            get { return this.filePath; }
-            set { this.filePath = value; }
+            get { return this.recordsPath; }
+            set { this.recordsPath = value; }
+        }
+
+        public string DrillsPath
+        {
+            get { return this.drillsPath; }
+            set { this.drillsPath = value; }
         }
 
         //------------------------------------------------------------------//
@@ -62,28 +68,29 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         public Student()
         {
+            group = "Unassigned";
             loginName = "Unknown";
-            password = "Unknown";
             lastLogin = "Unknown";
-            filePath = "Unknown";
+            recordsPath = "Unknown";
+            drillsPath = "Unknown";
         }
 
         //------------------------------------------------------------------//
         // Harvey Kreitzer                                                  //
         // Date: 2/17/2014                                                  //
         //------------------------------------------------------------------//
-        public Student(string name, string pwd, string login, string stID,
-            string cQuestions, string cRangeSt, string cRangeEnd, string cOp, string aPath)
+        public Student(string grp, string name, string login, string recsPath, string driPath)
         {
+            group = grp;
             loginName = name;
-            password = pwd;
             lastLogin = login;
-            filePath = aPath;
+            recordsPath = recsPath;
+            drillsPath = driPath;
         }
 
-        public void ResetCurrentDrill()
+        /*public void ResetCurrentDrill()
         {
             curDrill.Reset();
-        }
+        }*/
     }
 }

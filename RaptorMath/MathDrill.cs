@@ -81,7 +81,7 @@ namespace RaptorMath
 
             MatDri_CurrentNumLbl.Text = localManager.GetCurrentNumber();
             this.StudentName = localManager.currentStudent.LoginName;
-            this.TotalQuestions = localManager.GetNumQuestions().Replace("questions.", "");
+            //this.TotalQuestions = localManager.GetNumQuestions().Replace("questions.", "");
             RefreshRange();
         }
 
@@ -118,12 +118,14 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void RefreshRange()
         {
+            /*
             firstNum = localManager.CreateRandom();
             secondNum = localManager.CreateRandom();
             //MatDri_FirstNumberLbl.Text = localManager.CreateRandom();
             //MatDri_SecondNumberLbl.Text = localManager.CreateRandom();
             //            MatDri_Concat.Text = String.Concat(MatDri_FirstNumberLbl.Text, " ", localManager.GetOperand(), " ", MatDri_SecondNumberLbl.Text, " =");
             MatDri_ProblemPrompt.Text = String.Concat(firstNum, " ", localManager.GetOperand(), " ", secondNum, " =");
+        */
         }
 
         //------------------------------------------------------------------//
@@ -132,6 +134,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void MatDri_SubmitBtn_Click(object sender, EventArgs e)
         {
+            /*
             MatDri_ResponseLbl.Visible = false;
 
             if (localManager.IsValidEntry(MatDri_InputType.Text) == false)
@@ -178,6 +181,7 @@ namespace RaptorMath
                 MatDri_CurrentNumLbl.Text = localManager.UpdateCurrentNumber();
                 RefreshRange();
             }
+             * */
         }
 
         //------------------------------------------------------------------//
@@ -186,6 +190,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void MatDri_SkipBtn_Click(object sender, EventArgs e)
         {
+            /*
             // Case: Ask if user wants to skip
             if (MessageBox.Show("Are you sure you want to skip this problem?", "Raptor Math", 
                 MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -208,6 +213,7 @@ namespace RaptorMath
                 MatDri_CurrentNumLbl.Text = localManager.UpdateCurrentNumber();
             }
             this.MatDri_InputType.Focus();
+             */
         }
 
         //------------------------------------------------------------------//
@@ -216,7 +222,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void MatDri_EndDrillBtn_Click(object sender, EventArgs e)
         {
-            if (localManager.currentProblemNumber <= Convert.ToInt32(localManager.currentStudent.curDrill.CurQuestions))
+            /*if (localManager.currentProblemNumber <= Convert.ToInt32(localManager.currentStudent.curDrill.CurQuestions))
             {
                 if (MessageBox.Show("Are you sure you want to stop? You will have to start from the beginning next time.",
                 "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -235,7 +241,7 @@ namespace RaptorMath
                 localManager.currentStudent.ResetCurrentDrill();
                 localManager.SetWindow(Window.stuHome);
                 this.Close();
-            }
+            }*/
         }
 
         //------------------------------------------------------------------//

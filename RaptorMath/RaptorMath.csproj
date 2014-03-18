@@ -53,7 +53,12 @@
       <DependentUpon>AdminHome.cs</DependentUpon>
     </Compile>
     <Compile Include="Drill.cs" />
-    <Compile Include="XMLNewParser.cs" />
+    <Compile Include="MngUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MngUsers.Designer.cs">
+      <DependentUpon>MngUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="XMLParser.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="MathDrill.cs">
@@ -89,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MathDrill.resx">
       <DependentUpon>MathDrill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MngUsers.resx">
+      <DependentUpon>MngUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentHome.resx">
       <DependentUpon>StudentHome.cs</DependentUpon>

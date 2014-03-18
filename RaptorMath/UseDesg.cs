@@ -126,7 +126,6 @@ namespace RaptorMath
                 UseDesg_LoginBtn.Enabled = true;
             else
                 UseDesg_LoginBtn.Enabled = false;
-            Console.WriteLine("Hello");
         }
     }
 }

@@ -176,8 +176,8 @@ namespace RaptorMath
             else
             {
                 localManager.SetOperand(AdminHome_AddRdo.Checked, AdminHome_SubRdo.Checked);
-                localManager.SaveDrillSettings(AdminHome_StudentSelection.Text, AdminHome_MinOperand.Text, AdminHome_MaxOperand.Text,
-                    AdminHome_SetSize.Text);
+                //localManager.SaveDrillSettings(AdminHome_StudentSelection.Text, AdminHome_MinOperand.Text, AdminHome_MaxOperand.Text,
+                //   AdminHome_SetSize.Text);
                 MessageBox.Show("Settings succesfully saved.", "Raptor Math", MessageBoxButtons.OK);
             }
         }
@@ -189,6 +189,12 @@ namespace RaptorMath
         private void AdminHome_StudentSelection_SelectionChangeCommitted(object sender, EventArgs e)
         {
             AdminHome_RecordsBtn.Enabled = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            localManager.SetWindow(Window.mngUsers);
+            this.Close();
         }
     }
 }

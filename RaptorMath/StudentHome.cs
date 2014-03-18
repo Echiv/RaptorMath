@@ -76,10 +76,13 @@ namespace RaptorMath
             InitializeTimer();
 
             this.StudentName = localManager.currentUser;
-            this.LastLogin = localManager.currentStudent.LastLogin;
-            this.Questions = localManager.GetNumQuestions();
+            if (localManager.currentStudent.LastLogin == "Unknown")
+                this.LastLogin = "--/--/----";
+            else
+                this.LastLogin = localManager.currentStudent.LastLogin;
+            //this.Questions = localManager.GetNumQuestions();
 
-            localManager.SaveLoginDate(localManager.currentStudent.FilePath,
+            localManager.SaveLoginDate(localManager.studentXMLPath,
                 localManager.currentStudent.LoginName, DateTime.Now.ToString("M/d/yyyy"));
         }
 

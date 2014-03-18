@@ -24,7 +24,7 @@ namespace RaptorMath
     // Kyle Bridges, Harvey Kreitzer                                    //
     // Date: 2/20/2014                                                  //
     //------------------------------------------------------------------//
-    public enum Window { authUser, adminHome, adminReport, stuHome, stuDrill };
+    public enum Window { authUser, adminHome, adminReport, stuHome, stuDrill, mngUsers };
     public class Manager
     {
         Window form = Window.authUser;
@@ -33,6 +33,9 @@ namespace RaptorMath
         public string currentPassword = string.Empty;
         public string currentUserLogin = string.Empty;
         public string operand = string.Empty;
+        public string dataDir = string.Empty;
+        public string adminXMLPath = string.Empty;
+        public string studentXMLPath = string.Empty;
         public int currentProblemNumber = 1;
         public List<Student> studentList = new List<Student>();
         public List<Admin> adminList = new List<Admin>();
@@ -43,7 +46,25 @@ namespace RaptorMath
 
         public Manager()
         {
-            XML.LoadXML(studentList, adminList);
+            dataDir = Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData);
+            string adminFile = "RaptorMathAdmins.xml";
+            string studentFile = "RaptorMathStudents.xml";
+            adminXMLPath = System.IO.Path.Combine(dataDir, adminFile);
+            studentXMLPath = System.IO.Path.Combine(dataDir, studentFile);
+            //XML.LoadXML(studentList, adminList);
+            XML.StartUp(adminList, adminXMLPath);
+        }
+
+        public void CreateUser(string adminName, string password, string LastLogin, string filePath)
+        {
+            Admin newAdmin = new Admin(adminName, password, LastLogin, filePath);
+            XML.AddUserToXML(adminXMLPath, adminList, newAdmin);
+        }
+
+        public void CreateUser(string group, string studentName, string lastLogin, string recPath, string driPath)
+        {
+            Student newStudent = new Student(group, studentName, lastLogin, recPath, driPath);
+            XML.AddUserToXML(studentXMLPath, studentList, newStudent);
         }
 
         public bool IsRunning()
@@ -136,13 +157,6 @@ namespace RaptorMath
             return false;
         }
 
-        public bool isCorrectStudentPassword()
-        {
-            if (currentStudent.Password == currentPassword)
-                return true;
-            return false;
-        }
-
         public bool grantAccess()
         {
             if (isAdmin() == true)
@@ -154,13 +168,12 @@ namespace RaptorMath
                 else
                     ClearAdminUser();
             else if (isStudent() == true)
-                if (isCorrectStudentPassword() == true)
-                {
-                    SetWindow(Window.stuHome);
-                    return true;
-                }
-                else
-                    ClearStudentUser();
+            {
+                SetWindow(Window.stuHome);
+                return true;
+            }
+            else
+                ClearStudentUser();
             return false;
         }
         //------------------------------------------------------------------//
@@ -245,12 +258,13 @@ namespace RaptorMath
         // Kyle Bridges                                                     //
         // Date: 2/26/2014                                                  //
         //------------------------------------------------------------------//
-        public string GetNumQuestions()
+        /*public string GetNumQuestions()
         {
+**need to fix drills**
             string currentQuestions = currentStudent.curDrill.CurQuestions;
             currentQuestions = String.Concat(currentQuestions, " questions.");
             return currentQuestions;
-        }
+        }*/
 
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //
@@ -297,11 +311,13 @@ namespace RaptorMath
         // Date: 2/27/2014                                                  //
         // Purpose: Generate a random number between the set parameters.    //
         //------------------------------------------------------------------//
-        public string CreateRandom()
+
+        /*public string CreateRandom()
         {
             // NOTE: Check if the range makes mathematical sense.
             //       ex) Start = 5, End = -1
             //       Maybe move this checking to the Admin side?
+**need to fix drills**            
             string startRange = currentStudent.curDrill.CurRangeStart;
             string endRange = currentStudent.curDrill.CurRangeEnd;
 
@@ -309,20 +325,21 @@ namespace RaptorMath
             //       ex) random.Next(1, 11) generates a number between 1 and 11.
             int randomNumber = random.Next(Convert.ToInt32(startRange), Convert.ToInt32(endRange) + 1);
             return randomNumber.ToString();
-        }
+        }*/
 
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //
         // Date: 2/27/2014                                                  //
         //------------------------------------------------------------------//
-        public string GetOperand()
+        /*public string GetOperand()
         {
+**need to fix drills**
             // NOTE: Error if no operand or mislabeled
             if (currentStudent.curDrill.CurOperand == "addition")
                 return "+";
             else
                 return "-";
-        }
+        }*/
 
         //------------------------------------------------------------------//
         // Joshua Boone                                                     //
@@ -428,19 +445,21 @@ namespace RaptorMath
         // Kyle Bridges                                                     //
         // Date: 2/27/2014                                                  //
         //------------------------------------------------------------------//
-        public void SaveDrill()
+        /*public void SaveDrill()
         {
+**need to fix drills**
             currentStudent.curDrill.curPercent = CalculatePercentage();
             XML.WriteCurrentSession(currentStudent.FilePath, currentStudent.LoginName, currentStudent.curDrill);
             AddNewRecordToList();
-        }
+        }*/
 
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //
         // Date: 2/27/2014                                                  //
         //------------------------------------------------------------------//
-        public void AddNewRecordToList()
+        /*public void AddNewRecordToList()
         {
+**need to fix drills**
             Record newRecord = new Record();
             newRecord.DateTaken = DateTime.Now.ToString("M/d/yyyy");
             newRecord.Question = currentStudent.curDrill.CurQuestions;
@@ -450,19 +469,20 @@ namespace RaptorMath
             newRecord.Wrong = currentStudent.curDrill.CurWrong;
             newRecord.Percent = currentStudent.curDrill.curPercent;
             currentStudent.reportList.Add(newRecord);
-        }
+        }*/
 
         //------------------------------------------------------------------//
         // Harvey Kreitzer                                                  //
         // Date: 2/27/2014                                                  //
         //------------------------------------------------------------------//
-        public string CalculatePercentage()
+        /*public string CalculatePercentage()
         {
+**need to fix drills**
             float wrong = float.Parse(currentStudent.curDrill.CurWrong);
             float totalNumber = float.Parse(currentStudent.curDrill.CurQuestions);
             float percentage = 100 - ((wrong / totalNumber) * 100);
             return percentage.ToString();
-        }
+        }*/
 
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //
@@ -561,25 +581,27 @@ namespace RaptorMath
         // Kyle Bridges                                                     //
         // Date: 2/28/2014                                                  //
         //------------------------------------------------------------------//
-        public void SaveDrillSettings(string stuName, string minOperand, string maxOperand, string setSize)
+        /*public void SaveDrillSettings(string stuName, string minOperand, string maxOperand, string setSize)
         {
+**need to fix drills**
             currentStudent = FindStudent(stuName);
             XML.WriteDrillSettings(currentStudent.LoginName, currentStudent.FilePath, minOperand, maxOperand, setSize, operand);
             UpdateLocalDrillSettings(currentStudent, minOperand, maxOperand, setSize, operand);
             ClearStudentUser();
-        }
+        }*/
 
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //
         // Date: 3/1/2014                                                   //
         //------------------------------------------------------------------//
-        public void UpdateLocalDrillSettings(Student student, string minOp, string maxOp, string size, string op)
+        /*public void UpdateLocalDrillSettings(Student student, string minOp, string maxOp, string size, string op)
         {
+**need to fix drills**
             student.curDrill.CurQuestions = size;
             student.curDrill.CurRangeStart = minOp;
             student.curDrill.CurRangeEnd = maxOp;
             student.curDrill.CurOperand = op;
-        }
+        }*/
 
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //

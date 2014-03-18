@@ -47,6 +47,7 @@
             this.AdminHome_StudentSelection = new System.Windows.Forms.ComboBox();
             this.AdminHome_Timer = new System.Windows.Forms.Timer(this.components);
             this.AdminHome_ButtonBox = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.AdminHome_SettingsBox = new System.Windows.Forms.GroupBox();
             this.AdminHome_QuestionsBox = new System.Windows.Forms.GroupBox();
             this.AdminHome_StudentBox = new System.Windows.Forms.GroupBox();
@@ -240,7 +241,7 @@
             this.AdminHome_StudentSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AdminHome_StudentSelection.FormattingEnabled = true;
             this.AdminHome_StudentSelection.Location = new System.Drawing.Point(195, 148);
-            this.AdminHome_StudentSelection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_StudentSelection.Margin = new System.Windows.Forms.Padding(4);
             this.AdminHome_StudentSelection.MaxDropDownItems = 100;
             this.AdminHome_StudentSelection.Name = "AdminHome_StudentSelection";
             this.AdminHome_StudentSelection.Size = new System.Drawing.Size(191, 24);
@@ -255,16 +256,28 @@
             // 
             // AdminHome_ButtonBox
             // 
+            this.AdminHome_ButtonBox.Controls.Add(this.button1);
             this.AdminHome_ButtonBox.Controls.Add(this.AdminHome_SaveSettingsBtn);
             this.AdminHome_ButtonBox.Controls.Add(this.AdminHome_LogoutBtn);
             this.AdminHome_ButtonBox.Controls.Add(this.AdminHome_ExitBtn);
             this.AdminHome_ButtonBox.Location = new System.Drawing.Point(19, 560);
-            this.AdminHome_ButtonBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_ButtonBox.Margin = new System.Windows.Forms.Padding(4);
             this.AdminHome_ButtonBox.Name = "AdminHome_ButtonBox";
-            this.AdminHome_ButtonBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
             this.AdminHome_ButtonBox.Size = new System.Drawing.Size(544, 55);
             this.AdminHome_ButtonBox.TabIndex = 13;
             this.AdminHome_ButtonBox.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.Location = new System.Drawing.Point(329, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 27);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "CreateStudent";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AdminHome_SettingsBox
             // 
@@ -272,9 +285,9 @@
             this.AdminHome_SettingsBox.Controls.Add(this.AdminHome_RangeBox);
             this.AdminHome_SettingsBox.Controls.Add(this.AdminHome_OperandBox);
             this.AdminHome_SettingsBox.Location = new System.Drawing.Point(16, 234);
-            this.AdminHome_SettingsBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_SettingsBox.Margin = new System.Windows.Forms.Padding(4);
             this.AdminHome_SettingsBox.Name = "AdminHome_SettingsBox";
-            this.AdminHome_SettingsBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_SettingsBox.Padding = new System.Windows.Forms.Padding(4);
             this.AdminHome_SettingsBox.Size = new System.Drawing.Size(547, 319);
             this.AdminHome_SettingsBox.TabIndex = 4;
             this.AdminHome_SettingsBox.TabStop = false;
@@ -297,9 +310,9 @@
             // AdminHome_StudentBox
             // 
             this.AdminHome_StudentBox.Location = new System.Drawing.Point(17, 113);
-            this.AdminHome_StudentBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_StudentBox.Margin = new System.Windows.Forms.Padding(4);
             this.AdminHome_StudentBox.Name = "AdminHome_StudentBox";
-            this.AdminHome_StudentBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_StudentBox.Padding = new System.Windows.Forms.Padding(4);
             this.AdminHome_StudentBox.Size = new System.Drawing.Size(545, 113);
             this.AdminHome_StudentBox.TabIndex = 1;
             this.AdminHome_StudentBox.TabStop = false;
@@ -385,9 +398,9 @@
             this.AdminHome_UserInfoBox.Controls.Add(this.AdminHome_AdminNameLbl);
             this.AdminHome_UserInfoBox.Controls.Add(this.AdminHome_TimeLbl);
             this.AdminHome_UserInfoBox.Location = new System.Drawing.Point(16, 4);
-            this.AdminHome_UserInfoBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_UserInfoBox.Margin = new System.Windows.Forms.Padding(4);
             this.AdminHome_UserInfoBox.Name = "AdminHome_UserInfoBox";
-            this.AdminHome_UserInfoBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
             this.AdminHome_UserInfoBox.Size = new System.Drawing.Size(547, 100);
             this.AdminHome_UserInfoBox.TabIndex = 0;
             this.AdminHome_UserInfoBox.TabStop = false;
@@ -405,7 +418,7 @@
             this.Controls.Add(this.AdminHome_StudentSelection);
             this.Controls.Add(this.AdminHome_StudentBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminHome_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raptor Math";
@@ -414,6 +427,7 @@
             this.AdminHome_RangeBox.ResumeLayout(false);
             this.AdminHome_RangeBox.PerformLayout();
             this.AdminHome_ButtonBox.ResumeLayout(false);
+            this.AdminHome_ButtonBox.PerformLayout();
             this.AdminHome_SettingsBox.ResumeLayout(false);
             this.AdminHome_QuestionsBox.ResumeLayout(false);
             this.AdminHome_QuestionsBox.PerformLayout();
@@ -455,6 +469,7 @@
         private System.Windows.Forms.Label AdminHome_DateLbl;
         private System.Windows.Forms.GroupBox AdminHome_UserInfoBox;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button1;
 
     }
 }
