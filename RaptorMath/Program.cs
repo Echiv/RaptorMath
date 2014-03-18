@@ -1,4 +1,4 @@
-﻿//==============================================================//
+﻿//================Can you see this?==============================================//
 //					      Program.cs				            //
 //==============================================================//
 // Program Name: RaptorMath                                     //
@@ -68,6 +68,11 @@ namespace RaptorMath
                             Application.Run(new MatDri_Form(allManager));
                             break;
                         }
+                    case Window.mngUsers:
+                        {
+                            Application.Run(new MngUsers_Form(allManager));
+                            break;
+                        }                        
                     default:
                         break;
                 }
