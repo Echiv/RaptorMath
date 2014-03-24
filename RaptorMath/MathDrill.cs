@@ -42,12 +42,12 @@ using System.Xml.Linq;
 
 namespace RaptorMath
 {
-    public partial class MatDri_Form : Form
+    public partial class MathDrill_Form : Form
     {
         public Manager localManager;
         public string firstNum = string.Empty;
         public string secondNum = string.Empty;
-
+/*
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/20/2014                                                  //
@@ -57,7 +57,8 @@ namespace RaptorMath
             get { return MatDri_StudentNameLbl.Text; }
             set { MatDri_StudentNameLbl.Text = value; }
         }
-
+*/
+/*
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/24/2014                                                  //
@@ -67,20 +68,22 @@ namespace RaptorMath
             get { return MatDri_TotalNumLbl.Text; }
             set { MatDri_TotalNumLbl.Text = value; }
         }
+*/
 
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/12/2014                                                  //
         //------------------------------------------------------------------//
-        public MatDri_Form(Manager manager)
+        public MathDrill_Form(Manager manager)
         {
             InitializeComponent();
             localManager = manager;
             InitializeDate();
             InitializeTimer();
-
+/*
             MatDri_CurrentNumLbl.Text = localManager.GetCurrentNumber();
             this.StudentName = localManager.currentStudent.LoginName;
+*/
             //this.TotalQuestions = localManager.GetNumQuestions().Replace("questions.", "");
             RefreshRange();
         }
@@ -91,7 +94,9 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void InitializeDate()
         {
+/*
             MatDri_DateLbl.Text = DateTime.Now.ToString("M/d/yyyy");
+*/
         }
 
         //------------------------------------------------------------------//
@@ -100,7 +105,9 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void InitializeTimer()
         {
+/*
             MatDri_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
+*/
         }
 
         //------------------------------------------------------------------//
@@ -109,7 +116,9 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void MatDri_Timer_Tick(object sender, EventArgs e)
         {
+/*
             MatDri_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
+*/
         }
 
         //------------------------------------------------------------------//

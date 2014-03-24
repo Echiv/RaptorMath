@@ -52,12 +52,54 @@
     <Compile Include="AdminHome.designer.cs">
       <DependentUpon>AdminHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateDrill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateDrill.Designer.cs">
+      <DependentUpon>CreateDrill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Drill.cs" />
+    <Compile Include="EditStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditStudents.Designer.cs">
+      <DependentUpon>EditStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageDrills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageDrills.Designer.cs">
+      <DependentUpon>ManageDrills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageGroups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageGroups.Designer.cs">
+      <DependentUpon>ManageGroups.cs</DependentUpon>
+    </Compile>
     <Compile Include="MngUsers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MngUsers.Designer.cs">
       <DependentUpon>MngUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportGroup.Designer.cs">
+      <DependentUpon>ReportGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSingle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportSingle.Designer.cs">
+      <DependentUpon>ReportSingle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentRepotrs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentRepotrs.Designer.cs">
+      <DependentUpon>StudentRepotrs.cs</DependentUpon>
     </Compile>
     <Compile Include="XMLParser.cs" />
     <Compile Include="Manager.cs" />
@@ -92,14 +134,29 @@
     <EmbeddedResource Include="AdminHome.resx">
       <DependentUpon>AdminHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageDrills.resx">
+      <DependentUpon>ManageDrills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageGroups.resx">
+      <DependentUpon>ManageGroups.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MathDrill.resx">
       <DependentUpon>MathDrill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MngUsers.resx">
       <DependentUpon>MngUsers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportGroup.resx">
+      <DependentUpon>ReportGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportSingle.resx">
+      <DependentUpon>ReportSingle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentHome.resx">
       <DependentUpon>StudentHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentRepotrs.resx">
+      <DependentUpon>StudentRepotrs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UseDesg.resx">
       <DependentUpon>UseDesg.cs</DependentUpon>

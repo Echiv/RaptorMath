@@ -137,5 +137,10 @@ namespace RaptorMath
             else
                 UseDesg_LoginBtn.Enabled = false;
         }
+
+        private void UseDesg_LoginDdl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
