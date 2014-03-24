@@ -22,6 +22,7 @@ namespace RaptorMath
     //------------------------------------------------------------------//
     public class Drill
     {
+        private string drillSet;
         private string curQuestions;
         private string curRangeStart;
         private string curRangeEnd;
@@ -29,6 +30,12 @@ namespace RaptorMath
         private string curWrong;
         public string curSkipped;
         public string curPercent;
+
+        public string DrillSet
+        {
+            get { return this.drillSet; }
+            set { this.drillSet = value; }
+        }
 
         public string CurQuestions
         {

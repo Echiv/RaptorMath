@@ -39,6 +39,7 @@ namespace RaptorMath
         public int currentProblemNumber = 1;
         public List<Student> studentList = new List<Student>();
         public List<Admin> adminList = new List<Admin>();
+        public List<String> groupList = new List<string>();
         public Student currentStudent = new Student();
         public Admin currentAdmin = new Admin();
         public Random random = new Random();
@@ -52,19 +53,21 @@ namespace RaptorMath
             adminXMLPath = System.IO.Path.Combine(dataDir, adminFile);
             studentXMLPath = System.IO.Path.Combine(dataDir, studentFile);
             //XML.LoadXML(studentList, adminList);
-            XML.StartUp(adminList, adminXMLPath);
+            XML.StartUp(adminList, adminXMLPath, studentList, studentXMLPath, groupList);
         }
 
-        public void CreateUser(string adminName, string password, string LastLogin, string filePath)
+        public bool CreateUser(string adminName, string password, string LastLogin, string filePath)
         {
             Admin newAdmin = new Admin(adminName, password, LastLogin, filePath);
-            XML.AddUserToXML(adminXMLPath, adminList, newAdmin);
+            bool isCreatedUser = XML.AddUserToXML(adminXMLPath, adminList, newAdmin);
+            return isCreatedUser;
         }
 
-        public void CreateUser(string group, string studentName, string lastLogin, string recPath, string driPath)
+        public bool CreateUser(string group, string studentName, string lastLogin)
         {
-            Student newStudent = new Student(group, studentName, lastLogin, recPath, driPath);
-            XML.AddUserToXML(studentXMLPath, studentList, newStudent);
+            Student newStudent = new Student(group, studentName, lastLogin);
+            bool isCreatedUser = XML.AddUserToXML(studentXMLPath, studentList, newStudent, groupList);
+            return isCreatedUser;
         }
 
         public bool IsRunning()
@@ -119,6 +122,16 @@ namespace RaptorMath
             return userList;
         }
 
+        public List<String> GetGroups()
+        {
+            List<String> groups = new List<String>();
+
+            foreach (String group in groupList)
+                groups.Add(group);
+            groups.Sort();
+            return groups;
+        }
+
         //------------------------------------------------------------------//
         // Harvey Kreitzer                                                  //
         // Date: 2/26/2014                                                  //
@@ -128,16 +141,19 @@ namespace RaptorMath
         {
             if (currentUser.StartsWith("<Admin>"))
             {
-                currentUser = currentUser.Remove(0, 8);
-
-                // Check if it's finding the admin
-                //                if (FindAdmin(currentUser) == null)
-
-                currentAdmin = FindAdmin(currentUser);
-                currentUser = String.Concat("<Admin> ", currentUser);
                 return true;
             }
             return false;
+        }
+
+        private void SetCurrentAdmin(string currentUser)
+        {
+            if (currentUser.StartsWith("<Admin>"))
+            {
+                currentUser = currentUser.Remove(0, 8);
+                currentAdmin = FindAdmin(currentUser);
+                currentUser = String.Concat("<Admin> ", currentUser);
+            }
         }
 
         public bool isCorrectAdminPassword()
@@ -150,16 +166,23 @@ namespace RaptorMath
         public bool isStudent()
         {
             if (!currentUser.StartsWith("<Admin>"))
+                return true;
+            return false;
+        }
+
+        public void SetCurrentStudent(string currentUser)
+        {
+            if (!currentUser.StartsWith("<Admin>"))
             {
                 currentStudent = FindStudent(currentUser);
-                return true;
             }
-            return false;
         }
 
         public bool grantAccess()
         {
             if (isAdmin() == true)
+            {
+                SetCurrentAdmin(currentUser);
                 if (isCorrectAdminPassword() == true)
                 {
                     SetWindow(Window.adminHome);
@@ -167,8 +190,10 @@ namespace RaptorMath
                 }
                 else
                     ClearAdminUser();
+            }
             else if (isStudent() == true)
             {
+                SetCurrentStudent(currentUser);
                 SetWindow(Window.stuHome);
                 return true;
             }
@@ -449,7 +474,7 @@ namespace RaptorMath
         {
 **need to fix drills**
             currentStudent.curDrill.curPercent = CalculatePercentage();
-            XML.WriteCurrentSession(currentStudent.FilePath, currentStudent.LoginName, currentStudent.curDrill);
+            XML.WriteCurrentSession(currentStudent.DrillsPath, currentStudent.LoginName, currentStudent.curDrill);
             AddNewRecordToList();
         }*/
 
@@ -585,7 +610,7 @@ namespace RaptorMath
         {
 **need to fix drills**
             currentStudent = FindStudent(stuName);
-            XML.WriteDrillSettings(currentStudent.LoginName, currentStudent.FilePath, minOperand, maxOperand, setSize, operand);
+            XML.WriteDrillSettings(currentStudent.LoginName, currentStudent.DrillsPath, minOperand, maxOperand, setSize, operand);
             UpdateLocalDrillSettings(currentStudent, minOperand, maxOperand, setSize, operand);
             ClearStudentUser();
         }*/

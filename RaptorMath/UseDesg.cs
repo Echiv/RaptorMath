@@ -45,9 +45,7 @@ namespace RaptorMath
             InitializeComponent();
             InitializeDate();
             InitializeTimer();
-
-            foreach (string item in manager.GetUsers())
-                UseDesg_LoginDdl.Items.Add(item);
+            RefreshLoginDropDownBox();
         }
 
         //------------------------------------------------------------------//
@@ -68,6 +66,12 @@ namespace RaptorMath
             UseDesg_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
+        private void RefreshLoginDropDownBox()
+        {
+            UseDesg_LoginDdl.Items.Clear();
+            foreach (string item in localManager.GetUsers())
+                UseDesg_LoginDdl.Items.Add(item);
+        }
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/11/2014                                                  //
@@ -114,9 +118,15 @@ namespace RaptorMath
         private void UseDesg_LoginDdl_SelectionChangeCommitted(object sender, EventArgs e)
         {
             localManager.currentUser = UseDesg_LoginDdl.Text;
-            if(UseDesg_passwordBox.Text.Length > 0)
+            if (localManager.isStudent())
             {
+                UseDesg_passwordBox.Enabled = false;
                 UseDesg_LoginBtn.Enabled = true;
+            }
+            else
+            {
+                UseDesg_passwordBox.Enabled = true;
+                UseDesg_LoginBtn.Enabled = false;
             }
         }
 

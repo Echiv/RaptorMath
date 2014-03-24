@@ -78,18 +78,27 @@ namespace RaptorMath
             return true;
         }
 
-        public void StartUp(List<Admin> adminList, string adminXMLPath)
+        public bool studentXMLExists(string fileName)
+        {
+            if(!System.IO.File.Exists(fileName))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public void StartUp(List<Admin> adminList, string adminXMLPath, List<Student> studentList, string studentXMLPath, List<string> groupList)
         {
             //AdminXML should contain all admin information
             //Should find AdminXML in C://App Data
             if (!adminXMLExists(adminXMLPath))
                 InitialCreateAdminXML(adminXMLPath);
 
-            XDocument adminXML = XDocument.Load(adminXMLPath);
-
             Console.WriteLine("StartUP");
-            Console.WriteLine(adminXML.Root);
-            LoadAdminXML(adminList, adminXML);
+            
+            if (studentXMLExists(studentXMLPath))
+                LoadStudentXML(studentList, studentXMLPath, groupList);
+            LoadAdminXML(adminList, adminXMLPath);
         }
 
         private void InitialCreateAdminXML(string adminXMLPath)
@@ -105,8 +114,10 @@ namespace RaptorMath
             adminXML.Save(adminXMLPath);
         }
 
-        public void LoadAdminXML(List<Admin> adminList, XDocument adminXML)
+        public void LoadAdminXML(List<Admin> adminList, string fileName )
         {
+            XDocument adminXML = XDocument.Load(fileName);
+
             foreach (XElement admin in adminXML.Root.Nodes())
             {
                 Admin administrator = new Admin();
@@ -118,250 +129,257 @@ namespace RaptorMath
             }
         }
 
-        public void InitialCreateStudentXml(string studentXMLPath, List<Student> studentList, Student newStudentEntry)
+        public bool InitialCreateStudentXml(string studentXMLPath, List<Student> studentList, Student newStudentEntry, List<String> groupList)
         {
-            
-
             XDocument studentXML =
                 new XDocument(
                     new XElement("RaptorMathStu",
-                /* Group node that is initially Unassigned but can be assigned by teacher on creation*/
                         new XElement(newStudentEntry.Group,
                             new XElement("stu",
+                                new XElement("group", newStudentEntry.Group),
                                 new XElement("loginName", newStudentEntry.LoginName),
                                 new XElement("lastLogin", newStudentEntry.LastLogin),
-                /*Path to RaptorMathStudents XML*/
-                //new XElement("stuPath", "Unknown"),
-                /*Path to this students records XML*/
                                 new XElement("recPath", newStudentEntry.RecordsPath),
-                                /*Path to this students drill XML*/
                                 new XElement("driPath", newStudentEntry.DrillsPath)))));
-            Console.WriteLine("InitialCreateStudentXml", studentXML.Root.Nodes().ToString());
+            AddStudentToStudentAndGroupList(studentList, groupList, newStudentEntry);
             studentXML.Save(studentXMLPath);
-            
+            return true;
         }
 
-        public void AddUserToXML(string adminXMLPath, List<Admin> adminList, Admin newAdminEntry)
+        public bool AddUserToXML(string adminXMLPath, List<Admin> adminList, Admin newAdminEntry)
         {
-            adminList.Add(newAdminEntry);
+            
             XDocument adminXML = XDocument.Load(adminXMLPath);
 
-            Console.WriteLine("AddUserToXML");
-            foreach (XElement admin in adminXML.Root.Nodes())
-            {
-                if (admin.Element("loginName").Value != newAdminEntry.LoginName)
-                {
-                    XElement newAdmin =
-                        new XElement("admin",
-                                    new XElement("loginName", newAdminEntry.LoginName),
-                                    new XElement("password", newAdminEntry.Password),
-                                    new XElement("path", newAdminEntry.FilePath),
-                                    new XElement("lastLogin", newAdminEntry.LastLogin));
+            XElement rootNode = FirstLevelOfRoot(adminXML);
+            IEnumerable<XElement> AdminNodesQuery = SecondLevelOfRoot(rootNode);
 
-                    adminXML.Add(newAdmin);
-                }
+            bool isAdded = false;
+
+            bool AdminNotFound = isAdminNameInList(AdminNodesQuery, newAdminEntry.LoginName);
+            if (!AdminNotFound)
+            {
+                XElement newAdmin =
+                    new XElement("admin",
+                                new XElement("loginName", newAdminEntry.LoginName),
+                                new XElement("password", newAdminEntry.Password),
+                                new XElement("path", newAdminEntry.FilePath),
+                                new XElement("lastLogin", newAdminEntry.LastLogin));
+                rootNode.Add(newAdmin);
+                adminList.Add(newAdminEntry);
+                isAdded = true;
             }
+      
+            adminXML.Save(adminXMLPath);
+            return isAdded;
         }
 
-        public void AddUserToXML(string studentXMLPath, List<Student> studentList, Student newStudentEntry)
+        public bool AddUserToXML(string studentXMLPath, List<Student> studentList, Student newStudentEntry, List<String> groupList)
         {
+            string drillPath = newStudentEntry.LoginName.Replace(" ", "") + "DrillSettings.xml";
+            string recordPath = newStudentEntry.LoginName.Replace(" ", "") + "Records.xml";
+            newStudentEntry.RecordsPath = recordPath;
+            newStudentEntry.DrillsPath = drillPath;
+
+            bool isAdded = false;
             if (!System.IO.File.Exists(studentXMLPath))
-                InitialCreateStudentXml(studentXMLPath, studentList, newStudentEntry);
-
-            XDocument studentXML = XDocument.Load(studentXMLPath);
-
-            Console.WriteLine("AddUserToXML");
-            /*IEnumerable<XElement> StudentNodesQuery =
-                from groupName in studentXML.Root.Elements()
-                from students in groupName.Elements()
-                select students;*/
-
-            IEnumerable<XElement> GroupNodesQuery =
-                from groups in studentXML.Root.Elements()
-                select groups;
-
-            foreach (XElement groups in GroupNodesQuery)
             {
-                if (groups.Name == newStudentEntry.Group)
-                {
-                    IEnumerable<XElement> StudentNodesQuery =
-                        from students in groups.Elements()
-                        select students;
-                    bool studentNotFound = isStudentNameInXML(StudentNodesQuery, newStudentEntry.LoginName);
-                    foreach (XElement student in StudentNodesQuery)
-                    {
-                        //Console.WriteLine(student);
+                isAdded = InitialCreateStudentXml(studentXMLPath, studentList, newStudentEntry, groupList);
+            }
+            else
+            {
+                bool hasGroupBeenAdded = false;
+                XDocument studentXML = XDocument.Load(studentXMLPath);
 
-                        if (!studentNotFound)
+                XElement rootNode = FirstLevelOfRoot(studentXML);
+                IEnumerable<XElement> GroupNodesQuery = SecondLevelOfRoot(rootNode);
+                foreach (XElement groupNode in GroupNodesQuery)
+                {
+                    if (groupNode.Name == newStudentEntry.Group)
+                    {
+                        hasGroupBeenAdded = true;
+                        IEnumerable<XElement> StudentNodesOfGroupQuery = ThirdLevelOfRoot(groupNode);
+                        bool studentNotFound = isStudentNameInGroup(StudentNodesOfGroupQuery, newStudentEntry.LoginName);
+                        foreach (XElement student in StudentNodesOfGroupQuery)
                         {
-                            Console.WriteLine("True");
-                            XElement newStudent =
-                                new XElement("stu",
-                                    new XElement("loginName", newStudentEntry.LoginName),
-                                    new XElement("lastLogin", newStudentEntry.LastLogin),
-                                    new XElement("recPath", newStudentEntry.RecordsPath),
-                                    new XElement("driPath", newStudentEntry.DrillsPath));
-                            Console.WriteLine("Before Adding the student");
-                            Console.WriteLine(groups);
-                            groups.Add(newStudent);
-                            Console.WriteLine("After Adding the student");
-                            Console.WriteLine(groups);
-                            break;
+                            if (!studentNotFound)
+                            {
+                                XElement newStudent = XmlStudentWithoutGroup(newStudentEntry);
+                                AddStudentToStudentAndGroupList(studentList, groupList, newStudentEntry);
+                                groupNode.Add(newStudent);
+                                isAdded = true;
+                                break;
+                            }
+                            isAdded = false;
                         }
                     }
+                    if (hasGroupBeenAdded == true)
+                        break;
                 }
+                if (hasGroupBeenAdded == false)
+                {
+                    XElement newStudent = XmlStudentWithNewGroup(newStudentEntry);
+                    AddStudentToStudentAndGroupList(studentList, groupList, newStudentEntry);
+                    rootNode.Add(newStudent);
+                    isAdded = true;
+                }
+                studentXML.Save(studentXMLPath); 
             }
-            studentXML.Save(studentXMLPath);
+            return isAdded;
         }
 
-        private bool isStudentNameInXML(IEnumerable<XElement> StudentNodesQuery, string studentName)
+        private XElement XmlStudentWithoutGroup(Student student)
         {
-            foreach (XElement student in StudentNodesQuery)
+            XElement newStudent =
+                new XElement("stu",
+                    new XElement("group", student.Group),
+                    new XElement("loginName", student.LoginName),
+                    new XElement("lastLogin", student.LastLogin),
+                    new XElement("recPath", student.RecordsPath),
+                    new XElement("driPath", student.DrillsPath));
+            return newStudent;
+        }
+
+        private XElement XmlStudentWithNewGroup(Student student)
+        {
+            XElement newStudent =
+                new XElement(student.Group,
+                    new XElement("stu",
+                        new XElement("group", student.Group),
+                        new XElement("loginName", student.LoginName),
+                        new XElement("lastLogin", student.LastLogin),
+                        new XElement("recPath", student.RecordsPath),
+                        new XElement("driPath", student.DrillsPath)));
+            return newStudent;
+        }
+
+        private XElement XmlDrillSettingsWithNewDrillSet(Drill drill)
+        {
+            XElement newDrillSet =
+                new XElement(drill.DrillSet,
+                    new XElement("questions", drill.CurQuestions),
+                    new XElement("rangeStart", drill.CurRangeStart),
+                    new XElement("rangeEnd", drill.CurRangeEnd),
+                    new XElement("operand", drill.CurOperand),
+                    new XElement("wrong", drill.CurWrong),
+                    new XElement("skipped", drill.CurSkipped),
+                    new XElement("percent", drill.CurPercent) );
+            return newDrillSet;
+        }
+
+        private XElement XmlRecords(Drill currentDrill)
+        {
+            XElement records =
+                new XElement("records", currentDrill.DrillSet,
+                    new XElement("dateTaken", DateTime.Now.ToString("M/d/yyyy")),
+                    new XElement("question", currentDrill.CurQuestions),
+                    new XElement("rangeStart", currentDrill.CurRangeStart),
+                    new XElement("rangeEnd", currentDrill.CurRangeEnd),
+                    new XElement("op", currentDrill.CurOperand),
+                    new XElement("wrong", currentDrill.CurWrong),
+                    new XElement("skipped", currentDrill.curSkipped),
+                    new XElement("percent", currentDrill.curPercent));
+            return records;
+        }
+        /*private XElement XmlDrillSettingsWithNewDrillSet(Drill drill)
+        {
+            XElement newDrillSet = 
+                new XElement("questions", drill.CurQuestions,
+                    new XElement("rangeStart", drill.CurRangeStart),
+                    new XElement("rangeEnd", drill.CurRangeEnd),
+                    new XElement("operand", drill.CurOperand),
+                    new XElement("wrong", drill.CurWrong),
+                    new XElement("skipped", drill.CurSkipped),
+                    new XElement("percent", drill.CurPercent) );
+            return newDrillSet;
+        }*/
+
+        private void AddStudentToNode(List<Student> studentList, List<String> groupList, XElement Node, XElement XMLStudentStucture, Student newStudentEntry)
+        {
+            Node.Add(XMLStudentStucture);
+        }
+
+        private void AddStudentToStudentAndGroupList(List<Student> studentList, List<String> groupList, Student newStudentEntry)
+        {
+            studentList.Add(newStudentEntry);
+            groupList.Add(newStudentEntry.Group);
+        }
+
+        private XElement FirstLevelOfRoot(XDocument XMLFile)
+        {
+            return XMLFile.Root;
+        }
+
+        private IEnumerable<XElement> SecondLevelOfRoot(XElement RootNode)
+        {
+            IEnumerable<XElement> SecondLevelChildrenQuery =
+                from secondLevel in RootNode.Elements()
+                select secondLevel;
+            return SecondLevelChildrenQuery;
+        }
+
+        private IEnumerable<XElement> ThirdLevelOfRoot(XElement SecondLevelNode)
+        {
+            IEnumerable<XElement> ThirdLevelChildrenQuery =
+                from ThirdLevel in SecondLevelNode.Elements()
+                select ThirdLevel;
+            return ThirdLevelChildrenQuery;
+        }
+
+        private bool isStudentNameInGroup(IEnumerable<XElement> StudentNodesOfGroupQuery, string studentName)
+        {
+            foreach (XElement student in StudentNodesOfGroupQuery)
             {
                 if(student.Element("loginName").Value == studentName)
-                {
-                    Console.WriteLine("isStudentNameInXML is TRUE");
                     return true;
-                }
-                Console.WriteLine(student.Element("loginName").Value);
-                Console.WriteLine(studentName);
             }
-            Console.WriteLine("isStudentNameInXML is FALSE");
             return false;
         }
 
-        private void CreateXML(/*List<Student> studentList*/)
+        private bool isAdminNameInList(IEnumerable<XElement> AdminNodesQuery, string AdminName)
         {
-            //TODO: StudentXML should contain all student information
-            //Should find StudentXML in C://App Data
-            //string file = "Testing.xml";
-
-            /*Combine the path of AppData\local with the file you want to save to create a filename*/
-            //string filename = System.IO.Path.Combine(Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), file);
-            
-            /*How to get the path to your current directory*/
-            //(System.Environment.CurrentDirectory)
-
-            /*string adminFilename = System.IO.Path.Combine(System.Environment.CurrentDirectory, "RaptorMathAdminsTest.xml");
-            XDocument adminXML =
-                new XDocument(
-                    new XElement("RaptorMathAdmin",
-                        new XElement("admin",
-                            new XElement("loginName", "Admin"),
-                            new XElement("password", "Admin"),
-                            new XElement("path", "RaptorMathStudents.xml"),
-                            new XElement("lastLogin", DateTime.Now.ToString("M/d/yyyy")))) );
-            adminXML.Save(adminFilename);*/
-
-            /*Create student XML when the Admin logs in for the first time */
-            string studentFilename = System.IO.Path.Combine(System.Environment.CurrentDirectory, "RaptorMathStudentsTest.xml");
-            XDocument studentXML =
-                new XDocument(
-                    new XElement("RaptorMathStu",
-                        /* Group node that is initially Unassigned but can be assigned by teacher on creation*/
-                        new XElement("Unassigned",
-                            new XElement("stu",
-                                new XElement("loginName", "Unknown"),
-                                new XElement("lastLogin", "Unknown"),
-                                /*Path to RaptorMathStudents XML*/
-                                //new XElement("stuPath", "Unknown"),
-                                /*Path to this students records XML*/
-                                new XElement("recPath", "Unknown"),
-                                /*Path to this students drill XML*/
-                                new XElement("driPath", "Unknown")))) );
-            studentXML.Save(studentFilename);
-            /*Take their initials (i.e. CJ) with their screen name and concat "Records.xml" */
-            string recordFilename = System.IO.Path.Combine(System.Environment.CurrentDirectory, "RaptorMathRecordsTest.xml");
-            XDocument recordXML =
-                new XDocument(
-                    new XElement("StudentRecords",
-                        new XElement("record",
-                            new XElement("dateTaken", "Unknown"),
-                            new XElement("question", "Unknown"),
-                            new XElement("rangeStart", "Unknown"),
-                            new XElement("rangeEnd", "Unknown"),
-                            new XElement("op", "Unknown"),
-                            new XElement("wrong", "Unknown"),
-                            new XElement("skipped", "Unknown"),
-                            new XElement("percent", "Unknown"))) );
-            recordXML.Save(recordFilename);
-            /*Take their initials (i.e. CJ) with their screen name and concat "DrillSettings.xml" */
-            string drillSettingsFilename = System.IO.Path.Combine(System.Environment.CurrentDirectory, "RaptorMathDrillSettingsTest.xml");
-            XDocument drillSettingsXML =
-                new XDocument(
-                    new XElement("StudentDrillSettings",
-                        /*settings node will be pre-defined drill settings or custom drill settings*/
-                        new XElement("settings",
-                            new XElement("DrillNameHere",
-                                new XElement("question", "Unknown"),
-                                new XElement("rangeStart", "Unknown"),
-                                new XElement("rangeEnd", "Unknown"),
-                                new XElement("op", "Unknown")))) );
-            drillSettingsXML.Save(drillSettingsFilename);
-
-            
-
-                /*XDocument studentXML = XDocument.Load(fileName);
-
-                foreach (XElement student in studentXML.Root.Nodes())
-                {
-                    Student aStudent = new Student();
-                    aStudent.LoginName = student.Element("loginName").Value;
-                    aStudent.Password = student.Element("password").Value;
-                    aStudent.LastLogin = student.Element("lastLogin").Value;
-                    //Need studentXML filePath
-                    aStudent.FilePath = student.Element("filePath").Value;
-                    //Need Specific student's recordXML
-                    //Need Student specific drillXML
-                    aStudent.curDrill = CurrentDrillParser(student.Element("curSetting"));
-
-                    //foreach (XElement record in student.Elements("records"))
-                    //    aStudent.reportList.Add(CurrentRecordParser(record));
-
-                    // Add to student list
-                    studentList.Add(aStudent);
-                }
-                 * */
-            //}
+            foreach (XElement admin in AdminNodesQuery)
+            {
+                if (admin.Element("loginName").Value == AdminName)
+                    return true;
+            }
+            return false;
         }
 
-        //TODO: figure out how to store and read things from app data
-        private void InitializeDefaultAdmin(List<Admin> adminList)
-        {
-            Admin administrator = new Admin();
-            administrator.LoginName = "Admin";
-            administrator.Password = "Admin";
-            administrator.LastLogin = DateTime.Now.ToString("M/d/yyyy");
-            administrator.FilePath = "FilePathToStudentXMLS";
-            adminList.Add(administrator);
-        }
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //
         // Date: 2/26/2014                                                  //
         // Loads student XML using filepath found in admin                  //
         //------------------------------------------------------------------//
-        private void LoadStudentXML(string fileName, List<Student> studentList)
+        private void LoadStudentXML(List<Student> studentList, string fileName, List<String> groupList)
         {
-            if (!FileExists(fileName))
-                Environment.Exit(1);
-            else
-            {
-                XDocument studentXML = XDocument.Load(fileName);
+            XDocument studentXML = XDocument.Load(fileName);
 
-                foreach (XElement student in studentXML.Root.Nodes())
+            XElement rootNode = FirstLevelOfRoot(studentXML);
+
+            IEnumerable<XElement> GroupNodesQuery = SecondLevelOfRoot(rootNode);
+
+            foreach (XElement groups in GroupNodesQuery)
+            {
+                IEnumerable<XElement> StudentNodesQuery = ThirdLevelOfRoot(groups);
+                foreach (XElement student in StudentNodesQuery)
                 {
                     Student aStudent = new Student();
+                    aStudent.Group = student.Element("group").Value;
                     aStudent.LoginName = student.Element("loginName").Value;
                     aStudent.LastLogin = student.Element("lastLogin").Value;
                     aStudent.RecordsPath = student.Element("recPath").Value;
+                    aStudent.DrillsPath = student.Element("driPath").Value;
+                    
                     //aStudent.DrillsPath = CurrentDrillParser(student.Element("driPath"));
 
-                    foreach (XElement record in student.Elements("records"))
-                        aStudent.reportList.Add(CurrentRecordParser(record));
+                    //foreach (XElement record in student.Elements("records"))
+                    //    aStudent.reportList.Add(CurrentRecordParser(record));
 
                     // Add to student list
-                    studentList.Add(aStudent);
+                   studentList.Add(aStudent);
                 }
+                groupList.Add(groups.Name.ToString());
             }
         }
 
@@ -417,26 +435,48 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         public void WriteLogin(string fileName, string userName, string date, bool isAdmin)
         {
-            //if (isAdmin == true)
-                //fileName = adminFile;
-
             if (!FileExists(fileName))
                 Environment.Exit(1);
-            else
+            else if (isAdmin == true)
             {
-                XDocument doc = XDocument.Load(fileName);
-                foreach (XElement data in doc.Root.Nodes())
-                {
-                    string fullName = data.Element("loginName").Value;
+                //fileName = adminFile;
+                XDocument admin_doc = XDocument.Load(fileName);
+                XElement admin_root = FirstLevelOfRoot(admin_doc);
 
-                    if (userName == fullName)
+                IEnumerable<XElement> admins = SecondLevelOfRoot(admin_root);
+                foreach (XElement admin in admins)
+                {
+                    string fullName = admin.Element("loginName").Value;
+
+                    if(userName == fullName)
                     {
-                        data.Element("lastLogin").Value = date;
-                        break;
+                        admin.Element("lastLogin").Value = date;
                     }
                 }
+                admin_doc.Save(fileName);
+                MessageBox.Show("HERRO PREASE!");
+            }
+            else
+            {
+                XDocument student_doc = XDocument.Load(fileName);
+                XElement student_root = FirstLevelOfRoot(student_doc);
 
-                doc.Save(fileName);
+                IEnumerable<XElement> groups = SecondLevelOfRoot(student_root);
+                foreach (XElement group in groups)
+                {
+                    IEnumerable<XElement> students = SecondLevelOfRoot(group);
+                    foreach (XElement student in students)
+                    {
+                        string fullName = student.Element("loginName").Value;
+
+                        if (userName == fullName)
+                        {
+                            student.Element("lastLogin").Value = date;
+                            break;
+                        }
+                    }
+                }
+                student_doc.Save(fileName);
             }
         }
 

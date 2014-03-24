@@ -79,13 +79,11 @@ namespace RaptorMath
         // Harvey Kreitzer                                                  //
         // Date: 2/17/2014                                                  //
         //------------------------------------------------------------------//
-        public Student(string grp, string name, string login, string recsPath, string driPath)
+        public Student(string grp, string name, string login)
         {
             group = grp;
             loginName = name;
             lastLogin = login;
-            recordsPath = recsPath;
-            drillsPath = driPath;
         }
 
         /*public void ResetCurrentDrill()

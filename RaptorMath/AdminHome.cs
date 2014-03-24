@@ -81,9 +81,12 @@ namespace RaptorMath
                 AdminHome_StudentSelection.Items.Add(student);
 
             this.AdminName = localManager.currentUser.Remove(0, 8);
-            this.LastLogin = localManager.currentAdmin.LastLogin;
+            if (localManager.currentAdmin.LastLogin == "Unknown")
+                this.LastLogin = "--/--/----";
+            else
+                this.LastLogin = localManager.currentAdmin.LastLogin;
 
-            localManager.SaveLoginDate(localManager.currentAdmin.FilePath,
+            localManager.SaveLoginDate(localManager.adminXMLPath,
                 localManager.currentAdmin.LoginName, DateTime.Now.ToString("M/d/yyyy"), true);
         }
 

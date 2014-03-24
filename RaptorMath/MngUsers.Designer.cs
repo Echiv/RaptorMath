@@ -239,6 +239,7 @@
             this.MngUsers_AdminRdo.TabStop = true;
             this.MngUsers_AdminRdo.Text = "Admin";
             this.MngUsers_AdminRdo.UseVisualStyleBackColor = true;
+            this.MngUsers_AdminRdo.CheckedChanged += new System.EventHandler(this.MngUsers_AdminRdo_CheckedChanged);
             // 
             // MngUsers_StudentRdo
             // 
@@ -251,6 +252,7 @@
             this.MngUsers_StudentRdo.TabStop = true;
             this.MngUsers_StudentRdo.Text = "Student";
             this.MngUsers_StudentRdo.UseVisualStyleBackColor = true;
+            this.MngUsers_StudentRdo.CheckedChanged += new System.EventHandler(this.MngUsers_StudentRdo_CheckedChanged);
             // 
             // MngUsers_UserTypeLbl
             // 
