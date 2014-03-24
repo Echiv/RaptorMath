@@ -65,7 +65,7 @@ namespace RaptorMath
                         }
                     case Window.stuDrill:
                         {
-                            Application.Run(new MatDri_Form(allManager));
+                            Application.Run(new MathDrill_Form(allManager));
                             break;
                         }
                     case Window.mngUsers:

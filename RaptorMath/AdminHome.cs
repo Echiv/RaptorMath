@@ -76,10 +76,10 @@ namespace RaptorMath
             InitializeComponent();
             InitializeDate();
             InitializeTimer();
-
+/*
             foreach (String student in localManager.GetStudents())
                 AdminHome_StudentSelection.Items.Add(student);
-
+*/
             this.AdminName = localManager.currentUser.Remove(0, 8);
             this.LastLogin = localManager.currentAdmin.LastLogin;
 
@@ -145,7 +145,7 @@ namespace RaptorMath
                 this.Close();
             }
         }
-
+/*
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/13/2014                                                  //
@@ -157,7 +157,8 @@ namespace RaptorMath
             localManager.SetWindow(Window.adminReport);
             this.Close();
         }
-
+*/
+/*
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/27/2014                                                  //
@@ -181,7 +182,8 @@ namespace RaptorMath
                 MessageBox.Show("Settings succesfully saved.", "Raptor Math", MessageBoxButtons.OK);
             }
         }
-
+*/
+/*
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/27/2014                                                  //
@@ -196,5 +198,6 @@ namespace RaptorMath
             localManager.SetWindow(Window.mngUsers);
             this.Close();
         }
+*/
     }
 }

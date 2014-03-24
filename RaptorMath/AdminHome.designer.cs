@@ -29,224 +29,42 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.AdminHome_LogoutBtn = new System.Windows.Forms.Button();
-            this.AdminHome_SaveSettingsBtn = new System.Windows.Forms.Button();
-            this.AdminHome_SetSize = new System.Windows.Forms.TextBox();
-            this.AdminHome_NumQuestionsLbl = new System.Windows.Forms.Label();
-            this.AdminHome_AddRdo = new System.Windows.Forms.RadioButton();
-            this.AdminHome_DashLbl = new System.Windows.Forms.Label();
-            this.AdminHome_MaxOperand = new System.Windows.Forms.TextBox();
-            this.AdminHome_MinOperand = new System.Windows.Forms.TextBox();
-            this.AdminHome_SubRdo = new System.Windows.Forms.RadioButton();
-            this.AdminHome_OperandBox = new System.Windows.Forms.GroupBox();
-            this.AdminHome_MaxOpLbl = new System.Windows.Forms.Label();
-            this.AdminHome_ExitBtn = new System.Windows.Forms.Button();
-            this.AdminHome_RangeBox = new System.Windows.Forms.GroupBox();
-            this.AdminHome_MinOpLbl = new System.Windows.Forms.Label();
-            this.AdminHome_RecordsBtn = new System.Windows.Forms.Button();
-            this.AdminHome_StudentSelection = new System.Windows.Forms.ComboBox();
             this.AdminHome_Timer = new System.Windows.Forms.Timer(this.components);
-            this.AdminHome_ButtonBox = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.AdminHome_SettingsBox = new System.Windows.Forms.GroupBox();
-            this.AdminHome_QuestionsBox = new System.Windows.Forms.GroupBox();
-            this.AdminHome_StudentBox = new System.Windows.Forms.GroupBox();
-            this.AdminHome_TimeLbl = new System.Windows.Forms.Label();
-            this.AdminHome_AdminNameLbl = new System.Windows.Forms.Label();
-            this.AdminHome_LoginLbl = new System.Windows.Forms.Label();
-            this.AdminHome_WelcomeLbl = new System.Windows.Forms.Label();
-            this.AdminHome_LastLoginLbl = new System.Windows.Forms.Label();
-            this.AdminHome_WindowLbl = new System.Windows.Forms.Label();
-            this.AdminHome_DateLbl = new System.Windows.Forms.Label();
-            this.AdminHome_UserInfoBox = new System.Windows.Forms.GroupBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.AdminHome_OperandBox.SuspendLayout();
-            this.AdminHome_RangeBox.SuspendLayout();
-            this.AdminHome_ButtonBox.SuspendLayout();
-            this.AdminHome_SettingsBox.SuspendLayout();
-            this.AdminHome_QuestionsBox.SuspendLayout();
+            this.AdminHome_SaveBtn = new System.Windows.Forms.Button();
+            this.AdminHome_NewPWLbl = new System.Windows.Forms.Label();
+            this.AdminHome_CurrentPWLbl = new System.Windows.Forms.Label();
+            this.AdminHome_CurrentPWTxt = new System.Windows.Forms.RichTextBox();
+            this.AdminHome_UserInfoBox = new System.Windows.Forms.GroupBox();
+            this.AdminHome_DateLbl = new System.Windows.Forms.Label();
+            this.AdminHome_LastLoginLbl = new System.Windows.Forms.Label();
+            this.AdminHome_WelcomeLbl = new System.Windows.Forms.Label();
+            this.AdminHome_LoginLbl = new System.Windows.Forms.Label();
+            this.AdminHome_AdminNameLbl = new System.Windows.Forms.Label();
+            this.AdminHome_TimeLbl = new System.Windows.Forms.Label();
+            this.AdminHome_PasswordBox = new System.Windows.Forms.GroupBox();
+            this.AdminHome_NewPWTxt = new System.Windows.Forms.RichTextBox();
+            this.AdminHome_WindowLbl = new System.Windows.Forms.Label();
+            this.AdminHome_MngUsersBtn = new System.Windows.Forms.Button();
+            this.AdminHome_MngGroupsBtn = new System.Windows.Forms.Button();
+            this.AdminHome_UserBox = new System.Windows.Forms.GroupBox();
+            this.AdminHome_StuReportBtn = new System.Windows.Forms.Button();
+            this.AdminHome_EditStudentBtn = new System.Windows.Forms.Button();
+            this.AdminHome_CreateDrillBtn = new System.Windows.Forms.Button();
+            this.AdminHome_MngDrillBtn = new System.Windows.Forms.Button();
+            this.AdminHome_DrillBox = new System.Windows.Forms.GroupBox();
+            this.AdminHome_AdminBox = new System.Windows.Forms.GroupBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.AdminHome_LogoutBtn = new System.Windows.Forms.Button();
+            this.AdminHome_ExitBtn = new System.Windows.Forms.Button();
+            this.AdminHome_ButtonBox = new System.Windows.Forms.GroupBox();
             this.AdminHome_UserInfoBox.SuspendLayout();
+            this.AdminHome_PasswordBox.SuspendLayout();
+            this.AdminHome_UserBox.SuspendLayout();
+            this.AdminHome_DrillBox.SuspendLayout();
+            this.AdminHome_AdminBox.SuspendLayout();
+            this.AdminHome_ButtonBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // AdminHome_LogoutBtn
-            // 
-            this.AdminHome_LogoutBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.AdminHome_LogoutBtn.Location = new System.Drawing.Point(245, 16);
-            this.AdminHome_LogoutBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminHome_LogoutBtn.Name = "AdminHome_LogoutBtn";
-            this.AdminHome_LogoutBtn.Size = new System.Drawing.Size(75, 32);
-            this.AdminHome_LogoutBtn.TabIndex = 15;
-            this.AdminHome_LogoutBtn.Text = "Logout";
-            this.toolTip1.SetToolTip(this.AdminHome_LogoutBtn, "Return to the user login window");
-            this.AdminHome_LogoutBtn.UseVisualStyleBackColor = true;
-            this.AdminHome_LogoutBtn.Click += new System.EventHandler(this.AdminHome_LogoutBtn_Click);
-            // 
-            // AdminHome_SaveSettingsBtn
-            // 
-            this.AdminHome_SaveSettingsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AdminHome_SaveSettingsBtn.Location = new System.Drawing.Point(24, 16);
-            this.AdminHome_SaveSettingsBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminHome_SaveSettingsBtn.Name = "AdminHome_SaveSettingsBtn";
-            this.AdminHome_SaveSettingsBtn.Size = new System.Drawing.Size(123, 32);
-            this.AdminHome_SaveSettingsBtn.TabIndex = 14;
-            this.AdminHome_SaveSettingsBtn.Text = "Save Settings";
-            this.AdminHome_SaveSettingsBtn.UseVisualStyleBackColor = true;
-            this.AdminHome_SaveSettingsBtn.Click += new System.EventHandler(this.AdminHome_SaveSettingsBtn_Click);
-            // 
-            // AdminHome_SetSize
-            // 
-            this.AdminHome_SetSize.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AdminHome_SetSize.Location = new System.Drawing.Point(31, 62);
-            this.AdminHome_SetSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminHome_SetSize.Name = "AdminHome_SetSize";
-            this.AdminHome_SetSize.Size = new System.Drawing.Size(123, 22);
-            this.AdminHome_SetSize.TabIndex = 12;
-            // 
-            // AdminHome_NumQuestionsLbl
-            // 
-            this.AdminHome_NumQuestionsLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AdminHome_NumQuestionsLbl.AutoSize = true;
-            this.AdminHome_NumQuestionsLbl.Location = new System.Drawing.Point(31, 39);
-            this.AdminHome_NumQuestionsLbl.Name = "AdminHome_NumQuestionsLbl";
-            this.AdminHome_NumQuestionsLbl.Size = new System.Drawing.Size(126, 17);
-            this.AdminHome_NumQuestionsLbl.TabIndex = 22;
-            this.AdminHome_NumQuestionsLbl.Text = "Questions Per Drill";
-            // 
-            // AdminHome_AddRdo
-            // 
-            this.AdminHome_AddRdo.AutoSize = true;
-            this.AdminHome_AddRdo.Location = new System.Drawing.Point(45, 39);
-            this.AdminHome_AddRdo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminHome_AddRdo.Name = "AdminHome_AddRdo";
-            this.AdminHome_AddRdo.Size = new System.Drawing.Size(80, 21);
-            this.AdminHome_AddRdo.TabIndex = 9;
-            this.AdminHome_AddRdo.TabStop = true;
-            this.AdminHome_AddRdo.Text = "Addition";
-            this.AdminHome_AddRdo.UseVisualStyleBackColor = true;
-            // 
-            // AdminHome_DashLbl
-            // 
-            this.AdminHome_DashLbl.AutoSize = true;
-            this.AdminHome_DashLbl.Location = new System.Drawing.Point(187, 66);
-            this.AdminHome_DashLbl.Name = "AdminHome_DashLbl";
-            this.AdminHome_DashLbl.Size = new System.Drawing.Size(33, 17);
-            this.AdminHome_DashLbl.TabIndex = 4;
-            this.AdminHome_DashLbl.Text = "-----";
-            // 
-            // AdminHome_MaxOperand
-            // 
-            this.AdminHome_MaxOperand.Location = new System.Drawing.Point(244, 62);
-            this.AdminHome_MaxOperand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminHome_MaxOperand.Name = "AdminHome_MaxOperand";
-            this.AdminHome_MaxOperand.Size = new System.Drawing.Size(123, 22);
-            this.AdminHome_MaxOperand.TabIndex = 7;
-            // 
-            // AdminHome_MinOperand
-            // 
-            this.AdminHome_MinOperand.Location = new System.Drawing.Point(45, 62);
-            this.AdminHome_MinOperand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminHome_MinOperand.Name = "AdminHome_MinOperand";
-            this.AdminHome_MinOperand.Size = new System.Drawing.Size(120, 22);
-            this.AdminHome_MinOperand.TabIndex = 6;
-            // 
-            // AdminHome_SubRdo
-            // 
-            this.AdminHome_SubRdo.AutoSize = true;
-            this.AdminHome_SubRdo.Location = new System.Drawing.Point(45, 78);
-            this.AdminHome_SubRdo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminHome_SubRdo.Name = "AdminHome_SubRdo";
-            this.AdminHome_SubRdo.Size = new System.Drawing.Size(101, 21);
-            this.AdminHome_SubRdo.TabIndex = 10;
-            this.AdminHome_SubRdo.TabStop = true;
-            this.AdminHome_SubRdo.Text = "Subtraction";
-            this.AdminHome_SubRdo.UseVisualStyleBackColor = true;
-            // 
-            // AdminHome_OperandBox
-            // 
-            this.AdminHome_OperandBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AdminHome_OperandBox.Controls.Add(this.AdminHome_SubRdo);
-            this.AdminHome_OperandBox.Controls.Add(this.AdminHome_AddRdo);
-            this.AdminHome_OperandBox.Location = new System.Drawing.Point(57, 185);
-            this.AdminHome_OperandBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminHome_OperandBox.Name = "AdminHome_OperandBox";
-            this.AdminHome_OperandBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminHome_OperandBox.Size = new System.Drawing.Size(200, 113);
-            this.AdminHome_OperandBox.TabIndex = 8;
-            this.AdminHome_OperandBox.TabStop = false;
-            this.AdminHome_OperandBox.Text = "Operator Type";
-            // 
-            // AdminHome_MaxOpLbl
-            // 
-            this.AdminHome_MaxOpLbl.AutoSize = true;
-            this.AdminHome_MaxOpLbl.Location = new System.Drawing.Point(241, 42);
-            this.AdminHome_MaxOpLbl.Name = "AdminHome_MaxOpLbl";
-            this.AdminHome_MaxOpLbl.Size = new System.Drawing.Size(126, 17);
-            this.AdminHome_MaxOpLbl.TabIndex = 1;
-            this.AdminHome_MaxOpLbl.Text = "Maximum Operand";
-            // 
-            // AdminHome_ExitBtn
-            // 
-            this.AdminHome_ExitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.AdminHome_ExitBtn.Location = new System.Drawing.Point(440, 16);
-            this.AdminHome_ExitBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminHome_ExitBtn.Name = "AdminHome_ExitBtn";
-            this.AdminHome_ExitBtn.Size = new System.Drawing.Size(75, 32);
-            this.AdminHome_ExitBtn.TabIndex = 16;
-            this.AdminHome_ExitBtn.Text = "Exit";
-            this.AdminHome_ExitBtn.UseVisualStyleBackColor = true;
-            this.AdminHome_ExitBtn.Click += new System.EventHandler(this.AdminHome_ExitBtn_Click);
-            // 
-            // AdminHome_RangeBox
-            // 
-            this.AdminHome_RangeBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AdminHome_RangeBox.Controls.Add(this.AdminHome_DashLbl);
-            this.AdminHome_RangeBox.Controls.Add(this.AdminHome_MaxOperand);
-            this.AdminHome_RangeBox.Controls.Add(this.AdminHome_MinOperand);
-            this.AdminHome_RangeBox.Controls.Add(this.AdminHome_MaxOpLbl);
-            this.AdminHome_RangeBox.Controls.Add(this.AdminHome_MinOpLbl);
-            this.AdminHome_RangeBox.Location = new System.Drawing.Point(57, 41);
-            this.AdminHome_RangeBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminHome_RangeBox.Name = "AdminHome_RangeBox";
-            this.AdminHome_RangeBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminHome_RangeBox.Size = new System.Drawing.Size(427, 137);
-            this.AdminHome_RangeBox.TabIndex = 5;
-            this.AdminHome_RangeBox.TabStop = false;
-            this.AdminHome_RangeBox.Text = "Operand Range";
-            // 
-            // AdminHome_MinOpLbl
-            // 
-            this.AdminHome_MinOpLbl.AutoSize = true;
-            this.AdminHome_MinOpLbl.Location = new System.Drawing.Point(43, 42);
-            this.AdminHome_MinOpLbl.Name = "AdminHome_MinOpLbl";
-            this.AdminHome_MinOpLbl.Size = new System.Drawing.Size(123, 17);
-            this.AdminHome_MinOpLbl.TabIndex = 0;
-            this.AdminHome_MinOpLbl.Text = "Minimum Operand";
-            // 
-            // AdminHome_RecordsBtn
-            // 
-            this.AdminHome_RecordsBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AdminHome_RecordsBtn.Enabled = false;
-            this.AdminHome_RecordsBtn.Location = new System.Drawing.Point(196, 180);
-            this.AdminHome_RecordsBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminHome_RecordsBtn.Name = "AdminHome_RecordsBtn";
-            this.AdminHome_RecordsBtn.Size = new System.Drawing.Size(191, 31);
-            this.AdminHome_RecordsBtn.TabIndex = 3;
-            this.AdminHome_RecordsBtn.Text = "View Records";
-            this.AdminHome_RecordsBtn.UseVisualStyleBackColor = true;
-            this.AdminHome_RecordsBtn.Click += new System.EventHandler(this.studentRecordsButton_Click);
-            // 
-            // AdminHome_StudentSelection
-            // 
-            this.AdminHome_StudentSelection.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AdminHome_StudentSelection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AdminHome_StudentSelection.FormattingEnabled = true;
-            this.AdminHome_StudentSelection.Location = new System.Drawing.Point(195, 148);
-            this.AdminHome_StudentSelection.Margin = new System.Windows.Forms.Padding(4);
-            this.AdminHome_StudentSelection.MaxDropDownItems = 100;
-            this.AdminHome_StudentSelection.Name = "AdminHome_StudentSelection";
-            this.AdminHome_StudentSelection.Size = new System.Drawing.Size(191, 24);
-            this.AdminHome_StudentSelection.TabIndex = 2;
-            this.AdminHome_StudentSelection.SelectionChangeCommitted += new System.EventHandler(this.AdminHome_StudentSelection_SelectionChangeCommitted);
             // 
             // AdminHome_Timer
             // 
@@ -254,222 +72,363 @@
             this.AdminHome_Timer.Interval = 1000;
             this.AdminHome_Timer.Tick += new System.EventHandler(this.AdminHome_Timer_Tick);
             // 
-            // AdminHome_ButtonBox
+            // AdminHome_SaveBtn
             // 
-            this.AdminHome_ButtonBox.Controls.Add(this.button1);
-            this.AdminHome_ButtonBox.Controls.Add(this.AdminHome_SaveSettingsBtn);
-            this.AdminHome_ButtonBox.Controls.Add(this.AdminHome_LogoutBtn);
-            this.AdminHome_ButtonBox.Controls.Add(this.AdminHome_ExitBtn);
-            this.AdminHome_ButtonBox.Location = new System.Drawing.Point(19, 560);
-            this.AdminHome_ButtonBox.Margin = new System.Windows.Forms.Padding(4);
-            this.AdminHome_ButtonBox.Name = "AdminHome_ButtonBox";
-            this.AdminHome_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
-            this.AdminHome_ButtonBox.Size = new System.Drawing.Size(544, 55);
-            this.AdminHome_ButtonBox.TabIndex = 13;
-            this.AdminHome_ButtonBox.TabStop = false;
+            this.AdminHome_SaveBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AdminHome_SaveBtn.Enabled = false;
+            this.AdminHome_SaveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminHome_SaveBtn.Location = new System.Drawing.Point(135, 94);
+            this.AdminHome_SaveBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.AdminHome_SaveBtn.Name = "AdminHome_SaveBtn";
+            this.AdminHome_SaveBtn.Size = new System.Drawing.Size(116, 27);
+            this.AdminHome_SaveBtn.TabIndex = 39;
+            this.AdminHome_SaveBtn.Text = "Save";
+            this.AdminHome_SaveBtn.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // AdminHome_NewPWLbl
             // 
-            this.button1.AutoSize = true;
-            this.button1.Location = new System.Drawing.Point(329, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 27);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "CreateStudent";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.AdminHome_NewPWLbl.AutoSize = true;
+            this.AdminHome_NewPWLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminHome_NewPWLbl.Location = new System.Drawing.Point(32, 65);
+            this.AdminHome_NewPWLbl.Name = "AdminHome_NewPWLbl";
+            this.AdminHome_NewPWLbl.Size = new System.Drawing.Size(78, 13);
+            this.AdminHome_NewPWLbl.TabIndex = 2;
+            this.AdminHome_NewPWLbl.Text = "New Password";
             // 
-            // AdminHome_SettingsBox
+            // AdminHome_CurrentPWLbl
             // 
-            this.AdminHome_SettingsBox.Controls.Add(this.AdminHome_QuestionsBox);
-            this.AdminHome_SettingsBox.Controls.Add(this.AdminHome_RangeBox);
-            this.AdminHome_SettingsBox.Controls.Add(this.AdminHome_OperandBox);
-            this.AdminHome_SettingsBox.Location = new System.Drawing.Point(16, 234);
-            this.AdminHome_SettingsBox.Margin = new System.Windows.Forms.Padding(4);
-            this.AdminHome_SettingsBox.Name = "AdminHome_SettingsBox";
-            this.AdminHome_SettingsBox.Padding = new System.Windows.Forms.Padding(4);
-            this.AdminHome_SettingsBox.Size = new System.Drawing.Size(547, 319);
-            this.AdminHome_SettingsBox.TabIndex = 4;
-            this.AdminHome_SettingsBox.TabStop = false;
-            this.AdminHome_SettingsBox.Text = "Settings";
+            this.AdminHome_CurrentPWLbl.AutoSize = true;
+            this.AdminHome_CurrentPWLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminHome_CurrentPWLbl.Location = new System.Drawing.Point(22, 35);
+            this.AdminHome_CurrentPWLbl.Name = "AdminHome_CurrentPWLbl";
+            this.AdminHome_CurrentPWLbl.Size = new System.Drawing.Size(90, 13);
+            this.AdminHome_CurrentPWLbl.TabIndex = 1;
+            this.AdminHome_CurrentPWLbl.Text = "Current Password";
             // 
-            // AdminHome_QuestionsBox
+            // AdminHome_CurrentPWTxt
             // 
-            this.AdminHome_QuestionsBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AdminHome_QuestionsBox.Controls.Add(this.AdminHome_SetSize);
-            this.AdminHome_QuestionsBox.Controls.Add(this.AdminHome_NumQuestionsLbl);
-            this.AdminHome_QuestionsBox.Location = new System.Drawing.Point(284, 185);
-            this.AdminHome_QuestionsBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminHome_QuestionsBox.Name = "AdminHome_QuestionsBox";
-            this.AdminHome_QuestionsBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.AdminHome_QuestionsBox.Size = new System.Drawing.Size(200, 113);
-            this.AdminHome_QuestionsBox.TabIndex = 11;
-            this.AdminHome_QuestionsBox.TabStop = false;
-            this.AdminHome_QuestionsBox.Text = "Question Settings";
-            // 
-            // AdminHome_StudentBox
-            // 
-            this.AdminHome_StudentBox.Location = new System.Drawing.Point(17, 113);
-            this.AdminHome_StudentBox.Margin = new System.Windows.Forms.Padding(4);
-            this.AdminHome_StudentBox.Name = "AdminHome_StudentBox";
-            this.AdminHome_StudentBox.Padding = new System.Windows.Forms.Padding(4);
-            this.AdminHome_StudentBox.Size = new System.Drawing.Size(545, 113);
-            this.AdminHome_StudentBox.TabIndex = 1;
-            this.AdminHome_StudentBox.TabStop = false;
-            this.AdminHome_StudentBox.Text = "Select a Student";
-            // 
-            // AdminHome_TimeLbl
-            // 
-            this.AdminHome_TimeLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AdminHome_TimeLbl.AutoSize = true;
-            this.AdminHome_TimeLbl.Location = new System.Drawing.Point(461, 48);
-            this.AdminHome_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.AdminHome_TimeLbl.Name = "AdminHome_TimeLbl";
-            this.AdminHome_TimeLbl.Size = new System.Drawing.Size(55, 17);
-            this.AdminHome_TimeLbl.TabIndex = 17;
-            this.AdminHome_TimeLbl.Text = "<Time>";
-            // 
-            // AdminHome_AdminNameLbl
-            // 
-            this.AdminHome_AdminNameLbl.AutoSize = true;
-            this.AdminHome_AdminNameLbl.Location = new System.Drawing.Point(93, 44);
-            this.AdminHome_AdminNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.AdminHome_AdminNameLbl.Name = "AdminHome_AdminNameLbl";
-            this.AdminHome_AdminNameLbl.Size = new System.Drawing.Size(63, 17);
-            this.AdminHome_AdminNameLbl.TabIndex = 28;
-            this.AdminHome_AdminNameLbl.Text = "<Admin>";
-            // 
-            // AdminHome_LoginLbl
-            // 
-            this.AdminHome_LoginLbl.AutoSize = true;
-            this.AdminHome_LoginLbl.Location = new System.Drawing.Point(92, 71);
-            this.AdminHome_LoginLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.AdminHome_LoginLbl.Name = "AdminHome_LoginLbl";
-            this.AdminHome_LoginLbl.Size = new System.Drawing.Size(54, 17);
-            this.AdminHome_LoginLbl.TabIndex = 29;
-            this.AdminHome_LoginLbl.Text = "<Date>";
-            // 
-            // AdminHome_WelcomeLbl
-            // 
-            this.AdminHome_WelcomeLbl.AutoSize = true;
-            this.AdminHome_WelcomeLbl.Location = new System.Drawing.Point(7, 44);
-            this.AdminHome_WelcomeLbl.Name = "AdminHome_WelcomeLbl";
-            this.AdminHome_WelcomeLbl.Size = new System.Drawing.Size(70, 17);
-            this.AdminHome_WelcomeLbl.TabIndex = 27;
-            this.AdminHome_WelcomeLbl.Text = "Welcome,";
-            // 
-            // AdminHome_LastLoginLbl
-            // 
-            this.AdminHome_LastLoginLbl.AutoSize = true;
-            this.AdminHome_LastLoginLbl.Location = new System.Drawing.Point(7, 71);
-            this.AdminHome_LastLoginLbl.Name = "AdminHome_LastLoginLbl";
-            this.AdminHome_LastLoginLbl.Size = new System.Drawing.Size(78, 17);
-            this.AdminHome_LastLoginLbl.TabIndex = 16;
-            this.AdminHome_LastLoginLbl.Text = "Last Login:";
-            // 
-            // AdminHome_WindowLbl
-            // 
-            this.AdminHome_WindowLbl.AutoSize = true;
-            this.AdminHome_WindowLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdminHome_WindowLbl.Location = new System.Drawing.Point(7, 16);
-            this.AdminHome_WindowLbl.Name = "AdminHome_WindowLbl";
-            this.AdminHome_WindowLbl.Size = new System.Drawing.Size(98, 17);
-            this.AdminHome_WindowLbl.TabIndex = 32;
-            this.AdminHome_WindowLbl.Text = "Admin Home";
-            // 
-            // AdminHome_DateLbl
-            // 
-            this.AdminHome_DateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AdminHome_DateLbl.AutoSize = true;
-            this.AdminHome_DateLbl.Location = new System.Drawing.Point(461, 20);
-            this.AdminHome_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.AdminHome_DateLbl.Name = "AdminHome_DateLbl";
-            this.AdminHome_DateLbl.Size = new System.Drawing.Size(54, 17);
-            this.AdminHome_DateLbl.TabIndex = 31;
-            this.AdminHome_DateLbl.Text = "<Date>";
+            this.AdminHome_CurrentPWTxt.Location = new System.Drawing.Point(121, 29);
+            this.AdminHome_CurrentPWTxt.Name = "AdminHome_CurrentPWTxt";
+            this.AdminHome_CurrentPWTxt.Size = new System.Drawing.Size(168, 27);
+            this.AdminHome_CurrentPWTxt.TabIndex = 0;
+            this.AdminHome_CurrentPWTxt.Text = "";
             // 
             // AdminHome_UserInfoBox
             // 
             this.AdminHome_UserInfoBox.Controls.Add(this.AdminHome_DateLbl);
-            this.AdminHome_UserInfoBox.Controls.Add(this.AdminHome_WindowLbl);
             this.AdminHome_UserInfoBox.Controls.Add(this.AdminHome_LastLoginLbl);
             this.AdminHome_UserInfoBox.Controls.Add(this.AdminHome_WelcomeLbl);
             this.AdminHome_UserInfoBox.Controls.Add(this.AdminHome_LoginLbl);
             this.AdminHome_UserInfoBox.Controls.Add(this.AdminHome_AdminNameLbl);
             this.AdminHome_UserInfoBox.Controls.Add(this.AdminHome_TimeLbl);
-            this.AdminHome_UserInfoBox.Location = new System.Drawing.Point(16, 4);
-            this.AdminHome_UserInfoBox.Margin = new System.Windows.Forms.Padding(4);
+            this.AdminHome_UserInfoBox.Location = new System.Drawing.Point(6, 26);
             this.AdminHome_UserInfoBox.Name = "AdminHome_UserInfoBox";
-            this.AdminHome_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
-            this.AdminHome_UserInfoBox.Size = new System.Drawing.Size(547, 100);
-            this.AdminHome_UserInfoBox.TabIndex = 0;
+            this.AdminHome_UserInfoBox.Size = new System.Drawing.Size(410, 58);
+            this.AdminHome_UserInfoBox.TabIndex = 39;
             this.AdminHome_UserInfoBox.TabStop = false;
+            // 
+            // AdminHome_DateLbl
+            // 
+            this.AdminHome_DateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AdminHome_DateLbl.AutoSize = true;
+            this.AdminHome_DateLbl.Location = new System.Drawing.Point(354, 15);
+            this.AdminHome_DateLbl.Name = "AdminHome_DateLbl";
+            this.AdminHome_DateLbl.Size = new System.Drawing.Size(42, 13);
+            this.AdminHome_DateLbl.TabIndex = 31;
+            this.AdminHome_DateLbl.Text = "<Date>";
+            // 
+            // AdminHome_LastLoginLbl
+            // 
+            this.AdminHome_LastLoginLbl.AutoSize = true;
+            this.AdminHome_LastLoginLbl.Location = new System.Drawing.Point(9, 38);
+            this.AdminHome_LastLoginLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AdminHome_LastLoginLbl.Name = "AdminHome_LastLoginLbl";
+            this.AdminHome_LastLoginLbl.Size = new System.Drawing.Size(59, 13);
+            this.AdminHome_LastLoginLbl.TabIndex = 16;
+            this.AdminHome_LastLoginLbl.Text = "Last Login:";
+            // 
+            // AdminHome_WelcomeLbl
+            // 
+            this.AdminHome_WelcomeLbl.AutoSize = true;
+            this.AdminHome_WelcomeLbl.Location = new System.Drawing.Point(9, 16);
+            this.AdminHome_WelcomeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AdminHome_WelcomeLbl.Name = "AdminHome_WelcomeLbl";
+            this.AdminHome_WelcomeLbl.Size = new System.Drawing.Size(55, 13);
+            this.AdminHome_WelcomeLbl.TabIndex = 27;
+            this.AdminHome_WelcomeLbl.Text = "Welcome,";
+            // 
+            // AdminHome_LoginLbl
+            // 
+            this.AdminHome_LoginLbl.AutoSize = true;
+            this.AdminHome_LoginLbl.Location = new System.Drawing.Point(73, 38);
+            this.AdminHome_LoginLbl.Name = "AdminHome_LoginLbl";
+            this.AdminHome_LoginLbl.Size = new System.Drawing.Size(42, 13);
+            this.AdminHome_LoginLbl.TabIndex = 29;
+            this.AdminHome_LoginLbl.Text = "<Date>";
+            // 
+            // AdminHome_AdminNameLbl
+            // 
+            this.AdminHome_AdminNameLbl.AutoSize = true;
+            this.AdminHome_AdminNameLbl.Location = new System.Drawing.Point(74, 16);
+            this.AdminHome_AdminNameLbl.Name = "AdminHome_AdminNameLbl";
+            this.AdminHome_AdminNameLbl.Size = new System.Drawing.Size(48, 13);
+            this.AdminHome_AdminNameLbl.TabIndex = 28;
+            this.AdminHome_AdminNameLbl.Text = "<Admin>";
+            // 
+            // AdminHome_TimeLbl
+            // 
+            this.AdminHome_TimeLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AdminHome_TimeLbl.AutoSize = true;
+            this.AdminHome_TimeLbl.Location = new System.Drawing.Point(354, 38);
+            this.AdminHome_TimeLbl.Name = "AdminHome_TimeLbl";
+            this.AdminHome_TimeLbl.Size = new System.Drawing.Size(42, 13);
+            this.AdminHome_TimeLbl.TabIndex = 17;
+            this.AdminHome_TimeLbl.Text = "<Time>";
+            // 
+            // AdminHome_PasswordBox
+            // 
+            this.AdminHome_PasswordBox.Controls.Add(this.AdminHome_SaveBtn);
+            this.AdminHome_PasswordBox.Controls.Add(this.AdminHome_NewPWLbl);
+            this.AdminHome_PasswordBox.Controls.Add(this.AdminHome_CurrentPWLbl);
+            this.AdminHome_PasswordBox.Controls.Add(this.AdminHome_NewPWTxt);
+            this.AdminHome_PasswordBox.Controls.Add(this.AdminHome_CurrentPWTxt);
+            this.AdminHome_PasswordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminHome_PasswordBox.Location = new System.Drawing.Point(7, 92);
+            this.AdminHome_PasswordBox.Name = "AdminHome_PasswordBox";
+            this.AdminHome_PasswordBox.Size = new System.Drawing.Size(409, 139);
+            this.AdminHome_PasswordBox.TabIndex = 41;
+            this.AdminHome_PasswordBox.TabStop = false;
+            this.AdminHome_PasswordBox.Text = "Change Password";
+            // 
+            // AdminHome_NewPWTxt
+            // 
+            this.AdminHome_NewPWTxt.Location = new System.Drawing.Point(121, 62);
+            this.AdminHome_NewPWTxt.Name = "AdminHome_NewPWTxt";
+            this.AdminHome_NewPWTxt.Size = new System.Drawing.Size(168, 27);
+            this.AdminHome_NewPWTxt.TabIndex = 0;
+            this.AdminHome_NewPWTxt.Text = "";
+            // 
+            // AdminHome_WindowLbl
+            // 
+            this.AdminHome_WindowLbl.AutoSize = true;
+            this.AdminHome_WindowLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminHome_WindowLbl.Location = new System.Drawing.Point(181, 9);
+            this.AdminHome_WindowLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AdminHome_WindowLbl.Name = "AdminHome_WindowLbl";
+            this.AdminHome_WindowLbl.Size = new System.Drawing.Size(77, 13);
+            this.AdminHome_WindowLbl.TabIndex = 37;
+            this.AdminHome_WindowLbl.Text = "Admin Home";
+            // 
+            // AdminHome_MngUsersBtn
+            // 
+            this.AdminHome_MngUsersBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AdminHome_MngUsersBtn.Enabled = false;
+            this.AdminHome_MngUsersBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminHome_MngUsersBtn.Location = new System.Drawing.Point(36, 29);
+            this.AdminHome_MngUsersBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.AdminHome_MngUsersBtn.Name = "AdminHome_MngUsersBtn";
+            this.AdminHome_MngUsersBtn.Size = new System.Drawing.Size(116, 25);
+            this.AdminHome_MngUsersBtn.TabIndex = 37;
+            this.AdminHome_MngUsersBtn.Text = "Manage Users";
+            this.AdminHome_MngUsersBtn.UseVisualStyleBackColor = true;
+            // 
+            // AdminHome_MngGroupsBtn
+            // 
+            this.AdminHome_MngGroupsBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AdminHome_MngGroupsBtn.Enabled = false;
+            this.AdminHome_MngGroupsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminHome_MngGroupsBtn.Location = new System.Drawing.Point(36, 58);
+            this.AdminHome_MngGroupsBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.AdminHome_MngGroupsBtn.Name = "AdminHome_MngGroupsBtn";
+            this.AdminHome_MngGroupsBtn.Size = new System.Drawing.Size(116, 25);
+            this.AdminHome_MngGroupsBtn.TabIndex = 43;
+            this.AdminHome_MngGroupsBtn.Text = "Manage Groups";
+            this.AdminHome_MngGroupsBtn.UseVisualStyleBackColor = true;
+            // 
+            // AdminHome_UserBox
+            // 
+            this.AdminHome_UserBox.Controls.Add(this.AdminHome_MngUsersBtn);
+            this.AdminHome_UserBox.Controls.Add(this.AdminHome_MngGroupsBtn);
+            this.AdminHome_UserBox.Controls.Add(this.AdminHome_StuReportBtn);
+            this.AdminHome_UserBox.Controls.Add(this.AdminHome_EditStudentBtn);
+            this.AdminHome_UserBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminHome_UserBox.Location = new System.Drawing.Point(8, 19);
+            this.AdminHome_UserBox.Name = "AdminHome_UserBox";
+            this.AdminHome_UserBox.Size = new System.Drawing.Size(193, 169);
+            this.AdminHome_UserBox.TabIndex = 45;
+            this.AdminHome_UserBox.TabStop = false;
+            this.AdminHome_UserBox.Text = "User Controls";
+            // 
+            // AdminHome_StuReportBtn
+            // 
+            this.AdminHome_StuReportBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AdminHome_StuReportBtn.Enabled = false;
+            this.AdminHome_StuReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminHome_StuReportBtn.Location = new System.Drawing.Point(36, 87);
+            this.AdminHome_StuReportBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.AdminHome_StuReportBtn.Name = "AdminHome_StuReportBtn";
+            this.AdminHome_StuReportBtn.Size = new System.Drawing.Size(116, 25);
+            this.AdminHome_StuReportBtn.TabIndex = 19;
+            this.AdminHome_StuReportBtn.Text = "Student Reports";
+            this.AdminHome_StuReportBtn.UseVisualStyleBackColor = true;
+            // 
+            // AdminHome_EditStudentBtn
+            // 
+            this.AdminHome_EditStudentBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AdminHome_EditStudentBtn.Enabled = false;
+            this.AdminHome_EditStudentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminHome_EditStudentBtn.Location = new System.Drawing.Point(36, 116);
+            this.AdminHome_EditStudentBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.AdminHome_EditStudentBtn.Name = "AdminHome_EditStudentBtn";
+            this.AdminHome_EditStudentBtn.Size = new System.Drawing.Size(116, 25);
+            this.AdminHome_EditStudentBtn.TabIndex = 39;
+            this.AdminHome_EditStudentBtn.Text = "Edit Students";
+            this.AdminHome_EditStudentBtn.UseVisualStyleBackColor = true;
+            // 
+            // AdminHome_CreateDrillBtn
+            // 
+            this.AdminHome_CreateDrillBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.AdminHome_CreateDrillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminHome_CreateDrillBtn.Location = new System.Drawing.Point(27, 23);
+            this.AdminHome_CreateDrillBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.AdminHome_CreateDrillBtn.Name = "AdminHome_CreateDrillBtn";
+            this.AdminHome_CreateDrillBtn.Size = new System.Drawing.Size(116, 25);
+            this.AdminHome_CreateDrillBtn.TabIndex = 41;
+            this.AdminHome_CreateDrillBtn.Text = "Create Drill";
+            this.AdminHome_CreateDrillBtn.UseVisualStyleBackColor = true;
+            // 
+            // AdminHome_MngDrillBtn
+            // 
+            this.AdminHome_MngDrillBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.AdminHome_MngDrillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminHome_MngDrillBtn.Location = new System.Drawing.Point(27, 52);
+            this.AdminHome_MngDrillBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.AdminHome_MngDrillBtn.Name = "AdminHome_MngDrillBtn";
+            this.AdminHome_MngDrillBtn.Size = new System.Drawing.Size(116, 25);
+            this.AdminHome_MngDrillBtn.TabIndex = 42;
+            this.AdminHome_MngDrillBtn.Text = "Manage Drills";
+            this.AdminHome_MngDrillBtn.UseVisualStyleBackColor = true;
+            // 
+            // AdminHome_DrillBox
+            // 
+            this.AdminHome_DrillBox.Controls.Add(this.AdminHome_CreateDrillBtn);
+            this.AdminHome_DrillBox.Controls.Add(this.AdminHome_MngDrillBtn);
+            this.AdminHome_DrillBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminHome_DrillBox.Location = new System.Drawing.Point(216, 25);
+            this.AdminHome_DrillBox.Name = "AdminHome_DrillBox";
+            this.AdminHome_DrillBox.Size = new System.Drawing.Size(188, 169);
+            this.AdminHome_DrillBox.TabIndex = 44;
+            this.AdminHome_DrillBox.TabStop = false;
+            this.AdminHome_DrillBox.Text = "Drill Controls";
+            // 
+            // AdminHome_AdminBox
+            // 
+            this.AdminHome_AdminBox.Controls.Add(this.AdminHome_DrillBox);
+            this.AdminHome_AdminBox.Controls.Add(this.AdminHome_UserBox);
+            this.AdminHome_AdminBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminHome_AdminBox.Location = new System.Drawing.Point(6, 249);
+            this.AdminHome_AdminBox.Name = "AdminHome_AdminBox";
+            this.AdminHome_AdminBox.Size = new System.Drawing.Size(410, 200);
+            this.AdminHome_AdminBox.TabIndex = 40;
+            this.AdminHome_AdminBox.TabStop = false;
+            this.AdminHome_AdminBox.Text = "Admin Controls";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            // 
+            // AdminHome_LogoutBtn
+            // 
+            this.AdminHome_LogoutBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.AdminHome_LogoutBtn.Location = new System.Drawing.Point(134, 13);
+            this.AdminHome_LogoutBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.AdminHome_LogoutBtn.Name = "AdminHome_LogoutBtn";
+            this.AdminHome_LogoutBtn.Size = new System.Drawing.Size(116, 26);
+            this.AdminHome_LogoutBtn.TabIndex = 25;
+            this.AdminHome_LogoutBtn.Text = "Logout";
+            this.AdminHome_LogoutBtn.UseVisualStyleBackColor = true;
+            // 
+            // AdminHome_ExitBtn
+            // 
+            this.AdminHome_ExitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.AdminHome_ExitBtn.Location = new System.Drawing.Point(288, 13);
+            this.AdminHome_ExitBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.AdminHome_ExitBtn.Name = "AdminHome_ExitBtn";
+            this.AdminHome_ExitBtn.Size = new System.Drawing.Size(115, 26);
+            this.AdminHome_ExitBtn.TabIndex = 26;
+            this.AdminHome_ExitBtn.Text = "Exit";
+            this.AdminHome_ExitBtn.UseVisualStyleBackColor = true;
+            // 
+            // AdminHome_ButtonBox
+            // 
+            this.AdminHome_ButtonBox.Controls.Add(this.AdminHome_LogoutBtn);
+            this.AdminHome_ButtonBox.Controls.Add(this.AdminHome_ExitBtn);
+            this.AdminHome_ButtonBox.Location = new System.Drawing.Point(8, 455);
+            this.AdminHome_ButtonBox.Name = "AdminHome_ButtonBox";
+            this.AdminHome_ButtonBox.Size = new System.Drawing.Size(408, 45);
+            this.AdminHome_ButtonBox.TabIndex = 38;
+            this.AdminHome_ButtonBox.TabStop = false;
             // 
             // AdminHome_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 630);
+            this.ClientSize = new System.Drawing.Size(421, 506);
             this.ControlBox = false;
-            this.Controls.Add(this.AdminHome_RecordsBtn);
-            this.Controls.Add(this.AdminHome_ButtonBox);
             this.Controls.Add(this.AdminHome_UserInfoBox);
-            this.Controls.Add(this.AdminHome_SettingsBox);
-            this.Controls.Add(this.AdminHome_StudentSelection);
-            this.Controls.Add(this.AdminHome_StudentBox);
+            this.Controls.Add(this.AdminHome_PasswordBox);
+            this.Controls.Add(this.AdminHome_WindowLbl);
+            this.Controls.Add(this.AdminHome_AdminBox);
+            this.Controls.Add(this.AdminHome_ButtonBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminHome_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raptor Math";
-            this.AdminHome_OperandBox.ResumeLayout(false);
-            this.AdminHome_OperandBox.PerformLayout();
-            this.AdminHome_RangeBox.ResumeLayout(false);
-            this.AdminHome_RangeBox.PerformLayout();
-            this.AdminHome_ButtonBox.ResumeLayout(false);
-            this.AdminHome_ButtonBox.PerformLayout();
-            this.AdminHome_SettingsBox.ResumeLayout(false);
-            this.AdminHome_QuestionsBox.ResumeLayout(false);
-            this.AdminHome_QuestionsBox.PerformLayout();
             this.AdminHome_UserInfoBox.ResumeLayout(false);
             this.AdminHome_UserInfoBox.PerformLayout();
+            this.AdminHome_PasswordBox.ResumeLayout(false);
+            this.AdminHome_PasswordBox.PerformLayout();
+            this.AdminHome_UserBox.ResumeLayout(false);
+            this.AdminHome_DrillBox.ResumeLayout(false);
+            this.AdminHome_AdminBox.ResumeLayout(false);
+            this.AdminHome_ButtonBox.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button AdminHome_LogoutBtn;
-        private System.Windows.Forms.Button AdminHome_SaveSettingsBtn;
-        private System.Windows.Forms.TextBox AdminHome_SetSize;
-        private System.Windows.Forms.Label AdminHome_NumQuestionsLbl;
-        private System.Windows.Forms.RadioButton AdminHome_AddRdo;
-        private System.Windows.Forms.Label AdminHome_DashLbl;
-        private System.Windows.Forms.TextBox AdminHome_MaxOperand;
-        private System.Windows.Forms.TextBox AdminHome_MinOperand;
-        private System.Windows.Forms.RadioButton AdminHome_SubRdo;
-        private System.Windows.Forms.GroupBox AdminHome_OperandBox;
-        private System.Windows.Forms.Label AdminHome_MaxOpLbl;
-        private System.Windows.Forms.Button AdminHome_ExitBtn;
-        private System.Windows.Forms.GroupBox AdminHome_RangeBox;
-        private System.Windows.Forms.Label AdminHome_MinOpLbl;
-        private System.Windows.Forms.Button AdminHome_RecordsBtn;
-        private System.Windows.Forms.ComboBox AdminHome_StudentSelection;
         private System.Windows.Forms.Timer AdminHome_Timer;
-        private System.Windows.Forms.GroupBox AdminHome_ButtonBox;
-        private System.Windows.Forms.GroupBox AdminHome_SettingsBox;
-        private System.Windows.Forms.GroupBox AdminHome_QuestionsBox;
-        private System.Windows.Forms.GroupBox AdminHome_StudentBox;
-        private System.Windows.Forms.Label AdminHome_TimeLbl;
-        private System.Windows.Forms.Label AdminHome_AdminNameLbl;
-        private System.Windows.Forms.Label AdminHome_LoginLbl;
-        private System.Windows.Forms.Label AdminHome_WelcomeLbl;
-        private System.Windows.Forms.Label AdminHome_LastLoginLbl;
-        private System.Windows.Forms.Label AdminHome_WindowLbl;
-        private System.Windows.Forms.Label AdminHome_DateLbl;
-        private System.Windows.Forms.GroupBox AdminHome_UserInfoBox;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AdminHome_SaveBtn;
+        private System.Windows.Forms.Label AdminHome_NewPWLbl;
+        private System.Windows.Forms.Label AdminHome_CurrentPWLbl;
+        private System.Windows.Forms.RichTextBox AdminHome_CurrentPWTxt;
+        private System.Windows.Forms.GroupBox AdminHome_UserInfoBox;
+        private System.Windows.Forms.Label AdminHome_DateLbl;
+        private System.Windows.Forms.Label AdminHome_LastLoginLbl;
+        private System.Windows.Forms.Label AdminHome_WelcomeLbl;
+        private System.Windows.Forms.Label AdminHome_LoginLbl;
+        private System.Windows.Forms.Label AdminHome_AdminNameLbl;
+        private System.Windows.Forms.Label AdminHome_TimeLbl;
+        private System.Windows.Forms.GroupBox AdminHome_PasswordBox;
+        private System.Windows.Forms.RichTextBox AdminHome_NewPWTxt;
+        private System.Windows.Forms.Label AdminHome_WindowLbl;
+        private System.Windows.Forms.Button AdminHome_MngUsersBtn;
+        private System.Windows.Forms.Button AdminHome_MngGroupsBtn;
+        private System.Windows.Forms.GroupBox AdminHome_UserBox;
+        private System.Windows.Forms.Button AdminHome_StuReportBtn;
+        private System.Windows.Forms.Button AdminHome_EditStudentBtn;
+        private System.Windows.Forms.Button AdminHome_CreateDrillBtn;
+        private System.Windows.Forms.Button AdminHome_MngDrillBtn;
+        private System.Windows.Forms.GroupBox AdminHome_DrillBox;
+        private System.Windows.Forms.GroupBox AdminHome_AdminBox;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button AdminHome_LogoutBtn;
+        private System.Windows.Forms.Button AdminHome_ExitBtn;
+        private System.Windows.Forms.GroupBox AdminHome_ButtonBox;
 
     }
 }
