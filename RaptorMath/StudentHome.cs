@@ -153,5 +153,35 @@ namespace RaptorMath
             localManager.SetWindow(Window.stuDrill);
             this.Close();
         }
+
+        private void StuHome_ChooseLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StuHome_WelcomeLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StuHome_WindowLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StuHome_LastLoginLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StuHome_LoginDateLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StuHome_WindowLbl_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

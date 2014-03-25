@@ -9,11 +9,39 @@ using System.Windows.Forms;
 
 namespace RaptorMath
 {
-    public partial class ReportHome_Form : Form
+    public partial class ReportGroup_Form : Form
     {
-        public ReportHome_Form()
+        public Manager localManager;
+
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date: 3/16/2014                                                   //
+        //------------------------------------------------------------------//
+        private void InitializeDate()
+        {
+            GroupReport_DateLbl.Text = DateTime.Now.ToString("M/d/yyyy");
+        }
+
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date: 3/16/2014                                                  //
+        //------------------------------------------------------------------//
+        private void InitializeTimer()
+        {
+            GroupReport_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
+        }
+
+        public ReportGroup_Form(Manager manager)
         {
             InitializeComponent();
+            localManager = manager;
+            InitializeDate();
+            InitializeTimer();
+        }
+
+        private void MngUsers_Timer_Tick(object sender, EventArgs e)
+        {
+            GroupReport_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
     }
 }

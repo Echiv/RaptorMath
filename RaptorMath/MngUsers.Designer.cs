@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.MngUsers_WindowLbl = new System.Windows.Forms.GroupBox();
+            this.MngUsers_UserInfoBox = new System.Windows.Forms.GroupBox();
             this.MngUsers_TimeLbl = new System.Windows.Forms.Label();
             this.MngUsers_DateLbl = new System.Windows.Forms.Label();
             this.MngUsers_AddUserBox = new System.Windows.Forms.GroupBox();
@@ -51,9 +51,15 @@
             this.MngUsers_CloseBtn = new System.Windows.Forms.Button();
             this.MngUsers_ExitBtn = new System.Windows.Forms.Button();
             this.MngUsers_Timer = new System.Windows.Forms.Timer(this.components);
+            this.MngUser_AdminNameLbl = new System.Windows.Forms.Label();
+            this.MngUsers_WindowLbl = new System.Windows.Forms.Label();
+            this.MngUsers_SelectUserLbl = new System.Windows.Forms.Label();
+            this.MngUsers_UserDdl = new System.Windows.Forms.ComboBox();
+            this.MngUsers_RemoveUserBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.MngUsers_WindowLbl.SuspendLayout();
+            this.MngUsers_UserInfoBox.SuspendLayout();
             this.MngUsers_AddUserBox.SuspendLayout();
+            this.MngUsers_RemoveUserBox.SuspendLayout();
             this.MngUsers_ButtonBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,35 +67,35 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.MngUsers_WindowLbl, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.MngUsers_UserInfoBox, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.MngUsers_AddUserBox, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.MngUsers_RemoveUserBox, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.MngUsers_ButtonBox, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.30488F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 74.69512F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(432, 503);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // MngUsers_WindowLbl
+            // MngUsers_UserInfoBox
             // 
-            this.MngUsers_WindowLbl.Controls.Add(this.MngUsers_TimeLbl);
-            this.MngUsers_WindowLbl.Controls.Add(this.MngUsers_DateLbl);
-            this.MngUsers_WindowLbl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MngUsers_WindowLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_WindowLbl.Location = new System.Drawing.Point(15, 3);
-            this.MngUsers_WindowLbl.Margin = new System.Windows.Forms.Padding(15, 3, 15, 10);
-            this.MngUsers_WindowLbl.Name = "MngUsers_WindowLbl";
-            this.MngUsers_WindowLbl.Size = new System.Drawing.Size(402, 65);
-            this.MngUsers_WindowLbl.TabIndex = 0;
-            this.MngUsers_WindowLbl.TabStop = false;
-            this.MngUsers_WindowLbl.Text = "Manage Users";
+            this.MngUsers_UserInfoBox.Controls.Add(this.MngUsers_WindowLbl);
+            this.MngUsers_UserInfoBox.Controls.Add(this.MngUser_AdminNameLbl);
+            this.MngUsers_UserInfoBox.Controls.Add(this.MngUsers_TimeLbl);
+            this.MngUsers_UserInfoBox.Controls.Add(this.MngUsers_DateLbl);
+            this.MngUsers_UserInfoBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MngUsers_UserInfoBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngUsers_UserInfoBox.Location = new System.Drawing.Point(15, 3);
+            this.MngUsers_UserInfoBox.Margin = new System.Windows.Forms.Padding(15, 3, 15, 10);
+            this.MngUsers_UserInfoBox.Name = "MngUsers_UserInfoBox";
+            this.MngUsers_UserInfoBox.Size = new System.Drawing.Size(402, 70);
+            this.MngUsers_UserInfoBox.TabIndex = 0;
+            this.MngUsers_UserInfoBox.TabStop = false;
             // 
             // MngUsers_TimeLbl
             // 
@@ -131,10 +137,10 @@
             this.MngUsers_AddUserBox.Controls.Add(this.MngUsers_UserTypeLbl);
             this.MngUsers_AddUserBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MngUsers_AddUserBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_AddUserBox.Location = new System.Drawing.Point(15, 81);
+            this.MngUsers_AddUserBox.Location = new System.Drawing.Point(15, 86);
             this.MngUsers_AddUserBox.Margin = new System.Windows.Forms.Padding(15, 3, 15, 10);
             this.MngUsers_AddUserBox.Name = "MngUsers_AddUserBox";
-            this.MngUsers_AddUserBox.Size = new System.Drawing.Size(402, 217);
+            this.MngUsers_AddUserBox.Size = new System.Drawing.Size(402, 232);
             this.MngUsers_AddUserBox.TabIndex = 1;
             this.MngUsers_AddUserBox.TabStop = false;
             this.MngUsers_AddUserBox.Text = "Add a User";
@@ -152,9 +158,9 @@
             // MngUsers_ConfirmPasswordTxt
             // 
             this.MngUsers_ConfirmPasswordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_ConfirmPasswordTxt.Location = new System.Drawing.Point(149, 112);
+            this.MngUsers_ConfirmPasswordTxt.Location = new System.Drawing.Point(125, 112);
             this.MngUsers_ConfirmPasswordTxt.Name = "MngUsers_ConfirmPasswordTxt";
-            this.MngUsers_ConfirmPasswordTxt.Size = new System.Drawing.Size(148, 26);
+            this.MngUsers_ConfirmPasswordTxt.Size = new System.Drawing.Size(169, 26);
             this.MngUsers_ConfirmPasswordTxt.TabIndex = 11;
             this.MngUsers_ConfirmPasswordTxt.Text = "";
             // 
@@ -162,9 +168,9 @@
             // 
             this.MngUsers_SaveUserBtm.AutoSize = true;
             this.MngUsers_SaveUserBtm.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_SaveUserBtm.Location = new System.Drawing.Point(173, 173);
+            this.MngUsers_SaveUserBtm.Location = new System.Drawing.Point(149, 182);
             this.MngUsers_SaveUserBtm.Name = "MngUsers_SaveUserBtm";
-            this.MngUsers_SaveUserBtm.Size = new System.Drawing.Size(84, 32);
+            this.MngUsers_SaveUserBtm.Size = new System.Drawing.Size(115, 27);
             this.MngUsers_SaveUserBtm.TabIndex = 10;
             this.MngUsers_SaveUserBtm.Text = "Save User";
             this.MngUsers_SaveUserBtm.UseVisualStyleBackColor = true;
@@ -173,18 +179,18 @@
             // MngUsers_PasswordTxt
             // 
             this.MngUsers_PasswordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_PasswordTxt.Location = new System.Drawing.Point(149, 80);
+            this.MngUsers_PasswordTxt.Location = new System.Drawing.Point(125, 80);
             this.MngUsers_PasswordTxt.Name = "MngUsers_PasswordTxt";
-            this.MngUsers_PasswordTxt.Size = new System.Drawing.Size(148, 26);
+            this.MngUsers_PasswordTxt.Size = new System.Drawing.Size(169, 26);
             this.MngUsers_PasswordTxt.TabIndex = 9;
             this.MngUsers_PasswordTxt.Text = "";
             // 
             // MngUsers_NameTxt
             // 
             this.MngUsers_NameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_NameTxt.Location = new System.Drawing.Point(149, 48);
+            this.MngUsers_NameTxt.Location = new System.Drawing.Point(125, 49);
             this.MngUsers_NameTxt.Name = "MngUsers_NameTxt";
-            this.MngUsers_NameTxt.Size = new System.Drawing.Size(148, 26);
+            this.MngUsers_NameTxt.Size = new System.Drawing.Size(169, 26);
             this.MngUsers_NameTxt.TabIndex = 8;
             this.MngUsers_NameTxt.Text = "";
             // 
@@ -193,9 +199,9 @@
             this.MngUsers_GroupDdl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.MngUsers_GroupDdl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_GroupDdl.FormattingEnabled = true;
-            this.MngUsers_GroupDdl.Location = new System.Drawing.Point(149, 143);
+            this.MngUsers_GroupDdl.Location = new System.Drawing.Point(125, 152);
             this.MngUsers_GroupDdl.Name = "MngUsers_GroupDdl";
-            this.MngUsers_GroupDdl.Size = new System.Drawing.Size(148, 24);
+            this.MngUsers_GroupDdl.Size = new System.Drawing.Size(169, 24);
             this.MngUsers_GroupDdl.TabIndex = 7;
             // 
             // MngUsers_GroupLbl
@@ -222,7 +228,7 @@
             // 
             this.MngUsers_NameLbl.AutoSize = true;
             this.MngUsers_NameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_NameLbl.Location = new System.Drawing.Point(53, 51);
+            this.MngUsers_NameLbl.Location = new System.Drawing.Point(53, 49);
             this.MngUsers_NameLbl.Name = "MngUsers_NameLbl";
             this.MngUsers_NameLbl.Size = new System.Drawing.Size(45, 17);
             this.MngUsers_NameLbl.TabIndex = 4;
@@ -232,7 +238,7 @@
             // 
             this.MngUsers_AdminRdo.AutoSize = true;
             this.MngUsers_AdminRdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_AdminRdo.Location = new System.Drawing.Point(229, 21);
+            this.MngUsers_AdminRdo.Location = new System.Drawing.Point(250, 21);
             this.MngUsers_AdminRdo.Name = "MngUsers_AdminRdo";
             this.MngUsers_AdminRdo.Size = new System.Drawing.Size(68, 21);
             this.MngUsers_AdminRdo.TabIndex = 3;
@@ -266,12 +272,15 @@
             // 
             // MngUsers_RemoveUserBox
             // 
+            this.MngUsers_RemoveUserBox.Controls.Add(this.MngUsers_RemoveUserBtn);
+            this.MngUsers_RemoveUserBox.Controls.Add(this.MngUsers_UserDdl);
+            this.MngUsers_RemoveUserBox.Controls.Add(this.MngUsers_SelectUserLbl);
             this.MngUsers_RemoveUserBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MngUsers_RemoveUserBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_RemoveUserBox.Location = new System.Drawing.Point(15, 311);
+            this.MngUsers_RemoveUserBox.Location = new System.Drawing.Point(15, 331);
             this.MngUsers_RemoveUserBox.Margin = new System.Windows.Forms.Padding(15, 3, 15, 10);
             this.MngUsers_RemoveUserBox.Name = "MngUsers_RemoveUserBox";
-            this.MngUsers_RemoveUserBox.Size = new System.Drawing.Size(402, 92);
+            this.MngUsers_RemoveUserBox.Size = new System.Drawing.Size(402, 98);
             this.MngUsers_RemoveUserBox.TabIndex = 2;
             this.MngUsers_RemoveUserBox.TabStop = false;
             this.MngUsers_RemoveUserBox.Text = "Remove a User";
@@ -281,18 +290,18 @@
             this.MngUsers_ButtonBox.Controls.Add(this.MngUsers_CloseBtn);
             this.MngUsers_ButtonBox.Controls.Add(this.MngUsers_ExitBtn);
             this.MngUsers_ButtonBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MngUsers_ButtonBox.Location = new System.Drawing.Point(15, 416);
+            this.MngUsers_ButtonBox.Location = new System.Drawing.Point(15, 442);
             this.MngUsers_ButtonBox.Margin = new System.Windows.Forms.Padding(15, 3, 15, 10);
             this.MngUsers_ButtonBox.Name = "MngUsers_ButtonBox";
-            this.MngUsers_ButtonBox.Size = new System.Drawing.Size(402, 56);
+            this.MngUsers_ButtonBox.Size = new System.Drawing.Size(402, 51);
             this.MngUsers_ButtonBox.TabIndex = 3;
             this.MngUsers_ButtonBox.TabStop = false;
             // 
             // MngUsers_CloseBtn
             // 
-            this.MngUsers_CloseBtn.Location = new System.Drawing.Point(229, 20);
+            this.MngUsers_CloseBtn.Location = new System.Drawing.Point(149, 17);
             this.MngUsers_CloseBtn.Name = "MngUsers_CloseBtn";
-            this.MngUsers_CloseBtn.Size = new System.Drawing.Size(75, 32);
+            this.MngUsers_CloseBtn.Size = new System.Drawing.Size(115, 27);
             this.MngUsers_CloseBtn.TabIndex = 18;
             this.MngUsers_CloseBtn.Text = "Close";
             this.MngUsers_CloseBtn.UseVisualStyleBackColor = true;
@@ -300,11 +309,10 @@
             // 
             // MngUsers_ExitBtn
             // 
-            this.MngUsers_ExitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.MngUsers_ExitBtn.Location = new System.Drawing.Point(321, 19);
+            this.MngUsers_ExitBtn.Location = new System.Drawing.Point(281, 17);
             this.MngUsers_ExitBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_ExitBtn.Name = "MngUsers_ExitBtn";
-            this.MngUsers_ExitBtn.Size = new System.Drawing.Size(75, 32);
+            this.MngUsers_ExitBtn.Size = new System.Drawing.Size(115, 27);
             this.MngUsers_ExitBtn.TabIndex = 17;
             this.MngUsers_ExitBtn.Text = "Exit";
             this.MngUsers_ExitBtn.UseVisualStyleBackColor = true;
@@ -316,6 +324,55 @@
             this.MngUsers_Timer.Interval = 1000;
             this.MngUsers_Timer.Tick += new System.EventHandler(this.MngUsers_Timer_Tick);
             // 
+            // MngUser_AdminNameLbl
+            // 
+            this.MngUser_AdminNameLbl.AutoSize = true;
+            this.MngUser_AdminNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngUser_AdminNameLbl.Location = new System.Drawing.Point(6, 39);
+            this.MngUser_AdminNameLbl.Name = "MngUser_AdminNameLbl";
+            this.MngUser_AdminNameLbl.Size = new System.Drawing.Size(63, 17);
+            this.MngUser_AdminNameLbl.TabIndex = 34;
+            this.MngUser_AdminNameLbl.Text = "<Admin>";
+            // 
+            // MngUsers_WindowLbl
+            // 
+            this.MngUsers_WindowLbl.AutoSize = true;
+            this.MngUsers_WindowLbl.Location = new System.Drawing.Point(6, 14);
+            this.MngUsers_WindowLbl.Name = "MngUsers_WindowLbl";
+            this.MngUsers_WindowLbl.Size = new System.Drawing.Size(112, 17);
+            this.MngUsers_WindowLbl.TabIndex = 35;
+            this.MngUsers_WindowLbl.Text = "Manage Users";
+            // 
+            // MngUsers_SelectUserLbl
+            // 
+            this.MngUsers_SelectUserLbl.AutoSize = true;
+            this.MngUsers_SelectUserLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngUsers_SelectUserLbl.Location = new System.Drawing.Point(155, 13);
+            this.MngUsers_SelectUserLbl.Name = "MngUsers_SelectUserLbl";
+            this.MngUsers_SelectUserLbl.Size = new System.Drawing.Size(93, 17);
+            this.MngUsers_SelectUserLbl.TabIndex = 0;
+            this.MngUsers_SelectUserLbl.Text = "Select a User";
+            // 
+            // MngUsers_UserDdl
+            // 
+            this.MngUsers_UserDdl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MngUsers_UserDdl.FormattingEnabled = true;
+            this.MngUsers_UserDdl.Location = new System.Drawing.Point(114, 33);
+            this.MngUsers_UserDdl.Name = "MngUsers_UserDdl";
+            this.MngUsers_UserDdl.Size = new System.Drawing.Size(183, 24);
+            this.MngUsers_UserDdl.TabIndex = 1;
+            // 
+            // MngUsers_RemoveUserBtn
+            // 
+            this.MngUsers_RemoveUserBtn.AutoSize = true;
+            this.MngUsers_RemoveUserBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngUsers_RemoveUserBtn.Location = new System.Drawing.Point(149, 63);
+            this.MngUsers_RemoveUserBtn.Name = "MngUsers_RemoveUserBtn";
+            this.MngUsers_RemoveUserBtn.Size = new System.Drawing.Size(115, 27);
+            this.MngUsers_RemoveUserBtn.TabIndex = 2;
+            this.MngUsers_RemoveUserBtn.Text = "Remove User";
+            this.MngUsers_RemoveUserBtn.UseVisualStyleBackColor = true;
+            // 
             // MngUsers_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -325,10 +382,12 @@
             this.Name = "MngUsers_Form";
             this.Text = "Raptor Math";
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.MngUsers_WindowLbl.ResumeLayout(false);
-            this.MngUsers_WindowLbl.PerformLayout();
+            this.MngUsers_UserInfoBox.ResumeLayout(false);
+            this.MngUsers_UserInfoBox.PerformLayout();
             this.MngUsers_AddUserBox.ResumeLayout(false);
             this.MngUsers_AddUserBox.PerformLayout();
+            this.MngUsers_RemoveUserBox.ResumeLayout(false);
+            this.MngUsers_RemoveUserBox.PerformLayout();
             this.MngUsers_ButtonBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -337,7 +396,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.GroupBox MngUsers_WindowLbl;
+        private System.Windows.Forms.GroupBox MngUsers_UserInfoBox;
         private System.Windows.Forms.GroupBox MngUsers_AddUserBox;
         private System.Windows.Forms.GroupBox MngUsers_RemoveUserBox;
         private System.Windows.Forms.GroupBox MngUsers_ButtonBox;
@@ -358,5 +417,10 @@
         private System.Windows.Forms.Button MngUsers_SaveUserBtm;
         private System.Windows.Forms.Label MngUsers_ConfirmPassword;
         private System.Windows.Forms.RichTextBox MngUsers_ConfirmPasswordTxt;
+        private System.Windows.Forms.Label MngUsers_WindowLbl;
+        private System.Windows.Forms.Label MngUser_AdminNameLbl;
+        private System.Windows.Forms.Button MngUsers_RemoveUserBtn;
+        private System.Windows.Forms.ComboBox MngUsers_UserDdl;
+        private System.Windows.Forms.Label MngUsers_SelectUserLbl;
     }
 }

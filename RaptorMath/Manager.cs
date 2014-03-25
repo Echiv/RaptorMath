@@ -24,7 +24,9 @@ namespace RaptorMath
     // Kyle Bridges, Harvey Kreitzer                                    //
     // Date: 2/20/2014                                                  //
     //------------------------------------------------------------------//
-    public enum Window { authUser, adminHome, adminReport, stuHome, stuDrill, mngUsers };
+    public enum Window { authUser, adminHome, adminReport, stuHome
+        , stuDrill, mngUsers, createDrill, editStudents, mngDrills
+        , mngGroups, reportGroup, reportSingle, studentReports };
     public class Manager
     {
         Window form = Window.authUser;

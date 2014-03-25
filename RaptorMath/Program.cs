@@ -72,7 +72,43 @@ namespace RaptorMath
                         {
                             Application.Run(new MngUsers_Form(allManager));
                             break;
-                        }                        
+                        }
+                    case Window.createDrill:
+                        {
+                            Application.Run(new CreateDrill_Form(allManager));
+                            break;
+                        }
+                    case Window.editStudents:
+                        {
+                            Application.Run(new EditStudents_Form(allManager));
+                            break;
+                        }
+                    case Window.mngDrills:
+                        {
+                            Application.Run(new ManageDrills_Form(allManager));
+                            break;
+                        }
+                    case Window.mngGroups:
+                        {
+                            Application.Run(new ManageGroups_Form(allManager));
+                            break;
+                        }
+                    case Window.reportGroup:
+                        {
+                            Application.Run(new ReportGroup_Form(allManager));
+                            break;
+                        }
+                    case Window.reportSingle:
+                        {
+                            Application.Run(new SingleReport_Form(allManager));
+                            break;
+                        }
+                    case Window.studentReports:
+                        {
+                            Application.Run(new StudentReports_Form(allManager));
+                            break;
+                        } 
+
                     default:
                         break;
                 }
