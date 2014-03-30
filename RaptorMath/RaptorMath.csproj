@@ -125,14 +125,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UseRep.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UseRep.designer.cs">
-      <DependentUpon>UseRep.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AdminHome.resx">
       <DependentUpon>AdminHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateDrill.resx">
+      <DependentUpon>CreateDrill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditStudents.resx">
       <DependentUpon>EditStudents.cs</DependentUpon>
@@ -158,6 +155,9 @@
     <EmbeddedResource Include="StudentHome.resx">
       <DependentUpon>StudentHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StudentReports.resx">
+      <DependentUpon>StudentReports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UseDesg.resx">
       <DependentUpon>UseDesg.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,9 +171,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UseRep.resx">
-      <DependentUpon>UseRep.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

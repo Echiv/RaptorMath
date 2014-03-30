@@ -43,5 +43,10 @@ namespace RaptorMath
         {
             EditStu_DateLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
+
+        private void EditStu_SaveStudentBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
