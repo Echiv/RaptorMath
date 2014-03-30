@@ -43,5 +43,10 @@ namespace RaptorMath
         {
             MngDrills_DateLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
+
+        private void MngDrills_AddRmvDrillBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
