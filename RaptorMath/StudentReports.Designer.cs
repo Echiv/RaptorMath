@@ -317,6 +317,8 @@
             // 
             // ReportHome_StudentCmbo
             // 
+            this.ReportHome_StudentCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.ReportHome_StudentCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ReportHome_StudentCmbo.FormattingEnabled = true;
             this.ReportHome_StudentCmbo.Location = new System.Drawing.Point(63, 54);
             this.ReportHome_StudentCmbo.Name = "ReportHome_StudentCmbo";

@@ -153,6 +153,42 @@ namespace RaptorMath
         {
 
         }
+
+        private void AdminHome_MngUsersBtn_Click(object sender, EventArgs e)
+        {
+            localManager.SetWindow(Window.mngUsers);
+            this.Close();
+        }
+
+        private void AdminHome_MngGroupsBtn_Click(object sender, EventArgs e)
+        {
+            localManager.SetWindow(Window.mngGroups);
+            this.Close();
+        }
+
+        private void AdminHome_StuReportBtn_Click(object sender, EventArgs e)
+        {
+            localManager.SetWindow(Window.studentReports);
+            this.Close();
+        }
+
+        private void AdminHome_EditStudentBtn_Click(object sender, EventArgs e)
+        {
+            localManager.SetWindow(Window.editStudents);
+            this.Close();
+        }
+
+        private void AdminHome_CreateDrillBtn_Click(object sender, EventArgs e)
+        {
+            localManager.SetWindow(Window.createDrill);
+            this.Close();
+        }
+
+        private void AdminHome_MngDrillBtn_Click(object sender, EventArgs e)
+        {
+            localManager.SetWindow(Window.mngDrills);
+            this.Close();
+        }
 /*
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //

@@ -226,7 +226,6 @@
             // AdminHome_MngUsersBtn
             // 
             this.AdminHome_MngUsersBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AdminHome_MngUsersBtn.Enabled = false;
             this.AdminHome_MngUsersBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminHome_MngUsersBtn.Location = new System.Drawing.Point(16, 18);
             this.AdminHome_MngUsersBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -235,11 +234,11 @@
             this.AdminHome_MngUsersBtn.TabIndex = 37;
             this.AdminHome_MngUsersBtn.Text = "Manage Users";
             this.AdminHome_MngUsersBtn.UseVisualStyleBackColor = true;
+            this.AdminHome_MngUsersBtn.Click += new System.EventHandler(this.AdminHome_MngUsersBtn_Click);
             // 
             // AdminHome_MngGroupsBtn
             // 
             this.AdminHome_MngGroupsBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AdminHome_MngGroupsBtn.Enabled = false;
             this.AdminHome_MngGroupsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminHome_MngGroupsBtn.Location = new System.Drawing.Point(16, 46);
             this.AdminHome_MngGroupsBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -267,7 +266,6 @@
             // AdminHome_StuReportBtn
             // 
             this.AdminHome_StuReportBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AdminHome_StuReportBtn.Enabled = false;
             this.AdminHome_StuReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminHome_StuReportBtn.Location = new System.Drawing.Point(16, 76);
             this.AdminHome_StuReportBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -280,7 +278,6 @@
             // AdminHome_EditStudentBtn
             // 
             this.AdminHome_EditStudentBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AdminHome_EditStudentBtn.Enabled = false;
             this.AdminHome_EditStudentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminHome_EditStudentBtn.Location = new System.Drawing.Point(16, 105);
             this.AdminHome_EditStudentBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);

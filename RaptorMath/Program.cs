@@ -53,11 +53,6 @@ namespace RaptorMath
                             Application.Run(new AdminHome_Form(allManager));
                             break;
                         }
-                    case Window.adminReport:
-                        {
-                            Application.Run(new UseRep_Form(allManager));
-                            break;
-                        }
                     case Window.stuHome:
                         {
                             Application.Run(new StuHome_Form(allManager));
