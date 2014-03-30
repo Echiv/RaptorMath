@@ -134,9 +134,6 @@
     <EmbeddedResource Include="AdminHome.resx">
       <DependentUpon>AdminHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateDrill.resx">
-      <DependentUpon>CreateDrill.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EditStudents.resx">
       <DependentUpon>EditStudents.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,9 +157,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentHome.resx">
       <DependentUpon>StudentHome.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StudentReports.resx">
-      <DependentUpon>StudentReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UseDesg.resx">
       <DependentUpon>UseDesg.cs</DependentUpon>

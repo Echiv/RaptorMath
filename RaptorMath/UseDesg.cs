@@ -68,9 +68,9 @@ namespace RaptorMath
 
         private void RefreshLoginDropDownBox()
         {
-            UseDesg_LoginDdl.Items.Clear();
+            UseDesg_LoginCmbo.Items.Clear();
             foreach (string item in localManager.GetUsers())
-                UseDesg_LoginDdl.Items.Add(item);
+                UseDesg_LoginCmbo.Items.Add(item);
         }
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
@@ -117,7 +117,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void UseDesg_LoginDdl_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            localManager.currentUser = UseDesg_LoginDdl.Text;
+            localManager.currentUser = UseDesg_LoginCmbo.Text;
             if (localManager.isStudent())
             {
                 UseDesg_passwordBox.Enabled = false;
