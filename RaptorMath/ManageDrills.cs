@@ -12,6 +12,15 @@ namespace RaptorMath
     public partial class ManageDrills_Form : Form
     {
         public Manager localManager;
+        //------------------------------------------------------------------//
+        // Kyle Bridges, Harvey Kreitzer                                    //
+        // Date: 2/20/2014                                                  //
+        //------------------------------------------------------------------//
+        public string AdminName
+        {
+            get { return MngDrills_AdminNameLbl.Text; }
+            set { MngDrills_AdminNameLbl.Text = value; }
+        }
 
         //------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                         //
@@ -37,6 +46,8 @@ namespace RaptorMath
             localManager = manager;
             InitializeDate();
             InitializeTimer();
+
+            this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 
         private void MngUsers_Timer_Tick(object sender, EventArgs e)
@@ -47,6 +58,22 @@ namespace RaptorMath
         private void MngDrills_AddRmvDrillBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MngDrills_ExitBtn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.", 
+                "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                localManager.SetIsRunningFalse();
+                this.Close();
+            }
+        }
+
+        private void MngDrills_CloseBtn_Click(object sender, EventArgs e)
+        {
+            localManager.SetWindow(Window.adminHome);
+            this.Close();
         }
     }
 }

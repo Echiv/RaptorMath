@@ -173,7 +173,7 @@
             this.MngUsers_GroupCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.MngUsers_GroupCmbo.FormattingEnabled = true;
             this.MngUsers_GroupCmbo.Location = new System.Drawing.Point(149, 156);
-            this.MngUsers_GroupCmbo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngUsers_GroupCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngUsers_GroupCmbo.Name = "MngUsers_GroupCmbo";
             this.MngUsers_GroupCmbo.Size = new System.Drawing.Size(169, 24);
             this.MngUsers_GroupCmbo.TabIndex = 14;
@@ -184,7 +184,7 @@
             this.MngUsers_NameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.MngUsers_NameCmbo.FormattingEnabled = true;
             this.MngUsers_NameCmbo.Location = new System.Drawing.Point(149, 50);
-            this.MngUsers_NameCmbo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngUsers_NameCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngUsers_NameCmbo.Name = "MngUsers_NameCmbo";
             this.MngUsers_NameCmbo.Size = new System.Drawing.Size(169, 24);
             this.MngUsers_NameCmbo.TabIndex = 13;
@@ -322,7 +322,7 @@
             this.MngUsers_UserCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.MngUsers_UserCmbo.FormattingEnabled = true;
             this.MngUsers_UserCmbo.Location = new System.Drawing.Point(128, 21);
-            this.MngUsers_UserCmbo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngUsers_UserCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngUsers_UserCmbo.Name = "MngUsers_UserCmbo";
             this.MngUsers_UserCmbo.Size = new System.Drawing.Size(190, 24);
             this.MngUsers_UserCmbo.TabIndex = 15;
@@ -399,6 +399,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MngUsers_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raptor Math";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.MngUsers_UserInfoBox.ResumeLayout(false);

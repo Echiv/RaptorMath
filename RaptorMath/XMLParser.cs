@@ -241,13 +241,13 @@ namespace RaptorMath
         {
             XElement newDrillSet =
                 new XElement(drill.DrillName,
-                    new XElement("questions", drill.CurQuestions),
-                    new XElement("rangeStart", drill.CurRangeStart),
-                    new XElement("rangeEnd", drill.CurRangeEnd),
-                    new XElement("operand", drill.CurOperand),
-                    new XElement("wrong", drill.CurWrong),
-                    new XElement("skipped", drill.CurSkipped),
-                    new XElement("percent", drill.CurPercent) );
+                    new XElement("questions", drill.Questions),
+                    new XElement("rangeStart", drill.RangeStart),
+                    new XElement("rangeEnd", drill.RangeEnd),
+                    new XElement("operand", drill.Operand),
+                    new XElement("wrong", drill.Wrong),
+                    new XElement("skipped", drill.Skipped),
+                    new XElement("percent", drill.Percent) );
             return newDrillSet;
         }
 
@@ -256,13 +256,13 @@ namespace RaptorMath
             XElement records =
                 new XElement("records", currentDrill.DrillName,
                     new XElement("dateTaken", DateTime.Now.ToString("M/d/yyyy")),
-                    new XElement("question", currentDrill.CurQuestions),
-                    new XElement("rangeStart", currentDrill.CurRangeStart),
-                    new XElement("rangeEnd", currentDrill.CurRangeEnd),
-                    new XElement("op", currentDrill.CurOperand),
-                    new XElement("wrong", currentDrill.CurWrong),
-                    new XElement("skipped", currentDrill.curSkipped),
-                    new XElement("percent", currentDrill.curPercent));
+                    new XElement("question", currentDrill.Questions),
+                    new XElement("rangeStart", currentDrill.RangeStart),
+                    new XElement("rangeEnd", currentDrill.RangeEnd),
+                    new XElement("op", currentDrill.Operand),
+                    new XElement("wrong", currentDrill.Wrong),
+                    new XElement("skipped", currentDrill.Skipped),
+                    new XElement("percent", currentDrill.Percent));
             return records;
         }
         /*private XElement XmlDrillSettingsWithNewDrillSet(Drill drill)
@@ -415,10 +415,10 @@ namespace RaptorMath
         public Drill CurrentDrillParser(XElement drillNode)
         {
             Drill newDrill = new Drill();
-            newDrill.CurQuestions = drillNode.Element("question").Value;
-            newDrill.CurRangeStart = drillNode.Element("rangeStart").Value;
-            newDrill.CurRangeEnd = drillNode.Element("rangeEnd").Value;
-            newDrill.CurOperand = drillNode.Element("op").Value;
+            newDrill.Questions = drillNode.Element("question").Value;
+            newDrill.RangeStart = drillNode.Element("rangeStart").Value;
+            newDrill.RangeEnd = drillNode.Element("rangeEnd").Value;
+            newDrill.Operand = drillNode.Element("op").Value;
             return newDrill;
         }
 
@@ -518,13 +518,13 @@ namespace RaptorMath
                     XElement records =
                         new XElement("records",
                             new XElement("dateTaken", DateTime.Now.ToString("M/d/yyyy")),
-                            new XElement("question", currentDrill.CurQuestions),
-                            new XElement("rangeStart", currentDrill.CurRangeStart),
-                            new XElement("rangeEnd", currentDrill.CurRangeEnd),
-                            new XElement("op", currentDrill.CurOperand),
-                            new XElement("wrong", currentDrill.CurWrong),
-                            new XElement("skipped", currentDrill.curSkipped),
-                            new XElement("percent", currentDrill.curPercent));
+                            new XElement("question", currentDrill.Questions),
+                            new XElement("rangeStart", currentDrill.RangeStart),
+                            new XElement("rangeEnd", currentDrill.RangeEnd),
+                            new XElement("op", currentDrill.Operand),
+                            new XElement("wrong", currentDrill.Wrong),
+                            new XElement("skipped", currentDrill.Skipped),
+                            new XElement("percent", currentDrill.Percent));
                     
                     student.Add(records);
                     break;

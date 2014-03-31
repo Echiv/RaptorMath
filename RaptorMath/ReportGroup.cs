@@ -49,5 +49,10 @@ namespace RaptorMath
             localManager.SetWindow(Window.adminHome);
             this.Close();
         }
+
+        private void ReportGroup_Form_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -22,85 +22,91 @@ namespace RaptorMath
     //------------------------------------------------------------------//
     public class Drill
     {
+        private int id;
         private string drillName;
-        private string curQuestions;
-        private string curRangeStart;
-        private string curRangeEnd;
-        private string curOperand;
-        private string curWrong;
-        public string curSkipped;
-        public string curPercent;
+        private string questions;
+        private string rangeStart;
+        private string rangeEnd;
+        private string operand;
+        private string wrong;
+        public string skipped;
+        public string percent;
 
+        public int ID
+        {
+            get { return this.id; }
+            set { this.id = value; }
+        }
         public string DrillName
         {
             get { return this.drillName; }
             set { this.drillName = value; }
         }
 
-        public string CurQuestions
+        public string Questions
         {
-            get { return this.curQuestions; }
-            set { this.curQuestions = value; }
+            get { return this.questions; }
+            set { this.questions = value; }
         }
 
-        public string CurRangeStart
+        public string RangeStart
         {
-            get { return this.curRangeStart; }
-            set { this.curRangeStart = value; }
+            get { return this.rangeStart; }
+            set { this.rangeStart = value; }
         }
 
-        public string CurRangeEnd
+        public string RangeEnd
         {
-            get { return this.curRangeEnd; }
-            set { this.curRangeEnd = value; }
+            get { return this.rangeEnd; }
+            set { this.rangeEnd = value; }
         }
 
-        public string CurOperand
+        public string Operand
         {
-            get { return this.curOperand; }
-            set { this.curOperand = value; }
+            get { return this.operand; }
+            set { this.operand = value; }
         }
 
-        public string CurWrong
+        public string Wrong
         {
-            get { return this.curWrong; }
-            set { this.curWrong = value; }
+            get { return this.wrong; }
+            set { this.wrong = value; }
         }
 
-        public string CurSkipped
+        public string Skipped
         {
-            get { return this.curSkipped; }
-            set { this.curSkipped = value; }
+            get { return this.skipped; }
+            set { this.skipped = value; }
         }
 
-        public string CurPercent
+        public string Percent
         {
-            get { return this.curPercent; }
-            set { this.curPercent = value; }
+            get { return this.percent; }
+            set { this.percent = value; }
         }
 
         public Drill()
         {
             drillName = "Unknown";
-            curQuestions = "0";
-            curRangeStart = "0";
-            curRangeEnd = "0";
-            curOperand = "Unknown";
-            curWrong = "0";
-            curSkipped = "0";
-            curPercent = "0";
+            questions = "0";
+            rangeStart = "0";
+            rangeEnd = "0";
+            operand = "Unknown";
+            wrong = "0";
+            skipped = "0";
+            //curPercent = "0";
         }
 
-        public Drill(string driName, string questions, string start, string end, string operand)
+        public Drill(string driName, string numQuestions, string start, string end, string op)
         {
             drillName = driName;
-            curQuestions = questions;
-            curRangeStart = start;
-            curRangeEnd = end;
-            curOperand = operand;
-            curWrong = "0";
-            curSkipped = "0";
-            curPercent = "0";
+            questions = numQuestions;
+            rangeStart = start;
+            rangeEnd = end;
+            operand = op;
+            wrong = "0";
+            skipped = "0";
+            percent = "0";
         }
 
         //------------------------------------------------------------------//
@@ -109,9 +115,9 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         public void IncrementWrong()
         {
-            int wrong = Convert.ToInt32(curWrong);
-            wrong++;
-            curWrong = wrong.ToString();
+            int numWrong = Convert.ToInt32(wrong);
+            numWrong++;
+            wrong = numWrong.ToString();
         }
 
         //------------------------------------------------------------------//
@@ -120,16 +126,16 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         public void IncrementSkipped()
         {
-            int skipped = Convert.ToInt32(curSkipped);
-            skipped++;
-            curSkipped = skipped.ToString();
+            int numSkipped = Convert.ToInt32(skipped);
+            numSkipped++;
+            skipped = numSkipped.ToString();
         }
 
         public void Reset()
         {
-            curSkipped = "0";
-            curWrong = "0";
-            curPercent = "0";
+            skipped = "0";
+            wrong = "0";
+            percent = "0";
         }
     }
 }

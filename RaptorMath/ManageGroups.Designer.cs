@@ -63,9 +63,9 @@
             this.MngGroups_UserInfoBox.Controls.Add(this.MngGroups_DateLbl);
             this.MngGroups_UserInfoBox.Controls.Add(this.MngGroups_AdminNameLbl);
             this.MngGroups_UserInfoBox.Location = new System.Drawing.Point(4, 4);
-            this.MngGroups_UserInfoBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngGroups_UserInfoBox.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_UserInfoBox.Name = "MngGroups_UserInfoBox";
-            this.MngGroups_UserInfoBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngGroups_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
             this.MngGroups_UserInfoBox.Size = new System.Drawing.Size(424, 87);
             this.MngGroups_UserInfoBox.TabIndex = 2;
             this.MngGroups_UserInfoBox.TabStop = false;
@@ -119,9 +119,9 @@
             this.MngGroups_GroupBox.Controls.Add(this.MngGroups_GroupNameCmbo);
             this.MngGroups_GroupBox.Controls.Add(this.MngGroups_NameLbl);
             this.MngGroups_GroupBox.Location = new System.Drawing.Point(4, 99);
-            this.MngGroups_GroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngGroups_GroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_GroupBox.Name = "MngGroups_GroupBox";
-            this.MngGroups_GroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngGroups_GroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.MngGroups_GroupBox.Size = new System.Drawing.Size(424, 118);
             this.MngGroups_GroupBox.TabIndex = 3;
             this.MngGroups_GroupBox.TabStop = false;
@@ -131,7 +131,7 @@
             // 
             this.MngGroups_CreateBtn.AutoSize = true;
             this.MngGroups_CreateBtn.Location = new System.Drawing.Point(148, 68);
-            this.MngGroups_CreateBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngGroups_CreateBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_CreateBtn.Name = "MngGroups_CreateBtn";
             this.MngGroups_CreateBtn.Size = new System.Drawing.Size(139, 33);
             this.MngGroups_CreateBtn.TabIndex = 2;
@@ -145,7 +145,7 @@
             this.MngGroups_GroupNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.MngGroups_GroupNameCmbo.FormattingEnabled = true;
             this.MngGroups_GroupNameCmbo.Location = new System.Drawing.Point(148, 36);
-            this.MngGroups_GroupNameCmbo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngGroups_GroupNameCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_GroupNameCmbo.Name = "MngGroups_GroupNameCmbo";
             this.MngGroups_GroupNameCmbo.Size = new System.Drawing.Size(160, 24);
             this.MngGroups_GroupNameCmbo.TabIndex = 5;
@@ -169,9 +169,9 @@
             this.MngGroups_ModifyBox.Controls.Add(this.MngGroups_SelectGroupLbl);
             this.MngGroups_ModifyBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MngGroups_ModifyBox.Location = new System.Drawing.Point(4, 225);
-            this.MngGroups_ModifyBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngGroups_ModifyBox.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_ModifyBox.Name = "MngGroups_ModifyBox";
-            this.MngGroups_ModifyBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngGroups_ModifyBox.Padding = new System.Windows.Forms.Padding(4);
             this.MngGroups_ModifyBox.Size = new System.Drawing.Size(424, 202);
             this.MngGroups_ModifyBox.TabIndex = 4;
             this.MngGroups_ModifyBox.TabStop = false;
@@ -183,7 +183,7 @@
             this.MngGroups_NewNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.MngGroups_NewNameCmbo.FormattingEnabled = true;
             this.MngGroups_NewNameCmbo.Location = new System.Drawing.Point(148, 79);
-            this.MngGroups_NewNameCmbo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngGroups_NewNameCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_NewNameCmbo.Name = "MngGroups_NewNameCmbo";
             this.MngGroups_NewNameCmbo.Size = new System.Drawing.Size(160, 24);
             this.MngGroups_NewNameCmbo.TabIndex = 7;
@@ -194,7 +194,7 @@
             this.MngGroups_SelectGroupCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.MngGroups_SelectGroupCmbo.FormattingEnabled = true;
             this.MngGroups_SelectGroupCmbo.Location = new System.Drawing.Point(148, 42);
-            this.MngGroups_SelectGroupCmbo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngGroups_SelectGroupCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_SelectGroupCmbo.Name = "MngGroups_SelectGroupCmbo";
             this.MngGroups_SelectGroupCmbo.Size = new System.Drawing.Size(160, 24);
             this.MngGroups_SelectGroupCmbo.TabIndex = 6;
@@ -202,7 +202,7 @@
             // MngGroups_RenameBtn
             // 
             this.MngGroups_RenameBtn.Location = new System.Drawing.Point(148, 129);
-            this.MngGroups_RenameBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngGroups_RenameBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_RenameBtn.Name = "MngGroups_RenameBtn";
             this.MngGroups_RenameBtn.Size = new System.Drawing.Size(169, 28);
             this.MngGroups_RenameBtn.TabIndex = 4;
@@ -232,22 +232,24 @@
             // MngGroups_ExitBtn
             // 
             this.MngGroups_ExitBtn.Location = new System.Drawing.Point(316, 23);
-            this.MngGroups_ExitBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngGroups_ExitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_ExitBtn.Name = "MngGroups_ExitBtn";
             this.MngGroups_ExitBtn.Size = new System.Drawing.Size(100, 28);
             this.MngGroups_ExitBtn.TabIndex = 8;
             this.MngGroups_ExitBtn.Text = "Exit";
             this.MngGroups_ExitBtn.UseVisualStyleBackColor = true;
+            this.MngGroups_ExitBtn.Click += new System.EventHandler(this.MngGroups_ExitBtn_Click);
             // 
             // MngGroups_CloseBtn
             // 
             this.MngGroups_CloseBtn.Location = new System.Drawing.Point(175, 23);
-            this.MngGroups_CloseBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngGroups_CloseBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_CloseBtn.Name = "MngGroups_CloseBtn";
             this.MngGroups_CloseBtn.Size = new System.Drawing.Size(100, 28);
             this.MngGroups_CloseBtn.TabIndex = 7;
             this.MngGroups_CloseBtn.Text = "Close";
             this.MngGroups_CloseBtn.UseVisualStyleBackColor = true;
+            this.MngGroups_CloseBtn.Click += new System.EventHandler(this.MngGroups_CloseBtn_Click);
             // 
             // MngGroups_ButtonBox
             // 
@@ -255,9 +257,9 @@
             this.MngGroups_ButtonBox.Controls.Add(this.MngGroups_CloseBtn);
             this.MngGroups_ButtonBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MngGroups_ButtonBox.Location = new System.Drawing.Point(4, 435);
-            this.MngGroups_ButtonBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngGroups_ButtonBox.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_ButtonBox.Name = "MngGroups_ButtonBox";
-            this.MngGroups_ButtonBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngGroups_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
             this.MngGroups_ButtonBox.Size = new System.Drawing.Size(424, 64);
             this.MngGroups_ButtonBox.TabIndex = 5;
             this.MngGroups_ButtonBox.TabStop = false;
@@ -292,7 +294,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(432, 503);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ManageGroups_Form";

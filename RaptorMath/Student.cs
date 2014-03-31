@@ -32,7 +32,6 @@ namespace RaptorMath
         private string drillsPath;
 
         public List<Drill> curDrillList = new List<Drill>();
-        public List<Record> reportList = new List<Record>();
 
         public int ID
         {

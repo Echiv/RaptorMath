@@ -77,9 +77,9 @@
             this.MngDrills_UserInfoBox.Controls.Add(this.MngDrills_AdminNameLbl);
             this.MngDrills_UserInfoBox.Controls.Add(this.MngDrills_WindowLbl);
             this.MngDrills_UserInfoBox.Location = new System.Drawing.Point(4, 4);
-            this.MngDrills_UserInfoBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngDrills_UserInfoBox.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_UserInfoBox.Name = "MngDrills_UserInfoBox";
-            this.MngDrills_UserInfoBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngDrills_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
             this.MngDrills_UserInfoBox.Size = new System.Drawing.Size(424, 75);
             this.MngDrills_UserInfoBox.TabIndex = 1;
             this.MngDrills_UserInfoBox.TabStop = false;
@@ -122,9 +122,9 @@
             this.MngDrills_DrillBox.Controls.Add(this.MngDrills_OperationBox);
             this.MngDrills_DrillBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngDrills_DrillBox.Location = new System.Drawing.Point(4, 87);
-            this.MngDrills_DrillBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngDrills_DrillBox.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_DrillBox.Name = "MngDrills_DrillBox";
-            this.MngDrills_DrillBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngDrills_DrillBox.Padding = new System.Windows.Forms.Padding(4);
             this.MngDrills_DrillBox.Size = new System.Drawing.Size(424, 359);
             this.MngDrills_DrillBox.TabIndex = 2;
             this.MngDrills_DrillBox.TabStop = false;
@@ -142,9 +142,9 @@
             this.MngDrills_PerformBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.MngDrills_PerformBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngDrills_PerformBox.Location = new System.Drawing.Point(4, 136);
-            this.MngDrills_PerformBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngDrills_PerformBox.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_PerformBox.Name = "MngDrills_PerformBox";
-            this.MngDrills_PerformBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngDrills_PerformBox.Padding = new System.Windows.Forms.Padding(4);
             this.MngDrills_PerformBox.Size = new System.Drawing.Size(416, 219);
             this.MngDrills_PerformBox.TabIndex = 1;
             this.MngDrills_PerformBox.TabStop = false;
@@ -154,7 +154,7 @@
             // 
             this.MngDrills_SelectDrillCmbo.FormattingEnabled = true;
             this.MngDrills_SelectDrillCmbo.Location = new System.Drawing.Point(159, 124);
-            this.MngDrills_SelectDrillCmbo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngDrills_SelectDrillCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_SelectDrillCmbo.Name = "MngDrills_SelectDrillCmbo";
             this.MngDrills_SelectDrillCmbo.Size = new System.Drawing.Size(160, 24);
             this.MngDrills_SelectDrillCmbo.TabIndex = 9;
@@ -163,7 +163,7 @@
             // 
             this.MngDrills_GroupCmbo.FormattingEnabled = true;
             this.MngDrills_GroupCmbo.Location = new System.Drawing.Point(159, 91);
-            this.MngDrills_GroupCmbo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngDrills_GroupCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_GroupCmbo.Name = "MngDrills_GroupCmbo";
             this.MngDrills_GroupCmbo.Size = new System.Drawing.Size(160, 24);
             this.MngDrills_GroupCmbo.TabIndex = 8;
@@ -172,7 +172,7 @@
             // 
             this.MngDrills_StudentCmbo.FormattingEnabled = true;
             this.MngDrills_StudentCmbo.Location = new System.Drawing.Point(159, 58);
-            this.MngDrills_StudentCmbo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngDrills_StudentCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_StudentCmbo.Name = "MngDrills_StudentCmbo";
             this.MngDrills_StudentCmbo.Size = new System.Drawing.Size(160, 24);
             this.MngDrills_StudentCmbo.TabIndex = 7;
@@ -181,7 +181,7 @@
             // 
             this.MngDrills_AddRmvDrillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngDrills_AddRmvDrillBtn.Location = new System.Drawing.Point(159, 154);
-            this.MngDrills_AddRmvDrillBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngDrills_AddRmvDrillBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_AddRmvDrillBtn.Name = "MngDrills_AddRmvDrillBtn";
             this.MngDrills_AddRmvDrillBtn.Size = new System.Drawing.Size(100, 28);
             this.MngDrills_AddRmvDrillBtn.TabIndex = 6;
@@ -242,7 +242,7 @@
             this.MngDrills_RemoveDrillRdo.AutoSize = true;
             this.MngDrills_RemoveDrillRdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngDrills_RemoveDrillRdo.Location = new System.Drawing.Point(160, 63);
-            this.MngDrills_RemoveDrillRdo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngDrills_RemoveDrillRdo.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_RemoveDrillRdo.Name = "MngDrills_RemoveDrillRdo";
             this.MngDrills_RemoveDrillRdo.Size = new System.Drawing.Size(109, 21);
             this.MngDrills_RemoveDrillRdo.TabIndex = 1;
@@ -255,7 +255,7 @@
             this.MngDrills_AssignDrillRdo.AutoSize = true;
             this.MngDrills_AssignDrillRdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngDrills_AssignDrillRdo.Location = new System.Drawing.Point(160, 34);
-            this.MngDrills_AssignDrillRdo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngDrills_AssignDrillRdo.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_AssignDrillRdo.Name = "MngDrills_AssignDrillRdo";
             this.MngDrills_AssignDrillRdo.Size = new System.Drawing.Size(99, 21);
             this.MngDrills_AssignDrillRdo.TabIndex = 0;
@@ -268,9 +268,9 @@
             this.MngDrills_ButtonBox.Controls.Add(this.MngDrills_ExitBtn);
             this.MngDrills_ButtonBox.Controls.Add(this.MngDrills_CloseBtn);
             this.MngDrills_ButtonBox.Location = new System.Drawing.Point(4, 454);
-            this.MngDrills_ButtonBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngDrills_ButtonBox.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_ButtonBox.Name = "MngDrills_ButtonBox";
-            this.MngDrills_ButtonBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngDrills_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
             this.MngDrills_ButtonBox.Size = new System.Drawing.Size(424, 45);
             this.MngDrills_ButtonBox.TabIndex = 3;
             this.MngDrills_ButtonBox.TabStop = false;
@@ -278,22 +278,24 @@
             // MngDrills_ExitBtn
             // 
             this.MngDrills_ExitBtn.Location = new System.Drawing.Point(316, 12);
-            this.MngDrills_ExitBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngDrills_ExitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_ExitBtn.Name = "MngDrills_ExitBtn";
             this.MngDrills_ExitBtn.Size = new System.Drawing.Size(100, 28);
             this.MngDrills_ExitBtn.TabIndex = 8;
             this.MngDrills_ExitBtn.Text = "Exit";
             this.MngDrills_ExitBtn.UseVisualStyleBackColor = true;
+            this.MngDrills_ExitBtn.Click += new System.EventHandler(this.MngDrills_ExitBtn_Click);
             // 
             // MngDrills_CloseBtn
             // 
             this.MngDrills_CloseBtn.Location = new System.Drawing.Point(208, 12);
-            this.MngDrills_CloseBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MngDrills_CloseBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_CloseBtn.Name = "MngDrills_CloseBtn";
             this.MngDrills_CloseBtn.Size = new System.Drawing.Size(100, 28);
             this.MngDrills_CloseBtn.TabIndex = 7;
             this.MngDrills_CloseBtn.Text = "Close";
             this.MngDrills_CloseBtn.UseVisualStyleBackColor = true;
+            this.MngDrills_CloseBtn.Click += new System.EventHandler(this.MngDrills_CloseBtn_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -323,7 +325,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(432, 503);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ManageDrills_Form";

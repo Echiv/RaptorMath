@@ -12,7 +12,15 @@ namespace RaptorMath
     public partial class StudentReports_Form : Form
     {
         public Manager localManager;
-
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date: 3/16/2014                                                //
+        //------------------------------------------------------------------//
+        public string AdminName
+        {
+            get { return ReportHome_AdminNameLbl.Text; }
+            set { ReportHome_AdminNameLbl.Text = value; }
+        }
         //------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                         //
         // Date: 3/16/2014                                                   //
@@ -37,6 +45,8 @@ namespace RaptorMath
             localManager = manager;
             InitializeDate();
             InitializeTimer();
+
+            this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 
         private void MngUsers_Timer_Tick(object sender, EventArgs e)
@@ -55,7 +65,6 @@ namespace RaptorMath
             if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.",
                 "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                localManager.ClearAdminUser();
                 localManager.SetIsRunningFalse();
                 this.Close();
             }

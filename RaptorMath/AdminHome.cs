@@ -189,6 +189,12 @@ namespace RaptorMath
             localManager.SetWindow(Window.mngDrills);
             this.Close();
         }
+
+        private void AdminHome_AdminNameLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
 /*
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //

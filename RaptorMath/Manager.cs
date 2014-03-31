@@ -43,7 +43,8 @@ namespace RaptorMath
         public int currentProblemNumber = 1;
         public List<Student> studentList = new List<Student>();
         public List<Admin> adminList = new List<Admin>();
-        public List<String> groupList = new List<string>();
+        public List<Group> groupList = new List<Group>();
+        public List<Drill> mainDrillList = new List<Drill>();
         public Student currentStudent = new Student();
         public Admin currentAdmin = new Admin();
         public Random random = new Random();
@@ -65,7 +66,7 @@ namespace RaptorMath
             XMLDriver localXMLDriver = new XMLDriver(adminXMLPath, studentXMLPath, groupXMLPath, drillXMLPath);
             XMLDriver = localXMLDriver;
             //XML.LoadXML(studentList, adminList);
-            XMLDriver.StartUp(adminList, adminXMLPath, studentList, studentXMLPath, groupList, dataDirectory);
+            XMLDriver.StartUp(adminList, studentList, groupList, mainDrillList);
         }
 
         public bool CreateUser(string adminName, string password, string LastLogin, string filePath)
@@ -132,16 +133,6 @@ namespace RaptorMath
             //}
             userList.Sort();
             return userList;
-        }
-
-        public List<String> GetGroups()
-        {
-            List<String> groups = new List<String>();
-
-            foreach (String group in groupList)
-                groups.Add(group);
-            groups.Sort();
-            return groups;
         }
 
         //------------------------------------------------------------------//
@@ -644,8 +635,9 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/28/2014                                                  //
         //------------------------------------------------------------------//
-        public List<Record> GenerateRecord(DateTime first, DateTime second)
+        /*public List<Record> GenerateRecord(DateTime first, DateTime second)
         {
+* **need to fix drills**
             string date;
             List<Record> recordList = new List<Record>();
             foreach (Record record in currentStudent.reportList)
@@ -656,7 +648,7 @@ namespace RaptorMath
             }
 
             return recordList;
-        }
+        }*/
 
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //

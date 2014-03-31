@@ -56,7 +56,7 @@
             // GroupReport_CloseBtn
             // 
             this.GroupReport_CloseBtn.Location = new System.Drawing.Point(430, 12);
-            this.GroupReport_CloseBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GroupReport_CloseBtn.Margin = new System.Windows.Forms.Padding(4);
             this.GroupReport_CloseBtn.Name = "GroupReport_CloseBtn";
             this.GroupReport_CloseBtn.Size = new System.Drawing.Size(115, 27);
             this.GroupReport_CloseBtn.TabIndex = 1;
@@ -83,7 +83,7 @@
             this.RangeStart});
             this.GroupReport_DataDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GroupReport_DataDisplay.Location = new System.Drawing.Point(5, 22);
-            this.GroupReport_DataDisplay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GroupReport_DataDisplay.Margin = new System.Windows.Forms.Padding(4);
             this.GroupReport_DataDisplay.Name = "GroupReport_DataDisplay";
             this.GroupReport_DataDisplay.RowHeadersVisible = false;
             this.GroupReport_DataDisplay.Size = new System.Drawing.Size(544, 329);
@@ -136,9 +136,9 @@
             this.GroupReport_ButtonBox.Controls.Add(this.GroupReport_CloseBtn);
             this.GroupReport_ButtonBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GroupReport_ButtonBox.Location = new System.Drawing.Point(4, 452);
-            this.GroupReport_ButtonBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GroupReport_ButtonBox.Margin = new System.Windows.Forms.Padding(4);
             this.GroupReport_ButtonBox.Name = "GroupReport_ButtonBox";
-            this.GroupReport_ButtonBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GroupReport_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
             this.GroupReport_ButtonBox.Size = new System.Drawing.Size(554, 47);
             this.GroupReport_ButtonBox.TabIndex = 34;
             this.GroupReport_ButtonBox.TabStop = false;
@@ -149,7 +149,7 @@
             this.GroupReport_DrillBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GroupReport_DrillBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupReport_DrillBox.Location = new System.Drawing.Point(4, 87);
-            this.GroupReport_DrillBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GroupReport_DrillBox.Margin = new System.Windows.Forms.Padding(4);
             this.GroupReport_DrillBox.Name = "GroupReport_DrillBox";
             this.GroupReport_DrillBox.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.GroupReport_DrillBox.Size = new System.Drawing.Size(554, 357);
@@ -165,9 +165,9 @@
             this.GroupReport_UserInfoBox.Controls.Add(this.GroupReport_TimeLbl);
             this.GroupReport_UserInfoBox.Controls.Add(this.GroupReport_WindowLbl);
             this.GroupReport_UserInfoBox.Location = new System.Drawing.Point(4, 4);
-            this.GroupReport_UserInfoBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GroupReport_UserInfoBox.Margin = new System.Windows.Forms.Padding(4);
             this.GroupReport_UserInfoBox.Name = "GroupReport_UserInfoBox";
-            this.GroupReport_UserInfoBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GroupReport_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
             this.GroupReport_UserInfoBox.Size = new System.Drawing.Size(554, 75);
             this.GroupReport_UserInfoBox.TabIndex = 37;
             this.GroupReport_UserInfoBox.TabStop = false;
@@ -238,12 +238,13 @@
             this.ClientSize = new System.Drawing.Size(562, 503);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ReportGroup_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raptor Math";
+            this.Load += new System.EventHandler(this.ReportGroup_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GroupReport_DataDisplay)).EndInit();
             this.GroupReport_ButtonBox.ResumeLayout(false);
             this.GroupReport_DrillBox.ResumeLayout(false);

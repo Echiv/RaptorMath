@@ -139,6 +139,8 @@ namespace RaptorMath
             if (MessageBox.Show("Are you sure you want to quit Raptor Math?",
                 "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
+                localManager.ClearStudentUser();
+                localManager.currentUser = string.Empty;
                 localManager.SetIsRunningFalse();
                 this.Close();
             }

@@ -12,7 +12,15 @@ namespace RaptorMath
     public partial class MngUsers_Form : Form
     {
         public Manager localManager;
-
+        //------------------------------------------------------------------//
+        // Kyle Bridges, Harvey Kreitzer                                    //
+        // Date: 2/20/2014                                                  //
+        //------------------------------------------------------------------//
+        public string AdminName
+        {
+            get { return MngUser_AdminNameLbl.Text; }
+            set { MngUser_AdminNameLbl.Text = value; }
+        }
         //------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                         //
         // Date: 3/16/2014                                                   //
@@ -34,8 +42,23 @@ namespace RaptorMath
         private void RefreshGroupDropDownBox()
         {
             MngUsers_GroupCmbo.Items.Clear();
-            foreach (string group in localManager.GetGroups())
-                MngUsers_GroupCmbo.Items.Add(group);
+            foreach (Group group in localManager.groupList)
+                MngUsers_GroupCmbo.Items.Add(group.Name);
+        }
+
+        private void RefreshUserDropDownBox()
+        {
+            MngUsers_NameCmbo.Items.Clear();
+            foreach (Student student in localManager.studentList)
+                MngUsers_NameCmbo.Items.Add(student.LoginName);
+            foreach (Admin admin in localManager.adminList)
+                MngUsers_NameCmbo.Items.Add(admin.LoginName);
+        }
+
+        private void RefreshComboBoxes()
+        {
+            RefreshGroupDropDownBox();
+            RefreshUserDropDownBox();
         }
 
         private void MngUsers_Timer_Tick(object sender, EventArgs e)
@@ -49,7 +72,9 @@ namespace RaptorMath
             localManager = manager;
             InitializeDate();
             InitializeTimer();
-            RefreshGroupDropDownBox();
+            RefreshComboBoxes();
+
+            this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 
         private void MngUsers_CloseBtn_Click(object sender, EventArgs e)
@@ -63,7 +88,6 @@ namespace RaptorMath
             if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.",
                 "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                localManager.ClearAdminUser();
                 localManager.SetIsRunningFalse();
                 this.Close();
             }
@@ -75,13 +99,16 @@ namespace RaptorMath
             string newUserPassword = MngUsers_PasswordTxt.Text;
             string newUserConfirmPassword = MngUsers_ConfirmPasswordTxt.Text;
             MessageBox.Show(MngUsers_GroupCmbo.Text);
-            string newUserGroup = MngUsers_GroupCmbo.Text;
-            if ((MngUsers_StudentRdo.Checked) && (MngUsers_GroupCmbo.Text != ""))
+
+            string newUserGroup = string.Empty;
+            if (MngUsers_GroupCmbo.Text == "")
+                newUserGroup = "unassigned";
+            if ((MngUsers_StudentRdo.Checked) && (newUserGroup != ""))
             {
                 bool isCreatedUser = localManager.CreateUser(newUserGroup, newUserName, "Unknown");
                 if (isCreatedUser)
                 {
-                    RefreshGroupDropDownBox();
+                    RefreshComboBoxes();
                     MessageBox.Show("New Student Created!", "Raptor Math", MessageBoxButtons.OKCancel);
                 }
                 else
@@ -94,12 +121,15 @@ namespace RaptorMath
                 {
                     isCreatedUser = localManager.CreateUser(newUserName, newUserPassword, "Unknown", "RaptorMathStudents.xml");
                     if (isCreatedUser)
+                    {
+                        RefreshComboBoxes();
                         MessageBox.Show("New Admin Created!", "Raptor Math", MessageBoxButtons.OKCancel);
+                    }
                     else
                         MessageBox.Show("Admin has not been Created!", "Raptor Math", MessageBoxButtons.OKCancel);
                 }
                 else
-                    MessageBox.Show("Admin has not been Created!", "Raptor Math", MessageBoxButtons.OKCancel);
+                    MessageBox.Show("The Passwords did not match!", "Raptor Math", MessageBoxButtons.OKCancel);
             }
             else
                 MessageBox.Show("The User could not be created!!", "Raptor Math", MessageBoxButtons.OKCancel);
