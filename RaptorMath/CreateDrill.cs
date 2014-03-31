@@ -74,7 +74,21 @@ namespace RaptorMath
 
         private void CreateDrill_SaveDrillBtn_Click(object sender, EventArgs e)
         {
-
+            /*// Make sure all forms and radio buttons are filled and valid
+            if ((localManager.InvalidDrillFields(CreateDrill_MinValueTxt.Text, CreateDrill_MaxValueTxt.Text, CreateDrill_NumQuestionsTxt.Text))
+                || (localManager.InvalidRadioButtons(CreateDrill_AdditionRdo.Checked, CreateDrill_SubtactionRdo.Checked))
+                || (localManager.InvalidRange(CreateDrill_MinValueTxt.Text, CreateDrill_MaxValueTxt.Text))
+                || (localManager.InvalidQuestionCount(CreateDrill_NumQuestionsTxt.Text)))
+            {
+                MessageBox.Show("You are missing a selection or have entered an invalid range.", "Raptor Math", MessageBoxButtons.OK);
+            }
+            else
+            {
+                localManager.SetOperand(CreateDrill_AdditionRdo.Checked, CreateDrill_SubtactionRdo.Checked);
+                localManager.SaveDrillSettings(CreateDrill_MinValueTxt.Text, CreateDrill_MaxValueTxt.Text,
+                   CreateDrill_NumQuestionsTxt.Text);
+                MessageBox.Show("Settings succesfully saved.", "Raptor Math", MessageBoxButtons.OK);
+            }*/
         }
     }
 }

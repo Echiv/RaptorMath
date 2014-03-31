@@ -92,16 +92,13 @@ namespace RaptorMath
                         Group = student.Element("group").Value,
                         LoginName = student.Element("lastlogin").Value,
                         RecordsPath = student.Element("recPath").Value,
-                        DrillsPath = student.Element("driPath").Value
                     }).FirstOrDefault();
         }
 
         public bool AddUserToXML(Student newStudent, List<Student> studentList)
         {
-            string drillPath = newStudent.LoginName.Replace(" ", "") + "DrillSettings.xml";
             string recordPath = newStudent.LoginName.Replace(" ", "") + "Records.xml";
             newStudent.RecordsPath = recordPath;
-            newStudent.DrillsPath = drillPath;
            
             bool isAdded = false;
             if (!System.IO.File.Exists(studentXMLPath))
@@ -117,20 +114,27 @@ namespace RaptorMath
 
         public bool AddUserToXML(Admin newAdmin, List<Admin> adminList)
         {
-            bool isAdded = AddNewAdmin(newAdmin, adminXMLPath, adminList);
+            bool isAdded = false;
+            if (!System.IO.File.Exists(adminXMLPath))
+            {
+                isAdded = InitialCreateAdminXml(newAdmin, adminXMLPath, adminList);
+            }
+            else
+            {
+                isAdded = AddNewAdmin(newAdmin, adminXMLPath, adminList);
+            }
             return isAdded;
         }
 
         public bool InitialCreateStudentXml(Student newStudentEntry, string studentXMLPath, List<Student> studentList)
         {
             MessageBox.Show("RaptorMathStu");
-            XElement newStudent = 
+            XElement newStudent =
                 new XElement("stu",
                     new XElement("group", newStudentEntry.Group),
                     new XElement("loginName", newStudentEntry.LoginName),
                     new XElement("lastLogin", newStudentEntry.LastLogin),
-                    new XElement("recPath", newStudentEntry.RecordsPath),
-                    new XElement("driPath", newStudentEntry.DrillsPath));
+                    new XElement("recPath", newStudentEntry.RecordsPath));
             newStudent.SetAttributeValue("ID", "1");
 
             XDocument newStudentDoc =
@@ -138,6 +142,25 @@ namespace RaptorMath
                     new XElement("RaptorMathStu", newStudent));
             studentList.Add(newStudentEntry);
             newStudentDoc.Save(studentXMLPath);
+            return true;
+        }
+
+        public bool InitialCreateAdminXml(Admin newAdminEntry, string adminXMLPath, List<Admin> adminList)
+        {
+            XElement newAdmin =
+                new XElement("admin",
+                    new XElement("loginName", newAdminEntry.LoginName),
+                    new XElement("password", newAdminEntry.Password),
+                    new XElement("studentPath", newAdminEntry.FilePath),
+                    new XElement("lastLogin", newAdminEntry.LastLogin));
+            newAdmin.SetAttributeValue("ID", "1");
+
+            XDocument newAdminDoc =
+                new XDocument(
+                    new XElement("RaptorMathAdmin", newAdmin));
+
+            newAdminDoc.Save(adminXMLPath);
+            adminList.Add(newAdminEntry);
             return true;
         }
 
@@ -195,9 +218,9 @@ namespace RaptorMath
                     new XElement("rangeStart", "1"),
                     new XElement("rangeEnd", "25"),
                     new XElement("operand", "subtract"),
-                    new XElement("wrong", "unknown"),
-                    new XElement("skipped", "unknown"),
-                    new XElement("percent", "unknown"));
+                    new XElement("wrong", "0"),
+                    new XElement("skipped", "0"),
+                    new XElement("percent", "0"));
             defaultDrillTwo.SetAttributeValue("ID", "2");
 
             XDocument newDrillsDoc =
@@ -219,14 +242,13 @@ namespace RaptorMath
             }
             else
             {
-                XElement newStudent = 
-                    new XElement ("stu",
+                XElement newStudent =
+                    new XElement("stu",
                         new XElement("group", student.Group),
                         new XElement("loginName", student.LoginName),
                         new XElement("lastLogin", student.LastLogin),
-                        new XElement("recPath", student.RecordsPath),
-                        new XElement("driPath", student.DrillsPath));
-                newStudent.SetAttributeValue("ID", GetNextAvailableID(studentXMLPath));
+                        new XElement("recPath", student.RecordsPath));
+                newStudent.SetAttributeValue("ID", GetNextAvailableID(studentXMLPath, "stu"));
 
                 data.Element("RaptorMathStu").Add(newStudent);
                 studentList.Add(student);
@@ -253,7 +275,7 @@ namespace RaptorMath
                         new XElement("password", admin.Password),
                         new XElement("studentPath", admin.FilePath),
                         new XElement("lastLogin", admin.LastLogin));
-                newAdmin.SetAttributeValue("ID", GetNextAvailableID(fileName));
+                newAdmin.SetAttributeValue("ID", GetNextAvailableID(fileName, "admin"));
 
                 data.Element("RaptorMathAdmin").Add(newAdmin);
                 adminList.Add(admin);
@@ -262,12 +284,69 @@ namespace RaptorMath
             }
         }
 
-        public int GetNextAvailableID(string fileName)
+        public bool AddNewGroup(string groupName, List<Group> groupList)
+        {
+            Group group = new Group();
+            group.Name = groupName;
+            XDocument data = XDocument.Load(groupXMLPath);
+            
+            XElement GroupElement =
+                data.Descendants("group").Where(s => s.Element("groupName").Value == group.Name).FirstOrDefault();
+            if (GroupElement != null)
+            {
+                return false;
+            }
+            else
+            {
+                XElement newGroup =
+                    new XElement("group",
+                        new XElement("groupName", group.Name));
+                newGroup.SetAttributeValue("ID", GetNextAvailableID(groupXMLPath, "group"));
+
+                data.Element("RaptorMathGroups").Add(newGroup);
+                groupList.Add(group);
+                data.Save(groupXMLPath);
+                return true;
+            }
+        }
+
+        public bool AddNewDrill(Drill drill, string fileName, List<Drill> drillList)
+        {
+            XDocument data = XDocument.Load(fileName);
+
+            XElement DrillElement =
+                data.Descendants("drill").Where(s => s.Element("drillName").Value == drill.DrillName).FirstOrDefault();
+            if (DrillElement != null)
+            {
+                return false;
+            }
+            else
+            {
+                XElement newDrill =
+                    new XElement("drill",
+                        new XElement("drillName", drill.DrillName),
+                        new XElement("questions", drill.Questions),
+                        new XElement("rangeStart", drill.RangeStart),
+                        new XElement("rangeEnd", drill.RangeEnd),
+                        new XElement("operand", drill.Operand),
+                        new XElement("wrong", "0"),
+                        new XElement("skipped", "0"),
+                        new XElement("percent", "0"));
+                newDrill.SetAttributeValue("ID", GetNextAvailableID(fileName, "drill"));
+
+                data.Element("RaptorMathDrills").Add(newDrill);
+                drillList.Add(drill);
+                data.Save(fileName);
+                return true;
+            }
+        }
+
+        public int GetNextAvailableID(string fileName, string itemTag)
         {
             XDocument data = XDocument.Load(fileName);
 
             return Convert.ToInt32(
-                (from studentElements in data.Descendants("stu")
+                (from studentElements in data.Descendants(itemTag)
                  orderby Convert.ToInt32(studentElements.Attribute("ID").Value) descending
                  select studentElements.Attribute("ID").Value).FirstOrDefault()
                                    ) + 1;
@@ -285,8 +364,45 @@ namespace RaptorMath
             }
         }
 
+        public void Delete(Admin admin, string fileName)
+        {
+            XDocument data = XDocument.Load(fileName);
+
+            XElement adminElement = data.Descendants("admin").Where(s => s.Attribute("ID").Value.Equals(admin.ID.ToString())).FirstOrDefault();
+            if (adminElement != null)
+            {
+                adminElement.Remove();
+                data.Save(fileName);
+            }
+        }
+
+        public void Delete(Group group, string fileName)
+        {
+            XDocument data = XDocument.Load(fileName);
+
+            XElement groupElement = data.Descendants("group").Where(s => s.Attribute("ID").Value.Equals(group.ID.ToString())).FirstOrDefault();
+            if (groupElement != null)
+            {
+                groupElement.Remove();
+                data.Save(fileName);
+            }
+        }
+
+        public void Delete(Drill drill, string fileName)
+        {
+            XDocument data = XDocument.Load(fileName);
+
+            XElement drillElement = data.Descendants("drill").Where(s => s.Attribute("ID").Value.Equals(drill.ID.ToString())).FirstOrDefault();
+            if (drillElement != null)
+            {
+                drillElement.Remove();
+                data.Save(fileName);
+            }
+        }
+
         private void LoadStudentXML(List<Student> studentList, string fileName)
         {
+            Console.WriteLine("LoadStudent");
             XDocument studentXML = XDocument.Load(fileName);
 
             XElement rootNode = FirstLevelOfRoot(studentXML);
@@ -300,7 +416,6 @@ namespace RaptorMath
                 aStudent.LoginName = student.Element("loginName").Value;
                 aStudent.LastLogin = student.Element("lastLogin").Value;
                 aStudent.RecordsPath = student.Element("recPath").Value;
-                aStudent.DrillsPath = student.Element("driPath").Value;
 
                 //aStudent.DrillsPath = CurrentDrillParser(student.Element("driPath"));
 
@@ -314,34 +429,45 @@ namespace RaptorMath
 
         public void LoadAdminXML(List<Admin> adminList, string fileName)
         {
+            Console.WriteLine("LoadAdmin");
             XDocument adminXML = XDocument.Load(fileName);
 
             foreach (XElement admin in adminXML.Root.Nodes())
             {
                 Admin administrator = new Admin();
+                administrator.ID = Convert.ToInt32(admin.Attribute("ID").Value);
                 administrator.LoginName = admin.Element("loginName").Value;
                 administrator.Password = admin.Element("password").Value;
                 administrator.LastLogin = admin.Element("lastLogin").Value;
                 administrator.FilePath = admin.Element("studentPath").Value;
                 adminList.Add(administrator);
             }
+            Console.WriteLine("LoadAdmin");
         }
 
         public void LoadGroupXML(List<Group> groupList, string fileName)
         {
+            Console.WriteLine("LoadGroup");
             XDocument groupXML = XDocument.Load(fileName);
-
+            Console.WriteLine("XDocLoadGroup");
             foreach (XElement group in groupXML.Root.Nodes())
             {
+                Console.WriteLine("BeforeInForEachLoop");
                 Group Group = new Group();
+                Console.WriteLine("GROUP");
                 Group.ID = Convert.ToInt32(group.Attribute("ID").Value);
+                Console.WriteLine("IDCONVERT");
                 Group.Name = group.Element("groupName").Value;
+                Console.WriteLine("groupNAME");
                 groupList.Add(Group);
+                Console.WriteLine("AfterInForEachLoop");
             }
+            Console.WriteLine("AfterLoadGroup");
         }
 
         public void LoadDrillXML(List<Drill> drillList, string fileName)
         {
+            Console.WriteLine("LoadDrill");
             XDocument drillXML = XDocument.Load(fileName);
 
             foreach (XElement drill in drillXML.Root.Nodes())

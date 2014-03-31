@@ -29,7 +29,6 @@ namespace RaptorMath
         private string loginName;
         private string lastLogin;
         private string recordsPath;
-        private string drillsPath;
 
         public List<Drill> curDrillList = new List<Drill>();
 
@@ -61,12 +60,6 @@ namespace RaptorMath
             set { this.recordsPath = value; }
         }
 
-        public string DrillsPath
-        {
-            get { return this.drillsPath; }
-            set { this.drillsPath = value; }
-        }
-
         //------------------------------------------------------------------//
         // Harvey Kreitzer                                                  //
         // Date: 2/17/2014                                                  //
@@ -78,7 +71,6 @@ namespace RaptorMath
             loginName = "Unknown";
             lastLogin = "Unknown";
             recordsPath = "Unknown";
-            drillsPath = "Unknown";
         }
 
         //------------------------------------------------------------------//

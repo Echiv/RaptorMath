@@ -142,8 +142,7 @@ namespace RaptorMath
                                 new XElement("group", newStudentEntry.Group),
                                 new XElement("loginName", newStudentEntry.LoginName),
                                 new XElement("lastLogin", newStudentEntry.LastLogin),
-                                new XElement("recPath", newStudentEntry.RecordsPath),
-                                new XElement("driPath", newStudentEntry.DrillsPath))));
+                                new XElement("recPath", newStudentEntry.RecordsPath))));
             AddStudentToStudentAndGroupList(studentList, groupList, newStudentEntry);
             studentXML.Save(studentXMLPath);
             return true;
@@ -179,10 +178,8 @@ namespace RaptorMath
 
         public bool AddUserToXML(string studentXMLPath, List<Student> studentList, Student newStudentEntry, List<String> groupList)
         {
-            string drillPath = newStudentEntry.LoginName.Replace(" ", "") + "DrillSettings.xml";
             string recordPath = newStudentEntry.LoginName.Replace(" ", "") + "Records.xml";
             newStudentEntry.RecordsPath = recordPath;
-            newStudentEntry.DrillsPath = drillPath;
             MessageBox.Show(newStudentEntry.Group);
             MessageBox.Show(newStudentEntry.LoginName);
             bool isAdded = false;
@@ -219,8 +216,7 @@ namespace RaptorMath
                     new XElement("group", student.Group),
                     new XElement("loginName", student.LoginName),
                     new XElement("lastLogin", student.LastLogin),
-                    new XElement("recPath", student.RecordsPath),
-                    new XElement("driPath", student.DrillsPath));
+                    new XElement("recPath", student.RecordsPath));
             return newStudent;
         }
 
@@ -232,8 +228,7 @@ namespace RaptorMath
                         new XElement("group", student.Group),
                         new XElement("loginName", student.LoginName),
                         new XElement("lastLogin", student.LastLogin),
-                        new XElement("recPath", student.RecordsPath),
-                        new XElement("driPath", student.DrillsPath)));
+                        new XElement("recPath", student.RecordsPath)));
             return newStudent;
         }
 
@@ -333,14 +328,12 @@ namespace RaptorMath
         }
         public void AddDrillToXml(/*Drill newDrill,*/ Student student)
         {
-            string drillXMLPath = System.IO.Path.Combine(dataDirectory, student.DrillsPath);
 
             XDocument drillXML = new XDocument(new XElement(student.LoginName));
             XElement rootNode = FirstLevelOfRoot(drillXML);
 
             XElement newDrillXML = new XElement(student.LoginName, null);
             rootNode.Add(newDrillXML);
-            drillXML.Save(drillXMLPath);
         }
         public void AddDrill(Drill newDrill, Student student)
         {
@@ -393,7 +386,6 @@ namespace RaptorMath
                 aStudent.LoginName = student.Element("loginName").Value;
                 aStudent.LastLogin = student.Element("lastLogin").Value;
                 aStudent.RecordsPath = student.Element("recPath").Value;
-                aStudent.DrillsPath = student.Element("driPath").Value;
                     
                     
                 //aStudent.DrillsPath = CurrentDrillParser(student.Element("driPath"));

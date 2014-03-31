@@ -23,11 +23,18 @@ namespace RaptorMath
     //------------------------------------------------------------------//
     public class Admin
     {
+        private int id;
         private string loginName;
         private string password;
         private string lastLogin;
         private string filePath;
         public List<Student> adminStudents = new List<Student>();
+
+        public int ID
+        {
+            get { return this.id; }
+            set { this.id = value; }
+        }
 
         public string LoginName
         {

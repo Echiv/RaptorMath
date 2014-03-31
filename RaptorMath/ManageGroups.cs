@@ -57,7 +57,8 @@ namespace RaptorMath
 
         private void MngGroups_CreateBtn_Click(object sender, EventArgs e)
         {
-
+            string newGroupName = MngGroups_GroupNameCmbo.Text;
+            localManager.CreateGroup(newGroupName);
         }
 
         private void MngGroups_ExitBtn_Click(object sender, EventArgs e)

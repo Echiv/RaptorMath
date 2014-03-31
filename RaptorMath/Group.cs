@@ -26,14 +26,12 @@ namespace RaptorMath
 
         public Group()
         {
-            id = 0;
-            name = "Unknown";
+            Name = "Unknown";
         }
 
-        public Group(int IdenNum, string groupName)
+        public Group(string groupName)
         {
-            id = IdenNum;
-            name = groupName;
+            Name = groupName;
         }
     }
 }
