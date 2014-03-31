@@ -49,5 +49,15 @@ namespace RaptorMath
             localManager.SetWindow(Window.adminHome);
             this.Close();
         }
+
+        private void SingleReport_TimeLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SingleReport_DateLbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
