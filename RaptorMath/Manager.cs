@@ -35,9 +35,11 @@ namespace RaptorMath
         public string currentPassword = string.Empty;
         public string currentUserLogin = string.Empty;
         public string operand = string.Empty;
-        public string dataDir = string.Empty;
+        public string dataDirectory = string.Empty;
         public string adminXMLPath = string.Empty;
         public string studentXMLPath = string.Empty;
+        public string groupXMLPath = string.Empty;
+        public string drillXMLPath = string.Empty;
         public int currentProblemNumber = 1;
         public List<Student> studentList = new List<Student>();
         public List<Admin> adminList = new List<Admin>();
@@ -46,29 +48,37 @@ namespace RaptorMath
         public Admin currentAdmin = new Admin();
         public Random random = new Random();
         XMLParser XML = new XMLParser();
+        XMLDriver XMLDriver = new XMLDriver();
 
         public Manager()
         {
-            dataDir = Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData);
+
+            dataDirectory = Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData);
             string adminFile = "RaptorMathAdmins.xml";
             string studentFile = "RaptorMathStudents.xml";
-            adminXMLPath = System.IO.Path.Combine(dataDir, adminFile);
-            studentXMLPath = System.IO.Path.Combine(dataDir, studentFile);
+            string groupFile = "RaptorMathGroups.xml";
+            string drillFile = "RaptorMathDrills.xml";
+            adminXMLPath = System.IO.Path.Combine(dataDirectory, adminFile);
+            studentXMLPath = System.IO.Path.Combine(dataDirectory, studentFile);
+            groupXMLPath = System.IO.Path.Combine(dataDirectory, groupFile);
+            drillXMLPath = System.IO.Path.Combine(dataDirectory, drillFile);
+            XMLDriver localXMLDriver = new XMLDriver(adminXMLPath, studentXMLPath, groupXMLPath, drillXMLPath);
+            XMLDriver = localXMLDriver;
             //XML.LoadXML(studentList, adminList);
-            XML.StartUp(adminList, adminXMLPath, studentList, studentXMLPath, groupList);
+            XMLDriver.StartUp(adminList, adminXMLPath, studentList, studentXMLPath, groupList, dataDirectory);
         }
 
         public bool CreateUser(string adminName, string password, string LastLogin, string filePath)
         {
             Admin newAdmin = new Admin(adminName, password, LastLogin, filePath);
-            bool isCreatedUser = XML.AddUserToXML(adminXMLPath, adminList, newAdmin);
+            bool isCreatedUser = XMLDriver.AddUserToXML(newAdmin, adminList);//, adminList, newAdmin);
             return isCreatedUser;
         }
 
         public bool CreateUser(string group, string studentName, string lastLogin)
         {
             Student newStudent = new Student(group, studentName, lastLogin);
-            bool isCreatedUser = XML.AddUserToXML(studentXMLPath, studentList, newStudent, groupList);
+            bool isCreatedUser = XMLDriver.AddUserToXML(newStudent, studentList);
             return isCreatedUser;
         }
 

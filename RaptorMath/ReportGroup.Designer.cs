@@ -64,6 +64,7 @@
             this.GroupReport_CloseBtn.TabIndex = 1;
             this.GroupReport_CloseBtn.Text = "Close";
             this.GroupReport_CloseBtn.UseVisualStyleBackColor = true;
+            this.GroupReport_CloseBtn.Click += new System.EventHandler(this.GroupReport_CloseBtn_Click);
             // 
             // GroupReport_Timer
             // 

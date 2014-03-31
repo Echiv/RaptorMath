@@ -47,28 +47,26 @@ namespace RaptorMath
         public Manager localManager;
         public string firstNum = string.Empty;
         public string secondNum = string.Empty;
-/*
+
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/20/2014                                                  //
         //------------------------------------------------------------------//
         public string StudentName
         {
-            get { return MatDri_StudentNameLbl.Text; }
-            set { MatDri_StudentNameLbl.Text = value; }
+            get { return MathDrill_StudentNameLbl.Text; }
+            set { MathDrill_StudentNameLbl.Text = value; }
         }
-*/
-/*
+
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/24/2014                                                  //
         //------------------------------------------------------------------//
         public string TotalQuestions
         {
-            get { return MatDri_TotalNumLbl.Text; }
-            set { MatDri_TotalNumLbl.Text = value; }
+            get { return MathDrill_TotalNumberLbl.Text; }
+            set { MathDrill_TotalNumberLbl.Text = value; }
         }
-*/
 
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
@@ -80,10 +78,10 @@ namespace RaptorMath
             localManager = manager;
             InitializeDate();
             InitializeTimer();
-/*
-            MatDri_CurrentNumLbl.Text = localManager.GetCurrentNumber();
+
+            MathDrill_CurrentNumLbl.Text = localManager.GetCurrentNumber();
             this.StudentName = localManager.currentStudent.LoginName;
-*/
+
             //this.TotalQuestions = localManager.GetNumQuestions().Replace("questions.", "");
             RefreshRange();
         }
@@ -94,9 +92,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void InitializeDate()
         {
-/*
-            MatDri_DateLbl.Text = DateTime.Now.ToString("M/d/yyyy");
-*/
+            MathDrill_DateLbl.Text = DateTime.Now.ToString("M/d/yyyy");
         }
 
         //------------------------------------------------------------------//
@@ -105,9 +101,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void InitializeTimer()
         {
-/*
-            MatDri_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
-*/
+            MathDrill_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
         //------------------------------------------------------------------//
@@ -116,9 +110,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void MatDri_Timer_Tick(object sender, EventArgs e)
         {
-/*
-            MatDri_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
-*/
+            MathDrill_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
         //------------------------------------------------------------------//
@@ -126,14 +118,13 @@ namespace RaptorMath
         // Date: 2/27/2014                                                  //
         //------------------------------------------------------------------//
         private void RefreshRange()
-        {
-            /*
+        {/*
             firstNum = localManager.CreateRandom();
             secondNum = localManager.CreateRandom();
             //MatDri_FirstNumberLbl.Text = localManager.CreateRandom();
             //MatDri_SecondNumberLbl.Text = localManager.CreateRandom();
             //            MatDri_Concat.Text = String.Concat(MatDri_FirstNumberLbl.Text, " ", localManager.GetOperand(), " ", MatDri_SecondNumberLbl.Text, " =");
-            MatDri_ProblemPrompt.Text = String.Concat(firstNum, " ", localManager.GetOperand(), " ", secondNum, " =");
+            MathDrill_ProblemPrompt.Text = String.Concat(firstNum, " ", localManager.GetOperand(), " ", secondNum, " =");
         */
         }
 

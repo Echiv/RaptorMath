@@ -43,5 +43,11 @@ namespace RaptorMath
         {
             SingleReport_DateLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
+
+        private void SingleReport_CloseBtn_Click(object sender, EventArgs e)
+        {
+            localManager.SetWindow(Window.adminHome);
+            this.Close();
+        }
     }
 }

@@ -43,5 +43,11 @@ namespace RaptorMath
         {
             GroupReport_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
+
+        private void GroupReport_CloseBtn_Click(object sender, EventArgs e)
+        {
+            localManager.SetWindow(Window.adminHome);
+            this.Close();
+        }
     }
 }

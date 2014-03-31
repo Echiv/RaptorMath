@@ -23,6 +23,7 @@ namespace RaptorMath
 {
     public class XMLParser
     {
+        public string dataDirectory = string.Empty;
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //
         // Date: 2/26/2014                                                  //
@@ -87,8 +88,9 @@ namespace RaptorMath
             return true;
         }
 
-        public void StartUp(List<Admin> adminList, string adminXMLPath, List<Student> studentList, string studentXMLPath, List<string> groupList)
+        public void StartUp(List<Admin> adminList, string adminXMLPath, List<Student> studentList, string studentXMLPath, List<string> groupList, string managerDataDirectory)
         {
+            dataDirectory = managerDataDirectory;
             //AdminXML should contain all admin information
             //Should find AdminXML in C://App Data
             if (!adminXMLExists(adminXMLPath))
@@ -131,16 +133,17 @@ namespace RaptorMath
 
         public bool InitialCreateStudentXml(string studentXMLPath, List<Student> studentList, Student newStudentEntry, List<String> groupList)
         {
+            MessageBox.Show("RaptorMathStu");
+
             XDocument studentXML =
                 new XDocument(
                     new XElement("RaptorMathStu",
-                        new XElement(newStudentEntry.Group,
                             new XElement("stu",
                                 new XElement("group", newStudentEntry.Group),
                                 new XElement("loginName", newStudentEntry.LoginName),
                                 new XElement("lastLogin", newStudentEntry.LastLogin),
                                 new XElement("recPath", newStudentEntry.RecordsPath),
-                                new XElement("driPath", newStudentEntry.DrillsPath)))));
+                                new XElement("driPath", newStudentEntry.DrillsPath))));
             AddStudentToStudentAndGroupList(studentList, groupList, newStudentEntry);
             studentXML.Save(studentXMLPath);
             return true;
@@ -180,7 +183,8 @@ namespace RaptorMath
             string recordPath = newStudentEntry.LoginName.Replace(" ", "") + "Records.xml";
             newStudentEntry.RecordsPath = recordPath;
             newStudentEntry.DrillsPath = drillPath;
-
+            MessageBox.Show(newStudentEntry.Group);
+            MessageBox.Show(newStudentEntry.LoginName);
             bool isAdded = false;
             if (!System.IO.File.Exists(studentXMLPath))
             {
@@ -188,37 +192,17 @@ namespace RaptorMath
             }
             else
             {
-                bool hasGroupBeenAdded = false;
                 XDocument studentXML = XDocument.Load(studentXMLPath);
 
                 XElement rootNode = FirstLevelOfRoot(studentXML);
-                IEnumerable<XElement> GroupNodesQuery = SecondLevelOfRoot(rootNode);
-                foreach (XElement groupNode in GroupNodesQuery)
+                IEnumerable<XElement> StudentNodesOfGroupQuery = SecondLevelOfRoot(rootNode);
+                bool studentNotFound = isStudentNameInGroup(StudentNodesOfGroupQuery, newStudentEntry.LoginName);
+                        
+                if (!studentNotFound)
                 {
-                    if (groupNode.Name == newStudentEntry.Group)
-                    {
-                        hasGroupBeenAdded = true;
-                        IEnumerable<XElement> StudentNodesOfGroupQuery = ThirdLevelOfRoot(groupNode);
-                        bool studentNotFound = isStudentNameInGroup(StudentNodesOfGroupQuery, newStudentEntry.LoginName);
-                        foreach (XElement student in StudentNodesOfGroupQuery)
-                        {
-                            if (!studentNotFound)
-                            {
-                                XElement newStudent = XmlStudentWithoutGroup(newStudentEntry);
-                                AddStudentToStudentAndGroupList(studentList, groupList, newStudentEntry);
-                                groupNode.Add(newStudent);
-                                isAdded = true;
-                                break;
-                            }
-                            isAdded = false;
-                        }
-                    }
-                    if (hasGroupBeenAdded == true)
-                        break;
-                }
-                if (hasGroupBeenAdded == false)
-                {
-                    XElement newStudent = XmlStudentWithNewGroup(newStudentEntry);
+                    MessageBox.Show(newStudentEntry.LoginName);
+                    AddDrillToXml(newStudentEntry);
+                    XElement newStudent = XmlStudentWithoutGroup(newStudentEntry);
                     AddStudentToStudentAndGroupList(studentList, groupList, newStudentEntry);
                     rootNode.Add(newStudent);
                     isAdded = true;
@@ -256,7 +240,7 @@ namespace RaptorMath
         private XElement XmlDrillSettingsWithNewDrillSet(Drill drill)
         {
             XElement newDrillSet =
-                new XElement(drill.DrillSet,
+                new XElement(drill.DrillName,
                     new XElement("questions", drill.CurQuestions),
                     new XElement("rangeStart", drill.CurRangeStart),
                     new XElement("rangeEnd", drill.CurRangeEnd),
@@ -270,7 +254,7 @@ namespace RaptorMath
         private XElement XmlRecords(Drill currentDrill)
         {
             XElement records =
-                new XElement("records", currentDrill.DrillSet,
+                new XElement("records", currentDrill.DrillName,
                     new XElement("dateTaken", DateTime.Now.ToString("M/d/yyyy")),
                     new XElement("question", currentDrill.CurQuestions),
                     new XElement("rangeStart", currentDrill.CurRangeStart),
@@ -330,9 +314,11 @@ namespace RaptorMath
         {
             foreach (XElement student in StudentNodesOfGroupQuery)
             {
+                MessageBox.Show("True");
                 if(student.Element("loginName").Value == studentName)
                     return true;
             }
+            MessageBox.Show("false");
             return false;
         }
 
@@ -345,6 +331,48 @@ namespace RaptorMath
             }
             return false;
         }
+        public void AddDrillToXml(/*Drill newDrill,*/ Student student)
+        {
+            string drillXMLPath = System.IO.Path.Combine(dataDirectory, student.DrillsPath);
+
+            XDocument drillXML = new XDocument(new XElement(student.LoginName));
+            XElement rootNode = FirstLevelOfRoot(drillXML);
+
+            XElement newDrillXML = new XElement(student.LoginName, null);
+            rootNode.Add(newDrillXML);
+            drillXML.Save(drillXMLPath);
+        }
+        public void AddDrill(Drill newDrill, Student student)
+        {
+            student.curDrillList.Add(newDrill);
+        }
+
+        public void AddDrill(Drill newDrill, List<Student> studentList)
+        {
+            foreach (Student student in studentList)
+            {
+                student.curDrillList.Add(newDrill);
+            }
+        }
+
+        public void AddDrill(List<Drill> listOfNewDrills, Student student)
+        {
+            foreach (Drill newDrill in listOfNewDrills)
+            {
+                student.curDrillList.Add(newDrill);
+            }
+        }
+
+        public void AddDrill(List<Drill> listOfNewDrills, List<Student> studentList)
+        {
+            foreach (Student student in studentList)
+            {
+                foreach (Drill newDrill in listOfNewDrills)
+                {
+                    student.curDrillList.Add(newDrill);
+                }
+            }
+        }
 
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //
@@ -356,30 +384,26 @@ namespace RaptorMath
             XDocument studentXML = XDocument.Load(fileName);
 
             XElement rootNode = FirstLevelOfRoot(studentXML);
-
-            IEnumerable<XElement> GroupNodesQuery = SecondLevelOfRoot(rootNode);
-
-            foreach (XElement groups in GroupNodesQuery)
+       
+            IEnumerable<XElement> StudentNodesQuery = SecondLevelOfRoot(rootNode);
+            foreach (XElement student in StudentNodesQuery)
             {
-                IEnumerable<XElement> StudentNodesQuery = ThirdLevelOfRoot(groups);
-                foreach (XElement student in StudentNodesQuery)
-                {
-                    Student aStudent = new Student();
-                    aStudent.Group = student.Element("group").Value;
-                    aStudent.LoginName = student.Element("loginName").Value;
-                    aStudent.LastLogin = student.Element("lastLogin").Value;
-                    aStudent.RecordsPath = student.Element("recPath").Value;
-                    aStudent.DrillsPath = student.Element("driPath").Value;
+                Student aStudent = new Student();
+                aStudent.Group = student.Element("group").Value;
+                aStudent.LoginName = student.Element("loginName").Value;
+                aStudent.LastLogin = student.Element("lastLogin").Value;
+                aStudent.RecordsPath = student.Element("recPath").Value;
+                aStudent.DrillsPath = student.Element("driPath").Value;
                     
-                    //aStudent.DrillsPath = CurrentDrillParser(student.Element("driPath"));
+                    
+                //aStudent.DrillsPath = CurrentDrillParser(student.Element("driPath"));
 
-                    //foreach (XElement record in student.Elements("records"))
-                    //    aStudent.reportList.Add(CurrentRecordParser(record));
+                //foreach (XElement record in student.Elements("records"))
+                //    aStudent.reportList.Add(CurrentRecordParser(record));
 
-                    // Add to student list
-                   studentList.Add(aStudent);
-                }
-                groupList.Add(groups.Name.ToString());
+                // Add to student list
+                studentList.Add(aStudent);
+                groupList.Add(aStudent.Group);
             }
         }
 
@@ -454,28 +478,24 @@ namespace RaptorMath
                     }
                 }
                 admin_doc.Save(fileName);
-                MessageBox.Show("HERRO PREASE!");
             }
             else
             {
                 XDocument student_doc = XDocument.Load(fileName);
                 XElement student_root = FirstLevelOfRoot(student_doc);
 
-                IEnumerable<XElement> groups = SecondLevelOfRoot(student_root);
-                foreach (XElement group in groups)
+                IEnumerable<XElement> students = SecondLevelOfRoot(student_root);
+                foreach (XElement student in students)
                 {
-                    IEnumerable<XElement> students = SecondLevelOfRoot(group);
-                    foreach (XElement student in students)
-                    {
-                        string fullName = student.Element("loginName").Value;
+                    string fullName = student.Element("loginName").Value;
 
-                        if (userName == fullName)
-                        {
-                            student.Element("lastLogin").Value = date;
-                            break;
-                        }
+                    if (userName == fullName)
+                    {
+                        student.Element("lastLogin").Value = date;
+                        break;
                     }
                 }
+               
                 student_doc.Save(fileName);
             }
         }

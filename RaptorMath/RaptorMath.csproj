@@ -101,6 +101,7 @@
     <Compile Include="StudentReports.Designer.cs">
       <DependentUpon>StudentReports.cs</DependentUpon>
     </Compile>
+    <Compile Include="XMLDriver.cs" />
     <Compile Include="XMLParser.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="MathDrill.cs">

@@ -38,13 +38,13 @@
             this.AdminHome_UserInfoBox = new System.Windows.Forms.GroupBox();
             this.AdminHome_DateLbl = new System.Windows.Forms.Label();
             this.AdminHome_LastLoginLbl = new System.Windows.Forms.Label();
+            this.AdminHome_WindowLbl = new System.Windows.Forms.Label();
             this.AdminHome_WelcomeLbl = new System.Windows.Forms.Label();
             this.AdminHome_LoginLbl = new System.Windows.Forms.Label();
             this.AdminHome_AdminNameLbl = new System.Windows.Forms.Label();
             this.AdminHome_TimeLbl = new System.Windows.Forms.Label();
             this.AdminHome_PasswordBox = new System.Windows.Forms.GroupBox();
             this.AdminHome_NewPWTxt = new System.Windows.Forms.RichTextBox();
-            this.AdminHome_WindowLbl = new System.Windows.Forms.Label();
             this.AdminHome_MngUsersBtn = new System.Windows.Forms.Button();
             this.AdminHome_MngGroupsBtn = new System.Windows.Forms.Button();
             this.AdminHome_UserBox = new System.Windows.Forms.GroupBox();
@@ -112,7 +112,7 @@
             // AdminHome_CurrentPWTxt
             // 
             this.AdminHome_CurrentPWTxt.Location = new System.Drawing.Point(159, 29);
-            this.AdminHome_CurrentPWTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_CurrentPWTxt.Margin = new System.Windows.Forms.Padding(4);
             this.AdminHome_CurrentPWTxt.Name = "AdminHome_CurrentPWTxt";
             this.AdminHome_CurrentPWTxt.Size = new System.Drawing.Size(223, 32);
             this.AdminHome_CurrentPWTxt.TabIndex = 0;
@@ -128,9 +128,9 @@
             this.AdminHome_UserInfoBox.Controls.Add(this.AdminHome_AdminNameLbl);
             this.AdminHome_UserInfoBox.Controls.Add(this.AdminHome_TimeLbl);
             this.AdminHome_UserInfoBox.Location = new System.Drawing.Point(4, 4);
-            this.AdminHome_UserInfoBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_UserInfoBox.Margin = new System.Windows.Forms.Padding(4);
             this.AdminHome_UserInfoBox.Name = "AdminHome_UserInfoBox";
-            this.AdminHome_UserInfoBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
             this.AdminHome_UserInfoBox.Size = new System.Drawing.Size(424, 80);
             this.AdminHome_UserInfoBox.TabIndex = 39;
             this.AdminHome_UserInfoBox.TabStop = false;
@@ -154,6 +154,16 @@
             this.AdminHome_LastLoginLbl.Size = new System.Drawing.Size(78, 17);
             this.AdminHome_LastLoginLbl.TabIndex = 16;
             this.AdminHome_LastLoginLbl.Text = "Last Login:";
+            // 
+            // AdminHome_WindowLbl
+            // 
+            this.AdminHome_WindowLbl.AutoSize = true;
+            this.AdminHome_WindowLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminHome_WindowLbl.Location = new System.Drawing.Point(8, 13);
+            this.AdminHome_WindowLbl.Name = "AdminHome_WindowLbl";
+            this.AdminHome_WindowLbl.Size = new System.Drawing.Size(98, 17);
+            this.AdminHome_WindowLbl.TabIndex = 37;
+            this.AdminHome_WindowLbl.Text = "Admin Home";
             // 
             // AdminHome_WelcomeLbl
             // 
@@ -204,9 +214,9 @@
             this.AdminHome_PasswordBox.Controls.Add(this.AdminHome_CurrentPWTxt);
             this.AdminHome_PasswordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminHome_PasswordBox.Location = new System.Drawing.Point(4, 92);
-            this.AdminHome_PasswordBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_PasswordBox.Margin = new System.Windows.Forms.Padding(4);
             this.AdminHome_PasswordBox.Name = "AdminHome_PasswordBox";
-            this.AdminHome_PasswordBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_PasswordBox.Padding = new System.Windows.Forms.Padding(4);
             this.AdminHome_PasswordBox.Size = new System.Drawing.Size(424, 148);
             this.AdminHome_PasswordBox.TabIndex = 41;
             this.AdminHome_PasswordBox.TabStop = false;
@@ -215,26 +225,15 @@
             // AdminHome_NewPWTxt
             // 
             this.AdminHome_NewPWTxt.Location = new System.Drawing.Point(159, 69);
-            this.AdminHome_NewPWTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_NewPWTxt.Margin = new System.Windows.Forms.Padding(4);
             this.AdminHome_NewPWTxt.Name = "AdminHome_NewPWTxt";
             this.AdminHome_NewPWTxt.Size = new System.Drawing.Size(223, 32);
             this.AdminHome_NewPWTxt.TabIndex = 0;
             this.AdminHome_NewPWTxt.Text = "";
             // 
-            // AdminHome_WindowLbl
-            // 
-            this.AdminHome_WindowLbl.AutoSize = true;
-            this.AdminHome_WindowLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdminHome_WindowLbl.Location = new System.Drawing.Point(8, 13);
-            this.AdminHome_WindowLbl.Name = "AdminHome_WindowLbl";
-            this.AdminHome_WindowLbl.Size = new System.Drawing.Size(98, 17);
-            this.AdminHome_WindowLbl.TabIndex = 37;
-            this.AdminHome_WindowLbl.Text = "Admin Home";
-            // 
             // AdminHome_MngUsersBtn
             // 
             this.AdminHome_MngUsersBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AdminHome_MngUsersBtn.Enabled = false;
             this.AdminHome_MngUsersBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminHome_MngUsersBtn.Location = new System.Drawing.Point(22, 21);
             this.AdminHome_MngUsersBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -243,11 +242,11 @@
             this.AdminHome_MngUsersBtn.TabIndex = 37;
             this.AdminHome_MngUsersBtn.Text = "Manage Users";
             this.AdminHome_MngUsersBtn.UseVisualStyleBackColor = true;
+            this.AdminHome_MngUsersBtn.Click += new System.EventHandler(this.AdminHome_MngUsersBtn_Click);
             // 
             // AdminHome_MngGroupsBtn
             // 
             this.AdminHome_MngGroupsBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AdminHome_MngGroupsBtn.Enabled = false;
             this.AdminHome_MngGroupsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminHome_MngGroupsBtn.Location = new System.Drawing.Point(22, 56);
             this.AdminHome_MngGroupsBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -256,6 +255,7 @@
             this.AdminHome_MngGroupsBtn.TabIndex = 43;
             this.AdminHome_MngGroupsBtn.Text = "Manage Groups";
             this.AdminHome_MngGroupsBtn.UseVisualStyleBackColor = true;
+            this.AdminHome_MngGroupsBtn.Click += new System.EventHandler(this.AdminHome_MngGroupsBtn_Click);
             // 
             // AdminHome_UserBox
             // 
@@ -266,9 +266,9 @@
             this.AdminHome_UserBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.AdminHome_UserBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminHome_UserBox.Location = new System.Drawing.Point(4, 20);
-            this.AdminHome_UserBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_UserBox.Margin = new System.Windows.Forms.Padding(4);
             this.AdminHome_UserBox.Name = "AdminHome_UserBox";
-            this.AdminHome_UserBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_UserBox.Padding = new System.Windows.Forms.Padding(4);
             this.AdminHome_UserBox.Size = new System.Drawing.Size(204, 167);
             this.AdminHome_UserBox.TabIndex = 45;
             this.AdminHome_UserBox.TabStop = false;
@@ -277,7 +277,6 @@
             // AdminHome_StuReportBtn
             // 
             this.AdminHome_StuReportBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AdminHome_StuReportBtn.Enabled = false;
             this.AdminHome_StuReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminHome_StuReportBtn.Location = new System.Drawing.Point(22, 92);
             this.AdminHome_StuReportBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -286,11 +285,11 @@
             this.AdminHome_StuReportBtn.TabIndex = 19;
             this.AdminHome_StuReportBtn.Text = "Student Reports";
             this.AdminHome_StuReportBtn.UseVisualStyleBackColor = true;
+            this.AdminHome_StuReportBtn.Click += new System.EventHandler(this.AdminHome_StuReportBtn_Click);
             // 
             // AdminHome_EditStudentBtn
             // 
             this.AdminHome_EditStudentBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AdminHome_EditStudentBtn.Enabled = false;
             this.AdminHome_EditStudentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminHome_EditStudentBtn.Location = new System.Drawing.Point(22, 128);
             this.AdminHome_EditStudentBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -299,6 +298,7 @@
             this.AdminHome_EditStudentBtn.TabIndex = 39;
             this.AdminHome_EditStudentBtn.Text = "Edit Students";
             this.AdminHome_EditStudentBtn.UseVisualStyleBackColor = true;
+            this.AdminHome_EditStudentBtn.Click += new System.EventHandler(this.AdminHome_EditStudentBtn_Click);
             // 
             // AdminHome_CreateDrillBtn
             // 
@@ -311,6 +311,7 @@
             this.AdminHome_CreateDrillBtn.TabIndex = 41;
             this.AdminHome_CreateDrillBtn.Text = "Create Drill";
             this.AdminHome_CreateDrillBtn.UseVisualStyleBackColor = true;
+            this.AdminHome_CreateDrillBtn.Click += new System.EventHandler(this.AdminHome_CreateDrillBtn_Click);
             // 
             // AdminHome_MngDrillBtn
             // 
@@ -323,6 +324,7 @@
             this.AdminHome_MngDrillBtn.TabIndex = 42;
             this.AdminHome_MngDrillBtn.Text = "Manage Drills";
             this.AdminHome_MngDrillBtn.UseVisualStyleBackColor = true;
+            this.AdminHome_MngDrillBtn.Click += new System.EventHandler(this.AdminHome_MngDrillBtn_Click);
             // 
             // AdminHome_DrillBox
             // 
@@ -331,9 +333,9 @@
             this.AdminHome_DrillBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.AdminHome_DrillBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminHome_DrillBox.Location = new System.Drawing.Point(216, 20);
-            this.AdminHome_DrillBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_DrillBox.Margin = new System.Windows.Forms.Padding(4);
             this.AdminHome_DrillBox.Name = "AdminHome_DrillBox";
-            this.AdminHome_DrillBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_DrillBox.Padding = new System.Windows.Forms.Padding(4);
             this.AdminHome_DrillBox.Size = new System.Drawing.Size(204, 167);
             this.AdminHome_DrillBox.TabIndex = 44;
             this.AdminHome_DrillBox.TabStop = false;
@@ -346,9 +348,9 @@
             this.AdminHome_AdminBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AdminHome_AdminBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminHome_AdminBox.Location = new System.Drawing.Point(4, 248);
-            this.AdminHome_AdminBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_AdminBox.Margin = new System.Windows.Forms.Padding(4);
             this.AdminHome_AdminBox.Name = "AdminHome_AdminBox";
-            this.AdminHome_AdminBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_AdminBox.Padding = new System.Windows.Forms.Padding(4);
             this.AdminHome_AdminBox.Size = new System.Drawing.Size(424, 191);
             this.AdminHome_AdminBox.TabIndex = 40;
             this.AdminHome_AdminBox.TabStop = false;
@@ -389,9 +391,9 @@
             this.AdminHome_ButtonBox.Controls.Add(this.AdminHome_ExitBtn);
             this.AdminHome_ButtonBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AdminHome_ButtonBox.Location = new System.Drawing.Point(4, 447);
-            this.AdminHome_ButtonBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_ButtonBox.Margin = new System.Windows.Forms.Padding(4);
             this.AdminHome_ButtonBox.Name = "AdminHome_ButtonBox";
-            this.AdminHome_ButtonBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdminHome_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
             this.AdminHome_ButtonBox.Size = new System.Drawing.Size(424, 52);
             this.AdminHome_ButtonBox.TabIndex = 38;
             this.AdminHome_ButtonBox.TabStop = false;
@@ -423,7 +425,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminHome_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raptor Math";

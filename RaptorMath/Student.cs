@@ -24,15 +24,21 @@ namespace RaptorMath
     //------------------------------------------------------------------//
     public class Student
     {
+        private int id;
         private string group;
         private string loginName;
         private string lastLogin;
         private string recordsPath;
         private string drillsPath;
-        //public Drill curDrill = new Drill();
 
+        public List<Drill> curDrillList = new List<Drill>();
         public List<Record> reportList = new List<Record>();
 
+        public int ID
+        {
+            get { return this.id; }
+            set { this.id = value; }
+        }
         public string Group
         {
             get { return this.group; }
@@ -68,6 +74,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         public Student()
         {
+            id = 0;
             group = "Unassigned";
             loginName = "Unknown";
             lastLogin = "Unknown";

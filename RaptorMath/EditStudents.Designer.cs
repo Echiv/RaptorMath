@@ -221,6 +221,7 @@
             this.EditStu_ExitBtn.TabIndex = 1;
             this.EditStu_ExitBtn.Text = "Exit";
             this.EditStu_ExitBtn.UseVisualStyleBackColor = true;
+            this.EditStu_ExitBtn.Click += new System.EventHandler(this.EditStu_ExitBtn_Click);
             // 
             // EditStu_CloseBtn
             // 
@@ -231,6 +232,7 @@
             this.EditStu_CloseBtn.TabIndex = 0;
             this.EditStu_CloseBtn.Text = "Close";
             this.EditStu_CloseBtn.UseVisualStyleBackColor = true;
+            this.EditStu_CloseBtn.Click += new System.EventHandler(this.EditStu_CloseBtn_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -262,6 +264,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditStudents_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raptor Math";
             this.EditStu_UserInfoBox.ResumeLayout(false);
             this.EditStu_UserInfoBox.PerformLayout();

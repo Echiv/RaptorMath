@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace RaptorMath
 {
-    public partial class ManageDrills_Form : Form
+    public partial class StudentReports_Form : Form
     {
         public Manager localManager;
 
@@ -19,7 +19,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void InitializeDate()
         {
-            MngDrills_DateLbl.Text = DateTime.Now.ToString("M/d/yyyy");
+            ReportHome_DateLbl.Text = DateTime.Now.ToString("M/d/yyyy");
         }
 
         //------------------------------------------------------------------//
@@ -28,10 +28,10 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void InitializeTimer()
         {
-            MngDrills_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
+            ReportHome_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
-        public ManageDrills_Form(Manager manager)
+        public StudentReports_Form(Manager manager)
         {
             InitializeComponent();
             localManager = manager;
@@ -39,18 +39,18 @@ namespace RaptorMath
             InitializeTimer();
         }
 
-        private void ManageDrills_Timer_Tick(object sender, EventArgs e)
+        private void MngUsers_Timer_Tick(object sender, EventArgs e)
         {
-            MngDrills_DateLbl.Text = DateTime.Now.ToString("h:mm tt");
+            ReportHome_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
-        private void MngDrills_CloseBtn_Click(object sender, EventArgs e)
+        private void ReportHome_CloseBtn_Click(object sender, EventArgs e)
         {
             localManager.SetWindow(Window.adminHome);
             this.Close();
         }
 
-        private void MngDrills_ExitBtn_Click(object sender, EventArgs e)
+        private void ReportHome_ExitBtn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.",
                 "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)

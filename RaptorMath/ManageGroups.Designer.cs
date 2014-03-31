@@ -228,6 +228,7 @@
             this.MngGroups_ExitBtn.TabIndex = 8;
             this.MngGroups_ExitBtn.Text = "Exit";
             this.MngGroups_ExitBtn.UseVisualStyleBackColor = true;
+            this.MngGroups_ExitBtn.Click += new System.EventHandler(this.MngGroups_ExitBtn_Click);
             // 
             // MngGroups_CloseBtn
             // 
@@ -238,6 +239,7 @@
             this.MngGroups_CloseBtn.TabIndex = 7;
             this.MngGroups_CloseBtn.Text = "Close";
             this.MngGroups_CloseBtn.UseVisualStyleBackColor = true;
+            this.MngGroups_CloseBtn.Click += new System.EventHandler(this.MngGroups_CloseBtn_Click);
             // 
             // MngGroups_ButtonBox
             // 
@@ -284,6 +286,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManageGroups_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raptor Math";
             this.MngGroups_UserInfoBox.ResumeLayout(false);
             this.MngGroups_UserInfoBox.PerformLayout();

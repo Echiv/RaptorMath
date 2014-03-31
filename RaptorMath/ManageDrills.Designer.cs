@@ -284,6 +284,7 @@
             this.MngDrills_ExitBtn.TabIndex = 8;
             this.MngDrills_ExitBtn.Text = "Exit";
             this.MngDrills_ExitBtn.UseVisualStyleBackColor = true;
+            this.MngDrills_ExitBtn.Click += new System.EventHandler(this.MngDrills_ExitBtn_Click);
             // 
             // MngDrills_CloseBtn
             // 
@@ -294,6 +295,7 @@
             this.MngDrills_CloseBtn.TabIndex = 7;
             this.MngDrills_CloseBtn.Text = "Close";
             this.MngDrills_CloseBtn.UseVisualStyleBackColor = true;
+            this.MngDrills_CloseBtn.Click += new System.EventHandler(this.MngDrills_CloseBtn_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -325,6 +327,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManageDrills_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raptor Math";
             this.MngDrills_UserInfoBox.ResumeLayout(false);
             this.MngDrills_UserInfoBox.PerformLayout();

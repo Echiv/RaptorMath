@@ -399,6 +399,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CreateDrill_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raptor Math";
             this.CreateDrill_UserInfoBox.ResumeLayout(false);
             this.CreateDrill_UserInfoBox.PerformLayout();

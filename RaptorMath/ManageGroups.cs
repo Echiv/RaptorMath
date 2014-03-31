@@ -43,5 +43,22 @@ namespace RaptorMath
         {
             MngGroups_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
+
+        private void MngGroups_CloseBtn_Click(object sender, EventArgs e)
+        {
+            localManager.SetWindow(Window.adminHome);
+            this.Close();
+        }
+
+        private void MngGroups_ExitBtn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.",
+                "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                localManager.ClearAdminUser();
+                localManager.SetIsRunningFalse();
+                this.Close();
+            }
+        }
     }
 }

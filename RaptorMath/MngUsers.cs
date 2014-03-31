@@ -75,8 +75,12 @@ namespace RaptorMath
             string newUserPassword = MngUsers_PasswordTxt.Text;
             string newUserConfirmPassword = MngUsers_ConfirmPasswordTxt.Text;
             MessageBox.Show(MngUsers_GroupDdl.Text);
-            string newUserGroup = MngUsers_GroupDdl.Text;
-            if ((MngUsers_StudentRdo.Checked) && (MngUsers_GroupDdl.Text != ""))
+            string newUserGroup = string.Empty;
+            if (MngUsers_GroupDdl.Text.Length > 0)
+                newUserGroup = MngUsers_GroupDdl.Text;
+            else
+                newUserGroup = "Unassigned";
+            if (MngUsers_StudentRdo.Checked)
             {
                 bool isCreatedUser = localManager.CreateUser(newUserGroup, newUserName, "Unknown");
                 if (isCreatedUser)

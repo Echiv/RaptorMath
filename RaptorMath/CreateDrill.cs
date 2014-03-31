@@ -11,19 +11,54 @@ namespace RaptorMath
 {
     public partial class CreateDrill_Form : Form
     {
+        public Manager localManager;
+
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date: 3/16/2014                                                   //
+        //------------------------------------------------------------------//
+        private void InitializeDate()
+        {
+            CreateDrill_DateLbl.Text = DateTime.Now.ToString("M/d/yyyy");
+        }
+
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date: 3/16/2014                                                  //
+        //------------------------------------------------------------------//
+        private void InitializeTimer()
+        {
+            CreateDrill_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
+        }
+
         public CreateDrill_Form(Manager manager)
         {
             InitializeComponent();
+            localManager = manager;
+            InitializeDate();
+            InitializeTimer();
+        }
+
+        private void CreateDrill_Timer_Tick(object sender, EventArgs e)
+        {
+            CreateDrill_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
         private void CreateDrill_ExitBtn_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.",
+                "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                localManager.ClearAdminUser();
+                localManager.SetIsRunningFalse();
+                this.Close();
+            }
         }
 
         private void CreateDrill_CloseBtn_Click(object sender, EventArgs e)
         {
-
+            localManager.SetWindow(Window.adminHome);
+            this.Close();
         }
     }
 }

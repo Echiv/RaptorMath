@@ -262,6 +262,7 @@
             this.ReportHome_ExitBtn.TabIndex = 25;
             this.ReportHome_ExitBtn.Text = "Exit";
             this.ReportHome_ExitBtn.UseVisualStyleBackColor = true;
+            this.ReportHome_ExitBtn.Click += new System.EventHandler(this.ReportHome_ExitBtn_Click);
             // 
             // ReportHome_CloseBtn
             // 
@@ -273,6 +274,7 @@
             this.ReportHome_CloseBtn.TabIndex = 25;
             this.ReportHome_CloseBtn.Text = "Close";
             this.ReportHome_CloseBtn.UseVisualStyleBackColor = true;
+            this.ReportHome_CloseBtn.Click += new System.EventHandler(this.ReportHome_CloseBtn_Click);
             // 
             // ReportHome_SelectRportBox
             // 

@@ -65,7 +65,7 @@
             // 
             this.StuHome_NumQuestionsLbl.AutoSize = true;
             this.StuHome_NumQuestionsLbl.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StuHome_NumQuestionsLbl.Location = new System.Drawing.Point(68, 108);
+            this.StuHome_NumQuestionsLbl.Location = new System.Drawing.Point(63, 143);
             this.StuHome_NumQuestionsLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuHome_NumQuestionsLbl.Name = "StuHome_NumQuestionsLbl";
             this.StuHome_NumQuestionsLbl.Size = new System.Drawing.Size(177, 35);
@@ -76,7 +76,7 @@
             // 
             this.StuHome_TotalNumLbl.AutoSize = true;
             this.StuHome_TotalNumLbl.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StuHome_TotalNumLbl.Location = new System.Drawing.Point(240, 108);
+            this.StuHome_TotalNumLbl.Location = new System.Drawing.Point(235, 143);
             this.StuHome_TotalNumLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuHome_TotalNumLbl.Name = "StuHome_TotalNumLbl";
             this.StuHome_TotalNumLbl.Size = new System.Drawing.Size(190, 35);
@@ -92,11 +92,11 @@
             this.StuHome_DrillBox.Controls.Add(this.StuHome_StartDrillBtn);
             this.StuHome_DrillBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.StuHome_DrillBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StuHome_DrillBox.Location = new System.Drawing.Point(4, 122);
+            this.StuHome_DrillBox.Location = new System.Drawing.Point(4, 124);
             this.StuHome_DrillBox.Margin = new System.Windows.Forms.Padding(4);
             this.StuHome_DrillBox.Name = "StuHome_DrillBox";
             this.StuHome_DrillBox.Padding = new System.Windows.Forms.Padding(4);
-            this.StuHome_DrillBox.Size = new System.Drawing.Size(504, 245);
+            this.StuHome_DrillBox.Size = new System.Drawing.Size(474, 250);
             this.StuHome_DrillBox.TabIndex = 7;
             this.StuHome_DrillBox.TabStop = false;
             // 
@@ -105,7 +105,7 @@
             this.StuHome_DrillDdl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.StuHome_DrillDdl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StuHome_DrillDdl.FormattingEnabled = true;
-            this.StuHome_DrillDdl.Location = new System.Drawing.Point(133, 63);
+            this.StuHome_DrillDdl.Location = new System.Drawing.Point(118, 66);
             this.StuHome_DrillDdl.Margin = new System.Windows.Forms.Padding(4);
             this.StuHome_DrillDdl.MaxDropDownItems = 100;
             this.StuHome_DrillDdl.Name = "StuHome_DrillDdl";
@@ -128,7 +128,7 @@
             // 
             this.StuHome_StartDrillBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.StuHome_StartDrillBtn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StuHome_StartDrillBtn.Location = new System.Drawing.Point(192, 166);
+            this.StuHome_StartDrillBtn.Location = new System.Drawing.Point(170, 182);
             this.StuHome_StartDrillBtn.Margin = new System.Windows.Forms.Padding(4);
             this.StuHome_StartDrillBtn.Name = "StuHome_StartDrillBtn";
             this.StuHome_StartDrillBtn.Size = new System.Drawing.Size(108, 38);
@@ -157,7 +157,7 @@
             this.StuHome_UserInfoBox.Margin = new System.Windows.Forms.Padding(4);
             this.StuHome_UserInfoBox.Name = "StuHome_UserInfoBox";
             this.StuHome_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
-            this.StuHome_UserInfoBox.Size = new System.Drawing.Size(504, 110);
+            this.StuHome_UserInfoBox.Size = new System.Drawing.Size(474, 112);
             this.StuHome_UserInfoBox.TabIndex = 15;
             this.StuHome_UserInfoBox.TabStop = false;
             // 
@@ -253,7 +253,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.83183F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.16817F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(512, 446);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(482, 453);
             this.tableLayoutPanel1.TabIndex = 31;
             // 
             // tableLayoutPanel2
@@ -264,11 +264,11 @@
             this.tableLayoutPanel2.Controls.Add(this.StuHome_CoinBox, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.StuHome_ButtonBox, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 374);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 381);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(506, 69);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(476, 69);
             this.tableLayoutPanel2.TabIndex = 31;
             // 
             // StuHome_CoinBox
@@ -280,7 +280,7 @@
             this.StuHome_CoinBox.Margin = new System.Windows.Forms.Padding(4);
             this.StuHome_CoinBox.Name = "StuHome_CoinBox";
             this.StuHome_CoinBox.Padding = new System.Windows.Forms.Padding(4);
-            this.StuHome_CoinBox.Size = new System.Drawing.Size(257, 61);
+            this.StuHome_CoinBox.Size = new System.Drawing.Size(227, 61);
             this.StuHome_CoinBox.TabIndex = 30;
             this.StuHome_CoinBox.TabStop = false;
             // 
@@ -303,7 +303,7 @@
             this.StuHome_CoinTxt.Multiline = false;
             this.StuHome_CoinTxt.Name = "StuHome_CoinTxt";
             this.StuHome_CoinTxt.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.StuHome_CoinTxt.Size = new System.Drawing.Size(166, 35);
+            this.StuHome_CoinTxt.Size = new System.Drawing.Size(141, 35);
             this.StuHome_CoinTxt.TabIndex = 1;
             this.StuHome_CoinTxt.Text = "";
             // 
@@ -312,7 +312,7 @@
             this.StuHome_ButtonBox.Controls.Add(this.StuHome_LogoutBtn);
             this.StuHome_ButtonBox.Controls.Add(this.StuHome_ExitBtn);
             this.StuHome_ButtonBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StuHome_ButtonBox.Location = new System.Drawing.Point(269, 4);
+            this.StuHome_ButtonBox.Location = new System.Drawing.Point(239, 4);
             this.StuHome_ButtonBox.Margin = new System.Windows.Forms.Padding(4);
             this.StuHome_ButtonBox.Name = "StuHome_ButtonBox";
             this.StuHome_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
@@ -335,14 +335,13 @@
             // 
             // StuHome_ExitBtn
             // 
-            this.StuHome_ExitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.StuHome_ExitBtn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_ExitBtn.Location = new System.Drawing.Point(117, 15);
             this.StuHome_ExitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.StuHome_ExitBtn.Name = "StuHome_ExitBtn";
             this.StuHome_ExitBtn.Size = new System.Drawing.Size(108, 38);
             this.StuHome_ExitBtn.TabIndex = 3;
-            this.StuHome_ExitBtn.Text = "Exit";
+            this.StuHome_ExitBtn.Text = "Quit";
             this.StuHome_ExitBtn.UseVisualStyleBackColor = true;
             this.StuHome_ExitBtn.Click += new System.EventHandler(this.StuHome_ExitBtn_Click);
             // 
@@ -350,7 +349,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 446);
+            this.ClientSize = new System.Drawing.Size(482, 453);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
