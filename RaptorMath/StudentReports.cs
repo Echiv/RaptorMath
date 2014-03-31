@@ -60,5 +60,10 @@ namespace RaptorMath
                 this.Close();
             }
         }
+
+        private void ReportHome_SingleReportBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

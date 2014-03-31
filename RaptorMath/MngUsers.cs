@@ -33,9 +33,9 @@ namespace RaptorMath
 
         private void RefreshGroupDropDownBox()
         {
-            MngUsers_GroupDdl.Items.Clear();
+            MngUsers_GroupCmbo.Items.Clear();
             foreach (string group in localManager.GetGroups())
-                MngUsers_GroupDdl.Items.Add(group);
+                MngUsers_GroupCmbo.Items.Add(group);
         }
 
         private void MngUsers_Timer_Tick(object sender, EventArgs e)
@@ -71,16 +71,12 @@ namespace RaptorMath
 
         private void MngUsers_SaveUserBtm_Click(object sender, EventArgs e)
         {
-            string newUserName = MngUsers_NameTxt.Text;
+            string newUserName = MngUsers_NameCmbo.Text;
             string newUserPassword = MngUsers_PasswordTxt.Text;
             string newUserConfirmPassword = MngUsers_ConfirmPasswordTxt.Text;
-            MessageBox.Show(MngUsers_GroupDdl.Text);
-            string newUserGroup = string.Empty;
-            if (MngUsers_GroupDdl.Text.Length > 0)
-                newUserGroup = MngUsers_GroupDdl.Text;
-            else
-                newUserGroup = "Unassigned";
-            if (MngUsers_StudentRdo.Checked)
+            MessageBox.Show(MngUsers_GroupCmbo.Text);
+            string newUserGroup = MngUsers_GroupCmbo.Text;
+            if ((MngUsers_StudentRdo.Checked) && (MngUsers_GroupCmbo.Text != ""))
             {
                 bool isCreatedUser = localManager.CreateUser(newUserGroup, newUserName, "Unknown");
                 if (isCreatedUser)
@@ -114,14 +110,14 @@ namespace RaptorMath
         {
             MngUsers_PasswordTxt.Enabled = false;
             MngUsers_ConfirmPasswordTxt.Enabled = false;
-            MngUsers_GroupDdl.Enabled = true;
+            MngUsers_GroupCmbo.Enabled = true;
         }
 
         private void MngUsers_AdminRdo_CheckedChanged(object sender, EventArgs e)
         {
             MngUsers_PasswordTxt.Enabled = true;
             MngUsers_ConfirmPasswordTxt.Enabled = true;
-            MngUsers_GroupDdl.Enabled = false;
+            MngUsers_GroupCmbo.Enabled = false;
         }        
     }
 }

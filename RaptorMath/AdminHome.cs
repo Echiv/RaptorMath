@@ -149,6 +149,11 @@ namespace RaptorMath
             }
         }
 
+        private void AdminHome_SaveBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void AdminHome_MngUsersBtn_Click(object sender, EventArgs e)
         {
             localManager.SetWindow(Window.mngUsers);

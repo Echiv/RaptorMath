@@ -39,26 +39,14 @@ namespace RaptorMath
             InitializeTimer();
         }
 
-        private void ManageDrills_Timer_Tick(object sender, EventArgs e)
+        private void MngUsers_Timer_Tick(object sender, EventArgs e)
         {
             MngDrills_DateLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
-        private void MngDrills_CloseBtn_Click(object sender, EventArgs e)
+        private void MngDrills_AddRmvDrillBtn_Click(object sender, EventArgs e)
         {
-            localManager.SetWindow(Window.adminHome);
-            this.Close();
-        }
 
-        private void MngDrills_ExitBtn_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.",
-                "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
-                localManager.ClearAdminUser();
-                localManager.SetIsRunningFalse();
-                this.Close();
-            }
         }
     }
 }

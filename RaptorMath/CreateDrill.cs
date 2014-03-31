@@ -60,5 +60,10 @@ namespace RaptorMath
             localManager.SetWindow(Window.adminHome);
             this.Close();
         }
+
+        private void CreateDrill_SaveDrillBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
