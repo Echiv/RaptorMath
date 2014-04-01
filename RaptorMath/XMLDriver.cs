@@ -310,6 +310,38 @@ namespace RaptorMath
             }
         }
 
+        public void renameGroup(string newName, string currentName, List<Group> groupList)
+        {
+            Group modifiedGroup = new Group();
+            foreach (Group group in groupList)
+            {
+                if(group.Name == currentName)
+                {
+                    modifiedGroup.ID = group.ID;
+                    modifiedGroup.Name = newName;
+                    UpdateGroup(group, modifiedGroup);
+                    break;
+                }
+            }
+            
+        }
+        private void UpdateGroup(Group group, Group modifiedGroup)
+        {
+            XDocument data = XDocument.Load(groupXMLPath);
+
+            XElement groupIDElement =
+                data.Descendants("group").Where(grp => grp.Attribute("ID").Value.Equals(modifiedGroup.ID.ToString())).FirstOrDefault();
+            XElement groupNameElement =
+                data.Descendants("group").Where(grp => grp.Element("groupName").Value.Equals(modifiedGroup.Name)).FirstOrDefault();
+
+            if ((groupIDElement != null) && (groupNameElement == null))
+            {
+                groupIDElement.SetElementValue("groupName", modifiedGroup.Name);
+                group.ID = modifiedGroup.ID;
+                group.Name = modifiedGroup.Name;
+                data.Save(groupXMLPath);
+            }
+        }
         public bool AddNewDrill(Drill drill, string fileName, List<Drill> drillList)
         {
             XDocument data = XDocument.Load(fileName);

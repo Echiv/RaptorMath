@@ -85,7 +85,14 @@ namespace RaptorMath
 
         public void CreateGroup(string name)
         {
-            bool isCreatedUser = XMLDriver.AddNewGroup(name, groupList);
+            bool isCreatedUser = false;
+            if(name != string.Empty)
+                isCreatedUser = XMLDriver.AddNewGroup(name, groupList);
+        }
+
+        public void RenameGroup(string newName, string currentName, List<Group> groupList)
+        {
+            XMLDriver.renameGroup(newName, currentName, groupList);
         }
 
         public bool IsRunning()
@@ -614,12 +621,12 @@ namespace RaptorMath
         // Kyle Bridges                                                     //
         // Date: 2/28/2014                                                  //
         //------------------------------------------------------------------//
-        public void SaveDrillSettings(string minOperand, string maxOperand, string questionCount)
+        /*public void SaveDrillSettings(string minOperand, string maxOperand, string questionCount)
         {
             XML.WriteDrillSettings(currentStudent.LoginName, minOperand, maxOperand, questionCount, operand);
-            UpdateLocalDrillSettings(currentStudent, minOperand, maxOperand, setSize, operand);
+            UpdateLocalDrillSettings(currentStudent, minOperand, maxOperand, questionCount, operand);
             ClearStudentUser();
-        }
+        }*/
 
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //

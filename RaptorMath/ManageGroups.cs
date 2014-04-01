@@ -22,6 +22,42 @@ namespace RaptorMath
             set { MngGroups_AdminNameLbl.Text = value; }
         }
 
+        private void RefreshGroupNameCmboBox()
+        {
+            MngGroups_GroupNameCmbo.Items.Clear();
+            MngGroups_NewNameCmbo.Items.Clear();
+
+            foreach (Group group in localManager.groupList)
+            {
+                MngGroups_GroupNameCmbo.Items.Add(group.Name);
+            }
+        }
+
+        private void RefreshGroupCmboBox()
+        {
+            MngGroups_SelectGroupCmbo.Items.Clear();
+            MngGroups_NewNameCmbo.Items.Clear();
+
+            foreach (Group group in localManager.groupList)
+            {
+                MngGroups_SelectGroupCmbo.Items.Add(group.Name);
+            }
+        }
+
+        private void RefreshCmboBoxes()
+        {
+            RefreshGroupNameCmboBox();
+            RefreshGroupCmboBox();
+
+        }
+
+        private void ClearCmboBoxes()
+        {
+            MngGroups_GroupNameCmbo.Text = string.Empty;
+            MngGroups_SelectGroupCmbo.Text = string.Empty;
+            MngGroups_NewNameCmbo.Text = string.Empty;
+        }
+
         //------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                         //
         // Date: 3/16/2014                                                   //
@@ -46,6 +82,7 @@ namespace RaptorMath
             localManager = manager;
             InitializeDate();
             InitializeTimer();
+            RefreshCmboBoxes();
 
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
@@ -59,6 +96,8 @@ namespace RaptorMath
         {
             string newGroupName = MngGroups_GroupNameCmbo.Text;
             localManager.CreateGroup(newGroupName);
+            RefreshCmboBoxes();
+            ClearCmboBoxes();
         }
 
         private void MngGroups_ExitBtn_Click(object sender, EventArgs e)
@@ -75,6 +114,13 @@ namespace RaptorMath
         {
             localManager.SetWindow(Window.adminHome);
             this.Close();
+        }
+
+        private void MngGroups_RenameBtn_Click(object sender, EventArgs e)
+        {
+            localManager.RenameGroup(MngGroups_NewNameCmbo.Text, MngGroups_SelectGroupCmbo.Text, localManager.groupList);
+            RefreshCmboBoxes();
+            ClearCmboBoxes();
         }
     }
 }
