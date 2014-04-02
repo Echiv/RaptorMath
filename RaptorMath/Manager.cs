@@ -187,12 +187,12 @@ namespace RaptorMath
 
         public void RenameStudent(string newName, string currentName, string newGroup, List<Student> studentList)
         {
-            if ((newName.Equals(string.Empty))
+            if (!(newName.Equals(string.Empty))
                 && (newName.All(char.IsLetter))
-                && (currentName.Equals(string.Empty))
+                && !(currentName.Equals(string.Empty))
                 && (currentName.All(char.IsLetter))
-                && (newGroup.Equals(string.Empty))
-                && (newGroup.All(char.IsLetter)))
+                && !(newGroup.Equals(string.Empty))
+                && (newGroup.All(char.IsLetterOrDigit)))
             {
                 XMLDriver.editStudent(newName, currentName, newGroup, studentList);
             }
@@ -200,9 +200,9 @@ namespace RaptorMath
 
         public void RenameGroup(string newName, string currentName, List<Group> groupList)
         {
-            if ((newName.Equals(string.Empty))
+            if (!(newName.Equals(string.Empty))
                 && (newName.All(char.IsLetter))
-                && (currentName.Equals(string.Empty))
+                && !(currentName.Equals(string.Empty))
                 && (currentName.All(char.IsLetter)))
             {
                 XMLDriver.editGroup(newName, currentName, groupList);
