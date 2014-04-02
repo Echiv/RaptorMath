@@ -34,7 +34,7 @@ namespace RaptorMath
         public string currentUser = string.Empty;
         public string currentPassword = string.Empty;
         public string currentUserLogin = string.Empty;
-        public string operand = string.Empty;
+        //public string operand = string.Empty;
         public string dataDirectory = string.Empty;
         public string adminXMLPath = string.Empty;
         public string studentXMLPath = string.Empty;
@@ -71,29 +71,128 @@ namespace RaptorMath
 
         public bool CreateUser(string adminName, string password, string LastLogin, string filePath)
         {
+            bool isCreatedUser = false;
             Admin newAdmin = new Admin(adminName, password, LastLogin, filePath);
-            bool isCreatedUser = XMLDriver.AddUserToXML(newAdmin, adminList);//, adminList, newAdmin);
+
+            bool isUserInfoValid = isAdminInfoValid(newAdmin);
+            if(isUserInfoValid)
+                isCreatedUser = XMLDriver.AddUserToXML(newAdmin, adminList);
+
             return isCreatedUser;
+        }
+        public bool isAdminInfoValid(Admin adminToValidate)
+        {
+            if (!(adminToValidate.LoginName.Equals(string.Empty))
+                && (adminToValidate.LoginName.All(char.IsLetter))
+                && (adminToValidate.Password.All(char.IsLetterOrDigit))
+                && (!studentList.Any(student => student.LoginName.Equals(adminToValidate.LoginName))))
+            {
+                return true;
+            }
+            return false;
         }
 
         public bool CreateUser(string group, string studentName, string lastLogin)
         {
+            bool isCreatedUser = false;
             Student newStudent = new Student(group, studentName, lastLogin);
-            bool isCreatedUser = XMLDriver.AddUserToXML(newStudent, studentList);
+
+            bool isUserInfoValid = isStudentInfoValid(newStudent);
+            if(isUserInfoValid)
+                isCreatedUser = XMLDriver.AddUserToXML(newStudent, studentList);
             return isCreatedUser;
         }
 
-        public void CreateGroup(string name)
+        public bool isStudentInfoValid(Student studentToValidate)
         {
-            bool isCreatedUser = false;
-            if(name != string.Empty)
-                isCreatedUser = XMLDriver.AddNewGroup(name, groupList);
+            if (!(studentToValidate.LoginName.Equals(string.Empty))
+                &&(studentToValidate.LoginName.All(char.IsLetter)) 
+                && (studentToValidate.Group.All(char.IsLetterOrDigit))
+                && (groupList.Any(group => group.Name.Equals(studentToValidate.Group)))
+                && (!adminList.Any(admin => admin.LoginName.Equals(studentToValidate.LoginName))))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool CreateGroup(string name)
+        {
+            bool isCreatedGroup = false;
+            
+            bool isGroupValid = isGroupInfoValid(name);
+            if (isGroupValid)
+                isCreatedGroup = XMLDriver.AddNewGroup(name, groupList);
+
+            return isCreatedGroup;
+        }
+
+        public bool isGroupInfoValid(string groupToValidate)
+        {
+            if (!(groupToValidate.Equals(string.Empty))
+                && (groupToValidate.All(char.IsLetterOrDigit)))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool CreateDrill(string drillName, string numQuestions, string minValue, string maxValue, bool add, bool subtract)
+        {
+            bool isDrillAdded = false;
+            string operand = SetOperand(add, subtract);
+
+            Drill newDrill = new Drill(drillName, numQuestions, minValue, maxValue, operand);
+            bool isDrillValid = isDrillInfoValid(newDrill);
+            if (isDrillValid)
+                isDrillAdded = XMLDriver.AddNewDrill(newDrill, mainDrillList);
+
+            return isDrillAdded;
+        }
+
+        public bool isDrillInfoValid(Drill drillToValidate)
+        {
+            if (!(drillToValidate.DrillName.Equals(string.Empty))
+                && (drillToValidate.DrillName.All(char.IsLetterOrDigit))
+                && (drillToValidate.Questions.All(char.IsDigit))
+                && (drillToValidate.RangeStart.All(char.IsDigit) && (Convert.ToInt32(drillToValidate.RangeStart) > 0))
+                && (drillToValidate.RangeEnd.All(char.IsDigit) && (Convert.ToInt32(drillToValidate.RangeEnd) > 0))
+                && (drillToValidate.Operand.Equals("subtraction") || (drillToValidate.Operand.Equals("addition"))))
+            {
+                return true;
+            }
+            return false;
         }
 
         public void RenameGroup(string newName, string currentName, List<Group> groupList)
         {
             XMLDriver.renameGroup(newName, currentName, groupList);
         }
+
+        public void removeUser(string userName)
+        {
+            bool isAdmin = adminList.Any(admin => admin.LoginName.Equals(userName));
+            Console.WriteLine(isAdmin);
+            if (isAdmin)
+            {
+                Console.WriteLine("In if(isAdmin)");
+                Admin admin = adminList.Where(adm => adm.LoginName.Equals(userName)).FirstOrDefault();
+                XMLDriver.Delete(admin, adminList);
+            }
+            bool isStudent = studentList.Any(student => student.LoginName.Equals(userName));
+            Console.WriteLine(isStudent);
+            if(isStudent)
+            {
+                Console.WriteLine("In if(isStudent)");
+                Console.WriteLine(userName);
+                Student student = studentList.Where(stu => stu.LoginName.Equals(userName)).FirstOrDefault();
+                Console.WriteLine(student.ID.ToString());
+                Console.WriteLine(student.RecordsPath);
+                XMLDriver.Delete(student, studentList);
+            }
+
+        }
+
 
         public bool IsRunning()
         {
@@ -609,12 +708,14 @@ namespace RaptorMath
         // Kyle Bridges                                                     //
         // Date: 2/28/2014                                                  //
         //------------------------------------------------------------------//
-        public void SetOperand(bool add, bool subtract)
+        public string SetOperand(bool add, bool subtract)
         {
+            string operand = string.Empty;
             if (add == true)
                 operand = "addition";
             else if (subtract == true)
                 operand = "subtraction";
+            return operand;
         }
 
         //------------------------------------------------------------------//

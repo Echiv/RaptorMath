@@ -74,7 +74,7 @@ namespace RaptorMath
 
         private void CreateDrill_SaveDrillBtn_Click(object sender, EventArgs e)
         {
-            /*// Make sure all forms and radio buttons are filled and valid
+            // Make sure all forms and radio buttons are filled and valid
             if ((localManager.InvalidDrillFields(CreateDrill_MinValueTxt.Text, CreateDrill_MaxValueTxt.Text, CreateDrill_NumQuestionsTxt.Text))
                 || (localManager.InvalidRadioButtons(CreateDrill_AdditionRdo.Checked, CreateDrill_SubtactionRdo.Checked))
                 || (localManager.InvalidRange(CreateDrill_MinValueTxt.Text, CreateDrill_MaxValueTxt.Text))
@@ -84,11 +84,21 @@ namespace RaptorMath
             }
             else
             {
-                localManager.SetOperand(CreateDrill_AdditionRdo.Checked, CreateDrill_SubtactionRdo.Checked);
-                localManager.SaveDrillSettings(CreateDrill_MinValueTxt.Text, CreateDrill_MaxValueTxt.Text,
-                   CreateDrill_NumQuestionsTxt.Text);
-                MessageBox.Show("Settings succesfully saved.", "Raptor Math", MessageBoxButtons.OK);
-            }*/
+                //localManager.SetOperand(CreateDrill_AdditionRdo.Checked, CreateDrill_SubtactionRdo.Checked);
+                bool isDrillAdded = localManager.CreateDrill(CreateDrill_DrillNameTxt.Text, CreateDrill_NumQuestionsTxt.Text, CreateDrill_MinValueTxt.Text, CreateDrill_MaxValueTxt.Text,
+                   CreateDrill_AdditionRdo.Checked, CreateDrill_SubtactionRdo.Checked);
+                if (isDrillAdded)
+                {
+                    MessageBox.Show("The Drill has been succesfully saved!", "Raptor Math", MessageBoxButtons.OK);
+                }
+                else
+                { 
+                    //gets called even when there is an empty string, need to fix
+                    MessageBox.Show("A Drill with that name already exists! Please choose a different name");
+                    CreateDrill_DrillNameTxt.Text = string.Empty;
+                }
+                
+            }
         }
     }
 }

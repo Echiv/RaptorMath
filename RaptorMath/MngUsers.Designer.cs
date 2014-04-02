@@ -338,6 +338,7 @@
             this.MngUsers_RemoveUserBtn.TabIndex = 2;
             this.MngUsers_RemoveUserBtn.Text = "Remove User";
             this.MngUsers_RemoveUserBtn.UseVisualStyleBackColor = true;
+            this.MngUsers_RemoveUserBtn.Click += new System.EventHandler(this.MngUsers_RemoveUserBtn_Click);
             // 
             // MngUsers_SelectUserLbl
             // 

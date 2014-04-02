@@ -49,10 +49,17 @@ namespace RaptorMath
         private void RefreshUserDropDownBox()
         {
             MngUsers_NameCmbo.Items.Clear();
+            MngUsers_UserCmbo.Items.Clear();
             foreach (Student student in localManager.studentList)
+            {
                 MngUsers_NameCmbo.Items.Add(student.LoginName);
+                MngUsers_UserCmbo.Items.Add(student.LoginName);
+            }
             foreach (Admin admin in localManager.adminList)
+            {
                 MngUsers_NameCmbo.Items.Add(admin.LoginName);
+                MngUsers_UserCmbo.Items.Add(admin.LoginName);
+            }
         }
 
         private void RefreshComboBoxes()
@@ -95,17 +102,9 @@ namespace RaptorMath
 
         private void MngUsers_SaveUserBtm_Click(object sender, EventArgs e)
         {
-            string newUserName = MngUsers_NameCmbo.Text;
-            string newUserPassword = MngUsers_PasswordTxt.Text;
-            string newUserConfirmPassword = MngUsers_ConfirmPasswordTxt.Text;
-            MessageBox.Show(MngUsers_GroupCmbo.Text);
-
-            string newUserGroup = string.Empty;
-            if (MngUsers_GroupCmbo.Text == "")
-                newUserGroup = "unassigned";
-            if ((MngUsers_StudentRdo.Checked) && (newUserGroup != ""))
+            if (MngUsers_StudentRdo.Checked)
             {
-                bool isCreatedUser = localManager.CreateUser(newUserGroup, newUserName, "Unknown");
+                bool isCreatedUser = localManager.CreateUser(MngUsers_GroupCmbo.Text, MngUsers_NameCmbo.Text, "Unknown");
                 if (isCreatedUser)
                 {
                     RefreshComboBoxes();
@@ -119,7 +118,7 @@ namespace RaptorMath
                 bool isCreatedUser = false;
                 if (MngUsers_PasswordTxt.Text == MngUsers_ConfirmPasswordTxt.Text)
                 {
-                    isCreatedUser = localManager.CreateUser(newUserName, newUserPassword, "Unknown", "RaptorMathStudents.xml");
+                    isCreatedUser = localManager.CreateUser(MngUsers_NameCmbo.Text, MngUsers_PasswordTxt.Text, "Unknown", "RaptorMathStudents.xml");
                     if (isCreatedUser)
                     {
                         RefreshComboBoxes();
@@ -131,9 +130,6 @@ namespace RaptorMath
                 else
                     MessageBox.Show("The Passwords did not match!", "Raptor Math", MessageBoxButtons.OKCancel);
             }
-            else
-                MessageBox.Show("The User could not be created!!", "Raptor Math", MessageBoxButtons.OKCancel);
-
         }
 
         private void MngUsers_StudentRdo_CheckedChanged(object sender, EventArgs e)
@@ -148,6 +144,14 @@ namespace RaptorMath
             MngUsers_PasswordTxt.Enabled = true;
             MngUsers_ConfirmPasswordTxt.Enabled = true;
             MngUsers_GroupCmbo.Enabled = false;
+        }
+
+        private void MngUsers_RemoveUserBtn_Click(object sender, EventArgs e)
+        {
+            string userToBeRemoved = MngUsers_UserCmbo.Text;
+            localManager.removeUser(userToBeRemoved);
+            RefreshComboBoxes();
+            MngUsers_UserCmbo.Text = string.Empty;
         }        
     }
 }

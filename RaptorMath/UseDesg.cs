@@ -46,6 +46,7 @@ namespace RaptorMath
             InitializeDate();
             InitializeTimer();
             RefreshLoginDropDownBox();
+            UseDesg_LoginBtn.Enabled = false;
         }
 
         //------------------------------------------------------------------//
