@@ -73,9 +73,9 @@
             this.CreateDrill_UserInfoBox.Controls.Add(this.CreateDrill_TimeLbl);
             this.CreateDrill_UserInfoBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CreateDrill_UserInfoBox.Location = new System.Drawing.Point(4, 4);
-            this.CreateDrill_UserInfoBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateDrill_UserInfoBox.Margin = new System.Windows.Forms.Padding(4);
             this.CreateDrill_UserInfoBox.Name = "CreateDrill_UserInfoBox";
-            this.CreateDrill_UserInfoBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateDrill_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
             this.CreateDrill_UserInfoBox.Size = new System.Drawing.Size(424, 74);
             this.CreateDrill_UserInfoBox.TabIndex = 39;
             this.CreateDrill_UserInfoBox.TabStop = false;
@@ -127,9 +127,9 @@
             this.CreateDrill_ButtonBox.Controls.Add(this.CreateDrill_ExitBtn);
             this.CreateDrill_ButtonBox.Controls.Add(this.CreateDrill_CloseBtn);
             this.CreateDrill_ButtonBox.Location = new System.Drawing.Point(4, 449);
-            this.CreateDrill_ButtonBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateDrill_ButtonBox.Margin = new System.Windows.Forms.Padding(4);
             this.CreateDrill_ButtonBox.Name = "CreateDrill_ButtonBox";
-            this.CreateDrill_ButtonBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateDrill_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
             this.CreateDrill_ButtonBox.Size = new System.Drawing.Size(424, 49);
             this.CreateDrill_ButtonBox.TabIndex = 41;
             this.CreateDrill_ButtonBox.TabStop = false;
@@ -181,9 +181,9 @@
             this.CreateDrill_CreateBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CreateDrill_CreateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateDrill_CreateBox.Location = new System.Drawing.Point(4, 86);
-            this.CreateDrill_CreateBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateDrill_CreateBox.Margin = new System.Windows.Forms.Padding(4);
             this.CreateDrill_CreateBox.Name = "CreateDrill_CreateBox";
-            this.CreateDrill_CreateBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateDrill_CreateBox.Padding = new System.Windows.Forms.Padding(4);
             this.CreateDrill_CreateBox.Size = new System.Drawing.Size(424, 355);
             this.CreateDrill_CreateBox.TabIndex = 42;
             this.CreateDrill_CreateBox.TabStop = false;
@@ -327,7 +327,7 @@
             // 
             this.CreateDrill_SubtactionRdo.AutoSize = true;
             this.CreateDrill_SubtactionRdo.Location = new System.Drawing.Point(63, 54);
-            this.CreateDrill_SubtactionRdo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateDrill_SubtactionRdo.Margin = new System.Windows.Forms.Padding(4);
             this.CreateDrill_SubtactionRdo.Name = "CreateDrill_SubtactionRdo";
             this.CreateDrill_SubtactionRdo.Size = new System.Drawing.Size(101, 21);
             this.CreateDrill_SubtactionRdo.TabIndex = 0;
@@ -339,7 +339,7 @@
             // 
             this.CreateDrill_AdditionRdo.AutoSize = true;
             this.CreateDrill_AdditionRdo.Location = new System.Drawing.Point(63, 26);
-            this.CreateDrill_AdditionRdo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CreateDrill_AdditionRdo.Margin = new System.Windows.Forms.Padding(4);
             this.CreateDrill_AdditionRdo.Name = "CreateDrill_AdditionRdo";
             this.CreateDrill_AdditionRdo.Size = new System.Drawing.Size(80, 21);
             this.CreateDrill_AdditionRdo.TabIndex = 0;
@@ -376,7 +376,7 @@
             this.ClientSize = new System.Drawing.Size(432, 503);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CreateDrill_Form";

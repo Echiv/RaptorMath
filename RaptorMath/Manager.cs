@@ -163,10 +163,30 @@ namespace RaptorMath
             }
             return false;
         }
-
+        //Validate input before calling edit functions 4/1/14 CJ
         public void RenameGroup(string newName, string currentName, List<Group> groupList)
         {
-            XMLDriver.renameGroup(newName, currentName, groupList);
+            if ((newName.Equals(string.Empty))
+                && (newName.All(char.IsLetter))
+                && (currentName.Equals(string.Empty))
+                && (currentName.All(char.IsLetter)))
+            {
+                XMLDriver.editGroup(newName, currentName, groupList);
+            }
+        }
+        //Validate input before calling edit functions 4/1/14 CJ
+
+        public void RenameStudent(string newName, string currentName, string newGroup, List<Student> studentList)
+        {
+            if((newName.Equals(string.Empty))
+                && (newName.All(char.IsLetter))
+                && (currentName.Equals(string.Empty))
+                && (currentName.All(char.IsLetter))
+                && (newGroup.Equals(string.Empty))
+                && (newGroup.All(char.IsLetter)))
+            {
+                XMLDriver.editStudent(newName, currentName, newGroup, studentList);
+            }
         }
 
         public void removeUser(string userName)

@@ -313,7 +313,7 @@ namespace RaptorMath
             }
         }
 
-        public void renameGroup(string newName, string currentName, List<Group> groupList)
+        public void editGroup(string newName, string currentName, List<Group> groupList)
         {
             Group modifiedGroup = new Group();
             foreach (Group group in groupList)
@@ -326,8 +326,36 @@ namespace RaptorMath
                     break;
                 }
             }
-            
         }
+
+        public void editStudent(string newName, string currentName, string newGroup, List<Student> studentList)
+        {
+            Student modifiedStudent = new Student();
+            foreach (Student student in studentList)
+            {
+                if(student.LoginName == currentName)
+                {
+                    modifiedStudent = compareOldAndNewStudentInfo(newName, currentName, newGroup, student.Group);
+                    modifiedStudent.ID = student.ID;
+                    UpdateStudent(student, modifiedStudent);
+                }
+            }
+        }
+
+        private Student compareOldAndNewStudentInfo(string newName, string currentName, string newGroup, string oldGroup)
+        {
+            Student newStudent = new Student();
+            if(newName == currentName)
+                newStudent.LoginName = currentName;
+            else
+                newStudent.LoginName = newName;
+            if (newGroup == oldGroup)
+                newStudent.Group = oldGroup;
+            else
+                newStudent.Group = newGroup;
+            return newStudent;
+        }
+
         private void UpdateGroup(Group group, Group modifiedGroup)
         {
             XDocument data = XDocument.Load(groupXMLPath);
@@ -345,6 +373,37 @@ namespace RaptorMath
                 data.Save(groupXMLPath);
             }
         }
+
+        private void UpdateStudent(Student student, Student modifiedStudent)
+        {
+            XDocument data = XDocument.Load(studentXMLPath);
+
+            XElement studentIDElement =
+                data.Descendants("stu").Where(stu => stu.Attribute("ID").Value.Equals(modifiedStudent.ID.ToString())).FirstOrDefault();
+            XElement studentNameElement =
+                data.Descendants("stu").Where(stu => stu.Element("loginName").Value.Equals(modifiedStudent.LoginName)).FirstOrDefault();
+
+            XDocument groupData = XDocument.Load(groupXMLPath);
+            XElement GroupElement =
+                groupData.Descendants("group").Where(group => group.Element("groupName").Value.Equals(modifiedStudent.Group)).FirstOrDefault();
+
+            if ((studentIDElement != null) && (studentNameElement == null) && (GroupElement != null))
+            {
+                Console.WriteLine(student.ID);
+                Console.WriteLine(student.LoginName);
+                Console.WriteLine(student.Group);
+                studentIDElement.SetElementValue("loginName", modifiedStudent.LoginName);
+                studentIDElement.SetElementValue("group", modifiedStudent.Group);
+                student.ID = modifiedStudent.ID;
+                student.LoginName = modifiedStudent.LoginName;
+                student.Group = modifiedStudent.Group;
+                Console.WriteLine(student.ID);
+                Console.WriteLine(student.LoginName);
+                Console.WriteLine(student.Group);
+                data.Save(studentXMLPath);
+            }
+        }
+
         public bool AddNewDrill(Drill drill, List<Drill> drillList)
         {
             XDocument data = XDocument.Load(drillXMLPath);

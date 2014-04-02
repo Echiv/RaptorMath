@@ -46,6 +46,7 @@ namespace RaptorMath
             localManager = manager;
             InitializeDate();
             InitializeTimer();
+            RefreshCmboBoxes();
 
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
@@ -55,9 +56,44 @@ namespace RaptorMath
             EditStu_DateLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
+        private void RefreshSelectionCmboBo()
+        {
+            EditStu_SelectionCmbo.Items.Clear();
+            foreach (Student student in localManager.studentList)
+            {
+                EditStu_SelectionCmbo.Items.Add(student.LoginName);
+            }
+        }
+
+        private void RefreshNewNameCmbo()
+        {
+            EditStu_NewNameCmbo.Items.Clear();
+            foreach (Student student in localManager.studentList)
+            {
+                EditStu_NewNameCmbo.Items.Add(student.LoginName);
+            }
+        }
+
+        private void RefreshGroupCmbo()
+        {
+            EditStu_GroupCmbo.Items.Clear();
+            foreach (Group group in localManager.groupList)
+            {
+                EditStu_GroupCmbo.Items.Add(group.Name);
+            }
+        }
+
+        private void RefreshCmboBoxes()
+        {
+            RefreshSelectionCmboBo();
+            RefreshNewNameCmbo();
+            RefreshGroupCmbo();
+        }
+
         private void EditStu_SaveStudentBtn_Click(object sender, EventArgs e)
         {
-
+            localManager.RenameStudent(EditStu_NewNameCmbo.Text, EditStu_SelectionCmbo.Text, EditStu_GroupCmbo.Text, localManager.studentList);
+            RefreshCmboBoxes();
         }
 
         private void EditStu_ExitBtn_Click(object sender, EventArgs e)
