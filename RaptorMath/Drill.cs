@@ -94,7 +94,7 @@ namespace RaptorMath
             operand = "Unknown";
             wrong = "0";
             skipped = "0";
-            //curPercent = "0";
+            percent = "0";
         }
 
         public Drill(string driName, string numQuestions, string start, string end, string op)

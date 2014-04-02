@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MathDrill_Form));
             this.MatDri_Timer = new System.Windows.Forms.Timer(this.components);
             this.MathDrill_InputTxt = new System.Windows.Forms.RichTextBox();
             this.MathDrill_SkipBtn = new System.Windows.Forms.Button();
@@ -72,7 +73,7 @@
             this.MathDrill_InputTxt.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.MathDrill_InputTxt.Font = new System.Drawing.Font("Trebuchet MS", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_InputTxt.Location = new System.Drawing.Point(292, 82);
-            this.MathDrill_InputTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MathDrill_InputTxt.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_InputTxt.Multiline = false;
             this.MathDrill_InputTxt.Name = "MathDrill_InputTxt";
             this.MathDrill_InputTxt.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
@@ -86,7 +87,7 @@
             this.MathDrill_SkipBtn.AutoSize = true;
             this.MathDrill_SkipBtn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_SkipBtn.Location = new System.Drawing.Point(154, 199);
-            this.MathDrill_SkipBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MathDrill_SkipBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_SkipBtn.Name = "MathDrill_SkipBtn";
             this.MathDrill_SkipBtn.Size = new System.Drawing.Size(131, 40);
             this.MathDrill_SkipBtn.TabIndex = 3;
@@ -98,7 +99,7 @@
             // 
             this.MathDrill_QuitBtn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_QuitBtn.Location = new System.Drawing.Point(97, 23);
-            this.MathDrill_QuitBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MathDrill_QuitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_QuitBtn.Name = "MathDrill_QuitBtn";
             this.MathDrill_QuitBtn.Size = new System.Drawing.Size(125, 40);
             this.MathDrill_QuitBtn.TabIndex = 4;
@@ -110,7 +111,7 @@
             // 
             this.MathDrill_SubmitBtn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_SubmitBtn.Location = new System.Drawing.Point(292, 199);
-            this.MathDrill_SubmitBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MathDrill_SubmitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_SubmitBtn.Name = "MathDrill_SubmitBtn";
             this.MathDrill_SubmitBtn.Size = new System.Drawing.Size(125, 40);
             this.MathDrill_SubmitBtn.TabIndex = 2;
@@ -229,9 +230,9 @@
             this.MathDrill_UserInfoBox.Controls.Add(this.MathDrill_DateLbl);
             this.MathDrill_UserInfoBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MathDrill_UserInfoBox.Location = new System.Drawing.Point(4, 4);
-            this.MathDrill_UserInfoBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MathDrill_UserInfoBox.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_UserInfoBox.Name = "MathDrill_UserInfoBox";
-            this.MathDrill_UserInfoBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MathDrill_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
             this.MathDrill_UserInfoBox.Size = new System.Drawing.Size(474, 80);
             this.MathDrill_UserInfoBox.TabIndex = 27;
             this.MathDrill_UserInfoBox.TabStop = false;
@@ -240,9 +241,9 @@
             // 
             this.MatDri_ButtonBox.Controls.Add(this.MathDrill_QuitBtn);
             this.MatDri_ButtonBox.Location = new System.Drawing.Point(242, 4);
-            this.MatDri_ButtonBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MatDri_ButtonBox.Margin = new System.Windows.Forms.Padding(4);
             this.MatDri_ButtonBox.Name = "MatDri_ButtonBox";
-            this.MatDri_ButtonBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MatDri_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
             this.MatDri_ButtonBox.Size = new System.Drawing.Size(230, 79);
             this.MatDri_ButtonBox.TabIndex = 28;
             this.MatDri_ButtonBox.TabStop = false;
@@ -260,9 +261,9 @@
             this.MathDrill_ProblemBox.Controls.Add(this.MathDrill_CurrentNumLbl);
             this.MathDrill_ProblemBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MathDrill_ProblemBox.Location = new System.Drawing.Point(4, 92);
-            this.MathDrill_ProblemBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MathDrill_ProblemBox.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_ProblemBox.Name = "MathDrill_ProblemBox";
-            this.MathDrill_ProblemBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MathDrill_ProblemBox.Padding = new System.Windows.Forms.Padding(4);
             this.MathDrill_ProblemBox.Size = new System.Drawing.Size(474, 266);
             this.MathDrill_ProblemBox.TabIndex = 29;
             this.MathDrill_ProblemBox.TabStop = false;
@@ -284,9 +285,9 @@
             this.MathDrill_CoinBox.Controls.Add(this.MathDrill_CoinTxt);
             this.MathDrill_CoinBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MathDrill_CoinBox.Location = new System.Drawing.Point(4, 4);
-            this.MathDrill_CoinBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MathDrill_CoinBox.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_CoinBox.Name = "MathDrill_CoinBox";
-            this.MathDrill_CoinBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MathDrill_CoinBox.Padding = new System.Windows.Forms.Padding(4);
             this.MathDrill_CoinBox.Size = new System.Drawing.Size(230, 79);
             this.MathDrill_CoinBox.TabIndex = 31;
             this.MathDrill_CoinBox.TabStop = false;
@@ -294,7 +295,7 @@
             // MathDrill_CoinPic
             // 
             this.MathDrill_CoinPic.Location = new System.Drawing.Point(3, 15);
-            this.MathDrill_CoinPic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MathDrill_CoinPic.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_CoinPic.Name = "MathDrill_CoinPic";
             this.MathDrill_CoinPic.Size = new System.Drawing.Size(71, 60);
             this.MathDrill_CoinPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -306,7 +307,7 @@
             this.MathDrill_CoinTxt.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.MathDrill_CoinTxt.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_CoinTxt.Location = new System.Drawing.Point(83, 27);
-            this.MathDrill_CoinTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MathDrill_CoinTxt.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_CoinTxt.Multiline = false;
             this.MathDrill_CoinTxt.Name = "MathDrill_CoinTxt";
             this.MathDrill_CoinTxt.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
@@ -354,7 +355,8 @@
             this.ClientSize = new System.Drawing.Size(482, 453);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MathDrill_Form";

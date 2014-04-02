@@ -136,6 +136,7 @@ namespace RaptorMath
                     new XElement("lastLogin", newStudentEntry.LastLogin),
                     new XElement("recPath", newStudentEntry.RecordsPath));
             newStudent.SetAttributeValue("ID", "1");
+            newStudentEntry.ID = Convert.ToInt32(newStudent.Attribute("ID").Value);
 
             XDocument newStudentDoc =
                 new XDocument(
@@ -154,6 +155,7 @@ namespace RaptorMath
                     new XElement("studentPath", newAdminEntry.FilePath),
                     new XElement("lastLogin", newAdminEntry.LastLogin));
             newAdmin.SetAttributeValue("ID", "1");
+            newAdminEntry.ID = Convert.ToInt32(newAdmin.Attribute("ID").Value);
 
             XDocument newAdminDoc =
                 new XDocument(
@@ -389,17 +391,11 @@ namespace RaptorMath
 
             if ((studentIDElement != null) && (studentNameElement == null) && (GroupElement != null))
             {
-                Console.WriteLine(student.ID);
-                Console.WriteLine(student.LoginName);
-                Console.WriteLine(student.Group);
                 studentIDElement.SetElementValue("loginName", modifiedStudent.LoginName);
                 studentIDElement.SetElementValue("group", modifiedStudent.Group);
                 student.ID = modifiedStudent.ID;
                 student.LoginName = modifiedStudent.LoginName;
                 student.Group = modifiedStudent.Group;
-                Console.WriteLine(student.ID);
-                Console.WriteLine(student.LoginName);
-                Console.WriteLine(student.Group);
                 data.Save(studentXMLPath);
             }
         }

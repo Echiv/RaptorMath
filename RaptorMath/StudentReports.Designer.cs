@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentReports_Form));
             this.UseRep_DateLbl = new System.Windows.Forms.Label();
             this.ReportHome_DateRangeBox = new System.Windows.Forms.GroupBox();
             this.ReportHome_StartDate = new System.Windows.Forms.DateTimePicker();
@@ -81,9 +82,9 @@
             this.ReportHome_DateRangeBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ReportHome_DateRangeBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportHome_DateRangeBox.Location = new System.Drawing.Point(4, 216);
-            this.ReportHome_DateRangeBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportHome_DateRangeBox.Margin = new System.Windows.Forms.Padding(4);
             this.ReportHome_DateRangeBox.Name = "ReportHome_DateRangeBox";
-            this.ReportHome_DateRangeBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportHome_DateRangeBox.Padding = new System.Windows.Forms.Padding(4);
             this.ReportHome_DateRangeBox.Size = new System.Drawing.Size(424, 111);
             this.ReportHome_DateRangeBox.TabIndex = 19;
             this.ReportHome_DateRangeBox.TabStop = false;
@@ -94,7 +95,7 @@
             this.ReportHome_StartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ReportHome_StartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportHome_StartDate.Location = new System.Drawing.Point(117, 33);
-            this.ReportHome_StartDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportHome_StartDate.Margin = new System.Windows.Forms.Padding(4);
             this.ReportHome_StartDate.Name = "ReportHome_StartDate";
             this.ReportHome_StartDate.Size = new System.Drawing.Size(264, 23);
             this.ReportHome_StartDate.TabIndex = 26;
@@ -104,7 +105,7 @@
             this.ReportHome_EndDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ReportHome_EndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportHome_EndDate.Location = new System.Drawing.Point(117, 65);
-            this.ReportHome_EndDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportHome_EndDate.Margin = new System.Windows.Forms.Padding(4);
             this.ReportHome_EndDate.Name = "ReportHome_EndDate";
             this.ReportHome_EndDate.Size = new System.Drawing.Size(264, 23);
             this.ReportHome_EndDate.TabIndex = 25;
@@ -138,7 +139,7 @@
             this.ReportHome_GroupReportBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ReportHome_GroupReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportHome_GroupReportBtn.Location = new System.Drawing.Point(218, 24);
-            this.ReportHome_GroupReportBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportHome_GroupReportBtn.Margin = new System.Windows.Forms.Padding(4);
             this.ReportHome_GroupReportBtn.Name = "ReportHome_GroupReportBtn";
             this.ReportHome_GroupReportBtn.Size = new System.Drawing.Size(117, 32);
             this.ReportHome_GroupReportBtn.TabIndex = 0;
@@ -179,9 +180,9 @@
             this.ReportHome_SelectionBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ReportHome_SelectionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportHome_SelectionBox.Location = new System.Drawing.Point(4, 100);
-            this.ReportHome_SelectionBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportHome_SelectionBox.Margin = new System.Windows.Forms.Padding(4);
             this.ReportHome_SelectionBox.Name = "ReportHome_SelectionBox";
-            this.ReportHome_SelectionBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportHome_SelectionBox.Padding = new System.Windows.Forms.Padding(4);
             this.ReportHome_SelectionBox.Size = new System.Drawing.Size(424, 108);
             this.ReportHome_SelectionBox.TabIndex = 46;
             this.ReportHome_SelectionBox.TabStop = false;
@@ -192,7 +193,7 @@
             this.ReportHome_GroupCmbo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ReportHome_GroupCmbo.FormattingEnabled = true;
             this.ReportHome_GroupCmbo.Location = new System.Drawing.Point(218, 66);
-            this.ReportHome_GroupCmbo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportHome_GroupCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.ReportHome_GroupCmbo.Name = "ReportHome_GroupCmbo";
             this.ReportHome_GroupCmbo.Size = new System.Drawing.Size(183, 25);
             this.ReportHome_GroupCmbo.TabIndex = 39;
@@ -204,7 +205,7 @@
             this.ReportHome_StudentCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ReportHome_StudentCmbo.FormattingEnabled = true;
             this.ReportHome_StudentCmbo.Location = new System.Drawing.Point(11, 66);
-            this.ReportHome_StudentCmbo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportHome_StudentCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.ReportHome_StudentCmbo.Name = "ReportHome_StudentCmbo";
             this.ReportHome_StudentCmbo.Size = new System.Drawing.Size(185, 25);
             this.ReportHome_StudentCmbo.TabIndex = 38;
@@ -238,7 +239,7 @@
             this.ReportHome_SingleReportBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ReportHome_SingleReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportHome_SingleReportBtn.Location = new System.Drawing.Point(79, 24);
-            this.ReportHome_SingleReportBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportHome_SingleReportBtn.Margin = new System.Windows.Forms.Padding(4);
             this.ReportHome_SingleReportBtn.Name = "ReportHome_SingleReportBtn";
             this.ReportHome_SingleReportBtn.Size = new System.Drawing.Size(117, 30);
             this.ReportHome_SingleReportBtn.TabIndex = 27;
@@ -252,9 +253,9 @@
             this.ReportHome_ButtonBox.Controls.Add(this.ReportHome_CloseBtn);
             this.ReportHome_ButtonBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ReportHome_ButtonBox.Location = new System.Drawing.Point(4, 449);
-            this.ReportHome_ButtonBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportHome_ButtonBox.Margin = new System.Windows.Forms.Padding(4);
             this.ReportHome_ButtonBox.Name = "ReportHome_ButtonBox";
-            this.ReportHome_ButtonBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportHome_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
             this.ReportHome_ButtonBox.Size = new System.Drawing.Size(424, 50);
             this.ReportHome_ButtonBox.TabIndex = 47;
             this.ReportHome_ButtonBox.TabStop = false;
@@ -290,9 +291,9 @@
             this.ReportHome_SelectRportBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ReportHome_SelectRportBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportHome_SelectRportBox.Location = new System.Drawing.Point(4, 335);
-            this.ReportHome_SelectRportBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportHome_SelectRportBox.Margin = new System.Windows.Forms.Padding(4);
             this.ReportHome_SelectRportBox.Name = "ReportHome_SelectRportBox";
-            this.ReportHome_SelectRportBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportHome_SelectRportBox.Padding = new System.Windows.Forms.Padding(4);
             this.ReportHome_SelectRportBox.Size = new System.Drawing.Size(424, 106);
             this.ReportHome_SelectRportBox.TabIndex = 19;
             this.ReportHome_SelectRportBox.TabStop = false;
@@ -306,9 +307,9 @@
             this.ReportHome_UserInfoBox.Controls.Add(this.ReportHome_WindowLbl);
             this.ReportHome_UserInfoBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ReportHome_UserInfoBox.Location = new System.Drawing.Point(4, 4);
-            this.ReportHome_UserInfoBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportHome_UserInfoBox.Margin = new System.Windows.Forms.Padding(4);
             this.ReportHome_UserInfoBox.Name = "ReportHome_UserInfoBox";
-            this.ReportHome_UserInfoBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportHome_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
             this.ReportHome_UserInfoBox.Size = new System.Drawing.Size(424, 88);
             this.ReportHome_UserInfoBox.TabIndex = 48;
             this.ReportHome_UserInfoBox.TabStop = false;
@@ -372,7 +373,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(432, 503);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "StudentReports_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raptor Math";

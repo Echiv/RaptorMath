@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportGroup_Form));
             this.GroupReport_CloseBtn = new System.Windows.Forms.Button();
             this.GroupReport_Timer = new System.Windows.Forms.Timer(this.components);
             this.GroupReport_DataDisplay = new System.Windows.Forms.DataGridView();
@@ -238,6 +239,7 @@
             this.ClientSize = new System.Drawing.Size(562, 503);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

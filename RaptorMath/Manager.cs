@@ -68,7 +68,12 @@ namespace RaptorMath
             //XML.LoadXML(studentList, adminList);
             XMLDriver.StartUp(adminList, studentList, groupList, mainDrillList);
         }
-
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        // Purpose: Validate the administrator's info and then add the administrator to the admin XML   //
+        // Parameters: adminName, password, LastLogin, and filePath passed from MngUsers Form           //
+        //----------------------------------------------------------------------------------------------//
         public bool CreateUser(string adminName, string password, string LastLogin, string filePath)
         {
             bool isCreatedUser = false;
@@ -80,6 +85,57 @@ namespace RaptorMath
 
             return isCreatedUser;
         }
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        // Purpose: Validate the student info and then add the student to the student XML               //
+        // Parameters: studentName, group, and LastLogin passed from MngUsers Form                      //
+        //----------------------------------------------------------------------------------------------//
+        public bool CreateUser(string group, string studentName, string lastLogin)
+        {
+            bool isCreatedUser = false;
+            Student newStudent = new Student(group, studentName, lastLogin);
+
+            bool isUserInfoValid = isStudentInfoValid(newStudent);
+            if(isUserInfoValid)
+                isCreatedUser = XMLDriver.AddUserToXML(newStudent, studentList);
+            return isCreatedUser;
+        }
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        // Purpose: Validate group info and then add the group to the group XML                         //
+        // Parameters: name is passed in from the MngGroups form                                        //
+        //----------------------------------------------------------------------------------------------//
+        public bool CreateGroup(string name)
+        {
+            bool isCreatedGroup = false;
+
+            bool isGroupValid = isGroupInfoValid(name);
+            if (isGroupValid)
+                isCreatedGroup = XMLDriver.AddNewGroup(name, groupList);
+
+            return isCreatedGroup;
+        }
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        // Purpose: Validate Drill info and then add the drill to the drill XML                         //
+        // Parameters: drillName, numQuestions, minValue, maxValue, add, subtract from CreateDrill form //
+        //----------------------------------------------------------------------------------------------//
+        public bool CreateDrill(string drillName, string numQuestions, string minValue, string maxValue, bool add, bool subtract)
+        {
+            bool isDrillAdded = false;
+            string operand = SetOperand(add, subtract);
+
+            Drill newDrill = new Drill(drillName, numQuestions, minValue, maxValue, operand);
+            bool isDrillValid = isDrillInfoValid(newDrill);
+            if (isDrillValid)
+                isDrillAdded = XMLDriver.AddNewDrill(newDrill, mainDrillList);
+
+            return isDrillAdded;
+        }
+
         public bool isAdminInfoValid(Admin adminToValidate)
         {
             if (!(adminToValidate.LoginName.Equals(string.Empty))
@@ -90,17 +146,6 @@ namespace RaptorMath
                 return true;
             }
             return false;
-        }
-
-        public bool CreateUser(string group, string studentName, string lastLogin)
-        {
-            bool isCreatedUser = false;
-            Student newStudent = new Student(group, studentName, lastLogin);
-
-            bool isUserInfoValid = isStudentInfoValid(newStudent);
-            if(isUserInfoValid)
-                isCreatedUser = XMLDriver.AddUserToXML(newStudent, studentList);
-            return isCreatedUser;
         }
 
         public bool isStudentInfoValid(Student studentToValidate)
@@ -116,17 +161,6 @@ namespace RaptorMath
             return false;
         }
 
-        public bool CreateGroup(string name)
-        {
-            bool isCreatedGroup = false;
-            
-            bool isGroupValid = isGroupInfoValid(name);
-            if (isGroupValid)
-                isCreatedGroup = XMLDriver.AddNewGroup(name, groupList);
-
-            return isCreatedGroup;
-        }
-
         public bool isGroupInfoValid(string groupToValidate)
         {
             if (!(groupToValidate.Equals(string.Empty))
@@ -135,19 +169,6 @@ namespace RaptorMath
                 return true;
             }
             return false;
-        }
-
-        public bool CreateDrill(string drillName, string numQuestions, string minValue, string maxValue, bool add, bool subtract)
-        {
-            bool isDrillAdded = false;
-            string operand = SetOperand(add, subtract);
-
-            Drill newDrill = new Drill(drillName, numQuestions, minValue, maxValue, operand);
-            bool isDrillValid = isDrillInfoValid(newDrill);
-            if (isDrillValid)
-                isDrillAdded = XMLDriver.AddNewDrill(newDrill, mainDrillList);
-
-            return isDrillAdded;
         }
 
         public bool isDrillInfoValid(Drill drillToValidate)
@@ -163,22 +184,10 @@ namespace RaptorMath
             }
             return false;
         }
-        //Validate input before calling edit functions 4/1/14 CJ
-        public void RenameGroup(string newName, string currentName, List<Group> groupList)
-        {
-            if ((newName.Equals(string.Empty))
-                && (newName.All(char.IsLetter))
-                && (currentName.Equals(string.Empty))
-                && (currentName.All(char.IsLetter)))
-            {
-                XMLDriver.editGroup(newName, currentName, groupList);
-            }
-        }
-        //Validate input before calling edit functions 4/1/14 CJ
 
         public void RenameStudent(string newName, string currentName, string newGroup, List<Student> studentList)
         {
-            if((newName.Equals(string.Empty))
+            if ((newName.Equals(string.Empty))
                 && (newName.All(char.IsLetter))
                 && (currentName.Equals(string.Empty))
                 && (currentName.All(char.IsLetter))
@@ -189,30 +198,32 @@ namespace RaptorMath
             }
         }
 
+        public void RenameGroup(string newName, string currentName, List<Group> groupList)
+        {
+            if ((newName.Equals(string.Empty))
+                && (newName.All(char.IsLetter))
+                && (currentName.Equals(string.Empty))
+                && (currentName.All(char.IsLetter)))
+            {
+                XMLDriver.editGroup(newName, currentName, groupList);
+            }
+        }
+
         public void removeUser(string userName)
         {
             bool isAdmin = adminList.Any(admin => admin.LoginName.Equals(userName));
-            Console.WriteLine(isAdmin);
             if (isAdmin)
             {
-                Console.WriteLine("In if(isAdmin)");
                 Admin admin = adminList.Where(adm => adm.LoginName.Equals(userName)).FirstOrDefault();
                 XMLDriver.Delete(admin, adminList);
             }
             bool isStudent = studentList.Any(student => student.LoginName.Equals(userName));
-            Console.WriteLine(isStudent);
             if(isStudent)
             {
-                Console.WriteLine("In if(isStudent)");
-                Console.WriteLine(userName);
                 Student student = studentList.Where(stu => stu.LoginName.Equals(userName)).FirstOrDefault();
-                Console.WriteLine(student.ID.ToString());
-                Console.WriteLine(student.RecordsPath);
                 XMLDriver.Delete(student, studentList);
             }
-
         }
-
 
         public bool IsRunning()
         {

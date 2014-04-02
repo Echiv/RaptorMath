@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SingleReport_Form));
             this.SingleReport__GroupNameLbl = new System.Windows.Forms.Label();
             this.SingleReport_TimeLbl = new System.Windows.Forms.Label();
             this.SingleReport_UserInfoBox = new System.Windows.Forms.GroupBox();
@@ -84,9 +85,9 @@
             this.SingleReport_UserInfoBox.Controls.Add(this.GroupReport_WindowLbl);
             this.SingleReport_UserInfoBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SingleReport_UserInfoBox.Location = new System.Drawing.Point(4, 4);
-            this.SingleReport_UserInfoBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SingleReport_UserInfoBox.Margin = new System.Windows.Forms.Padding(4);
             this.SingleReport_UserInfoBox.Name = "SingleReport_UserInfoBox";
-            this.SingleReport_UserInfoBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SingleReport_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
             this.SingleReport_UserInfoBox.Size = new System.Drawing.Size(554, 100);
             this.SingleReport_UserInfoBox.TabIndex = 42;
             this.SingleReport_UserInfoBox.TabStop = false;
@@ -119,9 +120,9 @@
             this.SingleReport_ButtonBox.Controls.Add(this.SingleReport_CloseBtn);
             this.SingleReport_ButtonBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SingleReport_ButtonBox.Location = new System.Drawing.Point(4, 452);
-            this.SingleReport_ButtonBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SingleReport_ButtonBox.Margin = new System.Windows.Forms.Padding(4);
             this.SingleReport_ButtonBox.Name = "SingleReport_ButtonBox";
-            this.SingleReport_ButtonBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SingleReport_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
             this.SingleReport_ButtonBox.Size = new System.Drawing.Size(554, 47);
             this.SingleReport_ButtonBox.TabIndex = 40;
             this.SingleReport_ButtonBox.TabStop = false;
@@ -130,7 +131,7 @@
             // 
             this.SingleReport_GroupReportBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.SingleReport_GroupReportBtn.Location = new System.Drawing.Point(289, 11);
-            this.SingleReport_GroupReportBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SingleReport_GroupReportBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SingleReport_GroupReportBtn.Name = "SingleReport_GroupReportBtn";
             this.SingleReport_GroupReportBtn.Size = new System.Drawing.Size(124, 28);
             this.SingleReport_GroupReportBtn.TabIndex = 2;
@@ -141,7 +142,7 @@
             // 
             this.SingleReport_CloseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.SingleReport_CloseBtn.Location = new System.Drawing.Point(421, 11);
-            this.SingleReport_CloseBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SingleReport_CloseBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SingleReport_CloseBtn.Name = "SingleReport_CloseBtn";
             this.SingleReport_CloseBtn.Size = new System.Drawing.Size(124, 27);
             this.SingleReport_CloseBtn.TabIndex = 1;
@@ -155,7 +156,7 @@
             this.SingleReport_DrillBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SingleReport_DrillBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SingleReport_DrillBox.Location = new System.Drawing.Point(4, 112);
-            this.SingleReport_DrillBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SingleReport_DrillBox.Margin = new System.Windows.Forms.Padding(4);
             this.SingleReport_DrillBox.Name = "SingleReport_DrillBox";
             this.SingleReport_DrillBox.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.SingleReport_DrillBox.Size = new System.Drawing.Size(554, 332);
@@ -253,7 +254,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(562, 503);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SingleReport_Form";
