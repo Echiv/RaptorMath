@@ -45,6 +45,15 @@ namespace RaptorMath
             localManager = manager;
             InitializeDate();
             InitializeTimer();
+            foreach (Student student in localManager.studentList)
+            {
+                ReportHome_StudentCmbo.Items.Add(student.LoginName);
+            }
+
+            foreach (Group group in localManager.groupList)
+            {
+                ReportHome_GroupCmbo.Items.Add(group.Name);
+            }
 
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
