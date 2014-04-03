@@ -82,7 +82,7 @@ namespace RaptorMath
             MathDrill_CurrentNumLbl.Text = localManager.GetCurrentNumber();
             this.StudentName = localManager.currentStudent.LoginName;
 
-            //this.TotalQuestions = localManager.GetNumQuestions().Replace("questions.", "");
+            this.TotalQuestions = localManager.GetNumQuestions().Replace("questions.", "");
             RefreshRange();
         }
 
@@ -118,14 +118,13 @@ namespace RaptorMath
         // Date: 2/27/2014                                                  //
         //------------------------------------------------------------------//
         private void RefreshRange()
-        {/*
+        {
             firstNum = localManager.CreateRandom();
             secondNum = localManager.CreateRandom();
             //MatDri_FirstNumberLbl.Text = localManager.CreateRandom();
             //MatDri_SecondNumberLbl.Text = localManager.CreateRandom();
             //            MatDri_Concat.Text = String.Concat(MatDri_FirstNumberLbl.Text, " ", localManager.GetOperand(), " ", MatDri_SecondNumberLbl.Text, " =");
             MathDrill_ProblemPrompt.Text = String.Concat(firstNum, " ", localManager.GetOperand(), " ", secondNum, " =");
-        */
         }
 
         //------------------------------------------------------------------//
@@ -134,54 +133,52 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void MatDri_SubmitBtn_Click(object sender, EventArgs e)
         {
-            /*
-            MatDri_ResponseLbl.Visible = false;
+            MathDrill_ResponseLbl.Visible = false;
 
-            if (localManager.IsValidEntry(MatDri_InputType.Text) == false)
+            if (localManager.IsValidEntry(MathDrill_InputTxt.Text) == false)
             {
-                MatDri_InputType.Clear();
+                MathDrill_InputTxt.Clear();
                 MessageBox.Show("Please enter a number.", "Raptor Math", MessageBoxButtons.OK);
-                this.MatDri_InputType.Focus();
+                this.MathDrill_InputTxt.Focus();
                 return;
             }
 
-            if (localManager.IsCorrectAnswer(firstNum, secondNum, MatDri_InputType.Text) == true)
+            if (localManager.IsCorrectAnswer(firstNum, secondNum, MathDrill_InputTxt.Text) == true)
             //if (localManager.IsCorrectAnswer(MatDri_FirstNumberLbl.Text, MatDri_SecondNumberLbl.Text, MatDri_InputType.Text) == true)
             {
-                MatDri_ResponseLbl.ForeColor = Color.Green;
-                MatDri_ResponseLbl.Text = "Correct!";
-                MatDri_ResponseLbl.Visible = true;
-                this.MatDri_InputType.Focus();
+                MathDrill_ResponseLbl.ForeColor = Color.Green;
+                MathDrill_ResponseLbl.Text = "Correct!";
+                MathDrill_ResponseLbl.Visible = true;
+                this.MathDrill_InputTxt.Focus();
             }
             else
             {
-                MatDri_ResponseLbl.ForeColor = Color.Red;
-                MatDri_ResponseLbl.Text = "Incorrect.";
-                MatDri_ResponseLbl.Visible = true;
+                MathDrill_ResponseLbl.ForeColor = Color.Red;
+                MathDrill_ResponseLbl.Text = "Incorrect.";
+                MathDrill_ResponseLbl.Visible = true;
                 localManager.currentStudent.curDrill.IncrementWrong();
-                this.MatDri_InputType.Focus();
+                this.MathDrill_InputTxt.Focus();
             }
 
-            MatDri_InputType.Clear();
+            MathDrill_InputTxt.Clear();
             string currentNum = localManager.GetCurrentNumber();
 
             // Check if the end of the problem set range is reached
             // NOTE: We trim the label's text because somehow a whitespace is added during
             //       the process of calling the manager functions.            
-            if (localManager.ReachesEnd(currentNum, MatDri_TotalNumLbl.Text.Trim()) == true)
+            if (localManager.ReachesEnd(currentNum, MathDrill_TotalNumberLbl.Text.Trim()) == true)
             {
-                MatDri_InputType.Enabled = false;
-                MatDri_SkipBtn.Enabled = false;
-                MatDri_SubmitBtn.Enabled = false;
+                MathDrill_InputTxt.Enabled = false;
+                MathDrill_SkipBtn.Enabled = false;
+                MathDrill_SubmitBtn.Enabled = false;
                 MessageBox.Show("All done!", "Raptor Math", MessageBoxButtons.OK);
                 localManager.UpdateCurrentNumber();
             }
             else
             {
-                MatDri_CurrentNumLbl.Text = localManager.UpdateCurrentNumber();
+                MathDrill_CurrentNumLbl.Text = localManager.UpdateCurrentNumber();
                 RefreshRange();
             }
-             * */
         }
 
         //------------------------------------------------------------------//
@@ -190,30 +187,29 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void MatDri_SkipBtn_Click(object sender, EventArgs e)
         {
-            /*
+            
             // Case: Ask if user wants to skip
             if (MessageBox.Show("Are you sure you want to skip this problem?", "Raptor Math", 
                 MessageBoxButtons.OKCancel) == DialogResult.OK)
             {     
-                MatDri_InputType.Clear();
+                MathDrill_InputTxt.Clear();
                 localManager.currentStudent.curDrill.IncrementSkipped();
                 localManager.currentStudent.curDrill.IncrementWrong();
                 RefreshRange();
                 // CASE: Don't skip the last problem.
-                if (localManager.ReachesEnd(localManager.GetCurrentNumber(), MatDri_TotalNumLbl.Text.Trim()) == true)
+                if (localManager.ReachesEnd(localManager.GetCurrentNumber(), MathDrill_TotalNumberLbl.Text.Trim()) == true)
                 {
-                    MatDri_InputType.Enabled = false;
-                    MatDri_SkipBtn.Enabled = false;
-                    MatDri_SubmitBtn.Enabled = false;
+                    MathDrill_InputTxt.Enabled = false;
+                    MathDrill_SkipBtn.Enabled = false;
+                    MathDrill_SubmitBtn.Enabled = false;
                     MessageBox.Show("Completed! Good job!", "Raptor Math", MessageBoxButtons.OK);
                     localManager.UpdateCurrentNumber();
                     return;
                 }
                 
-                MatDri_CurrentNumLbl.Text = localManager.UpdateCurrentNumber();
+                MathDrill_CurrentNumLbl.Text = localManager.UpdateCurrentNumber();
             }
-            this.MatDri_InputType.Focus();
-             */
+            this.MathDrill_InputTxt.Focus();
         }
 
         //------------------------------------------------------------------//
@@ -222,7 +218,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void MatDri_EndDrillBtn_Click(object sender, EventArgs e)
         {
-            /*if (localManager.currentProblemNumber <= Convert.ToInt32(localManager.currentStudent.curDrill.CurQuestions))
+            if (localManager.currentProblemNumber <= Convert.ToInt32(localManager.currentStudent.curDrill.Questions))
             {
                 if (MessageBox.Show("Are you sure you want to stop? You will have to start from the beginning next time.",
                 "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -241,7 +237,7 @@ namespace RaptorMath
                 localManager.currentStudent.ResetCurrentDrill();
                 localManager.SetWindow(Window.stuHome);
                 this.Close();
-            }*/
+            }
         }
 
         //------------------------------------------------------------------//

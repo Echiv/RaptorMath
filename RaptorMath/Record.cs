@@ -22,6 +22,8 @@ namespace RaptorMath
     //------------------------------------------------------------------//
     public class Record
     {
+        private int id;
+        private string drillName;
         private string dateTaken;
         private string question;
         private string rangeStart;
@@ -34,6 +36,16 @@ namespace RaptorMath
         
         public Dictionary<string, string> recordDictionary; 
 
+        public int ID
+        {
+            get { return this.id; }
+            set { id = value; }
+        }
+        public string DrillName
+        {
+            get { return this.drillName; }
+            set { drillName = value; }
+        }
         public string DateTaken
         {
             get { return this.dateTaken; }
@@ -88,6 +100,8 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         public Record()
         {
+            id = 0;
+            drillName = "Unknown";
             dateTaken = "Unknown";
             question = "0";
             rangeStart = "0";
@@ -102,9 +116,10 @@ namespace RaptorMath
         // Kyle Bridges                                                     //
         // Date: 2/24/2014                                                  //
         //------------------------------------------------------------------//
-        public Record(string stDate, string stQuestion, string stRngStrt, string stRngEnd,
+        public Record(string stDrillName, string stDate, string stQuestion, string stRngStrt, string stRngEnd,
                       string stOp, string stWrong, string stPercent, string stSkipped)
         {
+            drillName = stDrillName;
             dateTaken = stDate;
             question = stQuestion;
             rangeStart = stRngStrt;

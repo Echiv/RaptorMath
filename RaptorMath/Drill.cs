@@ -115,9 +115,9 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         public void IncrementWrong()
         {
-            int numWrong = Convert.ToInt32(wrong);
+            int numWrong = Convert.ToInt32(Wrong);
             numWrong++;
-            wrong = numWrong.ToString();
+            Wrong = numWrong.ToString();
         }
 
         //------------------------------------------------------------------//
@@ -126,9 +126,9 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         public void IncrementSkipped()
         {
-            int numSkipped = Convert.ToInt32(skipped);
+            int numSkipped = Convert.ToInt32(Skipped);
             numSkipped++;
-            skipped = numSkipped.ToString();
+            Skipped = numSkipped.ToString();
         }
 
         public void Reset()

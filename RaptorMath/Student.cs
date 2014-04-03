@@ -30,7 +30,10 @@ namespace RaptorMath
         private string lastLogin;
         private string recordsPath;
 
+        public List<Record> curRecordList = new List<Record>();
         public List<Drill> curDrillList = new List<Drill>();
+
+        public Drill curDrill = new Drill();
 
         public int ID
         {
@@ -60,6 +63,12 @@ namespace RaptorMath
             set { this.recordsPath = value; }
         }
 
+        public List<Drill> CurDrillList
+        {
+            get { return this.curDrillList; }
+            set { this.curDrillList = value; }
+        }
+
         //------------------------------------------------------------------//
         // Harvey Kreitzer                                                  //
         // Date: 2/17/2014                                                  //
@@ -84,9 +93,9 @@ namespace RaptorMath
             lastLogin = login;
         }
 
-        /*public void ResetCurrentDrill()
+        public void ResetCurrentDrill()
         {
-            curDrill.Reset();
-        }*/
+            curDrill = new Drill();
+        }
     }
 }

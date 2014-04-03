@@ -112,6 +112,7 @@
             this.StuHome_DrillDdl.Name = "StuHome_DrillDdl";
             this.StuHome_DrillDdl.Size = new System.Drawing.Size(223, 34);
             this.StuHome_DrillDdl.TabIndex = 44;
+            this.StuHome_DrillDdl.SelectionChangeCommitted += new System.EventHandler(this.StuHome_DrillDdl_SelectionChangeCommitted);
             // 
             // StuHome_ChooseLbl
             // 
@@ -123,7 +124,6 @@
             this.StuHome_ChooseLbl.Size = new System.Drawing.Size(303, 35);
             this.StuHome_ChooseLbl.TabIndex = 2;
             this.StuHome_ChooseLbl.Text = "Choose your adventure!";
-            this.StuHome_ChooseLbl.Click += new System.EventHandler(this.StuHome_ChooseLbl_Click);
             // 
             // StuHome_StartDrillBtn
             // 
@@ -172,7 +172,6 @@
             this.StuHome_WindowLbl.Size = new System.Drawing.Size(146, 26);
             this.StuHome_WindowLbl.TabIndex = 23;
             this.StuHome_WindowLbl.Text = "Student Home";
-            this.StuHome_WindowLbl.Click += new System.EventHandler(this.StuHome_WindowLbl_Click_1);
             // 
             // StuHome_TimeLbl
             // 

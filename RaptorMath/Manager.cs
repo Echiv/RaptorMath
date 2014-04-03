@@ -47,6 +47,7 @@ namespace RaptorMath
         public List<Drill> mainDrillList = new List<Drill>();
         public Student currentStudent = new Student();
         public Admin currentAdmin = new Admin();
+        public Drill currentDrill = new Drill();
         public Random random = new Random();
         XMLParser XML = new XMLParser();
         XMLDriver XMLDriver = new XMLDriver();
@@ -63,7 +64,7 @@ namespace RaptorMath
             studentXMLPath = System.IO.Path.Combine(dataDirectory, studentFile);
             groupXMLPath = System.IO.Path.Combine(dataDirectory, groupFile);
             drillXMLPath = System.IO.Path.Combine(dataDirectory, drillFile);
-            XMLDriver localXMLDriver = new XMLDriver(adminXMLPath, studentXMLPath, groupXMLPath, drillXMLPath);
+            XMLDriver localXMLDriver = new XMLDriver(adminXMLPath, studentXMLPath, groupXMLPath, drillXMLPath, dataDirectory);
             XMLDriver = localXMLDriver;
             //XML.LoadXML(studentList, adminList);
             XMLDriver.StartUp(adminList, studentList, groupList, mainDrillList);
@@ -201,9 +202,9 @@ namespace RaptorMath
         public void RenameGroup(string newName, string currentName, List<Group> groupList)
         {
             if (!(newName.Equals(string.Empty))
-                && (newName.All(char.IsLetter))
+                && (newName.All(char.IsLetterOrDigit))
                 && !(currentName.Equals(string.Empty))
-                && (currentName.All(char.IsLetter)))
+                && (currentName.All(char.IsLetterOrDigit)))
             {
                 XMLDriver.editGroup(newName, currentName, groupList);
             }
@@ -223,6 +224,40 @@ namespace RaptorMath
                 Student student = studentList.Where(stu => stu.LoginName.Equals(userName)).FirstOrDefault();
                 XMLDriver.Delete(student, studentList);
             }
+        }
+
+        public void AssignDrill(string studentName, string drillName)
+        {
+            Student student = studentList.Where(stu => stu.LoginName.Equals(studentName)).FirstOrDefault();
+            Drill drill = mainDrillList.Where(dri => dri.DrillName.Equals(drillName)).FirstOrDefault();
+            Console.WriteLine(drill.DrillName);
+            AddDrillToStudent(student, drill);
+        }
+
+        public void UnassignDrill(string studentName, string drillName)
+        {
+            Student student = studentList.Where(stu => stu.LoginName.Equals(studentName)).FirstOrDefault();
+            Drill drill = mainDrillList.Where(dri => dri.DrillName.Equals(drillName)).FirstOrDefault();
+            RemoveDrillFromStudent(student, drill);
+        }
+
+        public Student FindStudentWithName(string studentName)
+        {
+            Student foundStudent = studentList.Where(stu => stu.LoginName.Equals(studentName)).FirstOrDefault();
+            //Console.WriteLine(foundStudent.curDrillList.Count);
+            //Console.WriteLine(foundStudent.curDrillList[0].DrillName);
+            //Console.WriteLine(foundStudent.curDrillList[1].DrillName);
+            return (foundStudent);
+        }
+
+        public void AddDrillToStudent(Student student, Drill drillToAdd)
+        {
+            XMLDriver.AddDrillToStudentXML(student, drillToAdd);
+        }
+
+        public void RemoveDrillFromStudent(Student student, Drill drillToRemove)
+        {
+            XMLDriver.RemoveDrillFromStudentXML(student, drillToRemove);
         }
 
         public bool IsRunning()
@@ -428,13 +463,12 @@ namespace RaptorMath
         // Kyle Bridges                                                     //
         // Date: 2/26/2014                                                  //
         //------------------------------------------------------------------//
-        /*public string GetNumQuestions()
+        public string GetNumQuestions()
         {
-**need to fix drills**
-            string currentQuestions = currentStudent.curDrill.CurQuestions;
+            string currentQuestions = currentStudent.curDrill.Questions;
             currentQuestions = String.Concat(currentQuestions, " questions.");
             return currentQuestions;
-        }*/
+        }
 
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //
@@ -482,34 +516,32 @@ namespace RaptorMath
         // Purpose: Generate a random number between the set parameters.    //
         //------------------------------------------------------------------//
 
-        /*public string CreateRandom()
+        public string CreateRandom()
         {
             // NOTE: Check if the range makes mathematical sense.
             //       ex) Start = 5, End = -1
-            //       Maybe move this checking to the Admin side?
-**need to fix drills**            
-            string startRange = currentStudent.curDrill.CurRangeStart;
-            string endRange = currentStudent.curDrill.CurRangeEnd;
+            //       Maybe move this checking to the Admin side?         
+            string startRange = currentStudent.curDrill.RangeStart;
+            string endRange = currentStudent.curDrill.RangeEnd;
 
             // NOTE: We add one to whatever the RangeEnd is due to the way random.Next functions
             //       ex) random.Next(1, 11) generates a number between 1 and 11.
             int randomNumber = random.Next(Convert.ToInt32(startRange), Convert.ToInt32(endRange) + 1);
             return randomNumber.ToString();
-        }*/
+        }
 
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //
         // Date: 2/27/2014                                                  //
         //------------------------------------------------------------------//
-        /*public string GetOperand()
+        public string GetOperand()
         {
-**need to fix drills**
             // NOTE: Error if no operand or mislabeled
-            if (currentStudent.curDrill.CurOperand == "addition")
+            if (currentStudent.curDrill.Operand == "addition")
                 return "+";
             else
                 return "-";
-        }*/
+        }
 
         //------------------------------------------------------------------//
         // Joshua Boone                                                     //
@@ -615,13 +647,11 @@ namespace RaptorMath
         // Kyle Bridges                                                     //
         // Date: 2/27/2014                                                  //
         //------------------------------------------------------------------//
-        /*public void SaveDrill()
+        public void SaveDrill()
         {
-**need to fix drills**
-            currentStudent.curDrill.curPercent = CalculatePercentage();
-            XML.WriteCurrentSession(currentStudent.DrillsPath, currentStudent.LoginName, currentStudent.curDrill);
-            AddNewRecordToList();
-        }*/
+            currentStudent.curDrill.Percent = CalculatePercentage();
+            XMLDriver.WriteCurrentSession(currentStudent, currentStudent.curDrill);
+        }
 
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //
@@ -629,7 +659,6 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         /*public void AddNewRecordToList()
         {
-**need to fix drills**
             Record newRecord = new Record();
             newRecord.DateTaken = DateTime.Now.ToString("M/d/yyyy");
             newRecord.Question = currentStudent.curDrill.CurQuestions;
@@ -645,14 +674,13 @@ namespace RaptorMath
         // Harvey Kreitzer                                                  //
         // Date: 2/27/2014                                                  //
         //------------------------------------------------------------------//
-        /*public string CalculatePercentage()
+        public string CalculatePercentage()
         {
-**need to fix drills**
-            float wrong = float.Parse(currentStudent.curDrill.CurWrong);
-            float totalNumber = float.Parse(currentStudent.curDrill.CurQuestions);
+            float wrong = float.Parse(currentStudent.curDrill.Wrong);
+            float totalNumber = float.Parse(currentStudent.curDrill.Questions);
             float percentage = 100 - ((wrong / totalNumber) * 100);
             return percentage.ToString();
-        }*/
+        }
 
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //
@@ -777,12 +805,11 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/28/2014                                                  //
         //------------------------------------------------------------------//
-        /*public List<Record> GenerateRecord(DateTime first, DateTime second)
+        public List<Record> GenerateRecord(DateTime first, DateTime second)
         {
-* **need to fix drills**
             string date;
             List<Record> recordList = new List<Record>();
-            foreach (Record record in currentStudent.reportList)
+            foreach (Record record in currentStudent.curRecordList)
             {
                 date = record.DateTaken;
                 if ((DateTime.Parse(date) >= first) && (DateTime.Parse(date) <= second))
@@ -790,7 +817,7 @@ namespace RaptorMath
             }
 
             return recordList;
-        }*/
+        }
 
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //

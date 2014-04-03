@@ -105,6 +105,12 @@
     <Compile Include="StudentReports.Designer.cs">
       <DependentUpon>StudentReports.cs</DependentUpon>
     </Compile>
+    <Compile Include="UseRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UseRep.Designer.cs">
+      <DependentUpon>UseRep.cs</DependentUpon>
+    </Compile>
     <Compile Include="XMLDriver.cs" />
     <Compile Include="XMLParser.cs" />
     <Compile Include="Manager.cs" />
@@ -176,6 +182,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UseRep.resx">
+      <DependentUpon>UseRep.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

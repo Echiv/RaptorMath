@@ -74,6 +74,7 @@ namespace RaptorMath
             InitializeComponent();
             InitializeDate();
             InitializeTimer();
+            RefreshDrillDdl();
 
             this.StudentName = localManager.currentUser;
             if (localManager.currentStudent.LastLogin == "Unknown")
@@ -102,6 +103,15 @@ namespace RaptorMath
         private void InitializeTimer()
         {
             StuHome_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
+        }
+
+        private void RefreshDrillDdl()
+        {
+            StuHome_DrillDdl.Items.Clear();
+            foreach (Drill drill in localManager.currentStudent.curDrillList)
+            {
+                StuHome_DrillDdl.Items.Add(drill.DrillName);
+            }
         }
 
         //------------------------------------------------------------------//
@@ -156,34 +166,10 @@ namespace RaptorMath
             this.Close();
         }
 
-        private void StuHome_ChooseLbl_Click(object sender, EventArgs e)
+        private void StuHome_DrillDdl_SelectionChangeCommitted(object sender, EventArgs e)
         {
-
-        }
-
-        private void StuHome_WelcomeLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void StuHome_WindowLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void StuHome_LastLoginLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void StuHome_LoginDateLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void StuHome_WindowLbl_Click_1(object sender, EventArgs e)
-        {
-
+            Drill currentDrill = localManager.currentStudent.curDrillList.Where(dri => dri.DrillName.Equals(StuHome_DrillDdl.Text)).FirstOrDefault();
+            localManager.currentStudent.curDrill = currentDrill;
         }
     }
 }

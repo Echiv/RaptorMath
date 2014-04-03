@@ -335,37 +335,6 @@ namespace RaptorMath
             XElement newDrillXML = new XElement(student.LoginName, null);
             rootNode.Add(newDrillXML);
         }
-        public void AddDrill(Drill newDrill, Student student)
-        {
-            student.curDrillList.Add(newDrill);
-        }
-
-        public void AddDrill(Drill newDrill, List<Student> studentList)
-        {
-            foreach (Student student in studentList)
-            {
-                student.curDrillList.Add(newDrill);
-            }
-        }
-
-        public void AddDrill(List<Drill> listOfNewDrills, Student student)
-        {
-            foreach (Drill newDrill in listOfNewDrills)
-            {
-                student.curDrillList.Add(newDrill);
-            }
-        }
-
-        public void AddDrill(List<Drill> listOfNewDrills, List<Student> studentList)
-        {
-            foreach (Student student in studentList)
-            {
-                foreach (Drill newDrill in listOfNewDrills)
-                {
-                    student.curDrillList.Add(newDrill);
-                }
-            }
-        }
 
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //
