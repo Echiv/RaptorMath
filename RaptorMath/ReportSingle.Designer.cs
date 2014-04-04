@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SingleReport_Form));
-            this.SingleReport__GroupNameLbl = new System.Windows.Forms.Label();
+            this.SingleReport__StudentNameLbl = new System.Windows.Forms.Label();
             this.SingleReport_TimeLbl = new System.Windows.Forms.Label();
             this.SingleReport_UserInfoBox = new System.Windows.Forms.GroupBox();
             this.SingleReport_DateLbl = new System.Windows.Forms.Label();
@@ -40,14 +40,13 @@
             this.SingleReport_CloseBtn = new System.Windows.Forms.Button();
             this.SingleReport_DrillBox = new System.Windows.Forms.GroupBox();
             this.SingleReport_DataDisplay = new System.Windows.Forms.DataGridView();
-            this.DateTaken = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Percent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Wrong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumQuestions = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Skipped = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RangeStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SingleReport_Timer = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.DrillName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateTaken = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Questions = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Percent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Skipped = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SingleReport_UserInfoBox.SuspendLayout();
             this.SingleReport_ButtonBox.SuspendLayout();
             this.SingleReport_DrillBox.SuspendLayout();
@@ -55,15 +54,15 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // SingleReport__GroupNameLbl
+            // SingleReport__StudentNameLbl
             // 
-            this.SingleReport__GroupNameLbl.AutoSize = true;
-            this.SingleReport__GroupNameLbl.Location = new System.Drawing.Point(7, 48);
-            this.SingleReport__GroupNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.SingleReport__GroupNameLbl.Name = "SingleReport__GroupNameLbl";
-            this.SingleReport__GroupNameLbl.Size = new System.Drawing.Size(114, 17);
-            this.SingleReport__GroupNameLbl.TabIndex = 37;
-            this.SingleReport__GroupNameLbl.Text = "<Student Name>";
+            this.SingleReport__StudentNameLbl.AutoSize = true;
+            this.SingleReport__StudentNameLbl.Location = new System.Drawing.Point(7, 48);
+            this.SingleReport__StudentNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SingleReport__StudentNameLbl.Name = "SingleReport__StudentNameLbl";
+            this.SingleReport__StudentNameLbl.Size = new System.Drawing.Size(114, 17);
+            this.SingleReport__StudentNameLbl.TabIndex = 37;
+            this.SingleReport__StudentNameLbl.Text = "<Student Name>";
             // 
             // SingleReport_TimeLbl
             // 
@@ -79,7 +78,7 @@
             // 
             // SingleReport_UserInfoBox
             // 
-            this.SingleReport_UserInfoBox.Controls.Add(this.SingleReport__GroupNameLbl);
+            this.SingleReport_UserInfoBox.Controls.Add(this.SingleReport__StudentNameLbl);
             this.SingleReport_UserInfoBox.Controls.Add(this.SingleReport_DateLbl);
             this.SingleReport_UserInfoBox.Controls.Add(this.SingleReport_TimeLbl);
             this.SingleReport_UserInfoBox.Controls.Add(this.GroupReport_WindowLbl);
@@ -170,12 +169,11 @@
             this.SingleReport_DataDisplay.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.SingleReport_DataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.SingleReport_DataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DrillName,
             this.DateTaken,
+            this.Questions,
             this.Percent,
-            this.Wrong,
-            this.NumQuestions,
-            this.Skipped,
-            this.RangeStart});
+            this.Skipped});
             this.SingleReport_DataDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SingleReport_DataDisplay.Location = new System.Drawing.Point(5, 22);
             this.SingleReport_DataDisplay.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -183,48 +181,6 @@
             this.SingleReport_DataDisplay.RowHeadersVisible = false;
             this.SingleReport_DataDisplay.Size = new System.Drawing.Size(544, 304);
             this.SingleReport_DataDisplay.TabIndex = 38;
-            // 
-            // DateTaken
-            // 
-            this.DateTaken.HeaderText = "Date Taken";
-            this.DateTaken.Name = "DateTaken";
-            this.DateTaken.ReadOnly = true;
-            this.DateTaken.Width = 117;
-            // 
-            // Percent
-            // 
-            this.Percent.HeaderText = "Total Time";
-            this.Percent.Name = "Percent";
-            this.Percent.ReadOnly = true;
-            this.Percent.Width = 110;
-            // 
-            // Wrong
-            // 
-            this.Wrong.HeaderText = "Questions";
-            this.Wrong.Name = "Wrong";
-            this.Wrong.ReadOnly = true;
-            this.Wrong.Width = 106;
-            // 
-            // NumQuestions
-            // 
-            this.NumQuestions.HeaderText = "Percent";
-            this.NumQuestions.Name = "NumQuestions";
-            this.NumQuestions.ReadOnly = true;
-            this.NumQuestions.Width = 89;
-            // 
-            // Skipped
-            // 
-            this.Skipped.HeaderText = "Wrong";
-            this.Skipped.Name = "Skipped";
-            this.Skipped.ReadOnly = true;
-            this.Skipped.Width = 80;
-            // 
-            // RangeStart
-            // 
-            this.RangeStart.HeaderText = "Skipped";
-            this.RangeStart.Name = "RangeStart";
-            this.RangeStart.ReadOnly = true;
-            this.RangeStart.Width = 91;
             // 
             // SingleReport_Timer
             // 
@@ -248,6 +204,41 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(562, 503);
             this.tableLayoutPanel1.TabIndex = 43;
+            // 
+            // DrillName
+            // 
+            this.DrillName.HeaderText = "Drill Name";
+            this.DrillName.Name = "DrillName";
+            this.DrillName.ReadOnly = true;
+            this.DrillName.Width = 108;
+            // 
+            // DateTaken
+            // 
+            this.DateTaken.HeaderText = "Date Taken";
+            this.DateTaken.Name = "DateTaken";
+            this.DateTaken.ReadOnly = true;
+            this.DateTaken.Width = 117;
+            // 
+            // Questions
+            // 
+            this.Questions.HeaderText = "# Questions";
+            this.Questions.Name = "Questions";
+            this.Questions.ReadOnly = true;
+            this.Questions.Width = 120;
+            // 
+            // Percent
+            // 
+            this.Percent.HeaderText = "% Correct";
+            this.Percent.Name = "Percent";
+            this.Percent.ReadOnly = true;
+            this.Percent.Width = 104;
+            // 
+            // Skipped
+            // 
+            this.Skipped.HeaderText = "Skipped";
+            this.Skipped.Name = "Skipped";
+            this.Skipped.ReadOnly = true;
+            this.Skipped.Width = 91;
             // 
             // SingleReport_Form
             // 
@@ -273,7 +264,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label SingleReport__GroupNameLbl;
+        private System.Windows.Forms.Label SingleReport__StudentNameLbl;
         private System.Windows.Forms.Label SingleReport_TimeLbl;
         private System.Windows.Forms.GroupBox SingleReport_UserInfoBox;
         private System.Windows.Forms.Label SingleReport_DateLbl;
@@ -284,12 +275,11 @@
         private System.Windows.Forms.Timer SingleReport_Timer;
         private System.Windows.Forms.Label GroupReport_WindowLbl;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateTaken;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Percent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Wrong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumQuestions;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Skipped;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RangeStart;
         private System.Windows.Forms.Button SingleReport_GroupReportBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DrillName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateTaken;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Questions;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Percent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Skipped;
     }
 }

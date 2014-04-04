@@ -99,6 +99,7 @@
             this.ReportHome_StartDate.Name = "ReportHome_StartDate";
             this.ReportHome_StartDate.Size = new System.Drawing.Size(264, 23);
             this.ReportHome_StartDate.TabIndex = 26;
+            this.ReportHome_StartDate.ValueChanged += new System.EventHandler(this.ReportHome_StartDate_ValueChanged);
             // 
             // ReportHome_EndDate
             // 
@@ -109,6 +110,7 @@
             this.ReportHome_EndDate.Name = "ReportHome_EndDate";
             this.ReportHome_EndDate.Size = new System.Drawing.Size(264, 23);
             this.ReportHome_EndDate.TabIndex = 25;
+            this.ReportHome_EndDate.ValueChanged += new System.EventHandler(this.ReportHome_EndDate_ValueChanged);
             // 
             // ReportHome_EndDateLbl
             // 
@@ -145,6 +147,7 @@
             this.ReportHome_GroupReportBtn.TabIndex = 0;
             this.ReportHome_GroupReportBtn.Text = "Group Report";
             this.ReportHome_GroupReportBtn.UseVisualStyleBackColor = true;
+            this.ReportHome_GroupReportBtn.Click += new System.EventHandler(this.ReportHome_GroupReportBtn_Click);
             // 
             // ReportHome_Timer
             // 

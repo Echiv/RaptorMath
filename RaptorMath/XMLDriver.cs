@@ -259,6 +259,7 @@ namespace RaptorMath
             XElement newRecord =
                 new XElement("record",
                     new XElement("drillName", RecordToAdd.DrillName),
+                    new XElement("dataTaken", RecordToAdd.DateTaken),
                     new XElement("questions", RecordToAdd.Question),
                     new XElement("rangeStart", RecordToAdd.RangeStart),
                     new XElement("rangeEnd", RecordToAdd.RangeEnd),
@@ -399,6 +400,7 @@ namespace RaptorMath
                 XElement newRecord =
                 new XElement("record",
                     new XElement("drillName", RecordToAdd.DrillName),
+                    new XElement("dataTaken", RecordToAdd.DateTaken),
                     new XElement("questions", RecordToAdd.Question),
                     new XElement("rangeStart", RecordToAdd.RangeStart),
                     new XElement("rangeEnd", RecordToAdd.RangeEnd),

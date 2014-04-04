@@ -16,6 +16,19 @@ namespace RaptorMath
         // Cody Jordan, Cian Carota                                         //
         // Date: 3/16/2014                                                //
         //------------------------------------------------------------------//
+        private bool startDate = false;
+        private bool endDate = false;
+
+        public bool StartDate
+        {
+            get { return startDate; }
+            set { startDate = value; }
+        }
+        public bool EndDate
+        {
+            get { return endDate; }
+            set { endDate = value; }
+        }
         public string AdminName
         {
             get { return ReportHome_AdminNameLbl.Text; }
@@ -45,6 +58,10 @@ namespace RaptorMath
             localManager = manager;
             InitializeDate();
             InitializeTimer();
+
+            ReportHome_SingleReportBtn.Enabled = false;
+            ReportHome_GroupReportBtn.Enabled = false;
+
             foreach (Student student in localManager.studentList)
             {
                 ReportHome_StudentCmbo.Items.Add(student.LoginName);
@@ -81,7 +98,39 @@ namespace RaptorMath
 
         private void ReportHome_SingleReportBtn_Click(object sender, EventArgs e)
         {
+            localManager.StartDate = DateTime.Parse(ReportHome_StartDate.Text);
+            localManager.EndDate = DateTime.Parse(ReportHome_EndDate.Text);
+            localManager.reportStudent = ReportHome_StudentCmbo.Text;
+            localManager.SetWindow(Window.reportSingle);
+            this.Close();
+        }
 
+        private void ReportHome_GroupReportBtn_Click(object sender, EventArgs e)
+        {
+            localManager.StartDate = DateTime.Parse(ReportHome_StartDate.Text);
+            localManager.EndDate = DateTime.Parse(ReportHome_EndDate.Text);
+            localManager.SetWindow(Window.reportGroup);
+            this.Close();
+        }
+
+        private void ReportHome_StartDate_ValueChanged(object sender, EventArgs e)
+        {
+            startDate = true;
+            if (startDate && endDate)
+            {
+                ReportHome_SingleReportBtn.Enabled = true;
+                ReportHome_GroupReportBtn.Enabled = true;
+            }
+        }
+
+        private void ReportHome_EndDate_ValueChanged(object sender, EventArgs e)
+        {
+            endDate = true;
+            if (startDate && endDate)
+            {
+                ReportHome_SingleReportBtn.Enabled = true;
+                ReportHome_GroupReportBtn.Enabled = true;
+            }
         }
     }
 }
