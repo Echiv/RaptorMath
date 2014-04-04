@@ -105,7 +105,7 @@
             this.MngUsers_WindowLbl.AutoSize = true;
             this.MngUsers_WindowLbl.Location = new System.Drawing.Point(5, 14);
             this.MngUsers_WindowLbl.Name = "MngUsers_WindowLbl";
-            this.MngUsers_WindowLbl.Size = new System.Drawing.Size(112, 17);
+            this.MngUsers_WindowLbl.Size = new System.Drawing.Size(88, 13);
             this.MngUsers_WindowLbl.TabIndex = 35;
             this.MngUsers_WindowLbl.Text = "Manage Users";
             // 
@@ -115,7 +115,7 @@
             this.MngUser_AdminNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUser_AdminNameLbl.Location = new System.Drawing.Point(5, 39);
             this.MngUser_AdminNameLbl.Name = "MngUser_AdminNameLbl";
-            this.MngUser_AdminNameLbl.Size = new System.Drawing.Size(63, 17);
+            this.MngUser_AdminNameLbl.Size = new System.Drawing.Size(48, 13);
             this.MngUser_AdminNameLbl.TabIndex = 34;
             this.MngUser_AdminNameLbl.Text = "<Admin>";
             // 
@@ -127,7 +127,7 @@
             this.MngUsers_TimeLbl.Location = new System.Drawing.Point(316, 39);
             this.MngUsers_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngUsers_TimeLbl.Name = "MngUsers_TimeLbl";
-            this.MngUsers_TimeLbl.Size = new System.Drawing.Size(55, 17);
+            this.MngUsers_TimeLbl.Size = new System.Drawing.Size(42, 13);
             this.MngUsers_TimeLbl.TabIndex = 33;
             this.MngUsers_TimeLbl.Text = "<Time>";
             // 
@@ -139,7 +139,7 @@
             this.MngUsers_DateLbl.Location = new System.Drawing.Point(317, 14);
             this.MngUsers_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngUsers_DateLbl.Name = "MngUsers_DateLbl";
-            this.MngUsers_DateLbl.Size = new System.Drawing.Size(54, 17);
+            this.MngUsers_DateLbl.Size = new System.Drawing.Size(42, 13);
             this.MngUsers_DateLbl.TabIndex = 32;
             this.MngUsers_DateLbl.Text = "<Date>";
             // 
@@ -176,8 +176,8 @@
             this.MngUsers_GroupCmbo.Location = new System.Drawing.Point(149, 156);
             this.MngUsers_GroupCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngUsers_GroupCmbo.Name = "MngUsers_GroupCmbo";
-            this.MngUsers_GroupCmbo.Size = new System.Drawing.Size(169, 24);
-            this.MngUsers_GroupCmbo.TabIndex = 14;
+            this.MngUsers_GroupCmbo.Size = new System.Drawing.Size(169, 21);
+            this.MngUsers_GroupCmbo.TabIndex = 5;
             // 
             // MngUsers_NameCmbo
             // 
@@ -187,8 +187,8 @@
             this.MngUsers_NameCmbo.Location = new System.Drawing.Point(149, 50);
             this.MngUsers_NameCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngUsers_NameCmbo.Name = "MngUsers_NameCmbo";
-            this.MngUsers_NameCmbo.Size = new System.Drawing.Size(169, 24);
-            this.MngUsers_NameCmbo.TabIndex = 13;
+            this.MngUsers_NameCmbo.Size = new System.Drawing.Size(169, 21);
+            this.MngUsers_NameCmbo.TabIndex = 2;
             // 
             // MngUsers_ConfirmPassword
             // 
@@ -196,7 +196,7 @@
             this.MngUsers_ConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_ConfirmPassword.Location = new System.Drawing.Point(53, 122);
             this.MngUsers_ConfirmPassword.Name = "MngUsers_ConfirmPassword";
-            this.MngUsers_ConfirmPassword.Size = new System.Drawing.Size(69, 34);
+            this.MngUsers_ConfirmPassword.Size = new System.Drawing.Size(53, 26);
             this.MngUsers_ConfirmPassword.TabIndex = 12;
             this.MngUsers_ConfirmPassword.Text = "Confirm \r\nPassword";
             // 
@@ -207,7 +207,7 @@
             this.MngUsers_ConfirmPasswordTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_ConfirmPasswordTxt.Name = "MngUsers_ConfirmPasswordTxt";
             this.MngUsers_ConfirmPasswordTxt.Size = new System.Drawing.Size(169, 26);
-            this.MngUsers_ConfirmPasswordTxt.TabIndex = 11;
+            this.MngUsers_ConfirmPasswordTxt.TabIndex = 4;
             this.MngUsers_ConfirmPasswordTxt.Text = "";
             // 
             // MngUsers_SaveUserBtm
@@ -218,7 +218,7 @@
             this.MngUsers_SaveUserBtm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_SaveUserBtm.Name = "MngUsers_SaveUserBtm";
             this.MngUsers_SaveUserBtm.Size = new System.Drawing.Size(115, 33);
-            this.MngUsers_SaveUserBtm.TabIndex = 10;
+            this.MngUsers_SaveUserBtm.TabIndex = 6;
             this.MngUsers_SaveUserBtm.Text = "Save User";
             this.MngUsers_SaveUserBtm.UseVisualStyleBackColor = true;
             this.MngUsers_SaveUserBtm.Click += new System.EventHandler(this.MngUsers_SaveUserBtm_Click);
@@ -230,7 +230,7 @@
             this.MngUsers_PasswordTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_PasswordTxt.Name = "MngUsers_PasswordTxt";
             this.MngUsers_PasswordTxt.Size = new System.Drawing.Size(169, 26);
-            this.MngUsers_PasswordTxt.TabIndex = 9;
+            this.MngUsers_PasswordTxt.TabIndex = 3;
             this.MngUsers_PasswordTxt.Text = "";
             // 
             // MngUsers_GroupLbl
@@ -239,7 +239,7 @@
             this.MngUsers_GroupLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_GroupLbl.Location = new System.Drawing.Point(53, 156);
             this.MngUsers_GroupLbl.Name = "MngUsers_GroupLbl";
-            this.MngUsers_GroupLbl.Size = new System.Drawing.Size(48, 17);
+            this.MngUsers_GroupLbl.Size = new System.Drawing.Size(36, 13);
             this.MngUsers_GroupLbl.TabIndex = 6;
             this.MngUsers_GroupLbl.Text = "Group";
             // 
@@ -249,7 +249,7 @@
             this.MngUsers_PasswordLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_PasswordLbl.Location = new System.Drawing.Point(53, 86);
             this.MngUsers_PasswordLbl.Name = "MngUsers_PasswordLbl";
-            this.MngUsers_PasswordLbl.Size = new System.Drawing.Size(69, 17);
+            this.MngUsers_PasswordLbl.Size = new System.Drawing.Size(53, 13);
             this.MngUsers_PasswordLbl.TabIndex = 5;
             this.MngUsers_PasswordLbl.Text = "Password";
             // 
@@ -259,7 +259,7 @@
             this.MngUsers_NameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_NameLbl.Location = new System.Drawing.Point(53, 53);
             this.MngUsers_NameLbl.Name = "MngUsers_NameLbl";
-            this.MngUsers_NameLbl.Size = new System.Drawing.Size(45, 17);
+            this.MngUsers_NameLbl.Size = new System.Drawing.Size(35, 13);
             this.MngUsers_NameLbl.TabIndex = 4;
             this.MngUsers_NameLbl.Text = "Name";
             // 
@@ -270,8 +270,8 @@
             this.MngUsers_AdminRdo.Location = new System.Drawing.Point(276, 23);
             this.MngUsers_AdminRdo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_AdminRdo.Name = "MngUsers_AdminRdo";
-            this.MngUsers_AdminRdo.Size = new System.Drawing.Size(68, 21);
-            this.MngUsers_AdminRdo.TabIndex = 3;
+            this.MngUsers_AdminRdo.Size = new System.Drawing.Size(54, 17);
+            this.MngUsers_AdminRdo.TabIndex = 1;
             this.MngUsers_AdminRdo.TabStop = true;
             this.MngUsers_AdminRdo.Text = "Admin";
             this.MngUsers_AdminRdo.UseVisualStyleBackColor = true;
@@ -284,8 +284,8 @@
             this.MngUsers_StudentRdo.Location = new System.Drawing.Point(171, 23);
             this.MngUsers_StudentRdo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_StudentRdo.Name = "MngUsers_StudentRdo";
-            this.MngUsers_StudentRdo.Size = new System.Drawing.Size(78, 21);
-            this.MngUsers_StudentRdo.TabIndex = 2;
+            this.MngUsers_StudentRdo.Size = new System.Drawing.Size(62, 17);
+            this.MngUsers_StudentRdo.TabIndex = 0;
             this.MngUsers_StudentRdo.TabStop = true;
             this.MngUsers_StudentRdo.Text = "Student";
             this.MngUsers_StudentRdo.UseVisualStyleBackColor = true;
@@ -297,7 +297,7 @@
             this.MngUsers_UserTypeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_UserTypeLbl.Location = new System.Drawing.Point(77, 26);
             this.MngUsers_UserTypeLbl.Name = "MngUsers_UserTypeLbl";
-            this.MngUsers_UserTypeLbl.Size = new System.Drawing.Size(74, 17);
+            this.MngUsers_UserTypeLbl.Size = new System.Drawing.Size(56, 13);
             this.MngUsers_UserTypeLbl.TabIndex = 1;
             this.MngUsers_UserTypeLbl.Text = "User Type";
             // 
@@ -325,8 +325,8 @@
             this.MngUsers_UserCmbo.Location = new System.Drawing.Point(128, 21);
             this.MngUsers_UserCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngUsers_UserCmbo.Name = "MngUsers_UserCmbo";
-            this.MngUsers_UserCmbo.Size = new System.Drawing.Size(190, 24);
-            this.MngUsers_UserCmbo.TabIndex = 15;
+            this.MngUsers_UserCmbo.Size = new System.Drawing.Size(190, 21);
+            this.MngUsers_UserCmbo.TabIndex = 0;
             // 
             // MngUsers_RemoveUserBtn
             // 
@@ -336,7 +336,7 @@
             this.MngUsers_RemoveUserBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_RemoveUserBtn.Name = "MngUsers_RemoveUserBtn";
             this.MngUsers_RemoveUserBtn.Size = new System.Drawing.Size(139, 33);
-            this.MngUsers_RemoveUserBtn.TabIndex = 2;
+            this.MngUsers_RemoveUserBtn.TabIndex = 1;
             this.MngUsers_RemoveUserBtn.Text = "Remove User";
             this.MngUsers_RemoveUserBtn.UseVisualStyleBackColor = true;
             this.MngUsers_RemoveUserBtn.Click += new System.EventHandler(this.MngUsers_RemoveUserBtn_Click);
@@ -347,7 +347,7 @@
             this.MngUsers_SelectUserLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_SelectUserLbl.Location = new System.Drawing.Point(27, 25);
             this.MngUsers_SelectUserLbl.Name = "MngUsers_SelectUserLbl";
-            this.MngUsers_SelectUserLbl.Size = new System.Drawing.Size(93, 17);
+            this.MngUsers_SelectUserLbl.Size = new System.Drawing.Size(71, 13);
             this.MngUsers_SelectUserLbl.TabIndex = 0;
             this.MngUsers_SelectUserLbl.Text = "Select a User";
             // 
@@ -366,11 +366,12 @@
             // 
             // MngUsers_CloseBtn
             // 
+            this.MngUsers_CloseBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.MngUsers_CloseBtn.Location = new System.Drawing.Point(149, 17);
             this.MngUsers_CloseBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_CloseBtn.Name = "MngUsers_CloseBtn";
             this.MngUsers_CloseBtn.Size = new System.Drawing.Size(115, 27);
-            this.MngUsers_CloseBtn.TabIndex = 18;
+            this.MngUsers_CloseBtn.TabIndex = 0;
             this.MngUsers_CloseBtn.Text = "Close";
             this.MngUsers_CloseBtn.UseVisualStyleBackColor = true;
             this.MngUsers_CloseBtn.Click += new System.EventHandler(this.MngUsers_CloseBtn_Click);
@@ -381,7 +382,7 @@
             this.MngUsers_ExitBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_ExitBtn.Name = "MngUsers_ExitBtn";
             this.MngUsers_ExitBtn.Size = new System.Drawing.Size(115, 27);
-            this.MngUsers_ExitBtn.TabIndex = 17;
+            this.MngUsers_ExitBtn.TabIndex = 1;
             this.MngUsers_ExitBtn.Text = "Exit";
             this.MngUsers_ExitBtn.UseVisualStyleBackColor = true;
             this.MngUsers_ExitBtn.Click += new System.EventHandler(this.MngUsers_ExitBtn_Click);
@@ -395,6 +396,7 @@
             // MngUsers_Form
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.CancelButton = this.MngUsers_CloseBtn;
             this.ClientSize = new System.Drawing.Size(432, 503);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

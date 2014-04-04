@@ -367,6 +367,7 @@
             // AdminHome_LogoutBtn
             // 
             this.AdminHome_LogoutBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.AdminHome_LogoutBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.AdminHome_LogoutBtn.Location = new System.Drawing.Point(103, 14);
             this.AdminHome_LogoutBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AdminHome_LogoutBtn.Name = "AdminHome_LogoutBtn";
@@ -423,7 +424,9 @@
             // 
             // AdminHome_Form
             // 
+            this.AcceptButton = this.AdminHome_SaveBtn;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.CancelButton = this.AdminHome_LogoutBtn;
             this.ClientSize = new System.Drawing.Size(432, 503);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

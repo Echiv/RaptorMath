@@ -61,7 +61,7 @@
             this.EditStu_WindowLbl.Location = new System.Drawing.Point(8, 18);
             this.EditStu_WindowLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditStu_WindowLbl.Name = "EditStu_WindowLbl";
-            this.EditStu_WindowLbl.Size = new System.Drawing.Size(105, 17);
+            this.EditStu_WindowLbl.Size = new System.Drawing.Size(83, 13);
             this.EditStu_WindowLbl.TabIndex = 0;
             this.EditStu_WindowLbl.Text = "Edit Students";
             // 
@@ -76,7 +76,7 @@
             this.EditStu_UserInfoBox.Name = "EditStu_UserInfoBox";
             this.EditStu_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
             this.EditStu_UserInfoBox.Size = new System.Drawing.Size(424, 85);
-            this.EditStu_UserInfoBox.TabIndex = 1;
+            this.EditStu_UserInfoBox.TabIndex = 0;
             this.EditStu_UserInfoBox.TabStop = false;
             // 
             // EditStu_TimeLbl
@@ -85,7 +85,7 @@
             this.EditStu_TimeLbl.Location = new System.Drawing.Point(361, 45);
             this.EditStu_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditStu_TimeLbl.Name = "EditStu_TimeLbl";
-            this.EditStu_TimeLbl.Size = new System.Drawing.Size(55, 17);
+            this.EditStu_TimeLbl.Size = new System.Drawing.Size(42, 13);
             this.EditStu_TimeLbl.TabIndex = 2;
             this.EditStu_TimeLbl.Text = "<Time>";
             // 
@@ -95,7 +95,7 @@
             this.EditStu_DateLbl.Location = new System.Drawing.Point(361, 18);
             this.EditStu_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditStu_DateLbl.Name = "EditStu_DateLbl";
-            this.EditStu_DateLbl.Size = new System.Drawing.Size(54, 17);
+            this.EditStu_DateLbl.Size = new System.Drawing.Size(42, 13);
             this.EditStu_DateLbl.TabIndex = 1;
             this.EditStu_DateLbl.Text = "<Date>";
             // 
@@ -105,7 +105,7 @@
             this.EditStu_AdminNameLbl.Location = new System.Drawing.Point(8, 46);
             this.EditStu_AdminNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditStu_AdminNameLbl.Name = "EditStu_AdminNameLbl";
-            this.EditStu_AdminNameLbl.Size = new System.Drawing.Size(63, 17);
+            this.EditStu_AdminNameLbl.Size = new System.Drawing.Size(48, 13);
             this.EditStu_AdminNameLbl.TabIndex = 0;
             this.EditStu_AdminNameLbl.Text = "<Admin>";
             // 
@@ -124,7 +124,7 @@
             this.EditStu_SettingBox.Name = "EditStu_SettingBox";
             this.EditStu_SettingBox.Padding = new System.Windows.Forms.Padding(4);
             this.EditStu_SettingBox.Size = new System.Drawing.Size(424, 327);
-            this.EditStu_SettingBox.TabIndex = 2;
+            this.EditStu_SettingBox.TabIndex = 1;
             this.EditStu_SettingBox.TabStop = false;
             this.EditStu_SettingBox.Text = "Edit Student Settings";
             // 
@@ -136,8 +136,8 @@
             this.EditStu_GroupCmbo.Location = new System.Drawing.Point(167, 146);
             this.EditStu_GroupCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.EditStu_GroupCmbo.Name = "EditStu_GroupCmbo";
-            this.EditStu_GroupCmbo.Size = new System.Drawing.Size(160, 24);
-            this.EditStu_GroupCmbo.TabIndex = 9;
+            this.EditStu_GroupCmbo.Size = new System.Drawing.Size(160, 21);
+            this.EditStu_GroupCmbo.TabIndex = 2;
             // 
             // EditStu_NewNameCmbo
             // 
@@ -147,8 +147,8 @@
             this.EditStu_NewNameCmbo.Location = new System.Drawing.Point(167, 113);
             this.EditStu_NewNameCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.EditStu_NewNameCmbo.Name = "EditStu_NewNameCmbo";
-            this.EditStu_NewNameCmbo.Size = new System.Drawing.Size(160, 24);
-            this.EditStu_NewNameCmbo.TabIndex = 8;
+            this.EditStu_NewNameCmbo.Size = new System.Drawing.Size(160, 21);
+            this.EditStu_NewNameCmbo.TabIndex = 1;
             // 
             // EditStu_SelectionCmbo
             // 
@@ -158,8 +158,8 @@
             this.EditStu_SelectionCmbo.Location = new System.Drawing.Point(167, 77);
             this.EditStu_SelectionCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.EditStu_SelectionCmbo.Name = "EditStu_SelectionCmbo";
-            this.EditStu_SelectionCmbo.Size = new System.Drawing.Size(160, 24);
-            this.EditStu_SelectionCmbo.TabIndex = 7;
+            this.EditStu_SelectionCmbo.Size = new System.Drawing.Size(160, 21);
+            this.EditStu_SelectionCmbo.TabIndex = 0;
             // 
             // EditStu_SaveStudentBtn
             // 
@@ -169,7 +169,7 @@
             this.EditStu_SaveStudentBtn.Margin = new System.Windows.Forms.Padding(4);
             this.EditStu_SaveStudentBtn.Name = "EditStu_SaveStudentBtn";
             this.EditStu_SaveStudentBtn.Size = new System.Drawing.Size(137, 33);
-            this.EditStu_SaveStudentBtn.TabIndex = 6;
+            this.EditStu_SaveStudentBtn.TabIndex = 3;
             this.EditStu_SaveStudentBtn.Text = "Save Student";
             this.EditStu_SaveStudentBtn.UseVisualStyleBackColor = true;
             this.EditStu_SaveStudentBtn.Click += new System.EventHandler(this.EditStu_SaveStudentBtn_Click);
@@ -181,7 +181,7 @@
             this.EditStu_GroupLbl.Location = new System.Drawing.Point(38, 150);
             this.EditStu_GroupLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditStu_GroupLbl.Name = "EditStu_GroupLbl";
-            this.EditStu_GroupLbl.Size = new System.Drawing.Size(79, 17);
+            this.EditStu_GroupLbl.Size = new System.Drawing.Size(61, 13);
             this.EditStu_GroupLbl.TabIndex = 5;
             this.EditStu_GroupLbl.Text = "New Group";
             // 
@@ -192,7 +192,7 @@
             this.EditStu_NameLbl.Location = new System.Drawing.Point(38, 115);
             this.EditStu_NameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditStu_NameLbl.Name = "EditStu_NameLbl";
-            this.EditStu_NameLbl.Size = new System.Drawing.Size(76, 17);
+            this.EditStu_NameLbl.Size = new System.Drawing.Size(60, 13);
             this.EditStu_NameLbl.TabIndex = 4;
             this.EditStu_NameLbl.Text = "New Name";
             // 
@@ -203,7 +203,7 @@
             this.EditStu_SelectStudentLbl.Location = new System.Drawing.Point(38, 77);
             this.EditStu_SelectStudentLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditStu_SelectStudentLbl.Name = "EditStu_SelectStudentLbl";
-            this.EditStu_SelectStudentLbl.Size = new System.Drawing.Size(112, 17);
+            this.EditStu_SelectStudentLbl.Size = new System.Drawing.Size(86, 13);
             this.EditStu_SelectStudentLbl.TabIndex = 0;
             this.EditStu_SelectStudentLbl.Text = "Select a Student";
             // 
@@ -216,7 +216,7 @@
             this.EditStu_ButtonBox.Name = "EditStu_ButtonBox";
             this.EditStu_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
             this.EditStu_ButtonBox.Size = new System.Drawing.Size(424, 67);
-            this.EditStu_ButtonBox.TabIndex = 3;
+            this.EditStu_ButtonBox.TabIndex = 2;
             this.EditStu_ButtonBox.TabStop = false;
             // 
             // EditStu_ExitBtn
@@ -232,6 +232,7 @@
             // 
             // EditStu_CloseBtn
             // 
+            this.EditStu_CloseBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.EditStu_CloseBtn.Location = new System.Drawing.Point(208, 23);
             this.EditStu_CloseBtn.Margin = new System.Windows.Forms.Padding(4);
             this.EditStu_CloseBtn.Name = "EditStu_CloseBtn";
@@ -266,7 +267,9 @@
             // 
             // EditStudents_Form
             // 
+            this.AcceptButton = this.EditStu_SaveStudentBtn;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.CancelButton = this.EditStu_CloseBtn;
             this.ClientSize = new System.Drawing.Size(432, 503);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

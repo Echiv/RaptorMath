@@ -150,6 +150,7 @@
             // CreateDrill_CloseBtn
             // 
             this.CreateDrill_CloseBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.CreateDrill_CloseBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CreateDrill_CloseBtn.Location = new System.Drawing.Point(149, 11);
             this.CreateDrill_CloseBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateDrill_CloseBtn.Name = "CreateDrill_CloseBtn";
@@ -373,7 +374,9 @@
             // 
             // CreateDrill_Form
             // 
+            this.AcceptButton = this.CreateDrill_SaveDrillBtn;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.CancelButton = this.CreateDrill_CloseBtn;
             this.ClientSize = new System.Drawing.Size(432, 503);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

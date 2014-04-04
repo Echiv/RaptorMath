@@ -83,5 +83,14 @@ namespace RaptorMath
         {
 
         }
+
+        private void ReportHome_StudentCmbo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Enter))
+            {
+                //SendKeys.Send("{button1}");
+                ReportHome_SingleReportBtn.PerformClick();
+            }
+        }
     }
 }

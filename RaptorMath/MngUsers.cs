@@ -152,6 +152,15 @@ namespace RaptorMath
             localManager.removeUser(userToBeRemoved);
             RefreshComboBoxes();
             MngUsers_UserCmbo.Text = string.Empty;
-        }        
+        }
+
+        private void MngUsers_UserCmbo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Enter))
+            {
+                SendKeys.Send("{MngUsers_RemoveUserBtn}");
+                //MngUsers_RemoveUserBtn.PerformClick();
+            }
+        }
     }
 }
