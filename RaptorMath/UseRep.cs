@@ -130,7 +130,7 @@ namespace RaptorMath
             }
 
             UseRep_SearchBtn.Enabled = false;
-            List<Record> studentRecords = localManager.GenerateRecord(first, second);
+            List<Record> studentRecords = localManager.GenerateRecord(first, second, "");
 
             // Search by calendar
             foreach (Record record in studentRecords)

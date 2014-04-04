@@ -49,6 +49,9 @@ namespace RaptorMath
         public Admin currentAdmin = new Admin();
         public Drill currentDrill = new Drill();
         public Random random = new Random();
+        public DateTime StartDate = DateTime.Now;
+        public DateTime EndDate = DateTime.Now;
+        public string reportStudent = string.Empty;
         XMLParser XML = new XMLParser();
         XMLDriver XMLDriver = new XMLDriver();
 
@@ -805,12 +808,14 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/28/2014                                                  //
         //------------------------------------------------------------------//
-        public List<Record> GenerateRecord(DateTime first, DateTime second)
+        public List<Record> GenerateRecord(DateTime first, DateTime second, string studentName)
         {
+            Student student = FindStudentWithName(studentName);
             string date;
             List<Record> recordList = new List<Record>();
-            foreach (Record record in currentStudent.curRecordList)
+            foreach (Record record in student.curRecordList)
             {
+                Console.WriteLine(student.curDrillList.Count.ToString());
                 date = record.DateTaken;
                 if ((DateTime.Parse(date) >= first) && (DateTime.Parse(date) <= second))
                     recordList.Add(record);
