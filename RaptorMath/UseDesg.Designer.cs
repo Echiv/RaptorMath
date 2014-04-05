@@ -139,6 +139,7 @@
             // 
             this.UseDesg_passwordBox.Location = new System.Drawing.Point(152, 115);
             this.UseDesg_passwordBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.UseDesg_passwordBox.MaxLength = 20;
             this.UseDesg_passwordBox.Name = "UseDesg_passwordBox";
             this.UseDesg_passwordBox.Size = new System.Drawing.Size(228, 26);
             this.UseDesg_passwordBox.TabIndex = 1;

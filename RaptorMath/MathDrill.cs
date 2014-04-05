@@ -79,6 +79,8 @@ namespace RaptorMath
             InitializeDate();
             InitializeTimer();
 
+            MathDrill_InputTxt.Select();
+
             MathDrill_CurrentNumLbl.Text = localManager.GetCurrentNumber();
             this.StudentName = localManager.currentStudent.LoginName;
 

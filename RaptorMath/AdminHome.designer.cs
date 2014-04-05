@@ -35,7 +35,6 @@
             this.AdminHome_SaveBtn = new System.Windows.Forms.Button();
             this.AdminHome_NewPWLbl = new System.Windows.Forms.Label();
             this.AdminHome_CurrentPWLbl = new System.Windows.Forms.Label();
-            this.AdminHome_CurrentPWTxt = new System.Windows.Forms.RichTextBox();
             this.AdminHome_UserInfoBox = new System.Windows.Forms.GroupBox();
             this.AdminHome_DateLbl = new System.Windows.Forms.Label();
             this.AdminHome_LastLoginLbl = new System.Windows.Forms.Label();
@@ -45,7 +44,8 @@
             this.AdminHome_AdminNameLbl = new System.Windows.Forms.Label();
             this.AdminHome_TimeLbl = new System.Windows.Forms.Label();
             this.AdminHome_PasswordBox = new System.Windows.Forms.GroupBox();
-            this.AdminHome_NewPWTxt = new System.Windows.Forms.RichTextBox();
+            this.AdminHome_NewPWTxt = new System.Windows.Forms.TextBox();
+            this.AdminHome_CurrentPWTxt = new System.Windows.Forms.TextBox();
             this.AdminHome_MngUsersBtn = new System.Windows.Forms.Button();
             this.AdminHome_MngGroupsBtn = new System.Windows.Forms.Button();
             this.AdminHome_UserBox = new System.Windows.Forms.GroupBox();
@@ -110,16 +110,6 @@
             this.AdminHome_CurrentPWLbl.Size = new System.Drawing.Size(90, 13);
             this.AdminHome_CurrentPWLbl.TabIndex = 1;
             this.AdminHome_CurrentPWLbl.Text = "Current Password";
-            // 
-            // AdminHome_CurrentPWTxt
-            // 
-            this.AdminHome_CurrentPWTxt.Location = new System.Drawing.Point(144, 24);
-            this.AdminHome_CurrentPWTxt.Margin = new System.Windows.Forms.Padding(4);
-            this.AdminHome_CurrentPWTxt.Name = "AdminHome_CurrentPWTxt";
-            this.AdminHome_CurrentPWTxt.Size = new System.Drawing.Size(259, 31);
-            this.AdminHome_CurrentPWTxt.TabIndex = 0;
-            this.AdminHome_CurrentPWTxt.Text = "";
-            this.AdminHome_CurrentPWTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AdminHome_PasswordBoxTextBoxes_KeyPress);
             // 
             // AdminHome_UserInfoBox
             // 
@@ -211,11 +201,11 @@
             // 
             // AdminHome_PasswordBox
             // 
+            this.AdminHome_PasswordBox.Controls.Add(this.AdminHome_NewPWTxt);
+            this.AdminHome_PasswordBox.Controls.Add(this.AdminHome_CurrentPWTxt);
             this.AdminHome_PasswordBox.Controls.Add(this.AdminHome_SaveBtn);
             this.AdminHome_PasswordBox.Controls.Add(this.AdminHome_NewPWLbl);
             this.AdminHome_PasswordBox.Controls.Add(this.AdminHome_CurrentPWLbl);
-            this.AdminHome_PasswordBox.Controls.Add(this.AdminHome_NewPWTxt);
-            this.AdminHome_PasswordBox.Controls.Add(this.AdminHome_CurrentPWTxt);
             this.AdminHome_PasswordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminHome_PasswordBox.Location = new System.Drawing.Point(4, 92);
             this.AdminHome_PasswordBox.Margin = new System.Windows.Forms.Padding(4);
@@ -228,13 +218,21 @@
             // 
             // AdminHome_NewPWTxt
             // 
-            this.AdminHome_NewPWTxt.Location = new System.Drawing.Point(144, 74);
-            this.AdminHome_NewPWTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.AdminHome_NewPWTxt.Location = new System.Drawing.Point(144, 75);
+            this.AdminHome_NewPWTxt.MaxLength = 20;
             this.AdminHome_NewPWTxt.Name = "AdminHome_NewPWTxt";
-            this.AdminHome_NewPWTxt.Size = new System.Drawing.Size(259, 34);
-            this.AdminHome_NewPWTxt.TabIndex = 1;
-            this.AdminHome_NewPWTxt.Text = "";
+            this.AdminHome_NewPWTxt.Size = new System.Drawing.Size(259, 20);
+            this.AdminHome_NewPWTxt.TabIndex = 4;
             this.AdminHome_NewPWTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AdminHome_PasswordBoxTextBoxes_KeyPress);
+            // 
+            // AdminHome_CurrentPWTxt
+            // 
+            this.AdminHome_CurrentPWTxt.Location = new System.Drawing.Point(144, 24);
+            this.AdminHome_CurrentPWTxt.MaxLength = 20;
+            this.AdminHome_CurrentPWTxt.Name = "AdminHome_CurrentPWTxt";
+            this.AdminHome_CurrentPWTxt.Size = new System.Drawing.Size(259, 20);
+            this.AdminHome_CurrentPWTxt.TabIndex = 3;
+            this.AdminHome_CurrentPWTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AdminHome_PasswordBoxTextBoxes_KeyPress);
             // 
             // AdminHome_MngUsersBtn
             // 
@@ -459,7 +457,6 @@
         private System.Windows.Forms.Button AdminHome_SaveBtn;
         private System.Windows.Forms.Label AdminHome_NewPWLbl;
         private System.Windows.Forms.Label AdminHome_CurrentPWLbl;
-        private System.Windows.Forms.RichTextBox AdminHome_CurrentPWTxt;
         private System.Windows.Forms.GroupBox AdminHome_UserInfoBox;
         private System.Windows.Forms.Label AdminHome_DateLbl;
         private System.Windows.Forms.Label AdminHome_LastLoginLbl;
@@ -468,7 +465,6 @@
         private System.Windows.Forms.Label AdminHome_AdminNameLbl;
         private System.Windows.Forms.Label AdminHome_TimeLbl;
         private System.Windows.Forms.GroupBox AdminHome_PasswordBox;
-        private System.Windows.Forms.RichTextBox AdminHome_NewPWTxt;
         private System.Windows.Forms.Label AdminHome_WindowLbl;
         private System.Windows.Forms.Button AdminHome_MngUsersBtn;
         private System.Windows.Forms.Button AdminHome_MngGroupsBtn;
@@ -484,6 +480,8 @@
         private System.Windows.Forms.Button AdminHome_ExitBtn;
         private System.Windows.Forms.GroupBox AdminHome_ButtonBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TextBox AdminHome_CurrentPWTxt;
+        private System.Windows.Forms.TextBox AdminHome_NewPWTxt;
 
     }
 }

@@ -76,6 +76,8 @@ namespace RaptorMath
             InitializeComponent();
             InitializeDate();
             InitializeTimer();
+
+            AdminHome_CurrentPWTxt.Select();
 /*
             foreach (String student in localManager.GetStudents())
                 AdminHome_StudentSelection.Items.Add(student);

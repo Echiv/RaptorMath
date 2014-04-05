@@ -76,6 +76,8 @@ namespace RaptorMath
             InitializeTimer();
             RefreshDrillDdl();
 
+            StuHome_DrillDdl.Select();
+
             this.StudentName = localManager.currentUser;
             if (localManager.currentStudent.LastLogin == "Unknown")
                 this.LastLogin = "--/--/----";

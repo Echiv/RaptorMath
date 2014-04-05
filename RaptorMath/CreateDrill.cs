@@ -48,6 +48,8 @@ namespace RaptorMath
             InitializeDate();
             InitializeTimer();
 
+            CreateDrill_AdditionRdo.Select();
+
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 

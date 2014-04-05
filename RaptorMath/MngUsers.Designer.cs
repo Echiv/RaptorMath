@@ -178,6 +178,7 @@
             this.MngUsers_GroupCmbo.Name = "MngUsers_GroupCmbo";
             this.MngUsers_GroupCmbo.Size = new System.Drawing.Size(169, 21);
             this.MngUsers_GroupCmbo.TabIndex = 5;
+            this.MngUsers_GroupCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_AddUserBoxTextBoxes_KeyPress);
             // 
             // MngUsers_NameCmbo
             // 
@@ -189,6 +190,7 @@
             this.MngUsers_NameCmbo.Name = "MngUsers_NameCmbo";
             this.MngUsers_NameCmbo.Size = new System.Drawing.Size(169, 21);
             this.MngUsers_NameCmbo.TabIndex = 2;
+            this.MngUsers_NameCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_AddUserBoxTextBoxes_KeyPress);
             // 
             // MngUsers_ConfirmPassword
             // 
@@ -205,10 +207,12 @@
             this.MngUsers_ConfirmPasswordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_ConfirmPasswordTxt.Location = new System.Drawing.Point(149, 123);
             this.MngUsers_ConfirmPasswordTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MngUsers_ConfirmPasswordTxt.MaxLength = 20;
             this.MngUsers_ConfirmPasswordTxt.Name = "MngUsers_ConfirmPasswordTxt";
             this.MngUsers_ConfirmPasswordTxt.Size = new System.Drawing.Size(169, 26);
             this.MngUsers_ConfirmPasswordTxt.TabIndex = 4;
             this.MngUsers_ConfirmPasswordTxt.Text = "";
+            this.MngUsers_ConfirmPasswordTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_AddUserBoxTextBoxes_KeyPress);
             // 
             // MngUsers_SaveUserBtm
             // 
@@ -228,10 +232,12 @@
             this.MngUsers_PasswordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_PasswordTxt.Location = new System.Drawing.Point(149, 86);
             this.MngUsers_PasswordTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MngUsers_PasswordTxt.MaxLength = 20;
             this.MngUsers_PasswordTxt.Name = "MngUsers_PasswordTxt";
             this.MngUsers_PasswordTxt.Size = new System.Drawing.Size(169, 26);
             this.MngUsers_PasswordTxt.TabIndex = 3;
             this.MngUsers_PasswordTxt.Text = "";
+            this.MngUsers_PasswordTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_AddUserBoxTextBoxes_KeyPress);
             // 
             // MngUsers_GroupLbl
             // 
@@ -327,6 +333,7 @@
             this.MngUsers_UserCmbo.Name = "MngUsers_UserCmbo";
             this.MngUsers_UserCmbo.Size = new System.Drawing.Size(190, 21);
             this.MngUsers_UserCmbo.TabIndex = 0;
+            this.MngUsers_UserCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_RemoveUserBoxTextBoxes_KeyPress);
             // 
             // MngUsers_RemoveUserBtn
             // 

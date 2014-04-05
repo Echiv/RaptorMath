@@ -48,6 +48,8 @@ namespace RaptorMath
             InitializeTimer();
             RefreshCmboBoxes();
 
+            EditStu_SelectionCmbo.Select();
+
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 

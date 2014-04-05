@@ -81,6 +81,8 @@ namespace RaptorMath
             InitializeTimer();
             RefreshComboBoxes();
 
+            MngUsers_StudentRdo.Select();
+
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 
@@ -154,12 +156,19 @@ namespace RaptorMath
             MngUsers_UserCmbo.Text = string.Empty;
         }
 
-        private void MngUsers_UserCmbo_KeyDown(object sender, KeyEventArgs e)
+        private void MngUsers_AddUserBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyCode.Equals(Keys.Enter))
+            if (e.KeyChar == 13)
             {
-                SendKeys.Send("{MngUsers_RemoveUserBtn}");
-                //MngUsers_RemoveUserBtn.PerformClick();
+                MngUsers_SaveUserBtm_Click(sender, e);
+            }
+        }
+
+        private void MngUsers_RemoveUserBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                MngUsers_RemoveUserBtn_Click(sender, e);
             }
         }
     }

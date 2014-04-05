@@ -84,6 +84,8 @@ namespace RaptorMath
             InitializeTimer();
             RefreshCmboBoxes();
 
+            MngGroups_GroupNameCmbo.Select();
+
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 
@@ -121,6 +123,22 @@ namespace RaptorMath
             localManager.RenameGroup(MngGroups_NewNameCmbo.Text, MngGroups_SelectGroupCmbo.Text, localManager.groupList);
             RefreshCmboBoxes();
             ClearCmboBoxes();
+        }
+
+        private void MngGroups_GroupBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                MngGroups_CreateBtn_Click(sender, e);
+            }
+        }
+
+        private void MngGroups_ModifyBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                MngGroups_RenameBtn_Click(sender, e);
+            }
         }
     }
 }

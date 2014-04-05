@@ -72,12 +72,13 @@
             // 
             this.MathDrill_InputTxt.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.MathDrill_InputTxt.Font = new System.Drawing.Font("Trebuchet MS", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MathDrill_InputTxt.Location = new System.Drawing.Point(292, 82);
+            this.MathDrill_InputTxt.Location = new System.Drawing.Point(291, 82);
             this.MathDrill_InputTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.MathDrill_InputTxt.MaxLength = 6;
             this.MathDrill_InputTxt.Multiline = false;
             this.MathDrill_InputTxt.Name = "MathDrill_InputTxt";
             this.MathDrill_InputTxt.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.MathDrill_InputTxt.Size = new System.Drawing.Size(107, 52);
+            this.MathDrill_InputTxt.Size = new System.Drawing.Size(126, 52);
             this.MathDrill_InputTxt.TabIndex = 0;
             this.MathDrill_InputTxt.Text = "";
             this.MathDrill_InputTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MatDri_InputType_KeyPress);

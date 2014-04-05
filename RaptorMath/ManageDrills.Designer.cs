@@ -154,12 +154,13 @@
             // MngDrills_SelectDrillCmbo
             // 
             this.MngDrills_SelectDrillCmbo.FormattingEnabled = true;
-            this.MngDrills_SelectDrillCmbo.Location = new System.Drawing.Point(159, 124);
+            this.MngDrills_SelectDrillCmbo.Location = new System.Drawing.Point(159, 125);
             this.MngDrills_SelectDrillCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_SelectDrillCmbo.Name = "MngDrills_SelectDrillCmbo";
             this.MngDrills_SelectDrillCmbo.Size = new System.Drawing.Size(160, 21);
             this.MngDrills_SelectDrillCmbo.TabIndex = 2;
             this.MngDrills_SelectDrillCmbo.SelectedIndexChanged += new System.EventHandler(this.MngDrills_SelectDrillCmbo_SelectedIndexChanged);
+            this.MngDrills_SelectDrillCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngDrills_PerformBoxTextBoxes_KeyPress);
             // 
             // MngDrills_GroupCmbo
             // 
@@ -170,6 +171,7 @@
             this.MngDrills_GroupCmbo.Size = new System.Drawing.Size(160, 21);
             this.MngDrills_GroupCmbo.TabIndex = 1;
             this.MngDrills_GroupCmbo.SelectedIndexChanged += new System.EventHandler(this.MngDrills_GroupCmbo_SelectedIndexChanged);
+            this.MngDrills_GroupCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngDrills_PerformBoxTextBoxes_KeyPress);
             // 
             // MngDrills_StudentCmbo
             // 
@@ -181,6 +183,7 @@
             this.MngDrills_StudentCmbo.Size = new System.Drawing.Size(160, 21);
             this.MngDrills_StudentCmbo.TabIndex = 0;
             this.MngDrills_StudentCmbo.SelectedIndexChanged += new System.EventHandler(this.MngDrills_StudentCmbo_SelectedIndexChanged);
+            this.MngDrills_StudentCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngDrills_PerformBoxTextBoxes_KeyPress);
             // 
             // MngDrills_AddRmvDrillBtn
             // 

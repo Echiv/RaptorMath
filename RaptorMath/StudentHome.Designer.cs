@@ -302,6 +302,7 @@
             this.StuHome_CoinTxt.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_CoinTxt.Location = new System.Drawing.Point(76, 14);
             this.StuHome_CoinTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.StuHome_CoinTxt.MaxLength = 6;
             this.StuHome_CoinTxt.Multiline = false;
             this.StuHome_CoinTxt.Name = "StuHome_CoinTxt";
             this.StuHome_CoinTxt.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
