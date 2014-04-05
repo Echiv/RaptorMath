@@ -119,6 +119,7 @@
             this.AdminHome_CurrentPWTxt.Size = new System.Drawing.Size(259, 31);
             this.AdminHome_CurrentPWTxt.TabIndex = 0;
             this.AdminHome_CurrentPWTxt.Text = "";
+            this.AdminHome_CurrentPWTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AdminHome_PasswordBoxTextBoxes_KeyPress);
             // 
             // AdminHome_UserInfoBox
             // 
@@ -233,6 +234,7 @@
             this.AdminHome_NewPWTxt.Size = new System.Drawing.Size(259, 34);
             this.AdminHome_NewPWTxt.TabIndex = 1;
             this.AdminHome_NewPWTxt.Text = "";
+            this.AdminHome_NewPWTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AdminHome_PasswordBoxTextBoxes_KeyPress);
             // 
             // AdminHome_MngUsersBtn
             // 

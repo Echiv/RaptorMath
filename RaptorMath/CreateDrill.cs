@@ -100,5 +100,18 @@ namespace RaptorMath
                 
             }
         }
+
+        private void CreateDrill_NumQuestionsTxt_TextChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Event: Text Changed");
+        }
+
+        private void CreateDrill_CreateBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                CreateDrill_SaveDrillBtn_Click(sender, e);
+            }
+        }
     }
 }

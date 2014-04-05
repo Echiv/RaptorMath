@@ -213,6 +213,8 @@
             this.CreateDrill_NumQuestionsTxt.Name = "CreateDrill_NumQuestionsTxt";
             this.CreateDrill_NumQuestionsTxt.Size = new System.Drawing.Size(123, 20);
             this.CreateDrill_NumQuestionsTxt.TabIndex = 0;
+            this.CreateDrill_NumQuestionsTxt.TextChanged += new System.EventHandler(this.CreateDrill_NumQuestionsTxt_TextChanged);
+            this.CreateDrill_NumQuestionsTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CreateDrill_CreateBoxTextBoxes_KeyPress);
             // 
             // CreateDrill_OpRangeBox
             // 
@@ -248,6 +250,7 @@
             this.CreateDrill_MaxValueTxt.Name = "CreateDrill_MaxValueTxt";
             this.CreateDrill_MaxValueTxt.Size = new System.Drawing.Size(123, 20);
             this.CreateDrill_MaxValueTxt.TabIndex = 1;
+            this.CreateDrill_MaxValueTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CreateDrill_CreateBoxTextBoxes_KeyPress);
             // 
             // CreateDrill_MinValueTxt
             // 
@@ -256,6 +259,7 @@
             this.CreateDrill_MinValueTxt.Name = "CreateDrill_MinValueTxt";
             this.CreateDrill_MinValueTxt.Size = new System.Drawing.Size(120, 20);
             this.CreateDrill_MinValueTxt.TabIndex = 0;
+            this.CreateDrill_MinValueTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CreateDrill_CreateBoxTextBoxes_KeyPress);
             // 
             // CreateDrill_MaxValueLbl
             // 
@@ -299,6 +303,7 @@
             this.CreateDrill_DrillNameTxt.Name = "CreateDrill_DrillNameTxt";
             this.CreateDrill_DrillNameTxt.Size = new System.Drawing.Size(120, 20);
             this.CreateDrill_DrillNameTxt.TabIndex = 0;
+            this.CreateDrill_DrillNameTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CreateDrill_CreateBoxTextBoxes_KeyPress);
             // 
             // CreateDrill_DrillNameLbl
             // 
@@ -332,10 +337,11 @@
             this.CreateDrill_SubtactionRdo.Margin = new System.Windows.Forms.Padding(4);
             this.CreateDrill_SubtactionRdo.Name = "CreateDrill_SubtactionRdo";
             this.CreateDrill_SubtactionRdo.Size = new System.Drawing.Size(79, 17);
-            this.CreateDrill_SubtactionRdo.TabIndex = 0;
+            this.CreateDrill_SubtactionRdo.TabIndex = 1;
             this.CreateDrill_SubtactionRdo.TabStop = true;
             this.CreateDrill_SubtactionRdo.Text = "Subtraction";
             this.CreateDrill_SubtactionRdo.UseVisualStyleBackColor = true;
+            this.CreateDrill_SubtactionRdo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CreateDrill_CreateBoxTextBoxes_KeyPress);
             // 
             // CreateDrill_AdditionRdo
             // 
@@ -344,10 +350,11 @@
             this.CreateDrill_AdditionRdo.Margin = new System.Windows.Forms.Padding(4);
             this.CreateDrill_AdditionRdo.Name = "CreateDrill_AdditionRdo";
             this.CreateDrill_AdditionRdo.Size = new System.Drawing.Size(63, 17);
-            this.CreateDrill_AdditionRdo.TabIndex = 1;
+            this.CreateDrill_AdditionRdo.TabIndex = 0;
             this.CreateDrill_AdditionRdo.TabStop = true;
             this.CreateDrill_AdditionRdo.Text = "Addition";
             this.CreateDrill_AdditionRdo.UseVisualStyleBackColor = true;
+            this.CreateDrill_AdditionRdo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CreateDrill_CreateBoxTextBoxes_KeyPress);
             // 
             // tableLayoutPanel1
             // 
@@ -374,7 +381,6 @@
             // 
             // CreateDrill_Form
             // 
-            this.AcceptButton = this.CreateDrill_SaveDrillBtn;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.CreateDrill_CloseBtn;
             this.ClientSize = new System.Drawing.Size(432, 503);

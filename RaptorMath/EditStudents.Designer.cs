@@ -138,6 +138,7 @@
             this.EditStu_GroupCmbo.Name = "EditStu_GroupCmbo";
             this.EditStu_GroupCmbo.Size = new System.Drawing.Size(160, 21);
             this.EditStu_GroupCmbo.TabIndex = 2;
+            this.EditStu_GroupCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditStu_SettingBoxTextBoxes_KeyPress);
             // 
             // EditStu_NewNameCmbo
             // 
@@ -149,6 +150,7 @@
             this.EditStu_NewNameCmbo.Name = "EditStu_NewNameCmbo";
             this.EditStu_NewNameCmbo.Size = new System.Drawing.Size(160, 21);
             this.EditStu_NewNameCmbo.TabIndex = 1;
+            this.EditStu_NewNameCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditStu_SettingBoxTextBoxes_KeyPress);
             // 
             // EditStu_SelectionCmbo
             // 
@@ -160,6 +162,7 @@
             this.EditStu_SelectionCmbo.Name = "EditStu_SelectionCmbo";
             this.EditStu_SelectionCmbo.Size = new System.Drawing.Size(160, 21);
             this.EditStu_SelectionCmbo.TabIndex = 0;
+            this.EditStu_SelectionCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditStu_SettingBoxTextBoxes_KeyPress);
             // 
             // EditStu_SaveStudentBtn
             // 

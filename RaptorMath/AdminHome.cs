@@ -195,6 +195,14 @@ namespace RaptorMath
 
         }
 
+        private void AdminHome_PasswordBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                AdminHome_SaveBtn_Click(sender, e);
+            }
+        }
+
 /*
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //

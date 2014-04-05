@@ -111,5 +111,13 @@ namespace RaptorMath
             localManager.SetWindow(Window.adminHome);
             this.Close();
         }
+
+        private void EditStu_SettingBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                EditStu_SaveStudentBtn_Click(sender, e);
+            }
+        }
     }
 }
