@@ -49,16 +49,19 @@ namespace RaptorMath
         private void RefreshUserDropDownBox()
         {
             MngUsers_FirstNameCmbo.Items.Clear();
-            MngUsers_UserCmbo.Items.Clear();
-            foreach (Student student in localManager.studentList)
+            MngUsers_LastNameCmbo.Items.Clear();
+            MngUsers_RemoveUserCmbo.Items.Clear();
+            foreach (String userFirstName in localManager.GetUsersFirstNames())
             {
-                MngUsers_FirstNameCmbo.Items.Add(student.LoginName);
-                MngUsers_UserCmbo.Items.Add(student.LoginName);
+                MngUsers_FirstNameCmbo.Items.Add(userFirstName);
             }
-            foreach (Admin admin in localManager.adminList)
+            foreach (String userLastName in localManager.GetUsersLastNames())
             {
-                MngUsers_FirstNameCmbo.Items.Add(admin.LoginName);
-                MngUsers_UserCmbo.Items.Add(admin.LoginName);
+                MngUsers_LastNameCmbo.Items.Add(userLastName);
+            }
+            foreach (String userNames in localManager.GetUsers())
+            {
+                MngUsers_RemoveUserCmbo.Items.Add(userNames);
             }
         }
 
@@ -141,6 +144,8 @@ namespace RaptorMath
             MngUsers_PasswordTxt.Enabled = false;
             MngUsers_ConfirmPasswordTxt.Enabled = false;
             MngUsers_GroupCmbo.Enabled = true;
+            MngUsers_PasswordTxt.Text = string.Empty;
+            MngUsers_ConfirmPasswordTxt.Text = string.Empty;
         }
 
         private void MngUsers_AdminRdo_CheckedChanged(object sender, EventArgs e)
@@ -148,14 +153,15 @@ namespace RaptorMath
             MngUsers_PasswordTxt.Enabled = true;
             MngUsers_ConfirmPasswordTxt.Enabled = true;
             MngUsers_GroupCmbo.Enabled = false;
+            MngUsers_GroupCmbo.Text = string.Empty;
         }
 
         private void MngUsers_RemoveUserBtn_Click(object sender, EventArgs e)
         {
-            string userToBeRemoved = MngUsers_UserCmbo.Text;
+            string userToBeRemoved = MngUsers_RemoveUserCmbo.Text;
             localManager.removeUser(userToBeRemoved);
             RefreshComboBoxes();
-            MngUsers_UserCmbo.Text = string.Empty;
+            MngUsers_RemoveUserCmbo.Text = string.Empty;
         }
 
         private void MngUsers_AddUserBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)

@@ -67,12 +67,21 @@ namespace RaptorMath
             }
         }
 
-        private void RefreshNewNameCmbo()
+        private void RefreshNewFirstNameCmbo()
         {
             EditStu_NewFirstNameCmbo.Items.Clear();
             foreach (Student student in localManager.studentList)
             {
-                EditStu_NewFirstNameCmbo.Items.Add(student.LoginName);
+                EditStu_NewFirstNameCmbo.Items.Add(student.FirstName);
+            }
+        }
+
+        private void RefreshNewLastNameCmbo()
+        {
+            EditStu_NewLastNameCmbo.Items.Clear();
+            foreach (Student student in localManager.studentList)
+            {
+                EditStu_NewLastNameCmbo.Items.Add(student.LastName);
             }
         }
 
@@ -88,7 +97,8 @@ namespace RaptorMath
         private void RefreshCmboBoxes()
         {
             RefreshSelectionCmboBo();
-            RefreshNewNameCmbo();
+            RefreshNewFirstNameCmbo();
+            RefreshNewLastNameCmbo();
             RefreshGroupCmbo();
         }
 

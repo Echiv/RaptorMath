@@ -58,8 +58,11 @@ namespace RaptorMath
         public Manager()
         {
 
-            dataDirectory = Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData);
-            string adminFile = "RaptorMathAdmins.xml";
+            string AppData = Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData);
+            dataDirectory = System.IO.Path.Combine(AppData, "RaptorMath");
+            if (!System.IO.Directory.Exists(dataDirectory))
+                System.IO.Directory.CreateDirectory(dataDirectory);
+            string adminFile = "RaptorMathRaptorMathAdmins.xml";
             string studentFile = "RaptorMathStudents.xml";
             string groupFile = "RaptorMathGroups.xml";
             string drillFile = "RaptorMathDrills.xml";
@@ -67,6 +70,11 @@ namespace RaptorMath
             studentXMLPath = System.IO.Path.Combine(dataDirectory, studentFile);
             groupXMLPath = System.IO.Path.Combine(dataDirectory, groupFile);
             drillXMLPath = System.IO.Path.Combine(dataDirectory, drillFile);
+            Console.WriteLine(adminXMLPath);
+            Console.WriteLine(studentXMLPath);
+            Console.WriteLine(groupXMLPath);
+            Console.WriteLine(drillXMLPath);
+            Console.WriteLine(dataDirectory);
             XMLDriver localXMLDriver = new XMLDriver(adminXMLPath, studentXMLPath, groupXMLPath, drillXMLPath, dataDirectory);
             XMLDriver = localXMLDriver;
             //XML.LoadXML(studentList, adminList);
@@ -223,10 +231,10 @@ namespace RaptorMath
 
         public void removeUser(string userName)
         {
-            bool isAdmin = adminList.Any(admin => admin.LoginName.Equals(userName));
+            bool isAdmin = adminList.Any(admin => admin.LoginName.Equals(userName.Remove(0, 8)));
             if (isAdmin)
             {
-                Admin admin = adminList.Where(adm => adm.LoginName.Equals(userName)).FirstOrDefault();
+                Admin admin = adminList.Where(adm => adm.LoginName.Equals(userName.Remove(0, 8))).FirstOrDefault();
                 if(admin != null)
                     XMLDriver.Delete(admin, adminList);
                 /*TODO: else
@@ -243,19 +251,37 @@ namespace RaptorMath
             }
         }
 
-        public void AssignDrill(string studentName, string drillName)
+        public bool AssignDrillToStudent(string studentName, string drillName)
         {
             Student student = studentList.Where(stu => stu.LoginName.Equals(studentName)).FirstOrDefault();
             Drill drill = mainDrillList.Where(dri => dri.DrillName.Equals(drillName)).FirstOrDefault();
-            Console.WriteLine(drill.DrillName);
-            AddDrillToStudent(student, drill);
+            if ((student != null) && (drill != null))
+                AddDrillToStudent(student, drill);
+            else
+                return false;
+            return true;
         }
 
-        public void UnassignDrill(string studentName, string drillName)
+        public bool AssignDrillToGroup(string groupName, string drillName)
+        {
+            return true;
+        }
+
+        public bool UnassignDrillFromStudent(string studentName, string drillName)
         {
             Student student = studentList.Where(stu => stu.LoginName.Equals(studentName)).FirstOrDefault();
             Drill drill = mainDrillList.Where(dri => dri.DrillName.Equals(drillName)).FirstOrDefault();
-            RemoveDrillFromStudent(student, drill);
+            if ((student != null) && (drill != null))
+                RemoveDrillFromStudent(student, drill);
+            else
+                return false;
+            return true;
+            
+        }
+
+        public bool UnassignDrillFromGroup(string groupName, string drillName)
+        {
+            return true;
         }
 
         public Student FindStudentWithName(string studentName)
@@ -307,6 +333,34 @@ namespace RaptorMath
         {
             form = newForm;
         }
+
+        public List<String> GetUsersFirstNames()
+        {
+            List<String> userFirstNamesList = new List<String>();
+            foreach (Admin admin in adminList)
+                userFirstNamesList.Add(admin.FirstName);
+
+            foreach (Student student in studentList)
+                userFirstNamesList.Add(student.FirstName);
+
+            
+            userFirstNamesList.Sort();
+            return userFirstNamesList.Distinct().ToList(); 
+        }
+
+        public List<String> GetUsersLastNames()
+        {
+            List<String> userLastNamesList = new List<String>();
+            foreach (Admin admin in adminList)
+                userLastNamesList.Add(admin.LastName);
+
+            foreach (Student student in studentList)
+                userLastNamesList.Add(student.LastName);
+
+            
+            userLastNamesList.Sort();
+            return userLastNamesList.Distinct().ToList(); 
+        }
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/26/2014                                                  //
@@ -347,66 +401,77 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         public bool isAdmin()
         {
-            if (currentUser.StartsWith("<Admin>"))
-            {
+            if ((currentUser.StartsWith("<Admin>")) && (currentUser != string.Empty))
                 return true;
-            }
             return false;
         }
 
-        private void SetCurrentAdmin(string currentUser)
+        private bool SetCurrentAdmin(string currentUser)
         {
-            if (currentUser.StartsWith("<Admin>"))
+            currentUser = currentUser.Remove(0, 8);
+            currentAdmin = FindAdmin(currentUser);
+            if (currentAdmin != null)
             {
-                currentUser = currentUser.Remove(0, 8);
-                currentAdmin = FindAdmin(currentUser);
                 currentUser = String.Concat("<Admin> ", currentUser);
+                return true;
             }
+
+            return false;
         }
 
         public bool isCorrectAdminPassword()
         {
-            if (currentAdmin.Password == currentPassword)
-                return true;
+            if (currentAdmin != null)
+            {
+                if (currentAdmin.Password == currentPassword)
+                    return true;
+                else
+                    ClearAdminUser();
+            }
             return false;
         }
 
         public bool isStudent()
         {
-            if (!currentUser.StartsWith("<Admin>"))
+            if (!(currentUser.StartsWith("<Admin>")) && (currentUser != string.Empty))
                 return true;
             return false;
         }
 
-        public void SetCurrentStudent(string currentUser)
+        public bool SetCurrentStudent(string currentUser) 
         {
-            if (!currentUser.StartsWith("<Admin>"))
-            {
-                currentStudent = FindStudent(currentUser);
-            }
+            currentStudent = FindStudent(currentUser);
+            if (currentStudent != null)
+                return true;
+
+            return false;
         }
 
-        public bool grantAccess()
+        public bool validateAdmin()
         {
-            if (isAdmin() == true)
+            bool isValidAdmin = SetCurrentAdmin(currentUser);
+            if (isValidAdmin)
             {
-                SetCurrentAdmin(currentUser);
-                if (isCorrectAdminPassword() == true)
-                {
-                    SetWindow(Window.adminHome);
-                    return true;
-                }
-                else
-                    ClearAdminUser();
-            }
-            else if (isStudent() == true)
-            {
-                SetCurrentStudent(currentUser);
-                SetWindow(Window.stuHome);
+                SetWindow(Window.adminHome);
                 return true;
             }
             else
+                ClearAdminUser();
+           
+            return false;
+        }
+
+        public bool validateStudent()
+        {
+            bool isValidStudent = SetCurrentStudent(currentUser);
+            if (isValidStudent)
+            {
+                SetWindow(Window.stuHome);
+                return true;
+            }  
+            else
                 ClearStudentUser();
+
             return false;
         }
         //------------------------------------------------------------------//
@@ -416,9 +481,13 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         public Student FindStudent(string currentUser)
         {
-            Student aStudent = new Student();
-
-            foreach (Student student in studentList)
+            //Student aStudent = new Student();
+            Student aStudent = studentList.Where(stu => stu.LoginName.Equals(currentUser)).FirstOrDefault();
+            if(aStudent != null)
+            {
+                studentList.Remove(aStudent);
+            }
+            /*foreach (Student student in studentList)
             {
                 if (student.LoginName == currentUser)
                 {
@@ -426,7 +495,7 @@ namespace RaptorMath
                     studentList.Remove(student);
                     break;
                 }
-            }
+            }*/
             return aStudent;
         }
 
@@ -437,9 +506,13 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         public Admin FindAdmin(string currentUser)
         {
-            Admin aAdmin = new Admin();
-
-            foreach (Admin admin in adminList)
+            //Admin aAdmin = new Admin();
+            Admin aAdmin = aAdmin = adminList.Where(admin => admin.LoginName.Equals(currentUser)).FirstOrDefault();
+            if (aAdmin != null)
+            {
+                adminList.Remove(aAdmin);
+            }
+            /*foreach (Admin admin in adminList)
             {
                 if (admin.LoginName == currentUser)
                 {
@@ -449,7 +522,7 @@ namespace RaptorMath
                 }
                 else
                     continue;
-            }
+            }*/
 
             return aAdmin;
         }
@@ -471,9 +544,12 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         public void ClearStudentUser()
         {
-            currentStudent.LastLogin = currentUserLogin;
-            studentList.Add(currentStudent);
-            currentStudent = new Student(); // Clear student
+            if(currentStudent != null)
+            {
+                currentStudent.LastLogin = currentUserLogin;
+                studentList.Add(currentStudent);
+                currentStudent = new Student(); // Clear student
+            }
         }
 
         //------------------------------------------------------------------//
@@ -482,9 +558,12 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         public void ClearAdminUser()
         {
-            currentAdmin.LastLogin = currentUserLogin;
-            adminList.Add(currentAdmin);
-            currentAdmin = new Admin(); // Clear student
+            if (currentAdmin != null)
+            {
+                currentAdmin.LastLogin = currentUserLogin;
+                adminList.Add(currentAdmin);
+                currentAdmin = new Admin(); // Clear admin
+            }
         }
 
         //------------------------------------------------------------------//

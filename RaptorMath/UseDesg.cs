@@ -104,13 +104,32 @@ namespace RaptorMath
         private void UseDesg_LoginBtn_Click(object sender, EventArgs e)
         {
             localManager.currentPassword = UseDesg_passwordBox.Text;
-            if (localManager.grantAccess() != true)
+            if(localManager.isStudent())
             {
-                MessageBox.Show("Wrong password, Try again!");
-                UseDesg_passwordBox.Text = string.Empty;
+                if (localManager.validateStudent() != true)
+                {
+                    MessageBox.Show("That Student could not be found!");
+                }
+                else
+                    this.Close();
             }
-            else
-                this.Close();            
+            else if (localManager.isAdmin())
+            {
+                if (localManager.validateAdmin() != true)
+                {
+                    MessageBox.Show("That Admin could not be found!");
+                    UseDesg_passwordBox.Text = string.Empty;
+                }
+                else
+                {
+                    if (localManager.isCorrectAdminPassword())
+                    {
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("Wrong password, Try again!");
+                }
+            }         
         }
       
         //------------------------------------------------------------------//
@@ -138,11 +157,6 @@ namespace RaptorMath
                 UseDesg_LoginBtn.Enabled = true;
             else
                 UseDesg_LoginBtn.Enabled = false;
-        }
-
-        private void UseDesg_LoginDdl_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void UseDesg_LoginBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)

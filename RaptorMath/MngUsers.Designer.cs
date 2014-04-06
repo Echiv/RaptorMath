@@ -50,7 +50,7 @@
             this.MngUsers_StudentRdo = new System.Windows.Forms.RadioButton();
             this.MngUsers_UserTypeLbl = new System.Windows.Forms.Label();
             this.MngUsers_RemoveUserBox = new System.Windows.Forms.GroupBox();
-            this.MngUsers_UserCmbo = new System.Windows.Forms.ComboBox();
+            this.MngUsers_RemoveUserCmbo = new System.Windows.Forms.ComboBox();
             this.MngUsers_RemoveUserBtn = new System.Windows.Forms.Button();
             this.MngUsers_SelectUserLbl = new System.Windows.Forms.Label();
             this.MngUsers_ButtonBox = new System.Windows.Forms.GroupBox();
@@ -313,7 +313,7 @@
             // 
             // MngUsers_RemoveUserBox
             // 
-            this.MngUsers_RemoveUserBox.Controls.Add(this.MngUsers_UserCmbo);
+            this.MngUsers_RemoveUserBox.Controls.Add(this.MngUsers_RemoveUserCmbo);
             this.MngUsers_RemoveUserBox.Controls.Add(this.MngUsers_RemoveUserBtn);
             this.MngUsers_RemoveUserBox.Controls.Add(this.MngUsers_SelectUserLbl);
             this.MngUsers_RemoveUserBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -326,18 +326,18 @@
             this.MngUsers_RemoveUserBox.TabStop = false;
             this.MngUsers_RemoveUserBox.Text = "Remove a User";
             // 
-            // MngUsers_UserCmbo
+            // MngUsers_RemoveUserCmbo
             // 
-            this.MngUsers_UserCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.MngUsers_UserCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.MngUsers_UserCmbo.FormattingEnabled = true;
-            this.MngUsers_UserCmbo.Location = new System.Drawing.Point(128, 19);
-            this.MngUsers_UserCmbo.Margin = new System.Windows.Forms.Padding(4);
-            this.MngUsers_UserCmbo.MaxLength = 10;
-            this.MngUsers_UserCmbo.Name = "MngUsers_UserCmbo";
-            this.MngUsers_UserCmbo.Size = new System.Drawing.Size(190, 24);
-            this.MngUsers_UserCmbo.TabIndex = 0;
-            this.MngUsers_UserCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_RemoveUserBoxTextBoxes_KeyPress);
+            this.MngUsers_RemoveUserCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.MngUsers_RemoveUserCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.MngUsers_RemoveUserCmbo.FormattingEnabled = true;
+            this.MngUsers_RemoveUserCmbo.Location = new System.Drawing.Point(128, 19);
+            this.MngUsers_RemoveUserCmbo.Margin = new System.Windows.Forms.Padding(4);
+            this.MngUsers_RemoveUserCmbo.MaxLength = 10;
+            this.MngUsers_RemoveUserCmbo.Name = "MngUsers_RemoveUserCmbo";
+            this.MngUsers_RemoveUserCmbo.Size = new System.Drawing.Size(190, 24);
+            this.MngUsers_RemoveUserCmbo.TabIndex = 0;
+            this.MngUsers_RemoveUserCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_RemoveUserBoxTextBoxes_KeyPress);
             // 
             // MngUsers_RemoveUserBtn
             // 
@@ -478,7 +478,7 @@
         private System.Windows.Forms.Label MngUsers_SelectUserLbl;
         private System.Windows.Forms.ComboBox MngUsers_GroupCmbo;
         private System.Windows.Forms.ComboBox MngUsers_FirstNameCmbo;
-        private System.Windows.Forms.ComboBox MngUsers_UserCmbo;
+        private System.Windows.Forms.ComboBox MngUsers_RemoveUserCmbo;
         private System.Windows.Forms.Label MngUsers_LastNameLbl;
         private System.Windows.Forms.ComboBox MngUsers_LastNameCmbo;
     }

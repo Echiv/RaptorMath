@@ -136,21 +136,21 @@ namespace RaptorMath
             RefreshSelectAssignedDrillCmbo(student);
         }
 
-        private void RefreshAssignedGroupDrills(Group group)
+        private void RefreshAssignedGroupCmboBoxes(Group group)
         {
             RefreshGroupCmboBox();
             RefreshSelectAssignedDrillCmbo(group);
         }
 
-        private void RefreshUnassignedCmboBoxes(Student student)
+        private void RefreshUnassignedStudentCmboBoxes(Student student)
         {
             RefreshStudentCmboBox();
             RefreshSelectUnassignedDrillCmbo(student);
         }
 
-        private void RefreshUnassignedCmboBoxes(Group group)
+        private void RefreshUnassignedGroupCmboBoxes(Group group)
         {
-            RefreshStudentCmboBox();
+            RefreshGroupCmboBox();
             RefreshSelectUnassignedDrillCmbo(group);
         }
 
@@ -176,13 +176,74 @@ namespace RaptorMath
         {
             if (MngDrills_AssignDrillRdo.Checked)
             {
-                localManager.AssignDrill(MngDrills_StudentOrGroupCmbo.Text, MngDrills_SelectDrillCmbo.Text);
-                RefreshSelectUnassignedDrillCmbo(localManager.FindStudentWithName(MngDrills_StudentOrGroupCmbo.Text));
+                bool isAssigned = false;
+                bool isStudent = false;
+                if((MngDrills_GroupRdo.Checked) && (!MngDrills_StudentRdo.Checked))
+                {
+                    isAssigned = localManager.AssignDrillToGroup(MngDrills_StudentOrGroupCmbo.Text, MngDrills_SelectDrillCmbo.Text);
+                    RefreshSelectUnassignedDrillCmbo(localManager.FindGroupByName(MngDrills_StudentOrGroupCmbo.Text));
+                    isStudent = false;
+                }
+                else if ((MngDrills_StudentRdo.Checked) && (!MngDrills_GroupRdo.Checked))
+                {
+                    isAssigned = localManager.AssignDrillToStudent(MngDrills_StudentOrGroupCmbo.Text, MngDrills_SelectDrillCmbo.Text);
+                    RefreshSelectUnassignedDrillCmbo(localManager.FindStudentWithName(MngDrills_StudentOrGroupCmbo.Text));
+                    isStudent = true;
+                }
+                
+                if((isAssigned == true) && (isStudent == true))
+                {
+                    MessageBox.Show("Drill has been assigned to the Student");
+                    MngDrills_SelectDrillCmbo.Text = string.Empty;
+                }
+                if ((isAssigned == false) && (isStudent == true))
+                {
+                    MessageBox.Show("Drill has not been assigned to the student");
+                }
+                if ((isAssigned == true) && (isStudent == false))
+                { 
+                    MessageBox.Show("Drill has been assigned to the Group");
+                    MngDrills_SelectDrillCmbo.Text = string.Empty;
+                }
+                if ((isAssigned == false) && (isStudent == false))
+                {
+                    MessageBox.Show("Drill has not been assigned to the Group");
+                }
             }
             else if(MngDrills_RemoveDrillRdo.Checked)
             {
-                localManager.UnassignDrill(MngDrills_StudentOrGroupCmbo.Text, MngDrills_SelectDrillCmbo.Text);
-                RefreshSelectAssignedDrillCmbo(localManager.FindStudentWithName(MngDrills_StudentOrGroupCmbo.Text));
+                bool isUnassigned = false;
+                bool isStudent = false;
+                if ((MngDrills_GroupRdo.Checked) && (!MngDrills_StudentRdo.Checked))
+                {
+                    isUnassigned = localManager.UnassignDrillFromGroup(MngDrills_StudentOrGroupCmbo.Text, MngDrills_SelectDrillCmbo.Text);
+                    RefreshSelectAssignedDrillCmbo(localManager.FindGroupByName(MngDrills_StudentOrGroupCmbo.Text));
+                    isStudent = false;
+                }
+                if ((MngDrills_StudentRdo.Checked) && (!MngDrills_GroupRdo.Checked))
+                {
+                    isUnassigned = localManager.UnassignDrillFromStudent(MngDrills_StudentOrGroupCmbo.Text, MngDrills_SelectDrillCmbo.Text);
+                    RefreshSelectAssignedDrillCmbo(localManager.FindStudentWithName(MngDrills_StudentOrGroupCmbo.Text));
+                    isStudent = true;
+                }
+                if ((isUnassigned == true) && (isStudent == true))
+                {
+                    MessageBox.Show("Drill has been removed to the Student");
+                    MngDrills_SelectDrillCmbo.Text = string.Empty;
+                }
+                if ((isUnassigned == false) && (isStudent == true))
+                {
+                    MessageBox.Show("Drill has not been removed to the student");
+                }
+                if ((isUnassigned == true) && (isStudent == false))
+                {
+                    MessageBox.Show("Drill has been removed to the Group");
+                    MngDrills_SelectDrillCmbo.Text = string.Empty;
+                }
+                if ((isUnassigned == false) && (isStudent == false))
+                {
+                    MessageBox.Show("Drill has not been removed to the Group");
+                }
             }
         }
 
@@ -204,21 +265,29 @@ namespace RaptorMath
 
         private void MngDrills_AssignDrillRdo_CheckedChanged(object sender, EventArgs e)
         {
+            RefreshAllDrillBoxesWithRdoChoices();
             MngDrills_AddRmvDrillBtn.Text = "Add Drill";
         }
 
         private void MngDrills_RemoveDrillRdo_CheckedChanged(object sender, EventArgs e)
         {
+            RefreshAllDrillBoxesWithRdoChoices();
             MngDrills_AddRmvDrillBtn.Text = "Remove Drill";
         }
 
         private void MngDrills_StudentRdo_CheckedChanged(object sender, EventArgs e)
         {
+            MngDrills_StudentOrGroupCmbo.Text = string.Empty;
+            RefreshStudentCmboBox();
+            RefreshAllDrillBoxesWithRdoChoices();
             MngDrills_StudentOrGroupLbl.Text = "Student";
         }
 
         private void MngDrills_GroupRdo_CheckedChanged(object sender, EventArgs e)
         {
+            MngDrills_StudentOrGroupCmbo.Text = string.Empty;
+            RefreshGroupCmboBox();
+            RefreshAllDrillBoxesWithRdoChoices();
             MngDrills_StudentOrGroupLbl.Text = "Group";
         }
 
@@ -232,11 +301,16 @@ namespace RaptorMath
 
         private void MngDrills_StudentOrGroupCmbo_TextChanged(object sender, EventArgs e)
         {
-            if( (MngDrills_AssignDrillRdo.Checked) && (MngDrills_StudentRdo.Checked))
+            RefreshAllDrillBoxesWithRdoChoices();
+        }
+
+        private void RefreshAllDrillBoxesWithRdoChoices()
+        {
+            if ((MngDrills_AssignDrillRdo.Checked) && (MngDrills_StudentRdo.Checked))
             {
                 RefreshSelectUnassignedDrillCmbo(localManager.FindStudentWithName(MngDrills_StudentOrGroupCmbo.Text));
             }
-            else if((MngDrills_AssignDrillRdo.Checked) && (MngDrills_GroupRdo.Checked))
+            else if ((MngDrills_AssignDrillRdo.Checked) && (MngDrills_GroupRdo.Checked))
             {
                 RefreshSelectUnassignedDrillCmbo(localManager.FindGroupByName(MngDrills_StudentOrGroupCmbo.Text));
             }
