@@ -176,7 +176,7 @@
             this.MngUsers_GroupCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.MngUsers_GroupCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.MngUsers_GroupCmbo.FormattingEnabled = true;
-            this.MngUsers_GroupCmbo.Location = new System.Drawing.Point(155, 174);
+            this.MngUsers_GroupCmbo.Location = new System.Drawing.Point(155, 195);
             this.MngUsers_GroupCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngUsers_GroupCmbo.MaxLength = 10;
             this.MngUsers_GroupCmbo.Name = "MngUsers_GroupCmbo";
@@ -189,7 +189,7 @@
             this.MngUsers_FirstNameCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.MngUsers_FirstNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.MngUsers_FirstNameCmbo.FormattingEnabled = true;
-            this.MngUsers_FirstNameCmbo.Location = new System.Drawing.Point(155, 46);
+            this.MngUsers_FirstNameCmbo.Location = new System.Drawing.Point(155, 67);
             this.MngUsers_FirstNameCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngUsers_FirstNameCmbo.MaxLength = 10;
             this.MngUsers_FirstNameCmbo.Name = "MngUsers_FirstNameCmbo";
@@ -201,7 +201,7 @@
             // 
             this.MngUsers_ConfirmPassword.AutoSize = true;
             this.MngUsers_ConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_ConfirmPassword.Location = new System.Drawing.Point(59, 140);
+            this.MngUsers_ConfirmPassword.Location = new System.Drawing.Point(59, 161);
             this.MngUsers_ConfirmPassword.Name = "MngUsers_ConfirmPassword";
             this.MngUsers_ConfirmPassword.Size = new System.Drawing.Size(69, 34);
             this.MngUsers_ConfirmPassword.TabIndex = 12;
@@ -210,7 +210,7 @@
             // MngUsers_ConfirmPasswordTxt
             // 
             this.MngUsers_ConfirmPasswordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_ConfirmPasswordTxt.Location = new System.Drawing.Point(155, 141);
+            this.MngUsers_ConfirmPasswordTxt.Location = new System.Drawing.Point(155, 162);
             this.MngUsers_ConfirmPasswordTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_ConfirmPasswordTxt.MaxLength = 20;
             this.MngUsers_ConfirmPasswordTxt.Name = "MngUsers_ConfirmPasswordTxt";
@@ -223,7 +223,7 @@
             // 
             this.MngUsers_SaveUserBtm.AutoSize = true;
             this.MngUsers_SaveUserBtm.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_SaveUserBtm.Location = new System.Drawing.Point(155, 204);
+            this.MngUsers_SaveUserBtm.Location = new System.Drawing.Point(155, 225);
             this.MngUsers_SaveUserBtm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_SaveUserBtm.Name = "MngUsers_SaveUserBtm";
             this.MngUsers_SaveUserBtm.Size = new System.Drawing.Size(115, 30);
@@ -235,7 +235,7 @@
             // MngUsers_PasswordTxt
             // 
             this.MngUsers_PasswordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_PasswordTxt.Location = new System.Drawing.Point(155, 108);
+            this.MngUsers_PasswordTxt.Location = new System.Drawing.Point(155, 129);
             this.MngUsers_PasswordTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_PasswordTxt.MaxLength = 20;
             this.MngUsers_PasswordTxt.Name = "MngUsers_PasswordTxt";
@@ -248,7 +248,7 @@
             // 
             this.MngUsers_GroupLbl.AutoSize = true;
             this.MngUsers_GroupLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_GroupLbl.Location = new System.Drawing.Point(59, 174);
+            this.MngUsers_GroupLbl.Location = new System.Drawing.Point(59, 195);
             this.MngUsers_GroupLbl.Name = "MngUsers_GroupLbl";
             this.MngUsers_GroupLbl.Size = new System.Drawing.Size(48, 17);
             this.MngUsers_GroupLbl.TabIndex = 6;
@@ -258,7 +258,7 @@
             // 
             this.MngUsers_PasswordLbl.AutoSize = true;
             this.MngUsers_PasswordLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_PasswordLbl.Location = new System.Drawing.Point(59, 108);
+            this.MngUsers_PasswordLbl.Location = new System.Drawing.Point(59, 129);
             this.MngUsers_PasswordLbl.Name = "MngUsers_PasswordLbl";
             this.MngUsers_PasswordLbl.Size = new System.Drawing.Size(69, 17);
             this.MngUsers_PasswordLbl.TabIndex = 5;
@@ -268,7 +268,7 @@
             // 
             this.MngUsers_FirstNameLbl.AutoSize = true;
             this.MngUsers_FirstNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_FirstNameLbl.Location = new System.Drawing.Point(59, 49);
+            this.MngUsers_FirstNameLbl.Location = new System.Drawing.Point(59, 70);
             this.MngUsers_FirstNameLbl.Name = "MngUsers_FirstNameLbl";
             this.MngUsers_FirstNameLbl.Size = new System.Drawing.Size(76, 17);
             this.MngUsers_FirstNameLbl.TabIndex = 4;
@@ -278,7 +278,7 @@
             // 
             this.MngUsers_AdminRdo.AutoSize = true;
             this.MngUsers_AdminRdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_AdminRdo.Location = new System.Drawing.Point(267, 19);
+            this.MngUsers_AdminRdo.Location = new System.Drawing.Point(256, 30);
             this.MngUsers_AdminRdo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_AdminRdo.Name = "MngUsers_AdminRdo";
             this.MngUsers_AdminRdo.Size = new System.Drawing.Size(68, 21);
@@ -292,7 +292,7 @@
             // 
             this.MngUsers_StudentRdo.AutoSize = true;
             this.MngUsers_StudentRdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_StudentRdo.Location = new System.Drawing.Point(162, 19);
+            this.MngUsers_StudentRdo.Location = new System.Drawing.Point(151, 30);
             this.MngUsers_StudentRdo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_StudentRdo.Name = "MngUsers_StudentRdo";
             this.MngUsers_StudentRdo.Size = new System.Drawing.Size(78, 21);
@@ -306,11 +306,11 @@
             // 
             this.MngUsers_UserTypeLbl.AutoSize = true;
             this.MngUsers_UserTypeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_UserTypeLbl.Location = new System.Drawing.Point(33, 19);
+            this.MngUsers_UserTypeLbl.Location = new System.Drawing.Point(61, 32);
             this.MngUsers_UserTypeLbl.Name = "MngUsers_UserTypeLbl";
-            this.MngUsers_UserTypeLbl.Size = new System.Drawing.Size(123, 17);
+            this.MngUsers_UserTypeLbl.Size = new System.Drawing.Size(78, 17);
             this.MngUsers_UserTypeLbl.TabIndex = 1;
-            this.MngUsers_UserTypeLbl.Text = "Choose your user!";
+            this.MngUsers_UserTypeLbl.Text = "User Type:";
             // 
             // MngUsers_RemoveUserBox
             // 
@@ -408,7 +408,7 @@
             // 
             this.MngUsers_LastNameLbl.AutoSize = true;
             this.MngUsers_LastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_LastNameLbl.Location = new System.Drawing.Point(59, 76);
+            this.MngUsers_LastNameLbl.Location = new System.Drawing.Point(59, 97);
             this.MngUsers_LastNameLbl.Name = "MngUsers_LastNameLbl";
             this.MngUsers_LastNameLbl.Size = new System.Drawing.Size(76, 17);
             this.MngUsers_LastNameLbl.TabIndex = 13;
@@ -419,7 +419,7 @@
             this.MngUsers_LastNameCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.MngUsers_LastNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.MngUsers_LastNameCmbo.FormattingEnabled = true;
-            this.MngUsers_LastNameCmbo.Location = new System.Drawing.Point(155, 78);
+            this.MngUsers_LastNameCmbo.Location = new System.Drawing.Point(155, 99);
             this.MngUsers_LastNameCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngUsers_LastNameCmbo.MaxLength = 10;
             this.MngUsers_LastNameCmbo.Name = "MngUsers_LastNameCmbo";
