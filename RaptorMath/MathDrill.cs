@@ -79,6 +79,8 @@ namespace RaptorMath
             InitializeDate();
             InitializeTimer();
 
+            MathDrill_InputTxt.Select();
+
             MathDrill_CurrentNumLbl.Text = localManager.GetCurrentNumber();
             this.StudentName = localManager.currentStudent.LoginName;
 
@@ -251,6 +253,16 @@ namespace RaptorMath
             {
                 MatDri_SubmitBtn_Click(sender, e);
             }
+        }
+
+        private void MathDrill_StudentNameLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

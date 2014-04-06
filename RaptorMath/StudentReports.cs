@@ -61,6 +61,7 @@ namespace RaptorMath
 
             ReportHome_SingleReportBtn.Enabled = false;
             ReportHome_GroupReportBtn.Enabled = false;
+            ReportHome_StudentCmbo.Select();
 
             foreach (Student student in localManager.studentList)
             {
@@ -130,6 +131,22 @@ namespace RaptorMath
             {
                 ReportHome_SingleReportBtn.Enabled = true;
                 ReportHome_GroupReportBtn.Enabled = true;
+            }
+        }
+
+        private void ReportHome_StudentCmbo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                ReportHome_SingleReportBtn_Click(sender, e);
+            }
+        }
+
+        private void ReportHome_GroupCmbo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                ReportHome_GroupReportBtn_Click(sender, e);
             }
         }
     }

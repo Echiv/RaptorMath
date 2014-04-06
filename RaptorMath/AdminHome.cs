@@ -76,6 +76,8 @@ namespace RaptorMath
             InitializeComponent();
             InitializeDate();
             InitializeTimer();
+
+            AdminHome_CurrentPWTxt.Select();
 /*
             foreach (String student in localManager.GetStudents())
                 AdminHome_StudentSelection.Items.Add(student);
@@ -193,6 +195,14 @@ namespace RaptorMath
         private void AdminHome_AdminNameLbl_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void AdminHome_PasswordBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                AdminHome_SaveBtn_Click(sender, e);
+            }
         }
 
 /*

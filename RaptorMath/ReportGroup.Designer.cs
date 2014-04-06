@@ -56,11 +56,12 @@
             // 
             // GroupReport_CloseBtn
             // 
+            this.GroupReport_CloseBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.GroupReport_CloseBtn.Location = new System.Drawing.Point(430, 12);
             this.GroupReport_CloseBtn.Margin = new System.Windows.Forms.Padding(4);
             this.GroupReport_CloseBtn.Name = "GroupReport_CloseBtn";
             this.GroupReport_CloseBtn.Size = new System.Drawing.Size(115, 27);
-            this.GroupReport_CloseBtn.TabIndex = 1;
+            this.GroupReport_CloseBtn.TabIndex = 0;
             this.GroupReport_CloseBtn.Text = "Close";
             this.GroupReport_CloseBtn.UseVisualStyleBackColor = true;
             this.GroupReport_CloseBtn.Click += new System.EventHandler(this.GroupReport_CloseBtn_Click);
@@ -83,11 +84,11 @@
             this.Skipped,
             this.RangeStart});
             this.GroupReport_DataDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GroupReport_DataDisplay.Location = new System.Drawing.Point(5, 22);
+            this.GroupReport_DataDisplay.Location = new System.Drawing.Point(5, 19);
             this.GroupReport_DataDisplay.Margin = new System.Windows.Forms.Padding(4);
             this.GroupReport_DataDisplay.Name = "GroupReport_DataDisplay";
             this.GroupReport_DataDisplay.RowHeadersVisible = false;
-            this.GroupReport_DataDisplay.Size = new System.Drawing.Size(544, 329);
+            this.GroupReport_DataDisplay.Size = new System.Drawing.Size(544, 332);
             this.GroupReport_DataDisplay.TabIndex = 0;
             // 
             // DateTaken
@@ -95,42 +96,41 @@
             this.DateTaken.HeaderText = "Name";
             this.DateTaken.Name = "DateTaken";
             this.DateTaken.ReadOnly = true;
-            this.DateTaken.Width = 74;
+            this.DateTaken.Width = 64;
             // 
             // Percent
             // 
             this.Percent.HeaderText = "AvgPercent";
             this.Percent.Name = "Percent";
             this.Percent.ReadOnly = true;
-            this.Percent.Width = 116;
+            this.Percent.Width = 98;
             // 
             // Wrong
             // 
             this.Wrong.HeaderText = "AvgWrong";
             this.Wrong.Name = "Wrong";
             this.Wrong.ReadOnly = true;
-            this.Wrong.Width = 107;
+            this.Wrong.Width = 91;
             // 
             // NumQuestions
             // 
             this.NumQuestions.HeaderText = "AvgSkipped";
             this.NumQuestions.Name = "NumQuestions";
             this.NumQuestions.ReadOnly = true;
-            this.NumQuestions.Width = 118;
             // 
             // Skipped
             // 
             this.Skipped.HeaderText = "TotalSetsDone";
             this.Skipped.Name = "Skipped";
             this.Skipped.ReadOnly = true;
-            this.Skipped.Width = 140;
+            this.Skipped.Width = 116;
             // 
             // RangeStart
             // 
             this.RangeStart.HeaderText = "AvgWorkTiime";
             this.RangeStart.Name = "RangeStart";
             this.RangeStart.ReadOnly = true;
-            this.RangeStart.Width = 136;
+            this.RangeStart.Width = 114;
             // 
             // GroupReport_ButtonBox
             // 
@@ -141,7 +141,7 @@
             this.GroupReport_ButtonBox.Name = "GroupReport_ButtonBox";
             this.GroupReport_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
             this.GroupReport_ButtonBox.Size = new System.Drawing.Size(554, 47);
-            this.GroupReport_ButtonBox.TabIndex = 34;
+            this.GroupReport_ButtonBox.TabIndex = 2;
             this.GroupReport_ButtonBox.TabStop = false;
             // 
             // GroupReport_DrillBox
@@ -154,7 +154,7 @@
             this.GroupReport_DrillBox.Name = "GroupReport_DrillBox";
             this.GroupReport_DrillBox.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.GroupReport_DrillBox.Size = new System.Drawing.Size(554, 357);
-            this.GroupReport_DrillBox.TabIndex = 35;
+            this.GroupReport_DrillBox.TabIndex = 1;
             this.GroupReport_DrillBox.TabStop = false;
             this.GroupReport_DrillBox.Text = "Drill Records";
             // 
@@ -170,7 +170,7 @@
             this.GroupReport_UserInfoBox.Name = "GroupReport_UserInfoBox";
             this.GroupReport_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
             this.GroupReport_UserInfoBox.Size = new System.Drawing.Size(554, 75);
-            this.GroupReport_UserInfoBox.TabIndex = 37;
+            this.GroupReport_UserInfoBox.TabIndex = 0;
             this.GroupReport_UserInfoBox.TabStop = false;
             // 
             // GroupReport_GroupNameLbl
@@ -179,7 +179,7 @@
             this.GroupReport_GroupNameLbl.Location = new System.Drawing.Point(8, 39);
             this.GroupReport_GroupNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.GroupReport_GroupNameLbl.Name = "GroupReport_GroupNameLbl";
-            this.GroupReport_GroupNameLbl.Size = new System.Drawing.Size(105, 17);
+            this.GroupReport_GroupNameLbl.Size = new System.Drawing.Size(79, 13);
             this.GroupReport_GroupNameLbl.TabIndex = 37;
             this.GroupReport_GroupNameLbl.Text = "<Group Name>";
             // 
@@ -190,7 +190,7 @@
             this.GroupReport_DateLbl.Location = new System.Drawing.Point(441, 8);
             this.GroupReport_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.GroupReport_DateLbl.Name = "GroupReport_DateLbl";
-            this.GroupReport_DateLbl.Size = new System.Drawing.Size(54, 17);
+            this.GroupReport_DateLbl.Size = new System.Drawing.Size(42, 13);
             this.GroupReport_DateLbl.TabIndex = 35;
             this.GroupReport_DateLbl.Text = "<Date>";
             // 
@@ -201,7 +201,7 @@
             this.GroupReport_TimeLbl.Location = new System.Drawing.Point(441, 36);
             this.GroupReport_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.GroupReport_TimeLbl.Name = "GroupReport_TimeLbl";
-            this.GroupReport_TimeLbl.Size = new System.Drawing.Size(55, 17);
+            this.GroupReport_TimeLbl.Size = new System.Drawing.Size(42, 13);
             this.GroupReport_TimeLbl.TabIndex = 34;
             this.GroupReport_TimeLbl.Text = "<Time>";
             // 
@@ -211,7 +211,7 @@
             this.GroupReport_WindowLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupReport_WindowLbl.Location = new System.Drawing.Point(8, 20);
             this.GroupReport_WindowLbl.Name = "GroupReport_WindowLbl";
-            this.GroupReport_WindowLbl.Size = new System.Drawing.Size(107, 17);
+            this.GroupReport_WindowLbl.Size = new System.Drawing.Size(83, 13);
             this.GroupReport_WindowLbl.TabIndex = 33;
             this.GroupReport_WindowLbl.Text = "Group Report";
             // 
@@ -236,6 +236,7 @@
             // ReportGroup_Form
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.CancelButton = this.GroupReport_CloseBtn;
             this.ClientSize = new System.Drawing.Size(562, 503);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

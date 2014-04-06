@@ -47,6 +47,7 @@ namespace RaptorMath
             InitializeTimer();
             RefreshLoginDropDownBox();
             UseDesg_LoginBtn.Enabled = false;
+            UseDesg_LoginCmbo.Select();
         }
 
         //------------------------------------------------------------------//
@@ -140,6 +141,11 @@ namespace RaptorMath
         }
 
         private void UseDesg_LoginDdl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UseDesg_LoginBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }

@@ -68,7 +68,7 @@
             this.MngGroups_UserInfoBox.Name = "MngGroups_UserInfoBox";
             this.MngGroups_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
             this.MngGroups_UserInfoBox.Size = new System.Drawing.Size(412, 75);
-            this.MngGroups_UserInfoBox.TabIndex = 2;
+            this.MngGroups_UserInfoBox.TabIndex = 0;
             this.MngGroups_UserInfoBox.TabStop = false;
             // 
             // MngGroups_WindowLbl
@@ -78,7 +78,7 @@
             this.MngGroups_WindowLbl.Location = new System.Drawing.Point(8, 7);
             this.MngGroups_WindowLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngGroups_WindowLbl.Name = "MngGroups_WindowLbl";
-            this.MngGroups_WindowLbl.Size = new System.Drawing.Size(123, 17);
+            this.MngGroups_WindowLbl.Size = new System.Drawing.Size(96, 13);
             this.MngGroups_WindowLbl.TabIndex = 3;
             this.MngGroups_WindowLbl.Text = "Manage Groups";
             // 
@@ -86,11 +86,11 @@
             // 
             this.MngGroups_TimeLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MngGroups_TimeLbl.AutoSize = true;
-            this.MngGroups_TimeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngGroups_TimeLbl.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngGroups_TimeLbl.Location = new System.Drawing.Point(322, 46);
             this.MngGroups_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngGroups_TimeLbl.Name = "MngGroups_TimeLbl";
-            this.MngGroups_TimeLbl.Size = new System.Drawing.Size(55, 17);
+            this.MngGroups_TimeLbl.Size = new System.Drawing.Size(46, 15);
             this.MngGroups_TimeLbl.TabIndex = 2;
             this.MngGroups_TimeLbl.Text = "<Time>";
             // 
@@ -98,22 +98,22 @@
             // 
             this.MngGroups_DateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MngGroups_DateLbl.AutoSize = true;
-            this.MngGroups_DateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngGroups_DateLbl.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngGroups_DateLbl.Location = new System.Drawing.Point(322, 19);
             this.MngGroups_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngGroups_DateLbl.Name = "MngGroups_DateLbl";
-            this.MngGroups_DateLbl.Size = new System.Drawing.Size(54, 17);
+            this.MngGroups_DateLbl.Size = new System.Drawing.Size(44, 15);
             this.MngGroups_DateLbl.TabIndex = 1;
             this.MngGroups_DateLbl.Text = "<Date>";
             // 
             // MngGroups_AdminNameLbl
             // 
             this.MngGroups_AdminNameLbl.AutoSize = true;
-            this.MngGroups_AdminNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngGroups_AdminNameLbl.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngGroups_AdminNameLbl.Location = new System.Drawing.Point(8, 33);
             this.MngGroups_AdminNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngGroups_AdminNameLbl.Name = "MngGroups_AdminNameLbl";
-            this.MngGroups_AdminNameLbl.Size = new System.Drawing.Size(63, 17);
+            this.MngGroups_AdminNameLbl.Size = new System.Drawing.Size(54, 15);
             this.MngGroups_AdminNameLbl.TabIndex = 0;
             this.MngGroups_AdminNameLbl.Text = "<Admin>";
             // 
@@ -128,19 +128,19 @@
             this.MngGroups_GroupBox.Name = "MngGroups_GroupBox";
             this.MngGroups_GroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.MngGroups_GroupBox.Size = new System.Drawing.Size(412, 106);
-            this.MngGroups_GroupBox.TabIndex = 3;
+            this.MngGroups_GroupBox.TabIndex = 1;
             this.MngGroups_GroupBox.TabStop = false;
             this.MngGroups_GroupBox.Text = "Create Group";
             // 
             // MngGroups_CreateBtn
             // 
             this.MngGroups_CreateBtn.AutoSize = true;
-            this.MngGroups_CreateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngGroups_CreateBtn.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngGroups_CreateBtn.Location = new System.Drawing.Point(158, 63);
             this.MngGroups_CreateBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_CreateBtn.Name = "MngGroups_CreateBtn";
             this.MngGroups_CreateBtn.Size = new System.Drawing.Size(127, 33);
-            this.MngGroups_CreateBtn.TabIndex = 2;
+            this.MngGroups_CreateBtn.TabIndex = 1;
             this.MngGroups_CreateBtn.Text = "Create Group";
             this.MngGroups_CreateBtn.UseVisualStyleBackColor = true;
             this.MngGroups_CreateBtn.Click += new System.EventHandler(this.MngGroups_CreateBtn_Click);
@@ -153,19 +153,18 @@
             this.MngGroups_GroupNameCmbo.FormattingEnabled = true;
             this.MngGroups_GroupNameCmbo.Location = new System.Drawing.Point(127, 31);
             this.MngGroups_GroupNameCmbo.Margin = new System.Windows.Forms.Padding(4);
-            this.MngGroups_GroupNameCmbo.MaxLength = 25;
             this.MngGroups_GroupNameCmbo.Name = "MngGroups_GroupNameCmbo";
-            this.MngGroups_GroupNameCmbo.Size = new System.Drawing.Size(203, 25);
-            this.MngGroups_GroupNameCmbo.TabIndex = 5;
+            this.MngGroups_GroupNameCmbo.Size = new System.Drawing.Size(203, 23);
+            this.MngGroups_GroupNameCmbo.TabIndex = 0;
             // 
             // MngGroups_NameLbl
             // 
             this.MngGroups_NameLbl.AutoSize = true;
-            this.MngGroups_NameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngGroups_NameLbl.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngGroups_NameLbl.Location = new System.Drawing.Point(25, 38);
             this.MngGroups_NameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngGroups_NameLbl.Name = "MngGroups_NameLbl";
-            this.MngGroups_NameLbl.Size = new System.Drawing.Size(45, 17);
+            this.MngGroups_NameLbl.Size = new System.Drawing.Size(35, 15);
             this.MngGroups_NameLbl.TabIndex = 0;
             this.MngGroups_NameLbl.Text = "Name";
             // 
@@ -183,7 +182,7 @@
             this.MngGroups_ModifyBox.Name = "MngGroups_ModifyBox";
             this.MngGroups_ModifyBox.Padding = new System.Windows.Forms.Padding(4);
             this.MngGroups_ModifyBox.Size = new System.Drawing.Size(412, 190);
-            this.MngGroups_ModifyBox.TabIndex = 4;
+            this.MngGroups_ModifyBox.TabIndex = 2;
             this.MngGroups_ModifyBox.TabStop = false;
             this.MngGroups_ModifyBox.Text = "Modify Existing Group";
             // 
@@ -195,10 +194,9 @@
             this.MngGroups_NewNameCmbo.FormattingEnabled = true;
             this.MngGroups_NewNameCmbo.Location = new System.Drawing.Point(127, 90);
             this.MngGroups_NewNameCmbo.Margin = new System.Windows.Forms.Padding(4);
-            this.MngGroups_NewNameCmbo.MaxLength = 25;
             this.MngGroups_NewNameCmbo.Name = "MngGroups_NewNameCmbo";
-            this.MngGroups_NewNameCmbo.Size = new System.Drawing.Size(203, 25);
-            this.MngGroups_NewNameCmbo.TabIndex = 7;
+            this.MngGroups_NewNameCmbo.Size = new System.Drawing.Size(203, 23);
+            this.MngGroups_NewNameCmbo.TabIndex = 1;
             // 
             // MngGroups_SelectGroupCmbo
             // 
@@ -208,19 +206,18 @@
             this.MngGroups_SelectGroupCmbo.FormattingEnabled = true;
             this.MngGroups_SelectGroupCmbo.Location = new System.Drawing.Point(127, 50);
             this.MngGroups_SelectGroupCmbo.Margin = new System.Windows.Forms.Padding(4);
-            this.MngGroups_SelectGroupCmbo.MaxLength = 25;
             this.MngGroups_SelectGroupCmbo.Name = "MngGroups_SelectGroupCmbo";
-            this.MngGroups_SelectGroupCmbo.Size = new System.Drawing.Size(203, 25);
-            this.MngGroups_SelectGroupCmbo.TabIndex = 6;
+            this.MngGroups_SelectGroupCmbo.Size = new System.Drawing.Size(203, 23);
+            this.MngGroups_SelectGroupCmbo.TabIndex = 0;
             // 
             // MngGroups_RenameBtn
             // 
-            this.MngGroups_RenameBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngGroups_RenameBtn.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngGroups_RenameBtn.Location = new System.Drawing.Point(158, 122);
             this.MngGroups_RenameBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_RenameBtn.Name = "MngGroups_RenameBtn";
             this.MngGroups_RenameBtn.Size = new System.Drawing.Size(127, 33);
-            this.MngGroups_RenameBtn.TabIndex = 4;
+            this.MngGroups_RenameBtn.TabIndex = 2;
             this.MngGroups_RenameBtn.Text = "Rename Group";
             this.MngGroups_RenameBtn.UseVisualStyleBackColor = true;
             this.MngGroups_RenameBtn.Click += new System.EventHandler(this.MngGroups_RenameBtn_Click);
@@ -228,45 +225,46 @@
             // MngGroups_NewNameLbl
             // 
             this.MngGroups_NewNameLbl.AutoSize = true;
-            this.MngGroups_NewNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngGroups_NewNameLbl.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngGroups_NewNameLbl.Location = new System.Drawing.Point(25, 94);
             this.MngGroups_NewNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngGroups_NewNameLbl.Name = "MngGroups_NewNameLbl";
-            this.MngGroups_NewNameLbl.Size = new System.Drawing.Size(76, 17);
+            this.MngGroups_NewNameLbl.Size = new System.Drawing.Size(61, 15);
             this.MngGroups_NewNameLbl.TabIndex = 2;
             this.MngGroups_NewNameLbl.Text = "New Name";
             // 
             // MngGroups_SelectGroupLbl
             // 
             this.MngGroups_SelectGroupLbl.AutoSize = true;
-            this.MngGroups_SelectGroupLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngGroups_SelectGroupLbl.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngGroups_SelectGroupLbl.Location = new System.Drawing.Point(25, 57);
             this.MngGroups_SelectGroupLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngGroups_SelectGroupLbl.Name = "MngGroups_SelectGroupLbl";
-            this.MngGroups_SelectGroupLbl.Size = new System.Drawing.Size(103, 17);
+            this.MngGroups_SelectGroupLbl.Size = new System.Drawing.Size(78, 15);
             this.MngGroups_SelectGroupLbl.TabIndex = 0;
             this.MngGroups_SelectGroupLbl.Text = "Select a Group";
             // 
             // MngGroups_ExitBtn
             // 
-            this.MngGroups_ExitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngGroups_ExitBtn.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngGroups_ExitBtn.Location = new System.Drawing.Point(256, 16);
             this.MngGroups_ExitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_ExitBtn.Name = "MngGroups_ExitBtn";
             this.MngGroups_ExitBtn.Size = new System.Drawing.Size(127, 33);
-            this.MngGroups_ExitBtn.TabIndex = 8;
+            this.MngGroups_ExitBtn.TabIndex = 1;
             this.MngGroups_ExitBtn.Text = "Exit";
             this.MngGroups_ExitBtn.UseVisualStyleBackColor = true;
             this.MngGroups_ExitBtn.Click += new System.EventHandler(this.MngGroups_ExitBtn_Click);
             // 
             // MngGroups_CloseBtn
             // 
-            this.MngGroups_CloseBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngGroups_CloseBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.MngGroups_CloseBtn.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngGroups_CloseBtn.Location = new System.Drawing.Point(121, 16);
             this.MngGroups_CloseBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_CloseBtn.Name = "MngGroups_CloseBtn";
             this.MngGroups_CloseBtn.Size = new System.Drawing.Size(127, 33);
-            this.MngGroups_CloseBtn.TabIndex = 7;
+            this.MngGroups_CloseBtn.TabIndex = 0;
             this.MngGroups_CloseBtn.Text = "Close";
             this.MngGroups_CloseBtn.UseVisualStyleBackColor = true;
             this.MngGroups_CloseBtn.Click += new System.EventHandler(this.MngGroups_CloseBtn_Click);
@@ -281,7 +279,7 @@
             this.MngGroups_ButtonBox.Name = "MngGroups_ButtonBox";
             this.MngGroups_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
             this.MngGroups_ButtonBox.Size = new System.Drawing.Size(412, 52);
-            this.MngGroups_ButtonBox.TabIndex = 5;
+            this.MngGroups_ButtonBox.TabIndex = 3;
             this.MngGroups_ButtonBox.TabStop = false;
             // 
             // tableLayoutPanel1
@@ -311,7 +309,9 @@
             // 
             // ManageGroups_Form
             // 
+            this.AcceptButton = this.MngGroups_CreateBtn;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.CancelButton = this.MngGroups_CloseBtn;
             this.ClientSize = new System.Drawing.Size(432, 503);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

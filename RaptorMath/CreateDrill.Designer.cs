@@ -87,7 +87,7 @@
             this.CreateDrill_WindowLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateDrill_WindowLbl.Location = new System.Drawing.Point(7, 18);
             this.CreateDrill_WindowLbl.Name = "CreateDrill_WindowLbl";
-            this.CreateDrill_WindowLbl.Size = new System.Drawing.Size(90, 17);
+            this.CreateDrill_WindowLbl.Size = new System.Drawing.Size(70, 13);
             this.CreateDrill_WindowLbl.TabIndex = 32;
             this.CreateDrill_WindowLbl.Text = "Create Drill";
             // 
@@ -98,7 +98,7 @@
             this.CreateDrill_DateLbl.Location = new System.Drawing.Point(361, 19);
             this.CreateDrill_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CreateDrill_DateLbl.Name = "CreateDrill_DateLbl";
-            this.CreateDrill_DateLbl.Size = new System.Drawing.Size(54, 17);
+            this.CreateDrill_DateLbl.Size = new System.Drawing.Size(42, 13);
             this.CreateDrill_DateLbl.TabIndex = 31;
             this.CreateDrill_DateLbl.Text = "<Date>";
             // 
@@ -108,7 +108,7 @@
             this.CreateDrill_AdminNameLbl.Location = new System.Drawing.Point(7, 42);
             this.CreateDrill_AdminNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CreateDrill_AdminNameLbl.Name = "CreateDrill_AdminNameLbl";
-            this.CreateDrill_AdminNameLbl.Size = new System.Drawing.Size(63, 17);
+            this.CreateDrill_AdminNameLbl.Size = new System.Drawing.Size(48, 13);
             this.CreateDrill_AdminNameLbl.TabIndex = 28;
             this.CreateDrill_AdminNameLbl.Text = "<Admin>";
             // 
@@ -119,7 +119,7 @@
             this.CreateDrill_TimeLbl.Location = new System.Drawing.Point(359, 43);
             this.CreateDrill_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CreateDrill_TimeLbl.Name = "CreateDrill_TimeLbl";
-            this.CreateDrill_TimeLbl.Size = new System.Drawing.Size(55, 17);
+            this.CreateDrill_TimeLbl.Size = new System.Drawing.Size(42, 13);
             this.CreateDrill_TimeLbl.TabIndex = 17;
             this.CreateDrill_TimeLbl.Text = "<Time>";
             // 
@@ -150,6 +150,7 @@
             // CreateDrill_CloseBtn
             // 
             this.CreateDrill_CloseBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.CreateDrill_CloseBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CreateDrill_CloseBtn.Location = new System.Drawing.Point(149, 11);
             this.CreateDrill_CloseBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateDrill_CloseBtn.Name = "CreateDrill_CloseBtn";
@@ -207,12 +208,14 @@
             // CreateDrill_NumQuestionsTxt
             // 
             this.CreateDrill_NumQuestionsTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CreateDrill_NumQuestionsTxt.Location = new System.Drawing.Point(27, 30);
+            this.CreateDrill_NumQuestionsTxt.Location = new System.Drawing.Point(75, 37);
             this.CreateDrill_NumQuestionsTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CreateDrill_NumQuestionsTxt.MaxLength = 10;
+            this.CreateDrill_NumQuestionsTxt.MaxLength = 3;
             this.CreateDrill_NumQuestionsTxt.Name = "CreateDrill_NumQuestionsTxt";
-            this.CreateDrill_NumQuestionsTxt.Size = new System.Drawing.Size(123, 23);
+            this.CreateDrill_NumQuestionsTxt.Size = new System.Drawing.Size(40, 20);
             this.CreateDrill_NumQuestionsTxt.TabIndex = 0;
+            this.CreateDrill_NumQuestionsTxt.TextChanged += new System.EventHandler(this.CreateDrill_NumQuestionsTxt_TextChanged);
+            this.CreateDrill_NumQuestionsTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CreateDrill_CreateBoxTextBoxes_KeyPress);
             // 
             // CreateDrill_OpRangeBox
             // 
@@ -237,35 +240,37 @@
             this.CreateDrill_DashLbl.AutoSize = true;
             this.CreateDrill_DashLbl.Location = new System.Drawing.Point(180, 62);
             this.CreateDrill_DashLbl.Name = "CreateDrill_DashLbl";
-            this.CreateDrill_DashLbl.Size = new System.Drawing.Size(33, 17);
+            this.CreateDrill_DashLbl.Size = new System.Drawing.Size(22, 13);
             this.CreateDrill_DashLbl.TabIndex = 4;
             this.CreateDrill_DashLbl.Text = "-----";
             // 
             // CreateDrill_MaxValueTxt
             // 
-            this.CreateDrill_MaxValueTxt.Location = new System.Drawing.Point(215, 57);
+            this.CreateDrill_MaxValueTxt.Location = new System.Drawing.Point(208, 59);
             this.CreateDrill_MaxValueTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CreateDrill_MaxValueTxt.MaxLength = 10;
+            this.CreateDrill_MaxValueTxt.MaxLength = 5;
             this.CreateDrill_MaxValueTxt.Name = "CreateDrill_MaxValueTxt";
-            this.CreateDrill_MaxValueTxt.Size = new System.Drawing.Size(123, 23);
+            this.CreateDrill_MaxValueTxt.Size = new System.Drawing.Size(60, 20);
             this.CreateDrill_MaxValueTxt.TabIndex = 1;
+            this.CreateDrill_MaxValueTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CreateDrill_CreateBoxTextBoxes_KeyPress);
             // 
             // CreateDrill_MinValueTxt
             // 
-            this.CreateDrill_MinValueTxt.Location = new System.Drawing.Point(53, 57);
+            this.CreateDrill_MinValueTxt.Location = new System.Drawing.Point(114, 59);
             this.CreateDrill_MinValueTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CreateDrill_MinValueTxt.MaxLength = 10;
+            this.CreateDrill_MinValueTxt.MaxLength = 5;
             this.CreateDrill_MinValueTxt.Name = "CreateDrill_MinValueTxt";
-            this.CreateDrill_MinValueTxt.Size = new System.Drawing.Size(120, 23);
+            this.CreateDrill_MinValueTxt.Size = new System.Drawing.Size(60, 20);
             this.CreateDrill_MinValueTxt.TabIndex = 0;
+            this.CreateDrill_MinValueTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CreateDrill_CreateBoxTextBoxes_KeyPress);
             // 
             // CreateDrill_MaxValueLbl
             // 
             this.CreateDrill_MaxValueLbl.AutoSize = true;
             this.CreateDrill_MaxValueLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateDrill_MaxValueLbl.Location = new System.Drawing.Point(216, 37);
+            this.CreateDrill_MaxValueLbl.Location = new System.Drawing.Point(205, 37);
             this.CreateDrill_MaxValueLbl.Name = "CreateDrill_MaxValueLbl";
-            this.CreateDrill_MaxValueLbl.Size = new System.Drawing.Size(106, 17);
+            this.CreateDrill_MaxValueLbl.Size = new System.Drawing.Size(81, 13);
             this.CreateDrill_MaxValueLbl.TabIndex = 1;
             this.CreateDrill_MaxValueLbl.Text = "Maximum Value";
             // 
@@ -273,9 +278,9 @@
             // 
             this.CreateDrill_MinValueLbl.AutoSize = true;
             this.CreateDrill_MinValueLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateDrill_MinValueLbl.Location = new System.Drawing.Point(61, 37);
+            this.CreateDrill_MinValueLbl.Location = new System.Drawing.Point(96, 37);
             this.CreateDrill_MinValueLbl.Name = "CreateDrill_MinValueLbl";
-            this.CreateDrill_MinValueLbl.Size = new System.Drawing.Size(103, 17);
+            this.CreateDrill_MinValueLbl.Size = new System.Drawing.Size(78, 13);
             this.CreateDrill_MinValueLbl.TabIndex = 0;
             this.CreateDrill_MinValueLbl.Text = "Minimum Value";
             // 
@@ -296,20 +301,21 @@
             // 
             // CreateDrill_DrillNameTxt
             // 
-            this.CreateDrill_DrillNameTxt.Location = new System.Drawing.Point(183, 27);
+            this.CreateDrill_DrillNameTxt.Location = new System.Drawing.Point(73, 40);
             this.CreateDrill_DrillNameTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CreateDrill_DrillNameTxt.MaxLength = 25;
+            this.CreateDrill_DrillNameTxt.MaxLength = 50;
             this.CreateDrill_DrillNameTxt.Name = "CreateDrill_DrillNameTxt";
-            this.CreateDrill_DrillNameTxt.Size = new System.Drawing.Size(120, 23);
+            this.CreateDrill_DrillNameTxt.Size = new System.Drawing.Size(320, 20);
             this.CreateDrill_DrillNameTxt.TabIndex = 0;
+            this.CreateDrill_DrillNameTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CreateDrill_CreateBoxTextBoxes_KeyPress);
             // 
             // CreateDrill_DrillNameLbl
             // 
             this.CreateDrill_DrillNameLbl.AutoSize = true;
             this.CreateDrill_DrillNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateDrill_DrillNameLbl.Location = new System.Drawing.Point(96, 27);
+            this.CreateDrill_DrillNameLbl.Location = new System.Drawing.Point(12, 43);
             this.CreateDrill_DrillNameLbl.Name = "CreateDrill_DrillNameLbl";
-            this.CreateDrill_DrillNameLbl.Size = new System.Drawing.Size(73, 17);
+            this.CreateDrill_DrillNameLbl.Size = new System.Drawing.Size(55, 13);
             this.CreateDrill_DrillNameLbl.TabIndex = 48;
             this.CreateDrill_DrillNameLbl.Text = "Drill Name";
             // 
@@ -334,11 +340,12 @@
             this.CreateDrill_SubtactionRdo.Location = new System.Drawing.Point(63, 54);
             this.CreateDrill_SubtactionRdo.Margin = new System.Windows.Forms.Padding(4);
             this.CreateDrill_SubtactionRdo.Name = "CreateDrill_SubtactionRdo";
-            this.CreateDrill_SubtactionRdo.Size = new System.Drawing.Size(101, 21);
-            this.CreateDrill_SubtactionRdo.TabIndex = 0;
+            this.CreateDrill_SubtactionRdo.Size = new System.Drawing.Size(79, 17);
+            this.CreateDrill_SubtactionRdo.TabIndex = 1;
             this.CreateDrill_SubtactionRdo.TabStop = true;
             this.CreateDrill_SubtactionRdo.Text = "Subtraction";
             this.CreateDrill_SubtactionRdo.UseVisualStyleBackColor = true;
+            this.CreateDrill_SubtactionRdo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CreateDrill_CreateBoxTextBoxes_KeyPress);
             // 
             // CreateDrill_AdditionRdo
             // 
@@ -346,11 +353,12 @@
             this.CreateDrill_AdditionRdo.Location = new System.Drawing.Point(63, 26);
             this.CreateDrill_AdditionRdo.Margin = new System.Windows.Forms.Padding(4);
             this.CreateDrill_AdditionRdo.Name = "CreateDrill_AdditionRdo";
-            this.CreateDrill_AdditionRdo.Size = new System.Drawing.Size(80, 21);
-            this.CreateDrill_AdditionRdo.TabIndex = 1;
+            this.CreateDrill_AdditionRdo.Size = new System.Drawing.Size(63, 17);
+            this.CreateDrill_AdditionRdo.TabIndex = 0;
             this.CreateDrill_AdditionRdo.TabStop = true;
             this.CreateDrill_AdditionRdo.Text = "Addition";
             this.CreateDrill_AdditionRdo.UseVisualStyleBackColor = true;
+            this.CreateDrill_AdditionRdo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CreateDrill_CreateBoxTextBoxes_KeyPress);
             // 
             // tableLayoutPanel1
             // 
@@ -378,6 +386,7 @@
             // CreateDrill_Form
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.CancelButton = this.CreateDrill_CloseBtn;
             this.ClientSize = new System.Drawing.Size(432, 503);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

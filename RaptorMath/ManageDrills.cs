@@ -98,6 +98,8 @@ namespace RaptorMath
             InitializeTimer();
             RefreshStudentCmboBo();
 
+            MngDrills_AssignDrillRdo.Select();
+
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 
@@ -181,6 +183,14 @@ namespace RaptorMath
             else
             {
                 RefreshSelectUnassignedDrillCmbo();
+            }
+        }
+
+        private void MngDrills_PerformBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                MngDrills_AddRmvDrillBtn_Click(sender, e);
             }
         }
     }
