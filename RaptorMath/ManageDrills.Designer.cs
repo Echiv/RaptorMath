@@ -314,6 +314,7 @@
             // 
             this.MngDrills_Timer.Enabled = true;
             this.MngDrills_Timer.Interval = 1000;
+            this.MngDrills_Timer.Tick += new System.EventHandler(this.MngDrills_Timer_Tick);
             // 
             // groupBox1
             // 

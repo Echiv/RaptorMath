@@ -382,6 +382,7 @@
             // 
             this.CreateDrill_Timer.Enabled = true;
             this.CreateDrill_Timer.Interval = 1000;
+            this.CreateDrill_Timer.Tick += new System.EventHandler(this.CreateDrill_Timer_Tick);
             // 
             // CreateDrill_Form
             // 

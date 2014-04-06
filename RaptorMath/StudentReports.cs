@@ -76,7 +76,7 @@ namespace RaptorMath
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 
-        private void MngUsers_Timer_Tick(object sender, EventArgs e)
+        private void ReportHome_Timer_Tick(object sender, EventArgs e)
         {
             ReportHome_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }

@@ -157,25 +157,6 @@ namespace RaptorMath
             {
                 MessageBox.Show("That Student could not be found!");
             }
-            /*foreach (Student student in studentList)
-            {
-                if ((student.FirstName == selectedStudent.FirstName) && (student.LastName == selectedStudent.LastName))
-                {
-                    Group group = groupList.Where(grp => grp.Name.Equals(newGroup)).FirstOrDefault();
-                    int groupID = 0;
-                    if (group != null)
-                    {
-                        Console.WriteLine("HEYYYYYO");
-                        groupID = group.ID;
-                    }
-                    MessageBox.Show(student.curDrillList.Count.ToString());
-                    
-                    //modifiedStudent = compareOldAndNewStudentInfo(newFName, newLName, selectedStudent, groupID, student.GroupID);
-                    //modifiedStudent.ID = student.ID;
-                    
-                    //UpdateStudent(student, modifiedStudent, studentXMLPath, groupXMLPath);
-                }
-            }*/
         }
 
         public void compareOldAndNewStudentInfo(string newFName, string newLName, Student selectedStudent, int newGroup/*, int oldGroup*/)
@@ -187,27 +168,9 @@ namespace RaptorMath
             if ((newGroup != selectedStudent.GroupID) && (newGroup != 0))
                 selectedStudent.GroupID = newGroup;
             selectedStudent.LoginName = selectedStudent.FirstName + " " + selectedStudent.LastName;
-            /*Student newStudent = new Student();
-            if ((newFName == currentFName) || (newFName == string.Empty))
-                newStudent.FirstName = currentFName;
-            else
-                newStudent.FirstName = newFName;
-
-            if ((newLName == currentLName) || (newLName == string.Empty))
-                newStudent.LastName = currentLName;
-            else
-                newStudent.LastName = newLName;
-
-            if ((newGroup == oldGroup) || (newGroup == 0))
-                newStudent.GroupID = oldGroup;
-            else          
-                newStudent.GroupID = newGroup;
-            newStudent.LoginName = newStudent.FirstName + " " + newStudent.LastName;
-
-            return newStudent;*/
         }
 
-        public void UpdateStudent(Student student, /*Student modifiedStudent, */string studentXMLPath, string groupXMLPath, string dataDirectory)
+        public void UpdateStudent(Student student, string studentXMLPath, string groupXMLPath, string dataDirectory)
         {
             XDocument data = XDocument.Load(studentXMLPath);
             XElement studentIDElement = data.Descendants("stu").Where(stu => stu.Attribute("ID").Value.Equals(student.ID.ToString())).FirstOrDefault();
@@ -239,7 +202,7 @@ namespace RaptorMath
             }
         }
 
-        public void AddDrillToStudentXML(Student student, Drill drillToAdd, string studentXMLPath)
+        public bool AddDrillToStudentXML(Student student, Drill drillToAdd, string studentXMLPath)
         {
             XDocument data = XDocument.Load(studentXMLPath);
 
@@ -252,10 +215,12 @@ namespace RaptorMath
 
                 studentElement.Add(newStudentDrill);
                 data.Save(studentXMLPath);
+                return true;
             }
+            return false;
         }
 
-        public void RemoveDrillFromStudentXML(Student student, Drill DrillToRemove, string studentXMLPath)
+        public bool RemoveDrillFromStudentXML(Student student, Drill DrillToRemove, string studentXMLPath)
         {
             XDocument data = XDocument.Load(studentXMLPath);
 
@@ -272,12 +237,13 @@ namespace RaptorMath
                         {
                             drill.Remove();
                             student.curDrillList.Remove(DrillToRemove);
-                            break;
+                            data.Save(studentXMLPath);
+                            return true;
                         }
                     }
                 }
-                data.Save(studentXMLPath);
             }
+            return false;
         }
 
         public bool isDrillAssigned(Student student, Drill drill)
@@ -299,6 +265,8 @@ namespace RaptorMath
             XElement studentElement = data.Descendants("stu").Where(s => s.Attribute("ID").Value.Equals(student.ID.ToString())).FirstOrDefault();
             if (studentElement != null)
             {
+                if (System.IO.File.Exists(student.RecordsPath))
+                    System.IO.File.Delete(student.RecordsPath);
                 studentElement.Remove();
                 data.Save(studentXMLPath);
                 studentList.Remove(student);
@@ -308,7 +276,6 @@ namespace RaptorMath
 
         public void LoadStudentXML(List<Student> studentList, List<Drill> mainDrillList, string fileName)
         {
-            Console.WriteLine("LoadStudent");
             XDocument studentXML = XDocument.Load(fileName);
 
             XElement rootNode = studentXML.Root;
@@ -325,8 +292,6 @@ namespace RaptorMath
                 aStudent.LoginName = student.Element("loginName").Value;
                 aStudent.LastLogin = student.Element("lastLogin").Value;
                 aStudent.RecordsPath = student.Element("recPath").Value;
-                Console.WriteLine(aStudent.RecordsPath);
-                //aStudent.DrillsPath = CurrentDrillParser(student.Element("driPath"));
                 if (student.Elements("drill") != null)
                 {
                     foreach (XElement drill in student.Elements("drill"))
@@ -335,8 +300,6 @@ namespace RaptorMath
                         aStudent.CurDrillList.Add(newDrill);
                     }
                 }
-                //MessageBox.Show(aStudent.curDrillList.Count.ToString());
-                // Add to student list
                 studentList.Add(aStudent);
             }
         }
@@ -346,7 +309,6 @@ namespace RaptorMath
             Record RecordToAdd = new Record(currentDrill.ID, currentDrill.DrillName, DateTime.Now.ToString("M/d/yyyy"), currentDrill.Questions, currentDrill.RangeStart,
                 currentDrill.RangeEnd, currentDrill.Operand, currentDrill.Wrong, currentDrill.Percent, currentDrill.Skipped);
             AddRecordToStudent(currentStudent, RecordToAdd);
-
         }
 
         public int GetNextAvailableID(string fileName, string itemTag)

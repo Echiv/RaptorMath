@@ -256,15 +256,19 @@ namespace RaptorMath
             Student student = studentList.Where(stu => stu.LoginName.Equals(studentName)).FirstOrDefault();
             Drill drill = mainDrillList.Where(dri => dri.DrillName.Equals(drillName)).FirstOrDefault();
             if ((student != null) && (drill != null))
-                AddDrillToStudent(student, drill);
+                return AddDrillToStudent(student, drill);
             else
                 return false;
-            return true;
         }
 
         public bool AssignDrillToGroup(string groupName, string drillName)
         {
-            return true;
+            Group group = groupList.Where(grp => grp.Name.Equals(groupName)).FirstOrDefault();
+            Drill drill = mainDrillList.Where(dri => dri.DrillName.Equals(drillName)).FirstOrDefault();
+            if ((group != null) && (drill != null))
+                return AddDrillToGroup(group, drill);
+            else
+                return false;
         }
 
         public bool UnassignDrillFromStudent(string studentName, string drillName)
@@ -272,16 +276,19 @@ namespace RaptorMath
             Student student = studentList.Where(stu => stu.LoginName.Equals(studentName)).FirstOrDefault();
             Drill drill = mainDrillList.Where(dri => dri.DrillName.Equals(drillName)).FirstOrDefault();
             if ((student != null) && (drill != null))
-                RemoveDrillFromStudent(student, drill);
+                return RemoveDrillFromStudent(student, drill);
             else
                 return false;
-            return true;
-            
         }
 
         public bool UnassignDrillFromGroup(string groupName, string drillName)
         {
-            return true;
+            Group group = groupList.Where(grp => grp.Name.Equals(groupName)).FirstOrDefault();
+            Drill drill = mainDrillList.Where(dri => dri.DrillName.Equals(drillName)).FirstOrDefault();
+            if ((group != null) && (drill != null))
+                return RemoveDrillFromGroup(group, drill);
+            else
+                return false;
         }
 
         public Student FindStudentWithName(string studentName)
@@ -304,14 +311,65 @@ namespace RaptorMath
             return (foundGroup.ID);
         }
 
-        public void AddDrillToStudent(Student student, Drill drillToAdd)
+        public bool AddDrillToStudent(Student student, Drill drillToAdd)
         {
-            XMLDriver.AddDrillToStudentXML(student, drillToAdd);
+            return XMLDriver.AddDrillToStudentXML(student, drillToAdd);
         }
 
-        public void RemoveDrillFromStudent(Student student, Drill drillToRemove)
+        public bool AddDrillToGroup(Group group, Drill drillToAdd)
         {
-            XMLDriver.RemoveDrillFromStudentXML(student, drillToRemove);
+            bool isDrillAddedToGroup = XMLDriver.AddDrillToGroupXML(group, drillToAdd);
+            List<Student> StudentList = FindStudentsByGroupID(group.ID);
+            
+            if(isDrillAddedToGroup)
+            {
+                foreach(Student student in StudentList)
+                {
+                    AddDrillToStudent(student, drillToAdd);
+                }
+            }
+            return isDrillAddedToGroup;
+        }
+
+        public void AddGroupDrillsToStudent(Group group, Student student)
+        {
+            foreach(Drill drill in group.groupDrillList)
+            {
+                student.curDrillList.Add(drill);
+            }
+        }
+
+        public void RemoveGroupDrillsFromStudent(Group group, Student student)
+        {
+            foreach (Drill drill in group.groupDrillList)
+            {
+                student.curDrillList.Remove(drill);
+            }
+        }
+
+        public List<Student> FindStudentsByGroupID(int groupID)
+        {
+            return studentList.Where(stu => stu.GroupID.ToString().Equals(groupID.ToString())).ToList();
+        }
+
+        public bool RemoveDrillFromStudent(Student student, Drill drillToRemove)
+        {
+            return XMLDriver.RemoveDrillFromStudentXML(student, drillToRemove);
+        }
+
+        public bool RemoveDrillFromGroup(Group group, Drill drillToRemove)
+        {
+            bool isDrillRemovedFromGroup = XMLDriver.RemoveDrillFromGroupXML(group, drillToRemove);
+            List<Student> StudentList = FindStudentsByGroupID(group.ID);
+
+            if (isDrillRemovedFromGroup)
+            {
+                foreach (Student student in StudentList)
+                {
+                    RemoveDrillFromStudent(student, drillToRemove);
+                }
+            }
+            return isDrillRemovedFromGroup;
         }
 
         public bool IsRunning()

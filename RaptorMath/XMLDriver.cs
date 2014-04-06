@@ -78,8 +78,9 @@ namespace RaptorMath
             Console.WriteLine(studentXMLPath);
 
             LoadAdminXML(adminList, adminXMLPath);
-            LoadGroupXML(groupList, groupXMLPath);
+            
             LoadDrillXML(mainDrillList, drillXMLPath);
+            LoadGroupXML(groupList, mainDrillList, groupXMLPath);
             if (studentXMLExists(studentXMLPath))
                 XMLStudentDriver.LoadStudentXML(studentList, mainDrillList, studentXMLPath);
         }
@@ -302,45 +303,51 @@ namespace RaptorMath
             }
         }
 
-        public void AddDrillToStudentXML(Student student, Drill drillToAdd)
+        public bool AddDrillToStudentXML(Student student, Drill drillToAdd)
         {
-            XMLStudentDriver.AddDrillToStudentXML(student, drillToAdd, studentXMLPath);
+            return XMLStudentDriver.AddDrillToStudentXML(student, drillToAdd, studentXMLPath);
         }
 
-        public void AddDrillToGroupXML(Group group, Drill drillToAdd)
+        public bool AddDrillToGroupXML(Group group, Drill drillToAdd)
         {
-            XDocument data = XDocument.Load(studentXMLPath);
+            XDocument data = XDocument.Load(groupXMLPath);
 
-            XElement groupElement = data.Descendants("group").Where(s => s.Attribute("ID").Value.Equals(group.ID.ToString())).FirstOrDefault();
-            bool isDrillAlreadyAssignedToStudent = isDrillAssigned(group, drillToAdd);
-            if ((groupElement != null) && (!isDrillAlreadyAssignedToStudent))
+            XElement groupElement = data.Descendants("group").Where(grp => grp.Attribute("ID").Value.Equals(group.ID.ToString())).FirstOrDefault();
+            bool isDrillAlreadyAssignedToGroup = isDrillAssignedToGroup(group, drillToAdd);
+            if ((groupElement != null) && (!isDrillAlreadyAssignedToGroup))
             {
                 XElement newStudentDrill = new XElement("drill", drillToAdd.ID);
                 group.groupDrillList.Add(drillToAdd);
 
                 groupElement.Add(newStudentDrill);
-                data.Save(studentXMLPath);
+                data.Save(groupXMLPath);
+                return true;
             }
+            return false;
         }
 
-        public bool isDrillAssigned(Group group, Drill drill)
+        public bool isDrillAssignedToGroup(Group group, Drill drill)
         {
             foreach (Drill groupDrill in group.groupDrillList)
             {
                 if (groupDrill.ID == drill.ID)
                 {
+                    Console.WriteLine("groupDrill list ID");
+                    Console.WriteLine(groupDrill.ID);
+                    Console.WriteLine("drill ID");
+                    Console.WriteLine(drill.ID);
                     return true;
                 }
             }
             return false;
         }
 
-        public void RemoveDrillFromStudentXML(Group group, Drill DrillToRemove, string groupXMLPath)
+        public bool RemoveDrillFromGroupXML(Group group, Drill DrillToRemove)
         {
             XDocument data = XDocument.Load(groupXMLPath);
 
             XElement groupElement = data.Descendants("group").Where(s => s.Attribute("ID").Value.Equals(group.ID.ToString())).FirstOrDefault();
-            bool isDrillAlreadyAssignedToStudent = isDrillAssigned(group, DrillToRemove);
+            bool isDrillAlreadyAssignedToStudent = isDrillAssignedToGroup(group, DrillToRemove);
             if ((groupElement != null) && (isDrillAlreadyAssignedToStudent))
             {
                 XElement newStudentDrill = new XElement("drill", DrillToRemove.ID);
@@ -352,17 +359,18 @@ namespace RaptorMath
                         {
                             drill.Remove();
                             group.groupDrillList.Remove(DrillToRemove);
-                            break;
+                            data.Save(groupXMLPath);
+                            return true;
                         }
                     }
                 }
-                data.Save(groupXMLPath);
             }
+            return false;
         }
 
-        public void RemoveDrillFromStudentXML(Student student, Drill DrillToRemove)
+        public bool RemoveDrillFromStudentXML(Student student, Drill DrillToRemove)
         {
-            XMLStudentDriver.RemoveDrillFromStudentXML(student, DrillToRemove, studentXMLPath);
+            return XMLStudentDriver.RemoveDrillFromStudentXML(student, DrillToRemove, studentXMLPath);
         }
 
         private bool isDrillAssigned(Student student, Drill drill)
@@ -446,7 +454,7 @@ namespace RaptorMath
             }
         }
 
-        public void LoadGroupXML(List<Group> groupList, string fileName)
+        public void LoadGroupXML(List<Group> groupList, List<Drill> mainDrillList, string fileName)
         {
             XDocument groupXML = XDocument.Load(fileName);
             foreach (XElement group in groupXML.Root.Nodes())
@@ -454,6 +462,14 @@ namespace RaptorMath
                 Group Group = new Group();
                 Group.ID = Convert.ToInt32(group.Attribute("ID").Value);
                 Group.Name = group.Element("groupName").Value;
+                if(group.Elements("drill") != null)
+                {
+                    foreach(XElement drill in group.Elements("drill"))
+                    {
+                        Drill newDrill = mainDrillList.Where(dri => dri.ID.Equals(Convert.ToInt32(drill.Value))).FirstOrDefault();
+                        Group.groupDrillList.Add(newDrill);
+                    }
+                }
                 groupList.Add(Group);
             }
         }

@@ -89,7 +89,7 @@ namespace RaptorMath
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 
-        private void ManageGroups_Timer_Tick(object sender, EventArgs e)
+        private void MngGroups_Timer_Tick(object sender, EventArgs e)
         {
             MngGroups_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }

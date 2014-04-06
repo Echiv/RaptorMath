@@ -53,7 +53,7 @@ namespace RaptorMath
             this.StudentName = localManager.reportStudent;
         }
 
-        private void MngUsers_Timer_Tick(object sender, EventArgs e)
+        private void SingleReport_Timer_Tick(object sender, EventArgs e)
         {
             SingleReport_DateLbl.Text = DateTime.Now.ToString("h:mm tt");
         }

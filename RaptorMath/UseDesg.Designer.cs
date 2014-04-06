@@ -81,6 +81,7 @@
             // 
             this.UseDesg_Timer.Enabled = true;
             this.UseDesg_Timer.Interval = 1000;
+            this.UseDesg_Timer.Tick += new System.EventHandler(this.UseDesg_Timer_Tick);
             // 
             // UseDesg_LoginBox
             // 

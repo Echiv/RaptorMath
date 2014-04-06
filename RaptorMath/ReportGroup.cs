@@ -39,7 +39,7 @@ namespace RaptorMath
             InitializeTimer();
         }
 
-        private void MngUsers_Timer_Tick(object sender, EventArgs e)
+        private void GroupReport_Timer_Tick(object sender, EventArgs e)
         {
             GroupReport_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }

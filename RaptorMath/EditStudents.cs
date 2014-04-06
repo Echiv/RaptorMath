@@ -53,7 +53,7 @@ namespace RaptorMath
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 
-        private void MngUsers_Timer_Tick(object sender, EventArgs e)
+        private void EditStu_Timer_Tick(object sender, EventArgs e)
         {
             EditStu_DateLbl.Text = DateTime.Now.ToString("h:mm tt");
         }

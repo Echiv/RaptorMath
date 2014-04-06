@@ -306,6 +306,7 @@
             // 
             this.MngGroups_Timer.Enabled = true;
             this.MngGroups_Timer.Interval = 1000;
+            this.MngGroups_Timer.Tick += new System.EventHandler(this.MngGroups_Timer_Tick);
             // 
             // ManageGroups_Form
             // 

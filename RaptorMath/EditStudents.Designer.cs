@@ -277,6 +277,7 @@
             // 
             this.EditStu_Timer.Enabled = true;
             this.EditStu_Timer.Interval = 1000;
+            this.EditStu_Timer.Tick += new System.EventHandler(this.EditStu_Timer_Tick);
             // 
             // EditStu_NewLastNameCmbo
             // 
