@@ -9,6 +9,8 @@ namespace RaptorMath
 {
     public class Group
     {
+        public List<Drill> groupDrillList = new List<Drill>();
+
         private int id;
         private string name;
 

@@ -38,12 +38,10 @@
             this.MngDrills_DrillBox = new System.Windows.Forms.GroupBox();
             this.MngDrills_PerformBox = new System.Windows.Forms.GroupBox();
             this.MngDrills_SelectDrillCmbo = new System.Windows.Forms.ComboBox();
-            this.MngDrills_GroupCmbo = new System.Windows.Forms.ComboBox();
-            this.MngDrills_StudentCmbo = new System.Windows.Forms.ComboBox();
+            this.MngDrills_StudentOrGroupCmbo = new System.Windows.Forms.ComboBox();
             this.MngDrills_AddRmvDrillBtn = new System.Windows.Forms.Button();
             this.MngDrills_SelectDrillLbl = new System.Windows.Forms.Label();
-            this.MngDrills_GroupLbl = new System.Windows.Forms.Label();
-            this.MngDrills_StudentLbl = new System.Windows.Forms.Label();
+            this.MngDrills_StudentOrGroupLbl = new System.Windows.Forms.Label();
             this.MngDrills_OperationBox = new System.Windows.Forms.GroupBox();
             this.MngDrills_RemoveDrillRdo = new System.Windows.Forms.RadioButton();
             this.MngDrills_AssignDrillRdo = new System.Windows.Forms.RadioButton();
@@ -52,12 +50,20 @@
             this.MngDrills_CloseBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.MngDrills_Timer = new System.Windows.Forms.Timer(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.MngDrills_StudentRdo = new System.Windows.Forms.RadioButton();
+            this.MngDrills_GroupRdo = new System.Windows.Forms.RadioButton();
             this.MngDrills_UserInfoBox.SuspendLayout();
             this.MngDrills_DrillBox.SuspendLayout();
             this.MngDrills_PerformBox.SuspendLayout();
             this.MngDrills_OperationBox.SuspendLayout();
             this.MngDrills_ButtonBox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // MngDrills_WindowLbl
@@ -67,7 +73,7 @@
             this.MngDrills_WindowLbl.Location = new System.Drawing.Point(8, 18);
             this.MngDrills_WindowLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngDrills_WindowLbl.Name = "MngDrills_WindowLbl";
-            this.MngDrills_WindowLbl.Size = new System.Drawing.Size(84, 13);
+            this.MngDrills_WindowLbl.Size = new System.Drawing.Size(107, 17);
             this.MngDrills_WindowLbl.TabIndex = 0;
             this.MngDrills_WindowLbl.Text = "Manage Drills";
             // 
@@ -92,7 +98,7 @@
             this.MngDrills_TimeLbl.Location = new System.Drawing.Point(345, 45);
             this.MngDrills_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngDrills_TimeLbl.Name = "MngDrills_TimeLbl";
-            this.MngDrills_TimeLbl.Size = new System.Drawing.Size(42, 13);
+            this.MngDrills_TimeLbl.Size = new System.Drawing.Size(55, 17);
             this.MngDrills_TimeLbl.TabIndex = 2;
             this.MngDrills_TimeLbl.Text = "<Time>";
             // 
@@ -103,7 +109,7 @@
             this.MngDrills_DateLbl.Location = new System.Drawing.Point(346, 19);
             this.MngDrills_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngDrills_DateLbl.Name = "MngDrills_DateLbl";
-            this.MngDrills_DateLbl.Size = new System.Drawing.Size(42, 13);
+            this.MngDrills_DateLbl.Size = new System.Drawing.Size(54, 17);
             this.MngDrills_DateLbl.TabIndex = 1;
             this.MngDrills_DateLbl.Text = "<Date>";
             // 
@@ -113,14 +119,14 @@
             this.MngDrills_AdminNameLbl.Location = new System.Drawing.Point(8, 44);
             this.MngDrills_AdminNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngDrills_AdminNameLbl.Name = "MngDrills_AdminNameLbl";
-            this.MngDrills_AdminNameLbl.Size = new System.Drawing.Size(48, 13);
+            this.MngDrills_AdminNameLbl.Size = new System.Drawing.Size(63, 17);
             this.MngDrills_AdminNameLbl.TabIndex = 0;
             this.MngDrills_AdminNameLbl.Text = "<Admin>";
             // 
             // MngDrills_DrillBox
             // 
-            this.MngDrills_DrillBox.Controls.Add(this.MngDrills_PerformBox);
-            this.MngDrills_DrillBox.Controls.Add(this.MngDrills_OperationBox);
+            this.MngDrills_DrillBox.Controls.Add(this.tableLayoutPanel2);
+            this.MngDrills_DrillBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MngDrills_DrillBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngDrills_DrillBox.Location = new System.Drawing.Point(4, 87);
             this.MngDrills_DrillBox.Margin = new System.Windows.Forms.Padding(4);
@@ -134,19 +140,17 @@
             // MngDrills_PerformBox
             // 
             this.MngDrills_PerformBox.Controls.Add(this.MngDrills_SelectDrillCmbo);
-            this.MngDrills_PerformBox.Controls.Add(this.MngDrills_GroupCmbo);
-            this.MngDrills_PerformBox.Controls.Add(this.MngDrills_StudentCmbo);
+            this.MngDrills_PerformBox.Controls.Add(this.MngDrills_StudentOrGroupCmbo);
             this.MngDrills_PerformBox.Controls.Add(this.MngDrills_AddRmvDrillBtn);
             this.MngDrills_PerformBox.Controls.Add(this.MngDrills_SelectDrillLbl);
-            this.MngDrills_PerformBox.Controls.Add(this.MngDrills_GroupLbl);
-            this.MngDrills_PerformBox.Controls.Add(this.MngDrills_StudentLbl);
-            this.MngDrills_PerformBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MngDrills_PerformBox.Controls.Add(this.MngDrills_StudentOrGroupLbl);
+            this.MngDrills_PerformBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MngDrills_PerformBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngDrills_PerformBox.Location = new System.Drawing.Point(4, 136);
+            this.MngDrills_PerformBox.Location = new System.Drawing.Point(4, 107);
             this.MngDrills_PerformBox.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_PerformBox.Name = "MngDrills_PerformBox";
             this.MngDrills_PerformBox.Padding = new System.Windows.Forms.Padding(4);
-            this.MngDrills_PerformBox.Size = new System.Drawing.Size(416, 219);
+            this.MngDrills_PerformBox.Size = new System.Drawing.Size(408, 225);
             this.MngDrills_PerformBox.TabIndex = 1;
             this.MngDrills_PerformBox.TabStop = false;
             this.MngDrills_PerformBox.Text = "Perform Action";
@@ -154,44 +158,31 @@
             // MngDrills_SelectDrillCmbo
             // 
             this.MngDrills_SelectDrillCmbo.FormattingEnabled = true;
-            this.MngDrills_SelectDrillCmbo.Location = new System.Drawing.Point(159, 125);
+            this.MngDrills_SelectDrillCmbo.Location = new System.Drawing.Point(159, 57);
             this.MngDrills_SelectDrillCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_SelectDrillCmbo.MaxLength = 25;
             this.MngDrills_SelectDrillCmbo.Name = "MngDrills_SelectDrillCmbo";
-            this.MngDrills_SelectDrillCmbo.Size = new System.Drawing.Size(160, 21);
+            this.MngDrills_SelectDrillCmbo.Size = new System.Drawing.Size(160, 24);
             this.MngDrills_SelectDrillCmbo.TabIndex = 2;
-            this.MngDrills_SelectDrillCmbo.SelectedIndexChanged += new System.EventHandler(this.MngDrills_SelectDrillCmbo_SelectedIndexChanged);
             this.MngDrills_SelectDrillCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngDrills_PerformBoxTextBoxes_KeyPress);
             // 
-            // MngDrills_GroupCmbo
+            // MngDrills_StudentOrGroupCmbo
             // 
-            this.MngDrills_GroupCmbo.FormattingEnabled = true;
-            this.MngDrills_GroupCmbo.Location = new System.Drawing.Point(159, 91);
-            this.MngDrills_GroupCmbo.Margin = new System.Windows.Forms.Padding(4);
-            this.MngDrills_GroupCmbo.MaxLength = 25;
-            this.MngDrills_GroupCmbo.Name = "MngDrills_GroupCmbo";
-            this.MngDrills_GroupCmbo.Size = new System.Drawing.Size(160, 21);
-            this.MngDrills_GroupCmbo.TabIndex = 1;
-            this.MngDrills_GroupCmbo.SelectedIndexChanged += new System.EventHandler(this.MngDrills_GroupCmbo_SelectedIndexChanged);
-            this.MngDrills_GroupCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngDrills_PerformBoxTextBoxes_KeyPress);
-            // 
-            // MngDrills_StudentCmbo
-            // 
-            this.MngDrills_StudentCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.MngDrills_StudentCmbo.FormattingEnabled = true;
-            this.MngDrills_StudentCmbo.Location = new System.Drawing.Point(159, 58);
-            this.MngDrills_StudentCmbo.Margin = new System.Windows.Forms.Padding(4);
-            this.MngDrills_StudentCmbo.MaxLength = 25;
-            this.MngDrills_StudentCmbo.Name = "MngDrills_StudentCmbo";
-            this.MngDrills_StudentCmbo.Size = new System.Drawing.Size(160, 21);
-            this.MngDrills_StudentCmbo.TabIndex = 0;
-            this.MngDrills_StudentCmbo.SelectedIndexChanged += new System.EventHandler(this.MngDrills_StudentCmbo_SelectedIndexChanged);
-            this.MngDrills_StudentCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngDrills_PerformBoxTextBoxes_KeyPress);
+            this.MngDrills_StudentOrGroupCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.MngDrills_StudentOrGroupCmbo.FormattingEnabled = true;
+            this.MngDrills_StudentOrGroupCmbo.Location = new System.Drawing.Point(159, 25);
+            this.MngDrills_StudentOrGroupCmbo.Margin = new System.Windows.Forms.Padding(4);
+            this.MngDrills_StudentOrGroupCmbo.MaxLength = 25;
+            this.MngDrills_StudentOrGroupCmbo.Name = "MngDrills_StudentOrGroupCmbo";
+            this.MngDrills_StudentOrGroupCmbo.Size = new System.Drawing.Size(160, 24);
+            this.MngDrills_StudentOrGroupCmbo.TabIndex = 0;
+            this.MngDrills_StudentOrGroupCmbo.TextChanged += new System.EventHandler(this.MngDrills_StudentOrGroupCmbo_TextChanged);
+            this.MngDrills_StudentOrGroupCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngDrills_PerformBoxTextBoxes_KeyPress);
             // 
             // MngDrills_AddRmvDrillBtn
             // 
             this.MngDrills_AddRmvDrillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngDrills_AddRmvDrillBtn.Location = new System.Drawing.Point(159, 154);
+            this.MngDrills_AddRmvDrillBtn.Location = new System.Drawing.Point(159, 86);
             this.MngDrills_AddRmvDrillBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_AddRmvDrillBtn.Name = "MngDrills_AddRmvDrillBtn";
             this.MngDrills_AddRmvDrillBtn.Size = new System.Drawing.Size(100, 28);
@@ -204,58 +195,47 @@
             // 
             this.MngDrills_SelectDrillLbl.AutoSize = true;
             this.MngDrills_SelectDrillLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngDrills_SelectDrillLbl.Location = new System.Drawing.Point(79, 128);
+            this.MngDrills_SelectDrillLbl.Location = new System.Drawing.Point(79, 60);
             this.MngDrills_SelectDrillLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngDrills_SelectDrillLbl.Name = "MngDrills_SelectDrillLbl";
-            this.MngDrills_SelectDrillLbl.Size = new System.Drawing.Size(57, 13);
+            this.MngDrills_SelectDrillLbl.Size = new System.Drawing.Size(75, 17);
             this.MngDrills_SelectDrillLbl.TabIndex = 5;
             this.MngDrills_SelectDrillLbl.Text = "Select Drill";
             // 
-            // MngDrills_GroupLbl
+            // MngDrills_StudentOrGroupLbl
             // 
-            this.MngDrills_GroupLbl.AutoSize = true;
-            this.MngDrills_GroupLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngDrills_GroupLbl.Location = new System.Drawing.Point(79, 95);
-            this.MngDrills_GroupLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.MngDrills_GroupLbl.Name = "MngDrills_GroupLbl";
-            this.MngDrills_GroupLbl.Size = new System.Drawing.Size(36, 13);
-            this.MngDrills_GroupLbl.TabIndex = 4;
-            this.MngDrills_GroupLbl.Text = "Group";
-            // 
-            // MngDrills_StudentLbl
-            // 
-            this.MngDrills_StudentLbl.AutoSize = true;
-            this.MngDrills_StudentLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngDrills_StudentLbl.Location = new System.Drawing.Point(79, 62);
-            this.MngDrills_StudentLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.MngDrills_StudentLbl.Name = "MngDrills_StudentLbl";
-            this.MngDrills_StudentLbl.Size = new System.Drawing.Size(44, 13);
-            this.MngDrills_StudentLbl.TabIndex = 3;
-            this.MngDrills_StudentLbl.Text = "Student";
+            this.MngDrills_StudentOrGroupLbl.AutoSize = true;
+            this.MngDrills_StudentOrGroupLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngDrills_StudentOrGroupLbl.Location = new System.Drawing.Point(79, 29);
+            this.MngDrills_StudentOrGroupLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.MngDrills_StudentOrGroupLbl.Name = "MngDrills_StudentOrGroupLbl";
+            this.MngDrills_StudentOrGroupLbl.Size = new System.Drawing.Size(57, 17);
+            this.MngDrills_StudentOrGroupLbl.TabIndex = 3;
+            this.MngDrills_StudentOrGroupLbl.Text = "Stu/Grp";
             // 
             // MngDrills_OperationBox
             // 
             this.MngDrills_OperationBox.Controls.Add(this.MngDrills_RemoveDrillRdo);
             this.MngDrills_OperationBox.Controls.Add(this.MngDrills_AssignDrillRdo);
-            this.MngDrills_OperationBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MngDrills_OperationBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MngDrills_OperationBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngDrills_OperationBox.Location = new System.Drawing.Point(4, 16);
+            this.MngDrills_OperationBox.Location = new System.Drawing.Point(210, 6);
             this.MngDrills_OperationBox.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.MngDrills_OperationBox.Name = "MngDrills_OperationBox";
             this.MngDrills_OperationBox.Padding = new System.Windows.Forms.Padding(11, 4, 11, 4);
-            this.MngDrills_OperationBox.Size = new System.Drawing.Size(416, 107);
+            this.MngDrills_OperationBox.Size = new System.Drawing.Size(195, 85);
             this.MngDrills_OperationBox.TabIndex = 0;
             this.MngDrills_OperationBox.TabStop = false;
-            this.MngDrills_OperationBox.Text = "Select an Operation";
+            this.MngDrills_OperationBox.Text = "Assign or Remove";
             // 
             // MngDrills_RemoveDrillRdo
             // 
             this.MngDrills_RemoveDrillRdo.AutoSize = true;
             this.MngDrills_RemoveDrillRdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngDrills_RemoveDrillRdo.Location = new System.Drawing.Point(160, 63);
+            this.MngDrills_RemoveDrillRdo.Location = new System.Drawing.Point(29, 52);
             this.MngDrills_RemoveDrillRdo.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_RemoveDrillRdo.Name = "MngDrills_RemoveDrillRdo";
-            this.MngDrills_RemoveDrillRdo.Size = new System.Drawing.Size(85, 17);
+            this.MngDrills_RemoveDrillRdo.Size = new System.Drawing.Size(109, 21);
             this.MngDrills_RemoveDrillRdo.TabIndex = 1;
             this.MngDrills_RemoveDrillRdo.TabStop = true;
             this.MngDrills_RemoveDrillRdo.Text = "Remove Drill";
@@ -266,10 +246,10 @@
             // 
             this.MngDrills_AssignDrillRdo.AutoSize = true;
             this.MngDrills_AssignDrillRdo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngDrills_AssignDrillRdo.Location = new System.Drawing.Point(160, 34);
+            this.MngDrills_AssignDrillRdo.Location = new System.Drawing.Point(29, 23);
             this.MngDrills_AssignDrillRdo.Margin = new System.Windows.Forms.Padding(4);
             this.MngDrills_AssignDrillRdo.Name = "MngDrills_AssignDrillRdo";
-            this.MngDrills_AssignDrillRdo.Size = new System.Drawing.Size(76, 17);
+            this.MngDrills_AssignDrillRdo.Size = new System.Drawing.Size(99, 21);
             this.MngDrills_AssignDrillRdo.TabIndex = 0;
             this.MngDrills_AssignDrillRdo.TabStop = true;
             this.MngDrills_AssignDrillRdo.Text = "Assign Drill";
@@ -334,6 +314,73 @@
             this.MngDrills_Timer.Enabled = true;
             this.MngDrills_Timer.Interval = 1000;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.MngDrills_GroupRdo);
+            this.groupBox1.Controls.Add(this.MngDrills_StudentRdo);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(199, 91);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Group or Student";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.MngDrills_PerformBox, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 19);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 233F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(416, 336);
+            this.tableLayoutPanel2.TabIndex = 3;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.MngDrills_OperationBox, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(410, 97);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // MngDrills_StudentRdo
+            // 
+            this.MngDrills_StudentRdo.AutoSize = true;
+            this.MngDrills_StudentRdo.Location = new System.Drawing.Point(24, 26);
+            this.MngDrills_StudentRdo.Name = "MngDrills_StudentRdo";
+            this.MngDrills_StudentRdo.Size = new System.Drawing.Size(78, 21);
+            this.MngDrills_StudentRdo.TabIndex = 0;
+            this.MngDrills_StudentRdo.TabStop = true;
+            this.MngDrills_StudentRdo.Text = "Student";
+            this.MngDrills_StudentRdo.UseVisualStyleBackColor = true;
+            this.MngDrills_StudentRdo.CheckedChanged += new System.EventHandler(this.MngDrills_StudentRdo_CheckedChanged);
+            // 
+            // MngDrills_GroupRdo
+            // 
+            this.MngDrills_GroupRdo.AutoSize = true;
+            this.MngDrills_GroupRdo.Location = new System.Drawing.Point(24, 55);
+            this.MngDrills_GroupRdo.Name = "MngDrills_GroupRdo";
+            this.MngDrills_GroupRdo.Size = new System.Drawing.Size(69, 21);
+            this.MngDrills_GroupRdo.TabIndex = 1;
+            this.MngDrills_GroupRdo.TabStop = true;
+            this.MngDrills_GroupRdo.Text = "Group";
+            this.MngDrills_GroupRdo.UseVisualStyleBackColor = true;
+            this.MngDrills_GroupRdo.CheckedChanged += new System.EventHandler(this.MngDrills_GroupRdo_CheckedChanged);
+            // 
             // ManageDrills_Form
             // 
             this.AcceptButton = this.MngDrills_AddRmvDrillBtn;
@@ -357,6 +404,10 @@
             this.MngDrills_OperationBox.PerformLayout();
             this.MngDrills_ButtonBox.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -374,8 +425,7 @@
         private System.Windows.Forms.Label MngDrills_AdminNameLbl;
         private System.Windows.Forms.Button MngDrills_AddRmvDrillBtn;
         private System.Windows.Forms.Label MngDrills_SelectDrillLbl;
-        private System.Windows.Forms.Label MngDrills_GroupLbl;
-        private System.Windows.Forms.Label MngDrills_StudentLbl;
+        private System.Windows.Forms.Label MngDrills_StudentOrGroupLbl;
         private System.Windows.Forms.RadioButton MngDrills_RemoveDrillRdo;
         private System.Windows.Forms.RadioButton MngDrills_AssignDrillRdo;
         private System.Windows.Forms.Button MngDrills_ExitBtn;
@@ -383,7 +433,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Timer MngDrills_Timer;
         private System.Windows.Forms.ComboBox MngDrills_SelectDrillCmbo;
-        private System.Windows.Forms.ComboBox MngDrills_GroupCmbo;
-        private System.Windows.Forms.ComboBox MngDrills_StudentCmbo;
+        private System.Windows.Forms.ComboBox MngDrills_StudentOrGroupCmbo;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton MngDrills_GroupRdo;
+        private System.Windows.Forms.RadioButton MngDrills_StudentRdo;
     }
 }

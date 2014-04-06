@@ -78,10 +78,10 @@ namespace RaptorMath
         // Purpose: Validate the administrator's info and then add the administrator to the admin XML   //
         // Parameters: adminName, password, LastLogin, and filePath passed from MngUsers Form           //
         //----------------------------------------------------------------------------------------------//
-        public bool CreateUser(string adminName, string password, string LastLogin, string filePath)
+        public bool CreateUser(string adminFName, string adminLName, string password, string LastLogin, string filePath)
         {
             bool isCreatedUser = false;
-            Admin newAdmin = new Admin(adminName, password, LastLogin, filePath);
+            Admin newAdmin = new Admin(adminFName, adminLName, password, LastLogin, filePath);
 
             bool isUserInfoValid = isAdminInfoValid(newAdmin);
             if(isUserInfoValid)
@@ -142,8 +142,10 @@ namespace RaptorMath
 
         public bool isAdminInfoValid(Admin adminToValidate)
         {
-            if (!(adminToValidate.LoginName.Equals(string.Empty))
-                && (adminToValidate.LoginName.All(char.IsLetter))
+            if (!(adminToValidate.FirstName.Equals(string.Empty))
+                && (adminToValidate.FirstName.All(char.IsLetter))
+                && !(adminToValidate.LastName.Equals(string.Empty))
+                && (adminToValidate.LastName.All(char.IsLetter))
                 && (adminToValidate.Password.All(char.IsLetterOrDigit))
                 && (!studentList.Any(student => student.LoginName.Equals(adminToValidate.LoginName))))
             {
@@ -154,8 +156,10 @@ namespace RaptorMath
 
         public bool isStudentInfoValid(Student studentToValidate)
         {
-            if (!(studentToValidate.LoginName.Equals(string.Empty))
-                &&(studentToValidate.LoginName.All(char.IsLetter)) 
+            if (!(studentToValidate.FirstName.Equals(string.Empty))
+                && (studentToValidate.FirstName.All(char.IsLetter))
+                && !(studentToValidate.LastName.Equals(string.Empty))
+                && (studentToValidate.LastName.All(char.IsLetter)) 
                 && (studentToValidate.GroupID > 0)
                 && (groupList.Any(group => group.ID.Equals(studentToValidate.GroupID)))
                 && (!adminList.Any(admin => admin.LoginName.Equals(studentToValidate.LoginName))))
@@ -194,10 +198,14 @@ namespace RaptorMath
             if ((newFName.Equals(string.Empty) || (newFName.All(char.IsLetter)))
                 && (newLName.Equals(string.Empty) || (newLName.All(char.IsLetter)))
                 && !(currentName.Equals(string.Empty))
-                && (currentName.All(char.IsLetter))
+                && (currentName.Replace(" ", string.Empty).All(char.IsLetter))
                 && (newGroup.Equals(string.Empty) || (newGroup.All(char.IsLetterOrDigit))))
             {
+                Console.WriteLine(currentName);
+                Console.WriteLine(newFName);
+                Console.WriteLine(newLName);
                 Student selectedStudent = FindStudentWithName(currentName);
+                Console.WriteLine(selectedStudent.LoginName);
                 XMLDriver.editStudent(newFName, newLName, selectedStudent, newGroup, studentList, groupList);
             }
         }
@@ -219,13 +227,19 @@ namespace RaptorMath
             if (isAdmin)
             {
                 Admin admin = adminList.Where(adm => adm.LoginName.Equals(userName)).FirstOrDefault();
-                XMLDriver.Delete(admin, adminList);
+                if(admin != null)
+                    XMLDriver.Delete(admin, adminList);
+                /*TODO: else
+                    throw error*/
             }
             bool isStudent = studentList.Any(student => student.LoginName.Equals(userName));
             if(isStudent)
             {
                 Student student = studentList.Where(stu => stu.LoginName.Equals(userName)).FirstOrDefault();
-                XMLDriver.Delete(student, studentList);
+                if(adminList != null)
+                    XMLDriver.Delete(student, studentList);
+                /*TODO: else
+                    throw error*/
             }
         }
 
@@ -250,9 +264,17 @@ namespace RaptorMath
             return (foundStudent);
         }
 
+        public Group FindGroupByName(string GroupName)
+        {
+            Group foundGroup = groupList.Where(grp => grp.Name.Equals(GroupName)).FirstOrDefault();
+            return (foundGroup);
+        }
+
         public int FindGroupIDByName(string GroupName)
         {
             Group foundGroup = groupList.Where(grp => grp.Name.Equals(GroupName)).FirstOrDefault();
+            if (foundGroup == null)
+                return 0;
             return (foundGroup.ID);
         }
 

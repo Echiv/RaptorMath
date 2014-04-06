@@ -48,16 +48,16 @@ namespace RaptorMath
 
         private void RefreshUserDropDownBox()
         {
-            MngUsers_NameCmbo.Items.Clear();
+            MngUsers_FirstNameCmbo.Items.Clear();
             MngUsers_UserCmbo.Items.Clear();
             foreach (Student student in localManager.studentList)
             {
-                MngUsers_NameCmbo.Items.Add(student.LoginName);
+                MngUsers_FirstNameCmbo.Items.Add(student.LoginName);
                 MngUsers_UserCmbo.Items.Add(student.LoginName);
             }
             foreach (Admin admin in localManager.adminList)
             {
-                MngUsers_NameCmbo.Items.Add(admin.LoginName);
+                MngUsers_FirstNameCmbo.Items.Add(admin.LoginName);
                 MngUsers_UserCmbo.Items.Add(admin.LoginName);
             }
         }
@@ -108,7 +108,7 @@ namespace RaptorMath
             {
                 int groupID = localManager.FindGroupIDByName(MngUsers_GroupCmbo.Text);
                 MessageBox.Show(groupID.ToString());
-                bool isCreatedUser = localManager.CreateUser(groupID, MngUsers_NameCmbo.Text, "Unknown");
+                bool isCreatedUser = localManager.CreateUser(groupID, MngUsers_FirstNameCmbo.Text, MngUsers_LastNameCmbo.Text, "Unknown");
                 if (isCreatedUser)
                 {
                     RefreshComboBoxes();
@@ -122,7 +122,7 @@ namespace RaptorMath
                 bool isCreatedUser = false;
                 if (MngUsers_PasswordTxt.Text == MngUsers_ConfirmPasswordTxt.Text)
                 {
-                    isCreatedUser = localManager.CreateUser(MngUsers_NameCmbo.Text, MngUsers_PasswordTxt.Text, "Unknown", "RaptorMathStudents.xml");
+                    isCreatedUser = localManager.CreateUser(MngUsers_FirstNameCmbo.Text, MngUsers_LastNameCmbo.Text, MngUsers_PasswordTxt.Text, "Unknown", "RaptorMathStudents.xml");
                     if (isCreatedUser)
                     {
                         RefreshComboBoxes();

@@ -139,9 +139,8 @@ namespace RaptorMath
             return true;
         }
 
-        public void editStudent(string newFName, string newLName, Student selectedStudent, string newGroup, List<Student> studentList, List<Group> groupList, string studentXMLPath, string groupXMLPath)
+        public void editStudent(string newFName, string newLName, Student selectedStudent, string newGroup, List<Student> studentList, List<Group> groupList, string studentXMLPath, string groupXMLPath, string dataDirectory)
         {
-            Student modifiedStudent = new Student();
             Student modifySelectedStudent = studentList.Where(stu => stu.ID.ToString().Equals(selectedStudent.ID.ToString())).FirstOrDefault();
             if (selectedStudent != null)
             {
@@ -151,9 +150,8 @@ namespace RaptorMath
                 {
                     groupID = group.ID;
                 }
-                MessageBox.Show(selectedStudent.curDrillList.Count.ToString());
                 compareOldAndNewStudentInfo(newFName, newLName, selectedStudent, groupID);
-                UpdateStudent(modifiedStudent, studentXMLPath, groupXMLPath);
+                UpdateStudent(selectedStudent, studentXMLPath, groupXMLPath, dataDirectory);
             }
             else
             {
@@ -184,12 +182,11 @@ namespace RaptorMath
         {
             if ((newFName != selectedStudent.FirstName) && (newFName != string.Empty))
                 selectedStudent.FirstName = newFName;
-            else if ((newLName != selectedStudent.LastName) && (newLName != string.Empty))
+            if ((newLName != selectedStudent.LastName) && (newLName != string.Empty))
                 selectedStudent.LastName = newLName;
-            else if ((newGroup != selectedStudent.GroupID) && (newGroup != 0))
+            if ((newGroup != selectedStudent.GroupID) && (newGroup != 0))
                 selectedStudent.GroupID = newGroup;
             selectedStudent.LoginName = selectedStudent.FirstName + " " + selectedStudent.LastName;
-
             /*Student newStudent = new Student();
             if ((newFName == currentFName) || (newFName == string.Empty))
                 newStudent.FirstName = currentFName;
@@ -210,29 +207,31 @@ namespace RaptorMath
             return newStudent;*/
         }
 
-        public void UpdateStudent(Student student, /*Student modifiedStudent, */string studentXMLPath, string groupXMLPath)
+        public void UpdateStudent(Student student, /*Student modifiedStudent, */string studentXMLPath, string groupXMLPath, string dataDirectory)
         {
             XDocument data = XDocument.Load(studentXMLPath);
-
-            XElement studentIDElement =
-                data.Descendants("stu").Where(stu => stu.Attribute("ID").Value.Equals(student.ID.ToString())).FirstOrDefault();
-            XElement studentNameElement =
-                data.Descendants("stu").Where(stu => stu.Element("loginName").Value.Equals(student.LoginName)).FirstOrDefault();
+            XElement studentIDElement = data.Descendants("stu").Where(stu => stu.Attribute("ID").Value.Equals(student.ID.ToString())).FirstOrDefault();
+            XElement studentNameElement = data.Descendants("stu").Where(stu => stu.Element("loginName").Value.Equals(student.LoginName)).FirstOrDefault();
 
             XDocument groupData = XDocument.Load(groupXMLPath);
-            XElement GroupElement =
-                groupData.Descendants("group").Where(group => group.Attribute("ID").Value.Equals(student.GroupID.ToString())).FirstOrDefault();
-            MessageBox.Show(student.LoginName);
-            MessageBox.Show(student.ID.ToString());
-            MessageBox.Show(student.GroupID.ToString());
+            XElement GroupElement = groupData.Descendants("group").Where(group => group.Attribute("ID").Value.Equals(student.GroupID.ToString())).FirstOrDefault();
+
             if ((studentIDElement != null) && (GroupElement != null))
             {
                 MessageBox.Show(student.GroupID.ToString());
                 if (studentNameElement == null)
                 {
+                    string oldRecordPath = student.RecordsPath;
+                    string recordPath = student.LoginName.Replace(" ", "") + "Records.xml";
+                    student.RecordsPath = System.IO.Path.Combine(dataDirectory, recordPath);
+                    if (System.IO.File.Exists(oldRecordPath))
+                    {
+                        System.IO.File.Move(oldRecordPath, student.RecordsPath);
+                    }
                     studentIDElement.SetElementValue("loginName", student.LoginName);
                     studentIDElement.SetElementValue("firstName", student.FirstName);
                     studentIDElement.SetElementValue("lastName", student.LastName);
+                    studentIDElement.SetElementValue("recPath", student.RecordsPath);
                 }
 
                 studentIDElement.SetElementValue("group", student.GroupID);
@@ -275,7 +274,6 @@ namespace RaptorMath
                             student.curDrillList.Remove(DrillToRemove);
                             break;
                         }
-
                     }
                 }
                 data.Save(studentXMLPath);
@@ -345,7 +343,7 @@ namespace RaptorMath
 
         public void WriteCurrentSession(Student currentStudent, Drill currentDrill)
         {
-            Record RecordToAdd = new Record(currentDrill.DrillName, DateTime.Now.ToString("M/d/yyyy"), currentDrill.Questions, currentDrill.RangeStart,
+            Record RecordToAdd = new Record(currentDrill.ID, currentDrill.DrillName, DateTime.Now.ToString("M/d/yyyy"), currentDrill.Questions, currentDrill.RangeStart,
                 currentDrill.RangeEnd, currentDrill.Operand, currentDrill.Wrong, currentDrill.Percent, currentDrill.Skipped);
             AddRecordToStudent(currentStudent, RecordToAdd);
 
@@ -374,6 +372,7 @@ namespace RaptorMath
         {
             XElement newRecord =
                 new XElement("record",
+                    new XElement("drillID", RecordToAdd.DrillID),
                     new XElement("drillName", RecordToAdd.DrillName),
                     new XElement("dataTaken", RecordToAdd.DateTaken),
                     new XElement("questions", RecordToAdd.Question),

@@ -24,6 +24,8 @@ namespace RaptorMath
     public class Admin
     {
         private int id;
+        private string firstName;
+        private string lastName;
         private string loginName;
         private string password;
         private string lastLogin;
@@ -35,7 +37,16 @@ namespace RaptorMath
             get { return this.id; }
             set { this.id = value; }
         }
-
+        public string FirstName
+        {
+            get { return this.firstName; }
+            set { this.firstName = value; }
+        }
+        public string LastName
+        {
+            get { return this.lastName; }
+            set { this.lastName = value; }
+        }
         public string LoginName
         {
             get { return this.loginName; }
@@ -66,7 +77,9 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         public Admin()
         {
-            loginName = "Unknown";
+            firstName = "Unknown";
+            lastName = "Unknown";
+            loginName = firstName + " " + lastName;
             password = "Unknown";
             lastLogin = "Unknown";
             filePath = "Unknown";
@@ -76,9 +89,11 @@ namespace RaptorMath
         // Harvey Kreitzer                                                  //
         // Date: 2/16/2014                                                  //
         //------------------------------------------------------------------//
-        public Admin(string name, string pwd, string login, string pathLoc)
+        public Admin(string fname, string lname, string pwd, string login, string pathLoc)
         {
-            loginName = name;
+            firstName = fname;
+            lastName = lname;
+            loginName = firstName + " " + lastName;
             password = pwd;
             lastLogin = login;
             filePath = pathLoc;

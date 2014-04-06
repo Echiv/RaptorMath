@@ -23,6 +23,7 @@ namespace RaptorMath
     public class Record
     {
         private int id;
+        private int drillID;
         private string drillName;
         private string dateTaken;
         private string question;
@@ -40,6 +41,11 @@ namespace RaptorMath
         {
             get { return this.id; }
             set { id = value; }
+        }
+        public int DrillID
+        {
+            get { return this.drillID; }
+            set { drillID = value; }
         }
         public string DrillName
         {
@@ -101,6 +107,7 @@ namespace RaptorMath
         public Record()
         {
             id = 0;
+            drillID = 0;
             drillName = "Unknown";
             dateTaken = "Unknown";
             question = "0";
@@ -116,9 +123,10 @@ namespace RaptorMath
         // Kyle Bridges                                                     //
         // Date: 2/24/2014                                                  //
         //------------------------------------------------------------------//
-        public Record(string stDrillName, string stDate, string stQuestion, string stRngStrt, string stRngEnd,
+        public Record(int driID, string stDrillName, string stDate, string stQuestion, string stRngStrt, string stRngEnd,
                       string stOp, string stWrong, string stPercent, string stSkipped)
         {
+            drillID = driID;
             drillName = stDrillName;
             dateTaken = stDate;
             question = stQuestion;
