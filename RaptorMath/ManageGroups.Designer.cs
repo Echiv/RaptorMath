@@ -136,7 +136,7 @@
             // 
             this.MngGroups_CreateBtn.AutoSize = true;
             this.MngGroups_CreateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngGroups_CreateBtn.Location = new System.Drawing.Point(158, 63);
+            this.MngGroups_CreateBtn.Location = new System.Drawing.Point(160, 63);
             this.MngGroups_CreateBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_CreateBtn.Name = "MngGroups_CreateBtn";
             this.MngGroups_CreateBtn.Size = new System.Drawing.Size(127, 33);
@@ -149,12 +149,12 @@
             // 
             this.MngGroups_GroupNameCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.MngGroups_GroupNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.MngGroups_GroupNameCmbo.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngGroups_GroupNameCmbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngGroups_GroupNameCmbo.FormattingEnabled = true;
-            this.MngGroups_GroupNameCmbo.Location = new System.Drawing.Point(127, 31);
+            this.MngGroups_GroupNameCmbo.Location = new System.Drawing.Point(129, 31);
             this.MngGroups_GroupNameCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_GroupNameCmbo.Name = "MngGroups_GroupNameCmbo";
-            this.MngGroups_GroupNameCmbo.Size = new System.Drawing.Size(203, 25);
+            this.MngGroups_GroupNameCmbo.Size = new System.Drawing.Size(203, 24);
             this.MngGroups_GroupNameCmbo.TabIndex = 0;
             // 
             // MngGroups_NameLbl
@@ -190,30 +190,30 @@
             // 
             this.MngGroups_NewNameCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.MngGroups_NewNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.MngGroups_NewNameCmbo.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngGroups_NewNameCmbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngGroups_NewNameCmbo.FormattingEnabled = true;
-            this.MngGroups_NewNameCmbo.Location = new System.Drawing.Point(127, 90);
+            this.MngGroups_NewNameCmbo.Location = new System.Drawing.Point(129, 90);
             this.MngGroups_NewNameCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_NewNameCmbo.Name = "MngGroups_NewNameCmbo";
-            this.MngGroups_NewNameCmbo.Size = new System.Drawing.Size(203, 25);
+            this.MngGroups_NewNameCmbo.Size = new System.Drawing.Size(203, 24);
             this.MngGroups_NewNameCmbo.TabIndex = 1;
             // 
             // MngGroups_SelectGroupCmbo
             // 
             this.MngGroups_SelectGroupCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.MngGroups_SelectGroupCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.MngGroups_SelectGroupCmbo.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngGroups_SelectGroupCmbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngGroups_SelectGroupCmbo.FormattingEnabled = true;
-            this.MngGroups_SelectGroupCmbo.Location = new System.Drawing.Point(127, 50);
+            this.MngGroups_SelectGroupCmbo.Location = new System.Drawing.Point(129, 57);
             this.MngGroups_SelectGroupCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_SelectGroupCmbo.Name = "MngGroups_SelectGroupCmbo";
-            this.MngGroups_SelectGroupCmbo.Size = new System.Drawing.Size(203, 25);
+            this.MngGroups_SelectGroupCmbo.Size = new System.Drawing.Size(203, 24);
             this.MngGroups_SelectGroupCmbo.TabIndex = 0;
             // 
             // MngGroups_RenameBtn
             // 
             this.MngGroups_RenameBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngGroups_RenameBtn.Location = new System.Drawing.Point(158, 122);
+            this.MngGroups_RenameBtn.Location = new System.Drawing.Point(160, 122);
             this.MngGroups_RenameBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_RenameBtn.Name = "MngGroups_RenameBtn";
             this.MngGroups_RenameBtn.Size = new System.Drawing.Size(127, 33);

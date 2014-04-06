@@ -132,7 +132,7 @@
             // 
             this.AdminHome_DateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AdminHome_DateLbl.AutoSize = true;
-            this.AdminHome_DateLbl.Location = new System.Drawing.Point(349, 18);
+            this.AdminHome_DateLbl.Location = new System.Drawing.Point(349, 16);
             this.AdminHome_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AdminHome_DateLbl.Name = "AdminHome_DateLbl";
             this.AdminHome_DateLbl.Size = new System.Drawing.Size(54, 17);
@@ -142,7 +142,7 @@
             // AdminHome_LastLoginLbl
             // 
             this.AdminHome_LastLoginLbl.AutoSize = true;
-            this.AdminHome_LastLoginLbl.Location = new System.Drawing.Point(8, 57);
+            this.AdminHome_LastLoginLbl.Location = new System.Drawing.Point(8, 50);
             this.AdminHome_LastLoginLbl.Name = "AdminHome_LastLoginLbl";
             this.AdminHome_LastLoginLbl.Size = new System.Drawing.Size(78, 17);
             this.AdminHome_LastLoginLbl.TabIndex = 16;
@@ -152,7 +152,7 @@
             // 
             this.AdminHome_WindowLbl.AutoSize = true;
             this.AdminHome_WindowLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdminHome_WindowLbl.Location = new System.Drawing.Point(8, 14);
+            this.AdminHome_WindowLbl.Location = new System.Drawing.Point(7, 10);
             this.AdminHome_WindowLbl.Name = "AdminHome_WindowLbl";
             this.AdminHome_WindowLbl.Size = new System.Drawing.Size(98, 17);
             this.AdminHome_WindowLbl.TabIndex = 37;
@@ -161,7 +161,7 @@
             // AdminHome_WelcomeLbl
             // 
             this.AdminHome_WelcomeLbl.AutoSize = true;
-            this.AdminHome_WelcomeLbl.Location = new System.Drawing.Point(8, 34);
+            this.AdminHome_WelcomeLbl.Location = new System.Drawing.Point(8, 27);
             this.AdminHome_WelcomeLbl.Name = "AdminHome_WelcomeLbl";
             this.AdminHome_WelcomeLbl.Size = new System.Drawing.Size(70, 17);
             this.AdminHome_WelcomeLbl.TabIndex = 27;
@@ -170,7 +170,7 @@
             // AdminHome_LoginLbl
             // 
             this.AdminHome_LoginLbl.AutoSize = true;
-            this.AdminHome_LoginLbl.Location = new System.Drawing.Point(93, 57);
+            this.AdminHome_LoginLbl.Location = new System.Drawing.Point(93, 50);
             this.AdminHome_LoginLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AdminHome_LoginLbl.Name = "AdminHome_LoginLbl";
             this.AdminHome_LoginLbl.Size = new System.Drawing.Size(54, 17);
@@ -180,7 +180,7 @@
             // AdminHome_AdminNameLbl
             // 
             this.AdminHome_AdminNameLbl.AutoSize = true;
-            this.AdminHome_AdminNameLbl.Location = new System.Drawing.Point(95, 34);
+            this.AdminHome_AdminNameLbl.Location = new System.Drawing.Point(95, 27);
             this.AdminHome_AdminNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AdminHome_AdminNameLbl.Name = "AdminHome_AdminNameLbl";
             this.AdminHome_AdminNameLbl.Size = new System.Drawing.Size(63, 17);
@@ -192,7 +192,7 @@
             // 
             this.AdminHome_TimeLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AdminHome_TimeLbl.AutoSize = true;
-            this.AdminHome_TimeLbl.Location = new System.Drawing.Point(349, 47);
+            this.AdminHome_TimeLbl.Location = new System.Drawing.Point(349, 41);
             this.AdminHome_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AdminHome_TimeLbl.Name = "AdminHome_TimeLbl";
             this.AdminHome_TimeLbl.Size = new System.Drawing.Size(55, 17);
@@ -206,6 +206,7 @@
             this.AdminHome_PasswordBox.Controls.Add(this.AdminHome_SaveBtn);
             this.AdminHome_PasswordBox.Controls.Add(this.AdminHome_NewPWLbl);
             this.AdminHome_PasswordBox.Controls.Add(this.AdminHome_CurrentPWLbl);
+            this.AdminHome_PasswordBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AdminHome_PasswordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminHome_PasswordBox.Location = new System.Drawing.Point(4, 92);
             this.AdminHome_PasswordBox.Margin = new System.Windows.Forms.Padding(4);
