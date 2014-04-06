@@ -92,7 +92,7 @@ namespace RaptorMath
 
         private void EditStu_SaveStudentBtn_Click(object sender, EventArgs e)
         {
-            localManager.RenameStudent(EditStu_NewNameCmbo.Text, EditStu_SelectionCmbo.Text, EditStu_GroupCmbo.Text, localManager.studentList);
+            localManager.RenameStudent(EditStu_NewNameCmbo.Text, EditStu_SelectionCmbo.Text, EditStu_GroupCmbo.Text, localManager.studentList, localManager.groupList);
             RefreshCmboBoxes();
         }
 

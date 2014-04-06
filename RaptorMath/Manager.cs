@@ -95,10 +95,10 @@ namespace RaptorMath
         // Purpose: Validate the student info and then add the student to the student XML               //
         // Parameters: studentName, group, and LastLogin passed from MngUsers Form                      //
         //----------------------------------------------------------------------------------------------//
-        public bool CreateUser(string group, string studentName, string lastLogin)
+        public bool CreateUser(int groupID, string studentName, string lastLogin)
         {
             bool isCreatedUser = false;
-            Student newStudent = new Student(group, studentName, lastLogin);
+            Student newStudent = new Student(groupID, studentName, lastLogin);
 
             bool isUserInfoValid = isStudentInfoValid(newStudent);
             if(isUserInfoValid)
@@ -156,8 +156,8 @@ namespace RaptorMath
         {
             if (!(studentToValidate.LoginName.Equals(string.Empty))
                 &&(studentToValidate.LoginName.All(char.IsLetter)) 
-                && (studentToValidate.Group.All(char.IsLetterOrDigit))
-                && (groupList.Any(group => group.Name.Equals(studentToValidate.Group)))
+                && (studentToValidate.GroupID > 0)
+                && (groupList.Any(group => group.ID.Equals(studentToValidate.GroupID)))
                 && (!adminList.Any(admin => admin.LoginName.Equals(studentToValidate.LoginName))))
             {
                 return true;
@@ -189,16 +189,15 @@ namespace RaptorMath
             return false;
         }
 
-        public void RenameStudent(string newName, string currentName, string newGroup, List<Student> studentList)
+        public void RenameStudent(string newName, string currentName, string newGroup, List<Student> studentList, List<Group> groupList)
         {
-            if (!(newName.Equals(string.Empty))
-                && (newName.All(char.IsLetter))
+            if ((newName.Equals(string.Empty) || (newName.All(char.IsLetter)))
                 && !(currentName.Equals(string.Empty))
                 && (currentName.All(char.IsLetter))
-                && !(newGroup.Equals(string.Empty))
-                && (newGroup.All(char.IsLetterOrDigit)))
+                && (newGroup.Equals(string.Empty) || (newGroup.All(char.IsLetterOrDigit))))
             {
-                XMLDriver.editStudent(newName, currentName, newGroup, studentList);
+                Console.WriteLine("IMHERE");
+                XMLDriver.editStudent(newName, currentName, newGroup, studentList, groupList);
             }
         }
 
@@ -247,10 +246,13 @@ namespace RaptorMath
         public Student FindStudentWithName(string studentName)
         {
             Student foundStudent = studentList.Where(stu => stu.LoginName.Equals(studentName)).FirstOrDefault();
-            //Console.WriteLine(foundStudent.curDrillList.Count);
-            //Console.WriteLine(foundStudent.curDrillList[0].DrillName);
-            //Console.WriteLine(foundStudent.curDrillList[1].DrillName);
             return (foundStudent);
+        }
+
+        public int FindGroupIDByName(string GroupName)
+        {
+            Group foundGroup = groupList.Where(grp => grp.Name.Equals(GroupName)).FirstOrDefault();
+            return (foundGroup.ID);
         }
 
         public void AddDrillToStudent(Student student, Drill drillToAdd)
@@ -436,7 +438,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         public void SaveLoginDate(string fileName, string userName, string date, bool isAdmin = false)
         {
-            XML.WriteLogin(fileName, userName, date, isAdmin);
+            XMLDriver.WriteLogin(fileName, userName, date, isAdmin);
             currentUserLogin = date;
         }
 

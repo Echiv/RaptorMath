@@ -25,7 +25,7 @@ namespace RaptorMath
     public class Student
     {
         private int id;
-        private string group;
+        private int groupID;
         private string loginName;
         private string lastLogin;
         private string recordsPath;
@@ -40,10 +40,10 @@ namespace RaptorMath
             get { return this.id; }
             set { this.id = value; }
         }
-        public string Group
+        public int GroupID
         {
-            get { return this.group; }
-            set { this.group = value; }
+            get { return this.groupID; }
+            set { this.groupID = value; }
         }
         public string LoginName
         {
@@ -76,7 +76,7 @@ namespace RaptorMath
         public Student()
         {
             id = 0;
-            group = "Unassigned";
+            groupID = 0;
             loginName = "Unknown";
             lastLogin = "Unknown";
             recordsPath = "Unknown";
@@ -86,9 +86,9 @@ namespace RaptorMath
         // Harvey Kreitzer                                                  //
         // Date: 2/17/2014                                                  //
         //------------------------------------------------------------------//
-        public Student(string grp, string name, string login)
+        public Student(int grpID, string name, string login)
         {
-            group = grp;
+            groupID = grpID;
             loginName = name;
             lastLogin = login;
         }

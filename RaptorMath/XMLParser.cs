@@ -88,7 +88,7 @@ namespace RaptorMath
             return true;
         }
 
-        public void StartUp(List<Admin> adminList, string adminXMLPath, List<Student> studentList, string studentXMLPath, List<string> groupList, string managerDataDirectory)
+        /*public void StartUp(List<Admin> adminList, string adminXMLPath, List<Student> studentList, string studentXMLPath, List<string> groupList, string managerDataDirectory)
         {
             dataDirectory = managerDataDirectory;
             //AdminXML should contain all admin information
@@ -101,7 +101,7 @@ namespace RaptorMath
             if (studentXMLExists(studentXMLPath))
                 LoadStudentXML(studentList, studentXMLPath, groupList);
             LoadAdminXML(adminList, adminXMLPath);
-        }
+        }*/
 
         private void InitialCreateAdminXML(string adminXMLPath)
         {
@@ -131,7 +131,7 @@ namespace RaptorMath
             }
         }
 
-        public bool InitialCreateStudentXml(string studentXMLPath, List<Student> studentList, Student newStudentEntry, List<String> groupList)
+        /*public bool InitialCreateStudentXml(string studentXMLPath, List<Student> studentList, Student newStudentEntry, List<String> groupList)
         {
             MessageBox.Show("RaptorMathStu");
 
@@ -259,7 +259,7 @@ namespace RaptorMath
                     new XElement("skipped", currentDrill.Skipped),
                     new XElement("percent", currentDrill.Percent));
             return records;
-        }
+        }*/
         /*private XElement XmlDrillSettingsWithNewDrillSet(Drill drill)
         {
             XElement newDrillSet = 
@@ -272,7 +272,7 @@ namespace RaptorMath
                     new XElement("percent", drill.CurPercent) );
             return newDrillSet;
         }*/
-
+        /*
         private void AddStudentToNode(List<Student> studentList, List<String> groupList, XElement Node, XElement XMLStudentStucture, Student newStudentEntry)
         {
             Node.Add(XMLStudentStucture);
@@ -326,7 +326,9 @@ namespace RaptorMath
             }
             return false;
         }
-        public void AddDrillToXml(/*Drill newDrill,*/ Student student)
+         * */
+        /*
+        public void AddDrillToXml(Drill newDrill, Student student)
         {
 
             XDocument drillXML = new XDocument(new XElement(student.LoginName));
@@ -400,7 +402,7 @@ namespace RaptorMath
             newRecord.Percent = recordNode.Element("percent").Value;
             newRecord.Skipped = recordNode.Element("skipped").Value;
             
-            /*//How to call Record(IEnumerable<XElement> elements)
+            //How to call Record(IEnumerable<XElement> elements)
             IEnumerable<XElement> elements = recordNode.Elements();
             Record testing = new Record(elements);
             Dictionary<string, string> recordDictionary = testing.recordDictionary;
@@ -408,7 +410,7 @@ namespace RaptorMath
             {
                 Console.WriteLine(recordDictionary.ElementAt(i).Key.ToString());
                 Console.WriteLine(recordDictionary.ElementAt(i).Value.ToString());
-            }*/
+            }
             
             return newRecord;
         }
@@ -519,6 +521,6 @@ namespace RaptorMath
                 }
             }
             doc.Save(fileName);
-        }
+        }*/
     }
 }

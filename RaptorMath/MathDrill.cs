@@ -252,10 +252,5 @@ namespace RaptorMath
                 MatDri_SubmitBtn_Click(sender, e);
             }
         }
-
-        private void MathDrill_StudentNameLbl_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

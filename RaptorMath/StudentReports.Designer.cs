@@ -197,6 +197,7 @@
             this.ReportHome_GroupCmbo.FormattingEnabled = true;
             this.ReportHome_GroupCmbo.Location = new System.Drawing.Point(218, 66);
             this.ReportHome_GroupCmbo.Margin = new System.Windows.Forms.Padding(4);
+            this.ReportHome_GroupCmbo.MaxLength = 25;
             this.ReportHome_GroupCmbo.Name = "ReportHome_GroupCmbo";
             this.ReportHome_GroupCmbo.Size = new System.Drawing.Size(183, 25);
             this.ReportHome_GroupCmbo.TabIndex = 39;
@@ -209,6 +210,7 @@
             this.ReportHome_StudentCmbo.FormattingEnabled = true;
             this.ReportHome_StudentCmbo.Location = new System.Drawing.Point(11, 66);
             this.ReportHome_StudentCmbo.Margin = new System.Windows.Forms.Padding(4);
+            this.ReportHome_StudentCmbo.MaxLength = 25;
             this.ReportHome_StudentCmbo.Name = "ReportHome_StudentCmbo";
             this.ReportHome_StudentCmbo.Size = new System.Drawing.Size(185, 25);
             this.ReportHome_StudentCmbo.TabIndex = 38;

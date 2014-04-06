@@ -72,12 +72,13 @@
             // 
             this.MathDrill_InputTxt.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.MathDrill_InputTxt.Font = new System.Drawing.Font("Trebuchet MS", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MathDrill_InputTxt.Location = new System.Drawing.Point(292, 82);
+            this.MathDrill_InputTxt.Location = new System.Drawing.Point(264, 81);
             this.MathDrill_InputTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.MathDrill_InputTxt.MaxLength = 25;
             this.MathDrill_InputTxt.Multiline = false;
             this.MathDrill_InputTxt.Name = "MathDrill_InputTxt";
             this.MathDrill_InputTxt.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.MathDrill_InputTxt.Size = new System.Drawing.Size(107, 52);
+            this.MathDrill_InputTxt.Size = new System.Drawing.Size(144, 52);
             this.MathDrill_InputTxt.TabIndex = 1;
             this.MathDrill_InputTxt.Text = "";
             this.MathDrill_InputTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MatDri_InputType_KeyPress);
@@ -86,7 +87,7 @@
             // 
             this.MathDrill_SkipBtn.AutoSize = true;
             this.MathDrill_SkipBtn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MathDrill_SkipBtn.Location = new System.Drawing.Point(154, 199);
+            this.MathDrill_SkipBtn.Location = new System.Drawing.Point(113, 201);
             this.MathDrill_SkipBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_SkipBtn.Name = "MathDrill_SkipBtn";
             this.MathDrill_SkipBtn.Size = new System.Drawing.Size(131, 40);
@@ -110,7 +111,7 @@
             // MathDrill_SubmitBtn
             // 
             this.MathDrill_SubmitBtn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MathDrill_SubmitBtn.Location = new System.Drawing.Point(292, 199);
+            this.MathDrill_SubmitBtn.Location = new System.Drawing.Point(251, 201);
             this.MathDrill_SubmitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_SubmitBtn.Name = "MathDrill_SubmitBtn";
             this.MathDrill_SubmitBtn.Size = new System.Drawing.Size(125, 40);
@@ -123,7 +124,7 @@
             // 
             this.MathDrill_ResponseLbl.AutoSize = true;
             this.MathDrill_ResponseLbl.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MathDrill_ResponseLbl.Location = new System.Drawing.Point(286, 138);
+            this.MathDrill_ResponseLbl.Location = new System.Drawing.Point(264, 137);
             this.MathDrill_ResponseLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_ResponseLbl.Name = "MathDrill_ResponseLbl";
             this.MathDrill_ResponseLbl.Size = new System.Drawing.Size(119, 35);
@@ -168,12 +169,12 @@
             // 
             this.MathDrill_ProblemPrompt.AutoSize = true;
             this.MathDrill_ProblemPrompt.Font = new System.Drawing.Font("Trebuchet MS", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MathDrill_ProblemPrompt.Location = new System.Drawing.Point(83, 82);
+            this.MathDrill_ProblemPrompt.Location = new System.Drawing.Point(12, 81);
             this.MathDrill_ProblemPrompt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_ProblemPrompt.Name = "MathDrill_ProblemPrompt";
-            this.MathDrill_ProblemPrompt.Size = new System.Drawing.Size(119, 55);
+            this.MathDrill_ProblemPrompt.Size = new System.Drawing.Size(244, 55);
             this.MathDrill_ProblemPrompt.TabIndex = 25;
-            this.MathDrill_ProblemPrompt.Text = "<Eq>";
+            this.MathDrill_ProblemPrompt.Text = "<Equation>";
             // 
             // MathDrill_DateLbl
             // 
@@ -197,7 +198,6 @@
             this.MathDrill_StudentNameLbl.Size = new System.Drawing.Size(102, 26);
             this.MathDrill_StudentNameLbl.TabIndex = 8;
             this.MathDrill_StudentNameLbl.Text = "<Student>";
-            this.MathDrill_StudentNameLbl.Click += new System.EventHandler(this.MathDrill_StudentNameLbl_Click);
             // 
             // MathDrill_TimeLbl
             // 
@@ -240,7 +240,7 @@
             // MatDri_ButtonBox
             // 
             this.MatDri_ButtonBox.Controls.Add(this.MathDrill_QuitBtn);
-            this.MatDri_ButtonBox.Location = new System.Drawing.Point(242, 4);
+            this.MatDri_ButtonBox.Location = new System.Drawing.Point(216, 4);
             this.MatDri_ButtonBox.Margin = new System.Windows.Forms.Padding(4);
             this.MatDri_ButtonBox.Name = "MatDri_ButtonBox";
             this.MatDri_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
@@ -288,7 +288,7 @@
             this.MathDrill_CoinBox.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_CoinBox.Name = "MathDrill_CoinBox";
             this.MathDrill_CoinBox.Padding = new System.Windows.Forms.Padding(4);
-            this.MathDrill_CoinBox.Size = new System.Drawing.Size(230, 79);
+            this.MathDrill_CoinBox.Size = new System.Drawing.Size(204, 79);
             this.MathDrill_CoinBox.TabIndex = 31;
             this.MathDrill_CoinBox.TabStop = false;
             // 
@@ -306,12 +306,12 @@
             // 
             this.MathDrill_CoinTxt.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.MathDrill_CoinTxt.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MathDrill_CoinTxt.Location = new System.Drawing.Point(83, 27);
+            this.MathDrill_CoinTxt.Location = new System.Drawing.Point(83, 15);
             this.MathDrill_CoinTxt.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_CoinTxt.Multiline = false;
             this.MathDrill_CoinTxt.Name = "MathDrill_CoinTxt";
             this.MathDrill_CoinTxt.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.MathDrill_CoinTxt.Size = new System.Drawing.Size(155, 35);
+            this.MathDrill_CoinTxt.Size = new System.Drawing.Size(116, 56);
             this.MathDrill_CoinTxt.TabIndex = 1;
             this.MathDrill_CoinTxt.Text = "";
             // 
@@ -336,8 +336,8 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.7479F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.2521F));
             this.tableLayoutPanel2.Controls.Add(this.MatDri_ButtonBox, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.MathDrill_CoinBox, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;

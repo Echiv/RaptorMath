@@ -107,6 +107,7 @@
             this.UseDesg_LoginCmbo.FormattingEnabled = true;
             this.UseDesg_LoginCmbo.Location = new System.Drawing.Point(153, 69);
             this.UseDesg_LoginCmbo.Margin = new System.Windows.Forms.Padding(4);
+            this.UseDesg_LoginCmbo.MaxLength = 25;
             this.UseDesg_LoginCmbo.Name = "UseDesg_LoginCmbo";
             this.UseDesg_LoginCmbo.Size = new System.Drawing.Size(227, 34);
             this.UseDesg_LoginCmbo.TabIndex = 18;
@@ -138,6 +139,7 @@
             // 
             this.UseDesg_passwordBox.Location = new System.Drawing.Point(152, 115);
             this.UseDesg_passwordBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.UseDesg_passwordBox.MaxLength = 10;
             this.UseDesg_passwordBox.Name = "UseDesg_passwordBox";
             this.UseDesg_passwordBox.Size = new System.Drawing.Size(228, 31);
             this.UseDesg_passwordBox.TabIndex = 3;

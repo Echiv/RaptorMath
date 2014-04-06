@@ -104,7 +104,9 @@ namespace RaptorMath
         {
             if (MngUsers_StudentRdo.Checked)
             {
-                bool isCreatedUser = localManager.CreateUser(MngUsers_GroupCmbo.Text, MngUsers_NameCmbo.Text, "Unknown");
+                int groupID = localManager.FindGroupIDByName(MngUsers_GroupCmbo.Text);
+                MessageBox.Show(groupID.ToString());
+                bool isCreatedUser = localManager.CreateUser(groupID, MngUsers_NameCmbo.Text, "Unknown");
                 if (isCreatedUser)
                 {
                     RefreshComboBoxes();

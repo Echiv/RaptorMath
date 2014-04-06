@@ -109,6 +109,7 @@
             this.StuHome_DrillDdl.Location = new System.Drawing.Point(112, 67);
             this.StuHome_DrillDdl.Margin = new System.Windows.Forms.Padding(4);
             this.StuHome_DrillDdl.MaxDropDownItems = 100;
+            this.StuHome_DrillDdl.MaxLength = 25;
             this.StuHome_DrillDdl.Name = "StuHome_DrillDdl";
             this.StuHome_DrillDdl.Size = new System.Drawing.Size(223, 34);
             this.StuHome_DrillDdl.TabIndex = 44;

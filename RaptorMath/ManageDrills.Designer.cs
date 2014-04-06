@@ -156,6 +156,7 @@
             this.MngDrills_SelectDrillCmbo.FormattingEnabled = true;
             this.MngDrills_SelectDrillCmbo.Location = new System.Drawing.Point(159, 124);
             this.MngDrills_SelectDrillCmbo.Margin = new System.Windows.Forms.Padding(4);
+            this.MngDrills_SelectDrillCmbo.MaxLength = 25;
             this.MngDrills_SelectDrillCmbo.Name = "MngDrills_SelectDrillCmbo";
             this.MngDrills_SelectDrillCmbo.Size = new System.Drawing.Size(160, 24);
             this.MngDrills_SelectDrillCmbo.TabIndex = 9;
@@ -166,6 +167,7 @@
             this.MngDrills_GroupCmbo.FormattingEnabled = true;
             this.MngDrills_GroupCmbo.Location = new System.Drawing.Point(159, 91);
             this.MngDrills_GroupCmbo.Margin = new System.Windows.Forms.Padding(4);
+            this.MngDrills_GroupCmbo.MaxLength = 25;
             this.MngDrills_GroupCmbo.Name = "MngDrills_GroupCmbo";
             this.MngDrills_GroupCmbo.Size = new System.Drawing.Size(160, 24);
             this.MngDrills_GroupCmbo.TabIndex = 8;
@@ -177,6 +179,7 @@
             this.MngDrills_StudentCmbo.FormattingEnabled = true;
             this.MngDrills_StudentCmbo.Location = new System.Drawing.Point(159, 58);
             this.MngDrills_StudentCmbo.Margin = new System.Windows.Forms.Padding(4);
+            this.MngDrills_StudentCmbo.MaxLength = 25;
             this.MngDrills_StudentCmbo.Name = "MngDrills_StudentCmbo";
             this.MngDrills_StudentCmbo.Size = new System.Drawing.Size(160, 24);
             this.MngDrills_StudentCmbo.TabIndex = 7;
