@@ -95,10 +95,10 @@ namespace RaptorMath
         // Purpose: Validate the student info and then add the student to the student XML               //
         // Parameters: studentName, group, and LastLogin passed from MngUsers Form                      //
         //----------------------------------------------------------------------------------------------//
-        public bool CreateUser(int groupID, string studentName, string lastLogin)
+        public bool CreateUser(int groupID, string firstName, string lastName, string lastLogin)
         {
             bool isCreatedUser = false;
-            Student newStudent = new Student(groupID, studentName, lastLogin);
+            Student newStudent = new Student(groupID, firstName, lastName, lastLogin);
 
             bool isUserInfoValid = isStudentInfoValid(newStudent);
             if(isUserInfoValid)
@@ -189,15 +189,16 @@ namespace RaptorMath
             return false;
         }
 
-        public void RenameStudent(string newName, string currentName, string newGroup, List<Student> studentList, List<Group> groupList)
+        public void RenameStudent(string newFName, string newLName, string currentName, string newGroup, List<Student> studentList, List<Group> groupList)
         {
-            if ((newName.Equals(string.Empty) || (newName.All(char.IsLetter)))
+            if ((newFName.Equals(string.Empty) || (newFName.All(char.IsLetter)))
+                && (newLName.Equals(string.Empty) || (newLName.All(char.IsLetter)))
                 && !(currentName.Equals(string.Empty))
                 && (currentName.All(char.IsLetter))
                 && (newGroup.Equals(string.Empty) || (newGroup.All(char.IsLetterOrDigit))))
             {
-                Console.WriteLine("IMHERE");
-                XMLDriver.editStudent(newName, currentName, newGroup, studentList, groupList);
+                Student selectedStudent = FindStudentWithName(currentName);
+                XMLDriver.editStudent(newFName, newLName, selectedStudent, newGroup, studentList, groupList);
             }
         }
 

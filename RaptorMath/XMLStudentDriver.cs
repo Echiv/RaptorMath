@@ -139,12 +139,29 @@ namespace RaptorMath
             return true;
         }
 
-        public void editStudent(string newName, string currentName, string newGroup, List<Student> studentList, List<Group> groupList, string studentXMLPath, string groupXMLPath)
+        public void editStudent(string newFName, string newLName, Student selectedStudent, string newGroup, List<Student> studentList, List<Group> groupList, string studentXMLPath, string groupXMLPath)
         {
             Student modifiedStudent = new Student();
-            foreach (Student student in studentList)
+            Student modifySelectedStudent = studentList.Where(stu => stu.ID.ToString().Equals(selectedStudent.ID.ToString())).FirstOrDefault();
+            if (selectedStudent != null)
             {
-                if (student.LoginName == currentName)
+                Group group = groupList.Where(grp => grp.Name.Equals(newGroup)).FirstOrDefault();
+                int groupID = 0;
+                if (group != null)
+                {
+                    groupID = group.ID;
+                }
+                MessageBox.Show(selectedStudent.curDrillList.Count.ToString());
+                compareOldAndNewStudentInfo(newFName, newLName, selectedStudent, groupID);
+                UpdateStudent(modifiedStudent, studentXMLPath, groupXMLPath);
+            }
+            else
+            {
+                MessageBox.Show("That Student could not be found!");
+            }
+            /*foreach (Student student in studentList)
+            {
+                if ((student.FirstName == selectedStudent.FirstName) && (student.LastName == selectedStudent.LastName))
                 {
                     Group group = groupList.Where(grp => grp.Name.Equals(newGroup)).FirstOrDefault();
                     int groupID = 0;
@@ -154,70 +171,71 @@ namespace RaptorMath
                         groupID = group.ID;
                     }
                     MessageBox.Show(student.curDrillList.Count.ToString());
-                    modifiedStudent = compareOldAndNewStudentInfo(newName, currentName, groupID, student.GroupID);
-                    modifiedStudent.ID = student.ID;
-                    UpdateStudent(student, modifiedStudent, studentXMLPath, groupXMLPath);
+                    
+                    //modifiedStudent = compareOldAndNewStudentInfo(newFName, newLName, selectedStudent, groupID, student.GroupID);
+                    //modifiedStudent.ID = student.ID;
+                    
+                    //UpdateStudent(student, modifiedStudent, studentXMLPath, groupXMLPath);
                 }
-            }
+            }*/
         }
 
-        public Student compareOldAndNewStudentInfo(string newName, string currentName, int newGroup, int oldGroup)
+        public void compareOldAndNewStudentInfo(string newFName, string newLName, Student selectedStudent, int newGroup/*, int oldGroup*/)
         {
+            if ((newFName != selectedStudent.FirstName) && (newFName != string.Empty))
+                selectedStudent.FirstName = newFName;
+            else if ((newLName != selectedStudent.LastName) && (newLName != string.Empty))
+                selectedStudent.LastName = newLName;
+            else if ((newGroup != selectedStudent.GroupID) && (newGroup != 0))
+                selectedStudent.GroupID = newGroup;
+            selectedStudent.LoginName = selectedStudent.FirstName + " " + selectedStudent.LastName;
 
-            Student newStudent = new Student();
-            if ((newName == currentName) || (newName == string.Empty))
-            {
-                Console.WriteLine("newName is null");
-                newStudent.LoginName = currentName;
-                MessageBox.Show(newStudent.LoginName);
-            }
+            /*Student newStudent = new Student();
+            if ((newFName == currentFName) || (newFName == string.Empty))
+                newStudent.FirstName = currentFName;
             else
-                newStudent.LoginName = newName;
+                newStudent.FirstName = newFName;
+
+            if ((newLName == currentLName) || (newLName == string.Empty))
+                newStudent.LastName = currentLName;
+            else
+                newStudent.LastName = newLName;
 
             if ((newGroup == oldGroup) || (newGroup == 0))
-            {
-                Console.WriteLine("if");
-                Console.WriteLine(newGroup);
-                Console.WriteLine(oldGroup);
                 newStudent.GroupID = oldGroup;
-            }
-            else
-            {
-                Console.WriteLine("else");
-                Console.WriteLine(newGroup);
+            else          
                 newStudent.GroupID = newGroup;
-            }
-            return newStudent;
+            newStudent.LoginName = newStudent.FirstName + " " + newStudent.LastName;
+
+            return newStudent;*/
         }
 
-        public void UpdateStudent(Student student, Student modifiedStudent, string studentXMLPath, string groupXMLPath)
+        public void UpdateStudent(Student student, /*Student modifiedStudent, */string studentXMLPath, string groupXMLPath)
         {
             XDocument data = XDocument.Load(studentXMLPath);
 
             XElement studentIDElement =
-                data.Descendants("stu").Where(stu => stu.Attribute("ID").Value.Equals(modifiedStudent.ID.ToString())).FirstOrDefault();
+                data.Descendants("stu").Where(stu => stu.Attribute("ID").Value.Equals(student.ID.ToString())).FirstOrDefault();
             XElement studentNameElement =
-                data.Descendants("stu").Where(stu => stu.Element("loginName").Value.Equals(modifiedStudent.LoginName)).FirstOrDefault();
+                data.Descendants("stu").Where(stu => stu.Element("loginName").Value.Equals(student.LoginName)).FirstOrDefault();
 
             XDocument groupData = XDocument.Load(groupXMLPath);
             XElement GroupElement =
-                groupData.Descendants("group").Where(group => group.Attribute("ID").Value.Equals(modifiedStudent.GroupID.ToString())).FirstOrDefault();
-            MessageBox.Show(modifiedStudent.LoginName);
-            MessageBox.Show(modifiedStudent.ID.ToString());
-            MessageBox.Show(modifiedStudent.GroupID.ToString());
+                groupData.Descendants("group").Where(group => group.Attribute("ID").Value.Equals(student.GroupID.ToString())).FirstOrDefault();
+            MessageBox.Show(student.LoginName);
+            MessageBox.Show(student.ID.ToString());
+            MessageBox.Show(student.GroupID.ToString());
             if ((studentIDElement != null) && (GroupElement != null))
             {
-                MessageBox.Show(modifiedStudent.GroupID.ToString());
+                MessageBox.Show(student.GroupID.ToString());
                 if (studentNameElement == null)
                 {
-                    studentIDElement.SetElementValue("loginName", modifiedStudent.LoginName);
-                    student.LoginName = modifiedStudent.LoginName;
+                    studentIDElement.SetElementValue("loginName", student.LoginName);
+                    studentIDElement.SetElementValue("firstName", student.FirstName);
+                    studentIDElement.SetElementValue("lastName", student.LastName);
                 }
 
-                studentIDElement.SetElementValue("group", modifiedStudent.GroupID);
-                student.ID = modifiedStudent.ID;
-                
-                student.GroupID = modifiedStudent.GroupID;
+                studentIDElement.SetElementValue("group", student.GroupID);
                 data.Save(studentXMLPath);
             }
         }
@@ -304,6 +322,8 @@ namespace RaptorMath
                 Student aStudent = new Student();
                 aStudent.ID = Convert.ToInt32(student.Attribute("ID").Value);
                 aStudent.GroupID = Convert.ToInt32(student.Element("group").Value);
+                aStudent.FirstName = student.Element("firstName").Value;
+                aStudent.LastName = student.Element("lastName").Value;
                 aStudent.LoginName = student.Element("loginName").Value;
                 aStudent.LastLogin = student.Element("lastLogin").Value;
                 aStudent.RecordsPath = student.Element("recPath").Value;
@@ -371,6 +391,8 @@ namespace RaptorMath
             XElement newStudent =
                 new XElement("stu",
                     new XElement("group", newStudentEntry.GroupID),
+                    new XElement("firstName", newStudentEntry.FirstName),
+                    new XElement("lastName", newStudentEntry.LastName),
                     new XElement("loginName", newStudentEntry.LoginName),
                     new XElement("lastLogin", newStudentEntry.LastLogin),
                     new XElement("recPath", newStudentEntry.RecordsPath));

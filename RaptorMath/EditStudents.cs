@@ -69,10 +69,10 @@ namespace RaptorMath
 
         private void RefreshNewNameCmbo()
         {
-            EditStu_NewNameCmbo.Items.Clear();
+            EditStu_NewFirstNameCmbo.Items.Clear();
             foreach (Student student in localManager.studentList)
             {
-                EditStu_NewNameCmbo.Items.Add(student.LoginName);
+                EditStu_NewFirstNameCmbo.Items.Add(student.LoginName);
             }
         }
 
@@ -94,7 +94,7 @@ namespace RaptorMath
 
         private void EditStu_SaveStudentBtn_Click(object sender, EventArgs e)
         {
-            localManager.RenameStudent(EditStu_NewNameCmbo.Text, EditStu_SelectionCmbo.Text, EditStu_GroupCmbo.Text, localManager.studentList, localManager.groupList);
+            localManager.RenameStudent(EditStu_NewFirstNameCmbo.Text, EditStu_NewLastNameCmbo.Text, EditStu_SelectionCmbo.Text, EditStu_GroupCmbo.Text, localManager.studentList, localManager.groupList);
             RefreshCmboBoxes();
         }
 

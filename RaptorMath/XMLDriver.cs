@@ -416,9 +416,9 @@ namespace RaptorMath
             }
         }
 
-        public void editStudent(string newName, string currentName, string newGroup, List<Student> studentList, List<Group> groupList)
+        public void editStudent(string newFName, string newLName, Student selectedStudent, string newGroup, List<Student> studentList, List<Group> groupList)
         {
-            XMLStudentDriver.editStudent(newName, currentName, newGroup, studentList, groupList, studentXMLPath, groupXMLPath);
+            XMLStudentDriver.editStudent(newFName, newLName, selectedStudent, newGroup, studentList, groupList, studentXMLPath, groupXMLPath);
             /*
             Student modifiedStudent = new Student();
             foreach (Student student in studentList)
@@ -434,10 +434,10 @@ namespace RaptorMath
              * */
         }
 
-        private Student compareOldAndNewStudentInfo(string newName, string currentName, int newGroup, int oldGroup)
+        /*private Student compareOldAndNewStudentInfo(string newName, string currentName, int newGroup, int oldGroup)
         {
             return XMLStudentDriver.compareOldAndNewStudentInfo(newName, currentName, newGroup, oldGroup);
-            /*
+            
             Student newStudent = new Student();
             if ((newName == currentName) || (newName == string.Empty))
                 newStudent.LoginName = currentName;
@@ -448,8 +448,8 @@ namespace RaptorMath
                 newStudent.Group = oldGroup;
             else
                 newStudent.Group = newGroup;
-            return newStudent;*/
-        }
+            return newStudent;
+        }*/
 
         private void UpdateGroup(Group group, Group modifiedGroup)
         {
@@ -469,10 +469,10 @@ namespace RaptorMath
             }
         }
 
-        private void UpdateStudent(Student student, Student modifiedStudent)
+        /*private void UpdateStudent(Student student, Student modifiedStudent)
         {
             XMLStudentDriver.UpdateStudent(student, modifiedStudent, studentXMLPath, groupXMLPath);
-            /*
+            
             XDocument data = XDocument.Load(studentXMLPath);
 
             XElement studentIDElement =
@@ -492,10 +492,10 @@ namespace RaptorMath
                 student.LoginName = modifiedStudent.LoginName;
                 student.Group = modifiedStudent.Group;
                 data.Save(studentXMLPath);
-            }*/
-        }
+            }
+        }*/
 
-        
+
 
         public void AddDrillToStudentXML(Student student, Drill drillToAdd)
         {
