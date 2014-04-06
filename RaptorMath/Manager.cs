@@ -111,6 +111,11 @@ namespace RaptorMath
             bool isUserInfoValid = isStudentInfoValid(newStudent);
             if(isUserInfoValid)
                 isCreatedUser = XMLDriver.AddUserToXML(newStudent, studentList);
+            if(isCreatedUser)
+            {
+                Group group = groupList.Where(grp => grp.ID.ToString().Equals(newStudent.GroupID.ToString())).FirstOrDefault();
+                AddGroupDrillsToStudent(group, newStudent);
+            }
             return isCreatedUser;
         }
         //----------------------------------------------------------------------------------------------//
@@ -209,12 +214,15 @@ namespace RaptorMath
                 && (currentName.Replace(" ", string.Empty).All(char.IsLetter))
                 && (newGroup.Equals(string.Empty) || (newGroup.All(char.IsLetterOrDigit))))
             {
-                Console.WriteLine(currentName);
-                Console.WriteLine(newFName);
-                Console.WriteLine(newLName);
                 Student selectedStudent = FindStudentWithName(currentName);
-                Console.WriteLine(selectedStudent.LoginName);
-                XMLDriver.editStudent(newFName, newLName, selectedStudent, newGroup, studentList, groupList);
+                Group selectedGroup = FindGroupByName(newGroup);
+                Group oldGroup = FindGroupByID(selectedStudent.GroupID);
+                bool hasGroupChanged = XMLDriver.editStudent(newFName, newLName, selectedStudent, selectedGroup, studentList);
+                if(hasGroupChanged)
+                {
+                    RemoveGroupDrillsFromStudent(oldGroup, selectedStudent);
+                    AddGroupDrillsToStudent(selectedGroup, selectedStudent);
+                }
             }
         }
 
@@ -303,6 +311,12 @@ namespace RaptorMath
             return (foundGroup);
         }
 
+        public Group FindGroupByID(int groupID)
+        {
+            Group foundGroup = groupList.Where(grp => grp.ID.ToString().Equals(groupID.ToString())).FirstOrDefault();
+            return foundGroup;
+        }
+
         public int FindGroupIDByName(string GroupName)
         {
             Group foundGroup = groupList.Where(grp => grp.Name.Equals(GroupName)).FirstOrDefault();
@@ -335,7 +349,7 @@ namespace RaptorMath
         {
             foreach(Drill drill in group.groupDrillList)
             {
-                student.curDrillList.Add(drill);
+                AddDrillToStudent(student, drill);
             }
         }
 
@@ -343,7 +357,7 @@ namespace RaptorMath
         {
             foreach (Drill drill in group.groupDrillList)
             {
-                student.curDrillList.Remove(drill);
+                RemoveDrillFromStudent(student, drill);
             }
         }
 

@@ -280,9 +280,9 @@ namespace RaptorMath
             }
         }
 
-        public void editStudent(string newFName, string newLName, Student selectedStudent, string newGroup, List<Student> studentList, List<Group> groupList)
+        public bool editStudent(string newFName, string newLName, Student selectedStudent, Group group, List<Student> studentList)
         {
-            XMLStudentDriver.editStudent(newFName, newLName, selectedStudent, newGroup, studentList, groupList, studentXMLPath, groupXMLPath, dataDirectory);
+            return XMLStudentDriver.editStudent(newFName, newLName, selectedStudent, group, studentList, studentXMLPath, groupXMLPath, dataDirectory);
         }
 
         private void UpdateGroup(Group group, Group modifiedGroup)

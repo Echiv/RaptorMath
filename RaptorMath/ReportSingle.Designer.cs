@@ -208,7 +208,7 @@
             // 
             this.SingleReport_Timer.Enabled = true;
             this.SingleReport_Timer.Interval = 1000;
-            this.SingleReport_Timer.Tick += new System.EventHandler(this.MngUsers_Timer_Tick);
+            this.SingleReport_Timer.Tick += new System.EventHandler(this.SingleReport_Timer_Tick);
             // 
             // tableLayoutPanel1
             // 

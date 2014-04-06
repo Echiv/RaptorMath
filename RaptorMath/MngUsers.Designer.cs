@@ -37,6 +37,8 @@
             this.MngUsers_TimeLbl = new System.Windows.Forms.Label();
             this.MngUsers_DateLbl = new System.Windows.Forms.Label();
             this.MngUsers_AddUserBox = new System.Windows.Forms.GroupBox();
+            this.MngUsers_LastNameCmbo = new System.Windows.Forms.ComboBox();
+            this.MngUsers_LastNameLbl = new System.Windows.Forms.Label();
             this.MngUsers_GroupCmbo = new System.Windows.Forms.ComboBox();
             this.MngUsers_FirstNameCmbo = new System.Windows.Forms.ComboBox();
             this.MngUsers_ConfirmPassword = new System.Windows.Forms.Label();
@@ -57,8 +59,6 @@
             this.MngUsers_CloseBtn = new System.Windows.Forms.Button();
             this.MngUsers_ExitBtn = new System.Windows.Forms.Button();
             this.MngUsers_Timer = new System.Windows.Forms.Timer(this.components);
-            this.MngUsers_LastNameLbl = new System.Windows.Forms.Label();
-            this.MngUsers_LastNameCmbo = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.MngUsers_UserInfoBox.SuspendLayout();
             this.MngUsers_AddUserBox.SuspendLayout();
@@ -170,6 +170,28 @@
             this.MngUsers_AddUserBox.TabIndex = 1;
             this.MngUsers_AddUserBox.TabStop = false;
             this.MngUsers_AddUserBox.Text = "Add a User";
+            // 
+            // MngUsers_LastNameCmbo
+            // 
+            this.MngUsers_LastNameCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.MngUsers_LastNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.MngUsers_LastNameCmbo.FormattingEnabled = true;
+            this.MngUsers_LastNameCmbo.Location = new System.Drawing.Point(155, 99);
+            this.MngUsers_LastNameCmbo.Margin = new System.Windows.Forms.Padding(4);
+            this.MngUsers_LastNameCmbo.MaxLength = 10;
+            this.MngUsers_LastNameCmbo.Name = "MngUsers_LastNameCmbo";
+            this.MngUsers_LastNameCmbo.Size = new System.Drawing.Size(169, 24);
+            this.MngUsers_LastNameCmbo.TabIndex = 14;
+            // 
+            // MngUsers_LastNameLbl
+            // 
+            this.MngUsers_LastNameLbl.AutoSize = true;
+            this.MngUsers_LastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngUsers_LastNameLbl.Location = new System.Drawing.Point(59, 97);
+            this.MngUsers_LastNameLbl.Name = "MngUsers_LastNameLbl";
+            this.MngUsers_LastNameLbl.Size = new System.Drawing.Size(76, 17);
+            this.MngUsers_LastNameLbl.TabIndex = 13;
+            this.MngUsers_LastNameLbl.Text = "Last Name";
             // 
             // MngUsers_GroupCmbo
             // 
@@ -306,11 +328,11 @@
             // 
             this.MngUsers_UserTypeLbl.AutoSize = true;
             this.MngUsers_UserTypeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_UserTypeLbl.Location = new System.Drawing.Point(61, 32);
+            this.MngUsers_UserTypeLbl.Location = new System.Drawing.Point(61, 30);
             this.MngUsers_UserTypeLbl.Name = "MngUsers_UserTypeLbl";
-            this.MngUsers_UserTypeLbl.Size = new System.Drawing.Size(78, 17);
+            this.MngUsers_UserTypeLbl.Size = new System.Drawing.Size(74, 17);
             this.MngUsers_UserTypeLbl.TabIndex = 1;
-            this.MngUsers_UserTypeLbl.Text = "User Type:";
+            this.MngUsers_UserTypeLbl.Text = "User Type";
             // 
             // MngUsers_RemoveUserBox
             // 
@@ -403,28 +425,6 @@
             this.MngUsers_Timer.Enabled = true;
             this.MngUsers_Timer.Interval = 1000;
             this.MngUsers_Timer.Tick += new System.EventHandler(this.MngUsers_Timer_Tick);
-            // 
-            // MngUsers_LastNameLbl
-            // 
-            this.MngUsers_LastNameLbl.AutoSize = true;
-            this.MngUsers_LastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_LastNameLbl.Location = new System.Drawing.Point(59, 97);
-            this.MngUsers_LastNameLbl.Name = "MngUsers_LastNameLbl";
-            this.MngUsers_LastNameLbl.Size = new System.Drawing.Size(76, 17);
-            this.MngUsers_LastNameLbl.TabIndex = 13;
-            this.MngUsers_LastNameLbl.Text = "Last Name";
-            // 
-            // MngUsers_LastNameCmbo
-            // 
-            this.MngUsers_LastNameCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.MngUsers_LastNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.MngUsers_LastNameCmbo.FormattingEnabled = true;
-            this.MngUsers_LastNameCmbo.Location = new System.Drawing.Point(155, 99);
-            this.MngUsers_LastNameCmbo.Margin = new System.Windows.Forms.Padding(4);
-            this.MngUsers_LastNameCmbo.MaxLength = 10;
-            this.MngUsers_LastNameCmbo.Name = "MngUsers_LastNameCmbo";
-            this.MngUsers_LastNameCmbo.Size = new System.Drawing.Size(169, 24);
-            this.MngUsers_LastNameCmbo.TabIndex = 14;
             // 
             // MngUsers_Form
             // 

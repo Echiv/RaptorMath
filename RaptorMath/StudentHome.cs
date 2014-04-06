@@ -75,7 +75,7 @@ namespace RaptorMath
             InitializeDate();
             InitializeTimer();
             RefreshDrillDdl();
-
+            StuHome_StartDrillBtn.Enabled = false;
             StuHome_DrillDdl.Select();
 
             this.StudentName = localManager.currentUser;
@@ -172,6 +172,11 @@ namespace RaptorMath
         {
             Drill currentDrill = localManager.currentStudent.curDrillList.Where(dri => dri.DrillName.Equals(StuHome_DrillDdl.Text)).FirstOrDefault();
             localManager.currentStudent.curDrill = currentDrill;
+        }
+
+        private void StuHome_DrillDdl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            StuHome_StartDrillBtn.Enabled = true;
         }
     }
 }

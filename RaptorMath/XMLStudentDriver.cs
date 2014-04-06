@@ -139,35 +139,42 @@ namespace RaptorMath
             return true;
         }
 
-        public void editStudent(string newFName, string newLName, Student selectedStudent, string newGroup, List<Student> studentList, List<Group> groupList, string studentXMLPath, string groupXMLPath, string dataDirectory)
+        public bool editStudent(string newFName, string newLName, Student selectedStudent, Group group, List<Student> studentList, string studentXMLPath, string groupXMLPath, string dataDirectory)
         {
             Student modifySelectedStudent = studentList.Where(stu => stu.ID.ToString().Equals(selectedStudent.ID.ToString())).FirstOrDefault();
+            bool hasGroupChanged = false;
             if (selectedStudent != null)
             {
-                Group group = groupList.Where(grp => grp.Name.Equals(newGroup)).FirstOrDefault();
                 int groupID = 0;
                 if (group != null)
                 {
                     groupID = group.ID;
                 }
-                compareOldAndNewStudentInfo(newFName, newLName, selectedStudent, groupID);
+                hasGroupChanged = compareOldAndNewStudentInfo(newFName, newLName, selectedStudent, groupID);
                 UpdateStudent(selectedStudent, studentXMLPath, groupXMLPath, dataDirectory);
+                MessageBox.Show("The Student was successfully modified!");
             }
             else
             {
                 MessageBox.Show("That Student could not be found!");
             }
+            return hasGroupChanged;
         }
 
-        public void compareOldAndNewStudentInfo(string newFName, string newLName, Student selectedStudent, int newGroup/*, int oldGroup*/)
+        public bool compareOldAndNewStudentInfo(string newFName, string newLName, Student selectedStudent, int newGroup/*, int oldGroup*/)
         {
+            bool hasGroupChanged = false;
             if ((newFName != selectedStudent.FirstName) && (newFName != string.Empty))
                 selectedStudent.FirstName = newFName;
             if ((newLName != selectedStudent.LastName) && (newLName != string.Empty))
                 selectedStudent.LastName = newLName;
             if ((newGroup != selectedStudent.GroupID) && (newGroup != 0))
+            { 
                 selectedStudent.GroupID = newGroup;
+                hasGroupChanged = true;
+            }
             selectedStudent.LoginName = selectedStudent.FirstName + " " + selectedStudent.LastName;
+            return hasGroupChanged;
         }
 
         public void UpdateStudent(Student student, string studentXMLPath, string groupXMLPath, string dataDirectory)
