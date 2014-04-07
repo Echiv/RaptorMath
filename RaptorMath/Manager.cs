@@ -271,24 +271,34 @@ namespace RaptorMath
         /// <param name="newGroup">Student's new group name.</param>
         /// <param name="studentList">List containing student objects.</param>
         /// <param name="groupList">List containing group objects.</param>
-        public void RenameStudent(string newFName, string newLName, string currentName, string newGroup, List<Student> studentList, List<Group> groupList)
+        public bool RenameStudent(string newFName, string newLName, string currentName, string newGroup, List<Student> studentList, List<Group> groupList)
         {
-            if ((newFName.Equals(string.Empty) || (newFName.All(char.IsLetter)))
+            Tuple<bool, bool> GroupStudentChanged = new Tuple<bool, bool>(false, false);
+            /*if ((newFName.Equals(string.Empty) || (newFName.All(char.IsLetter)))
                 && (newLName.Equals(string.Empty) || (newLName.All(char.IsLetter)))
                 && !(currentName.Equals(string.Empty))
                 && (currentName.Replace(" ", string.Empty).All(char.IsLetter))
-                && (newGroup.Equals(string.Empty) || (newGroup.All(char.IsLetterOrDigit))))
+                && (newGroup.Equals(string.Empty) || (newGroup.All(char.IsLetterOrDigit))))*/
+            if (currentName.Replace(" ", string.Empty).All(char.IsLetter)
+                && !(currentName.Equals(string.Empty))
+                && !((newFName.Equals(string.Empty)) && (newLName.Equals(string.Empty)) && (newGroup.Equals(string.Empty))))
             {
                 Student selectedStudent = FindStudentWithName(currentName);
-                Group selectedGroup = FindGroupByName(newGroup);
-                Group oldGroup = FindGroupByID(selectedStudent.GroupID);
-                bool hasGroupChanged = XMLDriver.editStudent(newFName, newLName, selectedStudent, selectedGroup, studentList);
-                if(hasGroupChanged)
+                if (selectedStudent != null)
                 {
-                    RemoveGroupDrillsFromStudent(oldGroup, selectedStudent);
-                    AddGroupDrillsToStudent(selectedGroup, selectedStudent);
+                    Group selectedGroup = FindGroupByName(newGroup);
+                    Group oldGroup = FindGroupByID(selectedStudent.GroupID);
+                    //bool hasGroupChanged = XMLDriver.editStudent(newFName, newLName, selectedStudent, selectedGroup, studentList);
+                    GroupStudentChanged = XMLDriver.editStudent(newFName, newLName, selectedStudent, selectedGroup, studentList);
+                    if (GroupStudentChanged.Item1)
+                    {
+                        RemoveGroupDrillsFromStudent(oldGroup, selectedStudent);
+                        AddGroupDrillsToStudent(selectedGroup, selectedStudent);
+                    }
+                    return GroupStudentChanged.Item2;
                 }
             }
+            return GroupStudentChanged.Item2;
         }
 
         //----------------------------------------------------------------------------------------------//
