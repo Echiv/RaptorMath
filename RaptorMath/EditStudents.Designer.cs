@@ -36,6 +36,8 @@
             this.EditStu_DateLbl = new System.Windows.Forms.Label();
             this.EditStu_AdminNameLbl = new System.Windows.Forms.Label();
             this.EditStu_SettingBox = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.EditStu_NewLastNameCmbo = new System.Windows.Forms.ComboBox();
             this.EditStu_GroupCmbo = new System.Windows.Forms.ComboBox();
             this.EditStu_NewFirstNameCmbo = new System.Windows.Forms.ComboBox();
             this.EditStu_SelectionCmbo = new System.Windows.Forms.ComboBox();
@@ -48,8 +50,6 @@
             this.EditStu_CloseBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.EditStu_Timer = new System.Windows.Forms.Timer(this.components);
-            this.EditStu_NewLastNameCmbo = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.EditStu_UserInfoBox.SuspendLayout();
             this.EditStu_SettingBox.SuspendLayout();
             this.EditStu_ButtonBox.SuspendLayout();
@@ -134,6 +134,32 @@
             this.EditStu_SettingBox.TabStop = false;
             this.EditStu_SettingBox.Text = "Edit Student Settings";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(38, 145);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 17);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "New Last Name";
+            // 
+            // EditStu_NewLastNameCmbo
+            // 
+            this.EditStu_NewLastNameCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.EditStu_NewLastNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.EditStu_NewLastNameCmbo.FormattingEnabled = true;
+            this.EditStu_NewLastNameCmbo.Location = new System.Drawing.Point(167, 145);
+            this.EditStu_NewLastNameCmbo.Margin = new System.Windows.Forms.Padding(4);
+            this.EditStu_NewLastNameCmbo.MaxLength = 25;
+            this.EditStu_NewLastNameCmbo.Name = "EditStu_NewLastNameCmbo";
+            this.EditStu_NewLastNameCmbo.Size = new System.Drawing.Size(160, 24);
+            this.EditStu_NewLastNameCmbo.TabIndex = 2;
+            this.EditStu_NewLastNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
+            this.EditStu_NewLastNameCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditStu_SettingBoxTextBoxes_KeyPress);
+            this.EditStu_NewLastNameCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
+            // 
             // EditStu_GroupCmbo
             // 
             this.EditStu_GroupCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -144,8 +170,10 @@
             this.EditStu_GroupCmbo.MaxLength = 25;
             this.EditStu_GroupCmbo.Name = "EditStu_GroupCmbo";
             this.EditStu_GroupCmbo.Size = new System.Drawing.Size(160, 24);
-            this.EditStu_GroupCmbo.TabIndex = 2;
+            this.EditStu_GroupCmbo.TabIndex = 3;
+            this.EditStu_GroupCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
             this.EditStu_GroupCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditStu_SettingBoxTextBoxes_KeyPress);
+            this.EditStu_GroupCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // EditStu_NewFirstNameCmbo
             // 
@@ -158,7 +186,9 @@
             this.EditStu_NewFirstNameCmbo.Name = "EditStu_NewFirstNameCmbo";
             this.EditStu_NewFirstNameCmbo.Size = new System.Drawing.Size(160, 24);
             this.EditStu_NewFirstNameCmbo.TabIndex = 1;
+            this.EditStu_NewFirstNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.EditStu_NewFirstNameCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditStu_SettingBoxTextBoxes_KeyPress);
+            this.EditStu_NewFirstNameCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // EditStu_SelectionCmbo
             // 
@@ -171,7 +201,9 @@
             this.EditStu_SelectionCmbo.Name = "EditStu_SelectionCmbo";
             this.EditStu_SelectionCmbo.Size = new System.Drawing.Size(160, 24);
             this.EditStu_SelectionCmbo.TabIndex = 0;
+            this.EditStu_SelectionCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.EditStu_SelectionCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditStu_SettingBoxTextBoxes_KeyPress);
+            this.EditStu_SelectionCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // EditStu_SaveStudentBtn
             // 
@@ -181,7 +213,7 @@
             this.EditStu_SaveStudentBtn.Margin = new System.Windows.Forms.Padding(4);
             this.EditStu_SaveStudentBtn.Name = "EditStu_SaveStudentBtn";
             this.EditStu_SaveStudentBtn.Size = new System.Drawing.Size(137, 33);
-            this.EditStu_SaveStudentBtn.TabIndex = 3;
+            this.EditStu_SaveStudentBtn.TabIndex = 4;
             this.EditStu_SaveStudentBtn.Text = "Save Student";
             this.EditStu_SaveStudentBtn.UseVisualStyleBackColor = true;
             this.EditStu_SaveStudentBtn.Click += new System.EventHandler(this.EditStu_SaveStudentBtn_Click);
@@ -278,29 +310,6 @@
             this.EditStu_Timer.Enabled = true;
             this.EditStu_Timer.Interval = 1000;
             this.EditStu_Timer.Tick += new System.EventHandler(this.EditStu_Timer_Tick);
-            // 
-            // EditStu_NewLastNameCmbo
-            // 
-            this.EditStu_NewLastNameCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.EditStu_NewLastNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.EditStu_NewLastNameCmbo.FormattingEnabled = true;
-            this.EditStu_NewLastNameCmbo.Location = new System.Drawing.Point(167, 145);
-            this.EditStu_NewLastNameCmbo.Margin = new System.Windows.Forms.Padding(4);
-            this.EditStu_NewLastNameCmbo.MaxLength = 25;
-            this.EditStu_NewLastNameCmbo.Name = "EditStu_NewLastNameCmbo";
-            this.EditStu_NewLastNameCmbo.Size = new System.Drawing.Size(160, 24);
-            this.EditStu_NewLastNameCmbo.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 145);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 17);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "New Last Name";
             // 
             // EditStudents_Form
             // 

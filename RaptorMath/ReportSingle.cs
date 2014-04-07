@@ -69,7 +69,7 @@ namespace RaptorMath
         /// <summary>Time display update on timer tick.</summary>
         private void SingleReport_Timer_Tick(object sender, EventArgs e)
         {
-            SingleReport_DateLbl.Text = DateTime.Now.ToString("h:mm tt");
+            SingleReport_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
         //------------------------------------------------------------------//

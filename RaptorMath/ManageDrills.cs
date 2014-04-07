@@ -258,7 +258,7 @@ namespace RaptorMath
         /// <summary>Time display update on timer tick.</summary>
         private void MngDrills_Timer_Tick(object sender, EventArgs e)
         {
-            MngDrills_DateLbl.Text = DateTime.Now.ToString("h:mm tt");
+            MngDrills_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
         //------------------------------------------------------------------//
