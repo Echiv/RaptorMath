@@ -123,7 +123,7 @@ namespace RaptorMath
         /// <summary>Time display update on timer tick.</summary>
         private void EditStu_Timer_Tick(object sender, EventArgs e)
         {
-            EditStu_DateLbl.Text = DateTime.Now.ToString("h:mm tt");
+            EditStu_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
         //------------------------------------------------------------------//
@@ -196,6 +196,13 @@ namespace RaptorMath
             RefreshNewLastNameCmbo();
             RefreshGroupCmbo();
         }
+        private void ClearCmboBoxes()
+        {
+            EditStu_SelectionCmbo.Text = string.Empty;
+            EditStu_NewFirstNameCmbo.Text = string.Empty;
+            EditStu_NewLastNameCmbo.Text = string.Empty;
+            EditStu_GroupCmbo.Text = string.Empty;
+        }
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
@@ -204,10 +211,18 @@ namespace RaptorMath
         /// <summary>Handle 'Save Student' button click.</summary>
         private void EditStu_SaveStudentBtn_Click(object sender, EventArgs e)
         {
-            localManager.RenameStudent(EditStu_NewFirstNameCmbo.Text, EditStu_NewLastNameCmbo.Text, EditStu_SelectionCmbo.Text, EditStu_GroupCmbo.Text, localManager.studentList, localManager.groupList);
-            RefreshCmboBoxes();
+            bool isStudentRenamed = localManager.RenameStudent(EditStu_NewFirstNameCmbo.Text, EditStu_NewLastNameCmbo.Text, EditStu_SelectionCmbo.Text, EditStu_GroupCmbo.Text, localManager.studentList, localManager.groupList);
+            if (isStudentRenamed)
+            {
+                MessageBox.Show("Student changes saved");
+                ClearCmboBoxes();
+                RefreshCmboBoxes();
+            }
+            else
+            {
+                MessageBox.Show("There was no changes specified");
+            }
         }
-
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
