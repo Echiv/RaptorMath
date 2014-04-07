@@ -17,6 +17,11 @@ namespace RaptorMath
         public string dataDirectory = string.Empty;
         private XMLStudentDriver XMLStudentDriver = new XMLStudentDriver();
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>XMLDriver object default constructor.</summary>
         public XMLDriver()
         {
             adminXMLPath = "Unknown";
@@ -26,6 +31,16 @@ namespace RaptorMath
             dataDirectory = "Unknown";
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>>XMLDriver object constructor.</summary>
+        /// <param name="adminXML">Admin XML's path.</param>
+        /// <param name="studentXML">Student XML's path.</param>
+        /// <param name="groupXML">Group XML's path.</param>
+        /// <param name="drillXML">Drill XML's path.</param>
+        /// <param name="DataDirectory">Data directory.</param>
         public XMLDriver(string adminXML, string studentXML, string groupXML, string drillXML, string DataDirectory)
         {
             adminXMLPath = adminXML;
@@ -36,6 +51,13 @@ namespace RaptorMath
 
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Validation of Admin XML's existence.</summary>
+        /// <param name="fileName">XML's file name.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool adminXMLExists(string fileName)
         {
             if (!System.IO.File.Exists(fileName))
@@ -45,6 +67,13 @@ namespace RaptorMath
             return true;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Validation of Student XML's existence.</summary>
+        /// <param name="fileName">Validation of Admin XML's existence.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool studentXMLExists(string fileName)
         {
             if (!System.IO.File.Exists(fileName))
@@ -54,6 +83,16 @@ namespace RaptorMath
             return true;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Checks for, and if necessary creates, core XML files;
+        /// Admin, Group, Drill.</summary>
+        /// <param name="adminList">List of admin objects.</param>
+        /// <param name="studentList">List of student objects.</param>
+        /// <param name="groupList">List of group objects.</param>
+        /// <param name="mainDrillList">List of drill objects.</param>
         public void StartUp(List<Admin> adminList, List<Student> studentList, List<Group> groupList, List<Drill> mainDrillList)
         {
             //AdminXML should contain all admin information
@@ -85,31 +124,81 @@ namespace RaptorMath
                 XMLStudentDriver.LoadStudentXML(studentList, mainDrillList, studentXMLPath);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Accessor: Student object by ID.</summary>
+        /// <param name="studentID">Student's ID.</param>
+        /// <param name="studentXMLPath">Student's XML file path.</param>
+        /// <returns>Student object.</returns>
         public Student GetStudentWithID(int studentID, string studentXMLPath)
         {
             return XMLStudentDriver.GetStudentWithID(studentID, studentXMLPath);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Add a studet to student XML.</summary>
+        /// <param name="newStudent">Student object to be added.</param>
+        /// <param name="studentList">List of student objects.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool AddUserToXML(Student newStudent, List<Student> studentList)
         {
             return XMLStudentDriver.AddUserToXML(newStudent, studentList, studentXMLPath, dataDirectory);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Add an admin to admin XML.</summary>
+        /// <param name="newAdmin">Admin object to be added.</param>
+        /// <param name="adminList">List of admin objects.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool AddUserToXML(Admin newAdmin, List<Admin> adminList)
         {
             return AddNewAdmin(newAdmin, adminXMLPath, adminList);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Add a record to student data.</summary>
+        /// <param name="student">Student object to be modified.</param>
+        /// <param name="RecordToAdd">Record object to be added.</param>
         public void AddRecordToStudent(Student student, Record RecordToAdd)
         {
             XMLStudentDriver.AddRecordToStudent(student, RecordToAdd);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Creating Student XML for addition of first student.
+        /// </summary>
+        /// <param name="newStudentEntry">Student object to be added.</param>
+        /// <param name="studentXMLPath">Student XML file path.</param>
+        /// <param name="studentList">List of student objects.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool InitialCreateStudentXml(Student newStudentEntry, string studentXMLPath, List<Student> studentList)
         {
             return XMLStudentDriver.InitialCreateStudentXml(newStudentEntry, studentXMLPath, studentList);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Creating Admin XML for addition of first Admin.</summary>
+        /// <param name="newAdminEntry">Admin object to be added.</param>
+        /// <param name="adminXMLPath">Admin XML file path.</param>
+        /// <param name="adminList">List of admin objects.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool InitialCreateAdminXml(Admin newAdminEntry, string adminXMLPath, List<Admin> adminList)
         {
             XElement newAdmin = CreateAdminNode(newAdminEntry);
@@ -126,6 +215,13 @@ namespace RaptorMath
             return true;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Default creation of Admin XML file.</summary>
+        /// <param name="AdminXMLPath">Admin XML file path.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool InitialCreateAdminXml(string AdminXMLPath)
         {
             Admin DefaultAdmin = new Admin("Admin", "", "Admin", DateTime.Now.ToString("M/d/yyyy"), "RaptopMathStudents.xml");
@@ -142,6 +238,13 @@ namespace RaptorMath
             return true;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Default creation of Group XML file.</summary>
+        /// <param name="GroupXMLPath">Group XML file path.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool InitialCreateGroupXML(string GroupXMLPath)
         {
             XElement newGroup =
@@ -156,6 +259,13 @@ namespace RaptorMath
             return true;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Default creation of Drill XML file.</summary>
+        /// <param name="DrillXMLPath">Drill XML file path.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool InitialCreateDrillXML(string DrillXMLPath)
         {
             Drill DrillOne = new Drill("10AddProb1to25", "10", "1", "25", "addition");
@@ -175,16 +285,43 @@ namespace RaptorMath
             return true;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Creating Record XML for addition of first record.
+        /// </summary>
+        /// <param name="RecordToAdd">Record object to added.</param>
+        /// <param name="student">Student object related to record.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool InitialCreateRecordXML(Student student, Record RecordToAdd)
         {
             return XMLStudentDriver.InitialCreateRecordXML(student, RecordToAdd);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Adding a new student to Student XML.</summary>
+        /// <param name="student">Student object to be added.</param>
+        /// <param name="studentXMLPath">Student XML's file path.</param>
+        /// <param name="studentList">List of student objects.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool AddNewStudent(Student student, string studentXMLPath, List<Student> studentList)
         {
             return XMLStudentDriver.AddNewStudent(student, studentXMLPath, studentList);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Adding a new admin to Admin XML.</summary>
+        /// <param name="admin">Admin object to be added.</param>
+        /// <param name="fileName">Admin XML file name.</param>
+        /// <param name="adminList">List of admin objects.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool AddNewAdmin(Admin admin, string fileName, List<Admin> adminList)
         {
             XDocument data = XDocument.Load(fileName);
@@ -209,6 +346,14 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Adding a new group to Group XML. </summary>
+        /// <param name="groupName">Group name.</param>
+        /// <param name="groupList">List of group objects.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool AddNewGroup(string groupName, List<Group> groupList)
         {
             Group group = new Group();
@@ -236,6 +381,14 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Adding a new drill to Drill XML. </summary>
+        /// <param name="drill">Drill name.</param>
+        /// <param name="drillList">List of drill objects.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool AddNewDrill(Drill drill, List<Drill> drillList)
         {
             XDocument data = XDocument.Load(drillXMLPath);
@@ -260,6 +413,14 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Adding a new record to Student XML. </summary>
+        /// <param name="student">Student object to be modified.</param>
+        /// <param name="RecordToAdd">Record to be added.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool AddNewRecord(Student student, Record RecordToAdd)
         {
             return XMLStudentDriver.AddNewRecord(student, RecordToAdd);
@@ -280,11 +441,29 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Edit data in Student XML.</summary>
+        /// <param name="newFName">Student's first name.</param>
+        /// <param name="newLName">Student's last name.</param>
+        /// <param name="selectedStudent">Student object to be modified</param>
+        /// <param name="group">Group object associated with student.</param>
+        /// <param name="studentList">List of student objects.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool editStudent(string newFName, string newLName, Student selectedStudent, Group group, List<Student> studentList)
         {
             return XMLStudentDriver.editStudent(newFName, newLName, selectedStudent, group, studentList, studentXMLPath, groupXMLPath, dataDirectory);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Edit data in Group XML.</summary>
+        /// <param name="group">Group object to be replaced.</param>
+        /// <param name="modifiedGroup">Group object to be inserted.</param>
         private void UpdateGroup(Group group, Group modifiedGroup)
         {
             XDocument data = XDocument.Load(groupXMLPath);
@@ -303,6 +482,14 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Add a drill to Student XML.</summary>
+        /// <param name="student">Student object to be modified.</param>
+        /// <param name="drillToAdd">Drill object to be added.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool AddDrillToStudentXML(Student student, Drill drillToAdd)
         {
             return XMLStudentDriver.AddDrillToStudentXML(student, drillToAdd, studentXMLPath);
@@ -326,6 +513,15 @@ namespace RaptorMath
             return false;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Check if drill is already associated with a group.
+        /// </summary>
+        /// <param name="group">Group object to check against.</param>
+        /// <param name="drill">Drill object to check for.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool isDrillAssignedToGroup(Group group, Drill drill)
         {
             foreach (Drill groupDrill in group.groupDrillList)
@@ -342,6 +538,14 @@ namespace RaptorMath
             return false;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Remove a drill from Group XML.</summary>
+        /// <param name="group">Group object to be modified.</param>
+        /// <param name="DrillToRemove">Drill object to be removed.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool RemoveDrillFromGroupXML(Group group, Drill DrillToRemove)
         {
             XDocument data = XDocument.Load(groupXMLPath);
@@ -368,6 +572,14 @@ namespace RaptorMath
             return false;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Remove a drill from Student XML.</summary>
+        /// <param name="student">Student object to be modified.</param>
+        /// <param name="DrillToRemove">Drill object to be removed.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool RemoveDrillFromStudentXML(Student student, Drill DrillToRemove)
         {
             return XMLStudentDriver.RemoveDrillFromStudentXML(student, DrillToRemove, studentXMLPath);
@@ -389,11 +601,26 @@ namespace RaptorMath
                                    ) + 1;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Delete a student from Student XML.</summary>
+        /// <param name="student">Student object to be removed.</param>
+        /// <param name="studentList">List of student object.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool Delete(Student student, List<Student> studentList)
         {
             return XMLStudentDriver.Delete(student, studentList, studentXMLPath);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Delete an admin from Admin XML.</summary>
+        /// <param name="admin">Admin object to be removed.</param>
+        /// <param name="adminList">List of admin object.</param>
         public void Delete(Admin admin, List<Admin> adminList)
         {
             XDocument data = XDocument.Load(adminXMLPath);
@@ -407,6 +634,13 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Delete an group from an XML file.</summary>
+        /// <param name="group">Group object to be deleted.</param>
+        /// <param name="fileName">XML file name.</param>
         public void Delete(Group group, string fileName)
         {
             XDocument data = XDocument.Load(fileName);
@@ -419,6 +653,13 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Delete an drill from an XML file.</summary>
+        /// <param name="drill">Drill object to be deleted.</param>
+        /// <param name="fileName">XML file name.</param>
         public void Delete(Drill drill, string fileName)
         {
             XDocument data = XDocument.Load(fileName);
@@ -431,11 +672,28 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Load a list of students from XML to local.</summary>
+        /// <param name="studentList">List of student objects to be populated.
+        /// </param>
+        /// <param name="mainDrillList">List of drill objects</param>
+        /// <param name="fileName">XML file name.</param>
         private void LoadStudentXML(List<Student> studentList, List<Drill> mainDrillList, string fileName)
         {
             XMLStudentDriver.LoadStudentXML(studentList, mainDrillList, fileName);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Load a list of admins from XML to local.</summary>
+        /// <param name="adminList">List of admin objects to be populated.
+        /// </param>
+        /// <param name="fileName">XML file name.</param>
         public void LoadAdminXML(List<Admin> adminList, string fileName)
         {
             XDocument adminXML = XDocument.Load(fileName);
@@ -454,6 +712,15 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Load a list of groups from XML to local.</summary>
+        /// <param name="groupList">List of group objects to be populated.
+        /// </param>
+        /// <param name="mainDrillList">List of drill objects</param>
+        /// <param name="fileName">XML file name.</param>
         public void LoadGroupXML(List<Group> groupList, List<Drill> mainDrillList, string fileName)
         {
             XDocument groupXML = XDocument.Load(fileName);
@@ -474,6 +741,14 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Load a list of drills from XML to local.</summary>
+        /// <param name="drillList">List of drill objects to be populated.
+        /// </param>
+        /// <param name="fileName">XML file name.</param>
         public void LoadDrillXML(List<Drill> drillList, string fileName)
         {
             Console.WriteLine("LoadDrill");
@@ -495,11 +770,25 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Define first level of root in XML.</summary>
+        /// <param name="XMLFile">XML file being used.</param>
+        /// <returns>XElement</returns>
         private XElement FirstLevelOfRoot(XDocument XMLFile)
         {
             return XMLFile.Root;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Define second level of root in XML.</summary>
+        /// <param name="RootNode">XML's root node.</param>
+        /// <returns>IEnumerable<XElement></returns>
         private IEnumerable<XElement> SecondLevelOfRoot(XElement RootNode)
         {
             IEnumerable<XElement> SecondLevelChildrenQuery =
@@ -508,6 +797,13 @@ namespace RaptorMath
             return SecondLevelChildrenQuery;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Define third level of root in XML.</summary>
+        /// <param name="RootNode">XML's root node.</param>
+        /// <returns>IEnumerable<XElement></returns>
         private IEnumerable<XElement> ThirdLevelOfRoot(XElement SecondLevelNode)
         {
             IEnumerable<XElement> ThirdLevelChildrenQuery =
@@ -515,7 +811,14 @@ namespace RaptorMath
                 select ThirdLevel;
             return ThirdLevelChildrenQuery;
         }
-        
+
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Add data from active session to XML.</summary>
+        /// <param name="currentStudent">Student object to be modified.</param>
+        /// <param name="currentDrill">Drill object to be modified.</param>
         public void WriteCurrentSession(Student currentStudent, Drill currentDrill)
         {
             XMLStudentDriver.WriteCurrentSession(currentStudent, currentDrill);
@@ -588,6 +891,13 @@ namespace RaptorMath
             return true;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Add an admin node to Admin XML.</summary>
+        /// <param name="newAdmin">Admin object to be added.</param>
+        /// <returns>XElement</returns>
         public XElement CreateAdminNode(Admin newAdmin)
         {
             XElement admin =
@@ -601,6 +911,13 @@ namespace RaptorMath
             return admin;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Add a drill node to Drill XML.</summary>
+        /// <param name="newDrill">Drill object to be added.</param>
+        /// <returns>XElement</returns>
         public XElement CreateDrillNode(Drill newDrill)
         {
             XElement drill =

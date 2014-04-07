@@ -25,6 +25,11 @@ namespace RaptorMath
         /// </summary>
         static Manager allManager = new Manager();
         [STAThread]
+
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
         static void Main()
         {
             System.Threading.Mutex mutexMyapplication = new System.Threading.Mutex(false, "RaptorMath.exe");

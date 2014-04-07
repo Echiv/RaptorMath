@@ -22,6 +22,12 @@ namespace RaptorMath
             set { MngGroups_AdminNameLbl.Text = value; }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Clears and refreshes content of 'Name' combo box, 
+        /// populating with group data.</summary>
         private void RefreshGroupNameCmboBox()
         {
             MngGroups_GroupNameCmbo.Items.Clear();
@@ -33,6 +39,12 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Clears and refreshes content of 'Select a Group' combo box, 
+        /// populating with group data.</summary>
         private void RefreshGroupCmboBox()
         {
             MngGroups_SelectGroupCmbo.Items.Clear();
@@ -44,6 +56,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Will refresh all combo boxes.</summary>
         private void RefreshCmboBoxes()
         {
             RefreshGroupNameCmboBox();
@@ -51,6 +68,11 @@ namespace RaptorMath
 
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Will clear all combo boxes.</summary>
         private void ClearCmboBoxes()
         {
             MngGroups_GroupNameCmbo.Text = string.Empty;
@@ -60,8 +82,9 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                         //
-        // Date: 3/16/2014                                                   //
+        // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
+        /// <summary>Formating initial display of current date.</summary>
         private void InitializeDate()
         {
             MngGroups_DateLbl.Text = DateTime.Now.ToString("M/d/yyyy");
@@ -71,11 +94,18 @@ namespace RaptorMath
         // Cody Jordan, Cian Carota                                         //
         // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
+        /// <summary>Formating initial display of current time.</summary>
         private void InitializeTimer()
         {
             MngGroups_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Manage Groups form constructor.</summary>
+        /// <param name="manager">The program management class.</param>
         public ManageGroups_Form(Manager manager)
         {
             InitializeComponent();
@@ -89,11 +119,21 @@ namespace RaptorMath
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Time display update on timer tick.</summary>
         private void MngGroups_Timer_Tick(object sender, EventArgs e)
         {
             MngGroups_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Create Group' button click.</summary>
         private void MngGroups_CreateBtn_Click(object sender, EventArgs e)
         {
             string newGroupName = MngGroups_GroupNameCmbo.Text;
@@ -102,6 +142,11 @@ namespace RaptorMath
             ClearCmboBoxes();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Exit' button click.</summary>
         private void MngGroups_ExitBtn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.",
@@ -112,12 +157,22 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Close' button click.</summary>
         private void MngGroups_CloseBtn_Click(object sender, EventArgs e)
         {
             localManager.SetWindow(Window.adminHome);
             this.Close();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Rename Group' button click.</summary>
         private void MngGroups_RenameBtn_Click(object sender, EventArgs e)
         {
             localManager.RenameGroup(MngGroups_NewNameCmbo.Text, MngGroups_SelectGroupCmbo.Text, localManager.groupList);
@@ -125,6 +180,11 @@ namespace RaptorMath
             ClearCmboBoxes();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Enter-key' press.</summary>
         private void MngGroups_GroupBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -133,6 +193,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Enter-key' press.</summary>
         private void MngGroups_ModifyBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)

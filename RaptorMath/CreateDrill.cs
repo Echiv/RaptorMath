@@ -25,8 +25,9 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                         //
-        // Date: 3/16/2014                                                   //
+        // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
+        /// <summary>Formating initial display of current date.</summary>
         private void InitializeDate()
         {
             CreateDrill_DateLbl.Text = DateTime.Now.ToString("M/d/yyyy");
@@ -36,11 +37,18 @@ namespace RaptorMath
         // Cody Jordan, Cian Carota                                         //
         // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
+        /// <summary>Formating initial display of current time.</summary>
         private void InitializeTimer()
         {
             CreateDrill_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Create Drill form constructor.</summary>
+        /// <param name="manager">The program management class.</param>
         public CreateDrill_Form(Manager manager)
         {
             InitializeComponent();
@@ -53,11 +61,21 @@ namespace RaptorMath
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Time display update on timer tick.</summary>
         private void CreateDrill_Timer_Tick(object sender, EventArgs e)
         {
             CreateDrill_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Exit' button click.</summary>
         private void CreateDrill_ExitBtn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.",
@@ -68,12 +86,22 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Close' button click.</summary>
         private void CreateDrill_CloseBtn_Click(object sender, EventArgs e)
         {
             localManager.SetWindow(Window.adminHome);
             this.Close();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Save Drill' button click.</summary>
         private void CreateDrill_SaveDrillBtn_Click(object sender, EventArgs e)
         {
             // Make sure all forms and radio buttons are filled and valid
@@ -105,9 +133,14 @@ namespace RaptorMath
 
         private void CreateDrill_NumQuestionsTxt_TextChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("Event: Text Changed");
+
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Enter-key' press.</summary>
         private void CreateDrill_CreateBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)

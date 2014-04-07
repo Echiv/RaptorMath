@@ -107,6 +107,12 @@ namespace RaptorMath
             StuHome_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Clears and refreshes content of drill selection
+        /// combo box.</summary>
         private void RefreshDrillDdl()
         {
             StuHome_DrillDdl.Items.Clear();
@@ -168,12 +174,22 @@ namespace RaptorMath
             this.Close();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Registers combo box item selection.</summary>
         private void StuHome_DrillDdl_SelectionChangeCommitted(object sender, EventArgs e)
         {
             Drill currentDrill = localManager.currentStudent.curDrillList.Where(dri => dri.DrillName.Equals(StuHome_DrillDdl.Text)).FirstOrDefault();
             localManager.currentStudent.curDrill = currentDrill;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Enables 'Start' button.</summary>
         private void StuHome_DrillDdl_SelectedIndexChanged(object sender, EventArgs e)
         {
             StuHome_StartDrillBtn.Enabled = true;

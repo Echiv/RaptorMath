@@ -23,8 +23,9 @@ namespace RaptorMath
         }
         //------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                         //
-        // Date: 3/16/2014                                                   //
+        // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
+        /// <summary>Formating initial display of current date.</summary>
         private void InitializeDate()
         {
             MngUsers_DateLbl.Text = DateTime.Now.ToString("M/d/yyyy");
@@ -34,11 +35,18 @@ namespace RaptorMath
         // Cody Jordan, Cian Carota                                         //
         // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
+        /// <summary>Formating initial display of current time.</summary>
         private void InitializeTimer()
         {
             MngUsers_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Clears and refreshes content of 'Group' combo box.
+        /// </summary>
         private void RefreshGroupDropDownBox()
         {
             MngUsers_GroupCmbo.Items.Clear();
@@ -46,6 +54,12 @@ namespace RaptorMath
                 MngUsers_GroupCmbo.Items.Add(group.Name);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Clears and refreshes content of 'First Name',
+        /// 'Last Name', & 'Select a User' combo boxes.</summary>
         private void RefreshUserDropDownBox()
         {
             MngUsers_FirstNameCmbo.Items.Clear();
@@ -65,17 +79,34 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Clears and refreshes content of all combo boxes.
+        /// </summary>
         private void RefreshComboBoxes()
         {
             RefreshGroupDropDownBox();
             RefreshUserDropDownBox();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Time display update on timer tick.</summary>
         private void MngUsers_Timer_Tick(object sender, EventArgs e)
         {
             MngUsers_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Manage Users form constructor.</summary>
+        /// <param name="manager">The program management class.</param>
         public MngUsers_Form(Manager manager)
         {
             InitializeComponent();
@@ -89,12 +120,22 @@ namespace RaptorMath
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Close' button click.</summary>
         private void MngUsers_CloseBtn_Click(object sender, EventArgs e)
         {
             localManager.SetWindow(Window.adminHome);
             this.Close();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Exit' button click.</summary>
         private void MngUsers_ExitBtn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.",
@@ -105,6 +146,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Save User' button click.</summary>
         private void MngUsers_SaveUserBtm_Click(object sender, EventArgs e)
         {
             if (MngUsers_StudentRdo.Checked)
@@ -139,6 +185,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Student' radiobutton click.</summary>
         private void MngUsers_StudentRdo_CheckedChanged(object sender, EventArgs e)
         {
             MngUsers_PasswordTxt.Enabled = false;
@@ -148,6 +199,11 @@ namespace RaptorMath
             MngUsers_ConfirmPasswordTxt.Text = string.Empty;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Admin' radiobutton click.</summary>
         private void MngUsers_AdminRdo_CheckedChanged(object sender, EventArgs e)
         {
             MngUsers_PasswordTxt.Enabled = true;
@@ -156,6 +212,11 @@ namespace RaptorMath
             MngUsers_GroupCmbo.Text = string.Empty;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Remove User' button click.</summary>
         private void MngUsers_RemoveUserBtn_Click(object sender, EventArgs e)
         {
             string userToBeRemoved = MngUsers_RemoveUserCmbo.Text;
@@ -164,6 +225,11 @@ namespace RaptorMath
             MngUsers_RemoveUserCmbo.Text = string.Empty;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Enter-key' press.</summary>
         private void MngUsers_AddUserBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -172,6 +238,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Enter-key' press.</summary>
         private void MngUsers_RemoveUserBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)

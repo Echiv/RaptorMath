@@ -151,6 +151,12 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Enables 'Login' button on 'Password' textbox text 
+        /// change.</summary>
         private void passwordBox_TextChanged(object sender, EventArgs e)
         {
             if((localManager.currentUser != string.Empty) && (UseDesg_passwordBox.Text.Length > 0))
