@@ -108,6 +108,11 @@ namespace RaptorMath
 
             EditStu_SelectionCmbo.Select();
 
+            this.EditStu_SelectionCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWithOneWhiteSpaceKeyPress);
+            this.EditStu_GroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
+            this.EditStu_NewFirstNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
+            this.EditStu_NewLastNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
+
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 
