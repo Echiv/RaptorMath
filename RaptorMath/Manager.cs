@@ -320,6 +320,16 @@ namespace RaptorMath
             }
         }
 
+        public bool ChangeAdminPassword(string currentPassword, string newPassword)
+        {
+            if (currentPassword == currentAdmin.Password)
+            {
+                XMLDriver.editAdmin(newPassword, currentAdmin, adminList);
+                return true;
+            }
+            return false;
+        }
+
         //----------------------------------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                                                     //
         // Date:                                                                                        //
