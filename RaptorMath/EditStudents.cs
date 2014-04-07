@@ -196,6 +196,7 @@ namespace RaptorMath
             RefreshNewLastNameCmbo();
             RefreshGroupCmbo();
         }
+
         private void ClearCmboBoxes()
         {
             EditStu_SelectionCmbo.Text = string.Empty;
@@ -223,6 +224,7 @@ namespace RaptorMath
                 MessageBox.Show("There was no changes specified");
             }
         }
+
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
