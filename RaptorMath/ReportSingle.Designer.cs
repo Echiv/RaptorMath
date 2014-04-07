@@ -59,7 +59,7 @@
             this.SingleReport__StudentNameLbl.Location = new System.Drawing.Point(7, 48);
             this.SingleReport__StudentNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SingleReport__StudentNameLbl.Name = "SingleReport__StudentNameLbl";
-            this.SingleReport__StudentNameLbl.Size = new System.Drawing.Size(114, 17);
+            this.SingleReport__StudentNameLbl.Size = new System.Drawing.Size(87, 13);
             this.SingleReport__StudentNameLbl.TabIndex = 37;
             this.SingleReport__StudentNameLbl.Text = "<Student Name>";
             // 
@@ -70,7 +70,7 @@
             this.SingleReport_TimeLbl.Location = new System.Drawing.Point(477, 47);
             this.SingleReport_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SingleReport_TimeLbl.Name = "SingleReport_TimeLbl";
-            this.SingleReport_TimeLbl.Size = new System.Drawing.Size(55, 17);
+            this.SingleReport_TimeLbl.Size = new System.Drawing.Size(42, 13);
             this.SingleReport_TimeLbl.TabIndex = 34;
             this.SingleReport_TimeLbl.Text = "<Time>";
             this.SingleReport_TimeLbl.Click += new System.EventHandler(this.SingleReport_TimeLbl_Click);
@@ -97,7 +97,7 @@
             this.SingleReport_DateLbl.Location = new System.Drawing.Point(477, 19);
             this.SingleReport_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SingleReport_DateLbl.Name = "SingleReport_DateLbl";
-            this.SingleReport_DateLbl.Size = new System.Drawing.Size(54, 17);
+            this.SingleReport_DateLbl.Size = new System.Drawing.Size(42, 13);
             this.SingleReport_DateLbl.TabIndex = 35;
             this.SingleReport_DateLbl.Text = "<Date>";
             this.SingleReport_DateLbl.Click += new System.EventHandler(this.SingleReport_DateLbl_Click);
@@ -108,7 +108,7 @@
             this.GroupReport_WindowLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupReport_WindowLbl.Location = new System.Drawing.Point(7, 18);
             this.GroupReport_WindowLbl.Name = "GroupReport_WindowLbl";
-            this.GroupReport_WindowLbl.Size = new System.Drawing.Size(107, 17);
+            this.GroupReport_WindowLbl.Size = new System.Drawing.Size(84, 13);
             this.GroupReport_WindowLbl.TabIndex = 39;
             this.GroupReport_WindowLbl.Text = "Single Report";
             // 
@@ -131,7 +131,7 @@
             this.SingleReport_CloseBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SingleReport_CloseBtn.Name = "SingleReport_CloseBtn";
             this.SingleReport_CloseBtn.Size = new System.Drawing.Size(124, 27);
-            this.SingleReport_CloseBtn.TabIndex = 1;
+            this.SingleReport_CloseBtn.TabIndex = 0;
             this.SingleReport_CloseBtn.Text = "Close";
             this.SingleReport_CloseBtn.UseVisualStyleBackColor = true;
             this.SingleReport_CloseBtn.Click += new System.EventHandler(this.SingleReport_CloseBtn_Click);
@@ -162,11 +162,11 @@
             this.Percent,
             this.Skipped});
             this.SingleReport_DataDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SingleReport_DataDisplay.Location = new System.Drawing.Point(5, 22);
+            this.SingleReport_DataDisplay.Location = new System.Drawing.Point(5, 19);
             this.SingleReport_DataDisplay.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.SingleReport_DataDisplay.Name = "SingleReport_DataDisplay";
             this.SingleReport_DataDisplay.RowHeadersVisible = false;
-            this.SingleReport_DataDisplay.Size = new System.Drawing.Size(544, 304);
+            this.SingleReport_DataDisplay.Size = new System.Drawing.Size(544, 307);
             this.SingleReport_DataDisplay.TabIndex = 0;
             // 
             // DrillName
@@ -174,35 +174,34 @@
             this.DrillName.HeaderText = "Drill Name";
             this.DrillName.Name = "DrillName";
             this.DrillName.ReadOnly = true;
-            this.DrillName.Width = 108;
+            this.DrillName.Width = 90;
             // 
             // DateTaken
             // 
             this.DateTaken.HeaderText = "Date Taken";
             this.DateTaken.Name = "DateTaken";
             this.DateTaken.ReadOnly = true;
-            this.DateTaken.Width = 117;
+            this.DateTaken.Width = 99;
             // 
             // Questions
             // 
             this.Questions.HeaderText = "# Questions";
             this.Questions.Name = "Questions";
             this.Questions.ReadOnly = true;
-            this.Questions.Width = 120;
             // 
             // Percent
             // 
             this.Percent.HeaderText = "% Correct";
             this.Percent.Name = "Percent";
             this.Percent.ReadOnly = true;
-            this.Percent.Width = 104;
+            this.Percent.Width = 86;
             // 
             // Skipped
             // 
             this.Skipped.HeaderText = "Skipped";
             this.Skipped.Name = "Skipped";
             this.Skipped.ReadOnly = true;
-            this.Skipped.Width = 91;
+            this.Skipped.Width = 78;
             // 
             // SingleReport_Timer
             // 
