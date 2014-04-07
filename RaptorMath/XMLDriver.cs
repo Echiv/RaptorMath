@@ -461,7 +461,7 @@ namespace RaptorMath
         /// <param name="selectedStudent">Student object to be modified</param>
         /// <param name="group">Group object associated with student.</param>
         /// <param name="studentList">List of student objects.</param>
-        /// <returns>Boolean confirmation.</returns>
+        /// <returns>bool, bool</returns>
         public Tuple<bool, bool> editStudent(string newFName, string newLName, Student selectedStudent, Group group, List<Student> studentList)
         {
             return XMLStudentDriver.editStudent(newFName, newLName, selectedStudent, group, studentList, studentXMLPath, groupXMLPath, dataDirectory);
