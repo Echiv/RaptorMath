@@ -45,7 +45,54 @@ namespace RaptorMath
     public partial class AdminHome_Form : Form
     {
         public Manager localManager;
+        private bool isKeyPressed = false;
+        private void RaptorMath_KeyUp(object sender, KeyEventArgs e)
+        {
+            isKeyPressed = false;
+        }
 
+        private void RaptorMath_LettersKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isLetter = char.IsLetter((char)e.KeyCode);
+            if ((e.KeyCode != Keys.Back) && (!e.Shift) && (!isLetter))
+            {
+                e.SuppressKeyPress = isKeyPressed;
+                isKeyPressed = true;
+            }
+        }
+
+        private void RaptorMath_LettersAndDigitsKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isLetterorDigit = char.IsLetterOrDigit((char)e.KeyCode);
+            bool isSpace = char.IsWhiteSpace((char)e.KeyCode);
+            if ((e.KeyCode != Keys.Back) && (!e.Shift) && (!isLetterorDigit))
+            {
+                e.SuppressKeyPress = isKeyPressed;
+                isKeyPressed = true;
+            }
+        }
+
+        private void RaptorMath_LettersWithOneWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
+        {
+            ComboBox cmbobx = (ComboBox)sender;
+            e.Handled = (!(char.IsLetter(e.KeyChar) || ((e.KeyChar == ' ') && (!cmbobx.Text.Contains(' '))) || (char.IsControl(e.KeyChar))));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        private void RaptorMath_LettersAndDigitsKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == ' ' || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        private void RaptorMath_LettersKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/20/2014                                                  //
@@ -76,6 +123,9 @@ namespace RaptorMath
             InitializeComponent();
             InitializeDate();
             InitializeTimer();
+
+            this.AdminHome_CurrentPWTxt.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
+            this.AdminHome_NewPWTxt.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
 
             AdminHome_CurrentPWTxt.Select();
 /*
@@ -153,7 +203,15 @@ namespace RaptorMath
 
         private void AdminHome_SaveBtn_Click(object sender, EventArgs e)
         {
-
+            bool passwordMatch = localManager.ChangeAdminPassword(AdminHome_CurrentPWTxt.Text, AdminHome_NewPWTxt.Text);
+            if (passwordMatch == true)
+            {
+                MessageBox.Show("Your password has been saved");
+            }
+            else
+            {
+                MessageBox.Show("The current password does not match the records");
+            }
         }
 
         private void AdminHome_MngUsersBtn_Click(object sender, EventArgs e)
@@ -202,6 +260,30 @@ namespace RaptorMath
             if (e.KeyChar == 13)
             {
                 AdminHome_SaveBtn_Click(sender, e);
+            }
+        }
+
+        private void AdminHome_CurrentPWTxt_TextChanged(object sender, EventArgs e)
+        {
+            if((AdminHome_CurrentPWTxt.Text.Length > 0)&&(AdminHome_NewPWTxt.Text.Length > 0))
+            {
+                AdminHome_SaveBtn.Enabled = true;
+            }
+            else
+            {
+                AdminHome_SaveBtn.Enabled = false;
+            }
+        }
+
+        private void AdminHome_NewPWTxt_TextChanged(object sender, EventArgs e)
+        {
+            if ((AdminHome_CurrentPWTxt.Text.Length > 0) && (AdminHome_NewPWTxt.Text.Length > 0))
+            {
+                AdminHome_SaveBtn.Enabled = true;
+            }
+            else
+            {
+                AdminHome_SaveBtn.Enabled = false;
             }
         }
 

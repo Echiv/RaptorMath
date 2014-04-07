@@ -55,22 +55,22 @@
             this.AdminHome_MngDrillBtn = new System.Windows.Forms.Button();
             this.AdminHome_DrillBox = new System.Windows.Forms.GroupBox();
             this.AdminHome_AdminBox = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.AdminHome_LogoutBtn = new System.Windows.Forms.Button();
             this.AdminHome_ExitBtn = new System.Windows.Forms.Button();
             this.AdminHome_ButtonBox = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.AdminHome_UserInfoBox.SuspendLayout();
             this.AdminHome_PasswordBox.SuspendLayout();
             this.AdminHome_UserBox.SuspendLayout();
             this.AdminHome_DrillBox.SuspendLayout();
             this.AdminHome_AdminBox.SuspendLayout();
-            this.AdminHome_ButtonBox.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.AdminHome_ButtonBox.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // AdminHome_Timer
@@ -228,6 +228,7 @@
             this.AdminHome_NewPWTxt.Name = "AdminHome_NewPWTxt";
             this.AdminHome_NewPWTxt.Size = new System.Drawing.Size(174, 23);
             this.AdminHome_NewPWTxt.TabIndex = 4;
+            this.AdminHome_NewPWTxt.TextChanged += new System.EventHandler(this.AdminHome_NewPWTxt_TextChanged);
             this.AdminHome_NewPWTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AdminHome_PasswordBoxTextBoxes_KeyPress);
             // 
             // AdminHome_CurrentPWTxt
@@ -237,7 +238,10 @@
             this.AdminHome_CurrentPWTxt.Name = "AdminHome_CurrentPWTxt";
             this.AdminHome_CurrentPWTxt.Size = new System.Drawing.Size(174, 23);
             this.AdminHome_CurrentPWTxt.TabIndex = 3;
+            this.AdminHome_CurrentPWTxt.TextChanged += new System.EventHandler(this.AdminHome_CurrentPWTxt_TextChanged);
+            this.AdminHome_CurrentPWTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
             this.AdminHome_CurrentPWTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AdminHome_PasswordBoxTextBoxes_KeyPress);
+            this.AdminHome_CurrentPWTxt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // AdminHome_MngUsersBtn
             // 
@@ -361,6 +365,36 @@
             this.AdminHome_AdminBox.TabStop = false;
             this.AdminHome_AdminBox.Text = "Admin Controls";
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.AdminHome_UserBox, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.AdminHome_DrillBox, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 2);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 20);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(416, 209);
+            this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.AdminHome_MngDrillBtn);
+            this.groupBox1.Controls.Add(this.AdminHome_CreateDrillBtn);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(3, 145);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(410, 61);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Drill Settings";
+            // 
             // timer1
             // 
             this.timer1.Enabled = true;
@@ -424,36 +458,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(432, 503);
             this.tableLayoutPanel1.TabIndex = 42;
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.AdminHome_UserBox, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.AdminHome_DrillBox, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 2);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 20);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(416, 209);
-            this.tableLayoutPanel2.TabIndex = 2;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.AdminHome_MngDrillBtn);
-            this.groupBox1.Controls.Add(this.AdminHome_CreateDrillBtn);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 145);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(410, 61);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Drill Settings";
-            // 
             // AdminHome_Form
             // 
             this.AcceptButton = this.AdminHome_SaveBtn;
@@ -476,10 +480,10 @@
             this.AdminHome_UserBox.ResumeLayout(false);
             this.AdminHome_DrillBox.ResumeLayout(false);
             this.AdminHome_AdminBox.ResumeLayout(false);
-            this.AdminHome_ButtonBox.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.AdminHome_ButtonBox.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

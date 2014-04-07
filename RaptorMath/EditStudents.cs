@@ -12,6 +12,55 @@ namespace RaptorMath
     public partial class EditStudents_Form : Form
     {
         public Manager localManager;
+
+        private bool isKeyPressed = false;
+        private void RaptorMath_KeyUp(object sender, KeyEventArgs e)
+        {
+            isKeyPressed = false;
+        }
+
+        private void RaptorMath_LettersKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isLetter = char.IsLetter((char) e.KeyCode);
+            if ((e.KeyCode != Keys.Back) && (!e.Shift) && (!isLetter))
+            {
+                e.SuppressKeyPress = isKeyPressed;
+                isKeyPressed = true;
+            }
+        }
+
+        private void RaptorMath_LettersAndDigitsKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isLetterorDigit = char.IsLetterOrDigit((char)e.KeyCode);
+            bool isSpace = char.IsWhiteSpace((char)e.KeyCode);
+            if ((e.KeyCode != Keys.Back) && (!e.Shift) && (!isLetterorDigit))
+            {
+                e.SuppressKeyPress = isKeyPressed;
+                isKeyPressed = true;
+            }
+        }
+
+        private void RaptorMath_LettersWithOneWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
+        {
+            ComboBox cmbobx = (ComboBox)sender;
+            e.Handled = (!(char.IsLetter(e.KeyChar) || ((e.KeyChar == ' ') && (!cmbobx.Text.Contains(' '))) || (char.IsControl(e.KeyChar))));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        private void RaptorMath_LettersAndDigitsKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == ' ' || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        private void RaptorMath_LettersKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/20/2014                                                  //
@@ -50,12 +99,18 @@ namespace RaptorMath
 
             EditStu_SelectionCmbo.Select();
 
+            this.EditStu_SelectionCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWithOneWhiteSpaceKeyPress);
+            this.EditStu_GroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
+            this.EditStu_NewFirstNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
+            this.EditStu_NewLastNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
+
             this.AdminName = localManager.currentUser.Remove(0, 8);
+            
         }
 
         private void EditStu_Timer_Tick(object sender, EventArgs e)
         {
-            EditStu_DateLbl.Text = DateTime.Now.ToString("h:mm tt");
+            EditStu_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
         private void RefreshSelectionCmboBo()
@@ -102,10 +157,27 @@ namespace RaptorMath
             RefreshGroupCmbo();
         }
 
+        private void ClearCmboBoxes()
+        {
+            EditStu_SelectionCmbo.Text = string.Empty;
+            EditStu_NewFirstNameCmbo.Text = string.Empty;
+            EditStu_NewLastNameCmbo.Text = string.Empty;
+            EditStu_GroupCmbo.Text = string.Empty;
+        }
+
         private void EditStu_SaveStudentBtn_Click(object sender, EventArgs e)
         {
-            localManager.RenameStudent(EditStu_NewFirstNameCmbo.Text, EditStu_NewLastNameCmbo.Text, EditStu_SelectionCmbo.Text, EditStu_GroupCmbo.Text, localManager.studentList, localManager.groupList);
-            RefreshCmboBoxes();
+            bool isStudentRenamed = localManager.RenameStudent(EditStu_NewFirstNameCmbo.Text, EditStu_NewLastNameCmbo.Text, EditStu_SelectionCmbo.Text, EditStu_GroupCmbo.Text, localManager.studentList, localManager.groupList);
+            if (isStudentRenamed)
+            {
+                MessageBox.Show("Student changes saved");
+                ClearCmboBoxes();
+                RefreshCmboBoxes();
+            }
+            else
+            {
+                MessageBox.Show("There was no changes specified");
+            }
         }
 
         private void EditStu_ExitBtn_Click(object sender, EventArgs e)
@@ -129,7 +201,7 @@ namespace RaptorMath
             if (e.KeyChar == 13)
             {
                 EditStu_SaveStudentBtn_Click(sender, e);
-            }
+            }           
         }
     }
 }

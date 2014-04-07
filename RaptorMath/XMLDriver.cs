@@ -71,12 +71,6 @@ namespace RaptorMath
                 InitialCreateDrillXML(drillXMLPath);
             }
 
-            Console.WriteLine("StartUP");
-            Console.WriteLine(adminXMLPath);
-            Console.WriteLine(groupXMLPath);
-            Console.WriteLine(drillXMLPath);
-            Console.WriteLine(studentXMLPath);
-
             LoadAdminXML(adminList, adminXMLPath);
             
             LoadDrillXML(mainDrillList, drillXMLPath);
@@ -265,6 +259,16 @@ namespace RaptorMath
             return XMLStudentDriver.AddNewRecord(student, RecordToAdd);
         }
 
+        public bool editAdmin(string newPassword, Admin admin, List<Admin> adminList)
+        {
+            if(admin != null)
+            {
+                admin.Password = newPassword;
+                UpdateAdmin(admin, adminXMLPath);
+            }
+            return false;
+        }
+
         public void editGroup(string newName, string currentName, List<Group> groupList)
         {
             Group modifiedGroup = new Group();
@@ -280,7 +284,7 @@ namespace RaptorMath
             }
         }
 
-        public bool editStudent(string newFName, string newLName, Student selectedStudent, Group group, List<Student> studentList)
+        public Tuple <bool, bool> editStudent(string newFName, string newLName, Student selectedStudent, Group group, List<Student> studentList)
         {
             return XMLStudentDriver.editStudent(newFName, newLName, selectedStudent, group, studentList, studentXMLPath, groupXMLPath, dataDirectory);
         }
@@ -300,6 +304,19 @@ namespace RaptorMath
                 group.ID = modifiedGroup.ID;
                 group.Name = modifiedGroup.Name;
                 data.Save(groupXMLPath);
+            }
+        }
+
+        private void UpdateAdmin(Admin admin, string adminXMLPath)
+        {
+            XDocument data = XDocument.Load(adminXMLPath);
+
+            XElement adminIDElement = data.Descendants("admin").Where(adm => adm.Attribute("ID").Value.Equals(admin.ID.ToString())).FirstOrDefault();
+
+            if(adminIDElement != null)
+            {
+                adminIDElement.SetElementValue("password", admin.Password);
+                data.Save(adminXMLPath);
             }
         }
 

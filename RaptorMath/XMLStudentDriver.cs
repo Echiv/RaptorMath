@@ -139,10 +139,10 @@ namespace RaptorMath
             return true;
         }
 
-        public bool editStudent(string newFName, string newLName, Student selectedStudent, Group group, List<Student> studentList, string studentXMLPath, string groupXMLPath, string dataDirectory)
+        public Tuple<bool, bool> editStudent(string newFName, string newLName, Student selectedStudent, Group group, List<Student> studentList, string studentXMLPath, string groupXMLPath, string dataDirectory)
         {
-            Student modifySelectedStudent = studentList.Where(stu => stu.ID.ToString().Equals(selectedStudent.ID.ToString())).FirstOrDefault();
             bool hasGroupChanged = false;
+            bool hasStudentChanged = false;
             if (selectedStudent != null)
             {
                 int groupID = 0;
@@ -151,14 +151,15 @@ namespace RaptorMath
                     groupID = group.ID;
                 }
                 hasGroupChanged = compareOldAndNewStudentInfo(newFName, newLName, selectedStudent, groupID);
-                UpdateStudent(selectedStudent, studentXMLPath, groupXMLPath, dataDirectory);
-                MessageBox.Show("The Student was successfully modified!");
+                hasStudentChanged = UpdateStudent(selectedStudent, studentXMLPath, groupXMLPath, dataDirectory);
+                
             }
             else
             {
                 MessageBox.Show("That Student could not be found!");
             }
-            return hasGroupChanged;
+            return Tuple.Create(hasGroupChanged, hasStudentChanged);
+            //return hasGroupChanged;
         }
 
         public bool compareOldAndNewStudentInfo(string newFName, string newLName, Student selectedStudent, int newGroup/*, int oldGroup*/)
@@ -177,7 +178,7 @@ namespace RaptorMath
             return hasGroupChanged;
         }
 
-        public void UpdateStudent(Student student, string studentXMLPath, string groupXMLPath, string dataDirectory)
+        public bool UpdateStudent(Student student, string studentXMLPath, string groupXMLPath, string dataDirectory)
         {
             XDocument data = XDocument.Load(studentXMLPath);
             XElement studentIDElement = data.Descendants("stu").Where(stu => stu.Attribute("ID").Value.Equals(student.ID.ToString())).FirstOrDefault();
@@ -188,7 +189,6 @@ namespace RaptorMath
 
             if ((studentIDElement != null) && (GroupElement != null))
             {
-                MessageBox.Show(student.GroupID.ToString());
                 if (studentNameElement == null)
                 {
                     string oldRecordPath = student.RecordsPath;
@@ -202,10 +202,30 @@ namespace RaptorMath
                     studentIDElement.SetElementValue("firstName", student.FirstName);
                     studentIDElement.SetElementValue("lastName", student.LastName);
                     studentIDElement.SetElementValue("recPath", student.RecordsPath);
+                    studentIDElement.SetElementValue("group", student.GroupID);
+                    data.Save(studentXMLPath);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("A student by that name already exists");
+                    return false;
+                }
+            }
+            else
+            {
+                if ((GroupElement != null) && (student.GroupID != 0))
+                {
+                    studentIDElement.SetElementValue("group", student.GroupID);
+                    data.Save(studentXMLPath);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Group name entered does not exist");
+                    return false;
                 }
 
-                studentIDElement.SetElementValue("group", student.GroupID);
-                data.Save(studentXMLPath);
             }
         }
 

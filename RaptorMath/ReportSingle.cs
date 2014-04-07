@@ -55,7 +55,7 @@ namespace RaptorMath
 
         private void SingleReport_Timer_Tick(object sender, EventArgs e)
         {
-            SingleReport_DateLbl.Text = DateTime.Now.ToString("h:mm tt");
+            SingleReport_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
         private void SingleReport_CloseBtn_Click(object sender, EventArgs e)

@@ -70,11 +70,6 @@ namespace RaptorMath
             studentXMLPath = System.IO.Path.Combine(dataDirectory, studentFile);
             groupXMLPath = System.IO.Path.Combine(dataDirectory, groupFile);
             drillXMLPath = System.IO.Path.Combine(dataDirectory, drillFile);
-            Console.WriteLine(adminXMLPath);
-            Console.WriteLine(studentXMLPath);
-            Console.WriteLine(groupXMLPath);
-            Console.WriteLine(drillXMLPath);
-            Console.WriteLine(dataDirectory);
             XMLDriver localXMLDriver = new XMLDriver(adminXMLPath, studentXMLPath, groupXMLPath, drillXMLPath, dataDirectory);
             XMLDriver = localXMLDriver;
             //XML.LoadXML(studentList, adminList);
@@ -206,24 +201,34 @@ namespace RaptorMath
             return false;
         }
 
-        public void RenameStudent(string newFName, string newLName, string currentName, string newGroup, List<Student> studentList, List<Group> groupList)
+        public bool RenameStudent(string newFName, string newLName, string currentName, string newGroup, List<Student> studentList, List<Group> groupList)
         {
-            if ((newFName.Equals(string.Empty) || (newFName.All(char.IsLetter)))
+            Tuple<bool, bool> GroupStudentChanged = new Tuple<bool, bool>(false, false);
+            /*if ((newFName.Equals(string.Empty) || (newFName.All(char.IsLetter)))
                 && (newLName.Equals(string.Empty) || (newLName.All(char.IsLetter)))
                 && !(currentName.Equals(string.Empty))
                 && (currentName.Replace(" ", string.Empty).All(char.IsLetter))
-                && (newGroup.Equals(string.Empty) || (newGroup.All(char.IsLetterOrDigit))))
+                && (newGroup.Equals(string.Empty) || (newGroup.All(char.IsLetterOrDigit))))*/
+            if(currentName.Replace(" ", string.Empty).All(char.IsLetter)
+                && !(currentName.Equals(string.Empty))
+                && !((newFName.Equals(string.Empty)) && (newLName.Equals(string.Empty)) && (newGroup.Equals(string.Empty))))
             {
                 Student selectedStudent = FindStudentWithName(currentName);
-                Group selectedGroup = FindGroupByName(newGroup);
-                Group oldGroup = FindGroupByID(selectedStudent.GroupID);
-                bool hasGroupChanged = XMLDriver.editStudent(newFName, newLName, selectedStudent, selectedGroup, studentList);
-                if(hasGroupChanged)
+                if (selectedStudent != null)
                 {
-                    RemoveGroupDrillsFromStudent(oldGroup, selectedStudent);
-                    AddGroupDrillsToStudent(selectedGroup, selectedStudent);
+                    Group selectedGroup = FindGroupByName(newGroup);
+                    Group oldGroup = FindGroupByID(selectedStudent.GroupID);
+                    //bool hasGroupChanged = XMLDriver.editStudent(newFName, newLName, selectedStudent, selectedGroup, studentList);
+                    GroupStudentChanged = XMLDriver.editStudent(newFName, newLName, selectedStudent, selectedGroup, studentList);
+                    if (GroupStudentChanged.Item1)
+                    {
+                        RemoveGroupDrillsFromStudent(oldGroup, selectedStudent);
+                        AddGroupDrillsToStudent(selectedGroup, selectedStudent);
+                    }
+                    return GroupStudentChanged.Item2;
                 }
             }
+            return GroupStudentChanged.Item2;
         }
 
         public void RenameGroup(string newName, string currentName, List<Group> groupList)
@@ -235,6 +240,16 @@ namespace RaptorMath
             {
                 XMLDriver.editGroup(newName, currentName, groupList);
             }
+        }
+
+        public bool ChangeAdminPassword(string currentPassword, string newPassword)
+        {
+            if (currentPassword == currentAdmin.Password)
+            {
+                XMLDriver.editAdmin(newPassword, currentAdmin, adminList);
+                return true;
+            }
+            return false;
         }
 
         public void removeUser(string userName)
