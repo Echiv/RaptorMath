@@ -231,14 +231,12 @@ namespace RaptorMath
                 }
                 hasGroupChanged = compareOldAndNewStudentInfo(newFName, newLName, selectedStudent, groupID);
                 hasStudentChanged = UpdateStudent(selectedStudent, studentXMLPath, groupXMLPath, dataDirectory);
-
             }
             else
             {
-                MessageBox.Show("That Student could not be found!");
+                MessageBox.Show("That Student could not be found", "Raptor Math", MessageBoxButtons.OK);
             }
             return Tuple.Create(hasGroupChanged, hasStudentChanged);
-            //return hasGroupChanged;
         }
 
         //------------------------------------------------------------------//
@@ -307,7 +305,7 @@ namespace RaptorMath
                 }
                 else
                 {
-                    MessageBox.Show("A student by that name already exists");
+                    MessageBox.Show("A student by that name already exists", "Raptor Math", MessageBoxButtons.OK);
                     return false;
                 }
             }
@@ -321,7 +319,7 @@ namespace RaptorMath
                 }
                 else
                 {
-                    MessageBox.Show("Group name entered does not exist");
+                    MessageBox.Show("Group name entered does not exist", "Raptor Math", MessageBoxButtons.OK);
                     return false;
                 }
 

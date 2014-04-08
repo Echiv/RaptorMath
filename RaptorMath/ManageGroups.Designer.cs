@@ -157,6 +157,7 @@
             this.MngGroups_GroupNameCmbo.Name = "MngGroups_GroupNameCmbo";
             this.MngGroups_GroupNameCmbo.Size = new System.Drawing.Size(203, 24);
             this.MngGroups_GroupNameCmbo.TabIndex = 0;
+            this.MngGroups_GroupNameCmbo.TextChanged += new System.EventHandler(this.MngGroups_GroupNameCmbo_TextChanged);
             this.MngGroups_GroupNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
             this.MngGroups_GroupNameCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
@@ -201,6 +202,7 @@
             this.MngGroups_NewNameCmbo.Name = "MngGroups_NewNameCmbo";
             this.MngGroups_NewNameCmbo.Size = new System.Drawing.Size(203, 24);
             this.MngGroups_NewNameCmbo.TabIndex = 1;
+            this.MngGroups_NewNameCmbo.TextChanged += new System.EventHandler(this.MngGroups_SelectGroupAndNewNameCmbo_TextChanged);
             this.MngGroups_NewNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
             this.MngGroups_NewNameCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
@@ -216,6 +218,7 @@
             this.MngGroups_SelectGroupCmbo.Name = "MngGroups_SelectGroupCmbo";
             this.MngGroups_SelectGroupCmbo.Size = new System.Drawing.Size(203, 24);
             this.MngGroups_SelectGroupCmbo.TabIndex = 0;
+            this.MngGroups_SelectGroupCmbo.TextChanged += new System.EventHandler(this.MngGroups_SelectGroupAndNewNameCmbo_TextChanged);
             this.MngGroups_SelectGroupCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
             this.MngGroups_SelectGroupCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 

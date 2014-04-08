@@ -189,6 +189,7 @@ namespace RaptorMath
             RefreshComboBoxes();
 
             MngUsers_RemoveUserBtn.Enabled = false;
+            MngUsers_SaveUserBtm.Enabled = false;
 
             MngUsers_StudentRdo.Select();
             this.MngUsers_FirstNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
@@ -249,6 +250,7 @@ namespace RaptorMath
                     MngUsers_FirstNameCmbo.Text = string.Empty;
                     MngUsers_LastNameCmbo.Text = string.Empty;
                     MngUsers_GroupCmbo.Text = string.Empty;
+                    MngUsers_FirstNameCmbo.Select();
                 }
                 else
                     MessageBox.Show("Entered student name already exists.", "Raptor Math", MessageBoxButtons.OKCancel);
@@ -319,16 +321,19 @@ namespace RaptorMath
             string userToBeRemoved = MngUsers_RemoveUserCmbo.Text;
             bool isUserRemoved = false;
             string checkForDefaultUser = string.Empty;
-            Console.WriteLine(userToBeRemoved);
+
             if (userToBeRemoved.Length > 9)
                 checkForDefaultUser = userToBeRemoved.Remove(0, 8);
-            Console.WriteLine(checkForDefaultUser);
+
             if (checkForDefaultUser.Trim() != "Admin")
             {
                 isUserRemoved = localManager.removeUser(userToBeRemoved);
                 if(isUserRemoved == true)
                 {
                     MessageBox.Show("The selected user has been removed", "Raptor Math", MessageBoxButtons.OK);
+                    RefreshComboBoxes();
+                    MngUsers_RemoveUserCmbo.Text = string.Empty;
+                    MngUsers_RemoveUserCmbo.Select();
                 }
                 else
                 {
@@ -336,9 +341,8 @@ namespace RaptorMath
                 }
             }
             else
-                MessageBox.Show("Cannot remove the default admin");
-            RefreshComboBoxes();
-            MngUsers_RemoveUserCmbo.Text = string.Empty;
+                MessageBox.Show("Cannot remove the default admin", "Raptor Math", MessageBoxButtons.OK);
+            
         }
 
         //------------------------------------------------------------------//
@@ -377,6 +381,15 @@ namespace RaptorMath
             {
                 MngUsers_RemoveUserBtn.Enabled = false;
             }
+        }
+
+        private void MngUsers_FirstAndLastNameCmbo_TextChanged(object sender, EventArgs e)
+        {
+            if ((MngUsers_FirstNameCmbo.Text.Length > 0) && (MngUsers_LastNameCmbo.Text.Length > 0))
+                MngUsers_SaveUserBtm.Enabled = true;
+            else
+                MngUsers_SaveUserBtm.Enabled = false;
+
         }
     }
 }

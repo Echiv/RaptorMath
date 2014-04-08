@@ -358,21 +358,21 @@ namespace RaptorMath
 
                 if((isAssigned == true) && (isStudent == true))
                 {
-                    MessageBox.Show("Drill has been assigned to the Student");
+                    MessageBox.Show("Drill has been assigned to the Student", "Raptor Math", MessageBoxButtons.OK);
                     MngDrills_SelectDrillCmbo.Text = string.Empty;
                 }
                 if ((isAssigned == false) && (isStudent == true))
                 {
-                    MessageBox.Show("Drill has not been assigned to the student");
+                    MessageBox.Show("Drill has not been assigned to the student", "Raptor Math", MessageBoxButtons.OK);
                 }
                 if ((isAssigned == true) && (isStudent == false))
-                { 
-                    MessageBox.Show("Drill has been assigned to the Group");
+                {
+                    MessageBox.Show("Drill has been assigned to the Group", "Raptor Math", MessageBoxButtons.OK);
                     MngDrills_SelectDrillCmbo.Text = string.Empty;
                 }
                 if ((isAssigned == false) && (isStudent == false))
                 {
-                    MessageBox.Show("Drill has not been assigned to the Group");
+                    MessageBox.Show("Drill has not been assigned to the Group", "Raptor Math", MessageBoxButtons.OK);
                 }
             }
             else if(MngDrills_RemoveDrillRdo.Checked)
@@ -395,21 +395,21 @@ namespace RaptorMath
                 }
                 if ((isUnassigned == true) && (isStudent == true))
                 {
-                    MessageBox.Show("Drill has been removed to the Student");
+                    MessageBox.Show("Drill has been removed", "Raptor Math", MessageBoxButtons.OK);
                     MngDrills_SelectDrillCmbo.Text = string.Empty;
                 }
                 if ((isUnassigned == false) && (isStudent == true))
                 {
-                    MessageBox.Show("Drill has not been removed to the student");
+                    MessageBox.Show("Drill has not been removed", "Raptor Math", MessageBoxButtons.OK);
                 }
                 if ((isUnassigned == true) && (isStudent == false))
                 {
-                    MessageBox.Show("Drill has been removed to the Group");
+                    MessageBox.Show("Drill has been removed", "Raptor Math", MessageBoxButtons.OK);
                     MngDrills_SelectDrillCmbo.Text = string.Empty;
                 }
                 if ((isUnassigned == false) && (isStudent == false))
                 {
-                    MessageBox.Show("Drill has not been removed to the Group");
+                    MessageBox.Show("Drill has not been removed", "Raptor Math", MessageBoxButtons.OK);
                 }
             }
         }

@@ -215,13 +215,13 @@ namespace RaptorMath
             bool isStudentRenamed = localManager.RenameStudent(EditStu_NewFirstNameCmbo.Text, EditStu_NewLastNameCmbo.Text, EditStu_SelectionCmbo.Text, EditStu_GroupCmbo.Text, localManager.studentList, localManager.groupList);
             if (isStudentRenamed)
             {
-                MessageBox.Show("Student changes saved");
+                MessageBox.Show("Student changes saved", "Raptor Math", MessageBoxButtons.OK);
                 ClearCmboBoxes();
                 RefreshCmboBoxes();
             }
             else
             {
-                MessageBox.Show("There was no changes specified");
+                MessageBox.Show("There was no changes specified", "Raptor Math", MessageBoxButtons.OK);
             }
         }
 

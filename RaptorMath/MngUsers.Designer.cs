@@ -183,6 +183,7 @@
             this.MngUsers_LastNameCmbo.Name = "MngUsers_LastNameCmbo";
             this.MngUsers_LastNameCmbo.Size = new System.Drawing.Size(169, 24);
             this.MngUsers_LastNameCmbo.TabIndex = 3;
+            this.MngUsers_LastNameCmbo.TextChanged += new System.EventHandler(this.MngUsers_FirstAndLastNameCmbo_TextChanged);
             this.MngUsers_LastNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.MngUsers_LastNameCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
@@ -223,6 +224,7 @@
             this.MngUsers_FirstNameCmbo.Name = "MngUsers_FirstNameCmbo";
             this.MngUsers_FirstNameCmbo.Size = new System.Drawing.Size(169, 24);
             this.MngUsers_FirstNameCmbo.TabIndex = 2;
+            this.MngUsers_FirstNameCmbo.TextChanged += new System.EventHandler(this.MngUsers_FirstAndLastNameCmbo_TextChanged);
             this.MngUsers_FirstNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             this.MngUsers_FirstNameCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_AddUserBoxTextBoxes_KeyPress);
             this.MngUsers_FirstNameCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);

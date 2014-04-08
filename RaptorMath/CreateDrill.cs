@@ -176,32 +176,31 @@ namespace RaptorMath
             if ((localManager.InvalidDrillFields(CreateDrill_MinValueTxt.Text, CreateDrill_MaxValueTxt.Text, CreateDrill_NumQuestionsTxt.Text))
                 || (localManager.InvalidRadioButtons(CreateDrill_AdditionRdo.Checked, CreateDrill_SubtactionRdo.Checked))
                 || (localManager.InvalidRange(CreateDrill_MinValueTxt.Text, CreateDrill_MaxValueTxt.Text))
-                || (localManager.InvalidQuestionCount(CreateDrill_NumQuestionsTxt.Text)))
+                || (localManager.InvalidQuestionCount(CreateDrill_NumQuestionsTxt.Text))
+                || !(CreateDrill_DrillNameTxt.Text.Trim().Length > 0))
             {
                 MessageBox.Show("You are missing a selection or have entered an invalid range.", "Raptor Math", MessageBoxButtons.OK);
             }
             else
             {
-                //localManager.SetOperand(CreateDrill_AdditionRdo.Checked, CreateDrill_SubtactionRdo.Checked);
                 bool isDrillAdded = localManager.CreateDrill(CreateDrill_DrillNameTxt.Text, CreateDrill_NumQuestionsTxt.Text, CreateDrill_MinValueTxt.Text, CreateDrill_MaxValueTxt.Text,
                    CreateDrill_AdditionRdo.Checked, CreateDrill_SubtactionRdo.Checked);
                 if (isDrillAdded)
                 {
                     MessageBox.Show("The Drill has been succesfully saved!", "Raptor Math", MessageBoxButtons.OK);
+                    CreateDrill_MinValueTxt.Text = string.Empty;
+                    CreateDrill_MaxValueTxt.Text = string.Empty;
+                    CreateDrill_NumQuestionsTxt.Text = string.Empty;
+                    CreateDrill_DrillNameTxt.Text = string.Empty;
                 }
                 else
                 { 
                     //gets called even when there is an empty string, need to fix
-                    MessageBox.Show("A Drill with that name already exists! Please choose a different name");
+                    MessageBox.Show("A Drill with that name already exists! Please choose a different name", "Raptor Math", MessageBoxButtons.OK);
                     CreateDrill_DrillNameTxt.Text = string.Empty;
                 }
                 
             }
-        }
-
-        private void CreateDrill_NumQuestionsTxt_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         //------------------------------------------------------------------//

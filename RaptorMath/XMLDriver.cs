@@ -243,7 +243,7 @@ namespace RaptorMath
         {
             XElement newGroup =
                 new XElement("group",
-                    new XElement("groupName", "unassigned"));
+                    new XElement("groupName", "Unassigned"));
             newGroup.SetAttributeValue("ID", "1");
 
             XDocument newGroupDoc =
@@ -430,7 +430,7 @@ namespace RaptorMath
             return false;
         }
         
-        public void editGroup(string newName, string currentName, List<Group> groupList)
+        public bool editGroup(string newName, string currentName, List<Group> groupList)
         {
             Group modifiedGroup = new Group();
             foreach (Group group in groupList)
@@ -440,9 +440,10 @@ namespace RaptorMath
                     modifiedGroup.ID = group.ID;
                     modifiedGroup.Name = newName;
                     UpdateGroup(group, modifiedGroup);
-                    break;
+                    return true;
                 }
             }
+            return false;
         }
 
         //------------------------------------------------------------------//

@@ -214,7 +214,6 @@
             this.CreateDrill_NumQuestionsTxt.Name = "CreateDrill_NumQuestionsTxt";
             this.CreateDrill_NumQuestionsTxt.Size = new System.Drawing.Size(40, 23);
             this.CreateDrill_NumQuestionsTxt.TabIndex = 0;
-            this.CreateDrill_NumQuestionsTxt.TextChanged += new System.EventHandler(this.CreateDrill_NumQuestionsTxt_TextChanged);
             this.CreateDrill_NumQuestionsTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_DigitsKeyDown);
             this.CreateDrill_NumQuestionsTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CreateDrill_CreateBoxTextBoxes_KeyPress);
             this.CreateDrill_NumQuestionsTxt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);

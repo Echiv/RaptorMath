@@ -227,8 +227,7 @@ namespace RaptorMath
         /// <returns>Boolean confirming validity.</returns>
         public bool isGroupInfoValid(string groupToValidate)
         {
-            if (!(groupToValidate.Equals(string.Empty))
-                && (groupToValidate.All(char.IsLetterOrDigit)))
+            if (!(groupToValidate.Equals(string.Empty)))
             {
                 return true;
             }
@@ -270,11 +269,7 @@ namespace RaptorMath
         public bool RenameStudent(string newFName, string newLName, string currentName, string newGroup, List<Student> studentList, List<Group> groupList)
         {
             Tuple<bool, bool> GroupStudentChanged = new Tuple<bool, bool>(false, false);
-            /*if ((newFName.Equals(string.Empty) || (newFName.All(char.IsLetter)))
-                && (newLName.Equals(string.Empty) || (newLName.All(char.IsLetter)))
-                && !(currentName.Equals(string.Empty))
-                && (currentName.Replace(" ", string.Empty).All(char.IsLetter))
-                && (newGroup.Equals(string.Empty) || (newGroup.All(char.IsLetterOrDigit))))*/
+            
             if (currentName.Replace(" ", string.Empty).All(char.IsLetter)
                 && !(currentName.Equals(string.Empty))
                 && !((newFName.Equals(string.Empty)) && (newLName.Equals(string.Empty)) && (newGroup.Equals(string.Empty))))
@@ -305,15 +300,14 @@ namespace RaptorMath
         /// <param name="newName">Group's new name.</param>
         /// <param name="currentName">Group's current name.</param>
         /// <param name="groupList">List of group objects.</param>
-        public void RenameGroup(string newName, string currentName, List<Group> groupList)
+        public bool RenameGroup(string newName, string currentName, List<Group> groupList)
         {
             if (!(newName.Equals(string.Empty))
-                && (newName.All(char.IsLetterOrDigit))
-                && !(currentName.Equals(string.Empty))
-                && (currentName.All(char.IsLetterOrDigit)))
+                && !(currentName.Equals(string.Empty)))
             {
-                XMLDriver.editGroup(newName, currentName, groupList);
+                return XMLDriver.editGroup(newName, currentName, groupList);
             }
+            return false;
         }
 
         public bool ChangeAdminPassword(string currentPassword, string newPassword)
@@ -818,7 +812,7 @@ namespace RaptorMath
         // Cody Jordan, Cian Carota                                                                     //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
-        /// <summary>alidate user as admin, and navigate to admin home.</summary>
+        /// <summary>Validate user as admin, and navigate to admin home.</summary>
         /// <returns>Boolean confirmation.</returns>
         public bool validateStudent()
         {

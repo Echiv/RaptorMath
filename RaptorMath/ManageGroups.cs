@@ -131,7 +131,6 @@ namespace RaptorMath
         {
             RefreshGroupNameCmboBox();
             RefreshGroupCmboBox();
-
         }
 
         //------------------------------------------------------------------//
@@ -181,6 +180,9 @@ namespace RaptorMath
             RefreshCmboBoxes();
 
             MngGroups_GroupNameCmbo.Select();
+            MngGroups_CreateBtn.Enabled = false;
+            MngGroups_RenameBtn.Enabled = false;
+
             this.MngGroups_SelectGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
             this.MngGroups_NewNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
             this.MngGroups_GroupNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
@@ -206,9 +208,18 @@ namespace RaptorMath
         private void MngGroups_CreateBtn_Click(object sender, EventArgs e)
         {
             string newGroupName = MngGroups_GroupNameCmbo.Text;
-            localManager.CreateGroup(newGroupName);
-            RefreshCmboBoxes();
-            ClearCmboBoxes();
+            bool isGroupAdded = localManager.CreateGroup(newGroupName);
+            if (isGroupAdded)
+            {
+                MessageBox.Show("New group created.", "Raptor Math", MessageBoxButtons.OK);
+                RefreshCmboBoxes();
+                ClearCmboBoxes();
+                MngGroups_GroupNameCmbo.Select();
+            }
+            else
+            {
+                MessageBox.Show("A group with the provided name already exists.", "Raptor Math", MessageBoxButtons.OK);
+            }
         }
 
         //------------------------------------------------------------------//
@@ -244,9 +255,25 @@ namespace RaptorMath
         /// <summary>Handle 'Rename Group' button click.</summary>
         private void MngGroups_RenameBtn_Click(object sender, EventArgs e)
         {
-            localManager.RenameGroup(MngGroups_NewNameCmbo.Text, MngGroups_SelectGroupCmbo.Text, localManager.groupList);
-            RefreshCmboBoxes();
-            ClearCmboBoxes();
+            if (MngGroups_SelectGroupCmbo.Text.Trim() != "Unassigned")
+            {
+                bool isGroupRenamed = localManager.RenameGroup(MngGroups_NewNameCmbo.Text, MngGroups_SelectGroupCmbo.Text, localManager.groupList);
+                if (isGroupRenamed)
+                {
+                    MessageBox.Show("Group has been renamed.", "Raptor Math", MessageBoxButtons.OK);
+                    RefreshCmboBoxes();
+                    ClearCmboBoxes();
+                    MngGroups_SelectGroupCmbo.Select();
+                }
+                else
+                {
+                    MessageBox.Show("The entered group doesn't exist", "Raptor Math", MessageBoxButtons.OK);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Cannot rename the default group", "Raptor Math", MessageBoxButtons.OK);
+            }
         }
 
         //------------------------------------------------------------------//
@@ -273,6 +300,22 @@ namespace RaptorMath
             {
                 MngGroups_RenameBtn_Click(sender, e);
             }
+        }
+
+        private void MngGroups_GroupNameCmbo_TextChanged(object sender, EventArgs e)
+        {
+            if (MngGroups_GroupNameCmbo.Text.Length > 0)
+                MngGroups_CreateBtn.Enabled = true;
+            else
+                MngGroups_CreateBtn.Enabled = false;
+        }
+
+        private void MngGroups_SelectGroupAndNewNameCmbo_TextChanged(object sender, EventArgs e)
+        {
+            if ((MngGroups_NewNameCmbo.Text.Length > 0) && (MngGroups_SelectGroupCmbo.Text.Length > 0))
+                MngGroups_RenameBtn.Enabled = true;
+            else
+                MngGroups_RenameBtn.Enabled = false;
         }
     }
 }
