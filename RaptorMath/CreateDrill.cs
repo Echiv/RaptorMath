@@ -56,6 +56,16 @@ namespace RaptorMath
             }
         }
 
+        private void RaptorMath_DigitsKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isDigit = char.IsDigit((char)e.KeyCode);
+            if ((e.KeyCode != Keys.Back) && (!e.Shift) && (!isDigit))
+            {
+                e.SuppressKeyPress = isKeyPressed;
+                isKeyPressed = true;
+            }
+        }
+        
         //------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                         //
         // Date:                                                   //
@@ -64,7 +74,7 @@ namespace RaptorMath
         private void RaptorMath_LettersWithOneWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
         {
             ComboBox cmbobx = (ComboBox)sender;
-            e.Handled = (!(char.IsLetter(e.KeyChar) || ((e.KeyChar == ' ') && (!cmbobx.Text.Contains(' '))) || (char.IsControl(e.KeyChar))));
+            e.Handled = (!(char.IsLetter(e.KeyChar) || (e.KeyChar == ' ') || (!cmbobx.Text.Contains(' ')) || (char.IsControl(e.KeyChar))));
             if (e.Handled)
                 System.Media.SystemSounds.Beep.Play();
         }
@@ -81,6 +91,13 @@ namespace RaptorMath
                 System.Media.SystemSounds.Beep.Play();
         }
 
+        private void RaptorMath_DigitsKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsDigit(e.KeyChar) || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+        
         //------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                         //
         // Date:                                                   //
