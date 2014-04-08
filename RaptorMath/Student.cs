@@ -7,6 +7,10 @@
 //          all pertinent data along with a list of all of the  //
 //          records of every student.                           //
 //==============================================================//
+// Authors: Cody Jordan and Cian Carota                         //
+// Changes:                                                     //
+//          • Refactored: Accessors and constructors            //
+//==============================================================//
 
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,13 @@
-﻿using System;
+﻿//==============================================================//
+//					       XMLDriver.cs				            //
+//==============================================================//
+// Program Name: RaptorMath                                     //
+// Authors: Cody Jordan and Cian Carota                         //
+// Purpose: This class is an XML accessor class that            //
+//          manipulating admin, group, and drill data.          //
+//==============================================================//
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
