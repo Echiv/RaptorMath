@@ -12,13 +12,26 @@ namespace RaptorMath
     public partial class StudentReports_Form : Form
     {
         public Manager localManager;
+        private bool startDate = false;
+        private bool endDate = false;
 
         private bool isKeyPressed = false;
+
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle KeyUp event.</summary>
         private void RaptorMath_KeyUp(object sender, KeyEventArgs e)
         {
             isKeyPressed = false;
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersKeyDown event.</summary>
         private void RaptorMath_LettersKeyDown(object sender, KeyEventArgs e)
         {
             bool isLetter = char.IsLetter((char)e.KeyCode);
@@ -29,6 +42,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersAndDigitsKeyDown event.</summary>
         private void RaptorMath_LettersAndDigitsKeyDown(object sender, KeyEventArgs e)
         {
             bool isLetterorDigit = char.IsLetterOrDigit((char)e.KeyCode);
@@ -40,6 +58,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle DigitsKeyDown event.</summary>
         private void RaptorMath_DigitsKeyDown(object sender, KeyEventArgs e)
         {
             bool isDigit = char.IsDigit((char)e.KeyCode);
@@ -50,6 +73,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersWithOneWhiteSpaceKeyPress event.</summary>
         private void RaptorMath_LettersWithOneWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
         {
             ComboBox cmbobx = (ComboBox)sender;
@@ -58,6 +86,11 @@ namespace RaptorMath
                 System.Media.SystemSounds.Beep.Play();
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersAndDigitsKeyPress event.</summary>
         private void RaptorMath_LettersAndDigitsKeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == ' ' || (char.IsControl(e.KeyChar)));
@@ -65,6 +98,11 @@ namespace RaptorMath
                 System.Media.SystemSounds.Beep.Play();
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle DigitsKeyPress event.</summary>
         private void RaptorMath_DigitsKeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsDigit(e.KeyChar) || (char.IsControl(e.KeyChar)));
@@ -72,18 +110,17 @@ namespace RaptorMath
                 System.Media.SystemSounds.Beep.Play();
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersKeyPress event.</summary>
         private void RaptorMath_LettersKeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || (char.IsControl(e.KeyChar)));
             if (e.Handled)
                 System.Media.SystemSounds.Beep.Play();
         }
-        //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
-        // Date: 3/16/2014                                                  //
-        //------------------------------------------------------------------//
-        private bool startDate = false;
-        private bool endDate = false;
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
@@ -156,9 +193,8 @@ namespace RaptorMath
             ReportHome_StudentCmbo.Select();
 
             this.ReportHome_StudentCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
-            this.ReportHome_GroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWithOneWhiteSpaceKeyPress);
-
-
+            this.ReportHome_GroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWithOneWhiteSpaceKeyPress); 
+            
             foreach (Student student in localManager.studentList)
             {
                 ReportHome_StudentCmbo.Items.Add(student.LoginName);

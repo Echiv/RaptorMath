@@ -36,11 +36,22 @@ namespace RaptorMath
         Manager localManager;
 
         private bool isKeyPressed = false;
+
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle KeyUp event.</summary>
         private void RaptorMath_KeyUp(object sender, KeyEventArgs e)
         {
             isKeyPressed = false;
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersKeyDown event.</summary>
         private void RaptorMath_LettersKeyDown(object sender, KeyEventArgs e)
         {
             bool isLetter = char.IsLetter((char)e.KeyCode);
@@ -51,6 +62,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersAndDigitsKeyDown event.</summary>
         private void RaptorMath_LettersAndDigitsKeyDown(object sender, KeyEventArgs e)
         {
             bool isLetterorDigit = char.IsLetterOrDigit((char)e.KeyCode);
@@ -62,6 +78,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle DigitsKeyDown event.</summary>
         private void RaptorMath_DigitsKeyDown(object sender, KeyEventArgs e)
         {
             bool isDigit = char.IsDigit((char)e.KeyCode);
@@ -72,6 +93,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersWithOneWhiteSpaceKeyPress event.</summary>
         private void RaptorMath_LettersWithOneWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
         {
             ComboBox cmbobx = (ComboBox)sender;
@@ -80,6 +106,11 @@ namespace RaptorMath
                 System.Media.SystemSounds.Beep.Play();
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersAndDigitsKeyPress event.</summary>
         private void RaptorMath_LettersAndDigitsKeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == ' ' || (char.IsControl(e.KeyChar)));
@@ -87,6 +118,11 @@ namespace RaptorMath
                 System.Media.SystemSounds.Beep.Play();
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle DigitsKeyPress event.</summary>
         private void RaptorMath_DigitsKeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsDigit(e.KeyChar) || (char.IsControl(e.KeyChar)));
@@ -94,12 +130,18 @@ namespace RaptorMath
                 System.Media.SystemSounds.Beep.Play();
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersKeyPress event.</summary>
         private void RaptorMath_LettersKeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || (char.IsControl(e.KeyChar)) || (e.KeyChar == ' ') || (e.KeyChar == '<') || (e.KeyChar == '>'));
             if (e.Handled)
                 System.Media.SystemSounds.Beep.Play();
         }
+
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/12/2014                                                  //
@@ -198,7 +240,7 @@ namespace RaptorMath
                     else
                         MessageBox.Show("Invalid password. Try again.", "Raptor Math", MessageBoxButtons.OK);
                 }
-            }   
+            }         
         }
       
         //------------------------------------------------------------------//
@@ -208,7 +250,6 @@ namespace RaptorMath
         private void UseDesg_LoginDdl_SelectionChangeCommitted(object sender, EventArgs e)
         {
             localManager.currentUser = UseDesg_LoginCmbo.Text;
-          
             if (localManager.isStudent())
             {
                 UseDesg_passwordBox.Enabled = false;
@@ -243,7 +284,7 @@ namespace RaptorMath
                 UseDesg_LoginBtn.Enabled = true;
                 UseDesg_passwordBox.Enabled = false;
             }
-            else if(localManager.isAdmin())
+            else if (localManager.isAdmin())
             {
                 UseDesg_passwordBox.Enabled = true;
             }
