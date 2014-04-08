@@ -45,12 +45,24 @@ namespace RaptorMath
     public partial class AdminHome_Form : Form
     {
         public Manager localManager;
+
         private bool isKeyPressed = false;
+
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle KeyUp event.</summary>
         private void RaptorMath_KeyUp(object sender, KeyEventArgs e)
         {
             isKeyPressed = false;
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersKeyDown event.</summary>
         private void RaptorMath_LettersKeyDown(object sender, KeyEventArgs e)
         {
             bool isLetter = char.IsLetter((char)e.KeyCode);
@@ -61,6 +73,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersAndDigitsKeyDown event.</summary>
         private void RaptorMath_LettersAndDigitsKeyDown(object sender, KeyEventArgs e)
         {
             bool isLetterorDigit = char.IsLetterOrDigit((char)e.KeyCode);
@@ -72,6 +89,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersWithOneWhiteSpaceKeyPress event.</summary>
         private void RaptorMath_LettersWithOneWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
         {
             ComboBox cmbobx = (ComboBox)sender;
@@ -80,6 +102,11 @@ namespace RaptorMath
                 System.Media.SystemSounds.Beep.Play();
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersAndDigitsKeyPress event.</summary>
         private void RaptorMath_LettersAndDigitsKeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == ' ' || (char.IsControl(e.KeyChar)));
@@ -87,12 +114,18 @@ namespace RaptorMath
                 System.Media.SystemSounds.Beep.Play();
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersKeyPress event.</summary>
         private void RaptorMath_LettersKeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || (char.IsControl(e.KeyChar)));
             if (e.Handled)
                 System.Media.SystemSounds.Beep.Play();
         }
+
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/20/2014                                                  //

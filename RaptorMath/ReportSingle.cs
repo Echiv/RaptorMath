@@ -13,6 +13,86 @@ namespace RaptorMath
     {
         public Manager localManager;
 
+        private bool isKeyPressed = false;
+
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle KeyUp event.</summary>
+        private void RaptorMath_KeyUp(object sender, KeyEventArgs e)
+        {
+            isKeyPressed = false;
+        }
+
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersKeyDown event.</summary>
+        private void RaptorMath_LettersKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isLetter = char.IsLetter((char)e.KeyCode);
+            if ((e.KeyCode != Keys.Back) && (!e.Shift) && (!isLetter))
+            {
+                e.SuppressKeyPress = isKeyPressed;
+                isKeyPressed = true;
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersAndDigitsKeyDown event.</summary>
+        private void RaptorMath_LettersAndDigitsKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isLetterorDigit = char.IsLetterOrDigit((char)e.KeyCode);
+            bool isSpace = char.IsWhiteSpace((char)e.KeyCode);
+            if ((e.KeyCode != Keys.Back) && (!e.Shift) && (!isLetterorDigit))
+            {
+                e.SuppressKeyPress = isKeyPressed;
+                isKeyPressed = true;
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersWithOneWhiteSpaceKeyPress event.</summary>
+        private void RaptorMath_LettersWithOneWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
+        {
+            ComboBox cmbobx = (ComboBox)sender;
+            e.Handled = (!(char.IsLetter(e.KeyChar) || ((e.KeyChar == ' ') && (!cmbobx.Text.Contains(' '))) || (char.IsControl(e.KeyChar))));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersAndDigitsKeyPress event.</summary>
+        private void RaptorMath_LettersAndDigitsKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == ' ' || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersKeyPress event.</summary>
+        private void RaptorMath_LettersKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
         //------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                         //
         // Date: 3/16/2014                                                  //
