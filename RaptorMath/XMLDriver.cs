@@ -993,7 +993,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
-        //------------------------------------------------------------------//
+        //-----------------------------------------------------------------//
         /// <summary>Add a drill node to Drill XML.</summary>
         /// <param name="newDrill">Drill object to be added.</param>
         /// <returns>XElement</returns>
