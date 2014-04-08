@@ -253,7 +253,7 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/12/2014                                                  //
         //------------------------------------------------------------------//
-        private void MatDri_SubmitBtn_Click(object sender, EventArgs e)
+        private void MathDrill_SubmitBtn_Click(object sender, EventArgs e)
         {
             MathDrill_ResponseLbl.Visible = false;
 
@@ -312,7 +312,7 @@ namespace RaptorMath
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle 'I don't know' button click.</summary>
-        private void MatDri_SkipBtn_Click(object sender, EventArgs e)
+        private void MathDrill_SkipBtn_Click(object sender, EventArgs e)
         {
             
             // Case: Ask if user wants to skip
@@ -347,7 +347,7 @@ namespace RaptorMath
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Quit' button click</summary>
-        private void MatDri_EndDrillBtn_Click(object sender, EventArgs e)
+        private void MathDrill_EndDrillBtn_Click(object sender, EventArgs e)
         {
             if (localManager.currentProblemNumber <= Convert.ToInt32(localManager.currentStudent.curDrill.Questions))
             {
@@ -375,23 +375,21 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 3/2/2014                                                  //
         //------------------------------------------------------------------//
-        private void MatDri_InputType_KeyPress(object sender, KeyPressEventArgs e)
+        private void MathDrill_InputType_KeyPress(object sender, KeyPressEventArgs e)
         {
             // If the enter key is pressed, perform the same code on the click of the submit button
             if (e.KeyChar == 13)
             {
-                MatDri_SubmitBtn_Click(sender, e);
+                MathDrill_SubmitBtn_Click(sender, e);
             }
         }
 
-        private void MathDrill_StudentNameLbl_Click(object sender, EventArgs e)
+        private void MathDrill_InputTxt_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            if (MathDrill_InputTxt.Text.Length > 0)
+                MathDrill_SubmitBtn.Enabled = true;
+            else
+                MathDrill_SubmitBtn.Enabled = false;
         }
     }
 }
