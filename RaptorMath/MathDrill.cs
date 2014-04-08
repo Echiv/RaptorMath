@@ -121,12 +121,13 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void RefreshRange()
         {
-            firstNum = localManager.CreateRandom();
-            secondNum = localManager.CreateRandom();
+            //firstNum = localManager.CreateRandom();
+            //secondNum = localManager.CreateRandom();
             //MatDri_FirstNumberLbl.Text = localManager.CreateRandom();
             //MatDri_SecondNumberLbl.Text = localManager.CreateRandom();
             //            MatDri_Concat.Text = String.Concat(MatDri_FirstNumberLbl.Text, " ", localManager.GetOperand(), " ", MatDri_SecondNumberLbl.Text, " =");
-            MathDrill_ProblemPrompt.Text = String.Concat(firstNum, " ", localManager.GetOperand(), " ", secondNum, " =");
+            //MathDrill_ProblemPrompt.Text = String.Concat(firstNum, " ", localManager.GetOperand(), " ", secondNum, " =");
+            MathDrill_ProblemPrompt.Text = localManager.genMathProb();
         }
 
         //------------------------------------------------------------------//
@@ -145,8 +146,9 @@ namespace RaptorMath
                 return;
             }
 
-            if (localManager.IsCorrectAnswer(firstNum, secondNum, MathDrill_InputTxt.Text) == true)
+            //if (localManager.IsCorrectAnswer(firstNum, secondNum, MathDrill_InputTxt.Text) == true)
             //if (localManager.IsCorrectAnswer(MatDri_FirstNumberLbl.Text, MatDri_SecondNumberLbl.Text, MatDri_InputType.Text) == true)
+            if (localManager.IsCorrectAnswer(MathDrill_InputTxt.Text))
             {
                 MathDrill_ResponseLbl.ForeColor = Color.Green;
                 MathDrill_ResponseLbl.Text = "Correct!";
