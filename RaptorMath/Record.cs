@@ -138,8 +138,13 @@ namespace RaptorMath
             skipped = stSkipped;
         }
 
-        //Given the elements of a record node and the order described in singleRecordList
-        //add this to the recordDictionary
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Given the elements of a record node and the order 
+        /// described in singleRecordList add this to the recordDictionary.
+        /// </summary>
         public Record(IEnumerable<XElement> elements)
         {
             List<string> singleRecordList = new List<string>() { "dateTaken", "question"

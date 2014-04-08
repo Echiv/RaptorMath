@@ -70,6 +70,13 @@ namespace RaptorMath
             }
         }*/
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Validation of Admin XML's existence.</summary>
+        /// <param name="fileName">XML's file name.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool adminXMLExists(string fileName)
         {
             if (!System.IO.File.Exists(fileName))
@@ -103,6 +110,12 @@ namespace RaptorMath
             LoadAdminXML(adminList, adminXMLPath);
         }*/
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Default creation of Admin XML file.</summary>
+        /// <param name="AdminXMLPath">Admin XML file path.</param>
         private void InitialCreateAdminXML(string adminXMLPath)
         {
             XDocument adminXML =
@@ -116,6 +129,13 @@ namespace RaptorMath
             adminXML.Save(adminXMLPath);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Load Admin XML file for access.</summary>
+        /// <param name="adminList">List of admin objects.</param>
+        /// <param name="fileName">Admin XML file path.</param>
         public void LoadAdminXML(List<Admin> adminList, string fileName )
         {
             XDocument adminXML = XDocument.Load(fileName);

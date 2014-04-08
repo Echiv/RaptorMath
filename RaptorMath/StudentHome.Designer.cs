@@ -62,7 +62,7 @@
             this.StuHome_NumQuestionsLbl.Location = new System.Drawing.Point(41, 117);
             this.StuHome_NumQuestionsLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuHome_NumQuestionsLbl.Name = "StuHome_NumQuestionsLbl";
-            this.StuHome_NumQuestionsLbl.Size = new System.Drawing.Size(177, 35);
+            this.StuHome_NumQuestionsLbl.Size = new System.Drawing.Size(135, 27);
             this.StuHome_NumQuestionsLbl.TabIndex = 2;
             this.StuHome_NumQuestionsLbl.Text = "There will be";
             // 
@@ -73,7 +73,7 @@
             this.StuHome_TotalNumLbl.Location = new System.Drawing.Point(213, 117);
             this.StuHome_TotalNumLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuHome_TotalNumLbl.Name = "StuHome_TotalNumLbl";
-            this.StuHome_TotalNumLbl.Size = new System.Drawing.Size(190, 35);
+            this.StuHome_TotalNumLbl.Size = new System.Drawing.Size(147, 27);
             this.StuHome_TotalNumLbl.TabIndex = 3;
             this.StuHome_TotalNumLbl.Text = "<#> questions.";
             // 
@@ -104,7 +104,7 @@
             this.StuHome_DrillDdl.MaxDropDownItems = 100;
             this.StuHome_DrillDdl.MaxLength = 25;
             this.StuHome_DrillDdl.Name = "StuHome_DrillDdl";
-            this.StuHome_DrillDdl.Size = new System.Drawing.Size(223, 34);
+            this.StuHome_DrillDdl.Size = new System.Drawing.Size(223, 30);
             this.StuHome_DrillDdl.TabIndex = 0;
             this.StuHome_DrillDdl.SelectedIndexChanged += new System.EventHandler(this.StuHome_DrillDdl_SelectedIndexChanged);
             this.StuHome_DrillDdl.SelectionChangeCommitted += new System.EventHandler(this.StuHome_DrillDdl_SelectionChangeCommitted);
@@ -116,7 +116,7 @@
             this.StuHome_ChooseLbl.Location = new System.Drawing.Point(84, 28);
             this.StuHome_ChooseLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuHome_ChooseLbl.Name = "StuHome_ChooseLbl";
-            this.StuHome_ChooseLbl.Size = new System.Drawing.Size(303, 35);
+            this.StuHome_ChooseLbl.Size = new System.Drawing.Size(234, 27);
             this.StuHome_ChooseLbl.TabIndex = 2;
             this.StuHome_ChooseLbl.Text = "Choose your adventure!";
             // 
@@ -164,7 +164,7 @@
             this.StuHome_WindowLbl.Location = new System.Drawing.Point(11, 14);
             this.StuHome_WindowLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuHome_WindowLbl.Name = "StuHome_WindowLbl";
-            this.StuHome_WindowLbl.Size = new System.Drawing.Size(146, 26);
+            this.StuHome_WindowLbl.Size = new System.Drawing.Size(115, 22);
             this.StuHome_WindowLbl.TabIndex = 23;
             this.StuHome_WindowLbl.Text = "Student Home";
             // 
@@ -175,7 +175,7 @@
             this.StuHome_TimeLbl.Location = new System.Drawing.Point(374, 54);
             this.StuHome_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuHome_TimeLbl.Name = "StuHome_TimeLbl";
-            this.StuHome_TimeLbl.Size = new System.Drawing.Size(78, 26);
+            this.StuHome_TimeLbl.Size = new System.Drawing.Size(62, 22);
             this.StuHome_TimeLbl.TabIndex = 22;
             this.StuHome_TimeLbl.Text = "<Time>";
             // 
@@ -186,7 +186,7 @@
             this.StuHome_DateLbl.Location = new System.Drawing.Point(374, 19);
             this.StuHome_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuHome_DateLbl.Name = "StuHome_DateLbl";
-            this.StuHome_DateLbl.Size = new System.Drawing.Size(74, 26);
+            this.StuHome_DateLbl.Size = new System.Drawing.Size(59, 22);
             this.StuHome_DateLbl.TabIndex = 19;
             this.StuHome_DateLbl.Text = "<Date>";
             // 
@@ -197,7 +197,7 @@
             this.StuHome_WelcomeLbl.Location = new System.Drawing.Point(11, 39);
             this.StuHome_WelcomeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuHome_WelcomeLbl.Name = "StuHome_WelcomeLbl";
-            this.StuHome_WelcomeLbl.Size = new System.Drawing.Size(102, 26);
+            this.StuHome_WelcomeLbl.Size = new System.Drawing.Size(83, 22);
             this.StuHome_WelcomeLbl.TabIndex = 17;
             this.StuHome_WelcomeLbl.Text = "Welcome,";
             // 
@@ -208,7 +208,7 @@
             this.StuHome_LoginDateLbl.Location = new System.Drawing.Point(117, 66);
             this.StuHome_LoginDateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuHome_LoginDateLbl.Name = "StuHome_LoginDateLbl";
-            this.StuHome_LoginDateLbl.Size = new System.Drawing.Size(74, 26);
+            this.StuHome_LoginDateLbl.Size = new System.Drawing.Size(59, 22);
             this.StuHome_LoginDateLbl.TabIndex = 21;
             this.StuHome_LoginDateLbl.Text = "<Date>";
             // 
@@ -219,7 +219,7 @@
             this.StuHome_LastLoginLbl.Location = new System.Drawing.Point(11, 66);
             this.StuHome_LastLoginLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuHome_LastLoginLbl.Name = "StuHome_LastLoginLbl";
-            this.StuHome_LastLoginLbl.Size = new System.Drawing.Size(106, 26);
+            this.StuHome_LastLoginLbl.Size = new System.Drawing.Size(83, 22);
             this.StuHome_LastLoginLbl.TabIndex = 18;
             this.StuHome_LastLoginLbl.Text = "Last login:";
             // 
@@ -230,7 +230,7 @@
             this.StuHome_StudentNameLbl.Location = new System.Drawing.Point(117, 39);
             this.StuHome_StudentNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuHome_StudentNameLbl.Name = "StuHome_StudentNameLbl";
-            this.StuHome_StudentNameLbl.Size = new System.Drawing.Size(102, 26);
+            this.StuHome_StudentNameLbl.Size = new System.Drawing.Size(80, 22);
             this.StuHome_StudentNameLbl.TabIndex = 20;
             this.StuHome_StudentNameLbl.Text = "<Student>";
             // 
@@ -262,7 +262,7 @@
             this.StuHome_ButtonBox.Name = "StuHome_ButtonBox";
             this.StuHome_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
             this.StuHome_ButtonBox.Size = new System.Drawing.Size(474, 61);
-            this.StuHome_ButtonBox.TabIndex = 3;
+            this.StuHome_ButtonBox.TabIndex = 2;
             this.StuHome_ButtonBox.TabStop = false;
             // 
             // StuHome_LogoutBtn

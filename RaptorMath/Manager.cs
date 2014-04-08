@@ -55,6 +55,11 @@ namespace RaptorMath
         XMLParser XML = new XMLParser();
         XMLDriver XMLDriver = new XMLDriver();
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Drill object default constructor.</summary>
         public Manager()
         {
 
@@ -62,7 +67,7 @@ namespace RaptorMath
             dataDirectory = System.IO.Path.Combine(AppData, "RaptorMath");
             if (!System.IO.Directory.Exists(dataDirectory))
                 System.IO.Directory.CreateDirectory(dataDirectory);
-            string adminFile = "RaptorMathRaptorMathAdmins.xml";
+            string adminFile = "RaptorMathAdmins.xml";
             string studentFile = "RaptorMathStudents.xml";
             string groupFile = "RaptorMathGroups.xml";
             string drillFile = "RaptorMathDrills.xml";
@@ -75,12 +80,19 @@ namespace RaptorMath
             //XML.LoadXML(studentList, adminList);
             XMLDriver.StartUp(adminList, studentList, groupList, mainDrillList);
         }
+
         //----------------------------------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                                                     //
         // Date:                                                                                        //
-        // Purpose: Validate the administrator's info and then add the administrator to the admin XML   //
-        // Parameters: adminName, password, LastLogin, and filePath passed from MngUsers Form           //
         //----------------------------------------------------------------------------------------------//
+        /// <summary>Validate the administrator's info and then add the administrator to the admin XML
+        /// </summary>
+        /// <param name="adminFName">Admin's first name.</param>
+        /// <param name="adminLName">Admin's last mame.</param>
+        /// <param name="password">Admin's password.</param>
+        /// <param name="LastLogin">Admin's last login date.</param>
+        /// <param name="filePath">Admin XML filepath.</param>
+        /// <returns>Boolean confirming creation success.</returns>
         public bool CreateUser(string adminFName, string adminLName, string password, string LastLogin, string filePath)
         {
             bool isCreatedUser = false;
@@ -92,12 +104,17 @@ namespace RaptorMath
 
             return isCreatedUser;
         }
+
         //----------------------------------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                                                     //
         // Date:                                                                                        //
-        // Purpose: Validate the student info and then add the student to the student XML               //
-        // Parameters: studentName, group, and LastLogin passed from MngUsers Form                      //
         //----------------------------------------------------------------------------------------------//
+        /// <summary>Validate the student info and then add the student to the student XML</summary>
+        /// <param name="groupID">Student's group ID.</param>
+        /// <param name="firstName">Student's first name.</param>
+        /// <param name="lastName">Student's last name.</param>
+        /// <param name="lastLogin">Student's last login date.</param>
+        /// <returns>Boolean confirming creation success.</returns>
         public bool CreateUser(int groupID, string firstName, string lastName, string lastLogin)
         {
             bool isCreatedUser = false;
@@ -113,12 +130,14 @@ namespace RaptorMath
             }
             return isCreatedUser;
         }
+
         //----------------------------------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                                                     //
         // Date:                                                                                        //
-        // Purpose: Validate group info and then add the group to the group XML                         //
-        // Parameters: name is passed in from the MngGroups form                                        //
         //----------------------------------------------------------------------------------------------//
+        /// <summary>Validate group info and then add the group to the group XML</summary>
+        /// <param name="name">Group's name.</param>
+        /// <returns>Boolean confirming creation success.</returns>
         public bool CreateGroup(string name)
         {
             bool isCreatedGroup = false;
@@ -129,12 +148,19 @@ namespace RaptorMath
 
             return isCreatedGroup;
         }
+
         //----------------------------------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                                                     //
         // Date:                                                                                        //
-        // Purpose: Validate Drill info and then add the drill to the drill XML                         //
-        // Parameters: drillName, numQuestions, minValue, maxValue, add, subtract from CreateDrill form //
         //----------------------------------------------------------------------------------------------//
+        /// <summary>Validate Drill info and then add the drill to the drill XML</summary>
+        /// <param name="drillName">Drill's name.</param>
+        /// <param name="numQuestions">Drill's number of problems.</param>
+        /// <param name="minValue">Drill's min value.</param>
+        /// <param name="maxValue">Drill's max value.</param>
+        /// <param name="add">Drill's operator if addition.</param>
+        /// <param name="subtract">Drill's operator if subtraction.</param>
+        /// <returns>Boolean confirming creation success.</returns>
         public bool CreateDrill(string drillName, string numQuestions, string minValue, string maxValue, bool add, bool subtract)
         {
             bool isDrillAdded = false;
@@ -148,6 +174,13 @@ namespace RaptorMath
             return isDrillAdded;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Validation of admin data input.</summary>
+        /// <param name="adminToValidate">Admin object to validate.</param>
+        /// <returns>Boolean confirming validity.</returns>
         public bool isAdminInfoValid(Admin adminToValidate)
         {
             if (!(adminToValidate.FirstName.Equals(string.Empty))
@@ -162,6 +195,13 @@ namespace RaptorMath
             return false;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Validation of student data input.</summary>
+        /// <param name="studentToValidate">Stdent object to validate.</param>
+        /// <returns>Boolean confirming validity.</returns>
         public bool isStudentInfoValid(Student studentToValidate)
         {
             if (!(studentToValidate.FirstName.Equals(string.Empty))
@@ -177,6 +217,13 @@ namespace RaptorMath
             return false;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Validation of group data input.</summary>
+        /// <param name="groupToValidate">Group object to validate.</param>
+        /// <returns>Boolean confirming validity.</returns>
         public bool isGroupInfoValid(string groupToValidate)
         {
             if (!(groupToValidate.Equals(string.Empty))
@@ -187,6 +234,13 @@ namespace RaptorMath
             return false;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Validation of drill data input.</summary>
+        /// <param name="drillToValidate">Drill object to validate.</param>
+        /// <returns>Boolean confirming validity.</returns>
         public bool isDrillInfoValid(Drill drillToValidate)
         {
             if (!(drillToValidate.DrillName.Equals(string.Empty))
@@ -201,6 +255,17 @@ namespace RaptorMath
             return false;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Adjust student information.</summary>
+        /// <param name="newFName">Student's new first name.</param>
+        /// <param name="newLName">Student's new last name.</param>
+        /// <param name="currentName">Student's current full name.</param>
+        /// <param name="newGroup">Student's new group name.</param>
+        /// <param name="studentList">List containing student objects.</param>
+        /// <param name="groupList">List containing group objects.</param>
         public bool RenameStudent(string newFName, string newLName, string currentName, string newGroup, List<Student> studentList, List<Group> groupList)
         {
             Tuple<bool, bool> GroupStudentChanged = new Tuple<bool, bool>(false, false);
@@ -209,7 +274,7 @@ namespace RaptorMath
                 && !(currentName.Equals(string.Empty))
                 && (currentName.Replace(" ", string.Empty).All(char.IsLetter))
                 && (newGroup.Equals(string.Empty) || (newGroup.All(char.IsLetterOrDigit))))*/
-            if(currentName.Replace(" ", string.Empty).All(char.IsLetter)
+            if (currentName.Replace(" ", string.Empty).All(char.IsLetter)
                 && !(currentName.Equals(string.Empty))
                 && !((newFName.Equals(string.Empty)) && (newLName.Equals(string.Empty)) && (newGroup.Equals(string.Empty))))
             {
@@ -231,6 +296,14 @@ namespace RaptorMath
             return GroupStudentChanged.Item2;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Adjust group information.</summary>
+        /// <param name="newName">Group's new name.</param>
+        /// <param name="currentName">Group's current name.</param>
+        /// <param name="groupList">List of group objects.</param>
         public void RenameGroup(string newName, string currentName, List<Group> groupList)
         {
             if (!(newName.Equals(string.Empty))
@@ -252,28 +325,45 @@ namespace RaptorMath
             return false;
         }
 
-        public void removeUser(string userName)
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Remove user from data set.</summary>
+        /// <param name="userName">User's name.</param>
+        public bool removeUser(string userName)
         {
-            bool isAdmin = adminList.Any(admin => admin.LoginName.Equals(userName.Remove(0, 8)));
+            bool isAdmin = false;
+            if(userName.Length > 9)
+                isAdmin = adminList.Any(admin => admin.LoginName.Equals(userName.Remove(0, 8)));
+            bool isStudent = studentList.Any(student => student.LoginName.Equals(userName));
             if (isAdmin)
             {
                 Admin admin = adminList.Where(adm => adm.LoginName.Equals(userName.Remove(0, 8))).FirstOrDefault();
-                if(admin != null)
-                    XMLDriver.Delete(admin, adminList);
-                /*TODO: else
-                    throw error*/
+                if (admin != null)
+                    return XMLDriver.Delete(admin, adminList);
+                else
+                    return false;
             }
-            bool isStudent = studentList.Any(student => student.LoginName.Equals(userName));
-            if(isStudent)
+            else if(isStudent)
             {
                 Student student = studentList.Where(stu => stu.LoginName.Equals(userName)).FirstOrDefault();
                 if(adminList != null)
-                    XMLDriver.Delete(student, studentList);
-                /*TODO: else
-                    throw error*/
+                    return XMLDriver.Delete(student, studentList);
+                return false;
             }
+            else
+                return false;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Assign a drill to a student.</summary>
+        /// <param name="studentName">Studen'ts name.</param>
+        /// <param name="drillName">Drill's name.</param>
+        /// <returns>Boolean confirming assignment success.</returns>
         public bool AssignDrillToStudent(string studentName, string drillName)
         {
             Student student = studentList.Where(stu => stu.LoginName.Equals(studentName)).FirstOrDefault();
@@ -284,6 +374,14 @@ namespace RaptorMath
                 return false;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Assign a drill to a group.</summary>
+        /// <param name="groupName">Group's name.</param>
+        /// <param name="drillName">Drill's name.</param>
+        /// <returns>Boolean confirming assignment success.</returns>
         public bool AssignDrillToGroup(string groupName, string drillName)
         {
             Group group = groupList.Where(grp => grp.Name.Equals(groupName)).FirstOrDefault();
@@ -294,6 +392,14 @@ namespace RaptorMath
                 return false;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Remove a drill from a student.</summary>
+        /// <param name="studentName">Studen'ts name.</param>
+        /// <param name="drillName">Drill's name.</param>
+        /// <returns>Boolean confirming removal success.</returns>
         public bool UnassignDrillFromStudent(string studentName, string drillName)
         {
             Student student = studentList.Where(stu => stu.LoginName.Equals(studentName)).FirstOrDefault();
@@ -304,6 +410,14 @@ namespace RaptorMath
                 return false;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Remove a drill from a group.</summary>
+        /// <param name="groupName">Group's name.</param>
+        /// <param name="drillName">Drill's name.</param>
+        /// <returns>Boolean confirming removal success.</returns>
         public bool UnassignDrillFromGroup(string groupName, string drillName)
         {
             Group group = groupList.Where(grp => grp.Name.Equals(groupName)).FirstOrDefault();
@@ -314,37 +428,83 @@ namespace RaptorMath
                 return false;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Search dataset for a student's name.</summary>
+        /// <param name="studentName">Student's name.</param>
+        /// <returns>Student object.</returns>
         public Student FindStudentWithName(string studentName)
         {
             Student foundStudent = studentList.Where(stu => stu.LoginName.Equals(studentName)).FirstOrDefault();
             return (foundStudent);
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Search dataset for a group's name.</summary>
+        /// <param name="GroupName">Group's name.</param>
+        /// <returns>Group object.</returns>
         public Group FindGroupByName(string GroupName)
         {
             Group foundGroup = groupList.Where(grp => grp.Name.Equals(GroupName)).FirstOrDefault();
             return (foundGroup);
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Search dataset for a group's ID.</summary>
+        /// <param name="groupID">Group's ID.</param>
+        /// <returns>Group object.</returns>
         public Group FindGroupByID(int groupID)
         {
             Group foundGroup = groupList.Where(grp => grp.ID.ToString().Equals(groupID.ToString())).FirstOrDefault();
             return foundGroup;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Search dataset for a group ID given group's name.</summary>
+        /// <param name="GroupName">Group's name.</param>
+        /// <returns>Group ID.</returns>
         public int FindGroupIDByName(string GroupName)
         {
             Group foundGroup = groupList.Where(grp => grp.Name.Equals(GroupName)).FirstOrDefault();
+            if (GroupName == string.Empty)
+                return 1;
             if (foundGroup == null)
                 return 0;
             return (foundGroup.ID);
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Add a drill to student's XML file.</summary>
+        /// <param name="student">Student object to be modified.</param>
+        /// <param name="drillToAdd">Drill object to be added.</param>
+        /// <returns>Boolean confirming addition success.</returns>
         public bool AddDrillToStudent(Student student, Drill drillToAdd)
         {
             return XMLDriver.AddDrillToStudentXML(student, drillToAdd);
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Add a drill to group's XML file.</summary>
+        /// <param name="group">Group object to be modified.</param>
+        /// <param name="drillToAdd">Drill object to be added.</param>
+        /// <returns>Boolean confirming addition success.</returns>
         public bool AddDrillToGroup(Group group, Drill drillToAdd)
         {
             bool isDrillAddedToGroup = XMLDriver.AddDrillToGroupXML(group, drillToAdd);
@@ -360,6 +520,13 @@ namespace RaptorMath
             return isDrillAddedToGroup;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Add all group's drills to student's XML file.</summary>
+        /// <param name="group">Group object acting as source.</param>
+        /// <param name="student">Student object to be modified.</param>
         public void AddGroupDrillsToStudent(Group group, Student student)
         {
             foreach(Drill drill in group.groupDrillList)
@@ -368,6 +535,13 @@ namespace RaptorMath
             }
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Remove all group's drills from student's XML file.</summary>
+        /// <param name="group">Group object acting as source.</param>
+        /// <param name="student">Student object to be modified.</param>
         public void RemoveGroupDrillsFromStudent(Group group, Student student)
         {
             foreach (Drill drill in group.groupDrillList)
@@ -376,16 +550,39 @@ namespace RaptorMath
             }
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Get data on all students associated with a group.</summary>
+        /// <param name="groupID">Group acting as source.</param>
+        /// <returns>List of student objects.</returns>
         public List<Student> FindStudentsByGroupID(int groupID)
         {
             return studentList.Where(stu => stu.GroupID.ToString().Equals(groupID.ToString())).ToList();
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Remove a drill from student's XML file.</summary>
+        /// <param name="student">Student object to be modified.</param>
+        /// <param name="drillToRemove">Drill object to be removed.</param>
+        /// <returns>Boolean confirming removal success.</returns>
         public bool RemoveDrillFromStudent(Student student, Drill drillToRemove)
         {
             return XMLDriver.RemoveDrillFromStudentXML(student, drillToRemove);
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Remove a drill from group's XML file.</summary>
+        /// <param name="group">Group object to be modified.</param>
+        /// <param name="drillToRemove">Drill object to be removed.</param>
+        /// <returns>Boolean confirming removal success.</returns>
         public bool RemoveDrillFromGroup(Group group, Drill drillToRemove)
         {
             bool isDrillRemovedFromGroup = XMLDriver.RemoveDrillFromGroupXML(group, drillToRemove);
@@ -401,26 +598,55 @@ namespace RaptorMath
             return isDrillRemovedFromGroup;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Check running status of program.</summary>
+        /// <returns>Boolean confirming running status.</returns>
         public bool IsRunning()
         {
             return (programRunning);
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Access form.</summary>
+        /// <returns>Form object being accessed.</returns>
         public Window GetWindow()
         {
             return (form);
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Set status of program to not running.</summary>
         public void SetIsRunningFalse()
         {
             programRunning = false;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Set window object.</summary>
+        /// <param name="newForm">Window to be established.</param>
         public void SetWindow(Window newForm)
         {
             form = newForm;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Generate a list of all user's first names.</summary>
+        /// <returns>List of strings.</returns>
         public List<String> GetUsersFirstNames()
         {
             List<String> userFirstNamesList = new List<String>();
@@ -435,6 +661,12 @@ namespace RaptorMath
             return userFirstNamesList.Distinct().ToList(); 
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Generate a list of all user's last names.</summary>
+        /// <returns>List of strings.</returns>
         public List<String> GetUsersLastNames()
         {
             List<String> userLastNamesList = new List<String>();
@@ -448,6 +680,7 @@ namespace RaptorMath
             userLastNamesList.Sort();
             return userLastNamesList.Distinct().ToList(); 
         }
+
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/26/2014                                                  //
@@ -493,6 +726,13 @@ namespace RaptorMath
             return false;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Establish current Admin.</summary>
+        /// <param name="currentUser">Name of current user.</param>
+        /// <returns>Boolean confirming success.</returns>
         private bool SetCurrentAdmin(string currentUser)
         {
             currentUser = currentUser.Remove(0, 8);
@@ -506,6 +746,12 @@ namespace RaptorMath
             return false;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Validate admin's password input.</summary>
+        /// <returns>Boolean confirming password.</returns>
         public bool isCorrectAdminPassword()
         {
             if (currentAdmin != null)
@@ -518,6 +764,12 @@ namespace RaptorMath
             return false;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Check if selection is student.</summary>
+        /// <returns>Boolean confirmation.</returns>
         public bool isStudent()
         {
             if (!(currentUser.StartsWith("<Admin>")) && (currentUser != string.Empty))
@@ -525,6 +777,13 @@ namespace RaptorMath
             return false;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Establish current student.</summary>
+        /// <param name="currentUser">Name of current user.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool SetCurrentStudent(string currentUser) 
         {
             currentStudent = FindStudent(currentUser);
@@ -534,6 +793,12 @@ namespace RaptorMath
             return false;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Validate user as admin, and navigate to admin home.</summary>
+        /// <returns>Boolean confirmation.</returns>
         public bool validateAdmin()
         {
             bool isValidAdmin = SetCurrentAdmin(currentUser);
@@ -548,6 +813,12 @@ namespace RaptorMath
             return false;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                                                     //
+        // Date:                                                                                        //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>alidate user as admin, and navigate to admin home.</summary>
+        /// <returns>Boolean confirmation.</returns>
         public bool validateStudent()
         {
             bool isValidStudent = SetCurrentStudent(currentUser);

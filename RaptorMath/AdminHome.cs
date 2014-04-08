@@ -206,44 +206,76 @@ namespace RaptorMath
             bool passwordMatch = localManager.ChangeAdminPassword(AdminHome_CurrentPWTxt.Text, AdminHome_NewPWTxt.Text);
             if (passwordMatch == true)
             {
-                MessageBox.Show("Your password has been saved");
+                MessageBox.Show("Your password has been saved", "Raptor Math", MessageBoxButtons.OK);
+                AdminHome_CurrentPWTxt.Text = string.Empty;
+                AdminHome_NewPWTxt.Text = string.Empty;
             }
             else
             {
-                MessageBox.Show("The current password does not match the records");
+                MessageBox.Show("The current password does not match the records", "Raptor Math", MessageBoxButtons.OK);
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Manage Users' button click.</summary>
         private void AdminHome_MngUsersBtn_Click(object sender, EventArgs e)
         {
             localManager.SetWindow(Window.mngUsers);
             this.Close();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Manage Groups' button click.</summary>
         private void AdminHome_MngGroupsBtn_Click(object sender, EventArgs e)
         {
             localManager.SetWindow(Window.mngGroups);
             this.Close();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Student Report' button click.</summary>
         private void AdminHome_StuReportBtn_Click(object sender, EventArgs e)
         {
             localManager.SetWindow(Window.studentReports);
             this.Close();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Edit Students' button click.</summary>
         private void AdminHome_EditStudentBtn_Click(object sender, EventArgs e)
         {
             localManager.SetWindow(Window.editStudents);
             this.Close();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Create Drill' button click.</summary>
         private void AdminHome_CreateDrillBtn_Click(object sender, EventArgs e)
         {
             localManager.SetWindow(Window.createDrill);
             this.Close();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Manage Drill' button click.</summary>
         private void AdminHome_MngDrillBtn_Click(object sender, EventArgs e)
         {
             localManager.SetWindow(Window.mngDrills);
@@ -255,11 +287,16 @@ namespace RaptorMath
 
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Enter-key' press.</summary>
         private void AdminHome_PasswordBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
-                AdminHome_SaveBtn_Click(sender, e);
+                AdminHome_SaveBtn_Click(sender, e); // call click event on Save Button
             }
         }
 

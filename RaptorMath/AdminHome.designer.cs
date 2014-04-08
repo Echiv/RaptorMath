@@ -99,7 +99,7 @@
             this.AdminHome_NewPWLbl.Location = new System.Drawing.Point(12, 57);
             this.AdminHome_NewPWLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AdminHome_NewPWLbl.Name = "AdminHome_NewPWLbl";
-            this.AdminHome_NewPWLbl.Size = new System.Drawing.Size(100, 17);
+            this.AdminHome_NewPWLbl.Size = new System.Drawing.Size(78, 13);
             this.AdminHome_NewPWLbl.TabIndex = 2;
             this.AdminHome_NewPWLbl.Text = "New Password";
             // 
@@ -110,7 +110,7 @@
             this.AdminHome_CurrentPWLbl.Location = new System.Drawing.Point(12, 27);
             this.AdminHome_CurrentPWLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AdminHome_CurrentPWLbl.Name = "AdminHome_CurrentPWLbl";
-            this.AdminHome_CurrentPWLbl.Size = new System.Drawing.Size(120, 17);
+            this.AdminHome_CurrentPWLbl.Size = new System.Drawing.Size(90, 13);
             this.AdminHome_CurrentPWLbl.TabIndex = 1;
             this.AdminHome_CurrentPWLbl.Text = "Current Password";
             // 
@@ -139,7 +139,7 @@
             this.AdminHome_DateLbl.Location = new System.Drawing.Point(349, 16);
             this.AdminHome_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AdminHome_DateLbl.Name = "AdminHome_DateLbl";
-            this.AdminHome_DateLbl.Size = new System.Drawing.Size(54, 17);
+            this.AdminHome_DateLbl.Size = new System.Drawing.Size(42, 13);
             this.AdminHome_DateLbl.TabIndex = 31;
             this.AdminHome_DateLbl.Text = "<Date>";
             // 
@@ -148,7 +148,7 @@
             this.AdminHome_LastLoginLbl.AutoSize = true;
             this.AdminHome_LastLoginLbl.Location = new System.Drawing.Point(8, 50);
             this.AdminHome_LastLoginLbl.Name = "AdminHome_LastLoginLbl";
-            this.AdminHome_LastLoginLbl.Size = new System.Drawing.Size(78, 17);
+            this.AdminHome_LastLoginLbl.Size = new System.Drawing.Size(59, 13);
             this.AdminHome_LastLoginLbl.TabIndex = 16;
             this.AdminHome_LastLoginLbl.Text = "Last Login:";
             // 
@@ -158,7 +158,7 @@
             this.AdminHome_WindowLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminHome_WindowLbl.Location = new System.Drawing.Point(7, 10);
             this.AdminHome_WindowLbl.Name = "AdminHome_WindowLbl";
-            this.AdminHome_WindowLbl.Size = new System.Drawing.Size(98, 17);
+            this.AdminHome_WindowLbl.Size = new System.Drawing.Size(77, 13);
             this.AdminHome_WindowLbl.TabIndex = 37;
             this.AdminHome_WindowLbl.Text = "Admin Home";
             // 
@@ -167,7 +167,7 @@
             this.AdminHome_WelcomeLbl.AutoSize = true;
             this.AdminHome_WelcomeLbl.Location = new System.Drawing.Point(8, 27);
             this.AdminHome_WelcomeLbl.Name = "AdminHome_WelcomeLbl";
-            this.AdminHome_WelcomeLbl.Size = new System.Drawing.Size(70, 17);
+            this.AdminHome_WelcomeLbl.Size = new System.Drawing.Size(55, 13);
             this.AdminHome_WelcomeLbl.TabIndex = 27;
             this.AdminHome_WelcomeLbl.Text = "Welcome,";
             // 
@@ -177,7 +177,7 @@
             this.AdminHome_LoginLbl.Location = new System.Drawing.Point(93, 50);
             this.AdminHome_LoginLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AdminHome_LoginLbl.Name = "AdminHome_LoginLbl";
-            this.AdminHome_LoginLbl.Size = new System.Drawing.Size(54, 17);
+            this.AdminHome_LoginLbl.Size = new System.Drawing.Size(42, 13);
             this.AdminHome_LoginLbl.TabIndex = 29;
             this.AdminHome_LoginLbl.Text = "<Date>";
             // 
@@ -187,7 +187,7 @@
             this.AdminHome_AdminNameLbl.Location = new System.Drawing.Point(95, 27);
             this.AdminHome_AdminNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AdminHome_AdminNameLbl.Name = "AdminHome_AdminNameLbl";
-            this.AdminHome_AdminNameLbl.Size = new System.Drawing.Size(63, 17);
+            this.AdminHome_AdminNameLbl.Size = new System.Drawing.Size(48, 13);
             this.AdminHome_AdminNameLbl.TabIndex = 28;
             this.AdminHome_AdminNameLbl.Text = "<Admin>";
             this.AdminHome_AdminNameLbl.Click += new System.EventHandler(this.AdminHome_AdminNameLbl_Click);
@@ -199,7 +199,7 @@
             this.AdminHome_TimeLbl.Location = new System.Drawing.Point(349, 41);
             this.AdminHome_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AdminHome_TimeLbl.Name = "AdminHome_TimeLbl";
-            this.AdminHome_TimeLbl.Size = new System.Drawing.Size(55, 17);
+            this.AdminHome_TimeLbl.Size = new System.Drawing.Size(42, 13);
             this.AdminHome_TimeLbl.TabIndex = 17;
             this.AdminHome_TimeLbl.Text = "<Time>";
             // 
@@ -226,8 +226,8 @@
             this.AdminHome_NewPWTxt.Location = new System.Drawing.Point(144, 54);
             this.AdminHome_NewPWTxt.MaxLength = 20;
             this.AdminHome_NewPWTxt.Name = "AdminHome_NewPWTxt";
-            this.AdminHome_NewPWTxt.Size = new System.Drawing.Size(174, 23);
-            this.AdminHome_NewPWTxt.TabIndex = 4;
+            this.AdminHome_NewPWTxt.Size = new System.Drawing.Size(174, 20);
+            this.AdminHome_NewPWTxt.TabIndex = 1;
             this.AdminHome_NewPWTxt.TextChanged += new System.EventHandler(this.AdminHome_NewPWTxt_TextChanged);
             this.AdminHome_NewPWTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AdminHome_PasswordBoxTextBoxes_KeyPress);
             // 
@@ -236,8 +236,8 @@
             this.AdminHome_CurrentPWTxt.Location = new System.Drawing.Point(144, 24);
             this.AdminHome_CurrentPWTxt.MaxLength = 20;
             this.AdminHome_CurrentPWTxt.Name = "AdminHome_CurrentPWTxt";
-            this.AdminHome_CurrentPWTxt.Size = new System.Drawing.Size(174, 23);
-            this.AdminHome_CurrentPWTxt.TabIndex = 3;
+            this.AdminHome_CurrentPWTxt.Size = new System.Drawing.Size(174, 20);
+            this.AdminHome_CurrentPWTxt.TabIndex = 0;
             this.AdminHome_CurrentPWTxt.TextChanged += new System.EventHandler(this.AdminHome_CurrentPWTxt_TextChanged);
             this.AdminHome_CurrentPWTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
             this.AdminHome_CurrentPWTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AdminHome_PasswordBoxTextBoxes_KeyPress);
@@ -279,7 +279,7 @@
             this.AdminHome_UserBox.Margin = new System.Windows.Forms.Padding(4);
             this.AdminHome_UserBox.Name = "AdminHome_UserBox";
             this.AdminHome_UserBox.Padding = new System.Windows.Forms.Padding(4);
-            this.AdminHome_UserBox.Size = new System.Drawing.Size(408, 63);
+            this.AdminHome_UserBox.Size = new System.Drawing.Size(408, 64);
             this.AdminHome_UserBox.TabIndex = 0;
             this.AdminHome_UserBox.TabStop = false;
             this.AdminHome_UserBox.Text = "User Controls";
@@ -292,7 +292,7 @@
             this.AdminHome_StuReportBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AdminHome_StuReportBtn.Name = "AdminHome_StuReportBtn";
             this.AdminHome_StuReportBtn.Size = new System.Drawing.Size(125, 30);
-            this.AdminHome_StuReportBtn.TabIndex = 2;
+            this.AdminHome_StuReportBtn.TabIndex = 1;
             this.AdminHome_StuReportBtn.Text = "Student Reports";
             this.AdminHome_StuReportBtn.UseVisualStyleBackColor = true;
             this.AdminHome_StuReportBtn.Click += new System.EventHandler(this.AdminHome_StuReportBtn_Click);
@@ -305,7 +305,7 @@
             this.AdminHome_EditStudentBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AdminHome_EditStudentBtn.Name = "AdminHome_EditStudentBtn";
             this.AdminHome_EditStudentBtn.Size = new System.Drawing.Size(125, 30);
-            this.AdminHome_EditStudentBtn.TabIndex = 3;
+            this.AdminHome_EditStudentBtn.TabIndex = 0;
             this.AdminHome_EditStudentBtn.Text = "Edit Students";
             this.AdminHome_EditStudentBtn.UseVisualStyleBackColor = true;
             this.AdminHome_EditStudentBtn.Click += new System.EventHandler(this.AdminHome_EditStudentBtn_Click);
@@ -314,7 +314,7 @@
             // 
             this.AdminHome_CreateDrillBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.AdminHome_CreateDrillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdminHome_CreateDrillBtn.Location = new System.Drawing.Point(77, 20);
+            this.AdminHome_CreateDrillBtn.Location = new System.Drawing.Point(77, 21);
             this.AdminHome_CreateDrillBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AdminHome_CreateDrillBtn.Name = "AdminHome_CreateDrillBtn";
             this.AdminHome_CreateDrillBtn.Size = new System.Drawing.Size(125, 30);
@@ -327,7 +327,7 @@
             // 
             this.AdminHome_MngDrillBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.AdminHome_MngDrillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdminHome_MngDrillBtn.Location = new System.Drawing.Point(208, 20);
+            this.AdminHome_MngDrillBtn.Location = new System.Drawing.Point(208, 21);
             this.AdminHome_MngDrillBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AdminHome_MngDrillBtn.Name = "AdminHome_MngDrillBtn";
             this.AdminHome_MngDrillBtn.Size = new System.Drawing.Size(125, 30);
@@ -342,11 +342,11 @@
             this.AdminHome_DrillBox.Controls.Add(this.AdminHome_EditStudentBtn);
             this.AdminHome_DrillBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AdminHome_DrillBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdminHome_DrillBox.Location = new System.Drawing.Point(4, 75);
+            this.AdminHome_DrillBox.Location = new System.Drawing.Point(4, 76);
             this.AdminHome_DrillBox.Margin = new System.Windows.Forms.Padding(4);
             this.AdminHome_DrillBox.Name = "AdminHome_DrillBox";
             this.AdminHome_DrillBox.Padding = new System.Windows.Forms.Padding(4);
-            this.AdminHome_DrillBox.Size = new System.Drawing.Size(408, 63);
+            this.AdminHome_DrillBox.Size = new System.Drawing.Size(408, 64);
             this.AdminHome_DrillBox.TabIndex = 1;
             this.AdminHome_DrillBox.TabStop = false;
             this.AdminHome_DrillBox.Text = "Student Settings";
@@ -373,13 +373,13 @@
             this.tableLayoutPanel2.Controls.Add(this.AdminHome_DrillBox, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 20);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 17);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(416, 209);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(416, 212);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // groupBox1
@@ -388,9 +388,9 @@
             this.groupBox1.Controls.Add(this.AdminHome_CreateDrillBtn);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 145);
+            this.groupBox1.Location = new System.Drawing.Point(3, 147);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(410, 61);
+            this.groupBox1.Size = new System.Drawing.Size(410, 62);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Drill Settings";

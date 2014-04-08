@@ -48,6 +48,26 @@ namespace RaptorMath
         public string firstNum = string.Empty;
         public string secondNum = string.Empty;
 
+        private bool isKeyPressed = false;
+        private void RaptorMath_KeyUp(object sender, KeyEventArgs e)
+        {
+            isKeyPressed = false;
+        }
+        private void RaptorMath_DigitsKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isDigit = char.IsDigit((char)e.KeyCode);
+            if ((e.KeyCode != Keys.Back) && (!e.Shift) && (!isDigit))
+            {
+                e.SuppressKeyPress = isKeyPressed;
+                isKeyPressed = true;
+            }
+        }
+        private void RaptorMath_DigitsKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsDigit(e.KeyChar) || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/20/2014                                                  //
@@ -80,6 +100,8 @@ namespace RaptorMath
             InitializeTimer();
 
             MathDrill_InputTxt.Select();
+
+            this.MathDrill_InputTxt.KeyPress += new KeyPressEventHandler(RaptorMath_DigitsKeyPress);
 
             MathDrill_CurrentNumLbl.Text = localManager.GetCurrentNumber();
             this.StudentName = localManager.currentStudent.LoginName;

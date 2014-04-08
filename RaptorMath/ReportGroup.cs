@@ -15,8 +15,9 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                         //
-        // Date: 3/16/2014                                                   //
+        // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
+        /// <summary>Formating initial display of current date.</summary>
         private void InitializeDate()
         {
             GroupReport_DateLbl.Text = DateTime.Now.ToString("M/d/yyyy");
@@ -26,11 +27,18 @@ namespace RaptorMath
         // Cody Jordan, Cian Carota                                         //
         // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
+        /// <summary>Formating initial display of current time.</summary>
         private void InitializeTimer()
         {
             GroupReport_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Group Report form constructor.</summary>
+        /// <param name="manager">The program management class.</param>
         public ReportGroup_Form(Manager manager)
         {
             InitializeComponent();
@@ -39,11 +47,21 @@ namespace RaptorMath
             InitializeTimer();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Time display update on timer tick.</summary>
         private void GroupReport_Timer_Tick(object sender, EventArgs e)
         {
             GroupReport_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Close' button click.</summary>
         private void GroupReport_CloseBtn_Click(object sender, EventArgs e)
         {
             localManager.SetWindow(Window.adminHome);

@@ -74,7 +74,9 @@
             this.MathDrill_InputTxt.Size = new System.Drawing.Size(126, 52);
             this.MathDrill_InputTxt.TabIndex = 0;
             this.MathDrill_InputTxt.Text = "";
+            this.MathDrill_InputTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_DigitsKeyDown);
             this.MathDrill_InputTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MatDri_InputType_KeyPress);
+            this.MathDrill_InputTxt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // MathDrill_SkipBtn
             // 
@@ -240,7 +242,7 @@
             this.MatDri_ButtonBox.Name = "MatDri_ButtonBox";
             this.MatDri_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
             this.MatDri_ButtonBox.Size = new System.Drawing.Size(474, 83);
-            this.MatDri_ButtonBox.TabIndex = 3;
+            this.MatDri_ButtonBox.TabIndex = 2;
             this.MatDri_ButtonBox.TabStop = false;
             // 
             // MathDrill_ProblemBox

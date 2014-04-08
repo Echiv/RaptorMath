@@ -85,6 +85,11 @@ namespace RaptorMath
             set { this.percent = value; }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Drill object default constructor.</summary>
         public Drill()
         {
             drillName = "Unknown";
@@ -97,6 +102,16 @@ namespace RaptorMath
             percent = "0";
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Drill object constructor.</summary>
+        /// <param name="driName">Drill name.</param>
+        /// <param name="end">Max operand value.</param>
+        /// <param name="numQuestions">Number of problems in the drill.</param>
+        /// <param name="op">Operator type.</param>
+        /// <param name="start">Min operand value.</param>
         public Drill(string driName, string numQuestions, string start, string end, string op)
         {
             drillName = driName;
@@ -131,6 +146,11 @@ namespace RaptorMath
             Skipped = numSkipped.ToString();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Zero-out values of Percent, Skipped, & Wrong.</summary>
         public void Reset()
         {
             skipped = "0";

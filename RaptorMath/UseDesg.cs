@@ -35,6 +35,71 @@ namespace RaptorMath
     {
         Manager localManager;
 
+        private bool isKeyPressed = false;
+        private void RaptorMath_KeyUp(object sender, KeyEventArgs e)
+        {
+            isKeyPressed = false;
+        }
+
+        private void RaptorMath_LettersKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isLetter = char.IsLetter((char)e.KeyCode);
+            if ((e.KeyCode != Keys.Back) && (!e.Shift) && (!isLetter))
+            {
+                e.SuppressKeyPress = isKeyPressed;
+                isKeyPressed = true;
+            }
+        }
+
+        private void RaptorMath_LettersAndDigitsKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isLetterorDigit = char.IsLetterOrDigit((char)e.KeyCode);
+            bool isSpace = char.IsWhiteSpace((char)e.KeyCode);
+            if ((e.KeyCode != Keys.Back) && (!e.Shift) && (!isLetterorDigit) && (!isSpace))
+            {
+                e.SuppressKeyPress = isKeyPressed;
+                isKeyPressed = true;
+            }
+        }
+
+        private void RaptorMath_DigitsKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isDigit = char.IsDigit((char)e.KeyCode);
+            if ((e.KeyCode != Keys.Back) && (!e.Shift) && (!isDigit))
+            {
+                e.SuppressKeyPress = isKeyPressed;
+                isKeyPressed = true;
+            }
+        }
+
+        private void RaptorMath_LettersWithOneWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
+        {
+            ComboBox cmbobx = (ComboBox)sender;
+            e.Handled = (!(char.IsLetter(e.KeyChar) || (e.KeyChar == ' ') || (!cmbobx.Text.Contains(' ')) || (char.IsControl(e.KeyChar))));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        private void RaptorMath_LettersAndDigitsKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == ' ' || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        private void RaptorMath_DigitsKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsDigit(e.KeyChar) || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        private void RaptorMath_LettersKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || (char.IsControl(e.KeyChar)) || (e.KeyChar == ' ') || (e.KeyChar == '<') || (e.KeyChar == '>'));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/12/2014                                                  //
@@ -47,7 +112,11 @@ namespace RaptorMath
             InitializeTimer();
             RefreshLoginDropDownBox();
             UseDesg_LoginBtn.Enabled = false;
+            UseDesg_passwordBox.Enabled = false;
             UseDesg_LoginCmbo.Select();
+
+            this.UseDesg_LoginCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
+            this.UseDesg_passwordBox.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
         }
 
         //------------------------------------------------------------------//
@@ -108,7 +177,7 @@ namespace RaptorMath
             {
                 if (localManager.validateStudent() != true)
                 {
-                    MessageBox.Show("That Student could not be found!");
+                    MessageBox.Show("The name entered does not match any users.", "Raptor Math", MessageBoxButtons.OK);
                 }
                 else
                     this.Close();
@@ -117,7 +186,7 @@ namespace RaptorMath
             {
                 if (localManager.validateAdmin() != true)
                 {
-                    MessageBox.Show("That Admin could not be found!");
+                    MessageBox.Show("The name entered does not match any users.", "Raptor Math", MessageBoxButtons.OK);
                     UseDesg_passwordBox.Text = string.Empty;
                 }
                 else
@@ -127,9 +196,9 @@ namespace RaptorMath
                         this.Close();
                     }
                     else
-                        MessageBox.Show("Wrong password, Try again!");
+                        MessageBox.Show("Invalid password. Try again.", "Raptor Math", MessageBoxButtons.OK);
                 }
-            }         
+            }   
         }
       
         //------------------------------------------------------------------//
@@ -139,6 +208,7 @@ namespace RaptorMath
         private void UseDesg_LoginDdl_SelectionChangeCommitted(object sender, EventArgs e)
         {
             localManager.currentUser = UseDesg_LoginCmbo.Text;
+          
             if (localManager.isStudent())
             {
                 UseDesg_passwordBox.Enabled = false;
@@ -151,6 +221,12 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Enables 'Login' button on 'Password' textbox text 
+        /// change.</summary>
         private void passwordBox_TextChanged(object sender, EventArgs e)
         {
             if((localManager.currentUser != string.Empty) && (UseDesg_passwordBox.Text.Length > 0))
@@ -159,8 +235,23 @@ namespace RaptorMath
                 UseDesg_LoginBtn.Enabled = false;
         }
 
-        private void UseDesg_LoginBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
+        private void UseDesg_LoginCmbo_TextChanged(object sender, EventArgs e)
         {
+            localManager.currentUser = UseDesg_LoginCmbo.Text;
+            if (localManager.isStudent())
+            {
+                UseDesg_LoginBtn.Enabled = true;
+                UseDesg_passwordBox.Enabled = false;
+            }
+            else if(localManager.isAdmin())
+            {
+                UseDesg_passwordBox.Enabled = true;
+            }
+            else
+            {
+                UseDesg_LoginBtn.Enabled = false;
+                UseDesg_passwordBox.Enabled = false;
+            }
 
         }
     }

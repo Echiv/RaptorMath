@@ -26,11 +26,22 @@ namespace RaptorMath
             set { this.name = value;  }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Group object default constructor.</summary>
         public Group()
         {
             Name = "Unknown";
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Drill object constructor.</summary>
+        /// <param name="groupName">Group Name.</param>
         public Group(string groupName)
         {
             Name = groupName;

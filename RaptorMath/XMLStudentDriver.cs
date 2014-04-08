@@ -16,6 +16,13 @@ namespace RaptorMath
             
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Validation of Student XML's existence.</summary>
+        /// <param name="fileName">XML's file name.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool studentXMLExists(string fileName)
         {
             if (!System.IO.File.Exists(fileName))
@@ -25,6 +32,14 @@ namespace RaptorMath
             return true;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Accessor: Student object by ID.</summary>
+        /// <param name="studentID">Student's ID.</param>
+        /// <param name="studentXMLPath">Student's XML file path.</param>
+        /// <returns>Student object.</returns>
         public Student GetStudentWithID(int studentID, string studentXMLPath)
         {
             XDocument Data = XDocument.Load(studentXMLPath);
@@ -40,6 +55,16 @@ namespace RaptorMath
                     }).FirstOrDefault();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Add a studet to student XML.</summary>
+        /// <param name="newStudent">Student object to be added.</param>
+        /// <param name="studentList">List of student objects.</param>
+        /// <param name="studentXMLPath">Student XML file path.</param>
+        /// <param name="dataDirectory">Data directory.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool AddUserToXML(Student newStudent, List<Student> studentList, string studentXMLPath, string dataDirectory)
         {
             string recordPath = newStudent.LoginName.Replace(" ", "") + "Records.xml";
@@ -57,6 +82,13 @@ namespace RaptorMath
             return isAdded;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Add a record to a student in Student XML.</summary>
+        /// <param name="student">Student object to be modified.</param>
+        /// <param name="RecordToAdd">Record object to be added.</param>
         public void AddRecordToStudent(Student student, Record RecordToAdd)
         {
             if (!System.IO.File.Exists(student.RecordsPath))
@@ -69,6 +101,16 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Creating Student XML for addition of first student.
+        /// </summary>
+        /// <param name="newStudentEntry">Student object to be added.</param>
+        /// <param name="studentXMLPath">Student XML file path.</param>
+        /// <param name="studentList">List of student objects.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool InitialCreateStudentXml(Student newStudentEntry, string studentXMLPath, List<Student> studentList)
         {
             MessageBox.Show("RaptorMathStu");
@@ -85,6 +127,15 @@ namespace RaptorMath
             return true;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Creating Record XML for addition of first record.
+        /// </summary>
+        /// <param name="RecordToAdd">Record object to added.</param>
+        /// <param name="student">Student object related to record.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool InitialCreateRecordXML(Student student, Record RecordToAdd)
         {
             XElement newRecord = CreateRecordNode(RecordToAdd);
@@ -100,6 +151,15 @@ namespace RaptorMath
             return true;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Adding a new student to Student XML.</summary>
+        /// <param name="newStudent">Student object to be added.</param>
+        /// <param name="studentXMLPath">Student XML's file path.</param>
+        /// <param name="studentList">List of student objects.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool AddNewStudent(Student newStudent, string studentXMLPath, List<Student> studentList)
         {
             XDocument data = XDocument.Load(studentXMLPath);
@@ -124,6 +184,14 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Adding a new record to Student XML. </summary>
+        /// <param name="student">Student object to be modified.</param>
+        /// <param name="RecordToAdd">Record to be added.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool AddNewRecord(Student student, Record RecordToAdd)
         {
             XDocument data = XDocument.Load(student.RecordsPath);
@@ -139,6 +207,17 @@ namespace RaptorMath
             return true;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Edit data in Student XML.</summary>
+        /// <param name="newFName">Student's first name.</param>
+        /// <param name="newLName">Student's last name.</param>
+        /// <param name="selectedStudent">Student object to be modified</param>
+        /// <param name="group">Group object associated with student.</param>
+        /// <param name="studentList">List of student objects.</param>
+        /// <returns>bool, bool</returns>
         public Tuple<bool, bool> editStudent(string newFName, string newLName, Student selectedStudent, Group group, List<Student> studentList, string studentXMLPath, string groupXMLPath, string dataDirectory)
         {
             bool hasGroupChanged = false;
@@ -152,7 +231,7 @@ namespace RaptorMath
                 }
                 hasGroupChanged = compareOldAndNewStudentInfo(newFName, newLName, selectedStudent, groupID);
                 hasStudentChanged = UpdateStudent(selectedStudent, studentXMLPath, groupXMLPath, dataDirectory);
-                
+
             }
             else
             {
@@ -162,6 +241,16 @@ namespace RaptorMath
             //return hasGroupChanged;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Check for change in data.</summary>
+        /// <param name="newFName">Student's first name.</param>
+        /// <param name="newLName">Student's last name.</param>
+        /// <param name="selectedStudent">Student object to check.</param>
+        /// <param name="newGroup">Associated group's name.</param>
+        /// <returns>Boolean confirmation of change.</returns>
         public bool compareOldAndNewStudentInfo(string newFName, string newLName, Student selectedStudent, int newGroup/*, int oldGroup*/)
         {
             bool hasGroupChanged = false;
@@ -178,6 +267,16 @@ namespace RaptorMath
             return hasGroupChanged;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Update student data in Student XML.</summary>
+        /// <param name="student">Student object to be modified.</param>
+        /// <param name="studentXMLPath">Student XML file path.</param>
+        /// <param name="groupXMLPath">Group XML file path.</param>
+        /// <param name="dataDirectory">Data Directory.</param>
+        /// <returns>Boolean confirming success.</returns>
         public bool UpdateStudent(Student student, string studentXMLPath, string groupXMLPath, string dataDirectory)
         {
             XDocument data = XDocument.Load(studentXMLPath);
@@ -229,6 +328,15 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Add a drill to a student in Student XML.</summary>
+        /// <param name="student">Student object to be modified</param>
+        /// <param name="drillToAdd">Drill object to be added.</param>
+        /// <param name="studentXMLPath">Student XML file path.</param>
+        /// <returns>Boolean confirming success.</returns>
         public bool AddDrillToStudentXML(Student student, Drill drillToAdd, string studentXMLPath)
         {
             XDocument data = XDocument.Load(studentXMLPath);
@@ -247,6 +355,15 @@ namespace RaptorMath
             return false;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Remove a drill from a student in Student XML.</summary>
+        /// <param name="student">Student object to be modified</param>
+        /// <param name="DrillToRemove">Drill object to be removed.</param>
+        /// <param name="studentXMLPath">Student XML file path.</param>
+        /// <returns>Boolean confirming success.</returns>
         public bool RemoveDrillFromStudentXML(Student student, Drill DrillToRemove, string studentXMLPath)
         {
             XDocument data = XDocument.Load(studentXMLPath);
@@ -273,6 +390,15 @@ namespace RaptorMath
             return false;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Check if drill already is assigned to a particular
+        /// student.</summary>
+        /// <param name="student"></param>
+        /// <param name="drill"></param>
+        /// <returns></returns>
         public bool isDrillAssigned(Student student, Drill drill)
         {
             foreach (Drill studentDrill in student.CurDrillList)
@@ -285,6 +411,15 @@ namespace RaptorMath
             return false;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Delete a student's data from Student XML.</summary>
+        /// <param name="student">Student object to be deleted.</param>
+        /// <param name="studentList">List of student objects.</param>
+        /// <param name="studentXMLPath">Student XML file path.</param>
+        /// <returns>Boolean confirming success.</returns>
         public bool Delete(Student student, List<Student> studentList, string studentXMLPath)
         {
             XDocument data = XDocument.Load(studentXMLPath);
@@ -297,10 +432,20 @@ namespace RaptorMath
                 studentElement.Remove();
                 data.Save(studentXMLPath);
                 studentList.Remove(student);
+                return true;
             }
             return false;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Load a list of students from XML to local.</summary>
+        /// <param name="studentList">List of student objects to be populated.
+        /// </param>
+        /// <param name="mainDrillList">List of drill objects</param>
+        /// <param name="fileName">XML file name.</param>
         public void LoadStudentXML(List<Student> studentList, List<Drill> mainDrillList, string fileName)
         {
             XDocument studentXML = XDocument.Load(fileName);
@@ -331,6 +476,13 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Add data from active session to XML.</summary>
+        /// <param name="currentStudent">Student object to be modified.</param>
+        /// <param name="currentDrill">Drill object to be modified.</param>
         public void WriteCurrentSession(Student currentStudent, Drill currentDrill)
         {
             Record RecordToAdd = new Record(currentDrill.ID, currentDrill.DrillName, DateTime.Now.ToString("M/d/yyyy"), currentDrill.Questions, currentDrill.RangeStart,
@@ -338,6 +490,14 @@ namespace RaptorMath
             AddRecordToStudent(currentStudent, RecordToAdd);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Search for next ID availabe to be assigned.</summary>
+        /// <param name="fileName">XML file name.</param>
+        /// <param name="itemTag">Item tag.</param>
+        /// <returns>Int</returns>
         public int GetNextAvailableID(string fileName, string itemTag)
         {
             XDocument data = XDocument.Load(fileName);
@@ -349,6 +509,13 @@ namespace RaptorMath
                                    ) + 1;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Define third level of root in XML.</summary>
+        /// <param name="RootNode">XML's root node.</param>
+        /// <returns>IEnumerable<XElement></returns>
         private IEnumerable<XElement> SecondLevelOfRoot(XElement RootNode)
         {
             IEnumerable<XElement> SecondLevelChildrenQuery =
@@ -357,6 +524,13 @@ namespace RaptorMath
             return SecondLevelChildrenQuery;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Add a record node to Record XML.</summary>
+        /// <param name="RecordToAdd">Record object to be added.</param>
+        /// <returns>XElement</returns>
         private XElement CreateRecordNode(Record RecordToAdd)
         {
             XElement newRecord =
@@ -374,6 +548,13 @@ namespace RaptorMath
             return newRecord;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Add a student node to Student XML.</summary>
+        /// <param name="newStudentEntry">Student object to be added.</param>
+        /// <returns>XElement</returns>
         private XElement CreateStudentNode(Student newStudentEntry)
         {
             XElement newStudent =

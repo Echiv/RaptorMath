@@ -15,8 +15,9 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                         //
-        // Date: 3/16/2014                                                   //
+        // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
+        /// <summary>Formating initial display of current date.</summary>
         private void InitializeDate()
         {
             SingleReport_DateLbl.Text = DateTime.Now.ToString("M/d/yyyy");
@@ -26,6 +27,7 @@ namespace RaptorMath
         // Cody Jordan, Cian Carota                                         //
         // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
+        /// <summary>Formating initial display of current time.</summary>
         private void InitializeTimer()
         {
             SingleReport_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
@@ -35,12 +37,19 @@ namespace RaptorMath
         // Cody Jordan, Cian Carota                                         //
         // Date: 2/20/2014                                                  //
         //------------------------------------------------------------------//
+        /// <summary>Accessor: Student's Name.</summary>
         public string StudentName
         {
             get { return SingleReport__StudentNameLbl.Text; }
             set { SingleReport__StudentNameLbl.Text = value; }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Single Report form constructor.</summary>
+        /// <param name="manager">The program management class.</param>
         public SingleReport_Form(Manager manager)
         {
             InitializeComponent();
@@ -53,11 +62,21 @@ namespace RaptorMath
             this.StudentName = localManager.reportStudent;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Time display update on timer tick.</summary>
         private void SingleReport_Timer_Tick(object sender, EventArgs e)
         {
             SingleReport_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Close' button click.</summary>
         private void SingleReport_CloseBtn_Click(object sender, EventArgs e)
         {
             localManager.SetWindow(Window.adminHome);
@@ -74,6 +93,12 @@ namespace RaptorMath
 
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Refreshes the datagrid to display the records of the
+        /// selected user.</summary>
         private void DisplayRecords()
         {
             DateTime first = localManager.StartDate;

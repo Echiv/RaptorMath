@@ -12,6 +12,72 @@ namespace RaptorMath
     public partial class MngUsers_Form : Form
     {
         public Manager localManager;
+
+        private bool isKeyPressed = false;
+        private void RaptorMath_KeyUp(object sender, KeyEventArgs e)
+        {
+            isKeyPressed = false;
+        }
+
+        private void RaptorMath_LettersKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isLetter = char.IsLetter((char)e.KeyCode);
+            if ((e.KeyCode != Keys.Back) && (!e.Shift) && (!isLetter))
+            {
+                e.SuppressKeyPress = isKeyPressed;
+                isKeyPressed = true;
+            }
+        }
+
+        private void RaptorMath_LettersAndDigitsKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isLetterorDigit = char.IsLetterOrDigit((char)e.KeyCode);
+            bool isSpace = char.IsWhiteSpace((char)e.KeyCode);
+            if ((e.KeyCode != Keys.Back) && (!e.Shift) && (!isLetterorDigit))
+            {
+                e.SuppressKeyPress = isKeyPressed;
+                isKeyPressed = true;
+            }
+        }
+
+        private void RaptorMath_DigitsKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isDigit = char.IsDigit((char)e.KeyCode);
+            if ((e.KeyCode != Keys.Back) && (!e.Shift) && (!isDigit))
+            {
+                e.SuppressKeyPress = isKeyPressed;
+                isKeyPressed = true;
+            }
+        }
+
+        private void RaptorMath_LettersWithOneWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
+        {
+            ComboBox cmbobx = (ComboBox)sender;
+            e.Handled = (!(char.IsLetter(e.KeyChar) || (e.KeyChar == ' ') || (!cmbobx.Text.Contains(' ')) || (char.IsControl(e.KeyChar))));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        private void RaptorMath_LettersAndDigitsKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == ' ' || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        private void RaptorMath_DigitsKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsDigit(e.KeyChar) || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        private void RaptorMath_LettersKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/20/2014                                                  //
@@ -23,8 +89,9 @@ namespace RaptorMath
         }
         //------------------------------------------------------------------//
         // Cody Jordan, Cian Carota                                         //
-        // Date: 3/16/2014                                                   //
+        // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
+        /// <summary>Formating initial display of current date.</summary>
         private void InitializeDate()
         {
             MngUsers_DateLbl.Text = DateTime.Now.ToString("M/d/yyyy");
@@ -34,11 +101,18 @@ namespace RaptorMath
         // Cody Jordan, Cian Carota                                         //
         // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
+        /// <summary>Formating initial display of current time.</summary>
         private void InitializeTimer()
         {
             MngUsers_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Clears and refreshes content of 'Group' combo box.
+        /// </summary>
         private void RefreshGroupDropDownBox()
         {
             MngUsers_GroupCmbo.Items.Clear();
@@ -46,6 +120,12 @@ namespace RaptorMath
                 MngUsers_GroupCmbo.Items.Add(group.Name);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Clears and refreshes content of 'First Name',
+        /// 'Last Name', & 'Select a User' combo boxes.</summary>
         private void RefreshUserDropDownBox()
         {
             MngUsers_FirstNameCmbo.Items.Clear();
@@ -59,23 +139,47 @@ namespace RaptorMath
             {
                 MngUsers_LastNameCmbo.Items.Add(userLastName);
             }
-            foreach (String userNames in localManager.GetUsers())
+            List<String> listOfUsers = localManager.GetUsers();
+            foreach (String userNames in listOfUsers)
             {
-                MngUsers_RemoveUserCmbo.Items.Add(userNames);
+                if (listOfUsers.Count > 0)
+                {
+                    MngUsers_RemoveUserCmbo.Enabled = true;
+                    MngUsers_RemoveUserCmbo.Items.Add(userNames);
+                }
+                else
+                    MngUsers_RemoveUserCmbo.Enabled = false;
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Clears and refreshes content of all combo boxes.
+        /// </summary>
         private void RefreshComboBoxes()
         {
             RefreshGroupDropDownBox();
             RefreshUserDropDownBox();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Time display update on timer tick.</summary>
         private void MngUsers_Timer_Tick(object sender, EventArgs e)
         {
             MngUsers_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Manage Users form constructor.</summary>
+        /// <param name="manager">The program management class.</param>
         public MngUsers_Form(Manager manager)
         {
             InitializeComponent();
@@ -84,17 +188,35 @@ namespace RaptorMath
             InitializeTimer();
             RefreshComboBoxes();
 
+            MngUsers_RemoveUserBtn.Enabled = false;
+
             MngUsers_StudentRdo.Select();
+            this.MngUsers_FirstNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
+            this.MngUsers_LastNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
+            this.MngUsers_PasswordTxt.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
+            this.MngUsers_ConfirmPasswordTxt.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
+            this.MngUsers_GroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
+            this.MngUsers_RemoveUserCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWithOneWhiteSpaceKeyPress);
 
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Close' button click.</summary>
         private void MngUsers_CloseBtn_Click(object sender, EventArgs e)
         {
             localManager.SetWindow(Window.adminHome);
             this.Close();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Exit' button click.</summary>
         private void MngUsers_ExitBtn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.",
@@ -105,22 +227,35 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Save User' button click.</summary>
         private void MngUsers_SaveUserBtm_Click(object sender, EventArgs e)
         {
-            if (MngUsers_StudentRdo.Checked)
+            if ((MngUsers_StudentRdo.Checked) && ((MngUsers_FirstNameCmbo.Text.Length > 0) && (MngUsers_LastNameCmbo.Text.Length > 0)))
             {
-                int groupID = localManager.FindGroupIDByName(MngUsers_GroupCmbo.Text);
-                MessageBox.Show(groupID.ToString());
-                bool isCreatedUser = localManager.CreateUser(groupID, MngUsers_FirstNameCmbo.Text, MngUsers_LastNameCmbo.Text, "Unknown");
+                bool isCreatedUser = false;
+                int groupID = localManager.FindGroupIDByName(MngUsers_GroupCmbo.Text.Trim());
+                if(groupID == 0)
+                    MessageBox.Show("The group entered does not match any groups.", "Raptor Math", MessageBoxButtons.OKCancel);
+                else
+                    isCreatedUser = localManager.CreateUser(groupID, MngUsers_FirstNameCmbo.Text, MngUsers_LastNameCmbo.Text, "Unknown");
                 if (isCreatedUser)
                 {
                     RefreshComboBoxes();
-                    MessageBox.Show("New Student Created!", "Raptor Math", MessageBoxButtons.OKCancel);
+                    MessageBox.Show("New user created.", "Raptor Math", MessageBoxButtons.OKCancel);
+                    MngUsers_FirstNameCmbo.Text = string.Empty;
+                    MngUsers_LastNameCmbo.Text = string.Empty;
+                    MngUsers_GroupCmbo.Text = string.Empty;
                 }
                 else
-                    MessageBox.Show("Student has not been Created!", "Raptor Math", MessageBoxButtons.OKCancel);
+                    MessageBox.Show("Entered student name already exists.", "Raptor Math", MessageBoxButtons.OKCancel);
             }
-            else if ((MngUsers_AdminRdo.Checked) && (MngUsers_PasswordTxt.Text.Length > 0 && MngUsers_ConfirmPasswordTxt.Text.Length > 0))
+            else if ((MngUsers_AdminRdo.Checked) 
+                && ((MngUsers_PasswordTxt.Text.Length > 0) && (MngUsers_ConfirmPasswordTxt.Text.Length > 0))
+                && ((MngUsers_FirstNameCmbo.Text.Length > 0) && (MngUsers_LastNameCmbo.Text.Length > 0)))
             {
                 bool isCreatedUser = false;
                 if (MngUsers_PasswordTxt.Text == MngUsers_ConfirmPasswordTxt.Text)
@@ -129,16 +264,29 @@ namespace RaptorMath
                     if (isCreatedUser)
                     {
                         RefreshComboBoxes();
-                        MessageBox.Show("New Admin Created!", "Raptor Math", MessageBoxButtons.OKCancel);
+                        MessageBox.Show("New user created.", "Raptor Math", MessageBoxButtons.OK);
+                        MngUsers_FirstNameCmbo.Text = string.Empty;
+                        MngUsers_LastNameCmbo.Text = string.Empty;
+                        MngUsers_PasswordTxt.Text = string.Empty;
+                        MngUsers_ConfirmPasswordTxt.Text = string.Empty;
                     }
                     else
-                        MessageBox.Show("Admin has not been Created!", "Raptor Math", MessageBoxButtons.OKCancel);
+                        MessageBox.Show("Entered admin name already exists.", "Raptor Math", MessageBoxButtons.OK);
                 }
                 else
-                    MessageBox.Show("The Passwords did not match!", "Raptor Math", MessageBoxButtons.OKCancel);
+                    MessageBox.Show("Entered passwords do not match. Please try again.", "Raptor Math", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("Must specify a first and last name", "Raptor Math", MessageBoxButtons.OK);
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Student' radiobutton click.</summary>
         private void MngUsers_StudentRdo_CheckedChanged(object sender, EventArgs e)
         {
             MngUsers_PasswordTxt.Enabled = false;
@@ -148,6 +296,11 @@ namespace RaptorMath
             MngUsers_ConfirmPasswordTxt.Text = string.Empty;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Admin' radiobutton click.</summary>
         private void MngUsers_AdminRdo_CheckedChanged(object sender, EventArgs e)
         {
             MngUsers_PasswordTxt.Enabled = true;
@@ -156,14 +309,43 @@ namespace RaptorMath
             MngUsers_GroupCmbo.Text = string.Empty;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Remove User' button click.</summary>
         private void MngUsers_RemoveUserBtn_Click(object sender, EventArgs e)
         {
             string userToBeRemoved = MngUsers_RemoveUserCmbo.Text;
-            localManager.removeUser(userToBeRemoved);
+            bool isUserRemoved = false;
+            string checkForDefaultUser = string.Empty;
+            Console.WriteLine(userToBeRemoved);
+            if (userToBeRemoved.Length > 9)
+                checkForDefaultUser = userToBeRemoved.Remove(0, 8);
+            Console.WriteLine(checkForDefaultUser);
+            if (checkForDefaultUser.Trim() != "Admin")
+            {
+                isUserRemoved = localManager.removeUser(userToBeRemoved);
+                if(isUserRemoved == true)
+                {
+                    MessageBox.Show("The selected user has been removed", "Raptor Math", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("The selected user does not match any known users and cannot be removed", "Raptor Math", MessageBoxButtons.OK);
+                }
+            }
+            else
+                MessageBox.Show("Cannot remove the default admin");
             RefreshComboBoxes();
             MngUsers_RemoveUserCmbo.Text = string.Empty;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Enter-key' press.</summary>
         private void MngUsers_AddUserBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -172,11 +354,28 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Enter-key' press.</summary>
         private void MngUsers_RemoveUserBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
                 MngUsers_RemoveUserBtn_Click(sender, e);
+            }
+        }
+
+        private void MngUsers_RemoveUserCmbo_TextChanged(object sender, EventArgs e)
+        {
+            if(MngUsers_RemoveUserCmbo.Text.Length > 0)
+            {
+                MngUsers_RemoveUserBtn.Enabled = true;
+            }
+            else
+            {
+                MngUsers_RemoveUserBtn.Enabled = false;
             }
         }
     }

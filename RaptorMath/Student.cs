@@ -109,6 +109,11 @@ namespace RaptorMath
             lastLogin = login;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Resets drill object.</summary>
         public void ResetCurrentDrill()
         {
             curDrill = new Drill();

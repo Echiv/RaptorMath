@@ -175,13 +175,16 @@
             // 
             this.MngUsers_LastNameCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.MngUsers_LastNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.MngUsers_LastNameCmbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_LastNameCmbo.FormattingEnabled = true;
             this.MngUsers_LastNameCmbo.Location = new System.Drawing.Point(155, 99);
             this.MngUsers_LastNameCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngUsers_LastNameCmbo.MaxLength = 10;
             this.MngUsers_LastNameCmbo.Name = "MngUsers_LastNameCmbo";
             this.MngUsers_LastNameCmbo.Size = new System.Drawing.Size(169, 24);
-            this.MngUsers_LastNameCmbo.TabIndex = 14;
+            this.MngUsers_LastNameCmbo.TabIndex = 3;
+            this.MngUsers_LastNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
+            this.MngUsers_LastNameCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // MngUsers_LastNameLbl
             // 
@@ -203,13 +206,16 @@
             this.MngUsers_GroupCmbo.MaxLength = 10;
             this.MngUsers_GroupCmbo.Name = "MngUsers_GroupCmbo";
             this.MngUsers_GroupCmbo.Size = new System.Drawing.Size(169, 24);
-            this.MngUsers_GroupCmbo.TabIndex = 5;
+            this.MngUsers_GroupCmbo.TabIndex = 6;
+            this.MngUsers_GroupCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
             this.MngUsers_GroupCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_AddUserBoxTextBoxes_KeyPress);
+            this.MngUsers_GroupCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // MngUsers_FirstNameCmbo
             // 
             this.MngUsers_FirstNameCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.MngUsers_FirstNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.MngUsers_FirstNameCmbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_FirstNameCmbo.FormattingEnabled = true;
             this.MngUsers_FirstNameCmbo.Location = new System.Drawing.Point(155, 67);
             this.MngUsers_FirstNameCmbo.Margin = new System.Windows.Forms.Padding(4);
@@ -217,7 +223,9 @@
             this.MngUsers_FirstNameCmbo.Name = "MngUsers_FirstNameCmbo";
             this.MngUsers_FirstNameCmbo.Size = new System.Drawing.Size(169, 24);
             this.MngUsers_FirstNameCmbo.TabIndex = 2;
+            this.MngUsers_FirstNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             this.MngUsers_FirstNameCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_AddUserBoxTextBoxes_KeyPress);
+            this.MngUsers_FirstNameCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             // 
             // MngUsers_ConfirmPassword
             // 
@@ -237,9 +245,11 @@
             this.MngUsers_ConfirmPasswordTxt.MaxLength = 20;
             this.MngUsers_ConfirmPasswordTxt.Name = "MngUsers_ConfirmPasswordTxt";
             this.MngUsers_ConfirmPasswordTxt.Size = new System.Drawing.Size(169, 26);
-            this.MngUsers_ConfirmPasswordTxt.TabIndex = 4;
+            this.MngUsers_ConfirmPasswordTxt.TabIndex = 5;
             this.MngUsers_ConfirmPasswordTxt.Text = "";
+            this.MngUsers_ConfirmPasswordTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.MngUsers_ConfirmPasswordTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_AddUserBoxTextBoxes_KeyPress);
+            this.MngUsers_ConfirmPasswordTxt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // MngUsers_SaveUserBtm
             // 
@@ -249,7 +259,7 @@
             this.MngUsers_SaveUserBtm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_SaveUserBtm.Name = "MngUsers_SaveUserBtm";
             this.MngUsers_SaveUserBtm.Size = new System.Drawing.Size(115, 30);
-            this.MngUsers_SaveUserBtm.TabIndex = 6;
+            this.MngUsers_SaveUserBtm.TabIndex = 7;
             this.MngUsers_SaveUserBtm.Text = "Save User";
             this.MngUsers_SaveUserBtm.UseVisualStyleBackColor = true;
             this.MngUsers_SaveUserBtm.Click += new System.EventHandler(this.MngUsers_SaveUserBtm_Click);
@@ -262,9 +272,11 @@
             this.MngUsers_PasswordTxt.MaxLength = 20;
             this.MngUsers_PasswordTxt.Name = "MngUsers_PasswordTxt";
             this.MngUsers_PasswordTxt.Size = new System.Drawing.Size(169, 26);
-            this.MngUsers_PasswordTxt.TabIndex = 3;
+            this.MngUsers_PasswordTxt.TabIndex = 4;
             this.MngUsers_PasswordTxt.Text = "";
+            this.MngUsers_PasswordTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.MngUsers_PasswordTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_AddUserBoxTextBoxes_KeyPress);
+            this.MngUsers_PasswordTxt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // MngUsers_GroupLbl
             // 
@@ -360,7 +372,10 @@
             this.MngUsers_RemoveUserCmbo.Name = "MngUsers_RemoveUserCmbo";
             this.MngUsers_RemoveUserCmbo.Size = new System.Drawing.Size(190, 24);
             this.MngUsers_RemoveUserCmbo.TabIndex = 0;
+            this.MngUsers_RemoveUserCmbo.TextChanged += new System.EventHandler(this.MngUsers_RemoveUserCmbo_TextChanged);
+            this.MngUsers_RemoveUserCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.MngUsers_RemoveUserCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_RemoveUserBoxTextBoxes_KeyPress);
+            this.MngUsers_RemoveUserCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // MngUsers_RemoveUserBtn
             // 

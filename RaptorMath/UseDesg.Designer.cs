@@ -97,14 +97,14 @@
             this.UseDesg_LoginBox.Name = "UseDesg_LoginBox";
             this.UseDesg_LoginBox.Padding = new System.Windows.Forms.Padding(4);
             this.UseDesg_LoginBox.Size = new System.Drawing.Size(474, 265);
-            this.UseDesg_LoginBox.TabIndex = 18;
+            this.UseDesg_LoginBox.TabIndex = 1;
             this.UseDesg_LoginBox.TabStop = false;
             this.UseDesg_LoginBox.Text = "Select Your Name";
             // 
             // UseDesg_LoginCmbo
             // 
             this.UseDesg_LoginCmbo.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.UseDesg_LoginCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.UseDesg_LoginCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.UseDesg_LoginCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.UseDesg_LoginCmbo.FormattingEnabled = true;
             this.UseDesg_LoginCmbo.Location = new System.Drawing.Point(153, 69);
@@ -113,8 +113,10 @@
             this.UseDesg_LoginCmbo.Name = "UseDesg_LoginCmbo";
             this.UseDesg_LoginCmbo.Size = new System.Drawing.Size(227, 34);
             this.UseDesg_LoginCmbo.TabIndex = 0;
-            this.UseDesg_LoginCmbo.SelectedIndexChanged += new System.EventHandler(this.UseDesg_LoginDdl_SelectionChangeCommitted);
-            this.UseDesg_LoginCmbo.TextChanged += new System.EventHandler(this.UseDesg_LoginDdl_SelectionChangeCommitted);
+            this.UseDesg_LoginCmbo.SelectedIndexChanged += new System.EventHandler(this.UseDesg_LoginCmbo_TextChanged);
+            this.UseDesg_LoginCmbo.TextChanged += new System.EventHandler(this.UseDesg_LoginCmbo_TextChanged);
+            this.UseDesg_LoginCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
+            this.UseDesg_LoginCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // label2
             // 
@@ -147,6 +149,8 @@
             this.UseDesg_passwordBox.Size = new System.Drawing.Size(228, 31);
             this.UseDesg_passwordBox.TabIndex = 1;
             this.UseDesg_passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
+            this.UseDesg_passwordBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
+            this.UseDesg_passwordBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // UseDesg_LoginBtn
             // 
@@ -197,7 +201,7 @@
             this.UseDesg_UserInfoBox.Name = "UseDesg_UserInfoBox";
             this.UseDesg_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
             this.UseDesg_UserInfoBox.Size = new System.Drawing.Size(474, 85);
-            this.UseDesg_UserInfoBox.TabIndex = 1;
+            this.UseDesg_UserInfoBox.TabIndex = 0;
             this.UseDesg_UserInfoBox.TabStop = false;
             // 
             // UseDesg_ButtonBox
