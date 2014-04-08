@@ -56,6 +56,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle DigitsKeyDown event.</summary>
         private void RaptorMath_DigitsKeyDown(object sender, KeyEventArgs e)
         {
             bool isDigit = char.IsDigit((char)e.KeyCode);
@@ -91,6 +96,11 @@ namespace RaptorMath
                 System.Media.SystemSounds.Beep.Play();
         }
 
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle DigitsKeyPress event.</summary>
         private void RaptorMath_DigitsKeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsDigit(e.KeyChar) || (char.IsControl(e.KeyChar)));
