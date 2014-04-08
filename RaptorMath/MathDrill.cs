@@ -193,6 +193,7 @@ namespace RaptorMath
             InitializeTimer();
 
             MathDrill_InputTxt.Select();
+            MathDrill_SubmitBtn.Enabled = false;
 
             this.MathDrill_InputTxt.KeyPress += new KeyPressEventHandler(RaptorMath_DigitsKeyPress);
 
@@ -225,7 +226,7 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/12/2014                                                  //
         //------------------------------------------------------------------//
-        private void MatDri_Timer_Tick(object sender, EventArgs e)
+        private void MathDrill_Timer_Tick(object sender, EventArgs e)
         {
             MathDrill_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
