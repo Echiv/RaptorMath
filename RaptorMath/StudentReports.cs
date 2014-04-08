@@ -192,6 +192,9 @@ namespace RaptorMath
             ReportHome_GroupReportBtn.Enabled = false;
             ReportHome_StudentCmbo.Select();
 
+            this.ReportHome_StudentCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
+            this.ReportHome_GroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWithOneWhiteSpaceKeyPress); 
+            
             foreach (Student student in localManager.studentList)
             {
                 ReportHome_StudentCmbo.Items.Add(student.LoginName);
