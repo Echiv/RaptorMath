@@ -154,7 +154,10 @@ namespace RaptorMath
             InitializeTimer();
 
             CreateDrill_AdditionRdo.Select();
-
+            this.CreateDrill_NumQuestionsTxt.KeyPress += new KeyPressEventHandler(RaptorMath_DigitsKeyPress);
+            this.CreateDrill_MinValueTxt.KeyPress += new KeyPressEventHandler(RaptorMath_DigitsKeyPress);
+            this.CreateDrill_MaxValueTxt.KeyPress += new KeyPressEventHandler(RaptorMath_DigitsKeyPress);
+            this.CreateDrill_DrillNameTxt.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 
