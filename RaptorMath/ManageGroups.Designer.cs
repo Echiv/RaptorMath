@@ -153,6 +153,7 @@
             this.MngGroups_GroupNameCmbo.FormattingEnabled = true;
             this.MngGroups_GroupNameCmbo.Location = new System.Drawing.Point(129, 31);
             this.MngGroups_GroupNameCmbo.Margin = new System.Windows.Forms.Padding(4);
+            this.MngGroups_GroupNameCmbo.MaxLength = 25;
             this.MngGroups_GroupNameCmbo.Name = "MngGroups_GroupNameCmbo";
             this.MngGroups_GroupNameCmbo.Size = new System.Drawing.Size(203, 24);
             this.MngGroups_GroupNameCmbo.TabIndex = 0;
@@ -196,6 +197,7 @@
             this.MngGroups_NewNameCmbo.FormattingEnabled = true;
             this.MngGroups_NewNameCmbo.Location = new System.Drawing.Point(129, 90);
             this.MngGroups_NewNameCmbo.Margin = new System.Windows.Forms.Padding(4);
+            this.MngGroups_NewNameCmbo.MaxLength = 25;
             this.MngGroups_NewNameCmbo.Name = "MngGroups_NewNameCmbo";
             this.MngGroups_NewNameCmbo.Size = new System.Drawing.Size(203, 24);
             this.MngGroups_NewNameCmbo.TabIndex = 1;
@@ -210,6 +212,7 @@
             this.MngGroups_SelectGroupCmbo.FormattingEnabled = true;
             this.MngGroups_SelectGroupCmbo.Location = new System.Drawing.Point(129, 57);
             this.MngGroups_SelectGroupCmbo.Margin = new System.Windows.Forms.Padding(4);
+            this.MngGroups_SelectGroupCmbo.MaxLength = 25;
             this.MngGroups_SelectGroupCmbo.Name = "MngGroups_SelectGroupCmbo";
             this.MngGroups_SelectGroupCmbo.Size = new System.Drawing.Size(203, 24);
             this.MngGroups_SelectGroupCmbo.TabIndex = 0;

@@ -179,7 +179,7 @@
             this.MngUsers_LastNameCmbo.FormattingEnabled = true;
             this.MngUsers_LastNameCmbo.Location = new System.Drawing.Point(155, 99);
             this.MngUsers_LastNameCmbo.Margin = new System.Windows.Forms.Padding(4);
-            this.MngUsers_LastNameCmbo.MaxLength = 10;
+            this.MngUsers_LastNameCmbo.MaxLength = 12;
             this.MngUsers_LastNameCmbo.Name = "MngUsers_LastNameCmbo";
             this.MngUsers_LastNameCmbo.Size = new System.Drawing.Size(169, 24);
             this.MngUsers_LastNameCmbo.TabIndex = 3;
@@ -203,7 +203,7 @@
             this.MngUsers_GroupCmbo.FormattingEnabled = true;
             this.MngUsers_GroupCmbo.Location = new System.Drawing.Point(155, 195);
             this.MngUsers_GroupCmbo.Margin = new System.Windows.Forms.Padding(4);
-            this.MngUsers_GroupCmbo.MaxLength = 10;
+            this.MngUsers_GroupCmbo.MaxLength = 25;
             this.MngUsers_GroupCmbo.Name = "MngUsers_GroupCmbo";
             this.MngUsers_GroupCmbo.Size = new System.Drawing.Size(169, 24);
             this.MngUsers_GroupCmbo.TabIndex = 6;
@@ -219,7 +219,7 @@
             this.MngUsers_FirstNameCmbo.FormattingEnabled = true;
             this.MngUsers_FirstNameCmbo.Location = new System.Drawing.Point(155, 67);
             this.MngUsers_FirstNameCmbo.Margin = new System.Windows.Forms.Padding(4);
-            this.MngUsers_FirstNameCmbo.MaxLength = 10;
+            this.MngUsers_FirstNameCmbo.MaxLength = 12;
             this.MngUsers_FirstNameCmbo.Name = "MngUsers_FirstNameCmbo";
             this.MngUsers_FirstNameCmbo.Size = new System.Drawing.Size(169, 24);
             this.MngUsers_FirstNameCmbo.TabIndex = 2;
@@ -242,7 +242,7 @@
             this.MngUsers_ConfirmPasswordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_ConfirmPasswordTxt.Location = new System.Drawing.Point(155, 162);
             this.MngUsers_ConfirmPasswordTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MngUsers_ConfirmPasswordTxt.MaxLength = 20;
+            this.MngUsers_ConfirmPasswordTxt.MaxLength = 10;
             this.MngUsers_ConfirmPasswordTxt.Name = "MngUsers_ConfirmPasswordTxt";
             this.MngUsers_ConfirmPasswordTxt.Size = new System.Drawing.Size(169, 26);
             this.MngUsers_ConfirmPasswordTxt.TabIndex = 5;
@@ -269,7 +269,7 @@
             this.MngUsers_PasswordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_PasswordTxt.Location = new System.Drawing.Point(155, 129);
             this.MngUsers_PasswordTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MngUsers_PasswordTxt.MaxLength = 20;
+            this.MngUsers_PasswordTxt.MaxLength = 10;
             this.MngUsers_PasswordTxt.Name = "MngUsers_PasswordTxt";
             this.MngUsers_PasswordTxt.Size = new System.Drawing.Size(169, 26);
             this.MngUsers_PasswordTxt.TabIndex = 4;
@@ -368,7 +368,7 @@
             this.MngUsers_RemoveUserCmbo.FormattingEnabled = true;
             this.MngUsers_RemoveUserCmbo.Location = new System.Drawing.Point(128, 19);
             this.MngUsers_RemoveUserCmbo.Margin = new System.Windows.Forms.Padding(4);
-            this.MngUsers_RemoveUserCmbo.MaxLength = 10;
+            this.MngUsers_RemoveUserCmbo.MaxLength = 25;
             this.MngUsers_RemoveUserCmbo.Name = "MngUsers_RemoveUserCmbo";
             this.MngUsers_RemoveUserCmbo.Size = new System.Drawing.Size(190, 24);
             this.MngUsers_RemoveUserCmbo.TabIndex = 0;
