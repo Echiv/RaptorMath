@@ -32,9 +32,9 @@ namespace RaptorMath
     // Kyle Bridges, Harvey Kreitzer                                    //
     // Date: 2/20/2014                                                  //
     //------------------------------------------------------------------//
-    //------------------------------------------------------------------//
     // Authors: Cody Jordan, Cian Carota                                //
     // Date:                                                   //
+    //------------------------------------------------------------------//
     public enum Window
     {
         authUser, adminHome, adminReport,
@@ -293,6 +293,7 @@ namespace RaptorMath
                 {
                     Group selectedGroup = FindGroupByName(newGroup);
                     Group oldGroup = FindGroupByID(selectedStudent.GroupID);
+                    GroupStudentChanged = XMLDriver.editStudent(newFName, newLName, selectedStudent, selectedGroup, studentList);
                     if (GroupStudentChanged.Item1)
                     {
                         RemoveGroupDrillsFromStudent(oldGroup, selectedStudent);
@@ -596,7 +597,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Remove a drill from group's XML file.</summary>
@@ -778,7 +779,7 @@ namespace RaptorMath
 
         //----------------------------------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                                            //
-        // Date:                                                                                        //
+        // Date: 3/13/14                                                                                //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Validate admin's password input.</summary>
         /// <returns>Boolean confirming password.</returns>
@@ -1030,7 +1031,6 @@ namespace RaptorMath
         // Date: 2/27/2014                                                  //
         // Purpose: Generate a random number between the set parameters.    //
         //------------------------------------------------------------------//
-
         public string CreateRandom()
         {
             // NOTE: Check if the range makes mathematical sense.
