@@ -21,7 +21,7 @@ namespace RaptorMath
     // Harvey Kreitzer                                                  //
     // Date: 2/16/2014                                                  //
     //------------------------------------------------------------------//
-    // Authors: Cody Jordan, Cian Carota                                         //
+    // Authors: Cody Jordan, Cian Carota                                //
     // Date:                                                  //
     //------------------------------------------------------------------//
     public class Admin

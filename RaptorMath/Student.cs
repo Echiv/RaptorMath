@@ -122,7 +122,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 3/10/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Resets drill object.</summary>
         public void ResetCurrentDrill()

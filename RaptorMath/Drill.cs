@@ -151,7 +151,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 3/10/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Zero-out values of Percent, Skipped, & Wrong.</summary>
         public void Reset()

@@ -86,7 +86,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Validate the administrator's info and then add the administrator to the admin XML
@@ -110,7 +110,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Validate the student info and then add the student to the student XML</summary>
@@ -136,7 +136,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Validate group info and then add the group to the group XML</summary>
@@ -154,7 +154,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Validate Drill info and then add the drill to the drill XML</summary>
@@ -179,7 +179,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Validation of admin data input.</summary>
@@ -200,7 +200,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Validation of student data input.</summary>
@@ -222,7 +222,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Validation of group data input.</summary>
@@ -238,7 +238,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Validation of drill data input.</summary>
@@ -259,7 +259,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Adjust student information.</summary>
@@ -296,7 +296,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Adjust group information.</summary>
@@ -314,7 +314,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Change admin's current password.</summary>
@@ -332,7 +332,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Remove user from data set.</summary>
@@ -363,7 +363,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Assign a drill to a student.</summary>
@@ -381,7 +381,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Assign a drill to a group.</summary>
@@ -399,7 +399,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Remove a drill from a student.</summary>
@@ -417,7 +417,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Remove a drill from a group.</summary>
@@ -435,7 +435,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Search dataset for a student's name.</summary>
@@ -448,7 +448,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Search dataset for a group's name.</summary>
@@ -461,7 +461,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Search dataset for a group's ID.</summary>
@@ -474,7 +474,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Search dataset for a group ID given group's name.</summary>
@@ -491,7 +491,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Add a drill to student's XML file.</summary>
@@ -504,7 +504,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Add a drill to group's XML file.</summary>
@@ -527,7 +527,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Add all group's drills to student's XML file.</summary>
@@ -545,7 +545,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Remove all group's drills from student's XML file.</summary>
@@ -563,7 +563,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Get data on all students associated with a group.</summary>
@@ -575,7 +575,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Remove a drill from student's XML file.</summary>
@@ -588,7 +588,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Remove a drill from group's XML file.</summary>
@@ -611,7 +611,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Check running status of program.</summary>
@@ -622,7 +622,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Access form.</summary>
@@ -633,7 +633,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Set status of program to not running.</summary>
@@ -643,7 +643,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Set window object.</summary>
@@ -654,7 +654,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Generate a list of all user's first names.</summary>
@@ -674,7 +674,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Generate a list of all user's last names.</summary>
@@ -699,7 +699,7 @@ namespace RaptorMath
         // Returns list of users for use in drop down list                  //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                     //
+        // Date: 3/10/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Fill a list of user names.</summary>
         /// <returns>List<String></returns>
@@ -749,7 +749,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Establish current Admin.</summary>
@@ -769,7 +769,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Validate admin's password input.</summary>
@@ -787,7 +787,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Check if selection is student.</summary>
@@ -800,7 +800,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Establish current student.</summary>
@@ -816,7 +816,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Validate user as admin, and navigate to admin home.</summary>
@@ -836,7 +836,7 @@ namespace RaptorMath
         }
 
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                                     //
+        // Authors: Cody Jordan, Cian Carota                                                            //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Validate user as admin, and navigate to admin home.</summary>
@@ -1022,7 +1022,6 @@ namespace RaptorMath
         // Date: 2/27/2014                                                  //
         // Purpose: Generate a random number between the set parameters.    //
         //------------------------------------------------------------------//
-
         public string CreateRandom()
         {
             // NOTE: Check if the range makes mathematical sense.
@@ -1297,7 +1296,7 @@ namespace RaptorMath
         // Date: 2/27/2014                                                  //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                      //
+        // Date: 3/10/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Fill a list of student objects.</summary>
         /// <returns>List<String></returns>
