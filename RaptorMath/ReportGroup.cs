@@ -16,7 +16,7 @@ namespace RaptorMath
         private bool isKeyPressed = false;
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle KeyUp event.</summary>
@@ -26,7 +26,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersKeyDown event.</summary>
@@ -41,7 +41,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersAndDigitsKeyDown event.</summary>
@@ -57,7 +57,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle DigitsKeyDown event.</summary>
@@ -72,7 +72,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersWithOneWhiteSpaceKeyPress event.</summary>
@@ -85,7 +85,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersAndDigitsKeyPress event.</summary>
@@ -97,7 +97,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle DigitsKeyPress event.</summary>
@@ -109,7 +109,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersKeyPress event.</summary>
@@ -121,7 +121,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
         /// <summary>Formating initial display of current date.</summary>
@@ -131,7 +131,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
         /// <summary>Formating initial display of current time.</summary>

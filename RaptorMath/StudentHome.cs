@@ -37,7 +37,7 @@ namespace RaptorMath
         private bool isKeyPressed = false;
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle KeyUp event.</summary>
@@ -47,7 +47,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersKeyDown event.</summary>
@@ -62,7 +62,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersAndDigitsKeyDown event.</summary>
@@ -78,7 +78,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle DigitsKeyDown event.</summary>
@@ -93,7 +93,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersWithOneWhiteSpaceKeyPress event.</summary>
@@ -106,7 +106,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersAndDigitsKeyPress event.</summary>
@@ -118,7 +118,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle DigitsKeyPress event.</summary>
@@ -130,7 +130,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersKeyPress event.</summary>
@@ -175,6 +175,11 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/11/2014                                                  //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Student Home form constructor.</summary>
+        /// <param name="manager">The program management class.</param>
         public StuHome_Form(Manager manager)
         {
             localManager = manager;
@@ -242,6 +247,10 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/11/2014                                                  //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Logout' button click.</summary>
         private void StuHome_LogoutBtn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to log out?",
@@ -259,6 +268,10 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/12/2014                                                  //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Exit' button click.</summary>
         private void StuHome_ExitBtn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to quit Raptor Math?",

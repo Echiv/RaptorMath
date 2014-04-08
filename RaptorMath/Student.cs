@@ -22,6 +22,9 @@ namespace RaptorMath
     // Harvey Kreitzer                                                  //
     // Date: 2/17/2014                                                  //
     //------------------------------------------------------------------//
+    // Authors: Cody Jordan, Cian Carota                                //
+    // Date:                                                   //
+    //------------------------------------------------------------------//
     public class Student
     {
         private int id;
@@ -85,6 +88,10 @@ namespace RaptorMath
         // Harvey Kreitzer                                                  //
         // Date: 2/17/2014                                                  //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Record object default constructor.</summary>
         public Student()
         {
             id = 0;
@@ -100,6 +107,10 @@ namespace RaptorMath
         // Harvey Kreitzer                                                  //
         // Date: 2/17/2014                                                  //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Record object constructor.</summary>
         public Student(int grpID, string fname, string lname, string login)
         {
             groupID = grpID;

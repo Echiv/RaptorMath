@@ -38,7 +38,7 @@ namespace RaptorMath
         private bool isKeyPressed = false;
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle KeyUp event.</summary>
@@ -48,7 +48,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersKeyDown event.</summary>
@@ -63,7 +63,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersAndDigitsKeyDown event.</summary>
@@ -79,7 +79,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle DigitsKeyDown event.</summary>
@@ -94,7 +94,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersWithOneWhiteSpaceKeyPress event.</summary>
@@ -107,7 +107,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersAndDigitsKeyPress event.</summary>
@@ -119,7 +119,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle DigitsKeyPress event.</summary>
@@ -131,7 +131,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersKeyPress event.</summary>
@@ -146,6 +146,11 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/12/2014                                                  //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>User Designation form constructor.</summary>
+        /// <param name="manager">The program management class.</param>
         public UseDesg_Form(Manager manager)
         {
             localManager = manager;
@@ -179,6 +184,11 @@ namespace RaptorMath
             UseDesg_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Refresh the content of the 'Name' combobox.</summary>
         private void RefreshLoginDropDownBox()
         {
             UseDesg_LoginCmbo.Items.Clear();
@@ -212,6 +222,10 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/16/2014                                                  //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Login' button click.</summary>
         private void UseDesg_LoginBtn_Click(object sender, EventArgs e)
         {
             localManager.currentPassword = UseDesg_passwordBox.Text;
@@ -247,6 +261,10 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/16/2014                                                  //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle Selection Change event.</summary>
         private void UseDesg_LoginDdl_SelectionChangeCommitted(object sender, EventArgs e)
         {
             localManager.currentUser = UseDesg_LoginCmbo.Text;
@@ -276,6 +294,11 @@ namespace RaptorMath
                 UseDesg_LoginBtn.Enabled = false;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle Text Change event.</summary>
         private void UseDesg_LoginCmbo_TextChanged(object sender, EventArgs e)
         {
             localManager.currentUser = UseDesg_LoginCmbo.Text;
