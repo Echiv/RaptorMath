@@ -223,6 +223,9 @@ namespace RaptorMath
             RefreshCmboBoxes();
 
             MngGroups_GroupNameCmbo.Select();
+            this.MngGroups_SelectGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
+            this.MngGroups_NewNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
+            this.MngGroups_GroupNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
 
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }

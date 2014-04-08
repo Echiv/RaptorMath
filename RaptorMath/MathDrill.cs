@@ -189,6 +189,8 @@ namespace RaptorMath
 
             MathDrill_InputTxt.Select();
 
+            this.MathDrill_InputTxt.KeyPress += new KeyPressEventHandler(RaptorMath_DigitsKeyPress);
+
             MathDrill_CurrentNumLbl.Text = localManager.GetCurrentNumber();
             this.StudentName = localManager.currentStudent.LoginName;
 
