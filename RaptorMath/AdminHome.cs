@@ -266,11 +266,13 @@ namespace RaptorMath
             bool passwordMatch = localManager.ChangeAdminPassword(AdminHome_CurrentPWTxt.Text, AdminHome_NewPWTxt.Text);
             if (passwordMatch == true)
             {
-                MessageBox.Show("Your password has been saved");
+                MessageBox.Show("Your password has been saved", "Raptor Math", MessageBoxButtons.OK);
+                AdminHome_CurrentPWTxt.Text = string.Empty;
+                AdminHome_NewPWTxt.Text = string.Empty;
             }
             else
             {
-                MessageBox.Show("The current password does not match the records");
+                MessageBox.Show("The current password does not match the records", "Raptor Math", MessageBoxButtons.OK);
             }
         }
 

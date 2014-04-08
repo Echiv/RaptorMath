@@ -68,7 +68,7 @@ namespace RaptorMath
             dataDirectory = System.IO.Path.Combine(AppData, "RaptorMath");
             if (!System.IO.Directory.Exists(dataDirectory))
                 System.IO.Directory.CreateDirectory(dataDirectory);
-            string adminFile = "RaptorMathRaptorMathAdmins.xml";
+            string adminFile = "RaptorMathAdmins.xml";
             string studentFile = "RaptorMathStudents.xml";
             string groupFile = "RaptorMathGroups.xml";
             string drillFile = "RaptorMathDrills.xml";
@@ -76,11 +76,6 @@ namespace RaptorMath
             studentXMLPath = System.IO.Path.Combine(dataDirectory, studentFile);
             groupXMLPath = System.IO.Path.Combine(dataDirectory, groupFile);
             drillXMLPath = System.IO.Path.Combine(dataDirectory, drillFile);
-            Console.WriteLine(adminXMLPath);
-            Console.WriteLine(studentXMLPath);
-            Console.WriteLine(groupXMLPath);
-            Console.WriteLine(drillXMLPath);
-            Console.WriteLine(dataDirectory);
             XMLDriver localXMLDriver = new XMLDriver(adminXMLPath, studentXMLPath, groupXMLPath, drillXMLPath, dataDirectory);
             XMLDriver = localXMLDriver;
             //XML.LoadXML(studentList, adminList);
@@ -337,26 +332,29 @@ namespace RaptorMath
         //----------------------------------------------------------------------------------------------//
         /// <summary>Remove user from data set.</summary>
         /// <param name="userName">User's name.</param>
-        public void removeUser(string userName)
+        public bool removeUser(string userName)
         {
-            bool isAdmin = adminList.Any(admin => admin.LoginName.Equals(userName.Remove(0, 8)));
+            bool isAdmin = false;
+            if(userName.Length > 9)
+                isAdmin = adminList.Any(admin => admin.LoginName.Equals(userName.Remove(0, 8)));
+            bool isStudent = studentList.Any(student => student.LoginName.Equals(userName));
             if (isAdmin)
             {
                 Admin admin = adminList.Where(adm => adm.LoginName.Equals(userName.Remove(0, 8))).FirstOrDefault();
-                if(admin != null)
-                    XMLDriver.Delete(admin, adminList);
-                /*TODO: else
-                    throw error*/
+                if (admin != null)
+                    return XMLDriver.Delete(admin, adminList);
+                else
+                    return false;
             }
-            bool isStudent = studentList.Any(student => student.LoginName.Equals(userName));
-            if(isStudent)
+            else if(isStudent)
             {
                 Student student = studentList.Where(stu => stu.LoginName.Equals(userName)).FirstOrDefault();
                 if(adminList != null)
-                    XMLDriver.Delete(student, studentList);
-                /*TODO: else
-                    throw error*/
+                    return XMLDriver.Delete(student, studentList);
+                return false;
             }
+            else
+                return false;
         }
 
         //----------------------------------------------------------------------------------------------//
@@ -474,12 +472,14 @@ namespace RaptorMath
         // Cody Jordan, Cian Carota                                                                     //
         // Date:                                                                                        //
         //----------------------------------------------------------------------------------------------//
-        /// <summary>Search dataset for a group ID with group's name.</summary>
+        /// <summary>Search dataset for a group ID given group's name.</summary>
         /// <param name="GroupName">Group's name.</param>
         /// <returns>Group ID.</returns>
         public int FindGroupIDByName(string GroupName)
         {
             Group foundGroup = groupList.Where(grp => grp.Name.Equals(GroupName)).FirstOrDefault();
+            if (GroupName == string.Empty)
+                return 1;
             if (foundGroup == null)
                 return 0;
             return (foundGroup.ID);

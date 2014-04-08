@@ -432,6 +432,7 @@ namespace RaptorMath
                 studentElement.Remove();
                 data.Save(studentXMLPath);
                 studentList.Remove(student);
+                return true;
             }
             return false;
         }

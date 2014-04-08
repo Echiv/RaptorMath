@@ -152,7 +152,7 @@
             this.EditStu_NewLastNameCmbo.FormattingEnabled = true;
             this.EditStu_NewLastNameCmbo.Location = new System.Drawing.Point(167, 145);
             this.EditStu_NewLastNameCmbo.Margin = new System.Windows.Forms.Padding(4);
-            this.EditStu_NewLastNameCmbo.MaxLength = 25;
+            this.EditStu_NewLastNameCmbo.MaxLength = 12;
             this.EditStu_NewLastNameCmbo.Name = "EditStu_NewLastNameCmbo";
             this.EditStu_NewLastNameCmbo.Size = new System.Drawing.Size(160, 24);
             this.EditStu_NewLastNameCmbo.TabIndex = 2;
@@ -182,7 +182,7 @@
             this.EditStu_NewFirstNameCmbo.FormattingEnabled = true;
             this.EditStu_NewFirstNameCmbo.Location = new System.Drawing.Point(167, 113);
             this.EditStu_NewFirstNameCmbo.Margin = new System.Windows.Forms.Padding(4);
-            this.EditStu_NewFirstNameCmbo.MaxLength = 25;
+            this.EditStu_NewFirstNameCmbo.MaxLength = 12;
             this.EditStu_NewFirstNameCmbo.Name = "EditStu_NewFirstNameCmbo";
             this.EditStu_NewFirstNameCmbo.Size = new System.Drawing.Size(160, 24);
             this.EditStu_NewFirstNameCmbo.TabIndex = 1;

@@ -110,12 +110,6 @@ namespace RaptorMath
                 InitialCreateDrillXML(drillXMLPath);
             }
 
-            Console.WriteLine("StartUP");
-            Console.WriteLine(adminXMLPath);
-            Console.WriteLine(groupXMLPath);
-            Console.WriteLine(drillXMLPath);
-            Console.WriteLine(studentXMLPath);
-
             LoadAdminXML(adminList, adminXMLPath);
             
             LoadDrillXML(mainDrillList, drillXMLPath);
@@ -644,7 +638,8 @@ namespace RaptorMath
         /// <summary>Delete an admin from Admin XML.</summary>
         /// <param name="admin">Admin object to be removed.</param>
         /// <param name="adminList">List of admin object.</param>
-        public void Delete(Admin admin, List<Admin> adminList)
+        /// <returns>Boolean confirmation.</returns>
+        public bool Delete(Admin admin, List<Admin> adminList)
         {
             XDocument data = XDocument.Load(adminXMLPath);
 
@@ -654,7 +649,9 @@ namespace RaptorMath
                 adminElement.Remove();
                 data.Save(adminXMLPath);
                 adminList.Remove(admin);
+                return true;
             }
+            return false;
         }
 
         //------------------------------------------------------------------//
@@ -907,7 +904,7 @@ namespace RaptorMath
         {
             if (!System.IO.File.Exists(fileName))
             {
-                MessageBox.Show("XML access error. Please redownload the application.", "Raptor Math", MessageBoxButtons.OK);
+                MessageBox.Show("Oops something happened to the XML, restart the program!", "Raptor Math", MessageBoxButtons.OK);
                 return false;
             }
 

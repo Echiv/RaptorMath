@@ -202,7 +202,9 @@
             this.ReportHome_GroupCmbo.Name = "ReportHome_GroupCmbo";
             this.ReportHome_GroupCmbo.Size = new System.Drawing.Size(183, 21);
             this.ReportHome_GroupCmbo.TabIndex = 1;
+            this.ReportHome_GroupCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
             this.ReportHome_GroupCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ReportHome_GroupCmbo_KeyPress);
+            this.ReportHome_GroupCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // ReportHome_StudentCmbo
             // 
@@ -216,7 +218,9 @@
             this.ReportHome_StudentCmbo.Name = "ReportHome_StudentCmbo";
             this.ReportHome_StudentCmbo.Size = new System.Drawing.Size(185, 21);
             this.ReportHome_StudentCmbo.TabIndex = 0;
+            this.ReportHome_StudentCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.ReportHome_StudentCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ReportHome_StudentCmbo_KeyPress);
+            this.ReportHome_StudentCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // ReportHome_GroupLbl
             // 
