@@ -252,14 +252,7 @@ namespace RaptorMath
                     CreateDrill_MaxValueTxt.Text = string.Empty;
                     CreateDrill_NumQuestionsTxt.Text = string.Empty;
                     CreateDrill_DrillNameTxt.Text = string.Empty;
-                }
-                else
-                { 
-                    //gets called even when there is an empty string, need to fix
-                    MessageBox.Show("A Drill with that name already exists! Please choose a different name", "Raptor Math", MessageBoxButtons.OK);
-                    CreateDrill_DrillNameTxt.Text = string.Empty;
-                }
-                
+                }                
             }
         }
 

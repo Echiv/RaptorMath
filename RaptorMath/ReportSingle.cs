@@ -178,7 +178,7 @@ namespace RaptorMath
 
             DisplayRecords();
 
-            this.StudentName = localManager.reportStudent;
+            this.StudentName = localManager.reportStudent.LoginName;
         }
 
         //------------------------------------------------------------------//
@@ -198,18 +198,8 @@ namespace RaptorMath
         /// <summary>Handle 'Close' button click.</summary>
         private void SingleReport_CloseBtn_Click(object sender, EventArgs e)
         {
-            localManager.SetWindow(Window.adminHome);
+            localManager.SetWindow(Window.studentReports);
             this.Close();
-        }
-
-        private void SingleReport_TimeLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SingleReport_DateLbl_Click(object sender, EventArgs e)
-        {
-
         }
 
         //------------------------------------------------------------------//
@@ -222,20 +212,12 @@ namespace RaptorMath
         {
             DateTime first = localManager.StartDate;
             DateTime second = localManager.EndDate;
-            string studentName = localManager.reportStudent;
-            List<Record> studentRecords = localManager.GenerateRecord(first, second, studentName);
-            MessageBox.Show(studentRecords.Count.ToString());
+            //string studentName = localManager.reportStudent;
+            List<Record> studentRecords = localManager.GenerateRecord(first, second, localManager.reportStudent.LoginName);
             // Search by calendar
-            foreach (Record record in studentRecords)
+            if (studentRecords.Count > 0)
             {
-
-                if ((DateTime.Parse(record.DateTaken) < first) && (DateTime.Parse(record.DateTaken)) > second)
-                {
-                    MessageBox.Show("No records found between the selected date range.", "Raptor Math", MessageBoxButtons.OK);
-                    break;
-                }
-
-                else
+                foreach (Record record in studentRecords)
                 {
                     DataGridViewRow newRow = (DataGridViewRow)SingleReport_DataDisplay.Rows[0].Clone();
                     newRow.Cells[0].Value = record.DrillName;
@@ -246,6 +228,11 @@ namespace RaptorMath
 
                     SingleReport_DataDisplay.Rows.Add(newRow);
                 }
+            }
+            else
+            {
+                MessageBox.Show("No records found between the selected date range.", "Raptor Math", MessageBoxButtons.OK);
+                SingleReport_CloseBtn.Select();
             }
         }
     }

@@ -164,6 +164,19 @@ namespace RaptorMath
             localManager = manager;
             InitializeDate();
             InitializeTimer();
+
+            GroupReport_GroupNameLbl.Visible = false;
+
+            if (localManager.reportGroup.ID > 0)
+            {
+                GroupReport_GroupNameLbl.Text = localManager.reportGroup.Name;
+                GroupReport_GroupNameLbl.Visible = true;
+                DisplayRecords();
+            }
+            else
+            {
+                MessageBox.Show("Group does not exist", "Raptor Math", MessageBoxButtons.OK);
+            }
         }
 
         //------------------------------------------------------------------//
@@ -183,13 +196,29 @@ namespace RaptorMath
         /// <summary>Handle 'Close' button click.</summary>
         private void GroupReport_CloseBtn_Click(object sender, EventArgs e)
         {
-            localManager.SetWindow(Window.adminHome);
+            localManager.SetWindow(Window.studentReports);
             this.Close();
         }
 
         private void ReportGroup_Form_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void DisplayRecords()
+        {
+            DateTime first = localManager.StartDate;
+            DateTime second = localManager.EndDate;
+
+            Tuple<string, float, float, float, int> GroupReportSummary = localManager.GenerateRecordForGroup(first, second, localManager.reportGroup);
+            DataGridViewRow newRow = (DataGridViewRow)GroupReport_DataDisplay.Rows[0].Clone();
+            newRow.Cells[0].Value = GroupReportSummary.Item1;
+            newRow.Cells[1].Value = GroupReportSummary.Item2;
+            newRow.Cells[2].Value = GroupReportSummary.Item3;
+            newRow.Cells[3].Value = GroupReportSummary.Item4;
+            newRow.Cells[4].Value = GroupReportSummary.Item5;
+
+            GroupReport_DataDisplay.Rows.Add(newRow);
         }
     }
 }

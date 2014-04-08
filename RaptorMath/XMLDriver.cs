@@ -400,6 +400,7 @@ namespace RaptorMath
                 data.Descendants("drill").Where(s => s.Element("drillName").Value == drill.DrillName).FirstOrDefault();
             if (DrillElement != null)
             {
+                MessageBox.Show("A Drill with that name already exists! Please choose a different name", "Raptor Math", MessageBoxButtons.OK);
                 return false;
             }
             else
@@ -442,8 +443,14 @@ namespace RaptorMath
         {
             if (admin != null)
             {
-                admin.Password = newPassword;
-                UpdateAdmin(admin, adminXMLPath);
+                if (newPassword.All(char.IsLetterOrDigit))
+                {
+                    admin.Password = newPassword;
+                    UpdateAdmin(admin, adminXMLPath);
+                    return true;
+                }
+                else
+                    return false;
             }
             return false;
         }
@@ -588,10 +595,6 @@ namespace RaptorMath
             {
                 if (groupDrill.ID == drill.ID)
                 {
-                    Console.WriteLine("groupDrill list ID");
-                    Console.WriteLine(groupDrill.ID);
-                    Console.WriteLine("drill ID");
-                    Console.WriteLine(drill.ID);
                     return true;
                 }
             }
@@ -830,7 +833,6 @@ namespace RaptorMath
         /// <param name="fileName">XML file name.</param>
         public void LoadDrillXML(List<Drill> drillList, string fileName)
         {
-            Console.WriteLine("LoadDrill");
             XDocument drillXML = XDocument.Load(fileName);
 
             foreach (XElement drill in drillXML.Root.Nodes())
@@ -1000,7 +1002,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
-        //------------------------------------------------------------------//
+        //-----------------------------------------------------------------//
         /// <summary>Add a drill node to Drill XML.</summary>
         /// <param name="newDrill">Drill object to be added.</param>
         /// <returns>XElement</returns>

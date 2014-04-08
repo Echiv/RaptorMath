@@ -194,6 +194,7 @@ namespace RaptorMath
             InitializeTimer();
             RefreshDrillDdl();
             StuHome_StartDrillBtn.Enabled = false;
+            StuHome_DrillDdl.Enabled = false;
             StuHome_DrillDdl.Select();
 
             this.StudentName = localManager.currentUser;
@@ -201,10 +202,14 @@ namespace RaptorMath
                 this.LastLogin = "--/--/----";
             else
                 this.LastLogin = localManager.currentStudent.LastLogin;
-            //this.Questions = localManager.GetNumQuestions();
+
+            if (localManager.currentStudent.CurDrillList.Count > 0)
+                StuHome_DrillDdl.Enabled = true;
+            StuHome_TotalNumLbl.Visible = false;
+            StuHome_NumQuestionsLbl.Visible = false;
 
             localManager.SaveLoginDate(localManager.studentXMLPath,
-                localManager.currentStudent.LoginName, DateTime.Now.ToString("M/d/yyyy"));
+            localManager.currentStudent.LoginName, DateTime.Now.ToString("M/d/yyyy"));
         }
 
         //------------------------------------------------------------------//
@@ -309,6 +314,9 @@ namespace RaptorMath
         {
             Drill currentDrill = localManager.currentStudent.curDrillList.Where(dri => dri.DrillName.Equals(StuHome_DrillDdl.Text)).FirstOrDefault();
             localManager.currentStudent.curDrill = currentDrill;
+            StuHome_TotalNumLbl.Text = localManager.GetNumQuestions();
+            StuHome_TotalNumLbl.Visible = true;
+            StuHome_NumQuestionsLbl.Visible = true;
         }
 
         //------------------------------------------------------------------//

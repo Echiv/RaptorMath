@@ -306,20 +306,20 @@ namespace RaptorMath
                 bool isCreatedUser = false;
                 int groupID = localManager.FindGroupIDByName(MngUsers_GroupCmbo.Text.Trim());
                 if (groupID == 0)
-                    MessageBox.Show("The group entered does not match any groups.", "Raptor Math", MessageBoxButtons.OKCancel);
+                    MessageBox.Show("The group entered does not match any groups.", "Raptor Math", MessageBoxButtons.OK);
                 else
                     isCreatedUser = localManager.CreateUser(groupID, MngUsers_FirstNameCmbo.Text, MngUsers_LastNameCmbo.Text, "Unknown");
                 if (isCreatedUser)
                 {
                     RefreshComboBoxes();
-                    MessageBox.Show("New user created.", "Raptor Math", MessageBoxButtons.OKCancel);
+                    MessageBox.Show("New user created.", "Raptor Math", MessageBoxButtons.OK);
                     MngUsers_FirstNameCmbo.Text = string.Empty;
                     MngUsers_LastNameCmbo.Text = string.Empty;
                     MngUsers_GroupCmbo.Text = string.Empty;
                     MngUsers_FirstNameCmbo.Select();
                 }
                 else
-                    MessageBox.Show("Entered student name already exists.", "Raptor Math", MessageBoxButtons.OKCancel);
+                    MessageBox.Show("Entered student name already exists.", "Raptor Math", MessageBoxButtons.OK);
             }
             else if ((MngUsers_AdminRdo.Checked)
                 && ((MngUsers_PasswordTxt.Text.Length > 0) && (MngUsers_ConfirmPasswordTxt.Text.Length > 0))
