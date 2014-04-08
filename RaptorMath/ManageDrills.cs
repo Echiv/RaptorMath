@@ -608,10 +608,5 @@ namespace RaptorMath
                 RefreshSelectAssignedDrillCmbo(localManager.FindGroupByName(MngDrills_StudentOrGroupCmbo.Text));
             }
         }
-
-        private void ManageDrills_Form_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

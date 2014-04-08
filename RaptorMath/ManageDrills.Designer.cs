@@ -406,7 +406,6 @@
             this.Name = "ManageDrills_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raptor Math";
-            this.Load += new System.EventHandler(this.ManageDrills_Form_Load);
             this.MngDrills_UserInfoBox.ResumeLayout(false);
             this.MngDrills_UserInfoBox.PerformLayout();
             this.MngDrills_DrillBox.ResumeLayout(false);

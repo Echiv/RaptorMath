@@ -200,11 +200,11 @@ namespace RaptorMath
             this.Close();
         }
 
-        private void ReportGroup_Form_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/1/14                                                     //
+        //------------------------------------------------------------------//
+        /// <summary>Displays the Group information in the GroupReport</summary>
         private void DisplayRecords()
         {
             DateTime first = localManager.StartDate;
