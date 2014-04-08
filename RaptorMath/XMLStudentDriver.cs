@@ -223,12 +223,7 @@ namespace RaptorMath
             bool hasStudentChanged = false;
             if (selectedStudent != null)
             {
-                int groupID = 0;
-                if (group != null)
-                {
-                    groupID = group.ID;
-                }
-                hasGroupChanged = compareOldAndNewStudentInfo(newFName, newLName, selectedStudent, groupID);
+                hasGroupChanged = compareOldAndNewStudentInfo(newFName, newLName, selectedStudent, group);
                 hasStudentChanged = UpdateStudent(selectedStudent, studentXMLPath, groupXMLPath, dataDirectory);
             }
             else
@@ -248,17 +243,21 @@ namespace RaptorMath
         /// <param name="selectedStudent">Student object to check.</param>
         /// <param name="newGroup">Associated group's name.</param>
         /// <returns>Boolean confirmation of change.</returns>
-        public bool compareOldAndNewStudentInfo(string newFName, string newLName, Student selectedStudent, int newGroup/*, int oldGroup*/)
+        public bool compareOldAndNewStudentInfo(string newFName, string newLName, Student selectedStudent, Group newGroup/*, int oldGroup*/)
         {
             bool hasGroupChanged = false;
             if ((newFName != selectedStudent.FirstName) && (newFName != string.Empty))
                 selectedStudent.FirstName = newFName;
             if ((newLName != selectedStudent.LastName) && (newLName != string.Empty))
                 selectedStudent.LastName = newLName;
-            if ((newGroup != selectedStudent.GroupID) && (newGroup != 0))
+            if (newGroup != null)
             { 
-                selectedStudent.GroupID = newGroup;
+                selectedStudent.GroupID = newGroup.ID;
                 hasGroupChanged = true;
+            }
+            else
+            {
+                selectedStudent.GroupID = 0;
             }
             selectedStudent.LoginName = selectedStudent.FirstName + " " + selectedStudent.LastName;
             return hasGroupChanged;
@@ -283,7 +282,7 @@ namespace RaptorMath
             XDocument groupData = XDocument.Load(groupXMLPath);
             XElement GroupElement = groupData.Descendants("group").Where(group => group.Attribute("ID").Value.Equals(student.GroupID.ToString())).FirstOrDefault();
 
-            if ((studentIDElement != null) && (GroupElement != null))
+            if ((studentIDElement != null) || (GroupElement != null))
             {
                 if (studentNameElement == null)
                 {
@@ -298,31 +297,25 @@ namespace RaptorMath
                     studentIDElement.SetElementValue("firstName", student.FirstName);
                     studentIDElement.SetElementValue("lastName", student.LastName);
                     studentIDElement.SetElementValue("recPath", student.RecordsPath);
-                    studentIDElement.SetElementValue("group", student.GroupID);
+                    if (GroupElement != null)
+                        studentIDElement.SetElementValue("group", student.GroupID);
                     data.Save(studentXMLPath);
                     return true;
                 }
-                else
-                {
-                    MessageBox.Show("A student by that name already exists", "Raptor Math", MessageBoxButtons.OK);
-                    return false;
-                }
-            }
-            else
-            {
-                if ((GroupElement != null) && (student.GroupID != 0))
+                if (GroupElement != null)
                 {
                     studentIDElement.SetElementValue("group", student.GroupID);
                     data.Save(studentXMLPath);
                     return true;
                 }
-                else
+                if (GroupElement == null)
                 {
                     MessageBox.Show("Group name entered does not exist", "Raptor Math", MessageBoxButtons.OK);
                     return false;
-                }
-
+                }                
             }
+            
+            return false;
         }
 
         //------------------------------------------------------------------//
