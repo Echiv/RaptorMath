@@ -30,6 +30,9 @@
 //==============================================================//
 // Authors: Cody Jordan and Cian Carota                         //
 // Changes:                                                     //
+//          • Removed ability to creat drills to Create Drill   //
+//            form.                                             //
+//          • Added menu buttons to access admin tools.         //
 //          • Refactored: Accessors, constructors, click events //
 //            and other functions.                              //
 //          • Added support for key events.                     //

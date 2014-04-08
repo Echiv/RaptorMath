@@ -6,6 +6,10 @@
 // Purpose: This class creates a Record object that contains    //
 //          all pertinent data required to fill it.             //
 //==============================================================//
+// Authors: Cody Jordan and Cian Carota                         //
+// Changes:                                                     //
+//          • Refactored: Accessors and constructors            //
+//==============================================================//
 
 using System;
 using System.Collections.Generic;

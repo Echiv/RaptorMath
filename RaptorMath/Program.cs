@@ -9,6 +9,10 @@
 //          If the program is already running, an error message //
 //          will display and will not open up another instance. //
 //==============================================================//
+// Authors: Cody Jordan and Cian Carota                         //
+// Changes:                                                     //
+//          • Refactored: Accessors and constructors            //
+//==============================================================//
 
 using System;
 using System.Collections.Generic;

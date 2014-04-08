@@ -1,4 +1,23 @@
-﻿using System;
+﻿//==============================================================//
+//					     ReportGroup.cs		       		        //
+//==============================================================//
+// Program Name: RaptorMath                                     //
+// Authors: Cody Jordan and Cian Carota                         //
+// Purpose: This form allows the user select the specific       //
+//            student/group and date range of drill records     //
+//            to view.                                          //
+// User:    • The user is assumed to be an admin.               //
+//          • The user must select either a student or group.   //
+//          • The user must define the date range of the drill  //
+//            records.                                          //
+//          • The user can then click the Single or Group       //
+//            button to view the report.                        //
+//          • The user can click the Close button to return to  //
+//            Admin home or click the Exit button to end the    //
+//            program.                                          //
+//==============================================================//
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

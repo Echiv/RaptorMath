@@ -1,4 +1,16 @@
-﻿using System;
+﻿//==============================================================//
+//					     ReportGroup.cs		       		        //
+//==============================================================//
+// Program Name: RaptorMath                                     //
+// Authors: Cody Jordan and Cian Carota                         //
+// Purpose: This form allows the user comparatively view the    //
+//          the records of students in a group.                 //
+// User:    • The user is assumed to be an admin.               //
+//          • The user can click the Close button to return to  //
+//            Admin home.                                       //
+//==============================================================//
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

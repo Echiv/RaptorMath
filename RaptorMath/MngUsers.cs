@@ -17,6 +17,9 @@
 //          • The user can select the name of a current user.   //
 //          • The user can then click the Remove User button to //
 //            remove the selected user.                         //
+//          • The user can click the Close button to return to  //
+//            Admin Home or click the Exit button to end the    //
+//            program.                                          //
 //==============================================================//
 
 using System;

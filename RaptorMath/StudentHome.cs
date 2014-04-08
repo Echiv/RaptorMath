@@ -16,6 +16,12 @@
 // Result:  The Manager sets window to the Math Drill page and  //
 //          closes the current one.                             //
 //==============================================================//
+// Authors: Cody Jordan and Cian Carota                         //
+// Changes:                                                     //
+//          • Refactored: Accessors, constructors, click events //
+//            and other functions.                              //
+//          • Added support for key events.                     //
+//==============================================================//
 
 using System;
 using System.Collections.Generic;
