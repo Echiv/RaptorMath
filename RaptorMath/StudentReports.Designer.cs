@@ -55,6 +55,7 @@
             this.ReportHome_AdminNameLbl = new System.Windows.Forms.Label();
             this.ReportHome_TimeLbl = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.ReportHome_DateRangeBox.SuspendLayout();
             this.ReportHome_SelectionBox.SuspendLayout();
             this.ReportHome_ButtonBox.SuspendLayout();
@@ -146,6 +147,7 @@
             this.ReportHome_GroupReportBtn.Size = new System.Drawing.Size(117, 32);
             this.ReportHome_GroupReportBtn.TabIndex = 1;
             this.ReportHome_GroupReportBtn.Text = "Group Report";
+            this.toolTip1.SetToolTip(this.ReportHome_GroupReportBtn, "Generates the report for your selected group.");
             this.ReportHome_GroupReportBtn.UseVisualStyleBackColor = true;
             this.ReportHome_GroupReportBtn.Click += new System.EventHandler(this.ReportHome_GroupReportBtn_Click);
             // 
@@ -258,6 +260,7 @@
             this.ReportHome_SingleReportBtn.Size = new System.Drawing.Size(117, 30);
             this.ReportHome_SingleReportBtn.TabIndex = 0;
             this.ReportHome_SingleReportBtn.Text = "Single Report";
+            this.toolTip1.SetToolTip(this.ReportHome_SingleReportBtn, "Generates the report for your selected student.");
             this.ReportHome_SingleReportBtn.UseVisualStyleBackColor = true;
             this.ReportHome_SingleReportBtn.Click += new System.EventHandler(this.ReportHome_SingleReportBtn_Click);
             // 
@@ -283,6 +286,7 @@
             this.ReportHome_ExitBtn.Size = new System.Drawing.Size(117, 32);
             this.ReportHome_ExitBtn.TabIndex = 1;
             this.ReportHome_ExitBtn.Text = "Exit";
+            this.toolTip1.SetToolTip(this.ReportHome_ExitBtn, "Closes the program.");
             this.ReportHome_ExitBtn.UseVisualStyleBackColor = true;
             this.ReportHome_ExitBtn.Click += new System.EventHandler(this.ReportHome_ExitBtn_Click);
             // 
@@ -296,6 +300,7 @@
             this.ReportHome_CloseBtn.Size = new System.Drawing.Size(117, 32);
             this.ReportHome_CloseBtn.TabIndex = 0;
             this.ReportHome_CloseBtn.Text = "Close";
+            this.toolTip1.SetToolTip(this.ReportHome_CloseBtn, "Return to the administration\'s homepage.");
             this.ReportHome_CloseBtn.UseVisualStyleBackColor = true;
             this.ReportHome_CloseBtn.Click += new System.EventHandler(this.ReportHome_CloseBtn_Click);
             // 
@@ -439,5 +444,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ComboBox ReportHome_GroupCmbo;
         private System.Windows.Forms.ComboBox ReportHome_StudentCmbo;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

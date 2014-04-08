@@ -74,6 +74,7 @@
             this.UseDesg_ExitBtn.Size = new System.Drawing.Size(125, 40);
             this.UseDesg_ExitBtn.TabIndex = 0;
             this.UseDesg_ExitBtn.Text = "Exit";
+            this.toolTip1.SetToolTip(this.UseDesg_ExitBtn, "Closes the program.");
             this.UseDesg_ExitBtn.UseVisualStyleBackColor = true;
             this.UseDesg_ExitBtn.Click += new System.EventHandler(this.UseDesg_ExitBtn_Click);
             // 
@@ -164,6 +165,7 @@
             this.UseDesg_LoginBtn.Size = new System.Drawing.Size(125, 40);
             this.UseDesg_LoginBtn.TabIndex = 2;
             this.UseDesg_LoginBtn.Text = "Login";
+            this.toolTip1.SetToolTip(this.UseDesg_LoginBtn, "Takes you to your homepage");
             this.UseDesg_LoginBtn.UseVisualStyleBackColor = true;
             this.UseDesg_LoginBtn.Click += new System.EventHandler(this.UseDesg_LoginBtn_Click);
             // 

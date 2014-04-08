@@ -46,6 +46,7 @@
             this.Skipped = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SingleReport_Timer = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SingleReport_UserInfoBox.SuspendLayout();
             this.SingleReport_ButtonBox.SuspendLayout();
             this.SingleReport_DrillBox.SuspendLayout();
@@ -131,6 +132,7 @@
             this.SingleReport_CloseBtn.Size = new System.Drawing.Size(124, 27);
             this.SingleReport_CloseBtn.TabIndex = 0;
             this.SingleReport_CloseBtn.Text = "Close";
+            this.toolTip1.SetToolTip(this.SingleReport_CloseBtn, "Return to the student reports homepage.");
             this.SingleReport_CloseBtn.UseVisualStyleBackColor = true;
             this.SingleReport_CloseBtn.Click += new System.EventHandler(this.SingleReport_CloseBtn_Click);
             // 
@@ -267,5 +269,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Questions;
         private System.Windows.Forms.DataGridViewTextBoxColumn Percent;
         private System.Windows.Forms.DataGridViewTextBoxColumn Skipped;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

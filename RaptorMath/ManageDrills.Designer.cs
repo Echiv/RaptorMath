@@ -55,6 +55,7 @@
             this.MngDrills_CloseBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.MngDrills_Timer = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.MngDrills_UserInfoBox.SuspendLayout();
             this.MngDrills_DrillBox.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -303,6 +304,7 @@
             this.MngDrills_AddRmvDrillBtn.Size = new System.Drawing.Size(100, 28);
             this.MngDrills_AddRmvDrillBtn.TabIndex = 2;
             this.MngDrills_AddRmvDrillBtn.Text = "Add/Rmv Drill";
+            this.toolTip1.SetToolTip(this.MngDrills_AddRmvDrillBtn, "Will either assign a drill or remove a drill based on your selections.");
             this.MngDrills_AddRmvDrillBtn.UseVisualStyleBackColor = true;
             this.MngDrills_AddRmvDrillBtn.Click += new System.EventHandler(this.MngDrills_AddRmvDrillBtn_Click);
             // 
@@ -348,6 +350,7 @@
             this.MngDrills_ExitBtn.Size = new System.Drawing.Size(100, 28);
             this.MngDrills_ExitBtn.TabIndex = 1;
             this.MngDrills_ExitBtn.Text = "Exit";
+            this.toolTip1.SetToolTip(this.MngDrills_ExitBtn, "Closes the program.");
             this.MngDrills_ExitBtn.UseVisualStyleBackColor = true;
             this.MngDrills_ExitBtn.Click += new System.EventHandler(this.MngDrills_ExitBtn_Click);
             // 
@@ -360,6 +363,7 @@
             this.MngDrills_CloseBtn.Size = new System.Drawing.Size(100, 28);
             this.MngDrills_CloseBtn.TabIndex = 0;
             this.MngDrills_CloseBtn.Text = "Close";
+            this.toolTip1.SetToolTip(this.MngDrills_CloseBtn, "Return to the administration\'s homepage.");
             this.MngDrills_CloseBtn.UseVisualStyleBackColor = true;
             this.MngDrills_CloseBtn.Click += new System.EventHandler(this.MngDrills_CloseBtn_Click);
             // 
@@ -402,6 +406,7 @@
             this.Name = "ManageDrills_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raptor Math";
+            this.Load += new System.EventHandler(this.ManageDrills_Form_Load);
             this.MngDrills_UserInfoBox.ResumeLayout(false);
             this.MngDrills_UserInfoBox.PerformLayout();
             this.MngDrills_DrillBox.ResumeLayout(false);
@@ -446,5 +451,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton MngDrills_GroupRdo;
         private System.Windows.Forms.RadioButton MngDrills_StudentRdo;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

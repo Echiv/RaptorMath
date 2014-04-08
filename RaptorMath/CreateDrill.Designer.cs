@@ -56,6 +56,7 @@
             this.CreateDrill_AdditionRdo = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.CreateDrill_Timer = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.CreateDrill_UserInfoBox.SuspendLayout();
             this.CreateDrill_ButtonBox.SuspendLayout();
             this.CreateDrill_CreateBox.SuspendLayout();
@@ -144,6 +145,7 @@
             this.CreateDrill_ExitBtn.Size = new System.Drawing.Size(121, 32);
             this.CreateDrill_ExitBtn.TabIndex = 1;
             this.CreateDrill_ExitBtn.Text = "Exit";
+            this.toolTip1.SetToolTip(this.CreateDrill_ExitBtn, "Closes the program.");
             this.CreateDrill_ExitBtn.UseVisualStyleBackColor = true;
             this.CreateDrill_ExitBtn.Click += new System.EventHandler(this.CreateDrill_ExitBtn_Click);
             // 
@@ -157,6 +159,7 @@
             this.CreateDrill_CloseBtn.Size = new System.Drawing.Size(121, 32);
             this.CreateDrill_CloseBtn.TabIndex = 0;
             this.CreateDrill_CloseBtn.Text = "Close";
+            this.toolTip1.SetToolTip(this.CreateDrill_CloseBtn, "Return to the administration\'s homepage.");
             this.CreateDrill_CloseBtn.UseVisualStyleBackColor = true;
             this.CreateDrill_CloseBtn.Click += new System.EventHandler(this.CreateDrill_CloseBtn_Click);
             // 
@@ -170,6 +173,7 @@
             this.CreateDrill_SaveDrillBtn.Size = new System.Drawing.Size(121, 32);
             this.CreateDrill_SaveDrillBtn.TabIndex = 4;
             this.CreateDrill_SaveDrillBtn.Text = "Save Drill";
+            this.toolTip1.SetToolTip(this.CreateDrill_SaveDrillBtn, "Saves the problem set you have created.");
             this.CreateDrill_SaveDrillBtn.UseVisualStyleBackColor = true;
             this.CreateDrill_SaveDrillBtn.Click += new System.EventHandler(this.CreateDrill_SaveDrillBtn_Click);
             // 
@@ -448,6 +452,7 @@
         private System.Windows.Forms.GroupBox CreateDrill_QuestionBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Timer CreateDrill_Timer;
+        private System.Windows.Forms.ToolTip toolTip1;
 
     }
 }

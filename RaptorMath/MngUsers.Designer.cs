@@ -59,6 +59,7 @@
             this.MngUsers_CloseBtn = new System.Windows.Forms.Button();
             this.MngUsers_ExitBtn = new System.Windows.Forms.Button();
             this.MngUsers_Timer = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.MngUsers_UserInfoBox.SuspendLayout();
             this.MngUsers_AddUserBox.SuspendLayout();
@@ -263,6 +264,7 @@
             this.MngUsers_SaveUserBtm.Size = new System.Drawing.Size(115, 30);
             this.MngUsers_SaveUserBtm.TabIndex = 7;
             this.MngUsers_SaveUserBtm.Text = "Save User";
+            this.toolTip1.SetToolTip(this.MngUsers_SaveUserBtm, "Saves the newly created student or admin.");
             this.MngUsers_SaveUserBtm.UseVisualStyleBackColor = true;
             this.MngUsers_SaveUserBtm.Click += new System.EventHandler(this.MngUsers_SaveUserBtm_Click);
             // 
@@ -389,6 +391,7 @@
             this.MngUsers_RemoveUserBtn.Size = new System.Drawing.Size(115, 30);
             this.MngUsers_RemoveUserBtn.TabIndex = 1;
             this.MngUsers_RemoveUserBtn.Text = "Remove User";
+            this.toolTip1.SetToolTip(this.MngUsers_RemoveUserBtn, "“Removes the selected admin or student from the system.");
             this.MngUsers_RemoveUserBtn.UseVisualStyleBackColor = true;
             this.MngUsers_RemoveUserBtn.Click += new System.EventHandler(this.MngUsers_RemoveUserBtn_Click);
             // 
@@ -423,6 +426,7 @@
             this.MngUsers_CloseBtn.Size = new System.Drawing.Size(115, 30);
             this.MngUsers_CloseBtn.TabIndex = 0;
             this.MngUsers_CloseBtn.Text = "Close";
+            this.toolTip1.SetToolTip(this.MngUsers_CloseBtn, "Return to the administration\'s homepage.");
             this.MngUsers_CloseBtn.UseVisualStyleBackColor = true;
             this.MngUsers_CloseBtn.Click += new System.EventHandler(this.MngUsers_CloseBtn_Click);
             // 
@@ -434,6 +438,7 @@
             this.MngUsers_ExitBtn.Size = new System.Drawing.Size(115, 30);
             this.MngUsers_ExitBtn.TabIndex = 1;
             this.MngUsers_ExitBtn.Text = "Exit";
+            this.toolTip1.SetToolTip(this.MngUsers_ExitBtn, "Closes the program.");
             this.MngUsers_ExitBtn.UseVisualStyleBackColor = true;
             this.MngUsers_ExitBtn.Click += new System.EventHandler(this.MngUsers_ExitBtn_Click);
             // 
@@ -501,5 +506,6 @@
         private System.Windows.Forms.ComboBox MngUsers_RemoveUserCmbo;
         private System.Windows.Forms.Label MngUsers_LastNameLbl;
         private System.Windows.Forms.ComboBox MngUsers_LastNameCmbo;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

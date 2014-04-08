@@ -50,6 +50,7 @@
             this.MngGroups_ButtonBox = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.MngGroups_Timer = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.MngGroups_UserInfoBox.SuspendLayout();
             this.MngGroups_GroupBox.SuspendLayout();
             this.MngGroups_ModifyBox.SuspendLayout();
@@ -142,6 +143,7 @@
             this.MngGroups_CreateBtn.Size = new System.Drawing.Size(127, 33);
             this.MngGroups_CreateBtn.TabIndex = 1;
             this.MngGroups_CreateBtn.Text = "Create Group";
+            this.toolTip1.SetToolTip(this.MngGroups_CreateBtn, "Creates a new group with the given name.");
             this.MngGroups_CreateBtn.UseVisualStyleBackColor = true;
             this.MngGroups_CreateBtn.Click += new System.EventHandler(this.MngGroups_CreateBtn_Click);
             // 
@@ -231,6 +233,7 @@
             this.MngGroups_RenameBtn.Size = new System.Drawing.Size(127, 33);
             this.MngGroups_RenameBtn.TabIndex = 2;
             this.MngGroups_RenameBtn.Text = "Rename Group";
+            this.toolTip1.SetToolTip(this.MngGroups_RenameBtn, "Assigns the entered name to the selected group.");
             this.MngGroups_RenameBtn.UseVisualStyleBackColor = true;
             this.MngGroups_RenameBtn.Click += new System.EventHandler(this.MngGroups_RenameBtn_Click);
             // 
@@ -265,6 +268,7 @@
             this.MngGroups_ExitBtn.Size = new System.Drawing.Size(127, 33);
             this.MngGroups_ExitBtn.TabIndex = 1;
             this.MngGroups_ExitBtn.Text = "Exit";
+            this.toolTip1.SetToolTip(this.MngGroups_ExitBtn, "Closes the program.");
             this.MngGroups_ExitBtn.UseVisualStyleBackColor = true;
             this.MngGroups_ExitBtn.Click += new System.EventHandler(this.MngGroups_ExitBtn_Click);
             // 
@@ -278,6 +282,7 @@
             this.MngGroups_CloseBtn.Size = new System.Drawing.Size(127, 33);
             this.MngGroups_CloseBtn.TabIndex = 0;
             this.MngGroups_CloseBtn.Text = "Close";
+            this.toolTip1.SetToolTip(this.MngGroups_CloseBtn, "Return to the administration\'s homepage.");
             this.MngGroups_CloseBtn.UseVisualStyleBackColor = true;
             this.MngGroups_CloseBtn.Click += new System.EventHandler(this.MngGroups_CloseBtn_Click);
             // 
@@ -369,5 +374,6 @@
         private System.Windows.Forms.ComboBox MngGroups_GroupNameCmbo;
         private System.Windows.Forms.ComboBox MngGroups_NewNameCmbo;
         private System.Windows.Forms.ComboBox MngGroups_SelectGroupCmbo;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

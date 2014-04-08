@@ -33,6 +33,11 @@
             this.GroupReport_CloseBtn = new System.Windows.Forms.Button();
             this.GroupReport_Timer = new System.Windows.Forms.Timer(this.components);
             this.GroupReport_DataDisplay = new System.Windows.Forms.DataGridView();
+            this.DateTaken = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Percent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Wrong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumQuestions = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Skipped = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupReport_ButtonBox = new System.Windows.Forms.GroupBox();
             this.GroupReport_DrillBox = new System.Windows.Forms.GroupBox();
             this.GroupReport_UserInfoBox = new System.Windows.Forms.GroupBox();
@@ -41,11 +46,7 @@
             this.GroupReport_TimeLbl = new System.Windows.Forms.Label();
             this.GroupReport_WindowLbl = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.DateTaken = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Percent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Wrong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumQuestions = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Skipped = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GroupReport_DataDisplay)).BeginInit();
             this.GroupReport_ButtonBox.SuspendLayout();
             this.GroupReport_DrillBox.SuspendLayout();
@@ -62,6 +63,7 @@
             this.GroupReport_CloseBtn.Size = new System.Drawing.Size(115, 27);
             this.GroupReport_CloseBtn.TabIndex = 0;
             this.GroupReport_CloseBtn.Text = "Close";
+            this.toolTip1.SetToolTip(this.GroupReport_CloseBtn, "Return to the student reports homepage.");
             this.GroupReport_CloseBtn.UseVisualStyleBackColor = true;
             this.GroupReport_CloseBtn.Click += new System.EventHandler(this.GroupReport_CloseBtn_Click);
             // 
@@ -89,6 +91,41 @@
             this.GroupReport_DataDisplay.RowHeadersVisible = false;
             this.GroupReport_DataDisplay.Size = new System.Drawing.Size(544, 329);
             this.GroupReport_DataDisplay.TabIndex = 0;
+            // 
+            // DateTaken
+            // 
+            this.DateTaken.HeaderText = "Name";
+            this.DateTaken.Name = "DateTaken";
+            this.DateTaken.ReadOnly = true;
+            this.DateTaken.Width = 74;
+            // 
+            // Percent
+            // 
+            this.Percent.HeaderText = "AvgPercent";
+            this.Percent.Name = "Percent";
+            this.Percent.ReadOnly = true;
+            this.Percent.Width = 116;
+            // 
+            // Wrong
+            // 
+            this.Wrong.HeaderText = "AvgWrong";
+            this.Wrong.Name = "Wrong";
+            this.Wrong.ReadOnly = true;
+            this.Wrong.Width = 107;
+            // 
+            // NumQuestions
+            // 
+            this.NumQuestions.HeaderText = "AvgSkipped";
+            this.NumQuestions.Name = "NumQuestions";
+            this.NumQuestions.ReadOnly = true;
+            this.NumQuestions.Width = 118;
+            // 
+            // Skipped
+            // 
+            this.Skipped.HeaderText = "TotalSetsDone";
+            this.Skipped.Name = "Skipped";
+            this.Skipped.ReadOnly = true;
+            this.Skipped.Width = 140;
             // 
             // GroupReport_ButtonBox
             // 
@@ -191,41 +228,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(562, 503);
             this.tableLayoutPanel1.TabIndex = 38;
             // 
-            // DateTaken
-            // 
-            this.DateTaken.HeaderText = "Name";
-            this.DateTaken.Name = "DateTaken";
-            this.DateTaken.ReadOnly = true;
-            this.DateTaken.Width = 74;
-            // 
-            // Percent
-            // 
-            this.Percent.HeaderText = "AvgPercent";
-            this.Percent.Name = "Percent";
-            this.Percent.ReadOnly = true;
-            this.Percent.Width = 116;
-            // 
-            // Wrong
-            // 
-            this.Wrong.HeaderText = "AvgWrong";
-            this.Wrong.Name = "Wrong";
-            this.Wrong.ReadOnly = true;
-            this.Wrong.Width = 107;
-            // 
-            // NumQuestions
-            // 
-            this.NumQuestions.HeaderText = "AvgSkipped";
-            this.NumQuestions.Name = "NumQuestions";
-            this.NumQuestions.ReadOnly = true;
-            this.NumQuestions.Width = 118;
-            // 
-            // Skipped
-            // 
-            this.Skipped.HeaderText = "TotalSetsDone";
-            this.Skipped.Name = "Skipped";
-            this.Skipped.ReadOnly = true;
-            this.Skipped.Width = 140;
-            // 
             // ReportGroup_Form
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -269,5 +271,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Wrong;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumQuestions;
         private System.Windows.Forms.DataGridViewTextBoxColumn Skipped;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
