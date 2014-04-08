@@ -50,6 +50,7 @@
             this.EditStu_CloseBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.EditStu_Timer = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.EditStu_UserInfoBox.SuspendLayout();
             this.EditStu_SettingBox.SuspendLayout();
             this.EditStu_ButtonBox.SuspendLayout();
@@ -215,6 +216,7 @@
             this.EditStu_SaveStudentBtn.Size = new System.Drawing.Size(137, 33);
             this.EditStu_SaveStudentBtn.TabIndex = 4;
             this.EditStu_SaveStudentBtn.Text = "Save Student";
+            this.toolTip1.SetToolTip(this.EditStu_SaveStudentBtn, "Saves the changes to the selected student.");
             this.EditStu_SaveStudentBtn.UseVisualStyleBackColor = true;
             this.EditStu_SaveStudentBtn.Click += new System.EventHandler(this.EditStu_SaveStudentBtn_Click);
             // 
@@ -272,6 +274,7 @@
             this.EditStu_ExitBtn.Size = new System.Drawing.Size(100, 28);
             this.EditStu_ExitBtn.TabIndex = 1;
             this.EditStu_ExitBtn.Text = "Exit";
+            this.toolTip1.SetToolTip(this.EditStu_ExitBtn, "Closes the program.");
             this.EditStu_ExitBtn.UseVisualStyleBackColor = true;
             this.EditStu_ExitBtn.Click += new System.EventHandler(this.EditStu_ExitBtn_Click);
             // 
@@ -284,6 +287,7 @@
             this.EditStu_CloseBtn.Size = new System.Drawing.Size(100, 28);
             this.EditStu_CloseBtn.TabIndex = 0;
             this.EditStu_CloseBtn.Text = "Close";
+            this.toolTip1.SetToolTip(this.EditStu_CloseBtn, "Return to the administration\'s homepage.");
             this.EditStu_CloseBtn.UseVisualStyleBackColor = true;
             this.EditStu_CloseBtn.Click += new System.EventHandler(this.EditStu_CloseBtn_Click);
             // 
@@ -358,5 +362,6 @@
         private System.Windows.Forms.ComboBox EditStu_SelectionCmbo;
         private System.Windows.Forms.ComboBox EditStu_NewLastNameCmbo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

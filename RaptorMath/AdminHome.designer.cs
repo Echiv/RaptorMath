@@ -89,6 +89,8 @@
             this.AdminHome_SaveBtn.Size = new System.Drawing.Size(125, 30);
             this.AdminHome_SaveBtn.TabIndex = 2;
             this.AdminHome_SaveBtn.Text = "Save";
+            this.toolTip1.SetToolTip(this.AdminHome_SaveBtn, "Password can only contain lower/upper case letters and numbers. This will overwri" +
+        "te your old password with the new one you provided.");
             this.AdminHome_SaveBtn.UseVisualStyleBackColor = true;
             this.AdminHome_SaveBtn.Click += new System.EventHandler(this.AdminHome_SaveBtn_Click);
             // 
@@ -253,6 +255,7 @@
             this.AdminHome_MngUsersBtn.Size = new System.Drawing.Size(125, 30);
             this.AdminHome_MngUsersBtn.TabIndex = 0;
             this.AdminHome_MngUsersBtn.Text = "Manage Users";
+            this.toolTip1.SetToolTip(this.AdminHome_MngUsersBtn, "Opens the window that deals with adding and removing users.");
             this.AdminHome_MngUsersBtn.UseVisualStyleBackColor = true;
             this.AdminHome_MngUsersBtn.Click += new System.EventHandler(this.AdminHome_MngUsersBtn_Click);
             // 
@@ -266,6 +269,7 @@
             this.AdminHome_MngGroupsBtn.Size = new System.Drawing.Size(125, 30);
             this.AdminHome_MngGroupsBtn.TabIndex = 1;
             this.AdminHome_MngGroupsBtn.Text = "Manage Groups";
+            this.toolTip1.SetToolTip(this.AdminHome_MngGroupsBtn, "Opens the window that deals with creating and editing groups.");
             this.AdminHome_MngGroupsBtn.UseVisualStyleBackColor = true;
             this.AdminHome_MngGroupsBtn.Click += new System.EventHandler(this.AdminHome_MngGroupsBtn_Click);
             // 
@@ -294,6 +298,7 @@
             this.AdminHome_StuReportBtn.Size = new System.Drawing.Size(125, 30);
             this.AdminHome_StuReportBtn.TabIndex = 1;
             this.AdminHome_StuReportBtn.Text = "Student Reports";
+            this.toolTip1.SetToolTip(this.AdminHome_StuReportBtn, "Opens the window that deals with generating reports.");
             this.AdminHome_StuReportBtn.UseVisualStyleBackColor = true;
             this.AdminHome_StuReportBtn.Click += new System.EventHandler(this.AdminHome_StuReportBtn_Click);
             // 
@@ -307,6 +312,7 @@
             this.AdminHome_EditStudentBtn.Size = new System.Drawing.Size(125, 30);
             this.AdminHome_EditStudentBtn.TabIndex = 0;
             this.AdminHome_EditStudentBtn.Text = "Edit Students";
+            this.toolTip1.SetToolTip(this.AdminHome_EditStudentBtn, "Opens the window that deals with editing existing students.");
             this.AdminHome_EditStudentBtn.UseVisualStyleBackColor = true;
             this.AdminHome_EditStudentBtn.Click += new System.EventHandler(this.AdminHome_EditStudentBtn_Click);
             // 
@@ -320,6 +326,7 @@
             this.AdminHome_CreateDrillBtn.Size = new System.Drawing.Size(125, 30);
             this.AdminHome_CreateDrillBtn.TabIndex = 0;
             this.AdminHome_CreateDrillBtn.Text = "Create Drill";
+            this.toolTip1.SetToolTip(this.AdminHome_CreateDrillBtn, "Opens the window that deals with creating new problem sets for the students.");
             this.AdminHome_CreateDrillBtn.UseVisualStyleBackColor = true;
             this.AdminHome_CreateDrillBtn.Click += new System.EventHandler(this.AdminHome_CreateDrillBtn_Click);
             // 
@@ -333,6 +340,8 @@
             this.AdminHome_MngDrillBtn.Size = new System.Drawing.Size(125, 30);
             this.AdminHome_MngDrillBtn.TabIndex = 1;
             this.AdminHome_MngDrillBtn.Text = "Manage Drills";
+            this.toolTip1.SetToolTip(this.AdminHome_MngDrillBtn, "Opens the window that handles assigning and removing drills from students and gro" +
+        "ups.");
             this.AdminHome_MngDrillBtn.UseVisualStyleBackColor = true;
             this.AdminHome_MngDrillBtn.Click += new System.EventHandler(this.AdminHome_MngDrillBtn_Click);
             // 
@@ -410,6 +419,7 @@
             this.AdminHome_LogoutBtn.Size = new System.Drawing.Size(125, 30);
             this.AdminHome_LogoutBtn.TabIndex = 0;
             this.AdminHome_LogoutBtn.Text = "Logout";
+            this.toolTip1.SetToolTip(this.AdminHome_LogoutBtn, "Returns you to the login homepage.");
             this.AdminHome_LogoutBtn.UseVisualStyleBackColor = true;
             this.AdminHome_LogoutBtn.Click += new System.EventHandler(this.AdminHome_LogoutBtn_Click);
             // 
@@ -422,6 +432,7 @@
             this.AdminHome_ExitBtn.Size = new System.Drawing.Size(125, 30);
             this.AdminHome_ExitBtn.TabIndex = 1;
             this.AdminHome_ExitBtn.Text = "Exit";
+            this.toolTip1.SetToolTip(this.AdminHome_ExitBtn, "Closes the program.");
             this.AdminHome_ExitBtn.UseVisualStyleBackColor = true;
             this.AdminHome_ExitBtn.Click += new System.EventHandler(this.AdminHome_ExitBtn_Click);
             // 

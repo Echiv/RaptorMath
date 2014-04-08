@@ -49,6 +49,7 @@
             this.MathDrill_ProblemBox = new System.Windows.Forms.GroupBox();
             this.MathDrill_TotalNumberLbl = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.MathDrill_UserInfoBox.SuspendLayout();
             this.MatDri_ButtonBox.SuspendLayout();
             this.MathDrill_ProblemBox.SuspendLayout();
@@ -89,6 +90,7 @@
             this.MathDrill_SkipBtn.Size = new System.Drawing.Size(131, 40);
             this.MathDrill_SkipBtn.TabIndex = 1;
             this.MathDrill_SkipBtn.Text = "I don\'t know";
+            this.toolTip1.SetToolTip(this.MathDrill_SkipBtn, "Skips the current problem");
             this.MathDrill_SkipBtn.UseVisualStyleBackColor = true;
             this.MathDrill_SkipBtn.Click += new System.EventHandler(this.MathDrill_SkipBtn_Click);
             // 
@@ -101,6 +103,7 @@
             this.MathDrill_QuitBtn.Size = new System.Drawing.Size(125, 40);
             this.MathDrill_QuitBtn.TabIndex = 0;
             this.MathDrill_QuitBtn.Text = "Quit";
+            this.toolTip1.SetToolTip(this.MathDrill_QuitBtn, "Ends the drill. Saves adventure if finished.");
             this.MathDrill_QuitBtn.UseVisualStyleBackColor = true;
             this.MathDrill_QuitBtn.Click += new System.EventHandler(this.MathDrill_EndDrillBtn_Click);
             // 
@@ -113,6 +116,7 @@
             this.MathDrill_SubmitBtn.Size = new System.Drawing.Size(125, 40);
             this.MathDrill_SubmitBtn.TabIndex = 2;
             this.MathDrill_SubmitBtn.Text = "Submit";
+            this.toolTip1.SetToolTip(this.MathDrill_SubmitBtn, "Submits your answer for grading.");
             this.MathDrill_SubmitBtn.UseVisualStyleBackColor = true;
             this.MathDrill_SubmitBtn.Click += new System.EventHandler(this.MathDrill_SubmitBtn_Click);
             // 
@@ -339,5 +343,6 @@
         private System.Windows.Forms.GroupBox MathDrill_ProblemBox;
         private System.Windows.Forms.Label MathDrill_TotalNumberLbl;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
