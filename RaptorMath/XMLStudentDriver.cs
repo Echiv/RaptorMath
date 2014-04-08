@@ -113,7 +113,6 @@ namespace RaptorMath
         /// <returns>Boolean confirmation.</returns>
         public bool InitialCreateStudentXml(Student newStudentEntry, string studentXMLPath, List<Student> studentList)
         {
-            MessageBox.Show("RaptorMathStu");
             XElement newStudent = CreateStudentNode(newStudentEntry);
                 
             newStudent.SetAttributeValue("ID", "1");
