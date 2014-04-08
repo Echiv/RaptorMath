@@ -9,6 +9,10 @@ using System.Windows.Forms;
 
 namespace RaptorMath
 {
+    //------------------------------------------------------------------//
+    // Authors: Cody Jordan, Cian Carota                                //
+    // Date:                                                   //
+    //------------------------------------------------------------------//
     public partial class ManageGroups_Form : Form
     {
         public Manager localManager;
@@ -16,7 +20,7 @@ namespace RaptorMath
         private bool isKeyPressed = false;
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle KeyUp event.</summary>
@@ -26,7 +30,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersKeyDown event.</summary>
@@ -41,7 +45,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersAndDigitsKeyDown event.</summary>
@@ -57,7 +61,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle DigitsKeyDown event.</summary>
@@ -72,7 +76,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersWithOneWhiteSpaceKeyPress event.</summary>
@@ -85,7 +89,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersAndDigitsKeyPress event.</summary>
@@ -97,7 +101,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle DigitsKeyPress event.</summary>
@@ -109,7 +113,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersKeyPress event.</summary>
@@ -188,7 +192,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
         /// <summary>Formating initial display of current date.</summary>
@@ -198,7 +202,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
         /// <summary>Formating initial display of current time.</summary>
@@ -344,6 +348,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle Text Changed event.</summary>
         private void MngGroups_GroupNameCmbo_TextChanged(object sender, EventArgs e)
         {
             if (MngGroups_GroupNameCmbo.Text.Length > 0)
@@ -352,6 +361,11 @@ namespace RaptorMath
                 MngGroups_CreateBtn.Enabled = false;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle Text Changed event.</summary>
         private void MngGroups_SelectGroupAndNewNameCmbo_TextChanged(object sender, EventArgs e)
         {
             if ((MngGroups_NewNameCmbo.Text.Length > 0) && (MngGroups_SelectGroupCmbo.Text.Length > 0))

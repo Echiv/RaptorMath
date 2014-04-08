@@ -21,6 +21,9 @@ namespace RaptorMath
     // Harvey Kreitzer                                                  //
     // Date: 2/16/2014                                                  //
     //------------------------------------------------------------------//
+    // Authors: Cody Jordan, Cian Carota                                         //
+    // Date:                                                  //
+    //------------------------------------------------------------------//
     public class Admin
     {
         private int id;
@@ -75,6 +78,9 @@ namespace RaptorMath
         // Harvey Kreitzer                                                  //
         // Date: 2/16/2014                                                  //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                         //
+        // Date:                                                  //
+        //------------------------------------------------------------------//
         public Admin()
         {
             firstName = "Unknown";
@@ -88,6 +94,9 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         // Harvey Kreitzer                                                  //
         // Date: 2/16/2014                                                  //
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                         //
+        // Date:                                                  //
         //------------------------------------------------------------------//
         public Admin(string fname, string lname, string pwd, string login, string pathLoc)
         {

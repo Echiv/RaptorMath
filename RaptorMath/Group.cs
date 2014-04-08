@@ -7,6 +7,10 @@ using System.Xml.Linq;
 
 namespace RaptorMath
 {
+    //------------------------------------------------------------------//
+    // Authors: Cody Jordan, Cian Carota                                //
+    // Date:                                                   //
+    //------------------------------------------------------------------//
     public class Group
     {
         public List<Drill> groupDrillList = new List<Drill>();

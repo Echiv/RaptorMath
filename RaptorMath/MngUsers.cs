@@ -16,7 +16,7 @@ namespace RaptorMath
         private bool isKeyPressed = false;
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle KeyUp event.</summary>
@@ -26,7 +26,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersKeyDown event.</summary>
@@ -41,7 +41,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersAndDigitsKeyDown event.</summary>
@@ -57,7 +57,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle DigitsKeyDown event.</summary>
@@ -72,7 +72,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersWithOneWhiteSpaceKeyPress event.</summary>
@@ -85,7 +85,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersAndDigitsKeyPress event.</summary>
@@ -97,7 +97,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle DigitsKeyPress event.</summary>
@@ -109,7 +109,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersKeyPress event.</summary>
@@ -130,7 +130,7 @@ namespace RaptorMath
             set { MngUser_AdminNameLbl.Text = value; }
         }
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
         /// <summary>Formating initial display of current date.</summary>
@@ -140,7 +140,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
         /// <summary>Formating initial display of current time.</summary>
@@ -413,6 +413,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle Text Change event.</summary>
         private void MngUsers_RemoveUserCmbo_TextChanged(object sender, EventArgs e)
         {
             if (MngUsers_RemoveUserCmbo.Text.Length > 0)
@@ -425,6 +430,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle Text Change event.</summary>
         private void MngUsers_FirstAndLastNameCmbo_TextChanged(object sender, EventArgs e)
         {
             if ((MngUsers_FirstNameCmbo.Text.Length > 0) && (MngUsers_LastNameCmbo.Text.Length > 0))

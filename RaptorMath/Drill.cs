@@ -20,6 +20,9 @@ namespace RaptorMath
     // Kyle Bridges                                                     //
     // Date: 2/26/2014                                                  //
     //------------------------------------------------------------------//
+    // Authors: Cody Jordan, Cian Carota                                //
+    // Date:                                                   //
+    //------------------------------------------------------------------//
     public class Drill
     {
         private int id;

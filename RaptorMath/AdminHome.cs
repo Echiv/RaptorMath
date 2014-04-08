@@ -49,7 +49,7 @@ namespace RaptorMath
         private bool isKeyPressed = false;
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                         //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle KeyUp event.</summary>
@@ -59,7 +59,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                         //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersKeyDown event.</summary>
@@ -74,7 +74,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                         //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersAndDigitsKeyDown event.</summary>
@@ -90,7 +90,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                         //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle DigitsKeyDown event.</summary>
@@ -105,7 +105,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                         //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersWithOneWhiteSpaceKeyPress event.</summary>
@@ -118,7 +118,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                         //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersAndDigitsKeyPress event.</summary>
@@ -130,7 +130,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                         //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle DigitsKeyPress event.</summary>
@@ -142,7 +142,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                         //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersKeyPress event.</summary>
@@ -176,6 +176,9 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/13/2014                                                  //
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                         //
+        // Date:                                                  //
         //------------------------------------------------------------------//
         public AdminHome_Form(Manager manager)
         {
@@ -233,6 +236,9 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/13/2014                                                  //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                         //
+        // Date:                                                  //
+        //------------------------------------------------------------------//
         private void AdminHome_LogoutBtn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to logout? Any settings changes will not be saved.",
@@ -261,6 +267,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Save' button click.</summary>
         private void AdminHome_SaveBtn_Click(object sender, EventArgs e)
         {
             bool passwordMatch = localManager.ChangeAdminPassword(AdminHome_CurrentPWTxt.Text, AdminHome_NewPWTxt.Text);
@@ -360,6 +371,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Handle Text Changed event.</summary>
         private void AdminHome_CurrentPWTxt_TextChanged(object sender, EventArgs e)
         {
             if((AdminHome_CurrentPWTxt.Text.Length > 0)&&(AdminHome_NewPWTxt.Text.Length > 0))
@@ -372,6 +388,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                         //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>>Handle Text Changed event.</summary>
         private void AdminHome_NewPWTxt_TextChanged(object sender, EventArgs e)
         {
             if ((AdminHome_CurrentPWTxt.Text.Length > 0) && (AdminHome_NewPWTxt.Text.Length > 0))
