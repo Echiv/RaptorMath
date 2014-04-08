@@ -199,7 +199,7 @@ namespace RaptorMath
                 this.LastLogin = localManager.currentAdmin.LastLogin;
 
             localManager.SaveLoginDate(localManager.adminXMLPath,
-                localManager.currentAdmin.LoginName, DateTime.Now.ToString("M/d/yyyy"), true);
+            localManager.currentAdmin.LoginName, DateTime.Now.ToString("M/d/yyyy"), true);
         }
 
         //------------------------------------------------------------------//
@@ -235,7 +235,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void AdminHome_LogoutBtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to logout? Any settings changes will not be saved.",
+            if (MessageBox.Show("Are you sure you want to logout? Any unsaved changes will be lost",
                 "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 // Save date you want to write out into class
@@ -252,7 +252,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void AdminHome_ExitBtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.", 
+            if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any unsaved changes will be lost", 
                 "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 localManager.ClearAdminUser();
@@ -263,17 +263,25 @@ namespace RaptorMath
 
         private void AdminHome_SaveBtn_Click(object sender, EventArgs e)
         {
-            bool passwordMatch = localManager.ChangeAdminPassword(AdminHome_CurrentPWTxt.Text, AdminHome_NewPWTxt.Text);
-            if (passwordMatch == true)
+            bool passwordMatch = localManager.ChangeAdminPassword(AdminHome_CurrentPWTxt.Text.Trim(), AdminHome_NewPWTxt.Text.Trim());
+            if (AdminHome_NewPWTxt.Text.Trim().All(char.IsLetterOrDigit))
             {
-                MessageBox.Show("Your password has been saved", "Raptor Math", MessageBoxButtons.OK);
-                AdminHome_CurrentPWTxt.Text = string.Empty;
-                AdminHome_NewPWTxt.Text = string.Empty;
+                if (passwordMatch == true)
+                {
+                    MessageBox.Show("Your password has been saved", "Raptor Math", MessageBoxButtons.OK);
+                    AdminHome_CurrentPWTxt.Text = string.Empty;
+                    AdminHome_NewPWTxt.Text = string.Empty;
+                }
+                else
+                {
+                    MessageBox.Show("The current password does not match the records", "Raptor Math", MessageBoxButtons.OK);
+                }
             }
             else
             {
-                MessageBox.Show("The current password does not match the records", "Raptor Math", MessageBoxButtons.OK);
+                MessageBox.Show("That password contains an invalid character", "Raptor Math", MessageBoxButtons.OK);
             }
+
         }
 
         //------------------------------------------------------------------//

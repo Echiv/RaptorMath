@@ -445,6 +445,7 @@
             // 
             // MngUsers_Form
             // 
+            this.AcceptButton = this.MngUsers_SaveUserBtm;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.MngUsers_CloseBtn;
             this.ClientSize = new System.Drawing.Size(432, 503);

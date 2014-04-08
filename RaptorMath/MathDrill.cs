@@ -308,6 +308,9 @@ namespace RaptorMath
                 MessageBoxButtons.OKCancel) == DialogResult.OK)
             {     
                 MathDrill_InputTxt.Clear();
+                MathDrill_ResponseLbl.ForeColor = Color.Blue;
+                MathDrill_ResponseLbl.Text = "Skipped!";
+                MathDrill_ResponseLbl.Visible = true;
                 localManager.currentStudent.curDrill.IncrementSkipped();
                 localManager.currentStudent.curDrill.IncrementWrong();
                 RefreshRange();

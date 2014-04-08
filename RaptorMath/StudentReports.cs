@@ -251,11 +251,34 @@ namespace RaptorMath
         /// <summary>Handle 'Single Report' button click.</summary>
         private void ReportHome_SingleReportBtn_Click(object sender, EventArgs e)
         {
+            localManager.reportStudent = localManager.FindStudentWithName(ReportHome_StudentCmbo.Text);
             localManager.StartDate = DateTime.Parse(ReportHome_StartDate.Text);
             localManager.EndDate = DateTime.Parse(ReportHome_EndDate.Text);
-            localManager.reportStudent = ReportHome_StudentCmbo.Text;
-            localManager.SetWindow(Window.reportSingle);
-            this.Close();
+            TimeSpan span = localManager.EndDate - localManager.StartDate;
+
+            if (span.Days < 0)
+            {
+                MessageBox.Show("Please select a valid date range.", "Raptor Math", MessageBoxButtons.OK);
+            }
+            else
+            {
+                if (localManager.reportStudent != null)
+                {
+                    if (localManager.reportStudent.curRecordList.Count > 0)
+                    {
+                        localManager.SetWindow(Window.reportSingle);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The entered student has no records", "Raptor Math", MessageBoxButtons.OK);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The entered student doesn’t exist.", "Raptor Math", MessageBoxButtons.OK);
+                }
+            }
         }
 
         //------------------------------------------------------------------//
@@ -265,10 +288,29 @@ namespace RaptorMath
         /// <summary>Handle 'Group Report' button click.</summary>
         private void ReportHome_GroupReportBtn_Click(object sender, EventArgs e)
         {
+            localManager.reportGroup = localManager.FindGroupByName(ReportHome_GroupCmbo.Text);
             localManager.StartDate = DateTime.Parse(ReportHome_StartDate.Text);
             localManager.EndDate = DateTime.Parse(ReportHome_EndDate.Text);
-            localManager.SetWindow(Window.reportGroup);
-            this.Close();
+            TimeSpan span = localManager.EndDate - localManager.StartDate;
+
+            if (span.Days < 0)
+            {
+                MessageBox.Show("Please select a valid date range.", "Raptor Math", MessageBoxButtons.OK);
+            }
+            else
+            {
+                if (localManager.reportGroup != null)
+                {
+                    localManager.SetWindow(Window.reportGroup);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("The entered group doesn’t exist.", "Raptor Math", MessageBoxButtons.OK);
+                    
+                }
+            }
+
         }
 
         //------------------------------------------------------------------//
@@ -278,12 +320,7 @@ namespace RaptorMath
         /// <summary>Registers 'Start Date' date box item selection.</summary>
         private void ReportHome_StartDate_ValueChanged(object sender, EventArgs e)
         {
-            startDate = true;
-            if (startDate && endDate)
-            {
-                ReportHome_SingleReportBtn.Enabled = true;
-                ReportHome_GroupReportBtn.Enabled = true;
-            }
+            localManager.StartDate = DateTime.Parse(ReportHome_StartDate.Text);
         }
 
         //------------------------------------------------------------------//
@@ -293,12 +330,7 @@ namespace RaptorMath
         /// <summary>Registers 'End Date' date box item selection.</summary>
         private void ReportHome_EndDate_ValueChanged(object sender, EventArgs e)
         {
-            endDate = true;
-            if (startDate && endDate)
-            {
-                ReportHome_SingleReportBtn.Enabled = true;
-                ReportHome_GroupReportBtn.Enabled = true;
-            }
+            localManager.EndDate = DateTime.Parse(ReportHome_EndDate.Text);
         }
 
         //------------------------------------------------------------------//
@@ -324,6 +356,34 @@ namespace RaptorMath
             if (e.KeyChar == 13)
             {
                 ReportHome_GroupReportBtn_Click(sender, e);
+            }
+        }
+
+        private void ReportHome_StudentCmbo_TextChanged(object sender, EventArgs e)
+        {
+            if(ReportHome_StudentCmbo.Text.Length > 0)
+            {
+                ReportHome_GroupReportBtn.Enabled = false;
+                ReportHome_GroupCmbo.Text = string.Empty;
+                ReportHome_SingleReportBtn.Enabled = true;
+            }
+            else
+            {
+                ReportHome_SingleReportBtn.Enabled = false;
+            }
+        }
+
+        private void ReportHome_GroupCmbo_TextChanged(object sender, EventArgs e)
+        {
+            if (ReportHome_GroupCmbo.Text.Length > 0)
+            {
+                ReportHome_SingleReportBtn.Enabled = false;
+                ReportHome_StudentCmbo.Text = string.Empty;
+                ReportHome_GroupReportBtn.Enabled = true;
+            }
+            else
+            {
+                ReportHome_GroupReportBtn.Enabled = false;
             }
         }
     }

@@ -462,6 +462,8 @@ namespace RaptorMath
                         aStudent.CurDrillList.Add(newDrill);
                     }
                 }
+                LoadStudentRecord(aStudent);
+                
                 studentList.Add(aStudent);
             }
         }
@@ -556,6 +558,32 @@ namespace RaptorMath
                     new XElement("lastLogin", newStudentEntry.LastLogin),
                     new XElement("recPath", newStudentEntry.RecordsPath));
             return newStudent;
+        }
+
+        private void LoadStudentRecord(Student aStudent)
+        {
+            if (System.IO.File.Exists(aStudent.RecordsPath))
+            {
+                XDocument studentRecordsXML = XDocument.Load(aStudent.RecordsPath);
+                IEnumerable<XElement> RecordsNodesQuery = SecondLevelOfRoot(studentRecordsXML.Root);
+
+                foreach (XElement record in RecordsNodesQuery)
+                {
+                    Record newRecord = new Record();
+                    newRecord.ID = Convert.ToInt32(record.Attribute("ID").Value);
+                    newRecord.DrillID = Convert.ToInt32(record.Element("drillID").Value);
+                    newRecord.DrillName = record.Element("drillName").Value;
+                    newRecord.DateTaken = record.Element("dataTaken").Value;
+                    newRecord.Question = record.Element("questions").Value;
+                    newRecord.RangeStart = record.Element("rangeStart").Value;
+                    newRecord.RangeEnd = record.Element("rangeEnd").Value;
+                    newRecord.Operation = record.Element("operand").Value;
+                    newRecord.Wrong = record.Element("wrong").Value;
+                    newRecord.Skipped = record.Element("skipped").Value;
+                    newRecord.Percent = record.Element("percent").Value;
+                    aStudent.curRecordList.Add(newRecord);
+                }
+            }
         }
     }
 }

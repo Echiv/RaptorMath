@@ -51,9 +51,10 @@ namespace RaptorMath
         public Random random = new Random();
         public DateTime StartDate = DateTime.Now;
         public DateTime EndDate = DateTime.Now;
-        public string reportStudent = string.Empty;
+        public Student reportStudent = new Student();
+        public Group reportGroup = new Group();
         public int currSolution;
-        XMLParser XML = new XMLParser();
+        //XMLParser XML = new XMLParser();
         XMLDriver XMLDriver = new XMLDriver();
 
         //------------------------------------------------------------------//
@@ -244,7 +245,6 @@ namespace RaptorMath
         public bool isDrillInfoValid(Drill drillToValidate)
         {
             if (!(drillToValidate.DrillName.Equals(string.Empty))
-                && (drillToValidate.DrillName.All(char.IsLetterOrDigit))
                 && (drillToValidate.Questions.All(char.IsDigit))
                 && (drillToValidate.RangeStart.All(char.IsDigit) && (Convert.ToInt32(drillToValidate.RangeStart) > 0))
                 && (drillToValidate.RangeEnd.All(char.IsDigit) && (Convert.ToInt32(drillToValidate.RangeEnd) > 0))
@@ -279,7 +279,6 @@ namespace RaptorMath
                 {
                     Group selectedGroup = FindGroupByName(newGroup);
                     Group oldGroup = FindGroupByID(selectedStudent.GroupID);
-                    //bool hasGroupChanged = XMLDriver.editStudent(newFName, newLName, selectedStudent, selectedGroup, studentList);
                     GroupStudentChanged = XMLDriver.editStudent(newFName, newLName, selectedStudent, selectedGroup, studentList);
                     if (GroupStudentChanged.Item1)
                     {
@@ -314,8 +313,7 @@ namespace RaptorMath
         {
             if (currentPassword == currentAdmin.Password)
             {
-                XMLDriver.editAdmin(newPassword, currentAdmin, adminList);
-                return true;
+                return XMLDriver.editAdmin(newPassword, currentAdmin, adminList);
             }
             return false;
         }
@@ -1085,7 +1083,6 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         public bool IsCorrectAnswer(string startRange, string endRange, string userInput)
         {
-            Console.WriteLine("Checking IsCorrectAnswer");
             int start = Convert.ToInt32(startRange);
             int end = Convert.ToInt32(endRange);
             int input = Convert.ToInt32(userInput);
@@ -1119,7 +1116,6 @@ namespace RaptorMath
             }
             else
             {
-                Console.WriteLine("Negative solution encountered:", operand1, " - ", operand2);
                 solution = calcSolution(Convert.ToInt32(operand2), Convert.ToInt32(operand1));
                 mathProb = String.Concat(operand2, " ", GetOperand(), " ", operand1, " ="); // adjust: GetOperand()
             }
@@ -1156,7 +1152,6 @@ namespace RaptorMath
 
         public bool IsCorrectAnswer(string userInput)
         {
-            Console.WriteLine("Checking IsCorrectAnswer");
             int input = Convert.ToInt32(userInput);
 
             if (CurrSolution == input)
@@ -1328,7 +1323,6 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         /*public void UpdateLocalDrillSettings(Student student, string minOp, string maxOp, string size, string op)
         {
-**need to fix drills**
             student.curDrill.CurQuestions = size;
             student.curDrill.CurRangeStart = minOp;
             student.curDrill.CurRangeEnd = maxOp;
@@ -1346,7 +1340,6 @@ namespace RaptorMath
             List<Record> recordList = new List<Record>();
             foreach (Record record in student.curRecordList)
             {
-                Console.WriteLine(student.curDrillList.Count.ToString());
                 date = record.DateTaken;
                 if ((DateTime.Parse(date) >= first) && (DateTime.Parse(date) <= second))
                     recordList.Add(record);
@@ -1373,6 +1366,58 @@ namespace RaptorMath
             }
 
             return aStudent;
+        }
+
+        //------------------------------------------------------------------//
+        // Cody Jordan, Cian Carota                                         //
+        // Date: 4/8/14                                                     //
+        //------------------------------------------------------------------//
+        /// <summary>Generate average percent, average wrong, average skipper</summary>
+        /// <param name="first">Start date</param>
+        /// <param name="second">End date</param>
+        /// <param name="group">Group to generate report</param>
+        /// <returns>Tuple that contains the group name, avg percent, avg skipped, numberOfSets</returns>
+        public Tuple<string, float, float, float, int> GenerateRecordForGroup(DateTime first, DateTime second, Group group)
+        {
+            string date;
+            List<Record> recordList = new List<Record>();
+            List<Student> listOfStudentsInGroup = new List<Student>();
+            
+            foreach (Student student in studentList)
+            {
+                if (student.GroupID == group.ID)
+                    listOfStudentsInGroup.Add(student);
+            }
+            int numberOfSets = 0;
+            float totalPercent = 0.0f;
+            int totalWrong = 0;
+            int totalSkipped = 0;
+            int numberOfStudents = listOfStudentsInGroup.Count;
+            foreach(Student studentInGroup in listOfStudentsInGroup)
+            {
+                foreach (Record record in studentInGroup.curRecordList)
+                {
+                    date = record.DateTaken;
+                    if ((DateTime.Parse(date) >= first) && (DateTime.Parse(date) <= second))
+                    {
+                        numberOfSets += 1;
+                        totalPercent += float.Parse(record.Percent);
+                        totalWrong += Convert.ToInt32(record.Wrong);
+                        totalSkipped += Convert.ToInt32(record.Skipped);
+                    }
+                }
+            }
+            if (numberOfStudents > 0)
+            {
+                float avgPercent = (totalPercent / numberOfSets) / numberOfStudents;
+                float avgWrong = totalWrong / numberOfStudents;
+                float avgSkipped = totalSkipped / numberOfStudents;
+                return Tuple.Create(group.Name, avgPercent, avgWrong, avgSkipped, numberOfSets);
+            }
+            else
+                return Tuple.Create(group.Name, 0f, 0f, 0f, 0);
+            
+            //return recordList;
         }
     }
 }

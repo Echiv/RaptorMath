@@ -49,7 +49,7 @@
             this.ReportHome_ButtonBox = new System.Windows.Forms.GroupBox();
             this.ReportHome_ExitBtn = new System.Windows.Forms.Button();
             this.ReportHome_CloseBtn = new System.Windows.Forms.Button();
-            this.ReportHome_SelectRportBox = new System.Windows.Forms.GroupBox();
+            this.ReportHome_SelectReportBox = new System.Windows.Forms.GroupBox();
             this.ReportHome_UserInfoBox = new System.Windows.Forms.GroupBox();
             this.ReportHome_DateLbl = new System.Windows.Forms.Label();
             this.ReportHome_AdminNameLbl = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.ReportHome_DateRangeBox.SuspendLayout();
             this.ReportHome_SelectionBox.SuspendLayout();
             this.ReportHome_ButtonBox.SuspendLayout();
-            this.ReportHome_SelectRportBox.SuspendLayout();
+            this.ReportHome_SelectReportBox.SuspendLayout();
             this.ReportHome_UserInfoBox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -97,7 +97,7 @@
             this.ReportHome_StartDate.Location = new System.Drawing.Point(117, 33);
             this.ReportHome_StartDate.Margin = new System.Windows.Forms.Padding(4);
             this.ReportHome_StartDate.Name = "ReportHome_StartDate";
-            this.ReportHome_StartDate.Size = new System.Drawing.Size(264, 20);
+            this.ReportHome_StartDate.Size = new System.Drawing.Size(264, 23);
             this.ReportHome_StartDate.TabIndex = 0;
             this.ReportHome_StartDate.ValueChanged += new System.EventHandler(this.ReportHome_StartDate_ValueChanged);
             // 
@@ -108,7 +108,7 @@
             this.ReportHome_EndDate.Location = new System.Drawing.Point(117, 65);
             this.ReportHome_EndDate.Margin = new System.Windows.Forms.Padding(4);
             this.ReportHome_EndDate.Name = "ReportHome_EndDate";
-            this.ReportHome_EndDate.Size = new System.Drawing.Size(264, 20);
+            this.ReportHome_EndDate.Size = new System.Drawing.Size(264, 23);
             this.ReportHome_EndDate.TabIndex = 1;
             this.ReportHome_EndDate.ValueChanged += new System.EventHandler(this.ReportHome_EndDate_ValueChanged);
             // 
@@ -120,7 +120,7 @@
             this.ReportHome_EndDateLbl.Location = new System.Drawing.Point(37, 67);
             this.ReportHome_EndDateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ReportHome_EndDateLbl.Name = "ReportHome_EndDateLbl";
-            this.ReportHome_EndDateLbl.Size = new System.Drawing.Size(52, 13);
+            this.ReportHome_EndDateLbl.Size = new System.Drawing.Size(67, 17);
             this.ReportHome_EndDateLbl.TabIndex = 24;
             this.ReportHome_EndDateLbl.Text = "End Date";
             // 
@@ -132,7 +132,7 @@
             this.ReportHome_StartDateLbl.Location = new System.Drawing.Point(36, 33);
             this.ReportHome_StartDateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ReportHome_StartDateLbl.Name = "ReportHome_StartDateLbl";
-            this.ReportHome_StartDateLbl.Size = new System.Drawing.Size(55, 13);
+            this.ReportHome_StartDateLbl.Size = new System.Drawing.Size(72, 17);
             this.ReportHome_StartDateLbl.TabIndex = 22;
             this.ReportHome_StartDateLbl.Text = "Start Date";
             // 
@@ -171,7 +171,7 @@
             this.ReportHome_WindowLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportHome_WindowLbl.Location = new System.Drawing.Point(7, 18);
             this.ReportHome_WindowLbl.Name = "ReportHome_WindowLbl";
-            this.ReportHome_WindowLbl.Size = new System.Drawing.Size(99, 13);
+            this.ReportHome_WindowLbl.Size = new System.Drawing.Size(126, 17);
             this.ReportHome_WindowLbl.TabIndex = 33;
             this.ReportHome_WindowLbl.Text = "Student Reports";
             // 
@@ -200,8 +200,9 @@
             this.ReportHome_GroupCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.ReportHome_GroupCmbo.MaxLength = 25;
             this.ReportHome_GroupCmbo.Name = "ReportHome_GroupCmbo";
-            this.ReportHome_GroupCmbo.Size = new System.Drawing.Size(183, 21);
+            this.ReportHome_GroupCmbo.Size = new System.Drawing.Size(183, 25);
             this.ReportHome_GroupCmbo.TabIndex = 1;
+            this.ReportHome_GroupCmbo.TextChanged += new System.EventHandler(this.ReportHome_GroupCmbo_TextChanged);
             this.ReportHome_GroupCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
             this.ReportHome_GroupCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ReportHome_GroupCmbo_KeyPress);
             this.ReportHome_GroupCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
@@ -216,8 +217,9 @@
             this.ReportHome_StudentCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.ReportHome_StudentCmbo.MaxLength = 25;
             this.ReportHome_StudentCmbo.Name = "ReportHome_StudentCmbo";
-            this.ReportHome_StudentCmbo.Size = new System.Drawing.Size(185, 21);
+            this.ReportHome_StudentCmbo.Size = new System.Drawing.Size(185, 25);
             this.ReportHome_StudentCmbo.TabIndex = 0;
+            this.ReportHome_StudentCmbo.TextChanged += new System.EventHandler(this.ReportHome_StudentCmbo_TextChanged);
             this.ReportHome_StudentCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.ReportHome_StudentCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ReportHome_StudentCmbo_KeyPress);
             this.ReportHome_StudentCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
@@ -230,7 +232,7 @@
             this.ReportHome_GroupLbl.Location = new System.Drawing.Point(274, 33);
             this.ReportHome_GroupLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ReportHome_GroupLbl.Name = "ReportHome_GroupLbl";
-            this.ReportHome_GroupLbl.Size = new System.Drawing.Size(36, 13);
+            this.ReportHome_GroupLbl.Size = new System.Drawing.Size(48, 17);
             this.ReportHome_GroupLbl.TabIndex = 37;
             this.ReportHome_GroupLbl.Text = "Group";
             // 
@@ -242,7 +244,7 @@
             this.ReportHome_StudenLbl.Location = new System.Drawing.Point(56, 33);
             this.ReportHome_StudenLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ReportHome_StudenLbl.Name = "ReportHome_StudenLbl";
-            this.ReportHome_StudenLbl.Size = new System.Drawing.Size(44, 13);
+            this.ReportHome_StudenLbl.Size = new System.Drawing.Size(57, 17);
             this.ReportHome_StudenLbl.TabIndex = 35;
             this.ReportHome_StudenLbl.Text = "Student";
             // 
@@ -297,20 +299,20 @@
             this.ReportHome_CloseBtn.UseVisualStyleBackColor = true;
             this.ReportHome_CloseBtn.Click += new System.EventHandler(this.ReportHome_CloseBtn_Click);
             // 
-            // ReportHome_SelectRportBox
+            // ReportHome_SelectReportBox
             // 
-            this.ReportHome_SelectRportBox.Controls.Add(this.ReportHome_SingleReportBtn);
-            this.ReportHome_SelectRportBox.Controls.Add(this.ReportHome_GroupReportBtn);
-            this.ReportHome_SelectRportBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ReportHome_SelectRportBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReportHome_SelectRportBox.Location = new System.Drawing.Point(4, 335);
-            this.ReportHome_SelectRportBox.Margin = new System.Windows.Forms.Padding(4);
-            this.ReportHome_SelectRportBox.Name = "ReportHome_SelectRportBox";
-            this.ReportHome_SelectRportBox.Padding = new System.Windows.Forms.Padding(4);
-            this.ReportHome_SelectRportBox.Size = new System.Drawing.Size(424, 106);
-            this.ReportHome_SelectRportBox.TabIndex = 3;
-            this.ReportHome_SelectRportBox.TabStop = false;
-            this.ReportHome_SelectRportBox.Text = "Select a Report";
+            this.ReportHome_SelectReportBox.Controls.Add(this.ReportHome_SingleReportBtn);
+            this.ReportHome_SelectReportBox.Controls.Add(this.ReportHome_GroupReportBtn);
+            this.ReportHome_SelectReportBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ReportHome_SelectReportBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportHome_SelectReportBox.Location = new System.Drawing.Point(4, 335);
+            this.ReportHome_SelectReportBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ReportHome_SelectReportBox.Name = "ReportHome_SelectReportBox";
+            this.ReportHome_SelectReportBox.Padding = new System.Windows.Forms.Padding(4);
+            this.ReportHome_SelectReportBox.Size = new System.Drawing.Size(424, 106);
+            this.ReportHome_SelectReportBox.TabIndex = 3;
+            this.ReportHome_SelectReportBox.TabStop = false;
+            this.ReportHome_SelectReportBox.Text = "Select a Report";
             // 
             // ReportHome_UserInfoBox
             // 
@@ -334,7 +336,7 @@
             this.ReportHome_DateLbl.Location = new System.Drawing.Point(361, 18);
             this.ReportHome_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ReportHome_DateLbl.Name = "ReportHome_DateLbl";
-            this.ReportHome_DateLbl.Size = new System.Drawing.Size(42, 13);
+            this.ReportHome_DateLbl.Size = new System.Drawing.Size(54, 17);
             this.ReportHome_DateLbl.TabIndex = 31;
             this.ReportHome_DateLbl.Text = "<Date>";
             // 
@@ -344,7 +346,7 @@
             this.ReportHome_AdminNameLbl.Location = new System.Drawing.Point(8, 46);
             this.ReportHome_AdminNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ReportHome_AdminNameLbl.Name = "ReportHome_AdminNameLbl";
-            this.ReportHome_AdminNameLbl.Size = new System.Drawing.Size(48, 13);
+            this.ReportHome_AdminNameLbl.Size = new System.Drawing.Size(63, 17);
             this.ReportHome_AdminNameLbl.TabIndex = 28;
             this.ReportHome_AdminNameLbl.Text = "<Admin>";
             // 
@@ -355,7 +357,7 @@
             this.ReportHome_TimeLbl.Location = new System.Drawing.Point(360, 46);
             this.ReportHome_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ReportHome_TimeLbl.Name = "ReportHome_TimeLbl";
-            this.ReportHome_TimeLbl.Size = new System.Drawing.Size(42, 13);
+            this.ReportHome_TimeLbl.Size = new System.Drawing.Size(55, 17);
             this.ReportHome_TimeLbl.TabIndex = 17;
             this.ReportHome_TimeLbl.Text = "<Time>";
             // 
@@ -365,7 +367,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.ReportHome_ButtonBox, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.ReportHome_UserInfoBox, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ReportHome_SelectRportBox, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.ReportHome_SelectReportBox, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.ReportHome_SelectionBox, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.ReportHome_DateRangeBox, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -399,7 +401,7 @@
             this.ReportHome_SelectionBox.ResumeLayout(false);
             this.ReportHome_SelectionBox.PerformLayout();
             this.ReportHome_ButtonBox.ResumeLayout(false);
-            this.ReportHome_SelectRportBox.ResumeLayout(false);
+            this.ReportHome_SelectReportBox.ResumeLayout(false);
             this.ReportHome_UserInfoBox.ResumeLayout(false);
             this.ReportHome_UserInfoBox.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -427,7 +429,7 @@
         private System.Windows.Forms.Label ReportHome_StudenLbl;
         private System.Windows.Forms.GroupBox ReportHome_ButtonBox;
         private System.Windows.Forms.Button ReportHome_CloseBtn;
-        private System.Windows.Forms.GroupBox ReportHome_SelectRportBox;
+        private System.Windows.Forms.GroupBox ReportHome_SelectReportBox;
         private System.Windows.Forms.Button ReportHome_ExitBtn;
         private System.Windows.Forms.GroupBox ReportHome_UserInfoBox;
         private System.Windows.Forms.Label ReportHome_DateLbl;
