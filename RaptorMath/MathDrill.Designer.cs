@@ -59,7 +59,7 @@
             // 
             this.MatDri_Timer.Enabled = true;
             this.MatDri_Timer.Interval = 1000;
-            this.MatDri_Timer.Tick += new System.EventHandler(this.MatDri_Timer_Tick);
+            this.MatDri_Timer.Tick += new System.EventHandler(this.MathDrill_Timer_Tick);
             // 
             // MathDrill_InputTxt
             // 
@@ -74,8 +74,9 @@
             this.MathDrill_InputTxt.Size = new System.Drawing.Size(126, 52);
             this.MathDrill_InputTxt.TabIndex = 0;
             this.MathDrill_InputTxt.Text = "";
+            this.MathDrill_InputTxt.TextChanged += new System.EventHandler(this.MathDrill_InputTxt_TextChanged);
             this.MathDrill_InputTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_DigitsKeyDown);
-            this.MathDrill_InputTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MatDri_InputType_KeyPress);
+            this.MathDrill_InputTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MathDrill_InputType_KeyPress);
             this.MathDrill_InputTxt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // MathDrill_SkipBtn
@@ -89,7 +90,7 @@
             this.MathDrill_SkipBtn.TabIndex = 1;
             this.MathDrill_SkipBtn.Text = "I don\'t know";
             this.MathDrill_SkipBtn.UseVisualStyleBackColor = true;
-            this.MathDrill_SkipBtn.Click += new System.EventHandler(this.MatDri_SkipBtn_Click);
+            this.MathDrill_SkipBtn.Click += new System.EventHandler(this.MathDrill_SkipBtn_Click);
             // 
             // MathDrill_QuitBtn
             // 
@@ -101,7 +102,7 @@
             this.MathDrill_QuitBtn.TabIndex = 0;
             this.MathDrill_QuitBtn.Text = "Quit";
             this.MathDrill_QuitBtn.UseVisualStyleBackColor = true;
-            this.MathDrill_QuitBtn.Click += new System.EventHandler(this.MatDri_EndDrillBtn_Click);
+            this.MathDrill_QuitBtn.Click += new System.EventHandler(this.MathDrill_EndDrillBtn_Click);
             // 
             // MathDrill_SubmitBtn
             // 
@@ -113,7 +114,7 @@
             this.MathDrill_SubmitBtn.TabIndex = 2;
             this.MathDrill_SubmitBtn.Text = "Submit";
             this.MathDrill_SubmitBtn.UseVisualStyleBackColor = true;
-            this.MathDrill_SubmitBtn.Click += new System.EventHandler(this.MatDri_SubmitBtn_Click);
+            this.MathDrill_SubmitBtn.Click += new System.EventHandler(this.MathDrill_SubmitBtn_Click);
             // 
             // MathDrill_ResponseLbl
             // 
@@ -193,7 +194,6 @@
             this.MathDrill_StudentNameLbl.Size = new System.Drawing.Size(102, 26);
             this.MathDrill_StudentNameLbl.TabIndex = 8;
             this.MathDrill_StudentNameLbl.Text = "<Student>";
-            this.MathDrill_StudentNameLbl.Click += new System.EventHandler(this.MathDrill_StudentNameLbl_Click);
             // 
             // MathDrill_TimeLbl
             // 
@@ -293,7 +293,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(482, 453);
             this.tableLayoutPanel1.TabIndex = 32;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // MathDrill_Form
             // 
