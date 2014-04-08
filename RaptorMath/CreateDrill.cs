@@ -170,7 +170,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Create Drill form constructor.</summary>
         /// <param name="manager">The program management class.</param>
@@ -227,7 +227,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Save Drill' button click.</summary>
         private void CreateDrill_SaveDrillBtn_Click(object sender, EventArgs e)
@@ -258,7 +258,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Enter-key' press.</summary>
         private void CreateDrill_CreateBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)

@@ -28,7 +28,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>XMLDriver object default constructor.</summary>
         public XMLDriver()
@@ -42,7 +42,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>>XMLDriver object constructor.</summary>
         /// <param name="adminXML">Admin XML's path.</param>
@@ -94,7 +94,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Checks for, and if necessary creates, core XML files;
         /// Admin, Group, Drill.</summary>
@@ -129,7 +129,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Accessor: Student object by ID.</summary>
         /// <param name="studentID">Student's ID.</param>
@@ -142,7 +142,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Add a studet to student XML.</summary>
         /// <param name="newStudent">Student object to be added.</param>
@@ -155,7 +155,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Add an admin to admin XML.</summary>
         /// <param name="newAdmin">Admin object to be added.</param>
@@ -168,7 +168,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Add a record to student data.</summary>
         /// <param name="student">Student object to be modified.</param>
@@ -180,7 +180,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Creating Student XML for addition of first student.
         /// </summary>
@@ -195,7 +195,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Creating Admin XML for addition of first Admin.</summary>
         /// <param name="newAdminEntry">Admin object to be added.</param>
@@ -220,7 +220,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Default creation of Admin XML file.</summary>
         /// <param name="AdminXMLPath">Admin XML file path.</param>
@@ -264,7 +264,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Default creation of Drill XML file.</summary>
         /// <param name="DrillXMLPath">Drill XML file path.</param>
@@ -290,7 +290,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Creating Record XML for addition of first record.
         /// </summary>
@@ -304,7 +304,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Adding a new student to Student XML.</summary>
         /// <param name="student">Student object to be added.</param>
@@ -318,7 +318,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Adding a new admin to Admin XML.</summary>
         /// <param name="admin">Admin object to be added.</param>
@@ -386,7 +386,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Adding a new drill to Drill XML. </summary>
         /// <param name="drill">Drill name.</param>
@@ -419,7 +419,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Adding a new record to Student XML. </summary>
         /// <param name="student">Student object to be modified.</param>
@@ -432,7 +432,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Edit admin data.</summary>
         /// <param name="newPassword">New password.</param>
@@ -457,7 +457,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Edit group data.</summary>
         /// <param name="newName">New group name.</param>
@@ -482,7 +482,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Edit data in Student XML.</summary>
         /// <param name="newFName">Student's first name.</param>
@@ -523,7 +523,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Update admin XML.</summary>
         /// <param name="admin">Admin object.</param>
@@ -543,7 +543,7 @@ namespace RaptorMath
         
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Add a drill to Student XML.</summary>
         /// <param name="student">Student object to be modified.</param>
@@ -556,7 +556,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Add a drill to a group XML.</summary>
         /// <param name="group">Group oject to be modified.</param>
@@ -582,7 +582,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Check if drill is already associated with a group.
         /// </summary>
@@ -603,7 +603,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Remove a drill from Group XML.</summary>
         /// <param name="group">Group object to be modified.</param>
@@ -637,7 +637,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Remove a drill from Student XML.</summary>
         /// <param name="student">Student object to be modified.</param>
@@ -650,7 +650,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Check if a drill has been assigned.</summary>
         /// <param name="student">Student object to be checked.</param>
@@ -682,7 +682,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Delete a student from Student XML.</summary>
         /// <param name="student">Student object to be removed.</param>
@@ -695,7 +695,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Delete an admin from Admin XML.</summary>
         /// <param name="admin">Admin object to be removed.</param>
@@ -756,7 +756,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Load a list of students from XML to local.</summary>
         /// <param name="studentList">List of student objects to be populated.
@@ -796,7 +796,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Load a list of groups from XML to local.</summary>
         /// <param name="groupList">List of group objects to be populated.
@@ -895,7 +895,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Add data from active session to XML.</summary>
         /// <param name="currentStudent">Student object to be modified.</param>
@@ -963,7 +963,7 @@ namespace RaptorMath
         // Checks if the file exists, returns bool                          //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Check if a file exists.</summary>
         /// <param name="fileName">File name to check for.</param>
@@ -981,7 +981,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Add an admin node to Admin XML.</summary>
         /// <param name="newAdmin">Admin object to be added.</param>
@@ -1001,8 +1001,8 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
-        //-----------------------------------------------------------------//
+        // Date: 4/5/14                                                     //
+        //------------------------------------------------------------------//
         /// <summary>Add a drill node to Drill XML.</summary>
         /// <param name="newDrill">Drill object to be added.</param>
         /// <returns>XElement</returns>

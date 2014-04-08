@@ -31,7 +31,7 @@ namespace RaptorMath
 {
     //------------------------------------------------------------------//
     // Authors: Cody Jordan, Cian Carota                                //
-    // Date:                                                   //
+    // Date: 4/3/14                                                     //
     //------------------------------------------------------------------//
     public partial class ManageGroups_Form : Form
     {
@@ -233,7 +233,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Manage Groups form constructor.</summary>
         /// <param name="manager">The program management class.</param>
@@ -268,7 +268,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Create Group' button click.</summary>
         private void MngGroups_CreateBtn_Click(object sender, EventArgs e)
@@ -316,7 +316,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Rename Group' button click.</summary>
         private void MngGroups_RenameBtn_Click(object sender, EventArgs e)
@@ -344,7 +344,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Enter-key' press.</summary>
         private void MngGroups_GroupBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
@@ -357,7 +357,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Enter-key' press.</summary>
         private void MngGroups_ModifyBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
@@ -370,7 +370,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle Text Changed event.</summary>
         private void MngGroups_GroupNameCmbo_TextChanged(object sender, EventArgs e)
@@ -383,7 +383,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle Text Changed event.</summary>
         private void MngGroups_SelectGroupAndNewNameCmbo_TextChanged(object sender, EventArgs e)

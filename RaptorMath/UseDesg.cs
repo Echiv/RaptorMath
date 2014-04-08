@@ -153,7 +153,7 @@ namespace RaptorMath
         // Date: 2/12/2014                                                  //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>User Designation form constructor.</summary>
         /// <param name="manager">The program management class.</param>
@@ -192,7 +192,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Refresh the content of the 'Name' combobox.</summary>
         private void RefreshLoginDropDownBox()
@@ -229,7 +229,7 @@ namespace RaptorMath
         // Date: 2/16/2014                                                  //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Login' button click.</summary>
         private void UseDesg_LoginBtn_Click(object sender, EventArgs e)
@@ -268,7 +268,7 @@ namespace RaptorMath
         // Date: 2/16/2014                                                  //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle Selection Change event.</summary>
         private void UseDesg_LoginDdl_SelectionChangeCommitted(object sender, EventArgs e)
@@ -302,7 +302,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle Text Change event.</summary>
         private void UseDesg_LoginCmbo_TextChanged(object sender, EventArgs e)

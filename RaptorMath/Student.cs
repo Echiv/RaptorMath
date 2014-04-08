@@ -27,7 +27,7 @@ namespace RaptorMath
     // Date: 2/17/2014                                                  //
     //------------------------------------------------------------------//
     // Authors: Cody Jordan, Cian Carota                                //
-    // Date:                                                   //
+    // Date: 4/4/14                                                     //
     //------------------------------------------------------------------//
     public class Student
     {
@@ -93,7 +93,7 @@ namespace RaptorMath
         // Date: 2/17/2014                                                  //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Record object default constructor.</summary>
         public Student()
@@ -112,7 +112,7 @@ namespace RaptorMath
         // Date: 2/17/2014                                                  //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Record object constructor.</summary>
         public Student(int grpID, string fname, string lname, string login)

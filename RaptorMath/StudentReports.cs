@@ -181,7 +181,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Student Reports form constructor.</summary>
         /// <param name="manager">The program management class.</param>
@@ -250,7 +250,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Single Report' button click.</summary>
         private void ReportHome_SingleReportBtn_Click(object sender, EventArgs e)
@@ -287,7 +287,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Group Report' button click.</summary>
         private void ReportHome_GroupReportBtn_Click(object sender, EventArgs e)
@@ -319,7 +319,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Registers 'Start Date' date box item selection.</summary>
         private void ReportHome_StartDate_ValueChanged(object sender, EventArgs e)
@@ -329,7 +329,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Registers 'End Date' date box item selection.</summary>
         private void ReportHome_EndDate_ValueChanged(object sender, EventArgs e)
@@ -339,7 +339,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Enter-key' press.</summary>
         private void ReportHome_StudentCmbo_KeyPress(object sender, KeyPressEventArgs e)
@@ -352,7 +352,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Enter-key' press.</summary>
         private void ReportHome_GroupCmbo_KeyPress(object sender, KeyPressEventArgs e)
@@ -363,6 +363,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/8/14                                                     //
+        //------------------------------------------------------------------//
+        /// <summary>Handle Text Change event.</summary>
         private void ReportHome_StudentCmbo_TextChanged(object sender, EventArgs e)
         {
             if(ReportHome_StudentCmbo.Text.Length > 0)
@@ -377,6 +382,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/8/14                                                     //
+        //------------------------------------------------------------------//
+        /// <summary>Handle Text Change event.</summary>
         private void ReportHome_GroupCmbo_TextChanged(object sender, EventArgs e)
         {
             if (ReportHome_GroupCmbo.Text.Length > 0)

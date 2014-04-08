@@ -188,7 +188,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears and refreshes content of 'First Name',
         /// 'Last Name', & 'Select a User' combo boxes.</summary>
@@ -242,7 +242,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Manage Users form constructor.</summary>
         /// <param name="manager">The program management class.</param>
@@ -296,7 +296,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Save User' button click.</summary>
         private void MngUsers_SaveUserBtm_Click(object sender, EventArgs e)
@@ -352,7 +352,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Student' radiobutton click.</summary>
         private void MngUsers_StudentRdo_CheckedChanged(object sender, EventArgs e)
@@ -366,7 +366,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Admin' radiobutton click.</summary>
         private void MngUsers_AdminRdo_CheckedChanged(object sender, EventArgs e)
@@ -379,7 +379,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Remove User' button click.</summary>
         private void MngUsers_RemoveUserBtn_Click(object sender, EventArgs e)
@@ -413,7 +413,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Enter-key' press.</summary>
         private void MngUsers_AddUserBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
@@ -426,7 +426,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Enter-key' press.</summary>
         private void MngUsers_RemoveUserBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
@@ -439,7 +439,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle Text Change event.</summary>
         private void MngUsers_RemoveUserCmbo_TextChanged(object sender, EventArgs e)
@@ -456,7 +456,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle Text Change event.</summary>
         private void MngUsers_FirstAndLastNameCmbo_TextChanged(object sender, EventArgs e)

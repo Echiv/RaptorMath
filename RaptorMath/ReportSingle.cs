@@ -165,7 +165,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Single Report form constructor.</summary>
         /// <param name="manager">The program management class.</param>
@@ -204,7 +204,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Refreshes the datagrid to display the records of the
         /// selected user.</summary>

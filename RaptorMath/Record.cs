@@ -25,7 +25,7 @@ namespace RaptorMath
     // Date: 2/24/2014                                                  //
     //------------------------------------------------------------------//
     // Authors: Cody Jordan, Cian Carota                                //
-    // Date:                                                    //
+    // Date: 4/4/14                                                     //
     //------------------------------------------------------------------//
     public class Record
     {
@@ -112,7 +112,7 @@ namespace RaptorMath
         // Date: 2/24/2014                                                  //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                    //
+        // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Record object default constructor.</summary>
         public Record()
@@ -135,7 +135,7 @@ namespace RaptorMath
         // Date: 2/24/2014                                                  //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                    //
+        // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Record object constructor.</summary>
         public Record(int driID, string stDrillName, string stDate, string stQuestion, string stRngStrt, string stRngEnd,

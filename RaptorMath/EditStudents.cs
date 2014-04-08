@@ -171,7 +171,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Edit Students form constructor.</summary>
         /// <param name="manager">The program management class.</param>
@@ -205,7 +205,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears and refreshes the content of 'Select a Student'
         /// combo box.</summary>
@@ -220,7 +220,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears and refreshes content of 'New First Name' combo 
         /// box.</summary>
@@ -235,7 +235,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears and refreshes content of 'New Last Name' combo box.</summary>
         private void RefreshNewLastNameCmbo()
@@ -249,7 +249,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears and refreshes content of 'New Group' combo box.</summary>
         private void RefreshGroupCmbo()
@@ -263,7 +263,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears and refreshes content of all combo boxes.</summary>
         private void RefreshCmboBoxes()
@@ -276,7 +276,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears content of all combo boxes.</summary>
         private void ClearCmboBoxes()
@@ -289,7 +289,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Save Student' button click.</summary>
         private void EditStu_SaveStudentBtn_Click(object sender, EventArgs e)
@@ -331,7 +331,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Enter-key' press.</summary>
         private void EditStu_SettingBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)

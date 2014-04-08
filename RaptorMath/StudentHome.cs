@@ -182,7 +182,7 @@ namespace RaptorMath
         // Date: 2/11/2014                                                  //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Student Home form constructor.</summary>
         /// <param name="manager">The program management class.</param>
@@ -232,7 +232,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears and refreshes content of drill selection
         /// combo box.</summary>
@@ -307,7 +307,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Registers combo box item selection.</summary>
         private void StuHome_DrillDdl_SelectionChangeCommitted(object sender, EventArgs e)
@@ -321,7 +321,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Enables 'Start' button.</summary>
         private void StuHome_DrillDdl_SelectedIndexChanged(object sender, EventArgs e)

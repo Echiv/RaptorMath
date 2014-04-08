@@ -185,7 +185,7 @@ namespace RaptorMath
         // Date: 2/12/2014                                                  //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Math Drill form constructor.</summary>
         /// <param name="manager">Manager object.</param>

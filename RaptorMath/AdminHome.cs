@@ -187,7 +187,7 @@ namespace RaptorMath
         // Date: 2/13/2014                                                  //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                  //
+        // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
         public AdminHome_Form(Manager manager)
         {
@@ -278,7 +278,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Save' button click.</summary>
         private void AdminHome_SaveBtn_Click(object sender, EventArgs e)
@@ -377,7 +377,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Enter-key' press.</summary>
         private void AdminHome_PasswordBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
@@ -389,8 +389,8 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle Text Changed event.</summary>
         private void AdminHome_CurrentPWTxt_TextChanged(object sender, EventArgs e)
@@ -406,8 +406,8 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>>Handle Text Changed event.</summary>
         private void AdminHome_NewPWTxt_TextChanged(object sender, EventArgs e)

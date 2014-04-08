@@ -178,7 +178,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears and refreshes content of 'Stu/Grp' combo box, 
         /// populating with student data.</summary>
@@ -193,7 +193,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears and refreshes content of 'Stu/Grp' combo box, 
         /// populating with group data.</summary>
@@ -208,7 +208,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears content of 'Select Drill' combo box and 
         /// repopulates with drills that can be assigned to the selected 
@@ -233,7 +233,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears content of 'Select Drill' combo box and 
         /// repopulates with drills that can be assigned to the selected 
@@ -258,7 +258,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears content of 'Select Drill' combo box and 
         /// repopulates with drills that can be unassigned from the selected 
@@ -285,7 +285,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears content of 'Select Drill' combo box and 
         /// repopulates with drills that can be unassigned from the selected 
@@ -312,7 +312,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Will refresh 'Stu/Grp' and 'Select 
         /// Drill' combo boxes relative to intent to assign a drill to a 
@@ -326,7 +326,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Will refresh 'Stu/Grp' and 'Select 
         /// Drill' combo boxes relative to intent to assign a drill to a 
@@ -340,7 +340,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Will refresh 'Stu/Grp' and 'Select 
         /// Drill' combo boxes relative to intent to unassign a drill to a 
@@ -354,7 +354,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Will refresh 'Stu/Grp' and 'Select 
         /// Drill' combo boxes relative to intent to unassign a drill to a 
@@ -368,7 +368,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Create Drill form constructor.</summary>
         /// <param name="manager">The program management class.</param>
@@ -400,7 +400,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Add/Rmv Drill' button click.</summary>
         private void MngDrills_AddRmvDrillBtn_Click(object sender, EventArgs e)
@@ -510,7 +510,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Assign' radiobutton click.</summary>
         private void MngDrills_AssignDrillRdo_CheckedChanged(object sender, EventArgs e)
@@ -521,7 +521,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'remove' radiobutton click.</summary>
         private void MngDrills_RemoveDrillRdo_CheckedChanged(object sender, EventArgs e)
@@ -532,7 +532,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'student' radiobutton click.</summary>
         private void MngDrills_StudentRdo_CheckedChanged(object sender, EventArgs e)
@@ -545,7 +545,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'group' radiobutton click.</summary>
         private void MngDrills_GroupRdo_CheckedChanged(object sender, EventArgs e)
@@ -558,7 +558,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Enter-key' press.</summary>
         private void MngDrills_PerformBoxTextBoxes_KeyPress(object sender, KeyPressEventArgs e)
@@ -571,7 +571,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle text change in 'Stu/Grp' combo box.</summary>
         private void MngDrills_StudentOrGroupCmbo_TextChanged(object sender, EventArgs e)
@@ -581,7 +581,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Refreshes all combo boxes, which will be repopulated 
         /// relative to radiobutton selections.</summary>
