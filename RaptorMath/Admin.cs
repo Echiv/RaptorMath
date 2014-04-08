@@ -7,6 +7,10 @@
 //          all pertinent data along with a list of all of the  //
 //          students each admin has based on a given file path. //
 //==============================================================//
+// Authors: Cody Jordan and Cian Carota                         //
+// Changes:                                                     //
+//          • Refactored: Accessors and constructors            //
+//==============================================================//
 
 using System;
 using System.Collections.Generic;
@@ -20,6 +24,9 @@ namespace RaptorMath
     //------------------------------------------------------------------//
     // Harvey Kreitzer                                                  //
     // Date: 2/16/2014                                                  //
+    //------------------------------------------------------------------//
+    // Authors: Cody Jordan, Cian Carota                                //
+    // Date:                                                  //
     //------------------------------------------------------------------//
     public class Admin
     {
@@ -75,6 +82,9 @@ namespace RaptorMath
         // Harvey Kreitzer                                                  //
         // Date: 2/16/2014                                                  //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                         //
+        // Date:                                                  //
+        //------------------------------------------------------------------//
         public Admin()
         {
             firstName = "Unknown";
@@ -88,6 +98,9 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         // Harvey Kreitzer                                                  //
         // Date: 2/16/2014                                                  //
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                         //
+        // Date:                                                  //
         //------------------------------------------------------------------//
         public Admin(string fname, string lname, string pwd, string login, string pathLoc)
         {

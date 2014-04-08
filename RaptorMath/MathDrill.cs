@@ -28,6 +28,10 @@
 //          in their XML file. The Manager sets window to the   //
 //          Student Home page and closes the current one.       //
 //==============================================================//
+// Authors: Cody Jordan and Cian Carota                         //
+// Changes:                                                     //
+//          • Refactored: Accessors and constructors            //
+//==============================================================//
 
 using System;
 using System.Collections.Generic;
@@ -52,8 +56,8 @@ namespace RaptorMath
         private bool isKeyPressed = false;
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle KeyUp event.</summary>
         private void RaptorMath_KeyUp(object sender, KeyEventArgs e)
@@ -62,8 +66,8 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersKeyDown event.</summary>
         private void RaptorMath_LettersKeyDown(object sender, KeyEventArgs e)
@@ -77,8 +81,8 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersAndDigitsKeyDown event.</summary>
         private void RaptorMath_LettersAndDigitsKeyDown(object sender, KeyEventArgs e)
@@ -93,8 +97,8 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle DigitsKeyDown event.</summary>
         private void RaptorMath_DigitsKeyDown(object sender, KeyEventArgs e)
@@ -108,8 +112,8 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersWithOneWhiteSpaceKeyPress event.</summary>
         private void RaptorMath_LettersWithOneWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
@@ -121,8 +125,8 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersAndDigitsKeyPress event.</summary>
         private void RaptorMath_LettersAndDigitsKeyPress(object sender, KeyPressEventArgs e)
@@ -133,8 +137,8 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle DigitsKeyPress event.</summary>
         private void RaptorMath_DigitsKeyPress(object sender, KeyPressEventArgs e)
@@ -145,8 +149,8 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersKeyPress event.</summary>
         private void RaptorMath_LettersKeyPress(object sender, KeyPressEventArgs e)
@@ -180,6 +184,11 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/12/2014                                                  //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Math Drill form constructor.</summary>
+        /// <param name="manager">Manager object.</param>
         public MathDrill_Form(Manager manager)
         {
             InitializeComponent();
@@ -189,7 +198,7 @@ namespace RaptorMath
 
             MathDrill_InputTxt.Select();
             MathDrill_SubmitBtn.Enabled = false;
-            
+
             this.MathDrill_InputTxt.KeyPress += new KeyPressEventHandler(RaptorMath_DigitsKeyPress);
 
             MathDrill_CurrentNumLbl.Text = localManager.GetCurrentNumber();
@@ -230,6 +239,10 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/27/2014                                                  //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
+        //------------------------------------------------------------------//
+        /// <summary>Refresh display of math problem.</summary>
         private void RefreshRange()
         {
             //firstNum = localManager.CreateRandom();
@@ -300,6 +313,10 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/25/2014                                                  //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 3/13/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'I don't know' button click.</summary>
         private void MathDrill_SkipBtn_Click(object sender, EventArgs e)
         {
             
@@ -334,6 +351,10 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/12/2014                                                  //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 3/10/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Quit' button click.</summary>
         private void MathDrill_EndDrillBtn_Click(object sender, EventArgs e)
         {
             if (localManager.currentProblemNumber <= Convert.ToInt32(localManager.currentStudent.curDrill.Questions))
@@ -360,7 +381,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
-        // Date: 3/2/2014                                                  //
+        // Date: 3/2/2014                                                   //
         //------------------------------------------------------------------//
         private void MathDrill_InputType_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -371,6 +392,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/8/14                                                     //
+        //------------------------------------------------------------------//
+        /// <summary>Handle Text Change event.</summary>
         private void MathDrill_InputTxt_TextChanged(object sender, EventArgs e)
         {
             if (MathDrill_InputTxt.Text.Length > 0)

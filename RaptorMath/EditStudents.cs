@@ -1,4 +1,23 @@
-﻿using System;
+﻿//==============================================================//
+//					       EditStudents.cs		                //
+//==============================================================//
+// Program Name: RaptorMath                                     //
+// Authors: Cody Jordan and Cian Carota                         //
+// Purpose: This form allows the user to modify the data of a   //
+//            specific student.                                 //
+// User:    • The user is assumed to be an admin.               //
+//          • The user can select the name of a student within  //
+//            the drop down list.                               //
+//          • The user can edit the student's first and/or last //
+//            name, and/or the student's associated group.      //
+//          • The user can click the Save button to commit any  //
+//            changes.                                      //
+//          • The user can click the Close button to return to  //
+//            Admin Home or click the Exit button to end the    //
+//            program.                                          //
+//==============================================================//
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,8 +35,8 @@ namespace RaptorMath
         private bool isKeyPressed = false;
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle KeyUp event.</summary>
         private void RaptorMath_KeyUp(object sender, KeyEventArgs e)
@@ -26,8 +45,8 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersKeyDown event.</summary>
         private void RaptorMath_LettersKeyDown(object sender, KeyEventArgs e)
@@ -41,8 +60,8 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersAndDigitsKeyDown event.</summary>
         private void RaptorMath_LettersAndDigitsKeyDown(object sender, KeyEventArgs e)
@@ -57,8 +76,8 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle DigitsKeyDown event.</summary>
         private void RaptorMath_DigitsKeyDown(object sender, KeyEventArgs e)
@@ -72,8 +91,8 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersWithOneWhiteSpaceKeyPress event.</summary>
         private void RaptorMath_LettersWithOneWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
@@ -85,8 +104,8 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersAndDigitsKeyPress event.</summary>
         private void RaptorMath_LettersAndDigitsKeyPress(object sender, KeyPressEventArgs e)
@@ -97,8 +116,8 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle DigitsKeyPress event.</summary>
         private void RaptorMath_DigitsKeyPress(object sender, KeyPressEventArgs e)
@@ -109,8 +128,8 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
-        // Date:                                                   //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersKeyPress event.</summary>
         private void RaptorMath_LettersKeyPress(object sender, KeyPressEventArgs e)
@@ -121,7 +140,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Kyle Bridges, Harvey Kreitzer                                    //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date: 2/20/2014                                                  //
         //------------------------------------------------------------------//
         public string AdminName
@@ -131,7 +150,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
         /// <summary>Formating initial display of current date.</summary>
@@ -141,7 +160,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date: 3/16/2014                                                  //
         //------------------------------------------------------------------//
         /// <summary>Formating initial display of current time.</summary>
@@ -176,7 +195,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Time display update on timer tick.</summary>
         private void EditStu_Timer_Tick(object sender, EventArgs e)
@@ -255,6 +274,11 @@ namespace RaptorMath
             RefreshGroupCmbo();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Clears content of all combo boxes.</summary>
         private void ClearCmboBoxes()
         {
             EditStu_SelectionCmbo.Text = string.Empty;
@@ -281,7 +305,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Exit' button click.</summary>
         private void EditStu_ExitBtn_Click(object sender, EventArgs e)
@@ -296,7 +320,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Close' button click.</summary>
         private void EditStu_CloseBtn_Click(object sender, EventArgs e)

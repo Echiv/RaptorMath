@@ -20,6 +20,9 @@ namespace RaptorMath
     // Kyle Bridges                                                     //
     // Date: 2/24/2014                                                  //
     //------------------------------------------------------------------//
+    // Authors: Cody Jordan, Cian Carota                                //
+    // Date:                                                    //
+    //------------------------------------------------------------------//
     public class Record
     {
         private int id;
@@ -104,6 +107,10 @@ namespace RaptorMath
         // Kyle Bridges                                                     //
         // Date: 2/24/2014                                                  //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Record object default constructor.</summary>
         public Record()
         {
             id = 0;
@@ -123,6 +130,10 @@ namespace RaptorMath
         // Kyle Bridges                                                     //
         // Date: 2/24/2014                                                  //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Record object constructor.</summary>
         public Record(int driID, string stDrillName, string stDate, string stQuestion, string stRngStrt, string stRngEnd,
                       string stOp, string stWrong, string stPercent, string stSkipped)
         {
@@ -140,7 +151,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 3/13/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Given the elements of a record node and the order 
         /// described in singleRecordList add this to the recordDictionary.

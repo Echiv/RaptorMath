@@ -53,7 +53,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Validation of Admin XML's existence.</summary>
         /// <param name="fileName">XML's file name.</param>
@@ -69,7 +69,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Validation of Student XML's existence.</summary>
         /// <param name="fileName">Validation of Admin XML's existence.</param>
@@ -234,7 +234,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Default creation of Group XML file.</summary>
         /// <param name="GroupXMLPath">Group XML file path.</param>
@@ -342,7 +342,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Adding a new group to Group XML. </summary>
         /// <param name="groupName">Group name.</param>
@@ -421,6 +421,15 @@ namespace RaptorMath
             return XMLStudentDriver.AddNewRecord(student, RecordToAdd);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Edit admin data.</summary>
+        /// <param name="newPassword">New password.</param>
+        /// <param name="admin">Admin object.</param>
+        /// <param name="adminList">List of admin objects.</param>
+        /// <returns>Boolean success confirmation.</returns>
         public bool editAdmin(string newPassword, Admin admin, List<Admin> adminList)
         {
             if (admin != null)
@@ -436,7 +445,16 @@ namespace RaptorMath
             }
             return false;
         }
-        
+
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Edit group data.</summary>
+        /// <param name="newName">New group name.</param>
+        /// <param name="currentName">Current group name.</param>
+        /// <param name="groupList">List of group objects.</param>
+        /// <returns>Boolean success confirmation.</returns>
         public bool editGroup(string newName, string currentName, List<Group> groupList)
         {
             Group modifiedGroup = new Group();
@@ -471,7 +489,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Edit data in Group XML.</summary>
         /// <param name="group">Group object to be replaced.</param>
@@ -494,6 +512,13 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Update admin XML.</summary>
+        /// <param name="admin">Admin object.</param>
+        /// <param name="adminXMLPath">Admin XML file path.</param>
         private void UpdateAdmin(Admin admin, string adminXMLPath)
         {
             XDocument data = XDocument.Load(adminXMLPath);
@@ -520,6 +545,14 @@ namespace RaptorMath
             return XMLStudentDriver.AddDrillToStudentXML(student, drillToAdd, studentXMLPath);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Add a drill to a group XML.</summary>
+        /// <param name="group">Group oject to be modified.</param>
+        /// <param name="drillToAdd">Drill object to be added.</param>
+        /// <returns>Boolean success confirmation.</returns>
         public bool AddDrillToGroupXML(Group group, Drill drillToAdd)
         {
             XDocument data = XDocument.Load(groupXMLPath);
@@ -606,11 +639,27 @@ namespace RaptorMath
             return XMLStudentDriver.RemoveDrillFromStudentXML(student, DrillToRemove, studentXMLPath);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Check if a drill has been assigned.</summary>
+        /// <param name="student">Student object to be checked.</param>
+        /// <param name="drill">Drill object to check for.</param>
+        /// <returns>Boolean confirmation.</returns>
         private bool isDrillAssigned(Student student, Drill drill)
         {
             return XMLStudentDriver.isDrillAssigned(student, drill);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/1/14                                                     //
+        //------------------------------------------------------------------//
+        /// <summary>Search for next ID to be assigned.</summary>
+        /// <param name="fileName">File name to search in.</param>
+        /// <param name="itemTag">Item tag.</param>
+        /// <returns>Integer</returns>
         public int GetNextAvailableID(string fileName, string itemTag)
         {
             XDocument data = XDocument.Load(fileName);
@@ -660,7 +709,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Delete an group from an XML file.</summary>
         /// <param name="group">Group object to be deleted.</param>
@@ -679,7 +728,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Delete an drill from an XML file.</summary>
         /// <param name="drill">Drill object to be deleted.</param>
@@ -712,7 +761,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Load a list of admins from XML to local.</summary>
         /// <param name="adminList">List of admin objects to be populated.
@@ -767,7 +816,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Load a list of drills from XML to local.</summary>
         /// <param name="drillList">List of drill objects to be populated.
@@ -795,7 +844,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Define first level of root in XML.</summary>
         /// <param name="XMLFile">XML file being used.</param>
@@ -807,7 +856,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Define second level of root in XML.</summary>
         /// <param name="RootNode">XML's root node.</param>
@@ -822,7 +871,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Define third level of root in XML.</summary>
         /// <param name="RootNode">XML's root node.</param>
@@ -898,11 +947,18 @@ namespace RaptorMath
                 student_doc.Save(fileName);
             }
         }
+
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //
         // Date: 2/26/2014                                                  //
         // Checks if the file exists, returns bool                          //
         //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date:                                                   //
+        //------------------------------------------------------------------//
+        /// <summary>Check if a file exists.</summary>
+        /// <param name="fileName">File name to check for.</param>
+        /// <returns>Boolean confirmation.</returns>
         public bool FileExists(string fileName)
         {
             if (!System.IO.File.Exists(fileName))

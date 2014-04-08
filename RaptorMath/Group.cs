@@ -1,4 +1,13 @@
-﻿using System;
+﻿//==============================================================//
+//					        Group.cs				            //
+//==============================================================//
+// Program Name: RaptorMath                                     //
+// Authors: Cody Jordan and Cian Carota                         //
+// Purpose: This class creates a Group object that contains     //
+//          all pertinent data.                                 //
+//==============================================================//
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +16,10 @@ using System.Xml.Linq;
 
 namespace RaptorMath
 {
+    //------------------------------------------------------------------//
+    // Authors: Cody Jordan, Cian Carota                                //
+    // Date: 4/1/14                                                     //
+    //------------------------------------------------------------------//
     public class Group
     {
         public List<Drill> groupDrillList = new List<Drill>();
@@ -28,7 +41,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Group object default constructor.</summary>
         public Group()
@@ -38,7 +51,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Drill object constructor.</summary>
         /// <param name="groupName">Group Name.</param>
