@@ -195,7 +195,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Time display update on timer tick.</summary>
         private void ReportHome_Timer_Tick(object sender, EventArgs e)
@@ -205,7 +205,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Close' button click.</summary>
         private void ReportHome_CloseBtn_Click(object sender, EventArgs e)
@@ -216,7 +216,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Exit' button click.</summary>
         private void ReportHome_ExitBtn_Click(object sender, EventArgs e)

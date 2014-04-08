@@ -151,7 +151,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 3/13/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Given the elements of a record node and the order 
         /// described in singleRecordList add this to the recordDictionary.

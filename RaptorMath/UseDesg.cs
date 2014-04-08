@@ -282,7 +282,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 3/13/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Enables 'Login' button on 'Password' textbox text 
         /// change.</summary>

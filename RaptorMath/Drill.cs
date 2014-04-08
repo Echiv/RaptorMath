@@ -7,6 +7,10 @@
 //          all pertinent data along with functions that        //
 //          increment the total questions wrong and skipped.    //
 //==============================================================//
+// Authors: Cody Jordan and Cian Carota                         //
+// Changes:                                                     //
+//          • Refactored: Accessors and constructors            //
+//==============================================================//
 
 using System;
 using System.Collections.Generic;
@@ -21,7 +25,7 @@ namespace RaptorMath
     // Date: 2/26/2014                                                  //
     //------------------------------------------------------------------//
     // Authors: Cody Jordan, Cian Carota                                //
-    // Date:                                                   //
+    // Date: 4/1/14                                                     //
     //------------------------------------------------------------------//
     public class Drill
     {
@@ -90,7 +94,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Drill object default constructor.</summary>
         public Drill()
@@ -107,7 +111,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Drill object constructor.</summary>
         /// <param name="driName">Drill name.</param>

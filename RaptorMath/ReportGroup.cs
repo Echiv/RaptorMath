@@ -142,7 +142,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Group Report form constructor.</summary>
         /// <param name="manager">The program management class.</param>
@@ -156,7 +156,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Time display update on timer tick.</summary>
         private void GroupReport_Timer_Tick(object sender, EventArgs e)
@@ -166,7 +166,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Close' button click.</summary>
         private void GroupReport_CloseBtn_Click(object sender, EventArgs e)

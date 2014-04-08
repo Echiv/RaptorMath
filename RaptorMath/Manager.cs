@@ -11,6 +11,14 @@
 //          variety of useful functions that are easily         //
 //          accessible within the desired form.                 //
 //==============================================================//
+// Authors: Cody Jordan and Cian Carota                         //
+// Changes:                                                     //
+//          • Refactored: Accessors and constructors            //
+//          • Added accessor functions.                         //
+//          • Added access and data validation functions.       //
+//          • Added object (Admin, Student, Group, etc...)      //
+//            creation functions.                               //
+//==============================================================//
 
 using System;
 using System.Collections.Generic;
@@ -612,7 +620,7 @@ namespace RaptorMath
 
         //----------------------------------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                                            //
-        // Date:                                                                                        //
+        // Date: 4/1/14                                                                                 //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Check running status of program.</summary>
         /// <returns>Boolean confirming running status.</returns>
@@ -623,7 +631,7 @@ namespace RaptorMath
 
         //----------------------------------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                                            //
-        // Date:                                                                                        //
+        // Date: 4/1/14                                                                                 //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Access form.</summary>
         /// <returns>Form object being accessed.</returns>
@@ -634,7 +642,7 @@ namespace RaptorMath
 
         //----------------------------------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                                            //
-        // Date:                                                                                        //
+        // Date: 4/1/14                                                                                 //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Set status of program to not running.</summary>
         public void SetIsRunningFalse()
@@ -644,7 +652,7 @@ namespace RaptorMath
 
         //----------------------------------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                                            //
-        // Date:                                                                                        //
+        // Date: 4/1/14                                                                                 //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Set window object.</summary>
         /// <param name="newForm">Window to be established.</param>
@@ -699,7 +707,7 @@ namespace RaptorMath
         // Returns list of users for use in drop down list                  //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date: 3/10/14                                                    //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Fill a list of user names.</summary>
         /// <returns>List<String></returns>
@@ -770,7 +778,7 @@ namespace RaptorMath
 
         //----------------------------------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                                            //
-        // Date:                                                                                        //
+        // Date: 3/13/14                                                                                //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Validate admin's password input.</summary>
         /// <returns>Boolean confirming password.</returns>
@@ -788,7 +796,7 @@ namespace RaptorMath
 
         //----------------------------------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                                            //
-        // Date:                                                                                        //
+        // Date: 4/1/14                                                                                 //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Check if selection is student.</summary>
         /// <returns>Boolean confirmation.</returns>
@@ -1051,7 +1059,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Joshua Boone                                                     //
-        // Date: 3/6/2014                                                  //
+        // Date: 3/6/2014                                                   //
         //------------------------------------------------------------------//
         public bool IsOverFlow(string number)
         {

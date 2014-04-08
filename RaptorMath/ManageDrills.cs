@@ -1,4 +1,26 @@
-﻿using System;
+﻿//==============================================================//
+//					       ManageDrills.cs				        //
+//==============================================================//
+// Program Name: RaptorMath                                     //
+// Authors: Cody Jordan and Cian Carota                         //
+// Purpose: This form allows the user to manage the association //
+//          between students/groups and drills.                 //
+// User:    • The user is assumed to be an admin.               //
+//          • The user can select to modify the association     //
+//            a student or group.                               //
+//          • The user can select whether to add or remove an   //
+//            association.                                      //
+//          • The user can then select the specific             //
+//            student/group and the drill association to be     //
+//            modified.                                         //
+//          • The user can click the Add/Remove button to       //
+//            commit any changes.                               //
+//          • The user can click the Close button to return to  //
+//            Admin Home or click the Exit button to end the    //
+//            program.                                          //
+//==============================================================//
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -368,7 +390,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Time display update on timer tick.</summary>
         private void MngDrills_Timer_Tick(object sender, EventArgs e)
@@ -462,7 +484,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Exit' button click.</summary>
         private void MngDrills_ExitBtn_Click(object sender, EventArgs e)
@@ -477,7 +499,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Close' button click.</summary>
         private void MngDrills_CloseBtn_Click(object sender, EventArgs e)

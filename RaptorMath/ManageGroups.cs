@@ -1,4 +1,24 @@
-﻿using System;
+﻿//==============================================================//
+//					     ManageGroups.cs				        //
+//==============================================================//
+// Program Name: RaptorMath                                     //
+// Authors: Cody Jordan and Cian Carota                         //
+// Purpose: This form allows the user to create and/or manage   //
+//          groups.                                             //
+// User:    • The user is assumed to be an admin.               //
+//          • The user can enter a new group name.              //
+//          • The user can click the Create Group button to     //
+//            create the group.                                 //
+//          • The user can select an existing group, and enter  //
+//            a new name.                                       //
+//          • The user can click the Rename Group button to     //
+//            commit the change.                                //
+//          • The user can click the Close button to return to  //
+//            Admin Home or click the Exit button to end the    //
+//            program.                                          //
+//==============================================================//
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -136,7 +156,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears and refreshes content of 'Name' combo box, 
         /// populating with group data.</summary>
@@ -153,7 +173,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears and refreshes content of 'Select a Group' combo box, 
         /// populating with group data.</summary>
@@ -170,7 +190,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Will refresh all combo boxes.</summary>
         private void RefreshCmboBoxes()
@@ -181,7 +201,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Will clear all combo boxes.</summary>
         private void ClearCmboBoxes()
@@ -238,7 +258,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Time display update on timer tick.</summary>
         private void MngGroups_Timer_Tick(object sender, EventArgs e)
@@ -270,7 +290,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Exit' button click.</summary>
         private void MngGroups_ExitBtn_Click(object sender, EventArgs e)
@@ -285,7 +305,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Close' button click.</summary>
         private void MngGroups_CloseBtn_Click(object sender, EventArgs e)

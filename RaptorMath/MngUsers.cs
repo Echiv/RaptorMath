@@ -1,4 +1,25 @@
-﻿using System;
+﻿//==============================================================//
+//					       MngUsers.cs		       		        //
+//==============================================================//
+// Program Name: RaptorMath                                     //
+// Authors: Cody Jordan and Cian Carota                         //
+// Purpose: This form allows the user to create and/or remove   //
+//          users.                                              //
+// User:    • The user is assumed to be an admin.               //
+//          • The user can select whether to add a student or   //
+//            an admin.                                         //
+//          • The user can enter their first and last name.     //
+//          • If adding an admin, the user must set a password. //
+//          • If adding a student, the user must associate them //
+//            with a group.                                     //
+//          • The user can then click the Save User button to   //
+//            save the new user.                                //
+//          • The user can select the name of a current user.   //
+//          • The user can then click the Remove User button to //
+//            remove the selected user.                         //
+//==============================================================//
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -151,7 +172,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears and refreshes content of 'Group' combo box.
         /// </summary>
@@ -196,7 +217,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Clears and refreshes content of all combo boxes.
         /// </summary>
@@ -208,7 +229,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Time display update on timer tick.</summary>
         private void MngUsers_Timer_Tick(object sender, EventArgs e)
@@ -246,7 +267,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Close' button click.</summary>
         private void MngUsers_CloseBtn_Click(object sender, EventArgs e)
@@ -257,7 +278,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Exit' button click.</summary>
         private void MngUsers_ExitBtn_Click(object sender, EventArgs e)

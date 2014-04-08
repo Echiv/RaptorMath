@@ -28,6 +28,10 @@
 //          in their XML file. The Manager sets window to the   //
 //          Student Home page and closes the current one.       //
 //==============================================================//
+// Authors: Cody Jordan and Cian Carota                         //
+// Changes:                                                     //
+//          • Refactored: Accessors and constructors            //
+//==============================================================//
 
 using System;
 using System.Collections.Generic;
@@ -310,7 +314,7 @@ namespace RaptorMath
         // Date: 2/25/2014                                                  //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 3/13/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Handle 'I don't know' button click.</summary>
         private void MathDrill_SkipBtn_Click(object sender, EventArgs e)
@@ -374,7 +378,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
-        // Date: 3/2/2014                                                  //
+        // Date: 3/2/2014                                                   //
         //------------------------------------------------------------------//
         private void MathDrill_InputType_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -387,7 +391,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date: 4/8/14                                                   //
+        // Date: 4/8/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle Text Change event.</summary>
         private void MathDrill_InputTxt_TextChanged(object sender, EventArgs e)

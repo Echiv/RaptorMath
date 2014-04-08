@@ -248,7 +248,7 @@ namespace RaptorMath
         // Date: 2/11/2014                                                  //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 3/13/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Logout' button click.</summary>
         private void StuHome_LogoutBtn_Click(object sender, EventArgs e)
@@ -269,7 +269,7 @@ namespace RaptorMath
         // Date: 2/12/2014                                                  //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Exit' button click.</summary>
         private void StuHome_ExitBtn_Click(object sender, EventArgs e)

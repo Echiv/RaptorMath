@@ -28,6 +28,12 @@
 // Result:  The Manager sets window to the User Report page and //
 //          closes the current one.                             //
 //==============================================================//
+// Authors: Cody Jordan and Cian Carota                         //
+// Changes:                                                     //
+//          • Refactored: Accessors, constructors, click events //
+//            and other functions.                              //
+//          • Added support for key events.                     //
+//==============================================================//
 
 using System;
 using System.Collections.Generic;
@@ -236,8 +242,8 @@ namespace RaptorMath
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/13/2014                                                  //
         //------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                         //
-        // Date:                                                  //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 3/13/14                                                    //
         //------------------------------------------------------------------//
         private void AdminHome_LogoutBtn_Click(object sender, EventArgs e)
         {
@@ -268,7 +274,7 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                         //
+        // Authors: Cody Jordan, Cian Carota                                //
         // Date:                                                   //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Save' button click.</summary>
@@ -289,7 +295,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Manage Users' button click.</summary>
         private void AdminHome_MngUsersBtn_Click(object sender, EventArgs e)
@@ -300,7 +306,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Manage Groups' button click.</summary>
         private void AdminHome_MngGroupsBtn_Click(object sender, EventArgs e)
@@ -311,7 +317,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Student Report' button click.</summary>
         private void AdminHome_StuReportBtn_Click(object sender, EventArgs e)
@@ -322,7 +328,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Edit Students' button click.</summary>
         private void AdminHome_EditStudentBtn_Click(object sender, EventArgs e)
@@ -333,7 +339,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Create Drill' button click.</summary>
         private void AdminHome_CreateDrillBtn_Click(object sender, EventArgs e)
@@ -344,7 +350,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Manage Drill' button click.</summary>
         private void AdminHome_MngDrillBtn_Click(object sender, EventArgs e)

@@ -1,4 +1,23 @@
-﻿using System;
+﻿//==============================================================//
+//					       EditStudents.cs		                //
+//==============================================================//
+// Program Name: RaptorMath                                     //
+// Authors: Cody Jordan and Cian Carota                         //
+// Purpose: This form allows the user to modify the data of a   //
+//            specific student.                                 //
+// User:    • The user is assumed to be an admin.               //
+//          • The user can select the name of a student within  //
+//            the drop down list.                               //
+//          • The user can edit the student's first and/or last //
+//            name, and/or the student's associated group.      //
+//          • The user can click the Save button to commit any  //
+//            changes.                                      //
+//          • The user can click the Close button to return to  //
+//            Admin Home or click the Exit button to end the    //
+//            program.                                          //
+//==============================================================//
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -176,7 +195,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Time display update on timer tick.</summary>
         private void EditStu_Timer_Tick(object sender, EventArgs e)
@@ -286,7 +305,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Exit' button click.</summary>
         private void EditStu_ExitBtn_Click(object sender, EventArgs e)
@@ -301,7 +320,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                   //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Close' button click.</summary>
         private void EditStu_CloseBtn_Click(object sender, EventArgs e)

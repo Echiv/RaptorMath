@@ -24,7 +24,7 @@ namespace RaptorMath
         // Authors: Kyle Bridges, Harvey Kreitzer                           //
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
-        // Date:                                                    //
+        // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>The main entry point for the application.</summary>
         static Manager allManager = new Manager();
