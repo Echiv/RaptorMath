@@ -52,6 +52,7 @@ namespace RaptorMath
         public DateTime StartDate = DateTime.Now;
         public DateTime EndDate = DateTime.Now;
         public string reportStudent = string.Empty;
+        public int currSolution;
         XMLParser XML = new XMLParser();
         XMLDriver XMLDriver = new XMLDriver();
 
@@ -1077,6 +1078,7 @@ namespace RaptorMath
                 return true;
         }
 
+        // DEPRICATED
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //
         // Date: 2/25/2014                                                  //
@@ -1091,6 +1093,73 @@ namespace RaptorMath
             int subtractionEq = start - end;
 
             if ((additionEq == input) || (subtractionEq == input))
+                return true;
+            else
+                return false;
+        }
+
+        public int CurrSolution
+        {
+            get { return currSolution; }
+            set { currSolution = value;  }
+        }
+
+        public string genMathProb()
+        {
+            string mathProb;
+            int solution;
+
+            string operand1 = CreateRandom();
+            string operand2 = CreateRandom();
+
+            solution = calcSolution(Convert.ToInt32(operand1), Convert.ToInt32(operand2));
+            if (solution >= 0)
+            {
+                mathProb = String.Concat(operand1, " ", GetOperand(), " ", operand2, " ="); // adjust: GetOperand()
+            }
+            else
+            {
+                Console.WriteLine("Negative solution encountered:", operand1, " - ", operand2);
+                solution = calcSolution(Convert.ToInt32(operand2), Convert.ToInt32(operand1));
+                mathProb = String.Concat(operand2, " ", GetOperand(), " ", operand1, " ="); // adjust: GetOperand()
+            }
+
+            CurrSolution = solution;
+
+            return mathProb;
+        }
+
+        public int calcSolution(int value1, int value2)
+        {
+            int solution = 0;
+
+            switch (GetOperand()) // adjust: GetOperand()
+            {
+                case "+":
+                    solution = value1 + value2;
+                    break;
+                case "-":
+                    solution = value1 - value2;
+                    break;
+                case "*":
+                    solution = value1 * value2;
+                    break;
+                case "/":
+                    solution = value1 / value2;
+                    break;
+                default:
+                    break;
+            }
+
+            return solution;
+        }
+
+        public bool IsCorrectAnswer(string userInput)
+        {
+            Console.WriteLine("Checking IsCorrectAnswer");
+            int input = Convert.ToInt32(userInput);
+
+            if (CurrSolution == input)
                 return true;
             else
                 return false;
