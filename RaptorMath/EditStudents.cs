@@ -282,10 +282,6 @@ namespace RaptorMath
                 ClearCmboBoxes();
                 RefreshCmboBoxes();
             }
-            else
-            {
-                MessageBox.Show("There was no changes specified", "Raptor Math", MessageBoxButtons.OK);
-            }
         }
 
         //------------------------------------------------------------------//

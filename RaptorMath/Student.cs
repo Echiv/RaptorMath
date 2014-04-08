@@ -116,7 +116,7 @@ namespace RaptorMath
         /// <summary>Resets drill object.</summary>
         public void ResetCurrentDrill()
         {
-            curDrill = new Drill();
+            curDrill.Reset();
         }
     }
 }

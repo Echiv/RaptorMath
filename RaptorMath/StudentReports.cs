@@ -236,7 +236,7 @@ namespace RaptorMath
         /// <summary>Handle 'Exit' button click.</summary>
         private void ReportHome_ExitBtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.",
+            if (MessageBox.Show("Are you sure you want to quit Raptor Math?",
                 "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 localManager.SetIsRunningFalse();

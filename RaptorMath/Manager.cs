@@ -274,8 +274,8 @@ namespace RaptorMath
             Tuple<bool, bool> GroupStudentChanged = new Tuple<bool, bool>(false, false);
             
             if (currentName.Replace(" ", string.Empty).All(char.IsLetter)
-                && !(currentName.Equals(string.Empty))
-                && !((newFName.Equals(string.Empty)) && (newLName.Equals(string.Empty)) && (newGroup.Equals(string.Empty))))
+                && !(currentName.Replace(" ", string.Empty).Equals(string.Empty))
+                && ((!newFName.Equals(string.Empty)) || (!newLName.Equals(string.Empty)) || (!newGroup.Equals(string.Empty))))
             {
                 Student selectedStudent = FindStudentWithName(currentName);
                 if (selectedStudent != null)
@@ -535,9 +535,12 @@ namespace RaptorMath
         /// <param name="student">Student object to be modified.</param>
         public void AddGroupDrillsToStudent(Group group, Student student)
         {
-            foreach(Drill drill in group.groupDrillList)
+            if ((group != null) && (student != null))
             {
-                AddDrillToStudent(student, drill);
+                foreach(Drill drill in group.groupDrillList)
+                {
+                    AddDrillToStudent(student, drill);
+                }
             }
         }
 
@@ -550,9 +553,12 @@ namespace RaptorMath
         /// <param name="student">Student object to be modified.</param>
         public void RemoveGroupDrillsFromStudent(Group group, Student student)
         {
-            foreach (Drill drill in group.groupDrillList)
+            if ((group != null) && (student != null))
             {
-                RemoveDrillFromStudent(student, drill);
+                foreach (Drill drill in group.groupDrillList)
+                {
+                    RemoveDrillFromStudent(student, drill);
+                }
             }
         }
 
