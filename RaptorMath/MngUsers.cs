@@ -181,9 +181,16 @@ namespace RaptorMath
             {
                 MngUsers_LastNameCmbo.Items.Add(userLastName);
             }
-            foreach (String userNames in localManager.GetUsers())
+            List<String> listOfUsers = localManager.GetUsers();
+            foreach (String userNames in listOfUsers)
             {
-                MngUsers_RemoveUserCmbo.Items.Add(userNames);
+                if (listOfUsers.Count > 0)
+                {
+                    MngUsers_RemoveUserCmbo.Enabled = true;
+                    MngUsers_RemoveUserCmbo.Items.Add(userNames);
+                }
+                else
+                    MngUsers_RemoveUserCmbo.Enabled = false;
             }
         }
 
@@ -223,7 +230,15 @@ namespace RaptorMath
             InitializeTimer();
             RefreshComboBoxes();
 
+            MngUsers_RemoveUserBtn.Enabled = false;
+
             MngUsers_StudentRdo.Select();
+            this.MngUsers_FirstNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
+            this.MngUsers_LastNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
+            this.MngUsers_PasswordTxt.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
+            this.MngUsers_ConfirmPasswordTxt.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
+            this.MngUsers_GroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
+            this.MngUsers_RemoveUserCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWithOneWhiteSpaceKeyPress);
 
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
@@ -261,20 +276,28 @@ namespace RaptorMath
         /// <summary>Handle 'Save User' button click.</summary>
         private void MngUsers_SaveUserBtm_Click(object sender, EventArgs e)
         {
-            if (MngUsers_StudentRdo.Checked)
+            if ((MngUsers_StudentRdo.Checked) && ((MngUsers_FirstNameCmbo.Text.Length > 0) && (MngUsers_LastNameCmbo.Text.Length > 0)))
             {
-                int groupID = localManager.FindGroupIDByName(MngUsers_GroupCmbo.Text);
-                MessageBox.Show(groupID.ToString());
-                bool isCreatedUser = localManager.CreateUser(groupID, MngUsers_FirstNameCmbo.Text, MngUsers_LastNameCmbo.Text, "Unknown");
+                bool isCreatedUser = false;
+                int groupID = localManager.FindGroupIDByName(MngUsers_GroupCmbo.Text.Trim());
+                if (groupID == 0)
+                    MessageBox.Show("The group entered does not match any groups.", "Raptor Math", MessageBoxButtons.OKCancel);
+                else
+                    isCreatedUser = localManager.CreateUser(groupID, MngUsers_FirstNameCmbo.Text, MngUsers_LastNameCmbo.Text, "Unknown");
                 if (isCreatedUser)
                 {
                     RefreshComboBoxes();
-                    MessageBox.Show("New Student Created!", "Raptor Math", MessageBoxButtons.OKCancel);
+                    MessageBox.Show("New user created.", "Raptor Math", MessageBoxButtons.OKCancel);
+                    MngUsers_FirstNameCmbo.Text = string.Empty;
+                    MngUsers_LastNameCmbo.Text = string.Empty;
+                    MngUsers_GroupCmbo.Text = string.Empty;
                 }
                 else
-                    MessageBox.Show("Student has not been Created!", "Raptor Math", MessageBoxButtons.OKCancel);
+                    MessageBox.Show("Entered student name already exists.", "Raptor Math", MessageBoxButtons.OKCancel);
             }
-            else if ((MngUsers_AdminRdo.Checked) && (MngUsers_PasswordTxt.Text.Length > 0 && MngUsers_ConfirmPasswordTxt.Text.Length > 0))
+            else if ((MngUsers_AdminRdo.Checked)
+                && ((MngUsers_PasswordTxt.Text.Length > 0) && (MngUsers_ConfirmPasswordTxt.Text.Length > 0))
+                && ((MngUsers_FirstNameCmbo.Text.Length > 0) && (MngUsers_LastNameCmbo.Text.Length > 0)))
             {
                 bool isCreatedUser = false;
                 if (MngUsers_PasswordTxt.Text == MngUsers_ConfirmPasswordTxt.Text)
@@ -283,13 +306,21 @@ namespace RaptorMath
                     if (isCreatedUser)
                     {
                         RefreshComboBoxes();
-                        MessageBox.Show("New Admin Created!", "Raptor Math", MessageBoxButtons.OKCancel);
+                        MessageBox.Show("New user created.", "Raptor Math", MessageBoxButtons.OK);
+                        MngUsers_FirstNameCmbo.Text = string.Empty;
+                        MngUsers_LastNameCmbo.Text = string.Empty;
+                        MngUsers_PasswordTxt.Text = string.Empty;
+                        MngUsers_ConfirmPasswordTxt.Text = string.Empty;
                     }
                     else
-                        MessageBox.Show("Admin has not been Created!", "Raptor Math", MessageBoxButtons.OKCancel);
+                        MessageBox.Show("Entered admin name already exists.", "Raptor Math", MessageBoxButtons.OK);
                 }
                 else
-                    MessageBox.Show("The Passwords did not match!", "Raptor Math", MessageBoxButtons.OKCancel);
+                    MessageBox.Show("Entered passwords do not match. Please try again.", "Raptor Math", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("Must specify a first and last name", "Raptor Math", MessageBoxButtons.OK);
             }
         }
 
@@ -328,7 +359,26 @@ namespace RaptorMath
         private void MngUsers_RemoveUserBtn_Click(object sender, EventArgs e)
         {
             string userToBeRemoved = MngUsers_RemoveUserCmbo.Text;
-            localManager.removeUser(userToBeRemoved);
+            bool isUserRemoved = false;
+            string checkForDefaultUser = string.Empty;
+            Console.WriteLine(userToBeRemoved);
+            if (userToBeRemoved.Length > 9)
+                checkForDefaultUser = userToBeRemoved.Remove(0, 8);
+            Console.WriteLine(checkForDefaultUser);
+            if (checkForDefaultUser.Trim() != "Admin")
+            {
+                isUserRemoved = localManager.removeUser(userToBeRemoved);
+                if (isUserRemoved == true)
+                {
+                    MessageBox.Show("The selected user has been removed", "Raptor Math", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("The selected user does not match any known users and cannot be removed", "Raptor Math", MessageBoxButtons.OK);
+                }
+            }
+            else
+                MessageBox.Show("Cannot remove the default admin");
             RefreshComboBoxes();
             MngUsers_RemoveUserCmbo.Text = string.Empty;
         }
@@ -356,6 +406,18 @@ namespace RaptorMath
             if (e.KeyChar == 13)
             {
                 MngUsers_RemoveUserBtn_Click(sender, e);
+            }
+        }
+
+        private void MngUsers_RemoveUserCmbo_TextChanged(object sender, EventArgs e)
+        {
+            if (MngUsers_RemoveUserCmbo.Text.Length > 0)
+            {
+                MngUsers_RemoveUserBtn.Enabled = true;
+            }
+            else
+            {
+                MngUsers_RemoveUserBtn.Enabled = false;
             }
         }
     }
