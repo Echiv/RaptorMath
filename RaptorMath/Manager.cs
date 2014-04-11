@@ -19,6 +19,11 @@
 //          • Added object (Admin, Student, Group, etc...)      //
 //            creation functions.                               //
 //==============================================================//
+/* 
+Authors: Joshua Boone and Justine Dinh                     
+Cycle 3 Changes:                                           
+ * • Added logic to in the RenameStudent function to fix a renaming bug                            
+//==============================================================*/
 
 using System;
 using System.Collections.Generic;
@@ -289,15 +294,28 @@ namespace RaptorMath
                 && ((!newFName.Equals(string.Empty)) || (!newLName.Equals(string.Empty)) || (!newGroup.Equals(string.Empty))))
             {
                 Student selectedStudent = FindStudentWithName(currentName);
-                if (selectedStudent != null)
+                // Need to make sure that this student doesn't alreadt exist
+                string newName = newFName + " " + newLName;
+                Student existStudent = FindStudentWithName(newName);
+                if (selectedStudent != null && existStudent == null)
                 {
+                    // Need to make sure the group exists
                     Group selectedGroup = FindGroupByName(newGroup);
-                    Group oldGroup = FindGroupByID(selectedStudent.GroupID);
-                    GroupStudentChanged = XMLDriver.editStudent(newFName, newLName, selectedStudent, selectedGroup, studentList);
-                    if (GroupStudentChanged.Item1)
+                    if (selectedGroup != null)
                     {
-                        RemoveGroupDrillsFromStudent(oldGroup, selectedStudent);
-                        AddGroupDrillsToStudent(selectedGroup, selectedStudent);
+                        Group oldGroup = FindGroupByID(selectedStudent.GroupID);
+                        GroupStudentChanged = XMLDriver.editStudent(newFName, newLName, selectedStudent, selectedGroup, studentList);
+                        if (GroupStudentChanged.Item1)
+                        {
+                            RemoveGroupDrillsFromStudent(oldGroup, selectedStudent);
+                            AddGroupDrillsToStudent(selectedGroup, selectedStudent);
+                        }
+                    }
+                    else
+                    {
+                        // 4/09/14 Added this bad code to get the program to rename a student even no new group was selected
+                        Group oldGroup = FindGroupByID(selectedStudent.GroupID);
+                        GroupStudentChanged = XMLDriver.editStudent(newFName, newLName, selectedStudent, oldGroup, studentList);
                     }
                     return GroupStudentChanged.Item2;
                 }

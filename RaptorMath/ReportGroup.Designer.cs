@@ -47,6 +47,7 @@
             this.GroupReport_WindowLbl = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.GroupReport_ExcelBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GroupReport_DataDisplay)).BeginInit();
             this.GroupReport_ButtonBox.SuspendLayout();
             this.GroupReport_DrillBox.SuspendLayout();
@@ -85,11 +86,11 @@
             this.NumQuestions,
             this.Skipped});
             this.GroupReport_DataDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GroupReport_DataDisplay.Location = new System.Drawing.Point(5, 22);
+            this.GroupReport_DataDisplay.Location = new System.Drawing.Point(5, 19);
             this.GroupReport_DataDisplay.Margin = new System.Windows.Forms.Padding(4);
             this.GroupReport_DataDisplay.Name = "GroupReport_DataDisplay";
             this.GroupReport_DataDisplay.RowHeadersVisible = false;
-            this.GroupReport_DataDisplay.Size = new System.Drawing.Size(544, 329);
+            this.GroupReport_DataDisplay.Size = new System.Drawing.Size(544, 332);
             this.GroupReport_DataDisplay.TabIndex = 0;
             // 
             // DateTaken
@@ -97,38 +98,38 @@
             this.DateTaken.HeaderText = "Name";
             this.DateTaken.Name = "DateTaken";
             this.DateTaken.ReadOnly = true;
-            this.DateTaken.Width = 74;
+            this.DateTaken.Width = 64;
             // 
             // Percent
             // 
             this.Percent.HeaderText = "AvgPercent";
             this.Percent.Name = "Percent";
             this.Percent.ReadOnly = true;
-            this.Percent.Width = 116;
+            this.Percent.Width = 98;
             // 
             // Wrong
             // 
             this.Wrong.HeaderText = "AvgWrong";
             this.Wrong.Name = "Wrong";
             this.Wrong.ReadOnly = true;
-            this.Wrong.Width = 107;
+            this.Wrong.Width = 91;
             // 
             // NumQuestions
             // 
             this.NumQuestions.HeaderText = "AvgSkipped";
             this.NumQuestions.Name = "NumQuestions";
             this.NumQuestions.ReadOnly = true;
-            this.NumQuestions.Width = 118;
             // 
             // Skipped
             // 
             this.Skipped.HeaderText = "TotalSetsDone";
             this.Skipped.Name = "Skipped";
             this.Skipped.ReadOnly = true;
-            this.Skipped.Width = 140;
+            this.Skipped.Width = 116;
             // 
             // GroupReport_ButtonBox
             // 
+            this.GroupReport_ButtonBox.Controls.Add(this.GroupReport_ExcelBtn);
             this.GroupReport_ButtonBox.Controls.Add(this.GroupReport_CloseBtn);
             this.GroupReport_ButtonBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GroupReport_ButtonBox.Location = new System.Drawing.Point(4, 452);
@@ -174,7 +175,7 @@
             this.GroupReport_GroupNameLbl.Location = new System.Drawing.Point(8, 39);
             this.GroupReport_GroupNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.GroupReport_GroupNameLbl.Name = "GroupReport_GroupNameLbl";
-            this.GroupReport_GroupNameLbl.Size = new System.Drawing.Size(105, 17);
+            this.GroupReport_GroupNameLbl.Size = new System.Drawing.Size(79, 13);
             this.GroupReport_GroupNameLbl.TabIndex = 37;
             this.GroupReport_GroupNameLbl.Text = "<Group Name>";
             // 
@@ -185,7 +186,7 @@
             this.GroupReport_DateLbl.Location = new System.Drawing.Point(441, 8);
             this.GroupReport_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.GroupReport_DateLbl.Name = "GroupReport_DateLbl";
-            this.GroupReport_DateLbl.Size = new System.Drawing.Size(54, 17);
+            this.GroupReport_DateLbl.Size = new System.Drawing.Size(42, 13);
             this.GroupReport_DateLbl.TabIndex = 35;
             this.GroupReport_DateLbl.Text = "<Date>";
             // 
@@ -196,7 +197,7 @@
             this.GroupReport_TimeLbl.Location = new System.Drawing.Point(441, 36);
             this.GroupReport_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.GroupReport_TimeLbl.Name = "GroupReport_TimeLbl";
-            this.GroupReport_TimeLbl.Size = new System.Drawing.Size(55, 17);
+            this.GroupReport_TimeLbl.Size = new System.Drawing.Size(42, 13);
             this.GroupReport_TimeLbl.TabIndex = 34;
             this.GroupReport_TimeLbl.Text = "<Time>";
             // 
@@ -206,7 +207,7 @@
             this.GroupReport_WindowLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupReport_WindowLbl.Location = new System.Drawing.Point(8, 20);
             this.GroupReport_WindowLbl.Name = "GroupReport_WindowLbl";
-            this.GroupReport_WindowLbl.Size = new System.Drawing.Size(107, 17);
+            this.GroupReport_WindowLbl.Size = new System.Drawing.Size(83, 13);
             this.GroupReport_WindowLbl.TabIndex = 33;
             this.GroupReport_WindowLbl.Text = "Group Report";
             // 
@@ -227,6 +228,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(562, 503);
             this.tableLayoutPanel1.TabIndex = 38;
+            // 
+            // GroupReport_ExcelBtn
+            // 
+            this.GroupReport_ExcelBtn.Location = new System.Drawing.Point(295, 12);
+            this.GroupReport_ExcelBtn.Name = "GroupReport_ExcelBtn";
+            this.GroupReport_ExcelBtn.Size = new System.Drawing.Size(115, 27);
+            this.GroupReport_ExcelBtn.TabIndex = 1;
+            this.GroupReport_ExcelBtn.Text = "Export to Excel";
+            this.GroupReport_ExcelBtn.UseVisualStyleBackColor = true;
+            this.GroupReport_ExcelBtn.Click += new System.EventHandler(this.GroupReport_ExcelBtn_Click);
             // 
             // ReportGroup_Form
             // 
@@ -271,5 +282,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NumQuestions;
         private System.Windows.Forms.DataGridViewTextBoxColumn Skipped;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button GroupReport_ExcelBtn;
     }
 }

@@ -301,6 +301,10 @@ namespace RaptorMath
                 ClearCmboBoxes();
                 RefreshCmboBoxes();
             }
+            else
+            {
+                MessageBox.Show("Error. Student not saved", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //------------------------------------------------------------------//

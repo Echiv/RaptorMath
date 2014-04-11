@@ -18,11 +18,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
 
 namespace RaptorMath
 {
     public partial class SingleReport_Form : Form
     {
+        private Microsoft.Office.Interop.Excel.Application excel;
         public Manager localManager;
 
         private bool isKeyPressed = false;
@@ -181,6 +183,14 @@ namespace RaptorMath
             this.StudentName = localManager.reportStudent.LoginName;
         }
 
+        ~SingleReport_Form()
+        {
+            if (excel != null)
+            {
+                excel.Quit();
+            }
+        }
+
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/1/14                                                     //
@@ -233,6 +243,64 @@ namespace RaptorMath
             {
                 MessageBox.Show("No records found between the selected date range.", "Raptor Math", MessageBoxButtons.OK);
                 SingleReport_CloseBtn.Select();
+            }
+        }
+
+        private void SingleReport_Excel_Click(object sender, EventArgs e)
+        {
+            excel = new Microsoft.Office.Interop.Excel.Application();
+            excel.DisplayAlerts = false;
+            Workbook wb = excel.Workbooks.Add(XlSheetType.xlWorksheet);
+            Worksheet ws = (Worksheet)excel.ActiveSheet;
+            //excel.Visible = true;
+            ws.Cells[1, 1] = "Student Name";
+            ws.Cells[1, 2] = StudentName;
+            ws.Cells[2, 1] = "Date Range";
+            ws.Cells[2, 2] = localManager.StartDate.ToString() + " through " + localManager.EndDate.ToString();
+            ws.Cells[3, 1] = "Drill Name";
+            ws.Cells[3, 2] = "Date Taken";
+            ws.Cells[3, 3] = "# Questions";
+            ws.Cells[3, 4] = "% Correct";
+            ws.Cells[3, 5] = "Skipped";
+
+            for (int i = 0; i < SingleReport_DataDisplay.Rows.Count; i++)
+            {
+                for (int j = 0; j < SingleReport_DataDisplay.Columns.Count; j++)
+                {
+                    ws.Cells[i+4, j+1] = SingleReport_DataDisplay.Rows[i].Cells[j].Value;
+                }
+            }
+            ws.Cells.Columns.AutoFit();
+            ws.Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+            using (SaveFileDialog exportSaveFileDialog = new SaveFileDialog())
+            {
+                exportSaveFileDialog.Title = "Select Excel File";
+                exportSaveFileDialog.Filter = "Microsoft Office Excel Workbook(*.xlsx)|*.xlsx";
+
+                if (DialogResult.OK == exportSaveFileDialog.ShowDialog())
+                {
+                    string fullFileName = exportSaveFileDialog.FileName;
+                    // currentWorkbook.SaveCopyAs(fullFileName);
+                    // indicating that we already saved the workbook, otherwise call to Quit() will pop up
+                    // the save file dialogue box
+                    object misValue = System.Reflection.Missing.Value;
+                    try
+                    {
+                        wb.SaveAs(fullFileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlOpenXMLWorkbook, System.Reflection.Missing.Value, misValue, false, false, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Microsoft.Office.Interop.Excel.XlSaveConflictResolution.xlUserResolution, true, misValue, misValue, misValue);
+                        wb.Saved = true;
+                        MessageBox.Show("Exported successfully", "Exported to Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (System.Runtime.InteropServices.COMException error)
+                    {
+                        MessageBox.Show("Error. File is in use.", "Exported to Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+            if (excel != null)
+            {
+                wb.Close(Type.Missing, Type.Missing, Type.Missing);
+                excel.Quit();
             }
         }
     }
