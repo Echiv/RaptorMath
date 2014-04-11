@@ -185,6 +185,7 @@ namespace RaptorMath
             if (excel != null)
             {
                 excel.Quit();
+                excel = null;
             }
         }
         //------------------------------------------------------------------//
@@ -284,6 +285,7 @@ namespace RaptorMath
             {
                 wb.Close(Type.Missing, Type.Missing, Type.Missing);
                 excel.Quit();
+                excel = null;
             }
         }
     }
