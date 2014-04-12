@@ -45,6 +45,7 @@
             this.UseDesg_ButtonBox = new System.Windows.Forms.GroupBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.UseDesg_LoginBox.SuspendLayout();
             this.UseDesg_UserInfoBox.SuspendLayout();
             this.UseDesg_ButtonBox.SuspendLayout();
@@ -59,7 +60,7 @@
             this.UseDesg_DateLbl.Location = new System.Drawing.Point(378, 10);
             this.UseDesg_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UseDesg_DateLbl.Name = "UseDesg_DateLbl";
-            this.UseDesg_DateLbl.Size = new System.Drawing.Size(74, 26);
+            this.UseDesg_DateLbl.Size = new System.Drawing.Size(59, 22);
             this.UseDesg_DateLbl.TabIndex = 9;
             this.UseDesg_DateLbl.Text = "<Date>";
             // 
@@ -107,12 +108,13 @@
             this.UseDesg_LoginCmbo.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.UseDesg_LoginCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.UseDesg_LoginCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.UseDesg_LoginCmbo.ContextMenuStrip = this.doNothingContextMenu;
             this.UseDesg_LoginCmbo.FormattingEnabled = true;
             this.UseDesg_LoginCmbo.Location = new System.Drawing.Point(153, 69);
             this.UseDesg_LoginCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.UseDesg_LoginCmbo.MaxLength = 25;
             this.UseDesg_LoginCmbo.Name = "UseDesg_LoginCmbo";
-            this.UseDesg_LoginCmbo.Size = new System.Drawing.Size(227, 34);
+            this.UseDesg_LoginCmbo.Size = new System.Drawing.Size(227, 30);
             this.UseDesg_LoginCmbo.TabIndex = 0;
             this.UseDesg_LoginCmbo.SelectedIndexChanged += new System.EventHandler(this.UseDesg_LoginCmbo_TextChanged);
             this.UseDesg_LoginCmbo.TextChanged += new System.EventHandler(this.UseDesg_LoginCmbo_TextChanged);
@@ -126,7 +128,7 @@
             this.label2.Location = new System.Drawing.Point(37, 119);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 26);
+            this.label2.Size = new System.Drawing.Size(82, 22);
             this.label2.TabIndex = 17;
             this.label2.Text = "Password";
             // 
@@ -137,17 +139,18 @@
             this.label1.Location = new System.Drawing.Point(37, 73);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 26);
+            this.label1.Size = new System.Drawing.Size(53, 22);
             this.label1.TabIndex = 16;
             this.label1.Text = "Name";
             // 
             // UseDesg_passwordBox
             // 
+            this.UseDesg_passwordBox.ContextMenuStrip = this.doNothingContextMenu;
             this.UseDesg_passwordBox.Location = new System.Drawing.Point(152, 115);
             this.UseDesg_passwordBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UseDesg_passwordBox.MaxLength = 10;
             this.UseDesg_passwordBox.Name = "UseDesg_passwordBox";
-            this.UseDesg_passwordBox.Size = new System.Drawing.Size(228, 31);
+            this.UseDesg_passwordBox.Size = new System.Drawing.Size(228, 26);
             this.UseDesg_passwordBox.TabIndex = 1;
             this.UseDesg_passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
             this.UseDesg_passwordBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
@@ -176,7 +179,7 @@
             this.UseDesg_WindowLbl.Location = new System.Drawing.Point(8, 10);
             this.UseDesg_WindowLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UseDesg_WindowLbl.Name = "UseDesg_WindowLbl";
-            this.UseDesg_WindowLbl.Size = new System.Drawing.Size(62, 26);
+            this.UseDesg_WindowLbl.Size = new System.Drawing.Size(52, 22);
             this.UseDesg_WindowLbl.TabIndex = 15;
             this.UseDesg_WindowLbl.Text = "Login";
             // 
@@ -188,7 +191,7 @@
             this.UseDesg_TimeLbl.Location = new System.Drawing.Point(378, 42);
             this.UseDesg_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UseDesg_TimeLbl.Name = "UseDesg_TimeLbl";
-            this.UseDesg_TimeLbl.Size = new System.Drawing.Size(78, 26);
+            this.UseDesg_TimeLbl.Size = new System.Drawing.Size(62, 22);
             this.UseDesg_TimeLbl.TabIndex = 11;
             this.UseDesg_TimeLbl.Text = "<Time>";
             // 
@@ -236,6 +239,11 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(482, 453);
             this.tableLayoutPanel1.TabIndex = 21;
             // 
+            // doNothingContextMenu
+            // 
+            this.doNothingContextMenu.Name = "doNothingContextMenu";
+            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
+            // 
             // UseDesg_Form
             // 
             this.AcceptButton = this.UseDesg_LoginBtn;
@@ -279,6 +287,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ComboBox UseDesg_LoginCmbo;
+        private System.Windows.Forms.ContextMenuStrip doNothingContextMenu;
 
 
     }

@@ -51,6 +51,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.EditStu_Timer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.EditStu_UserInfoBox.SuspendLayout();
             this.EditStu_SettingBox.SuspendLayout();
             this.EditStu_ButtonBox.SuspendLayout();
@@ -64,7 +65,7 @@
             this.EditStu_WindowLbl.Location = new System.Drawing.Point(8, 18);
             this.EditStu_WindowLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditStu_WindowLbl.Name = "EditStu_WindowLbl";
-            this.EditStu_WindowLbl.Size = new System.Drawing.Size(105, 17);
+            this.EditStu_WindowLbl.Size = new System.Drawing.Size(83, 13);
             this.EditStu_WindowLbl.TabIndex = 0;
             this.EditStu_WindowLbl.Text = "Edit Students";
             // 
@@ -89,7 +90,7 @@
             this.EditStu_TimeLbl.Location = new System.Drawing.Point(361, 45);
             this.EditStu_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditStu_TimeLbl.Name = "EditStu_TimeLbl";
-            this.EditStu_TimeLbl.Size = new System.Drawing.Size(55, 17);
+            this.EditStu_TimeLbl.Size = new System.Drawing.Size(42, 13);
             this.EditStu_TimeLbl.TabIndex = 2;
             this.EditStu_TimeLbl.Text = "<Time>";
             // 
@@ -99,7 +100,7 @@
             this.EditStu_DateLbl.Location = new System.Drawing.Point(361, 18);
             this.EditStu_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditStu_DateLbl.Name = "EditStu_DateLbl";
-            this.EditStu_DateLbl.Size = new System.Drawing.Size(54, 17);
+            this.EditStu_DateLbl.Size = new System.Drawing.Size(42, 13);
             this.EditStu_DateLbl.TabIndex = 1;
             this.EditStu_DateLbl.Text = "<Date>";
             // 
@@ -109,12 +110,13 @@
             this.EditStu_AdminNameLbl.Location = new System.Drawing.Point(8, 46);
             this.EditStu_AdminNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditStu_AdminNameLbl.Name = "EditStu_AdminNameLbl";
-            this.EditStu_AdminNameLbl.Size = new System.Drawing.Size(63, 17);
+            this.EditStu_AdminNameLbl.Size = new System.Drawing.Size(48, 13);
             this.EditStu_AdminNameLbl.TabIndex = 0;
             this.EditStu_AdminNameLbl.Text = "<Admin>";
             // 
             // EditStu_SettingBox
             // 
+            this.EditStu_SettingBox.ContextMenuStrip = this.doNothingContextMenu;
             this.EditStu_SettingBox.Controls.Add(this.label1);
             this.EditStu_SettingBox.Controls.Add(this.EditStu_NewLastNameCmbo);
             this.EditStu_SettingBox.Controls.Add(this.EditStu_GroupCmbo);
@@ -142,7 +144,7 @@
             this.label1.Location = new System.Drawing.Point(38, 145);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 17);
+            this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "New Last Name";
             // 
@@ -150,12 +152,13 @@
             // 
             this.EditStu_NewLastNameCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.EditStu_NewLastNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.EditStu_NewLastNameCmbo.ContextMenuStrip = this.doNothingContextMenu;
             this.EditStu_NewLastNameCmbo.FormattingEnabled = true;
             this.EditStu_NewLastNameCmbo.Location = new System.Drawing.Point(167, 145);
             this.EditStu_NewLastNameCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.EditStu_NewLastNameCmbo.MaxLength = 12;
             this.EditStu_NewLastNameCmbo.Name = "EditStu_NewLastNameCmbo";
-            this.EditStu_NewLastNameCmbo.Size = new System.Drawing.Size(160, 24);
+            this.EditStu_NewLastNameCmbo.Size = new System.Drawing.Size(160, 21);
             this.EditStu_NewLastNameCmbo.TabIndex = 2;
             this.EditStu_NewLastNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.EditStu_NewLastNameCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditStu_SettingBoxTextBoxes_KeyPress);
@@ -165,12 +168,13 @@
             // 
             this.EditStu_GroupCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.EditStu_GroupCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.EditStu_GroupCmbo.ContextMenuStrip = this.doNothingContextMenu;
             this.EditStu_GroupCmbo.FormattingEnabled = true;
             this.EditStu_GroupCmbo.Location = new System.Drawing.Point(167, 177);
             this.EditStu_GroupCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.EditStu_GroupCmbo.MaxLength = 25;
             this.EditStu_GroupCmbo.Name = "EditStu_GroupCmbo";
-            this.EditStu_GroupCmbo.Size = new System.Drawing.Size(160, 24);
+            this.EditStu_GroupCmbo.Size = new System.Drawing.Size(160, 21);
             this.EditStu_GroupCmbo.TabIndex = 3;
             this.EditStu_GroupCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
             this.EditStu_GroupCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditStu_SettingBoxTextBoxes_KeyPress);
@@ -180,12 +184,13 @@
             // 
             this.EditStu_NewFirstNameCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.EditStu_NewFirstNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.EditStu_NewFirstNameCmbo.ContextMenuStrip = this.doNothingContextMenu;
             this.EditStu_NewFirstNameCmbo.FormattingEnabled = true;
             this.EditStu_NewFirstNameCmbo.Location = new System.Drawing.Point(167, 113);
             this.EditStu_NewFirstNameCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.EditStu_NewFirstNameCmbo.MaxLength = 12;
             this.EditStu_NewFirstNameCmbo.Name = "EditStu_NewFirstNameCmbo";
-            this.EditStu_NewFirstNameCmbo.Size = new System.Drawing.Size(160, 24);
+            this.EditStu_NewFirstNameCmbo.Size = new System.Drawing.Size(160, 21);
             this.EditStu_NewFirstNameCmbo.TabIndex = 1;
             this.EditStu_NewFirstNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.EditStu_NewFirstNameCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditStu_SettingBoxTextBoxes_KeyPress);
@@ -195,12 +200,13 @@
             // 
             this.EditStu_SelectionCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.EditStu_SelectionCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.EditStu_SelectionCmbo.ContextMenuStrip = this.doNothingContextMenu;
             this.EditStu_SelectionCmbo.FormattingEnabled = true;
             this.EditStu_SelectionCmbo.Location = new System.Drawing.Point(167, 79);
             this.EditStu_SelectionCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.EditStu_SelectionCmbo.MaxLength = 25;
             this.EditStu_SelectionCmbo.Name = "EditStu_SelectionCmbo";
-            this.EditStu_SelectionCmbo.Size = new System.Drawing.Size(160, 24);
+            this.EditStu_SelectionCmbo.Size = new System.Drawing.Size(160, 21);
             this.EditStu_SelectionCmbo.TabIndex = 0;
             this.EditStu_SelectionCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.EditStu_SelectionCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditStu_SettingBoxTextBoxes_KeyPress);
@@ -227,7 +233,7 @@
             this.EditStu_GroupLbl.Location = new System.Drawing.Point(38, 177);
             this.EditStu_GroupLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditStu_GroupLbl.Name = "EditStu_GroupLbl";
-            this.EditStu_GroupLbl.Size = new System.Drawing.Size(79, 17);
+            this.EditStu_GroupLbl.Size = new System.Drawing.Size(61, 13);
             this.EditStu_GroupLbl.TabIndex = 5;
             this.EditStu_GroupLbl.Text = "New Group";
             // 
@@ -238,7 +244,7 @@
             this.EditStu_NameLbl.Location = new System.Drawing.Point(38, 113);
             this.EditStu_NameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditStu_NameLbl.Name = "EditStu_NameLbl";
-            this.EditStu_NameLbl.Size = new System.Drawing.Size(107, 17);
+            this.EditStu_NameLbl.Size = new System.Drawing.Size(82, 13);
             this.EditStu_NameLbl.TabIndex = 4;
             this.EditStu_NameLbl.Text = "New First Name";
             // 
@@ -249,7 +255,7 @@
             this.EditStu_SelectStudentLbl.Location = new System.Drawing.Point(38, 79);
             this.EditStu_SelectStudentLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EditStu_SelectStudentLbl.Name = "EditStu_SelectStudentLbl";
-            this.EditStu_SelectStudentLbl.Size = new System.Drawing.Size(112, 17);
+            this.EditStu_SelectStudentLbl.Size = new System.Drawing.Size(86, 13);
             this.EditStu_SelectStudentLbl.TabIndex = 0;
             this.EditStu_SelectStudentLbl.Text = "Select a Student";
             // 
@@ -315,6 +321,11 @@
             this.EditStu_Timer.Interval = 1000;
             this.EditStu_Timer.Tick += new System.EventHandler(this.EditStu_Timer_Tick);
             // 
+            // doNothingContextMenu
+            // 
+            this.doNothingContextMenu.Name = "doNothingContextMenu";
+            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
+            // 
             // EditStudents_Form
             // 
             this.AcceptButton = this.EditStu_SaveStudentBtn;
@@ -363,5 +374,6 @@
         private System.Windows.Forms.ComboBox EditStu_NewLastNameCmbo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ContextMenuStrip doNothingContextMenu;
     }
 }

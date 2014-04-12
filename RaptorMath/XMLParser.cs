@@ -124,7 +124,7 @@ namespace RaptorMath
                     new XElement("RaptorMathAdmin",
                         new XElement("admin",
                             new XElement("loginName", "Admin"),
-                            new XElement("password", "Admin"),
+                            new XElement("password", "admin"),
                             new XElement("path", "RaptorMathStudents.xml"),
                             new XElement("lastLogin", DateTime.Now.ToString("M/d/yyyy")))));
             adminXML.Save(adminXMLPath);

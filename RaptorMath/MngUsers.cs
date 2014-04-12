@@ -465,7 +465,21 @@ namespace RaptorMath
                 MngUsers_SaveUserBtm.Enabled = true;
             else
                 MngUsers_SaveUserBtm.Enabled = false;
+        }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/11/14                                                     //
+        //------------------------------------------------------------------//
+        /// <summary>Disallows copy, paste, cut from keyboard.</summary>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if ((keyData == (Keys.Control | Keys.C)) || (keyData == (Keys.Control | Keys.V)) || (keyData == (Keys.Control | Keys.X)))
+            {
+
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

@@ -51,6 +51,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.MngGroups_Timer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MngGroups_UserInfoBox.SuspendLayout();
             this.MngGroups_GroupBox.SuspendLayout();
             this.MngGroups_ModifyBox.SuspendLayout();
@@ -79,7 +80,7 @@
             this.MngGroups_WindowLbl.Location = new System.Drawing.Point(8, 7);
             this.MngGroups_WindowLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngGroups_WindowLbl.Name = "MngGroups_WindowLbl";
-            this.MngGroups_WindowLbl.Size = new System.Drawing.Size(123, 17);
+            this.MngGroups_WindowLbl.Size = new System.Drawing.Size(96, 13);
             this.MngGroups_WindowLbl.TabIndex = 3;
             this.MngGroups_WindowLbl.Text = "Manage Groups";
             // 
@@ -91,7 +92,7 @@
             this.MngGroups_TimeLbl.Location = new System.Drawing.Point(322, 46);
             this.MngGroups_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngGroups_TimeLbl.Name = "MngGroups_TimeLbl";
-            this.MngGroups_TimeLbl.Size = new System.Drawing.Size(55, 17);
+            this.MngGroups_TimeLbl.Size = new System.Drawing.Size(42, 13);
             this.MngGroups_TimeLbl.TabIndex = 2;
             this.MngGroups_TimeLbl.Text = "<Time>";
             // 
@@ -103,7 +104,7 @@
             this.MngGroups_DateLbl.Location = new System.Drawing.Point(322, 19);
             this.MngGroups_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngGroups_DateLbl.Name = "MngGroups_DateLbl";
-            this.MngGroups_DateLbl.Size = new System.Drawing.Size(54, 17);
+            this.MngGroups_DateLbl.Size = new System.Drawing.Size(42, 13);
             this.MngGroups_DateLbl.TabIndex = 1;
             this.MngGroups_DateLbl.Text = "<Date>";
             // 
@@ -114,7 +115,7 @@
             this.MngGroups_AdminNameLbl.Location = new System.Drawing.Point(8, 33);
             this.MngGroups_AdminNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngGroups_AdminNameLbl.Name = "MngGroups_AdminNameLbl";
-            this.MngGroups_AdminNameLbl.Size = new System.Drawing.Size(63, 17);
+            this.MngGroups_AdminNameLbl.Size = new System.Drawing.Size(48, 13);
             this.MngGroups_AdminNameLbl.TabIndex = 0;
             this.MngGroups_AdminNameLbl.Text = "<Admin>";
             // 
@@ -151,13 +152,14 @@
             // 
             this.MngGroups_GroupNameCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.MngGroups_GroupNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.MngGroups_GroupNameCmbo.ContextMenuStrip = this.doNothingContextMenu;
             this.MngGroups_GroupNameCmbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngGroups_GroupNameCmbo.FormattingEnabled = true;
             this.MngGroups_GroupNameCmbo.Location = new System.Drawing.Point(129, 31);
             this.MngGroups_GroupNameCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_GroupNameCmbo.MaxLength = 25;
             this.MngGroups_GroupNameCmbo.Name = "MngGroups_GroupNameCmbo";
-            this.MngGroups_GroupNameCmbo.Size = new System.Drawing.Size(203, 24);
+            this.MngGroups_GroupNameCmbo.Size = new System.Drawing.Size(203, 21);
             this.MngGroups_GroupNameCmbo.TabIndex = 0;
             this.MngGroups_GroupNameCmbo.TextChanged += new System.EventHandler(this.MngGroups_GroupNameCmbo_TextChanged);
             this.MngGroups_GroupNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
@@ -170,7 +172,7 @@
             this.MngGroups_NameLbl.Location = new System.Drawing.Point(25, 38);
             this.MngGroups_NameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngGroups_NameLbl.Name = "MngGroups_NameLbl";
-            this.MngGroups_NameLbl.Size = new System.Drawing.Size(45, 17);
+            this.MngGroups_NameLbl.Size = new System.Drawing.Size(35, 13);
             this.MngGroups_NameLbl.TabIndex = 0;
             this.MngGroups_NameLbl.Text = "Name";
             // 
@@ -196,13 +198,14 @@
             // 
             this.MngGroups_NewNameCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.MngGroups_NewNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.MngGroups_NewNameCmbo.ContextMenuStrip = this.doNothingContextMenu;
             this.MngGroups_NewNameCmbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngGroups_NewNameCmbo.FormattingEnabled = true;
             this.MngGroups_NewNameCmbo.Location = new System.Drawing.Point(129, 90);
             this.MngGroups_NewNameCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_NewNameCmbo.MaxLength = 25;
             this.MngGroups_NewNameCmbo.Name = "MngGroups_NewNameCmbo";
-            this.MngGroups_NewNameCmbo.Size = new System.Drawing.Size(203, 24);
+            this.MngGroups_NewNameCmbo.Size = new System.Drawing.Size(203, 21);
             this.MngGroups_NewNameCmbo.TabIndex = 1;
             this.MngGroups_NewNameCmbo.TextChanged += new System.EventHandler(this.MngGroups_SelectGroupAndNewNameCmbo_TextChanged);
             this.MngGroups_NewNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
@@ -212,13 +215,14 @@
             // 
             this.MngGroups_SelectGroupCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.MngGroups_SelectGroupCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.MngGroups_SelectGroupCmbo.ContextMenuStrip = this.doNothingContextMenu;
             this.MngGroups_SelectGroupCmbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngGroups_SelectGroupCmbo.FormattingEnabled = true;
             this.MngGroups_SelectGroupCmbo.Location = new System.Drawing.Point(129, 57);
             this.MngGroups_SelectGroupCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngGroups_SelectGroupCmbo.MaxLength = 25;
             this.MngGroups_SelectGroupCmbo.Name = "MngGroups_SelectGroupCmbo";
-            this.MngGroups_SelectGroupCmbo.Size = new System.Drawing.Size(203, 24);
+            this.MngGroups_SelectGroupCmbo.Size = new System.Drawing.Size(203, 21);
             this.MngGroups_SelectGroupCmbo.TabIndex = 0;
             this.MngGroups_SelectGroupCmbo.TextChanged += new System.EventHandler(this.MngGroups_SelectGroupAndNewNameCmbo_TextChanged);
             this.MngGroups_SelectGroupCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
@@ -244,7 +248,7 @@
             this.MngGroups_NewNameLbl.Location = new System.Drawing.Point(25, 94);
             this.MngGroups_NewNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngGroups_NewNameLbl.Name = "MngGroups_NewNameLbl";
-            this.MngGroups_NewNameLbl.Size = new System.Drawing.Size(76, 17);
+            this.MngGroups_NewNameLbl.Size = new System.Drawing.Size(60, 13);
             this.MngGroups_NewNameLbl.TabIndex = 2;
             this.MngGroups_NewNameLbl.Text = "New Name";
             // 
@@ -255,7 +259,7 @@
             this.MngGroups_SelectGroupLbl.Location = new System.Drawing.Point(25, 57);
             this.MngGroups_SelectGroupLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngGroups_SelectGroupLbl.Name = "MngGroups_SelectGroupLbl";
-            this.MngGroups_SelectGroupLbl.Size = new System.Drawing.Size(103, 17);
+            this.MngGroups_SelectGroupLbl.Size = new System.Drawing.Size(78, 13);
             this.MngGroups_SelectGroupLbl.TabIndex = 0;
             this.MngGroups_SelectGroupLbl.Text = "Select a Group";
             // 
@@ -325,6 +329,11 @@
             this.MngGroups_Timer.Interval = 1000;
             this.MngGroups_Timer.Tick += new System.EventHandler(this.MngGroups_Timer_Tick);
             // 
+            // doNothingContextMenu
+            // 
+            this.doNothingContextMenu.Name = "doNothingContextMenu";
+            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
+            // 
             // ManageGroups_Form
             // 
             this.AcceptButton = this.MngGroups_CreateBtn;
@@ -375,5 +384,6 @@
         private System.Windows.Forms.ComboBox MngGroups_NewNameCmbo;
         private System.Windows.Forms.ComboBox MngGroups_SelectGroupCmbo;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ContextMenuStrip doNothingContextMenu;
     }
 }

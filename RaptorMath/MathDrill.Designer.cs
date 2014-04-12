@@ -50,6 +50,7 @@
             this.MathDrill_TotalNumberLbl = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MathDrill_UserInfoBox.SuspendLayout();
             this.MatDri_ButtonBox.SuspendLayout();
             this.MathDrill_ProblemBox.SuspendLayout();
@@ -65,6 +66,8 @@
             // MathDrill_InputTxt
             // 
             this.MathDrill_InputTxt.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.MathDrill_InputTxt.ContextMenuStrip = this.doNothingContextMenu;
+            this.MathDrill_InputTxt.DetectUrls = false;
             this.MathDrill_InputTxt.Font = new System.Drawing.Font("Trebuchet MS", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_InputTxt.Location = new System.Drawing.Point(291, 82);
             this.MathDrill_InputTxt.Margin = new System.Windows.Forms.Padding(4);
@@ -127,7 +130,7 @@
             this.MathDrill_ResponseLbl.Location = new System.Drawing.Point(286, 138);
             this.MathDrill_ResponseLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_ResponseLbl.Name = "MathDrill_ResponseLbl";
-            this.MathDrill_ResponseLbl.Size = new System.Drawing.Size(119, 35);
+            this.MathDrill_ResponseLbl.Size = new System.Drawing.Size(91, 27);
             this.MathDrill_ResponseLbl.TabIndex = 23;
             this.MathDrill_ResponseLbl.Text = "<Result>";
             this.MathDrill_ResponseLbl.Visible = false;
@@ -139,7 +142,7 @@
             this.MathDrill_OfLbl.Location = new System.Drawing.Point(267, 20);
             this.MathDrill_OfLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_OfLbl.Name = "MathDrill_OfLbl";
-            this.MathDrill_OfLbl.Size = new System.Drawing.Size(39, 35);
+            this.MathDrill_OfLbl.Size = new System.Drawing.Size(32, 27);
             this.MathDrill_OfLbl.TabIndex = 16;
             this.MathDrill_OfLbl.Text = "of";
             // 
@@ -150,7 +153,7 @@
             this.MathDrill_ProblemLbl.Location = new System.Drawing.Point(87, 20);
             this.MathDrill_ProblemLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_ProblemLbl.Name = "MathDrill_ProblemLbl";
-            this.MathDrill_ProblemLbl.Size = new System.Drawing.Size(115, 35);
+            this.MathDrill_ProblemLbl.Size = new System.Drawing.Size(93, 27);
             this.MathDrill_ProblemLbl.TabIndex = 9;
             this.MathDrill_ProblemLbl.Text = "Problem";
             // 
@@ -161,7 +164,7 @@
             this.MathDrill_CurrentNumLbl.Location = new System.Drawing.Point(207, 20);
             this.MathDrill_CurrentNumLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_CurrentNumLbl.Name = "MathDrill_CurrentNumLbl";
-            this.MathDrill_CurrentNumLbl.Size = new System.Drawing.Size(57, 35);
+            this.MathDrill_CurrentNumLbl.Size = new System.Drawing.Size(48, 27);
             this.MathDrill_CurrentNumLbl.TabIndex = 15;
             this.MathDrill_CurrentNumLbl.Text = "<#>";
             // 
@@ -172,7 +175,7 @@
             this.MathDrill_ProblemPrompt.Location = new System.Drawing.Point(83, 82);
             this.MathDrill_ProblemPrompt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_ProblemPrompt.Name = "MathDrill_ProblemPrompt";
-            this.MathDrill_ProblemPrompt.Size = new System.Drawing.Size(119, 55);
+            this.MathDrill_ProblemPrompt.Size = new System.Drawing.Size(94, 43);
             this.MathDrill_ProblemPrompt.TabIndex = 25;
             this.MathDrill_ProblemPrompt.Text = "<Eq>";
             // 
@@ -184,7 +187,7 @@
             this.MathDrill_DateLbl.Location = new System.Drawing.Point(354, 16);
             this.MathDrill_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_DateLbl.Name = "MathDrill_DateLbl";
-            this.MathDrill_DateLbl.Size = new System.Drawing.Size(74, 26);
+            this.MathDrill_DateLbl.Size = new System.Drawing.Size(59, 22);
             this.MathDrill_DateLbl.TabIndex = 7;
             this.MathDrill_DateLbl.Text = "<Date>";
             // 
@@ -195,7 +198,7 @@
             this.MathDrill_StudentNameLbl.Location = new System.Drawing.Point(8, 41);
             this.MathDrill_StudentNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_StudentNameLbl.Name = "MathDrill_StudentNameLbl";
-            this.MathDrill_StudentNameLbl.Size = new System.Drawing.Size(102, 26);
+            this.MathDrill_StudentNameLbl.Size = new System.Drawing.Size(80, 22);
             this.MathDrill_StudentNameLbl.TabIndex = 8;
             this.MathDrill_StudentNameLbl.Text = "<Student>";
             // 
@@ -207,7 +210,7 @@
             this.MathDrill_TimeLbl.Location = new System.Drawing.Point(354, 41);
             this.MathDrill_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_TimeLbl.Name = "MathDrill_TimeLbl";
-            this.MathDrill_TimeLbl.Size = new System.Drawing.Size(78, 26);
+            this.MathDrill_TimeLbl.Size = new System.Drawing.Size(62, 22);
             this.MathDrill_TimeLbl.TabIndex = 24;
             this.MathDrill_TimeLbl.Text = "<Time>";
             // 
@@ -218,7 +221,7 @@
             this.MathDrill_WindowLbl.Location = new System.Drawing.Point(8, 16);
             this.MathDrill_WindowLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_WindowLbl.Name = "MathDrill_WindowLbl";
-            this.MathDrill_WindowLbl.Size = new System.Drawing.Size(104, 26);
+            this.MathDrill_WindowLbl.Size = new System.Drawing.Size(81, 22);
             this.MathDrill_WindowLbl.TabIndex = 26;
             this.MathDrill_WindowLbl.Text = "Math Drill";
             // 
@@ -276,7 +279,7 @@
             this.MathDrill_TotalNumberLbl.Location = new System.Drawing.Point(304, 20);
             this.MathDrill_TotalNumberLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_TotalNumberLbl.Name = "MathDrill_TotalNumberLbl";
-            this.MathDrill_TotalNumberLbl.Size = new System.Drawing.Size(57, 35);
+            this.MathDrill_TotalNumberLbl.Size = new System.Drawing.Size(48, 27);
             this.MathDrill_TotalNumberLbl.TabIndex = 26;
             this.MathDrill_TotalNumberLbl.Text = "<#>";
             // 
@@ -297,6 +300,11 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(482, 453);
             this.tableLayoutPanel1.TabIndex = 32;
+            // 
+            // doNothingContextMenu
+            // 
+            this.doNothingContextMenu.Name = "doNothingContextMenu";
+            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
             // 
             // MathDrill_Form
             // 
@@ -344,5 +352,6 @@
         private System.Windows.Forms.Label MathDrill_TotalNumberLbl;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ContextMenuStrip doNothingContextMenu;
     }
 }
