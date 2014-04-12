@@ -35,6 +35,7 @@
             this.UseDesg_Timer = new System.Windows.Forms.Timer(this.components);
             this.UseDesg_LoginBox = new System.Windows.Forms.GroupBox();
             this.UseDesg_LoginCmbo = new System.Windows.Forms.ComboBox();
+            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.UseDesg_passwordBox = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.UseDesg_ButtonBox = new System.Windows.Forms.GroupBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.UseDesg_LoginBox.SuspendLayout();
             this.UseDesg_UserInfoBox.SuspendLayout();
             this.UseDesg_ButtonBox.SuspendLayout();
@@ -120,6 +120,11 @@
             this.UseDesg_LoginCmbo.TextChanged += new System.EventHandler(this.UseDesg_LoginCmbo_TextChanged);
             this.UseDesg_LoginCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.UseDesg_LoginCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
+            // 
+            // doNothingContextMenu
+            // 
+            this.doNothingContextMenu.Name = "doNothingContextMenu";
+            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
             // 
             // label2
             // 
@@ -238,11 +243,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 86F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(482, 453);
             this.tableLayoutPanel1.TabIndex = 21;
-            // 
-            // doNothingContextMenu
-            // 
-            this.doNothingContextMenu.Name = "doNothingContextMenu";
-            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
             // 
             // UseDesg_Form
             // 

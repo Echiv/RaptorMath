@@ -6,6 +6,10 @@
 // Purpose: This class is an XML accessor class that            //
 //          specializes in manipulating student data.           //
 //==============================================================//
+/* 
+Authors: Joshua Boone and Justine Dinh                     
+Cycle 3 Changes:
+*/
 
 using System;
 using System.Collections.Generic;

@@ -11,6 +11,13 @@
 // Changes:                                                     //
 //          • Refactored: Accessors and constructors            //
 //==============================================================//
+/* 
+Authors: Joshua Boone and Justine Dinh                     
+Cycle 3 Changes:
+ * Date: 4/12/14
+ * • Added logic to disallow interaction with a form's border close button.
+ * • Added logic to disallow copy, paste, and cut.
+*/
 
 using System;
 using System.Collections.Generic;

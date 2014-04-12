@@ -21,9 +21,8 @@
 //==============================================================//
 /* 
 Authors: Joshua Boone and Justine Dinh                     
-Cycle 3 Changes:                                           
- * • Added logic to in the RenameStudent function to fix a renaming bug                            
-//==============================================================*/
+Cycle 3 Changes:
+*/
 
 using System;
 using System.Collections.Generic;

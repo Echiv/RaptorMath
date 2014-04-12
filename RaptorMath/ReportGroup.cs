@@ -9,6 +9,15 @@
 //          • The user can click the Close button to return to  //
 //            Admin home.                                       //
 //==============================================================//
+/* 
+Authors: Joshua Boone and Justine Dinh                     
+Cycle 3 Changes:
+ * Date: 4/10/14
+ * • Added the ability to export a report to excel.
+ * Date: 4/12/14
+ * • Added logic to disallow interaction with a form's border close button.
+ * • Added logic to disallow copy, paste, and cut.
+*/
 
 using System;
 using System.Collections.Generic;
@@ -27,6 +36,22 @@ namespace RaptorMath
         private Microsoft.Office.Interop.Excel.Application excel;
         public Manager localManager;
         private bool isKeyPressed = false;
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                     //
+        //------------------------------------------------------------------//
+        /// <summary>Disallows closing a window with the window's 'X' button.</summary>
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
+        } 
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
@@ -230,6 +255,11 @@ namespace RaptorMath
             GroupReport_DataDisplay.Rows.Add(newRow);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/10/14                                                     //
+        //------------------------------------------------------------------//
+        /// <summary>Exports the opened report to an excel file.</summary>
         private void GroupReport_ExcelBtn_Click(object sender, EventArgs e)
         {
             excel = new Microsoft.Office.Interop.Excel.Application();

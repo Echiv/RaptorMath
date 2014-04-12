@@ -16,6 +16,13 @@
 //            Admin Home or click the Exit button to end the    //
 //            program.                                          //
 //==============================================================//
+/* 
+Authors: Joshua Boone and Justine Dinh                     
+Cycle 3 Changes:
+ * Date: 4/12/14
+ * • Added logic to disallow interaction with a form's border close button.
+ * • Added logic to disallow copy, paste, and cut.
+*/
 
 using System;
 using System.Collections.Generic;
@@ -33,6 +40,22 @@ namespace RaptorMath
         public Manager localManager;
 
         private bool isKeyPressed = false;
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                     //
+        //------------------------------------------------------------------//
+        /// <summary>Disallows closing a window with the window's 'X' button.</summary>
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
+        } 
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
