@@ -369,7 +369,7 @@ namespace RaptorMath
                 }
                 else
                 {
-                    MessageBox.Show("Entered student name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Entered name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if ((MngUsers_AdminRdo.Checked)
@@ -391,7 +391,7 @@ namespace RaptorMath
                     }
                     else
                     {
-                        MessageBox.Show("Entered admin name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Entered name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         MngUsers_FirstNameCmbo.Focus();
                     }
                 }
