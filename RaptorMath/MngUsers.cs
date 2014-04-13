@@ -32,6 +32,7 @@ Cycle 3 Changes:
  * • Changed regular message boxes to the proper error message boxes.
  * • Added support for numbers ot be entered into the password boxes.
  * • Fixed a tabbing issue where tabs wouldn't work in the right order when certain boxes had data in them
+ * • Added some UI enhancements to better direct the user during errors.
 */
 
 using System;
@@ -394,6 +395,8 @@ namespace RaptorMath
                 else
                 {
                     MessageBox.Show("Entered passwords do not match. Please try again.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MngUsers_PasswordTxt.Text = string.Empty;
+                    MngUsers_ConfirmPasswordTxt.Text = string.Empty;
                     MngUsers_PasswordTxt.Focus();
                 }
             }

@@ -24,6 +24,8 @@ Cycle 3 Changes:
  * • Added logic to disallow copy, paste, and cut.
  * • Added logic to restrict the date range the user can select from
  * • Added logic to only enable report buttons if there are records in the given date range
+ * Date: 4/13/14
+ * • Fixed two bugs that would kill the program when entering in names that don't exist
 */
 
 using System;
@@ -428,7 +430,10 @@ namespace RaptorMath
             List<Record> studentRecords = new List<Record>();
             if (ReportHome_StudentCmbo.Text.Length > 0)
             {
-                studentRecords = localManager.GenerateRecord(localManager.StartDate, localManager.EndDate, ReportHome_StudentCmbo.Text);
+                if (localManager.FindStudentWithName(ReportHome_StudentCmbo.Text) != null)
+                {
+                    studentRecords = localManager.GenerateRecord(localManager.StartDate, localManager.EndDate, ReportHome_StudentCmbo.Text);
+                }
             }
             if (studentRecords.Count > 0)
             {
@@ -450,14 +455,17 @@ namespace RaptorMath
             if (ReportHome_GroupCmbo.Text.Length > 0)
             {
                 localManager.reportGroup = localManager.FindGroupByName(ReportHome_GroupCmbo.Text);
-                bool exists = localManager.IsRecordInRangeGroup(localManager.StartDate, localManager.EndDate, localManager.reportGroup);
-                if (exists)
+                if (localManager.reportGroup != null)
                 {
-                    ReportHome_GroupReportBtn.Enabled = true;
-                }
-                else
-                {
-                    ReportHome_GroupReportBtn.Enabled = false;
+                    bool exists = localManager.IsRecordInRangeGroup(localManager.StartDate, localManager.EndDate, localManager.reportGroup);
+                    if (exists)
+                    {
+                        ReportHome_GroupReportBtn.Enabled = true;
+                    }
+                    else
+                    {
+                        ReportHome_GroupReportBtn.Enabled = false;
+                    }
                 }
             }
         }

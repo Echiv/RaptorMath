@@ -30,6 +30,8 @@ Cycle 3 Changes:
  * • Added logic to disallow interaction with a form's border close button.
  * • Added logic to disallow copy, paste, and cut.
  * • No longer display passwords as plain text
+ * Date: 4/13/14
+ * • Repalced generic message boxes with error message boxes where needed.
 */
 
 using System;
@@ -272,7 +274,7 @@ namespace RaptorMath
             {
                 if (localManager.validateStudent() != true)
                 {
-                    MessageBox.Show("The name entered does not match any users.", "Raptor Math", MessageBoxButtons.OK);
+                    MessageBox.Show("The name entered does not match any users.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                     this.Close();
@@ -281,7 +283,7 @@ namespace RaptorMath
             {
                 if (localManager.validateAdmin() != true)
                 {
-                    MessageBox.Show("The name entered does not match any users.", "Raptor Math", MessageBoxButtons.OK);
+                    MessageBox.Show("The name entered does not match any users.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     UseDesg_passwordBox.Text = string.Empty;
                 }
                 else
@@ -292,7 +294,7 @@ namespace RaptorMath
                     }
                     else
                     {
-                        MessageBox.Show("Invalid password. Try again.", "Raptor Math", MessageBoxButtons.OK);
+                        MessageBox.Show("Invalid password. Try again.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         UseDesg_passwordBox.Text = "";
                     }
                 }
