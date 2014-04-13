@@ -198,6 +198,10 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Edit Students form constructor.</summary>
         /// <param name="manager">The program management class.</param>
         public EditStudents_Form(Manager manager)

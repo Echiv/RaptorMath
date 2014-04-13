@@ -179,6 +179,10 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>User Designation form constructor.</summary>
         /// <param name="manager">The program management class.</param>
         public UseDesg_Form(Manager manager)
@@ -255,6 +259,10 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/5/14                                                     //
+        //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Login' button click.</summary>
         private void UseDesg_LoginBtn_Click(object sender, EventArgs e)
