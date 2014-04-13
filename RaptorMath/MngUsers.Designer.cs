@@ -185,7 +185,7 @@
             this.MngUsers_LastNameCmbo.MaxLength = 12;
             this.MngUsers_LastNameCmbo.Name = "MngUsers_LastNameCmbo";
             this.MngUsers_LastNameCmbo.Size = new System.Drawing.Size(169, 21);
-            this.MngUsers_LastNameCmbo.TabIndex = 3;
+            this.MngUsers_LastNameCmbo.TabIndex = 4;
             this.MngUsers_LastNameCmbo.TextChanged += new System.EventHandler(this.MngUsers_FirstAndLastNameCmbo_TextChanged);
             this.MngUsers_LastNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.MngUsers_LastNameCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
@@ -193,7 +193,7 @@
             // doNothingContextMenu
             // 
             this.doNothingContextMenu.Name = "doNothingContextMenu";
-            this.doNothingContextMenu.Size = new System.Drawing.Size(153, 26);
+            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
             // 
             // MngUsers_LastNameLbl
             // 
@@ -216,7 +216,7 @@
             this.MngUsers_GroupCmbo.MaxLength = 25;
             this.MngUsers_GroupCmbo.Name = "MngUsers_GroupCmbo";
             this.MngUsers_GroupCmbo.Size = new System.Drawing.Size(169, 21);
-            this.MngUsers_GroupCmbo.TabIndex = 6;
+            this.MngUsers_GroupCmbo.TabIndex = 7;
             this.MngUsers_GroupCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
             this.MngUsers_GroupCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_AddUserBoxTextBoxes_KeyPress);
             this.MngUsers_GroupCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
@@ -233,7 +233,7 @@
             this.MngUsers_FirstNameCmbo.MaxLength = 12;
             this.MngUsers_FirstNameCmbo.Name = "MngUsers_FirstNameCmbo";
             this.MngUsers_FirstNameCmbo.Size = new System.Drawing.Size(169, 21);
-            this.MngUsers_FirstNameCmbo.TabIndex = 2;
+            this.MngUsers_FirstNameCmbo.TabIndex = 3;
             this.MngUsers_FirstNameCmbo.TextChanged += new System.EventHandler(this.MngUsers_FirstAndLastNameCmbo_TextChanged);
             this.MngUsers_FirstNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             this.MngUsers_FirstNameCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_AddUserBoxTextBoxes_KeyPress);
@@ -257,7 +257,7 @@
             this.MngUsers_SaveUserBtm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_SaveUserBtm.Name = "MngUsers_SaveUserBtm";
             this.MngUsers_SaveUserBtm.Size = new System.Drawing.Size(115, 30);
-            this.MngUsers_SaveUserBtm.TabIndex = 7;
+            this.MngUsers_SaveUserBtm.TabIndex = 8;
             this.MngUsers_SaveUserBtm.Text = "Save User";
             this.toolTip1.SetToolTip(this.MngUsers_SaveUserBtm, "Saves the newly created student or admin.");
             this.MngUsers_SaveUserBtm.UseVisualStyleBackColor = true;
@@ -301,7 +301,7 @@
             this.MngUsers_AdminRdo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_AdminRdo.Name = "MngUsers_AdminRdo";
             this.MngUsers_AdminRdo.Size = new System.Drawing.Size(54, 17);
-            this.MngUsers_AdminRdo.TabIndex = 1;
+            this.MngUsers_AdminRdo.TabIndex = 2;
             this.MngUsers_AdminRdo.TabStop = true;
             this.MngUsers_AdminRdo.Text = "Admin";
             this.MngUsers_AdminRdo.UseVisualStyleBackColor = true;
@@ -315,7 +315,7 @@
             this.MngUsers_StudentRdo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_StudentRdo.Name = "MngUsers_StudentRdo";
             this.MngUsers_StudentRdo.Size = new System.Drawing.Size(62, 17);
-            this.MngUsers_StudentRdo.TabIndex = 0;
+            this.MngUsers_StudentRdo.TabIndex = 1;
             this.MngUsers_StudentRdo.TabStop = true;
             this.MngUsers_StudentRdo.Text = "Student";
             this.MngUsers_StudentRdo.UseVisualStyleBackColor = true;
@@ -357,7 +357,7 @@
             this.MngUsers_RemoveUserCmbo.MaxLength = 25;
             this.MngUsers_RemoveUserCmbo.Name = "MngUsers_RemoveUserCmbo";
             this.MngUsers_RemoveUserCmbo.Size = new System.Drawing.Size(190, 21);
-            this.MngUsers_RemoveUserCmbo.TabIndex = 0;
+            this.MngUsers_RemoveUserCmbo.TabIndex = 1;
             this.MngUsers_RemoveUserCmbo.TextChanged += new System.EventHandler(this.MngUsers_RemoveUserCmbo_TextChanged);
             this.MngUsers_RemoveUserCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.MngUsers_RemoveUserCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_RemoveUserBoxTextBoxes_KeyPress);
@@ -371,7 +371,7 @@
             this.MngUsers_RemoveUserBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_RemoveUserBtn.Name = "MngUsers_RemoveUserBtn";
             this.MngUsers_RemoveUserBtn.Size = new System.Drawing.Size(115, 30);
-            this.MngUsers_RemoveUserBtn.TabIndex = 1;
+            this.MngUsers_RemoveUserBtn.TabIndex = 2;
             this.MngUsers_RemoveUserBtn.Text = "Remove User";
             this.toolTip1.SetToolTip(this.MngUsers_RemoveUserBtn, "“Removes the selected admin or student from the system.");
             this.MngUsers_RemoveUserBtn.UseVisualStyleBackColor = true;
@@ -406,7 +406,7 @@
             this.MngUsers_CloseBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_CloseBtn.Name = "MngUsers_CloseBtn";
             this.MngUsers_CloseBtn.Size = new System.Drawing.Size(115, 30);
-            this.MngUsers_CloseBtn.TabIndex = 0;
+            this.MngUsers_CloseBtn.TabIndex = 1;
             this.MngUsers_CloseBtn.Text = "Close";
             this.toolTip1.SetToolTip(this.MngUsers_CloseBtn, "Return to the administration\'s homepage.");
             this.MngUsers_CloseBtn.UseVisualStyleBackColor = true;
@@ -418,7 +418,7 @@
             this.MngUsers_ExitBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_ExitBtn.Name = "MngUsers_ExitBtn";
             this.MngUsers_ExitBtn.Size = new System.Drawing.Size(115, 30);
-            this.MngUsers_ExitBtn.TabIndex = 1;
+            this.MngUsers_ExitBtn.TabIndex = 2;
             this.MngUsers_ExitBtn.Text = "Exit";
             this.toolTip1.SetToolTip(this.MngUsers_ExitBtn, "Closes the program.");
             this.MngUsers_ExitBtn.UseVisualStyleBackColor = true;
@@ -435,14 +435,14 @@
             this.MngUsers_PasswordTxt.Location = new System.Drawing.Point(155, 129);
             this.MngUsers_PasswordTxt.Name = "MngUsers_PasswordTxt";
             this.MngUsers_PasswordTxt.Size = new System.Drawing.Size(169, 19);
-            this.MngUsers_PasswordTxt.TabIndex = 14;
+            this.MngUsers_PasswordTxt.TabIndex = 5;
             // 
             // MngUsers_ConfirmPasswordTxt
             // 
             this.MngUsers_ConfirmPasswordTxt.Location = new System.Drawing.Point(155, 161);
             this.MngUsers_ConfirmPasswordTxt.Name = "MngUsers_ConfirmPasswordTxt";
             this.MngUsers_ConfirmPasswordTxt.Size = new System.Drawing.Size(169, 19);
-            this.MngUsers_ConfirmPasswordTxt.TabIndex = 15;
+            this.MngUsers_ConfirmPasswordTxt.TabIndex = 6;
             // 
             // MngUsers_Form
             // 

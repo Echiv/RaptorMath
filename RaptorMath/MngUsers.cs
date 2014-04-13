@@ -30,6 +30,8 @@ Cycle 3 Changes:
  * • No longer display passwords as plain text
  * Date: 4/13/14
  * • Changed regular message boxes to the proper error message boxes.
+ * • Added support for numbers ot be entered into the password boxes.
+ * • Fixed a tabbing issue where tabs wouldn't work in the right order when certain boxes had data in them
 */
 
 using System;
@@ -141,6 +143,18 @@ namespace RaptorMath
         private void RaptorMath_LettersAndDigitsKeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == ' ' || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/13/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersAndDigitsKeyPress event.</summary>
+        private void RaptorMath_OnlyLettersAndDigitsKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || (char.IsControl(e.KeyChar)));
             if (e.Handled)
                 System.Media.SystemSounds.Beep.Play();
         }
@@ -287,8 +301,8 @@ namespace RaptorMath
             MngUsers_StudentRdo.Select();
             this.MngUsers_FirstNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
             this.MngUsers_LastNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
-            this.MngUsers_PasswordTxt.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
-            this.MngUsers_ConfirmPasswordTxt.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
+            this.MngUsers_PasswordTxt.KeyPress += new KeyPressEventHandler(RaptorMath_OnlyLettersAndDigitsKeyPress);
+            this.MngUsers_ConfirmPasswordTxt.KeyPress += new KeyPressEventHandler(RaptorMath_OnlyLettersAndDigitsKeyPress);
             this.MngUsers_GroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
             this.MngUsers_RemoveUserCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWithOneWhiteSpaceKeyPress);
 

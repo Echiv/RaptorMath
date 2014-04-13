@@ -363,7 +363,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/11/14                                                     //
+        // Date: 4/11/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Disallows copy, paste, cut from keyboard.</summary>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
