@@ -33,6 +33,7 @@ Cycle 3 Changes:
  * • Added support for numbers ot be entered into the password boxes.
  * • Fixed a tabbing issue where tabs wouldn't work in the right order when certain boxes had data in them
  * • Added some UI enhancements to better direct the user during errors.
+ * • Added a confirmation box when removing a user from the system.
 */
 
 using System;
@@ -356,7 +357,7 @@ namespace RaptorMath
                 {
                     isCreatedUser = localManager.CreateUser(groupID, MngUsers_FirstNameCmbo.Text, MngUsers_LastNameCmbo.Text, "Unknown");
                 }
-                
+
                 if (isCreatedUser)
                 {
                     RefreshComboBoxes();
@@ -367,7 +368,9 @@ namespace RaptorMath
                     MngUsers_FirstNameCmbo.Select();
                 }
                 else
+                {
                     MessageBox.Show("Entered student name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else if ((MngUsers_AdminRdo.Checked)
                 && ((MngUsers_PasswordTxt.Text.Length > 0) && (MngUsers_ConfirmPasswordTxt.Text.Length > 0))
@@ -450,17 +453,21 @@ namespace RaptorMath
 
             if (checkForDefaultUser.Trim() != "Admin")
             {
-                isUserRemoved = localManager.removeUser(userToBeRemoved);
-                if (isUserRemoved == true)
+                if (MessageBox.Show("Are you sure you want to remove this user? All their data will be removed from the system.",
+                    "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    MessageBox.Show("The selected user has been removed", "Raptor Math", MessageBoxButtons.OK);
-                    RefreshComboBoxes();
-                    MngUsers_RemoveUserCmbo.Text = string.Empty;
-                    MngUsers_RemoveUserCmbo.Select();
-                }
-                else
-                {
-                    MessageBox.Show("The selected user does not match any known users and cannot be removed", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    isUserRemoved = localManager.removeUser(userToBeRemoved);
+                    if (isUserRemoved == true)
+                    {
+                        MessageBox.Show("The selected user has been removed", "Raptor Math", MessageBoxButtons.OK);
+                        RefreshComboBoxes();
+                        MngUsers_RemoveUserCmbo.Text = string.Empty;
+                        MngUsers_RemoveUserCmbo.Select();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The selected user does not match any known users and cannot be removed", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else

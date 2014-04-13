@@ -44,6 +44,8 @@ Cycle 3 Changes:
  * • Added logic to disallow interaction with a form's border close button.
  * • Added logic to disallow copy, paste, and cut.
  * • No longer display passwords as plain text
+ * Date: 4/13/14
+ * • Repalced generic message boxes with error message boxes where needed.
 */
 
 using System;
@@ -324,12 +326,12 @@ namespace RaptorMath
                 }
                 else
                 {
-                    MessageBox.Show("The current password does not match the records", "Raptor Math", MessageBoxButtons.OK);
+                    MessageBox.Show("The current password does not match the records", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("That password contains an invalid character", "Raptor Math", MessageBoxButtons.OK);
+                MessageBox.Show("That password contains an invalid character", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

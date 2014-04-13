@@ -53,6 +53,7 @@
             this.AdminHome_TimeLbl = new System.Windows.Forms.Label();
             this.AdminHome_PasswordBox = new System.Windows.Forms.GroupBox();
             this.AdminHome_NewPWTxt = new System.Windows.Forms.TextBox();
+            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.AdminHome_CurrentPWTxt = new System.Windows.Forms.TextBox();
             this.AdminHome_UserBox = new System.Windows.Forms.GroupBox();
             this.AdminHome_DrillBox = new System.Windows.Forms.GroupBox();
@@ -62,7 +63,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.AdminHome_ButtonBox = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.AdminHome_UserInfoBox.SuspendLayout();
             this.AdminHome_PasswordBox.SuspendLayout();
             this.AdminHome_UserBox.SuspendLayout();
@@ -84,7 +84,7 @@
             // 
             this.AdminHome_SaveBtn.Enabled = false;
             this.AdminHome_SaveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdminHome_SaveBtn.Location = new System.Drawing.Point(144, 81);
+            this.AdminHome_SaveBtn.Location = new System.Drawing.Point(164, 79);
             this.AdminHome_SaveBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AdminHome_SaveBtn.Name = "AdminHome_SaveBtn";
             this.AdminHome_SaveBtn.Size = new System.Drawing.Size(125, 30);
@@ -347,6 +347,11 @@
             this.AdminHome_NewPWTxt.TextChanged += new System.EventHandler(this.AdminHome_NewPWTxt_TextChanged);
             this.AdminHome_NewPWTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AdminHome_PasswordBoxTextBoxes_KeyPress);
             // 
+            // doNothingContextMenu
+            // 
+            this.doNothingContextMenu.Name = "doNothingContextMenu";
+            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
+            // 
             // AdminHome_CurrentPWTxt
             // 
             this.AdminHome_CurrentPWTxt.ContextMenuStrip = this.doNothingContextMenu;
@@ -471,11 +476,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(432, 503);
             this.tableLayoutPanel1.TabIndex = 42;
-            // 
-            // doNothingContextMenu
-            // 
-            this.doNothingContextMenu.Name = "doNothingContextMenu";
-            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
             // 
             // AdminHome_Form
             // 
