@@ -42,6 +42,7 @@
             this.ReportHome_WindowLbl = new System.Windows.Forms.Label();
             this.ReportHome_SelectionBox = new System.Windows.Forms.GroupBox();
             this.ReportHome_GroupCmbo = new System.Windows.Forms.ComboBox();
+            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ReportHome_StudentCmbo = new System.Windows.Forms.ComboBox();
             this.ReportHome_GroupLbl = new System.Windows.Forms.Label();
             this.ReportHome_StudenLbl = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.ReportHome_TimeLbl = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ReportHome_DateRangeBox.SuspendLayout();
             this.ReportHome_SelectionBox.SuspendLayout();
             this.ReportHome_ButtonBox.SuspendLayout();
@@ -142,7 +142,7 @@
             // 
             this.ReportHome_GroupReportBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ReportHome_GroupReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReportHome_GroupReportBtn.Location = new System.Drawing.Point(218, 24);
+            this.ReportHome_GroupReportBtn.Location = new System.Drawing.Point(218, 44);
             this.ReportHome_GroupReportBtn.Margin = new System.Windows.Forms.Padding(4);
             this.ReportHome_GroupReportBtn.Name = "ReportHome_GroupReportBtn";
             this.ReportHome_GroupReportBtn.Size = new System.Drawing.Size(117, 32);
@@ -211,6 +211,11 @@
             this.ReportHome_GroupCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ReportHome_GroupCmbo_KeyPress);
             this.ReportHome_GroupCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
+            // doNothingContextMenu
+            // 
+            this.doNothingContextMenu.Name = "doNothingContextMenu";
+            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
+            // 
             // ReportHome_StudentCmbo
             // 
             this.ReportHome_StudentCmbo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -257,7 +262,7 @@
             // 
             this.ReportHome_SingleReportBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ReportHome_SingleReportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReportHome_SingleReportBtn.Location = new System.Drawing.Point(79, 24);
+            this.ReportHome_SingleReportBtn.Location = new System.Drawing.Point(79, 44);
             this.ReportHome_SingleReportBtn.Margin = new System.Windows.Forms.Padding(4);
             this.ReportHome_SingleReportBtn.Name = "ReportHome_SingleReportBtn";
             this.ReportHome_SingleReportBtn.Size = new System.Drawing.Size(117, 30);
@@ -390,11 +395,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(432, 503);
             this.tableLayoutPanel1.TabIndex = 49;
-            // 
-            // doNothingContextMenu
-            // 
-            this.doNothingContextMenu.Name = "doNothingContextMenu";
-            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
             // 
             // StudentReports_Form
             // 

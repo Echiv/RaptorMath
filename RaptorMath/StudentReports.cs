@@ -217,6 +217,9 @@ namespace RaptorMath
             ReportHome_SingleReportBtn.Enabled = false;
             ReportHome_GroupReportBtn.Enabled = false;
             ReportHome_StudentCmbo.Select();
+            ReportHome_StartDate.MaxDate = DateTime.Now;
+            ReportHome_EndDate.MaxDate = DateTime.Now;
+            ReportHome_EndDate.MinDate = ReportHome_StartDate.Value;
 
             this.ReportHome_StudentCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
             this.ReportHome_GroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWithOneWhiteSpaceKeyPress); 
@@ -347,6 +350,7 @@ namespace RaptorMath
         private void ReportHome_StartDate_ValueChanged(object sender, EventArgs e)
         {
             localManager.StartDate = DateTime.Parse(ReportHome_StartDate.Text);
+            ReportHome_EndDate.MinDate = ReportHome_StartDate.Value;
         }
 
         //------------------------------------------------------------------//
@@ -357,6 +361,7 @@ namespace RaptorMath
         private void ReportHome_EndDate_ValueChanged(object sender, EventArgs e)
         {
             localManager.EndDate = DateTime.Parse(ReportHome_EndDate.Text);
+            ReportHome_StartDate.MaxDate = ReportHome_EndDate.Value;
         }
 
         //------------------------------------------------------------------//
