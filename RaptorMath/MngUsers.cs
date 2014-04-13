@@ -28,6 +28,8 @@ Cycle 3 Changes:
  * • Added logic to disallow interaction with a form's border close button.
  * • Added logic to disallow copy, paste, and cut.
  * • No longer display passwords as plain text
+ * Date: 4/13/14
+ * • Changed regular message boxes to the proper error message boxes.
 */
 
 using System;
@@ -362,12 +364,12 @@ namespace RaptorMath
                     isCreatedUser = localManager.CreateUser(MngUsers_FirstNameCmbo.Text, MngUsers_LastNameCmbo.Text, MngUsers_PasswordTxt.Text, "Unknown", "RaptorMathStudents.xml");
                     if (isCreatedUser)
                     {
-                        RefreshComboBoxes();
                         MessageBox.Show("New user created.", "Raptor Math", MessageBoxButtons.OK);
                         MngUsers_FirstNameCmbo.Text = string.Empty;
                         MngUsers_LastNameCmbo.Text = string.Empty;
                         MngUsers_PasswordTxt.Text = string.Empty;
                         MngUsers_ConfirmPasswordTxt.Text = string.Empty;
+                        RefreshComboBoxes();
                     }
                     else
                     {

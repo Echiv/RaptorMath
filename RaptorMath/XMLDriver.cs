@@ -233,7 +233,8 @@ namespace RaptorMath
         /// <returns>Boolean confirmation.</returns>
         public bool InitialCreateAdminXml(string AdminXMLPath)
         {
-            Admin DefaultAdmin = new Admin("Admin", "", "Admin", DateTime.Now.ToString("M/d/yyyy"), "RaptopMathStudents.xml");
+            Admin DefaultAdmin = new Admin("Default", "Admin", "admin", DateTime.Now.ToString("M/d/yyyy"), "RaptopMathStudents.xml");
+            DefaultAdmin.LoginName = DefaultAdmin.FirstName + " " + DefaultAdmin.LastName;
             DefaultAdmin.ID = 1;
 
             XElement newAdmin = CreateAdminNode(DefaultAdmin);
