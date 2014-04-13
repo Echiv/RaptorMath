@@ -36,6 +36,7 @@
             this.EditStu_DateLbl = new System.Windows.Forms.Label();
             this.EditStu_AdminNameLbl = new System.Windows.Forms.Label();
             this.EditStu_SettingBox = new System.Windows.Forms.GroupBox();
+            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.EditStu_NewLastNameCmbo = new System.Windows.Forms.ComboBox();
             this.EditStu_GroupCmbo = new System.Windows.Forms.ComboBox();
@@ -51,7 +52,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.EditStu_Timer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.EditStu_UserInfoBox.SuspendLayout();
             this.EditStu_SettingBox.SuspendLayout();
             this.EditStu_ButtonBox.SuspendLayout();
@@ -137,6 +137,11 @@
             this.EditStu_SettingBox.TabStop = false;
             this.EditStu_SettingBox.Text = "Edit Student Settings";
             // 
+            // doNothingContextMenu
+            // 
+            this.doNothingContextMenu.Name = "doNothingContextMenu";
+            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -160,6 +165,7 @@
             this.EditStu_NewLastNameCmbo.Name = "EditStu_NewLastNameCmbo";
             this.EditStu_NewLastNameCmbo.Size = new System.Drawing.Size(160, 21);
             this.EditStu_NewLastNameCmbo.TabIndex = 2;
+            this.EditStu_NewLastNameCmbo.TextChanged += new System.EventHandler(this.EditStu_NewLastNameCmbo_TextChanged);
             this.EditStu_NewLastNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.EditStu_NewLastNameCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditStu_SettingBoxTextBoxes_KeyPress);
             this.EditStu_NewLastNameCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
@@ -176,6 +182,7 @@
             this.EditStu_GroupCmbo.Name = "EditStu_GroupCmbo";
             this.EditStu_GroupCmbo.Size = new System.Drawing.Size(160, 21);
             this.EditStu_GroupCmbo.TabIndex = 3;
+            this.EditStu_GroupCmbo.TextChanged += new System.EventHandler(this.EditStu_GroupCmbo_TextChanged);
             this.EditStu_GroupCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
             this.EditStu_GroupCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditStu_SettingBoxTextBoxes_KeyPress);
             this.EditStu_GroupCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
@@ -192,6 +199,7 @@
             this.EditStu_NewFirstNameCmbo.Name = "EditStu_NewFirstNameCmbo";
             this.EditStu_NewFirstNameCmbo.Size = new System.Drawing.Size(160, 21);
             this.EditStu_NewFirstNameCmbo.TabIndex = 1;
+            this.EditStu_NewFirstNameCmbo.TextChanged += new System.EventHandler(this.EditStu_NewFirstNameCmbo_TextChanged);
             this.EditStu_NewFirstNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.EditStu_NewFirstNameCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditStu_SettingBoxTextBoxes_KeyPress);
             this.EditStu_NewFirstNameCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
@@ -208,6 +216,7 @@
             this.EditStu_SelectionCmbo.Name = "EditStu_SelectionCmbo";
             this.EditStu_SelectionCmbo.Size = new System.Drawing.Size(160, 21);
             this.EditStu_SelectionCmbo.TabIndex = 0;
+            this.EditStu_SelectionCmbo.TextChanged += new System.EventHandler(this.EditStu_SelectionCmbo_TextChanged);
             this.EditStu_SelectionCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.EditStu_SelectionCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditStu_SettingBoxTextBoxes_KeyPress);
             this.EditStu_SelectionCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
@@ -320,11 +329,6 @@
             this.EditStu_Timer.Enabled = true;
             this.EditStu_Timer.Interval = 1000;
             this.EditStu_Timer.Tick += new System.EventHandler(this.EditStu_Timer_Tick);
-            // 
-            // doNothingContextMenu
-            // 
-            this.doNothingContextMenu.Name = "doNothingContextMenu";
-            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
             // 
             // EditStudents_Form
             // 

@@ -336,7 +336,7 @@ namespace RaptorMath
                 UseDesg_LoginBtn.Enabled = true;
                 UseDesg_passwordBox.Enabled = false;
             }
-            else if (localManager.isAdmin())
+            else if (localManager.isAdmin() && localManager.currentUser.Length > 8)
             {
                 UseDesg_passwordBox.Enabled = true;
             }

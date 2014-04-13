@@ -500,6 +500,33 @@ namespace RaptorMath
             return XMLStudentDriver.editStudent(newFName, newLName, selectedStudent, group, studentList, studentXMLPath, groupXMLPath, dataDirectory);
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                                                       //
+        // Date: 4/12/14                                                                                //
+        //----------------------------------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        /// <summary>Edit a student's group placement.</summary>
+        /// <param name="selectedStudent">Student object to be modified</param>
+        /// <param name="group">Group object associated with student.</param>
+        public void EditGroup(Student selectedStudent, Group group)
+        {
+            selectedStudent.GroupID = group.ID;
+            XMLStudentDriver.EditGroup(selectedStudent, studentXMLPath, groupXMLPath, dataDirectory);
+        }
+
+        //----------------------------------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                                                       //
+        // Date: 4/12/14                                                                                //
+        //----------------------------------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        /// <summary>Edit a student's group placement.</summary>
+        /// <param name="selectedStudent">Student object to be modified</param>
+        /// <param name="group">Group object associated with student.</param>
+        public void EditName(Student selectedStudent)
+        {
+            XMLStudentDriver.EditName(selectedStudent, studentXMLPath, groupXMLPath, dataDirectory);
+        }
+
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/1/14                                                     //

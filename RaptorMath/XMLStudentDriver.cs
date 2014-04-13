@@ -331,6 +331,67 @@ namespace RaptorMath
             return false;
         }
 
+        //----------------------------------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                                                       //
+        // Date: 4/12/14                                                                                //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Update a student's group data in Student XML.</summary>
+        /// <param name="student">Student object to be modified.</param>
+        /// <param name="studentXMLPath">Student XML file path.</param>
+        /// <param name="groupXMLPath">Group XML file path.</param>
+        /// <param name="dataDirectory">Data Directory.</param>
+        public void EditGroup(Student student, string studentXMLPath, string groupXMLPath, string dataDirectory)
+        {
+            XDocument data = XDocument.Load(studentXMLPath);
+            XElement studentIDElement = data.Descendants("stu").Where(stu => stu.Attribute("ID").Value.Equals(student.ID.ToString())).FirstOrDefault();
+            XDocument groupData = XDocument.Load(groupXMLPath);
+            XElement GroupElement = groupData.Descendants("group").Where(group => group.Attribute("ID").Value.Equals(student.GroupID.ToString())).FirstOrDefault();
+
+            if (GroupElement != null)
+            {
+                if (GroupElement != null)
+                {
+                    studentIDElement.SetElementValue("group", student.GroupID);
+                    data.Save(studentXMLPath);
+                }
+            }
+        }
+
+        //----------------------------------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                                                       //
+        // Date: 4/12/14                                                                                //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Update a student's group data in Student XML.</summary>
+        /// <param name="student">Student object to be modified.</param>
+        /// <param name="studentXMLPath">Student XML file path.</param>
+        /// <param name="groupXMLPath">Group XML file path.</param>
+        /// <param name="dataDirectory">Data Directory.</param>
+        public void EditName(Student student, string studentXMLPath, string groupXMLPath, string dataDirectory)
+        {
+            XDocument data = XDocument.Load(studentXMLPath);
+            XElement studentIDElement = data.Descendants("stu").Where(stu => stu.Attribute("ID").Value.Equals(student.ID.ToString())).FirstOrDefault();
+            XElement studentNameElement = data.Descendants("stu").Where(stu => stu.Element("loginName").Value.Equals(student.LoginName)).FirstOrDefault();
+
+            if ((studentIDElement != null))
+            {
+                if (studentNameElement == null)
+                {
+                    string oldRecordPath = student.RecordsPath;
+                    string recordPath = student.LoginName.Replace(" ", "") + "Records.xml";
+                    student.RecordsPath = System.IO.Path.Combine(dataDirectory, recordPath);
+                    if (System.IO.File.Exists(oldRecordPath))
+                    {
+                        System.IO.File.Move(oldRecordPath, student.RecordsPath);
+                    }
+                    studentIDElement.SetElementValue("loginName", student.LoginName);
+                    studentIDElement.SetElementValue("firstName", student.FirstName);
+                    studentIDElement.SetElementValue("lastName", student.LastName);
+                    studentIDElement.SetElementValue("recPath", student.RecordsPath);
+                    data.Save(studentXMLPath);
+                }
+            }
+        }
+
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/5/14                                                     //

@@ -207,6 +207,10 @@ namespace RaptorMath
             RefreshCmboBoxes();
 
             EditStu_SelectionCmbo.Select();
+            EditStu_SaveStudentBtn.Enabled = false;
+            EditStu_NewFirstNameCmbo.Enabled = false;
+            EditStu_NewLastNameCmbo.Enabled = false;
+            EditStu_GroupCmbo.Enabled = false;
 
             this.EditStu_SelectionCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWithOneWhiteSpaceKeyPress);
             this.EditStu_GroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
@@ -310,23 +314,59 @@ namespace RaptorMath
             EditStu_GroupCmbo.Text = string.Empty;
         }
 
+        ////------------------------------------------------------------------//
+        //// Authors: Cody Jordan, Cian Carota                                //
+        //// Date: 4/2/14                                                     //
+        ////------------------------------------------------------------------//
+        ///// <summary>Handle 'Save Student' button click.</summary>
+        //private void EditStu_SaveStudentBtn_Click(object sender, EventArgs e)
+        //{
+        //    bool isStudentRenamed = localManager.RenameStudent(EditStu_NewFirstNameCmbo.Text, EditStu_NewLastNameCmbo.Text, EditStu_SelectionCmbo.Text, EditStu_GroupCmbo.Text, localManager.studentList, localManager.groupList);
+        //    if (isStudentRenamed)
+        //    {
+        //        MessageBox.Show("Student changes saved", "Raptor Math", MessageBoxButtons.OK);
+        //        ClearCmboBoxes();
+        //        RefreshCmboBoxes();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Error. Student not saved", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
+
         //------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                //
-        // Date: 4/2/14                                                     //
+        // Authors: Joshua Boone and Hustine Dinh                           //
+        // Date: 4/12/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Save Student' button click.</summary>
         private void EditStu_SaveStudentBtn_Click(object sender, EventArgs e)
         {
-            bool isStudentRenamed = localManager.RenameStudent(EditStu_NewFirstNameCmbo.Text, EditStu_NewLastNameCmbo.Text, EditStu_SelectionCmbo.Text, EditStu_GroupCmbo.Text, localManager.studentList, localManager.groupList);
-            if (isStudentRenamed)
+            int isValidEdit = localManager.IsValidEdit(EditStu_NewFirstNameCmbo.Text, EditStu_NewLastNameCmbo.Text, EditStu_SelectionCmbo.Text, EditStu_GroupCmbo.Text, localManager.studentList, localManager.groupList);
+            if (isValidEdit == 0)
             {
-                MessageBox.Show("Student changes saved", "Raptor Math", MessageBoxButtons.OK);
+                localManager.EditStudent(EditStu_NewFirstNameCmbo.Text, EditStu_NewLastNameCmbo.Text, EditStu_SelectionCmbo.Text, EditStu_GroupCmbo.Text, localManager.studentList, localManager.groupList);
+                MessageBox.Show("Student changes saved.", "Raptor Math", MessageBoxButtons.OK);
                 ClearCmboBoxes();
                 RefreshCmboBoxes();
             }
-            else
+            else if (isValidEdit == 1)
             {
-                MessageBox.Show("Error. Student not saved", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error. Entered student doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                EditStu_SelectionCmbo.Focus();
+            }
+            else if (isValidEdit == 2)
+            {
+                MessageBox.Show("Error. New name is not valid.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                EditStu_NewFirstNameCmbo.Focus();
+            }
+            else if (isValidEdit == 3)
+            {
+                MessageBox.Show("Error. Entered group doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                EditStu_GroupCmbo.Focus();
+            }
+            else if (isValidEdit == 4)
+            {
+                MessageBox.Show("Error. Student not saved.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -382,6 +422,87 @@ namespace RaptorMath
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Enables and siables the combo boxes used to edit a student.</summary>
+        private void EditStu_SelectionCmbo_TextChanged(object sender, EventArgs e)
+        {
+            if (EditStu_SelectionCmbo.Text.Length > 0 && (EditStu_NewFirstNameCmbo.Text.Length > 0 ||
+                EditStu_NewLastNameCmbo.Text.Length > 0 || EditStu_GroupCmbo.Text.Length > 0))
+            {
+                EditStu_NewFirstNameCmbo.Enabled = true;
+                EditStu_NewLastNameCmbo.Enabled = true;
+                EditStu_GroupCmbo.Enabled = true;
+                EditStu_SaveStudentBtn.Enabled = true;
+            }
+            else if (EditStu_SelectionCmbo.Text.Length > 0)
+            {
+                EditStu_NewFirstNameCmbo.Enabled = true;
+                EditStu_NewLastNameCmbo.Enabled = true;
+                EditStu_GroupCmbo.Enabled = true;
+            }
+            else
+            {
+                EditStu_NewFirstNameCmbo.Enabled = false;
+                EditStu_NewLastNameCmbo.Enabled = false;
+                EditStu_GroupCmbo.Enabled = false;
+                EditStu_SaveStudentBtn.Enabled = false;
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Disallows copy, paste, cut from keyboard.</summary>
+        private void EditStu_NewFirstNameCmbo_TextChanged(object sender, EventArgs e)
+        {
+            if (EditStu_NewFirstNameCmbo.Text.Length > 0)
+            {
+                EditStu_SaveStudentBtn.Enabled = true;
+            }
+            else if (EditStu_NewLastNameCmbo.Text.Length < 1 && EditStu_GroupCmbo.Text.Length < 1)
+            {
+                EditStu_SaveStudentBtn.Enabled = false;
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Disallows copy, paste, cut from keyboard.</summary>
+        private void EditStu_NewLastNameCmbo_TextChanged(object sender, EventArgs e)
+        {
+            if (EditStu_NewLastNameCmbo.Text.Length > 0)
+            {
+                EditStu_SaveStudentBtn.Enabled = true;
+            }
+            else if (EditStu_NewFirstNameCmbo.Text.Length < 1 && EditStu_GroupCmbo.Text.Length < 1)
+            {
+                EditStu_SaveStudentBtn.Enabled = false;
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Disallows copy, paste, cut from keyboard.</summary>
+        private void EditStu_GroupCmbo_TextChanged(object sender, EventArgs e)
+        {
+            if (EditStu_GroupCmbo.Text.Length > 0)
+            {
+                EditStu_SaveStudentBtn.Enabled = true;
+            }
+            else if (EditStu_NewFirstNameCmbo.Text.Length < 1 && EditStu_NewLastNameCmbo.Text.Length < 1)
+            {
+                EditStu_SaveStudentBtn.Enabled = false;
+            }
         }
     }
 }

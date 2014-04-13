@@ -273,8 +273,57 @@ namespace RaptorMath
             return false;
         }
 
+        ////----------------------------------------------------------------------------------------------//
+        //// Authors: Cody Jordan, Cian Carota                                                            //
+        //// Date: 4/3/14                                                                                 //
+        ////----------------------------------------------------------------------------------------------//
+        ///// <summary>Adjust student information.</summary>
+        ///// <param name="newFName">Student's new first name.</param>
+        ///// <param name="newLName">Student's new last name.</param>
+        ///// <param name="currentName">Student's current full name.</param>
+        ///// <param name="newGroup">Student's new group name.</param>
+        ///// <param name="studentList">List containing student objects.</param>
+        ///// <param name="groupList">List containing group objects.</param>
+        //public bool RenameStudent(string newFName, string newLName, string currentName, string newGroup, List<Student> studentList, List<Group> groupList)
+        //{
+        //    Tuple<bool, bool> GroupStudentChanged = new Tuple<bool, bool>(false, false);
+            
+        //    if (currentName.Replace(" ", string.Empty).All(char.IsLetter)
+        //        && !(currentName.Replace(" ", string.Empty).Equals(string.Empty))
+        //        && ((!newFName.Equals(string.Empty)) || (!newLName.Equals(string.Empty)) || (!newGroup.Equals(string.Empty))))
+        //    {
+        //        Student selectedStudent = FindStudentWithName(currentName);
+        //        // Need to make sure that this student doesn't alreadt exist
+        //        string newName = newFName + " " + newLName;
+        //        Student existStudent = FindStudentWithName(newName);
+        //        if (selectedStudent != null && existStudent == null)
+        //        {
+        //            // Need to make sure the group exists
+        //            Group selectedGroup = FindGroupByName(newGroup);
+        //            if (selectedGroup != null)
+        //            {
+        //                Group oldGroup = FindGroupByID(selectedStudent.GroupID);
+        //                GroupStudentChanged = XMLDriver.editStudent(newFName, newLName, selectedStudent, selectedGroup, studentList);
+        //                if (GroupStudentChanged.Item1)
+        //                {
+        //                    RemoveGroupDrillsFromStudent(oldGroup, selectedStudent);
+        //                    AddGroupDrillsToStudent(selectedGroup, selectedStudent);
+        //                }
+        //            }
+        //            else
+        //            {
+        //                // 4/09/14 Added this bad code to get the program to rename a student even no new group was selected
+        //                Group oldGroup = FindGroupByID(selectedStudent.GroupID);
+        //                GroupStudentChanged = XMLDriver.editStudent(newFName, newLName, selectedStudent, oldGroup, studentList);
+        //            }
+        //            return GroupStudentChanged.Item2;
+        //        }
+        //    }
+        //    return GroupStudentChanged.Item2;
+        //}
+
         //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                            //
+        // Authors: Joshua Boone and Justine Dinh                                                           //
         // Date: 4/3/14                                                                                 //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Adjust student information.</summary>
@@ -284,42 +333,145 @@ namespace RaptorMath
         /// <param name="newGroup">Student's new group name.</param>
         /// <param name="studentList">List containing student objects.</param>
         /// <param name="groupList">List containing group objects.</param>
-        public bool RenameStudent(string newFName, string newLName, string currentName, string newGroup, List<Student> studentList, List<Group> groupList)
+        public int IsValidEdit(string newFName, string newLName, string currentName, string newGroup, List<Student> studentList, List<Group> groupList)
         {
-            Tuple<bool, bool> GroupStudentChanged = new Tuple<bool, bool>(false, false);
-            
-            if (currentName.Replace(" ", string.Empty).All(char.IsLetter)
-                && !(currentName.Replace(" ", string.Empty).Equals(string.Empty))
-                && ((!newFName.Equals(string.Empty)) || (!newLName.Equals(string.Empty)) || (!newGroup.Equals(string.Empty))))
+            // Error code can be 0 through 3. 
+            // 0 means the edit is valid
+            // 1 means the entered student doesn't exist
+            // 2 means the entered new name(s) are not valid
+            // 3 means the entered group is not valid
+            int errorCode = 0;
+
+            // Check to see if student to edit exists
+            if (FindStudentWithName(currentName) == null)
             {
-                Student selectedStudent = FindStudentWithName(currentName);
-                // Need to make sure that this student doesn't alreadt exist
-                string newName = newFName + " " + newLName;
-                Student existStudent = FindStudentWithName(newName);
-                if (selectedStudent != null && existStudent == null)
+                errorCode = 1;
+            }
+            // Check to see if the desired new name student is valid
+            else if (IsEditNameValid(newFName, newLName, currentName, studentList) == false)
+            {
+                errorCode = 2;
+            }
+            // Check to see if the desirted new group is valid
+            else if (FindGroupByName(newGroup) == null && !newGroup.Equals(string.Empty))
+            {
+                errorCode = 3;
+            }
+
+            return errorCode;
+        }
+        //----------------------------------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                                                           //
+        // Date: 4/3/14                                                                                 //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Checks to see if the new name is valid.</summary>
+        /// <param name="newFName">Student's new first name.</param>
+        /// <param name="newLName">Student's new last name.</param>
+        /// <param name="currentName">Student's current full name.</param>
+        /// <param name="studentList">List containing student objects.</param>
+        public bool IsEditNameValid(string newFName, string newLName, string currentName, List<Student> studentList)
+        {
+            // Used to return what data was not valid
+            bool isValid = true;
+            // Used to to see if there already exists a student in the system with the new name selected
+            Student existStudent;
+            // USed to hold the split name of the current student so we can easily get his first and last name
+            string[] wholeName;
+            // Holds the valid chars to split a string on
+            string[] separators = {" "};
+            // Now split the string
+            wholeName = currentName.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+            // Check to see if a student by the passed names already exists
+            // Need to find out if we are changing the student's name and if so what parts of it
+            if (newFName.Equals(string.Empty) && newLName.Equals(string.Empty))
+            {
+                // We are not trying to change the student's name
+                // Do nothing because this valid
+            }
+            else if (newFName.Equals(string.Empty) && !newLName.Equals(string.Empty))
+            {
+                // We are trying to change the student's last name.
+                // Need to get the students first name here for appending
+                string newName = wholeName[0] + " " + newLName;
+                // Check to see if there is already a student by this name
+                existStudent = FindStudentWithName(newName);
+                if (existStudent != null)
                 {
-                    // Need to make sure the group exists
-                    Group selectedGroup = FindGroupByName(newGroup);
-                    if (selectedGroup != null)
-                    {
-                        Group oldGroup = FindGroupByID(selectedStudent.GroupID);
-                        GroupStudentChanged = XMLDriver.editStudent(newFName, newLName, selectedStudent, selectedGroup, studentList);
-                        if (GroupStudentChanged.Item1)
-                        {
-                            RemoveGroupDrillsFromStudent(oldGroup, selectedStudent);
-                            AddGroupDrillsToStudent(selectedGroup, selectedStudent);
-                        }
-                    }
-                    else
-                    {
-                        // 4/09/14 Added this bad code to get the program to rename a student even no new group was selected
-                        Group oldGroup = FindGroupByID(selectedStudent.GroupID);
-                        GroupStudentChanged = XMLDriver.editStudent(newFName, newLName, selectedStudent, oldGroup, studentList);
-                    }
-                    return GroupStudentChanged.Item2;
+                    isValid = false;
                 }
             }
-            return GroupStudentChanged.Item2;
+            else if (!newFName.Equals(string.Empty) && newLName.Equals(string.Empty))
+            {
+                // We are trying to change the student's first name.
+                // Need to get the students last name here for appending
+                string newName = newFName + " " + wholeName[0];
+                // Check to see if there is already a student by this name
+                existStudent = FindStudentWithName(newName);
+                if (existStudent != null)
+                {
+                    isValid = false;
+                }
+            }
+            else if (!newFName.Equals(string.Empty) && !newLName.Equals(string.Empty))
+            {
+                // We are trying to change the student's whole name
+                string newName = newFName + " " + newLName;
+                // Check to see if there is already a student by this name
+                existStudent = FindStudentWithName(newName);
+                if (existStudent != null)
+                {
+                    isValid = false;
+                }
+            }
+
+            return isValid;
+        }
+
+        //----------------------------------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                                                       //
+        // Date: 4/12/14                                                                                 //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Adjust student information.</summary>
+        /// <param name="newFName">Student's new first name.</param>
+        /// <param name="newLName">Student's new last name.</param>
+        /// <param name="currentName">Student's current full name.</param>
+        /// <param name="newGroup">Student's new group name.</param>
+        /// <param name="studentList">List containing student objects.</param>
+        /// <param name="groupList">List containing group objects.</param>
+        public void EditStudent(string newFName, string newLName, string currentName, string newGroup, List<Student> studentList, List<Group> groupList)
+        {
+            // Get the student we need to edit
+            Student selectedStudent = FindStudentWithName(currentName);
+            // We must determine what exactly needs to be edited
+            // The first case only the group needs to be edited
+            if (!newFName.Equals(string.Empty) && newLName.Equals(string.Empty))
+            {
+                selectedStudent.FirstName = newFName;
+                selectedStudent.LoginName = selectedStudent.FirstName + " " + selectedStudent.LastName;
+                XMLDriver.EditName(selectedStudent);
+            }
+            else if (newFName.Equals(string.Empty) && !newLName.Equals(string.Empty))
+            {
+                selectedStudent.LastName = newLName;
+                selectedStudent.LoginName = selectedStudent.FirstName + " " + selectedStudent.LastName;
+                XMLDriver.EditName(selectedStudent);
+            }
+            else if (!newFName.Equals(string.Empty) && !newLName.Equals(string.Empty))
+            {
+                selectedStudent.FirstName = newFName;
+                selectedStudent.LastName = newLName;
+                selectedStudent.LoginName = selectedStudent.FirstName + " " + selectedStudent.LastName;
+                XMLDriver.EditName(selectedStudent);
+            }
+
+            if (!newGroup.Equals(string.Empty))
+            {
+                Group selectedGroup = FindGroupByName(newGroup);
+                Group oldGroup = FindGroupByID(selectedStudent.GroupID);
+                XMLDriver.EditGroup(selectedStudent, selectedGroup);
+                RemoveGroupDrillsFromStudent(oldGroup, selectedStudent);
+                AddGroupDrillsToStudent(selectedGroup, selectedStudent);
+            }
         }
 
         //----------------------------------------------------------------------------------------------//
@@ -783,8 +935,11 @@ namespace RaptorMath
         /// <returns>Boolean confirming success.</returns>
         private bool SetCurrentAdmin(string currentUser)
         {
-            currentUser = currentUser.Remove(0, 8);
-            currentAdmin = FindAdmin(currentUser);
+            if (currentUser.Length > 8)
+            {
+                currentUser = currentUser.Remove(0, 8);
+                currentAdmin = FindAdmin(currentUser);
+            }
             if (currentAdmin != null)
             {
                 currentUser = String.Concat("<Admin> ", currentUser);
