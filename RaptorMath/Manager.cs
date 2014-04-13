@@ -407,7 +407,7 @@ namespace RaptorMath
             {
                 // We are trying to change the student's first name.
                 // Need to get the students last name here for appending
-                string newName = newFName + " " + wholeName[0];
+                string newName = newFName + " " + wholeName[1];
                 // Check to see if there is already a student by this name
                 existStudent = FindStudentWithName(newName);
                 if (existStudent != null)

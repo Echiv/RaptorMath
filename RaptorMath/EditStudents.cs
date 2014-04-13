@@ -362,7 +362,7 @@ namespace RaptorMath
             }
             else if (isValidEdit == 2)
             {
-                MessageBox.Show("Error. New name is not valid.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error. That student already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EditStu_NewFirstNameCmbo.Focus();
             }
             else if (isValidEdit == 3)
