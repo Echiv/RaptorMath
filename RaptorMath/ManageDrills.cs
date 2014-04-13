@@ -25,6 +25,8 @@ Cycle 3 Changes:
  * Date: 4/12/14
  * • Added logic to disallow interaction with a form's border close button.
  * • Added logic to disallow copy, paste, and cut.
+ * Date: 4/13/14
+ * • Repalced generic message boxes with error message boxes where needed.
 */
 
 using System;
@@ -449,21 +451,21 @@ namespace RaptorMath
 
                 if((isAssigned == true) && (isStudent == true))
                 {
-                    MessageBox.Show("Drill has been assigned to the Student", "Raptor Math", MessageBoxButtons.OK);
+                    MessageBox.Show("Drill has been assigned to the Student.", "Raptor Math", MessageBoxButtons.OK);
                     MngDrills_SelectDrillCmbo.Text = string.Empty;
                 }
                 if ((isAssigned == false) && (isStudent == true))
                 {
-                    MessageBox.Show("Drill has not been assigned to the student", "Raptor Math", MessageBoxButtons.OK);
+                    MessageBox.Show("Drill has not been assigned to the student.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 if ((isAssigned == true) && (isStudent == false))
                 {
-                    MessageBox.Show("Drill has been assigned to the Group", "Raptor Math", MessageBoxButtons.OK);
+                    MessageBox.Show("Drill has been assigned to the Group.", "Raptor Math", MessageBoxButtons.OK);
                     MngDrills_SelectDrillCmbo.Text = string.Empty;
                 }
                 if ((isAssigned == false) && (isStudent == false))
                 {
-                    MessageBox.Show("Drill has not been assigned to the Group", "Raptor Math", MessageBoxButtons.OK);
+                    MessageBox.Show("Drill has not been assigned to the Group.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if(MngDrills_RemoveDrillRdo.Checked)
@@ -486,21 +488,21 @@ namespace RaptorMath
                 }
                 if ((isUnassigned == true) && (isStudent == true))
                 {
-                    MessageBox.Show("Drill has been removed", "Raptor Math", MessageBoxButtons.OK);
+                    MessageBox.Show("Drill has been removed.", "Raptor Math", MessageBoxButtons.OK);
                     MngDrills_SelectDrillCmbo.Text = string.Empty;
                 }
                 if ((isUnassigned == false) && (isStudent == true))
                 {
-                    MessageBox.Show("Drill has not been removed", "Raptor Math", MessageBoxButtons.OK);
+                    MessageBox.Show("Drill has not been removed.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 if ((isUnassigned == true) && (isStudent == false))
                 {
-                    MessageBox.Show("Drill has been removed", "Raptor Math", MessageBoxButtons.OK);
+                    MessageBox.Show("Drill has been removed.", "Raptor Math", MessageBoxButtons.OK);
                     MngDrills_SelectDrillCmbo.Text = string.Empty;
                 }
                 if ((isUnassigned == false) && (isStudent == false))
                 {
-                    MessageBox.Show("Drill has not been removed", "Raptor Math", MessageBoxButtons.OK);
+                    MessageBox.Show("Drill has not been removed.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
