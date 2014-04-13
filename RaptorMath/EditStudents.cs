@@ -337,7 +337,7 @@ namespace RaptorMath
         //}
 
         //------------------------------------------------------------------//
-        // Authors: Joshua Boone and Hustine Dinh                           //
+        // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/12/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Save Student' button click.</summary>

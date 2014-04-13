@@ -274,7 +274,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/10/14                                                     //
+        // Date: 4/10/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Exports the opened report to an excel file.</summary>
         private void SingleReport_Excel_Click(object sender, EventArgs e)

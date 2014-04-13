@@ -22,7 +22,8 @@ Cycle 3 Changes:
  * Date: 4/12/14
  * • Added logic to disallow interaction with a form's border close button.
  * • Added logic to disallow copy, paste, and cut.
- * • Added logic to restrict the date tange an admin can select from
+ * • Added logic to restrict the date range the user can select from
+ * • Added logic to only enable report buttons if there are records in the given date range
 */
 
 using System;
@@ -206,6 +207,10 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Student Reports form constructor.</summary>
         /// <param name="manager">The program management class.</param>
         public StudentReports_Form(Manager manager)
@@ -219,8 +224,12 @@ namespace RaptorMath
             ReportHome_GroupReportBtn.Enabled = false;
             ReportHome_StudentCmbo.Select();
             ReportHome_StartDate.MaxDate = DateTime.Now;
+            TimeSpan sinceMidnight = DateTime.Now - DateTime.Today;
+            ReportHome_StartDate.MaxDate.Subtract(sinceMidnight);
+            localManager.StartDate = DateTime.Today;
             ReportHome_EndDate.MaxDate = DateTime.Now;
             ReportHome_EndDate.MinDate = ReportHome_StartDate.Value;
+            localManager.EndDate = ReportHome_EndDate.Value;
 
             this.ReportHome_StudentCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
             this.ReportHome_GroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWithOneWhiteSpaceKeyPress); 
@@ -278,91 +287,109 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Handle 'Single Report' button click.</summary>
         private void ReportHome_SingleReportBtn_Click(object sender, EventArgs e)
         {
             localManager.reportStudent = localManager.FindStudentWithName(ReportHome_StudentCmbo.Text);
-            localManager.StartDate = DateTime.Parse(ReportHome_StartDate.Text);
-            localManager.EndDate = DateTime.Parse(ReportHome_EndDate.Text);
-            TimeSpan span = localManager.EndDate - localManager.StartDate;
+            //localManager.StartDate = DateTime.Parse(ReportHome_StartDate.Text);
+            //localManager.EndDate = DateTime.Parse(ReportHome_EndDate.Text);
+            //TimeSpan span = localManager.EndDate - localManager.StartDate;
 
-            if (span.Days < 0)
-            {
-                MessageBox.Show("Please select a valid date range.", "Raptor Math", MessageBoxButtons.OK);
-            }
-            else
-            {
-                if (localManager.reportStudent != null)
-                {
-                    if (localManager.reportStudent.curRecordList.Count > 0)
-                    {
+            //if (span.Days < 0)
+            //{
+            //    MessageBox.Show("Please select a valid date range.", "Raptor Math", MessageBoxButtons.OK);
+            //}
+            //else
+            //{
+                //if (localManager.reportStudent != null)
+                //{
+                //    if (localManager.reportStudent.curRecordList.Count > 0)
+                //    {
                         localManager.SetWindow(Window.reportSingle);
                         this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("The entered student has no records", "Raptor Math", MessageBoxButtons.OK);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("The entered student doesn’t exist.", "Raptor Math", MessageBoxButtons.OK);
-                }
-            }
+                //    }
+                //    else
+                //    {
+                //        MessageBox.Show("The entered student has no records", "Raptor Math", MessageBoxButtons.OK);
+                //    }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("The entered student doesn’t exist.", "Raptor Math", MessageBoxButtons.OK);
+                //}
+            //}
         }
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/5/14                                                     //
+        //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Group Report' button click.</summary>
         private void ReportHome_GroupReportBtn_Click(object sender, EventArgs e)
         {
             localManager.reportGroup = localManager.FindGroupByName(ReportHome_GroupCmbo.Text);
-            localManager.StartDate = DateTime.Parse(ReportHome_StartDate.Text);
-            localManager.EndDate = DateTime.Parse(ReportHome_EndDate.Text);
-            TimeSpan span = localManager.EndDate - localManager.StartDate;
+            //localManager.StartDate = DateTime.Parse(ReportHome_StartDate.Text);
+            //localManager.EndDate = DateTime.Parse(ReportHome_EndDate.Text);
+            //TimeSpan span = localManager.EndDate - localManager.StartDate;
 
-            if (span.Days < 0)
-            {
-                MessageBox.Show("Please select a valid date range.", "Raptor Math", MessageBoxButtons.OK);
-            }
-            else
-            {
-                if (localManager.reportGroup != null)
-                {
+            //if (span.Days < 0)
+            //{
+            //    MessageBox.Show("Please select a valid date range.", "Raptor Math", MessageBoxButtons.OK);
+            //}
+            //else
+            //{
+            //    if (localManager.reportGroup != null)
+            //    {
                     localManager.SetWindow(Window.reportGroup);
                     this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("The entered group doesn’t exist.", "Raptor Math", MessageBoxButtons.OK);
-                    
-                }
-            }
-
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("The entered group doesn’t exist.", "Raptor Math", MessageBoxButtons.OK);        
+            //    }
+            //}
         }
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/5/14                                                     //
+        //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Registers 'Start Date' date box item selection.</summary>
         private void ReportHome_StartDate_ValueChanged(object sender, EventArgs e)
         {
             localManager.StartDate = DateTime.Parse(ReportHome_StartDate.Text);
             ReportHome_EndDate.MinDate = ReportHome_StartDate.Value;
+            UpdateSingleReportButton();
+            UpdateGroupReportButton();
         }
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Registers 'End Date' date box item selection.</summary>
         private void ReportHome_EndDate_ValueChanged(object sender, EventArgs e)
         {
             localManager.EndDate = DateTime.Parse(ReportHome_EndDate.Text);
             ReportHome_StartDate.MaxDate = ReportHome_EndDate.Value;
+            UpdateSingleReportButton();
+            UpdateGroupReportButton();
         }
 
         //------------------------------------------------------------------//
@@ -392,8 +419,56 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Used to enable or disable the single student report button.</summary>
+        private void UpdateSingleReportButton()
+        {
+            List<Record> studentRecords = new List<Record>();
+            if (ReportHome_StudentCmbo.Text.Length > 0)
+            {
+                studentRecords = localManager.GenerateRecord(localManager.StartDate, localManager.EndDate, ReportHome_StudentCmbo.Text);
+            }
+            if (studentRecords.Count > 0)
+            {
+                ReportHome_SingleReportBtn.Enabled = true;
+            }
+            else
+            {
+                ReportHome_SingleReportBtn.Enabled = false;
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Used to enable or disable the group student report button.</summary>
+        private void UpdateGroupReportButton()
+        {
+            if (ReportHome_GroupCmbo.Text.Length > 0)
+            {
+                localManager.reportGroup = localManager.FindGroupByName(ReportHome_GroupCmbo.Text);
+                bool exists = localManager.IsRecordInRangeGroup(localManager.StartDate, localManager.EndDate, localManager.reportGroup);
+                if (exists)
+                {
+                    ReportHome_GroupReportBtn.Enabled = true;
+                }
+                else
+                {
+                    ReportHome_GroupReportBtn.Enabled = false;
+                }
+            }
+        }
+
+        //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/8/14                                                     //
+        //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Handle Text Change event.</summary>
         private void ReportHome_StudentCmbo_TextChanged(object sender, EventArgs e)
@@ -402,7 +477,8 @@ namespace RaptorMath
             {
                 ReportHome_GroupReportBtn.Enabled = false;
                 ReportHome_GroupCmbo.Text = string.Empty;
-                ReportHome_SingleReportBtn.Enabled = true;
+                UpdateSingleReportButton();
+                //    ReportHome_SingleReportBtn.Enabled = true;
             }
             else
             {
@@ -414,6 +490,10 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/8/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Handle Text Change event.</summary>
         private void ReportHome_GroupCmbo_TextChanged(object sender, EventArgs e)
         {
@@ -421,7 +501,8 @@ namespace RaptorMath
             {
                 ReportHome_SingleReportBtn.Enabled = false;
                 ReportHome_StudentCmbo.Text = string.Empty;
-                ReportHome_GroupReportBtn.Enabled = true;
+                UpdateGroupReportButton();
+                //ReportHome_GroupReportBtn.Enabled = true;
             }
             else
             {

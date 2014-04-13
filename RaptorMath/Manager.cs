@@ -24,6 +24,7 @@ Authors: Joshua Boone and Justine Dinh
 Cycle 3 Changes:
  * Date: 4/12/14
  * • Added new methods for editing a student
+ * • Added a method to find if there exists any group records within a given date range
 */
 
 using System;
@@ -445,7 +446,6 @@ namespace RaptorMath
             // Get the student we need to edit
             Student selectedStudent = FindStudentWithName(currentName);
             // We must determine what exactly needs to be edited
-            // The first case only the group needs to be edited
             if (!newFName.Equals(string.Empty) && newLName.Equals(string.Empty))
             {
                 selectedStudent.FirstName = newFName;
@@ -465,7 +465,7 @@ namespace RaptorMath
                 selectedStudent.LoginName = selectedStudent.FirstName + " " + selectedStudent.LastName;
                 XMLDriver.EditName(selectedStudent);
             }
-
+            // Now to check to see if the group needs to be changed
             if (!newGroup.Equals(string.Empty))
             {
                 Group selectedGroup = FindGroupByName(newGroup);
@@ -1698,6 +1698,45 @@ namespace RaptorMath
                 return Tuple.Create(group.Name, 0f, 0f, 0f, 0);
             
             //return recordList;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Returns if there are group reocords in a picked date range</summary>
+        /// <param name="first">Start date</param>
+        /// <param name="second">End date</param>
+        /// <param name="group">Group to generate report</param>
+        /// <returns>Whether there are records for this group in the given date range</returns>
+        public bool IsRecordInRangeGroup(DateTime first, DateTime second, Group group)
+        {
+            string date;
+            bool recordsExist = false;
+            List<Record> recordList = new List<Record>();
+            List<Student> listOfStudentsInGroup = new List<Student>();
+
+            foreach (Student student in studentList)
+            {
+                if (student.GroupID == group.ID)
+                {
+                    listOfStudentsInGroup.Add(student);
+                }
+            }
+            foreach (Student studentInGroup in listOfStudentsInGroup)
+            {
+                foreach (Record record in studentInGroup.curRecordList)
+                {
+                    date = record.DateTaken;
+                    if ((DateTime.Parse(date) >= first) && (DateTime.Parse(date) <= second))
+                    {
+                        recordsExist = true;
+                        break;
+                    }
+                }
+            }
+
+           return recordsExist;
         }
     }
 }
