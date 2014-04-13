@@ -22,6 +22,8 @@ Cycle 3 Changes:
  * Date: 4/12/14
  * • Added logic to disallow interaction with a form's border close button.
  * • Added logic to disallow copy, paste, and cut.
+ * • Completely rewrote valdation checking when editing students
+ * • Added in better error messages to let the user know what went wrong
 */
 
 using System;

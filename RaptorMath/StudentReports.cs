@@ -22,6 +22,7 @@ Cycle 3 Changes:
  * Date: 4/12/14
  * • Added logic to disallow interaction with a form's border close button.
  * • Added logic to disallow copy, paste, and cut.
+ * • Added logic to restrict the date tange an admin can select from
 */
 
 using System;

@@ -22,6 +22,8 @@
 /* 
 Authors: Joshua Boone and Justine Dinh                     
 Cycle 3 Changes:
+ * Date: 4/12/14
+ * • Added new methods for editing a student
 */
 
 using System;
