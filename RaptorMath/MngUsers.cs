@@ -278,6 +278,8 @@ namespace RaptorMath
 
             MngUsers_RemoveUserBtn.Enabled = false;
             MngUsers_SaveUserBtm.Enabled = false;
+            MngUsers_PasswordTxt.PasswordChar = '*';
+            MngUsers_ConfirmPasswordTxt.PasswordChar = '*';
 
             MngUsers_StudentRdo.Select();
             this.MngUsers_FirstNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);

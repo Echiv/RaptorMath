@@ -38,13 +38,12 @@
             this.MngUsers_DateLbl = new System.Windows.Forms.Label();
             this.MngUsers_AddUserBox = new System.Windows.Forms.GroupBox();
             this.MngUsers_LastNameCmbo = new System.Windows.Forms.ComboBox();
+            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MngUsers_LastNameLbl = new System.Windows.Forms.Label();
             this.MngUsers_GroupCmbo = new System.Windows.Forms.ComboBox();
             this.MngUsers_FirstNameCmbo = new System.Windows.Forms.ComboBox();
             this.MngUsers_ConfirmPassword = new System.Windows.Forms.Label();
-            this.MngUsers_ConfirmPasswordTxt = new System.Windows.Forms.RichTextBox();
             this.MngUsers_SaveUserBtm = new System.Windows.Forms.Button();
-            this.MngUsers_PasswordTxt = new System.Windows.Forms.RichTextBox();
             this.MngUsers_GroupLbl = new System.Windows.Forms.Label();
             this.MngUsers_PasswordLbl = new System.Windows.Forms.Label();
             this.MngUsers_FirstNameLbl = new System.Windows.Forms.Label();
@@ -60,7 +59,8 @@
             this.MngUsers_ExitBtn = new System.Windows.Forms.Button();
             this.MngUsers_Timer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MngUsers_PasswordTxt = new System.Windows.Forms.TextBox();
+            this.MngUsers_ConfirmPasswordTxt = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.MngUsers_UserInfoBox.SuspendLayout();
             this.MngUsers_AddUserBox.SuspendLayout();
@@ -148,14 +148,14 @@
             // 
             // MngUsers_AddUserBox
             // 
+            this.MngUsers_AddUserBox.Controls.Add(this.MngUsers_ConfirmPasswordTxt);
+            this.MngUsers_AddUserBox.Controls.Add(this.MngUsers_PasswordTxt);
             this.MngUsers_AddUserBox.Controls.Add(this.MngUsers_LastNameCmbo);
             this.MngUsers_AddUserBox.Controls.Add(this.MngUsers_LastNameLbl);
             this.MngUsers_AddUserBox.Controls.Add(this.MngUsers_GroupCmbo);
             this.MngUsers_AddUserBox.Controls.Add(this.MngUsers_FirstNameCmbo);
             this.MngUsers_AddUserBox.Controls.Add(this.MngUsers_ConfirmPassword);
-            this.MngUsers_AddUserBox.Controls.Add(this.MngUsers_ConfirmPasswordTxt);
             this.MngUsers_AddUserBox.Controls.Add(this.MngUsers_SaveUserBtm);
-            this.MngUsers_AddUserBox.Controls.Add(this.MngUsers_PasswordTxt);
             this.MngUsers_AddUserBox.Controls.Add(this.MngUsers_GroupLbl);
             this.MngUsers_AddUserBox.Controls.Add(this.MngUsers_PasswordLbl);
             this.MngUsers_AddUserBox.Controls.Add(this.MngUsers_FirstNameLbl);
@@ -189,6 +189,11 @@
             this.MngUsers_LastNameCmbo.TextChanged += new System.EventHandler(this.MngUsers_FirstAndLastNameCmbo_TextChanged);
             this.MngUsers_LastNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
             this.MngUsers_LastNameCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
+            // 
+            // doNothingContextMenu
+            // 
+            this.doNothingContextMenu.Name = "doNothingContextMenu";
+            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
             // 
             // MngUsers_LastNameLbl
             // 
@@ -244,21 +249,6 @@
             this.MngUsers_ConfirmPassword.TabIndex = 12;
             this.MngUsers_ConfirmPassword.Text = "Confirm \r\nPassword";
             // 
-            // MngUsers_ConfirmPasswordTxt
-            // 
-            this.MngUsers_ConfirmPasswordTxt.ContextMenuStrip = this.doNothingContextMenu;
-            this.MngUsers_ConfirmPasswordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_ConfirmPasswordTxt.Location = new System.Drawing.Point(155, 162);
-            this.MngUsers_ConfirmPasswordTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MngUsers_ConfirmPasswordTxt.MaxLength = 10;
-            this.MngUsers_ConfirmPasswordTxt.Name = "MngUsers_ConfirmPasswordTxt";
-            this.MngUsers_ConfirmPasswordTxt.Size = new System.Drawing.Size(169, 26);
-            this.MngUsers_ConfirmPasswordTxt.TabIndex = 5;
-            this.MngUsers_ConfirmPasswordTxt.Text = "";
-            this.MngUsers_ConfirmPasswordTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
-            this.MngUsers_ConfirmPasswordTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_AddUserBoxTextBoxes_KeyPress);
-            this.MngUsers_ConfirmPasswordTxt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
-            // 
             // MngUsers_SaveUserBtm
             // 
             this.MngUsers_SaveUserBtm.AutoSize = true;
@@ -272,21 +262,6 @@
             this.toolTip1.SetToolTip(this.MngUsers_SaveUserBtm, "Saves the newly created student or admin.");
             this.MngUsers_SaveUserBtm.UseVisualStyleBackColor = true;
             this.MngUsers_SaveUserBtm.Click += new System.EventHandler(this.MngUsers_SaveUserBtm_Click);
-            // 
-            // MngUsers_PasswordTxt
-            // 
-            this.MngUsers_PasswordTxt.ContextMenuStrip = this.doNothingContextMenu;
-            this.MngUsers_PasswordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_PasswordTxt.Location = new System.Drawing.Point(155, 129);
-            this.MngUsers_PasswordTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MngUsers_PasswordTxt.MaxLength = 10;
-            this.MngUsers_PasswordTxt.Name = "MngUsers_PasswordTxt";
-            this.MngUsers_PasswordTxt.Size = new System.Drawing.Size(169, 26);
-            this.MngUsers_PasswordTxt.TabIndex = 4;
-            this.MngUsers_PasswordTxt.Text = "";
-            this.MngUsers_PasswordTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
-            this.MngUsers_PasswordTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_AddUserBoxTextBoxes_KeyPress);
-            this.MngUsers_PasswordTxt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // MngUsers_GroupLbl
             // 
@@ -455,10 +430,19 @@
             this.MngUsers_Timer.Interval = 1000;
             this.MngUsers_Timer.Tick += new System.EventHandler(this.MngUsers_Timer_Tick);
             // 
-            // doNothingContextMenu
+            // MngUsers_PasswordTxt
             // 
-            this.doNothingContextMenu.Name = "doNothingContextMenu";
-            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
+            this.MngUsers_PasswordTxt.Location = new System.Drawing.Point(155, 129);
+            this.MngUsers_PasswordTxt.Name = "MngUsers_PasswordTxt";
+            this.MngUsers_PasswordTxt.Size = new System.Drawing.Size(169, 19);
+            this.MngUsers_PasswordTxt.TabIndex = 14;
+            // 
+            // MngUsers_ConfirmPasswordTxt
+            // 
+            this.MngUsers_ConfirmPasswordTxt.Location = new System.Drawing.Point(155, 161);
+            this.MngUsers_ConfirmPasswordTxt.Name = "MngUsers_ConfirmPasswordTxt";
+            this.MngUsers_ConfirmPasswordTxt.Size = new System.Drawing.Size(169, 19);
+            this.MngUsers_ConfirmPasswordTxt.TabIndex = 15;
             // 
             // MngUsers_Form
             // 
@@ -505,10 +489,8 @@
         private System.Windows.Forms.RadioButton MngUsers_AdminRdo;
         private System.Windows.Forms.RadioButton MngUsers_StudentRdo;
         private System.Windows.Forms.Label MngUsers_UserTypeLbl;
-        private System.Windows.Forms.RichTextBox MngUsers_PasswordTxt;
         private System.Windows.Forms.Button MngUsers_SaveUserBtm;
         private System.Windows.Forms.Label MngUsers_ConfirmPassword;
-        private System.Windows.Forms.RichTextBox MngUsers_ConfirmPasswordTxt;
         private System.Windows.Forms.Label MngUsers_WindowLbl;
         private System.Windows.Forms.Label MngUser_AdminNameLbl;
         private System.Windows.Forms.Button MngUsers_RemoveUserBtn;
@@ -520,5 +502,7 @@
         private System.Windows.Forms.ComboBox MngUsers_LastNameCmbo;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ContextMenuStrip doNothingContextMenu;
+        private System.Windows.Forms.TextBox MngUsers_ConfirmPasswordTxt;
+        private System.Windows.Forms.TextBox MngUsers_PasswordTxt;
     }
 }

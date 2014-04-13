@@ -223,6 +223,8 @@ namespace RaptorMath
             this.AdminHome_NewPWTxt.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
 
             AdminHome_CurrentPWTxt.Select();
+            AdminHome_CurrentPWTxt.PasswordChar = '*';
+            AdminHome_NewPWTxt.PasswordChar = '*';
 /*
             foreach (String student in localManager.GetStudents())
                 AdminHome_StudentSelection.Items.Add(student);

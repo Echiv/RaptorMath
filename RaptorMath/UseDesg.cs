@@ -189,6 +189,7 @@ namespace RaptorMath
             RefreshLoginDropDownBox();
             UseDesg_LoginBtn.Enabled = false;
             UseDesg_passwordBox.Enabled = false;
+            UseDesg_passwordBox.PasswordChar = '*';
             UseDesg_LoginCmbo.Select();
 
             this.UseDesg_LoginCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
@@ -281,7 +282,10 @@ namespace RaptorMath
                         this.Close();
                     }
                     else
+                    {
                         MessageBox.Show("Invalid password. Try again.", "Raptor Math", MessageBoxButtons.OK);
+                        UseDesg_passwordBox.Text = "";
+                    }
                 }
             }         
         }
