@@ -193,7 +193,7 @@
             // doNothingContextMenu
             // 
             this.doNothingContextMenu.Name = "doNothingContextMenu";
-            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
+            this.doNothingContextMenu.Size = new System.Drawing.Size(153, 26);
             // 
             // MngUsers_LastNameLbl
             // 

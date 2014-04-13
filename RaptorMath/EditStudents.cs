@@ -222,8 +222,12 @@ namespace RaptorMath
             this.EditStu_GroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
             this.EditStu_NewFirstNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
             this.EditStu_NewLastNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
-
             this.AdminName = localManager.currentUser.Remove(0, 8);
+
+            if (localManager.studentList.Count < 1)
+            {
+                EditStu_SelectionCmbo.Enabled = false;
+            }
         }
 
         //------------------------------------------------------------------//
@@ -369,10 +373,6 @@ namespace RaptorMath
             {
                 MessageBox.Show("Error. Entered group doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EditStu_GroupCmbo.Focus();
-            }
-            else if (isValidEdit == 4)
-            {
-                MessageBox.Show("Error. Student not saved.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

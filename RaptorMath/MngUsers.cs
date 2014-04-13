@@ -326,14 +326,20 @@ namespace RaptorMath
         /// <summary>Handle 'Save User' button click.</summary>
         private void MngUsers_SaveUserBtm_Click(object sender, EventArgs e)
         {
-            if ((MngUsers_StudentRdo.Checked) && ((MngUsers_FirstNameCmbo.Text.Length > 0) && (MngUsers_LastNameCmbo.Text.Length > 0)))
+            if (MngUsers_StudentRdo.Checked)
             {
                 bool isCreatedUser = false;
                 int groupID = localManager.FindGroupIDByName(MngUsers_GroupCmbo.Text.Trim());
+
                 if (groupID == 0)
-                    MessageBox.Show("The group entered does not match any groups.", "Raptor Math", MessageBoxButtons.OK);
+                {
+                    MessageBox.Show("The group entered does not match any groups.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 else
+                {
                     isCreatedUser = localManager.CreateUser(groupID, MngUsers_FirstNameCmbo.Text, MngUsers_LastNameCmbo.Text, "Unknown");
+                }
+                
                 if (isCreatedUser)
                 {
                     RefreshComboBoxes();
@@ -344,7 +350,7 @@ namespace RaptorMath
                     MngUsers_FirstNameCmbo.Select();
                 }
                 else
-                    MessageBox.Show("Entered student name already exists.", "Raptor Math", MessageBoxButtons.OK);
+                    MessageBox.Show("Entered student name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if ((MngUsers_AdminRdo.Checked)
                 && ((MngUsers_PasswordTxt.Text.Length > 0) && (MngUsers_ConfirmPasswordTxt.Text.Length > 0))
@@ -364,14 +370,21 @@ namespace RaptorMath
                         MngUsers_ConfirmPasswordTxt.Text = string.Empty;
                     }
                     else
-                        MessageBox.Show("Entered admin name already exists.", "Raptor Math", MessageBoxButtons.OK);
+                    {
+                        MessageBox.Show("Entered admin name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MngUsers_FirstNameCmbo.Focus();
+                    }
                 }
                 else
-                    MessageBox.Show("Entered passwords do not match. Please try again.", "Raptor Math", MessageBoxButtons.OK);
+                {
+                    MessageBox.Show("Entered passwords do not match. Please try again.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MngUsers_PasswordTxt.Focus();
+                }
             }
             else
             {
-                MessageBox.Show("Must specify a first and last name", "Raptor Math", MessageBoxButtons.OK);
+                MessageBox.Show("Error. Must provide a password.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MngUsers_PasswordTxt.Focus();
             }
         }
 
@@ -428,11 +441,11 @@ namespace RaptorMath
                 }
                 else
                 {
-                    MessageBox.Show("The selected user does not match any known users and cannot be removed", "Raptor Math", MessageBoxButtons.OK);
+                    MessageBox.Show("The selected user does not match any known users and cannot be removed", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
-                MessageBox.Show("Cannot remove the default admin", "Raptor Math", MessageBoxButtons.OK);
+                MessageBox.Show("Cannot remove the default admin", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
             
         }
 
