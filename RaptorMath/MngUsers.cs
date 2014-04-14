@@ -35,6 +35,10 @@ Cycle 3 Changes:
  * • Added some UI enhancements to better direct the user during errors.
  * • Added a confirmation box when removing a user from the system.
  * • Added new button for importing students from a text file
+ * Date: 4/14/14
+ * • Changed some logic when creating a new user that was causing to error messages boxes to appear
+ *   so that only one is shown
+ * • Fixed a bug that allowed numbers and special characters into the selection combo for removing a user  
 */
 
 using System;
@@ -52,6 +56,7 @@ namespace RaptorMath
     {
         public Manager localManager;
         private bool isKeyPressed = false;
+        // Used when importing students from a txt file
         OpenFileDialog openFile;
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
@@ -130,10 +135,10 @@ namespace RaptorMath
         // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersWithOneWhiteSpaceKeyPress event.</summary>
-        private void RaptorMath_LettersWithOneWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
+        private void RaptorMath_LettersAndWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
         {
             ComboBox cmbobx = (ComboBox)sender;
-            e.Handled = (!(char.IsLetter(e.KeyChar) || (e.KeyChar == ' ') || (!cmbobx.Text.Contains(' ')) || (char.IsControl(e.KeyChar))));
+            e.Handled = !(char.IsLetter(e.KeyChar) || (e.KeyChar == ' ') || (char.IsControl(e.KeyChar)));
             if (e.Handled)
                 System.Media.SystemSounds.Beep.Play();
         }
@@ -296,6 +301,10 @@ namespace RaptorMath
             InitializeTimer();
             RefreshComboBoxes();
 
+            if (MngUsers_RemoveUserCmbo.Items.Count == 0)
+            {
+                MngUsers_RemoveUserCmbo.Enabled = false;
+            }
             MngUsers_RemoveUserBtn.Enabled = false;
             MngUsers_SaveUserBtm.Enabled = false;
             MngUsers_PasswordTxt.PasswordChar = '*';
@@ -307,7 +316,7 @@ namespace RaptorMath
             this.MngUsers_PasswordTxt.KeyPress += new KeyPressEventHandler(RaptorMath_OnlyLettersAndDigitsKeyPress);
             this.MngUsers_ConfirmPasswordTxt.KeyPress += new KeyPressEventHandler(RaptorMath_OnlyLettersAndDigitsKeyPress);
             this.MngUsers_GroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
-            this.MngUsers_RemoveUserCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWithOneWhiteSpaceKeyPress);
+            this.MngUsers_RemoveUserCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndWhiteSpaceKeyPress);
 
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
@@ -356,21 +365,21 @@ namespace RaptorMath
                 }
                 else
                 {
+                    // 4/14/14 Moved the if/else into this else to prevent two error boxes from displaying
                     isCreatedUser = localManager.CreateUser(groupID, MngUsers_FirstNameCmbo.Text, MngUsers_LastNameCmbo.Text, "Unknown");
-                }
-
-                if (isCreatedUser)
-                {
-                    RefreshComboBoxes();
-                    MessageBox.Show("New user created.", "Raptor Math", MessageBoxButtons.OK);
-                    MngUsers_FirstNameCmbo.Text = string.Empty;
-                    MngUsers_LastNameCmbo.Text = string.Empty;
-                    MngUsers_GroupCmbo.Text = string.Empty;
-                    MngUsers_FirstNameCmbo.Select();
-                }
-                else
-                {
-                    MessageBox.Show("Entered name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (isCreatedUser)
+                    {
+                        RefreshComboBoxes();
+                        MessageBox.Show("New user created.", "Raptor Math", MessageBoxButtons.OK);
+                        MngUsers_FirstNameCmbo.Text = string.Empty;
+                        MngUsers_LastNameCmbo.Text = string.Empty;
+                        MngUsers_GroupCmbo.Text = string.Empty;
+                        MngUsers_FirstNameCmbo.Select();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Entered name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else if ((MngUsers_AdminRdo.Checked)
