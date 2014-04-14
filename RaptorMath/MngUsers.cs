@@ -38,7 +38,7 @@ Cycle 3 Changes:
  * Date: 4/14/14
  * • Changed some logic when creating a new user that was causing to error messages boxes to appear
  *   so that only one is shown
- * • Fixed a bug that allowed numbers and special characters into the selection combo for removing a user  
+ * • Fixed a bug that allowed numbers and special characters into the selection combo for removing a user.
 */
 
 using System;
