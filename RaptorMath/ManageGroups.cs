@@ -23,6 +23,8 @@ Cycle 3 Changes:
  * Date: 4/12/14
  * • Added logic to disallow interaction with a form's border close button.
  * • Added logic to disallow copy, paste, and cut.
+ * Date: 4/14/14
+ * • Added logic to disallow renaming a group to its current name.
 */
 
 using System;
@@ -254,6 +256,17 @@ namespace RaptorMath
             MngGroups_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
+        //// Authors: Joshua Boone and Justine Dinh                           //
+        //// Date: 4/12/14                                                    //
+        ////------------------------------------------------------------------//
+        //private void MngGroups_NewNameCmbo_KeyDown(Object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == 13)
+        //    {
+        //        MngGroups_RenameBtn_Click(sender, e);
+        //    }
+        //}
+
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/3/14                                                     //
@@ -274,6 +287,7 @@ namespace RaptorMath
 
             this.MngGroups_SelectGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
             this.MngGroups_NewNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
+            //this.MngGroups_NewNameCmbo.KeyPress += new KeyPressEventHandler(MngGroups_NewNameCmbo_KeyDown);
             this.MngGroups_GroupNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
 
             this.AdminName = localManager.currentUser.Remove(0, 8);
@@ -341,27 +355,38 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Handle 'Rename Group' button click.</summary>
         private void MngGroups_RenameBtn_Click(object sender, EventArgs e)
         {
             if (MngGroups_SelectGroupCmbo.Text.Trim() != "Unassigned")
             {
-                bool isGroupRenamed = localManager.RenameGroup(MngGroups_NewNameCmbo.Text, MngGroups_SelectGroupCmbo.Text, localManager.groupList);
-                if (isGroupRenamed)
+                if (!MngGroups_SelectGroupCmbo.Text.Equals(MngGroups_NewNameCmbo.Text))
                 {
-                    MessageBox.Show("Group has been renamed.", "Raptor Math", MessageBoxButtons.OK);
-                    RefreshCmboBoxes();
-                    ClearCmboBoxes();
-                    MngGroups_SelectGroupCmbo.Select();
+                    bool isGroupRenamed = localManager.RenameGroup(MngGroups_NewNameCmbo.Text, MngGroups_SelectGroupCmbo.Text, localManager.groupList);
+                    if (isGroupRenamed)
+                    {
+                        MessageBox.Show("Group has been renamed.", "Raptor Math", MessageBoxButtons.OK);
+                        RefreshCmboBoxes();
+                        ClearCmboBoxes();
+                        MngGroups_SelectGroupCmbo.Select();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The entered group doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("The entered group doesn't exist", "Raptor Math", MessageBoxButtons.OK);
+                    MessageBox.Show("Cannot give a group the name it already has.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Cannot rename the default group", "Raptor Math", MessageBoxButtons.OK);
+                MessageBox.Show("Cannot rename the default group.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

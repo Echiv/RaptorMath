@@ -38,6 +38,7 @@
             this.MngGroups_GroupBox = new System.Windows.Forms.GroupBox();
             this.MngGroups_CreateBtn = new System.Windows.Forms.Button();
             this.MngGroups_GroupNameCmbo = new System.Windows.Forms.ComboBox();
+            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MngGroups_NameLbl = new System.Windows.Forms.Label();
             this.MngGroups_ModifyBox = new System.Windows.Forms.GroupBox();
             this.MngGroups_NewNameCmbo = new System.Windows.Forms.ComboBox();
@@ -51,7 +52,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.MngGroups_Timer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MngGroups_UserInfoBox.SuspendLayout();
             this.MngGroups_GroupBox.SuspendLayout();
             this.MngGroups_ModifyBox.SuspendLayout();
@@ -164,6 +164,11 @@
             this.MngGroups_GroupNameCmbo.TextChanged += new System.EventHandler(this.MngGroups_GroupNameCmbo_TextChanged);
             this.MngGroups_GroupNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
             this.MngGroups_GroupNameCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
+            // 
+            // doNothingContextMenu
+            // 
+            this.doNothingContextMenu.Name = "doNothingContextMenu";
+            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
             // 
             // MngGroups_NameLbl
             // 
@@ -328,11 +333,6 @@
             this.MngGroups_Timer.Enabled = true;
             this.MngGroups_Timer.Interval = 1000;
             this.MngGroups_Timer.Tick += new System.EventHandler(this.MngGroups_Timer_Tick);
-            // 
-            // doNothingContextMenu
-            // 
-            this.doNothingContextMenu.Name = "doNothingContextMenu";
-            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
             // 
             // ManageGroups_Form
             // 
