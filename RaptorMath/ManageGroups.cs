@@ -27,6 +27,7 @@ Cycle 3 Changes:
  * • Added logic to disallow renaming a group to its current name.
  * • Added logic so that the porgram only allows interaction with the new name combox when there is valid group selected.
  * • Added error message boxes instead of just messages boxes.
+ * • Changed it so the enter will call the correct button associated with the program's focus.
 */
 
 using System;
@@ -145,6 +146,27 @@ namespace RaptorMath
             e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == ' ' || (char.IsControl(e.KeyChar)));
             if (e.Handled)
                 System.Media.SystemSounds.Beep.Play();
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersAndDigitsKeyPress event.</summary>
+        private void RaptorMath_LettersAndDigitsEnterKeyPress(object sender, KeyPressEventArgs e)
+        {
+            Console.WriteLine(e.KeyChar);
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                Console.WriteLine("CLICK");
+                MngGroups_RenameBtn.PerformClick();
+            }
+            else
+            {
+                e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == ' ' || (char.IsControl(e.KeyChar)));
+                if (e.Handled)
+                    System.Media.SystemSounds.Beep.Play();
+            }
         }
 
         //------------------------------------------------------------------//
@@ -278,10 +300,13 @@ namespace RaptorMath
             MngGroups_NewNameCmbo.Enabled = false;
 
             this.MngGroups_SelectGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
-            this.MngGroups_NewNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
+            this.MngGroups_NewNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsEnterKeyPress);
             this.MngGroups_GroupNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
 
             this.AdminName = localManager.currentUser.Remove(0, 8);
+            MngGroups_NewNameCmbo.GotFocus += new EventHandler(MngGroups_NewNameCmbo_GotFocus);
+            MngGroups_GroupNameCmbo.GotFocus += new EventHandler(MngGroups_GroupNameCmbo_GotFocus);
+            MngGroups_SelectGroupCmbo.GotFocus += new EventHandler(MngGroups_NewNameCmbo_GotFocus);
         }
 
         //------------------------------------------------------------------//
@@ -451,7 +476,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/11/14                                                     //
+        // Date: 4/11/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Disallows copy, paste, cut from keyboard.</summary>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -462,6 +487,26 @@ namespace RaptorMath
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Custom method to set the enter button to the "Rename" button.</summary>
+        private void MngGroups_NewNameCmbo_GotFocus(Object sender, EventArgs e)
+        {
+            this.AcceptButton = MngGroups_RenameBtn;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Custom method to set the enter button to the "Create Group" button.</summary>
+        private void MngGroups_GroupNameCmbo_GotFocus(Object sender, EventArgs e)
+        {
+            this.AcceptButton = MngGroups_CreateBtn;
         }
     }
 }
