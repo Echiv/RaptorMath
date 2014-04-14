@@ -26,6 +26,7 @@ Cycle 3 Changes:
  * Date: 4/14/14
  * • Added logic to disallow renaming a group to its current name.
  * • Added logic so that the porgram only allows interaction with the new name combox when there is valid group selected.
+ * • Added error message boxes instead of just messages boxes.
 */
 
 using System;
@@ -311,7 +312,7 @@ namespace RaptorMath
             }
             else
             {
-                MessageBox.Show("A group with the provided name already exists.", "Raptor Math", MessageBoxButtons.OK);
+                MessageBox.Show("A group with the provided name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
