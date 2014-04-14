@@ -25,6 +25,7 @@ Cycle 3 Changes:
  * • Added logic to disallow copy, paste, and cut.
  * Date: 4/14/14
  * • Added logic to disallow renaming a group to its current name.
+ * • Added logic so that the porgram only allows interaction with the new name combox when there is valid group selected.
 */
 
 using System;
@@ -256,17 +257,6 @@ namespace RaptorMath
             MngGroups_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
-        //// Authors: Joshua Boone and Justine Dinh                           //
-        //// Date: 4/12/14                                                    //
-        ////------------------------------------------------------------------//
-        //private void MngGroups_NewNameCmbo_KeyDown(Object sender, KeyPressEventArgs e)
-        //{
-        //    if (e.KeyChar == 13)
-        //    {
-        //        MngGroups_RenameBtn_Click(sender, e);
-        //    }
-        //}
-
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/3/14                                                     //
@@ -284,10 +274,10 @@ namespace RaptorMath
             MngGroups_GroupNameCmbo.Select();
             MngGroups_CreateBtn.Enabled = false;
             MngGroups_RenameBtn.Enabled = false;
+            MngGroups_NewNameCmbo.Enabled = false;
 
             this.MngGroups_SelectGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
             this.MngGroups_NewNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
-            //this.MngGroups_NewNameCmbo.KeyPress += new KeyPressEventHandler(MngGroups_NewNameCmbo_KeyDown);
             this.MngGroups_GroupNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
 
             this.AdminName = localManager.currentUser.Remove(0, 8);
@@ -433,9 +423,25 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/11/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Handle Text Changed event.</summary>
         private void MngGroups_SelectGroupAndNewNameCmbo_TextChanged(object sender, EventArgs e)
         {
+            if (MngGroups_SelectGroupCmbo.Text.Length > 0)
+            {
+                if (localManager.FindGroupByName(MngGroups_SelectGroupCmbo.Text) != null)
+                {
+                    MngGroups_NewNameCmbo.Enabled = true;
+                }
+                else
+                {
+                    MngGroups_NewNameCmbo.Enabled = false;
+                }
+            }
+
             if ((MngGroups_NewNameCmbo.Text.Length > 0) && (MngGroups_SelectGroupCmbo.Text.Length > 0))
                 MngGroups_RenameBtn.Enabled = true;
             else
