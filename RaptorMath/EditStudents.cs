@@ -24,6 +24,9 @@ Cycle 3 Changes:
  * • Added logic to disallow copy, paste, and cut.
  * • Completely rewrote valdation checking when editing students
  * • Added in better error messages to let the user know what went wrong
+ * Date: 4/14/14
+ * • Updated the logic when selection a user to edit so that the edit options
+ *   stay grayed out if the selected user changes and doesn't exist.
 */
 
 using System;
@@ -452,6 +455,13 @@ namespace RaptorMath
                 EditStu_GroupCmbo.Enabled = true;
             }
             else
+            {
+                EditStu_NewFirstNameCmbo.Enabled = false;
+                EditStu_NewLastNameCmbo.Enabled = false;
+                EditStu_GroupCmbo.Enabled = false;
+                EditStu_SaveStudentBtn.Enabled = false;
+            }
+            if (localManager.FindStudentWithName(EditStu_SelectionCmbo.Text) == null)
             {
                 EditStu_NewFirstNameCmbo.Enabled = false;
                 EditStu_NewLastNameCmbo.Enabled = false;
