@@ -34,6 +34,7 @@ Cycle 3 Changes:
  * • Fixed a tabbing issue where tabs wouldn't work in the right order when certain boxes had data in them
  * • Added some UI enhancements to better direct the user during errors.
  * • Added a confirmation box when removing a user from the system.
+ * • Added new button for importing students from a text file
 */
 
 using System;
@@ -51,7 +52,7 @@ namespace RaptorMath
     {
         public Manager localManager;
         private bool isKeyPressed = false;
-
+        OpenFileDialog openFile;
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/12/14                                                     //
@@ -533,7 +534,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/11/14                                                     //
+        // Date: 4/11/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Disallows copy, paste, cut from keyboard.</summary>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -544,6 +545,44 @@ namespace RaptorMath
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        // TODO: Need to come up with a way to show the admin which lines in the file were not added
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/13/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Attempts to import a list of students into the sysem from a file.</summary>
+        private void MngUsers_ImportBtn_Click(object sender, EventArgs e)
+        {
+            openFile = new OpenFileDialog();
+            openFile.Filter = "Text Files|*.txt";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                Tuple<int, int, int, int> code = localManager.ImportStudents(openFile.FileName);
+                if (code.Item1 == 0 && code.Item4 == 0)
+                {
+                    MessageBox.Show("All users in the file were added.", "Raptor Math", MessageBoxButtons.OK);
+                    RefreshComboBoxes();
+                }
+                else if (code.Item2 == 1)
+                {
+                    MessageBox.Show("Unable to open the file.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (code.Item3 == 1)
+                {
+                    MessageBox.Show("Provided file is empty.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (code.Item4 == 1 && code.Item1 == 0)
+                {
+                    MessageBox.Show("Unable to add some students but some were added.", "Raptor Math", MessageBoxButtons.OK);
+                    RefreshComboBoxes();
+                }
+                else if (code.Item4 == 1 && code.Item1 == 1)
+                {
+                    MessageBox.Show("Unable to add any students.", "Raptor Math", MessageBoxButtons.OK);
+                }
+            }
         }
     }
 }
