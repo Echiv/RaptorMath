@@ -11,6 +11,8 @@ Authors: Joshua Boone and Justine Dinh
 Cycle 3 Changes:
  * Date: 4/12/14
  * • Added new methods for editing a student in a simplier way.
+ * Date: 4/14/14
+ * • Added support for reading and writing out a student's rewards. 
 */
 
 using System;
@@ -221,32 +223,32 @@ namespace RaptorMath
             return true;
         }
 
-        //------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                //
-        // Date: 4/5/14                                                     //
-        //------------------------------------------------------------------//
-        /// <summary>Edit data in Student XML.</summary>
-        /// <param name="newFName">Student's first name.</param>
-        /// <param name="newLName">Student's last name.</param>
-        /// <param name="selectedStudent">Student object to be modified</param>
-        /// <param name="group">Group object associated with student.</param>
-        /// <param name="studentList">List of student objects.</param>
-        /// <returns>bool, bool</returns>
-        public Tuple<bool, bool> editStudent(string newFName, string newLName, Student selectedStudent, Group group, List<Student> studentList, string studentXMLPath, string groupXMLPath, string dataDirectory)
-        {
-            bool hasGroupChanged = false;
-            bool hasStudentChanged = false;
-            if (selectedStudent != null)
-            {
-                hasGroupChanged = compareOldAndNewStudentInfo(newFName, newLName, selectedStudent, group);
-                hasStudentChanged = UpdateStudent(selectedStudent, studentXMLPath, groupXMLPath, dataDirectory);
-            }
-            else
-            {
-                MessageBox.Show("That Student could not be found", "Raptor Math", MessageBoxButtons.OK);
-            }
-            return Tuple.Create(hasGroupChanged, hasStudentChanged);
-        }
+        ////------------------------------------------------------------------//
+        //// Authors: Cody Jordan, Cian Carota                                //
+        //// Date: 4/5/14                                                     //
+        ////------------------------------------------------------------------//
+        ///// <summary>Edit data in Student XML.</summary>
+        ///// <param name="newFName">Student's first name.</param>
+        ///// <param name="newLName">Student's last name.</param>
+        ///// <param name="selectedStudent">Student object to be modified</param>
+        ///// <param name="group">Group object associated with student.</param>
+        ///// <param name="studentList">List of student objects.</param>
+        ///// <returns>bool, bool</returns>
+        //public Tuple<bool, bool> editStudent(string newFName, string newLName, Student selectedStudent, Group group, List<Student> studentList, string studentXMLPath, string groupXMLPath, string dataDirectory)
+        //{
+        //    bool hasGroupChanged = false;
+        //    bool hasStudentChanged = false;
+        //    if (selectedStudent != null)
+        //    {
+        //        hasGroupChanged = compareOldAndNewStudentInfo(newFName, newLName, selectedStudent, group);
+        //        hasStudentChanged = UpdateStudent(selectedStudent, studentXMLPath, groupXMLPath, dataDirectory);
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("That Student could not be found", "Raptor Math", MessageBoxButtons.OK);
+        //    }
+        //    return Tuple.Create(hasGroupChanged, hasStudentChanged);
+        //}
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
@@ -278,60 +280,72 @@ namespace RaptorMath
             return hasGroupChanged;
         }
 
-        //------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                //
-        // Date: 4/5/14                                                     //
-        //------------------------------------------------------------------//
-        /// <summary>Update student data in Student XML.</summary>
-        /// <param name="student">Student object to be modified.</param>
-        /// <param name="studentXMLPath">Student XML file path.</param>
-        /// <param name="groupXMLPath">Group XML file path.</param>
-        /// <param name="dataDirectory">Data Directory.</param>
-        /// <returns>Boolean confirming success.</returns>
-        public bool UpdateStudent(Student student, string studentXMLPath, string groupXMLPath, string dataDirectory)
-        {
-            XDocument data = XDocument.Load(studentXMLPath);
-            XElement studentIDElement = data.Descendants("stu").Where(stu => stu.Attribute("ID").Value.Equals(student.ID.ToString())).FirstOrDefault();
-            XElement studentNameElement = data.Descendants("stu").Where(stu => stu.Element("loginName").Value.Equals(student.LoginName)).FirstOrDefault();
+        ////------------------------------------------------------------------//
+        //// Authors: Cody Jordan, Cian Carota                                //
+        //// Date: 4/5/14                                                     //
+        ////------------------------------------------------------------------//
+        ////------------------------------------------------------------------//
+        //// Authors: Joshua Boone and Justine Dinh                           //
+        //// Date: 4/14/14                                                    //
+        ////------------------------------------------------------------------//
+        ///// <summary>Update student data in Student XML.</summary>
+        ///// <param name="student">Student object to be modified.</param>
+        ///// <param name="studentXMLPath">Student XML file path.</param>
+        ///// <param name="groupXMLPath">Group XML file path.</param>
+        ///// <param name="dataDirectory">Data Directory.</param>
+        ///// <returns>Boolean confirming success.</returns>
+        //public bool UpdateStudent(Student student, string studentXMLPath, string groupXMLPath, string dataDirectory)
+        //{
+        //    XDocument data = XDocument.Load(studentXMLPath);
+        //    XElement studentIDElement = data.Descendants("stu").Where(stu => stu.Attribute("ID").Value.Equals(student.ID.ToString())).FirstOrDefault();
+        //    XElement studentNameElement = data.Descendants("stu").Where(stu => stu.Element("loginName").Value.Equals(student.LoginName)).FirstOrDefault();
 
-            XDocument groupData = XDocument.Load(groupXMLPath);
-            XElement GroupElement = groupData.Descendants("group").Where(group => group.Attribute("ID").Value.Equals(student.GroupID.ToString())).FirstOrDefault();
+        //    XDocument groupData = XDocument.Load(groupXMLPath);
+        //    XElement GroupElement = groupData.Descendants("group").Where(group => group.Attribute("ID").Value.Equals(student.GroupID.ToString())).FirstOrDefault();
 
-            if ((studentIDElement != null) || (GroupElement != null))
-            {
-                if (studentNameElement == null)
-                {
-                    string oldRecordPath = student.RecordsPath;
-                    string recordPath = student.LoginName.Replace(" ", "") + "Records.xml";
-                    student.RecordsPath = System.IO.Path.Combine(dataDirectory, recordPath);
-                    if (System.IO.File.Exists(oldRecordPath))
-                    {
-                        System.IO.File.Move(oldRecordPath, student.RecordsPath);
-                    }
-                    studentIDElement.SetElementValue("loginName", student.LoginName);
-                    studentIDElement.SetElementValue("firstName", student.FirstName);
-                    studentIDElement.SetElementValue("lastName", student.LastName);
-                    studentIDElement.SetElementValue("recPath", student.RecordsPath);
-                    if (GroupElement != null)
-                        studentIDElement.SetElementValue("group", student.GroupID);
-                    data.Save(studentXMLPath);
-                    return true;
-                }
-                if (GroupElement != null)
-                {
-                    studentIDElement.SetElementValue("group", student.GroupID);
-                    data.Save(studentXMLPath);
-                    return true;
-                }
-                if (GroupElement == null)
-                {
-                    MessageBox.Show("Group name entered does not exist", "Raptor Math", MessageBoxButtons.OK);
-                    return false;
-                }                
-            }
+        //    if ((studentIDElement != null) || (GroupElement != null))
+        //    {
+        //        if (studentNameElement == null)
+        //        {
+        //            string oldRecordPath = student.RecordsPath;
+        //            string recordPath = student.LoginName.Replace(" ", "") + "Records.xml";
+        //            student.RecordsPath = System.IO.Path.Combine(dataDirectory, recordPath);
+        //            if (System.IO.File.Exists(oldRecordPath))
+        //            {
+        //                System.IO.File.Move(oldRecordPath, student.RecordsPath);
+        //            }
+        //            if (studentIDElement.Element("reward") != null)
+        //            {
+        //                studentIDElement.SetElementValue("reward", student.RewardTotal);
+        //            }
+        //            else
+        //            {
+        //                Console.WriteLine("No reward node.");
+        //            }
+        //            studentIDElement.SetElementValue("loginName", student.LoginName);
+        //            studentIDElement.SetElementValue("firstName", student.FirstName);
+        //            studentIDElement.SetElementValue("lastName", student.LastName);
+        //            studentIDElement.SetElementValue("recPath", student.RecordsPath);
+        //            if (GroupElement != null)
+        //                studentIDElement.SetElementValue("group", student.GroupID);
+        //            data.Save(studentXMLPath);
+        //            return true;
+        //        }
+        //        if (GroupElement != null)
+        //        {
+        //            studentIDElement.SetElementValue("group", student.GroupID);
+        //            data.Save(studentXMLPath);
+        //            return true;
+        //        }
+        //        if (GroupElement == null)
+        //        {
+        //            MessageBox.Show("Group name entered does not exist", "Raptor Math", MessageBoxButtons.OK);
+        //            return false;
+        //        }                
+        //    }
             
-            return false;
-        }
+        //    return false;
+        //}
 
         //----------------------------------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                                                       //
@@ -363,12 +377,11 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                                                       //
         // Date: 4/12/14                                                                                //
         //----------------------------------------------------------------------------------------------//
-        /// <summary>Update a student's group data in Student XML.</summary>
+        /// <summary>Update a student's personal data in Student XML.</summary>
         /// <param name="student">Student object to be modified.</param>
         /// <param name="studentXMLPath">Student XML file path.</param>
-        /// <param name="groupXMLPath">Group XML file path.</param>
         /// <param name="dataDirectory">Data Directory.</param>
-        public void EditName(Student student, string studentXMLPath, string groupXMLPath, string dataDirectory)
+        public void EditName(Student student, string studentXMLPath, string dataDirectory)
         {
             XDocument data = XDocument.Load(studentXMLPath);
             XElement studentIDElement = data.Descendants("stu").Where(stu => stu.Attribute("ID").Value.Equals(student.ID.ToString())).FirstOrDefault();
@@ -389,8 +402,36 @@ namespace RaptorMath
                     studentIDElement.SetElementValue("firstName", student.FirstName);
                     studentIDElement.SetElementValue("lastName", student.LastName);
                     studentIDElement.SetElementValue("recPath", student.RecordsPath);
+                    studentIDElement.SetElementValue("reward", student.RewardTotal);
                     data.Save(studentXMLPath);
                 }
+            }
+        }
+
+        //----------------------------------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                                                       //
+        // Date: 4/14/14                                                                                //
+        //----------------------------------------------------------------------------------------------//
+        /// <summary>Update a student's reward data in Student XML.</summary>
+        /// <param name="student">Student object to be modified.</param>
+        /// <param name="studentXMLPath">Student XML file path.</param>
+        /// <param name="dataDirectory">Data Directory.</param>
+        public void EditRewardAmount(Student student, string studentXMLPath, string dataDirectory)
+        {
+            XDocument data = XDocument.Load(studentXMLPath);
+            XElement studentIDElement = data.Descendants("stu").Where(stu => stu.Attribute("ID").Value.Equals(student.ID.ToString())).FirstOrDefault();
+
+            if ((studentIDElement != null))
+            {
+                string oldRecordPath = student.RecordsPath;
+                string recordPath = student.LoginName.Replace(" ", "") + "Records.xml";
+                student.RecordsPath = System.IO.Path.Combine(dataDirectory, recordPath);
+                if (System.IO.File.Exists(oldRecordPath))
+                {
+                    System.IO.File.Move(oldRecordPath, student.RecordsPath);
+                }
+                studentIDElement.SetElementValue("reward", student.RewardTotal);
+                data.Save(studentXMLPath);
             }
         }
 
@@ -507,6 +548,11 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        // Added support for writing out a student's rewards.               //
+        //------------------------------------------------------------------//
         /// <summary>Load a list of students from XML to local.</summary>
         /// <param name="studentList">List of student objects to be populated.
         /// </param>
@@ -514,6 +560,7 @@ namespace RaptorMath
         /// <param name="fileName">XML file name.</param>
         public void LoadStudentXML(List<Student> studentList, List<Drill> mainDrillList, string fileName)
         {
+            bool toSave = false;
             XDocument studentXML = XDocument.Load(fileName);
 
             XElement rootNode = studentXML.Root;
@@ -525,6 +572,16 @@ namespace RaptorMath
                 Student aStudent = new Student();
                 aStudent.ID = Convert.ToInt32(student.Attribute("ID").Value);
                 aStudent.GroupID = Convert.ToInt32(student.Element("group").Value);
+                if (IsNodeExist(student, "reward"))
+                {
+                    aStudent.RewardTotal = Convert.ToInt32(student.Element("reward").Value);
+                }
+                else
+                {
+                    AttachNewNode(student, "reward", "0");
+                    toSave = true;
+                }
+                //aStudent.RewardTotal = Convert.ToInt32(student.Element("reward").Value);
                 aStudent.FirstName = student.Element("firstName").Value;
                 aStudent.LastName = student.Element("lastName").Value;
                 aStudent.LoginName = student.Element("loginName").Value;
@@ -539,8 +596,11 @@ namespace RaptorMath
                     }
                 }
                 LoadStudentRecord(aStudent);
-                
                 studentList.Add(aStudent);
+                if (toSave)
+                {
+                    studentXML.Save(fileName);
+                }
             }
         }
 
@@ -620,6 +680,11 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        // Added support for writing out a student's rewards.               //
+        //------------------------------------------------------------------//
         /// <summary>Add a student node to Student XML.</summary>
         /// <param name="newStudentEntry">Student object to be added.</param>
         /// <returns>XElement</returns>
@@ -632,7 +697,9 @@ namespace RaptorMath
                     new XElement("lastName", newStudentEntry.LastName),
                     new XElement("loginName", newStudentEntry.LoginName),
                     new XElement("lastLogin", newStudentEntry.LastLogin),
-                    new XElement("recPath", newStudentEntry.RecordsPath));
+                    new XElement("recPath", newStudentEntry.RecordsPath),
+                    new XElement("reward", newStudentEntry.RewardTotal));
+
             return newStudent;
         }
 
@@ -661,5 +728,35 @@ namespace RaptorMath
                 }
             }
         }
-    }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Returns if a element by the passed name exists.</summary>
+        private bool IsNodeExist(XElement node, string atrributeName)
+        {
+            bool exist = false;
+
+            if (node.Element(atrributeName) != null)
+            {
+                exist = true;
+            }
+            return exist;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Create and attach a new node to another node.</summary>
+        /// <param name="node">The XElement node to attach a new node to.</param>
+        /// <param name="atrributeName">Name of the new node to attach.</param>
+        /// <param name="defaultValue">The value of the new node.</param>
+        private void AttachNewNode(XElement node, string atrributeName, string defaultValue)
+        {
+            XElement newNode = new XElement(atrributeName, defaultValue);
+            node.Add(newNode);
+        }
+  }
 }

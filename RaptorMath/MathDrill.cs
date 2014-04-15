@@ -391,7 +391,8 @@ namespace RaptorMath
             }
             else
             {
-                // Read session into student XML file 
+                // Read session into student XML file
+                localManager.UpdateRewards();
                 localManager.SaveDrill();
                 localManager.ResetCurrentNumber();
                 localManager.currentStudent.ResetCurrentDrill();

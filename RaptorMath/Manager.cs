@@ -1829,5 +1829,17 @@ namespace RaptorMath
 
             return Tuple.Create(okayCode, noFileCode, emptyFileCode, invalidNameCode);
         }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/13/14                                                    //
+        //------------------------------------------------------------------//
+        /// <param name="fileName">Name of the file to open</param>
+        /// <summary>Attempts to import a list of students into the sysem from a file.</summary>
+        public void UpdateRewards()
+        {
+            currentStudent.RewardTotal = currentStudent.RewardTotal + Convert.ToInt32(currentStudent.curDrill.Questions) - Convert.ToInt32(currentStudent.curDrill.Wrong);
+            XMLDriver.EditRewardAmount(currentStudent);
+        }
     }
 }

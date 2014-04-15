@@ -14,6 +14,8 @@
 /* 
 Authors: Joshua Boone and Justine Dinh                     
 Cycle 3 Changes:
+ * Date: 4/14/14
+ * • Added support to keep track of a students earned rewards.
 */
 
 using System;
@@ -33,10 +35,15 @@ namespace RaptorMath
     // Authors: Cody Jordan, Cian Carota                                //
     // Date: 4/4/14                                                     //
     //------------------------------------------------------------------//
+    //------------------------------------------------------------------//
+    // Authors: Joshua Boone and Justine Dinh                           //
+    // Date: 4/14/14                                                    //
+    //------------------------------------------------------------------//
     public class Student
     {
         private int id;
         private int groupID;
+        private int rewardAmount;
         private string firstName;
         private string lastName;
         private string loginName;
@@ -57,6 +64,11 @@ namespace RaptorMath
         {
             get { return this.groupID; }
             set { this.groupID = value; }
+        }
+        public int RewardTotal
+        {
+            get { return this.rewardAmount; }
+            set { this.rewardAmount = value; }
         }
         public string FirstName
         {
@@ -99,11 +111,16 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Record object default constructor.</summary>
         public Student()
         {
             id = 0;
             groupID = 0;
+            rewardAmount = 0;
             firstName = "Unknown";
             lastName = "Unknown";
             loginName = firstName + " " + lastName; 
@@ -118,14 +135,19 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Record object constructor.</summary>
-        public Student(int grpID, string fname, string lname, string login)
+        public Student(int grpID, string fname, string lname, string login, int reward = 0)
         {
-            groupID = grpID;
+            groupID = grpID;   
             firstName = fname;
             lastName = lname;
             loginName = firstName + " " + lastName;
             lastLogin = login;
+            rewardAmount = reward;
         }
 
         //------------------------------------------------------------------//
