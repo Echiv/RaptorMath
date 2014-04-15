@@ -25,8 +25,8 @@ Cycle 3 Changes:
  * • Completely rewrote valdation checking when editing students
  * • Added in better error messages to let the user know what went wrong
  * Date: 4/14/14
- * • Updated the logic when selection a user to edit so that the edit options
- *   stay grayed out if the selected user changes and doesn't exist.
+ * • Updated the logic when selection a user to edit so that the edit options stay grayed out if the selected user changes and doesn't exist.
+ * • Fixed any issue where the same name could be added multiple times into a list of more than one student shared that one part of their name.
 */
 
 using System;
@@ -267,29 +267,45 @@ namespace RaptorMath
         private void RefreshNewFirstNameCmbo()
         {
             EditStu_NewFirstNameCmbo.Items.Clear();
-            foreach (Student student in localManager.studentList)
+            //foreach (Student student in localManager.studentList)
+            //{
+            //    EditStu_NewFirstNameCmbo.Items.Add(student.FirstName);
+            //}
+            foreach (String userFirstName in localManager.GetUsersFirstNames())
             {
-                EditStu_NewFirstNameCmbo.Items.Add(student.FirstName);
+                EditStu_NewFirstNameCmbo.Items.Add(userFirstName);
             }
         }
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/2/14                                                     //
+        //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/13/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Clears and refreshes content of 'New Last Name' combo box.</summary>
         private void RefreshNewLastNameCmbo()
         {
             EditStu_NewLastNameCmbo.Items.Clear();
-            foreach (Student student in localManager.studentList)
+            //foreach (Student student in localManager.studentList)
+            //{
+            //    EditStu_NewLastNameCmbo.Items.Add(student.LastName);
+            //}
+            foreach (String userLastName in localManager.GetUsersLastNames())
             {
-                EditStu_NewLastNameCmbo.Items.Add(student.LastName);
+                EditStu_NewLastNameCmbo.Items.Add(userLastName);
             }
         }
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/2/14                                                     //
+        //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/13/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Clears and refreshes content of 'New Group' combo box.</summary>
         private void RefreshGroupCmbo()
