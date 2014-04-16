@@ -38,6 +38,8 @@ Cycle 3 Changes:
  * Date: 4/12/14
  * • Added logic to disallow interaction with a form's border close button.
  * • Added logic to disallow copy, paste, and cut.
+ * Date: 4/16/14
+ * • Added key event handler to stop the user from entering anything but a number into the answer box.
 */
 
 using System;
@@ -224,6 +226,7 @@ namespace RaptorMath
 
             MathDrill_CurrentNumLbl.Text = localManager.GetCurrentNumber();
             this.StudentName = localManager.currentStudent.LoginName;
+            this.MathDrill_InputTxt.KeyPress += new KeyPressEventHandler(RaptorMath_DigitsKeyPress);
 
             this.TotalQuestions = localManager.GetNumQuestions().Replace("questions.", "");
             RefreshRange();
