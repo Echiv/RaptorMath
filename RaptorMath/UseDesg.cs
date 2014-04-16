@@ -377,5 +377,10 @@ namespace RaptorMath
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
+
+        private void UseDesg_Form_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -260,6 +260,7 @@
             this.Name = "UseDesg_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raptor Math";
+            this.Load += new System.EventHandler(this.UseDesg_Form_Load);
             this.UseDesg_LoginBox.ResumeLayout(false);
             this.UseDesg_LoginBox.PerformLayout();
             this.UseDesg_UserInfoBox.ResumeLayout(false);
