@@ -46,6 +46,12 @@ Cycle 3 Changes:
  * • No longer display passwords as plain text
  * Date: 4/13/14
  * • Repalced generic message boxes with error message boxes where needed.
+ * Date: 4/15/14
+ * • Repalced generic message boxes with error message boxes where needed.
+ * • Changed it so the user cannot enter spaces into the password box.
+ * • Changed the minimal length of a password to 4 and the maximum length to 8.
+ * Date: 4/16/14
+ * • Changed the password logic so the user cannot change their password to the current password.
 */
 
 using System;
@@ -165,6 +171,18 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/15/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersAndDigitsKeyPressNoSpace event.</summary>
+        private void RaptorMath_LettersAndDigitsKeyPressNoSpace(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
@@ -226,8 +244,8 @@ namespace RaptorMath
             InitializeDate();
             InitializeTimer();
 
-            this.AdminHome_CurrentPWTxt.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
-            this.AdminHome_NewPWTxt.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
+            this.AdminHome_CurrentPWTxt.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPressNoSpace);
+            this.AdminHome_NewPWTxt.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPressNoSpace);
 
             AdminHome_CurrentPWTxt.Select();
             AdminHome_CurrentPWTxt.PasswordChar = '*';
@@ -312,6 +330,10 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Handle 'Save' button click.</summary>
         private void AdminHome_SaveBtn_Click(object sender, EventArgs e)
         {
@@ -320,18 +342,26 @@ namespace RaptorMath
             {
                 if (passwordMatch == true)
                 {
-                    MessageBox.Show("Your password has been saved", "Raptor Math", MessageBoxButtons.OK);
-                    AdminHome_CurrentPWTxt.Text = string.Empty;
-                    AdminHome_NewPWTxt.Text = string.Empty;
+                    if (AdminHome_CurrentPWTxt.Text != AdminHome_NewPWTxt.Text)
+                    {
+                        localManager.ChangeAdminPassword(AdminHome_CurrentPWTxt.Text, AdminHome_NewPWTxt.Text);
+                        MessageBox.Show("Your password has been saved.", "Raptor Math", MessageBoxButtons.OK);
+                        AdminHome_CurrentPWTxt.Text = string.Empty;
+                        AdminHome_NewPWTxt.Text = string.Empty;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your new password cannot match your old password.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("The current password does not match the records", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The current password does not match the records.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("That password contains an invalid character", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("That password contains an invalid character.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -441,10 +471,14 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/15/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>>Handle Text Changed event.</summary>
         private void AdminHome_NewPWTxt_TextChanged(object sender, EventArgs e)
         {
-            if ((AdminHome_CurrentPWTxt.Text.Length > 0) && (AdminHome_NewPWTxt.Text.Length > 0))
+            if ((AdminHome_CurrentPWTxt.Text.Length >= 4) && (AdminHome_NewPWTxt.Text.Length >= 4))
             {
                 AdminHome_SaveBtn.Enabled = true;
             }

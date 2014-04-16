@@ -23,11 +23,16 @@
 Authors: Joshua Boone and Justine Dinh                     
 Cycle 3 Changes:
  * Date: 4/12/14
- * • Added new methods for editing a student
- * • Added a method to find if there exists any group records within a given date range
+ * • Added new methods for editing a student.
+ * • Added a method to find if there exists any group records within a given date range.
  * Date: 4/13/14
- * • Added new method for importing students from a text file
- * • Added variables to keep track of students that were not added into the system from a file
+ * • Added new method for importing students from a text file.
+ * • Added variables to keep track of students that were not added into the system from a file.
+ * Date: 4/15/14
+ * • Changed the the way the student's name from a file is read to read the last name first than the first name.
+ * • Expaned logic in IsValidEdit() to catch the user trying to assign a student to the group they are already in.
+ * Date: 4/16/14
+ * • Added two functions to support changing a password.
 */
 
 using System;
@@ -88,10 +93,13 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/15/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Drill object default constructor.</summary>
         public Manager()
         {
-
             string AppData = Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData);
             dataDirectory = System.IO.Path.Combine(AppData, "RaptorMath");
             if (!System.IO.Directory.Exists(dataDirectory))
@@ -349,6 +357,7 @@ namespace RaptorMath
             // 1 means the entered student doesn't exist
             // 2 means the entered new name(s) are not valid
             // 3 means the entered group is not valid
+            // 4 means the student is already assigned to the passed in group
             int errorCode = 0;
 
             // Check to see if student to edit exists
@@ -365,6 +374,13 @@ namespace RaptorMath
             else if (FindGroupByName(newGroup) == null && !newGroup.Equals(string.Empty))
             {
                 errorCode = 3;
+            }
+            else if (FindGroupByName(newGroup) != null)
+            {
+                if (FindGroupByName(newGroup).ID == FindStudentWithName(currentName).GroupID)
+                {
+                    errorCode = 4;
+                }
             }
 
             return errorCode;
@@ -500,21 +516,47 @@ namespace RaptorMath
             return false;
         }
 
-        //----------------------------------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                                            //
-        // Date: 4/3/14                                                                                 //
-        //----------------------------------------------------------------------------------------------//
+        ////----------------------------------------------------------------------------------------------//
+        //// Authors: Cody Jordan, Cian Carota                                                            //
+        //// Date: 4/3/14                                                                                 //
+        ////----------------------------------------------------------------------------------------------//
+        ///// <summary>Change admin's current password.</summary>
+        ///// <param name="currentPassword">Current Password.</param>
+        ///// <param name="newPassword">New password.</param>
+        ///// <returns>Boolean confirmation.</returns>
+        //public bool ChangeAdminPassword(string currentPassword, string newPassword)
+        //{
+        //    if (currentPassword == currentAdmin.Password)
+        //    {
+        //        return XMLDriver.editAdmin(newPassword, currentAdmin, adminList);
+        //    }
+        //    return false;
+        //}
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Change admin's current password.</summary>
         /// <param name="currentPassword">Current Password.</param>
         /// <param name="newPassword">New password.</param>
-        /// <returns>Boolean confirmation.</returns>
+        /// <returns>Whether the passwords match or not.</returns>
+        public bool AdminPasswordMatch(string currentPassword, string newPassword)
+        {
+            return (currentPassword == currentAdmin.Password);
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Change admin's current password.</summary>
+        /// <param name="currentPassword">Current Password.</param>
+        /// <param name="newPassword">New password.</param>
+        /// <returns>Whether the passwords match or not.</returns>
         public bool ChangeAdminPassword(string currentPassword, string newPassword)
         {
-            if (currentPassword == currentAdmin.Password)
-            {
-                return XMLDriver.editAdmin(newPassword, currentAdmin, adminList);
-            }
-            return false;
+            return (XMLDriver.editAdmin(newPassword, currentAdmin, adminList));
         }
 
         //----------------------------------------------------------------------------------------------//
@@ -1786,7 +1828,7 @@ namespace RaptorMath
                 // USed to hold the split name of the current student so we can easily get his first and last name
                 string[] wholeName;
                 // Holds the valid chars to split a string on
-                string[] separators = { " " };
+                string[] separators = { " ", "," };
                 while ((line = file.ReadLine()) != null)
                 {
                     // Now split the string
@@ -1800,8 +1842,8 @@ namespace RaptorMath
                     }
                     else
                     {
-                        firstName = wholeName[0];
-                        lastName = wholeName[1];
+                        firstName = wholeName[1];
+                        lastName = wholeName[0];
                         loginname = firstName + " " + lastName;
                         if (FindStudentWithName(loginname) == null)
                         {
@@ -1834,12 +1876,39 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/13/14                                                    //
         //------------------------------------------------------------------//
-        /// <param name="fileName">Name of the file to open</param>
-        /// <summary>Attempts to import a list of students into the sysem from a file.</summary>
+        /// <summary>Used to update and pass along the current student's rewards.</summary>
         public void UpdateRewards()
         {
             currentStudent.RewardTotal = currentStudent.RewardTotal + Convert.ToInt32(currentStudent.curDrill.Questions) - Convert.ToInt32(currentStudent.curDrill.Wrong);
             XMLDriver.EditRewardAmount(currentStudent);
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/15/14                                                    //
+        //------------------------------------------------------------------//
+        /// <param name="name">The string to trim white space from</param>
+        public string RemoveExtraWhiteSpace(string name)
+        {
+            string nameCleaned = name.Trim();
+            while (nameCleaned.Contains("  ")) nameCleaned = nameCleaned.Replace("  ", " ");
+            return (nameCleaned);
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/15/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Returns a list of sorted students, sorted by first name then last name.</summary>
+        public List<string> GetSortedStudents()
+        {
+            List<string> sorted = new List<string>();
+            foreach (Student student in studentList)
+            {
+                sorted.Add(student.LoginName);
+            }
+            sorted.Sort();
+            return sorted;
         }
     }
 }

@@ -27,6 +27,8 @@ Cycle 3 Changes:
  * Date: 4/14/14
  * • Updated the logic when selection a user to edit so that the edit options stay grayed out if the selected user changes and doesn't exist.
  * • Fixed any issue where the same name could be added multiple times into a list of more than one student shared that one part of their name.
+ * Date: 4/15/14
+ * • Expaned edit student logic to catch the user trying to assign a student to the group they are already in.
 */
 
 using System;
@@ -48,7 +50,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/12/14                                                     //
+        // Date: 4/12/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Disallows closing a window with the window's 'X' button.</summary>
         private const int CP_NOCLOSE_BUTTON = 0x200;
@@ -247,14 +249,22 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/2/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/15/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Clears and refreshes the content of 'Select a Student'
         /// combo box.</summary>
         private void RefreshSelectionCmboBo()
         {
             EditStu_SelectionCmbo.Items.Clear();
-            foreach (Student student in localManager.studentList)
+            //foreach (Student student in localManager.studentList)
+            //{
+            //    EditStu_SelectionCmbo.Items.Add(student.LoginName);
+            //}
+            foreach (string student in localManager.GetSortedStudents())
             {
-                EditStu_SelectionCmbo.Items.Add(student.LoginName);
+                EditStu_SelectionCmbo.Items.Add(student);
             }
         }
 
@@ -391,6 +401,11 @@ namespace RaptorMath
             else if (isValidEdit == 3)
             {
                 MessageBox.Show("Error. Entered group doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                EditStu_GroupCmbo.Focus();
+            }
+            else if (isValidEdit == 4)
+            {
+                MessageBox.Show("Error. Student already belongs to this group.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EditStu_GroupCmbo.Focus();
             }
         }

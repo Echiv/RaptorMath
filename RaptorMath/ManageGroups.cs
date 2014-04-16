@@ -468,7 +468,7 @@ namespace RaptorMath
                 }
             }
 
-            if ((MngGroups_NewNameCmbo.Text.Length > 0) && (MngGroups_SelectGroupCmbo.Text.Length > 0))
+            if ((MngGroups_NewNameCmbo.Text.Length > 0) && (localManager.FindGroupByName(MngGroups_SelectGroupCmbo.Text) != null))
                 MngGroups_RenameBtn.Enabled = true;
             else
                 MngGroups_RenameBtn.Enabled = false;

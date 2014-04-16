@@ -57,11 +57,11 @@
             this.MngUsers_RemoveUserBtn = new System.Windows.Forms.Button();
             this.MngUsers_SelectUserLbl = new System.Windows.Forms.Label();
             this.MngUsers_ButtonBox = new System.Windows.Forms.GroupBox();
+            this.MngUsers_ImportBtn = new System.Windows.Forms.Button();
             this.MngUsers_CloseBtn = new System.Windows.Forms.Button();
             this.MngUsers_ExitBtn = new System.Windows.Forms.Button();
             this.MngUsers_Timer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.MngUsers_ImportBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.MngUsers_UserInfoBox.SuspendLayout();
             this.MngUsers_AddUserBox.SuspendLayout();
@@ -177,16 +177,20 @@
             // MngUsers_ConfirmPasswordTxt
             // 
             this.MngUsers_ConfirmPasswordTxt.Location = new System.Drawing.Point(155, 161);
+            this.MngUsers_ConfirmPasswordTxt.MaxLength = 8;
             this.MngUsers_ConfirmPasswordTxt.Name = "MngUsers_ConfirmPasswordTxt";
             this.MngUsers_ConfirmPasswordTxt.Size = new System.Drawing.Size(169, 19);
             this.MngUsers_ConfirmPasswordTxt.TabIndex = 6;
+            this.MngUsers_ConfirmPasswordTxt.TextChanged += new System.EventHandler(this.MngUsers_ConfirmPasswordTxt_TextChanged);
             // 
             // MngUsers_PasswordTxt
             // 
             this.MngUsers_PasswordTxt.Location = new System.Drawing.Point(155, 129);
+            this.MngUsers_PasswordTxt.MaxLength = 8;
             this.MngUsers_PasswordTxt.Name = "MngUsers_PasswordTxt";
             this.MngUsers_PasswordTxt.Size = new System.Drawing.Size(169, 19);
             this.MngUsers_PasswordTxt.TabIndex = 5;
+            this.MngUsers_PasswordTxt.TextChanged += new System.EventHandler(this.MngUsers_PasswordTxt_TextChanged);
             // 
             // MngUsers_LastNameCmbo
             // 
@@ -415,6 +419,16 @@
             this.MngUsers_ButtonBox.TabIndex = 3;
             this.MngUsers_ButtonBox.TabStop = false;
             // 
+            // MngUsers_ImportBtn
+            // 
+            this.MngUsers_ImportBtn.Location = new System.Drawing.Point(8, 12);
+            this.MngUsers_ImportBtn.Name = "MngUsers_ImportBtn";
+            this.MngUsers_ImportBtn.Size = new System.Drawing.Size(115, 30);
+            this.MngUsers_ImportBtn.TabIndex = 1;
+            this.MngUsers_ImportBtn.Text = "Import Students";
+            this.MngUsers_ImportBtn.UseVisualStyleBackColor = true;
+            this.MngUsers_ImportBtn.Click += new System.EventHandler(this.MngUsers_ImportBtn_Click);
+            // 
             // MngUsers_CloseBtn
             // 
             this.MngUsers_CloseBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -445,16 +459,6 @@
             this.MngUsers_Timer.Enabled = true;
             this.MngUsers_Timer.Interval = 1000;
             this.MngUsers_Timer.Tick += new System.EventHandler(this.MngUsers_Timer_Tick);
-            // 
-            // MngUsers_ImportBtn
-            // 
-            this.MngUsers_ImportBtn.Location = new System.Drawing.Point(8, 12);
-            this.MngUsers_ImportBtn.Name = "MngUsers_ImportBtn";
-            this.MngUsers_ImportBtn.Size = new System.Drawing.Size(115, 30);
-            this.MngUsers_ImportBtn.TabIndex = 1;
-            this.MngUsers_ImportBtn.Text = "Import Students";
-            this.MngUsers_ImportBtn.UseVisualStyleBackColor = true;
-            this.MngUsers_ImportBtn.Click += new System.EventHandler(this.MngUsers_ImportBtn_Click);
             // 
             // MngUsers_Form
             // 

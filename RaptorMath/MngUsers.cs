@@ -36,9 +36,12 @@ Cycle 3 Changes:
  * • Added a confirmation box when removing a user from the system.
  * • Added new button for importing students from a text file
  * Date: 4/14/14
- * • Changed some logic when creating a new user that was causing to error messages boxes to appear
+ * • Changed some logic when creating a new user that was causing to error messages boxes to appear.
  *   so that only one is shown
  * • Fixed a bug that allowed numbers and special characters into the selection combo for removing a user.
+ * Date: 4/15/14
+ * • Changed the minimal length of a password to 4 and the maximum length to 8.
+ * • Added logic to keep the save button disabled until all boxes have the correct data in them.
 */
 
 using System;
@@ -305,6 +308,7 @@ namespace RaptorMath
             {
                 MngUsers_RemoveUserCmbo.Enabled = false;
             }
+            MngUsers_ConfirmPasswordTxt.Enabled = false;
             MngUsers_RemoveUserBtn.Enabled = false;
             MngUsers_SaveUserBtm.Enabled = false;
             MngUsers_PasswordTxt.PasswordChar = '*';
@@ -383,7 +387,7 @@ namespace RaptorMath
                 }
             }
             else if ((MngUsers_AdminRdo.Checked)
-                && ((MngUsers_PasswordTxt.Text.Length > 0) && (MngUsers_ConfirmPasswordTxt.Text.Length > 0))
+                && ((MngUsers_PasswordTxt.Text.Length >= 4) && (MngUsers_ConfirmPasswordTxt.Text.Length >= 4))
                 && ((MngUsers_FirstNameCmbo.Text.Length > 0) && (MngUsers_LastNameCmbo.Text.Length > 0)))
             {
                 bool isCreatedUser = false;
@@ -442,7 +446,7 @@ namespace RaptorMath
         private void MngUsers_AdminRdo_CheckedChanged(object sender, EventArgs e)
         {
             MngUsers_PasswordTxt.Enabled = true;
-            MngUsers_ConfirmPasswordTxt.Enabled = true;
+            //MngUsers_ConfirmPasswordTxt.Enabled = true;
             MngUsers_GroupCmbo.Enabled = false;
             MngUsers_GroupCmbo.Text = string.Empty;
         }
@@ -450,6 +454,10 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/4/14                                                     //
+        //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/15/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Handle 'Remove User' button click.</summary>
         private void MngUsers_RemoveUserBtn_Click(object sender, EventArgs e)
@@ -461,10 +469,10 @@ namespace RaptorMath
             if (userToBeRemoved.Length > 9)
                 checkForDefaultUser = userToBeRemoved.Remove(0, 8);
 
-            if (checkForDefaultUser.Trim() != "Admin")
+            if (checkForDefaultUser.Trim() != "Default Admin")
             {
                 if (MessageBox.Show("Are you sure you want to remove this user? All their data will be removed from the system.",
-                    "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    "Raptor Math", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     isUserRemoved = localManager.removeUser(userToBeRemoved);
                     if (isUserRemoved == true)
@@ -535,7 +543,8 @@ namespace RaptorMath
         /// <summary>Handle Text Change event.</summary>
         private void MngUsers_FirstAndLastNameCmbo_TextChanged(object sender, EventArgs e)
         {
-            if ((MngUsers_FirstNameCmbo.Text.Length > 0) && (MngUsers_LastNameCmbo.Text.Length > 0))
+            if ((MngUsers_FirstNameCmbo.Text.Length > 0) && (MngUsers_LastNameCmbo.Text.Length > 0) &&
+                (MngUsers_PasswordTxt.Text.Length >= 4) && (MngUsers_ConfirmPasswordTxt.Text.Length >= 4))
                 MngUsers_SaveUserBtm.Enabled = true;
             else
                 MngUsers_SaveUserBtm.Enabled = false;
@@ -592,6 +601,41 @@ namespace RaptorMath
                     MessageBox.Show("Unable to add any students.", "Raptor Math", MessageBoxButtons.OK);
                 }
             }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/15/14                                                    //
+        //------------------------------------------------------------------//
+        private void MngUsers_PasswordTxt_TextChanged(object sender, EventArgs e)
+        {
+            if (MngUsers_PasswordTxt.Text.Length >= 4)
+            {
+                MngUsers_ConfirmPasswordTxt.Enabled = true;
+            }
+            else
+            {
+                MngUsers_ConfirmPasswordTxt.Enabled = false;
+            }
+
+            if ((MngUsers_FirstNameCmbo.Text.Length > 0) && (MngUsers_LastNameCmbo.Text.Length > 0) &&
+                (MngUsers_PasswordTxt.Text.Length >= 4) && (MngUsers_ConfirmPasswordTxt.Text.Length >= 4))
+                MngUsers_SaveUserBtm.Enabled = true;
+            else
+                MngUsers_SaveUserBtm.Enabled = false;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/15/14                                                    //
+        //------------------------------------------------------------------//
+        private void MngUsers_ConfirmPasswordTxt_TextChanged(object sender, EventArgs e)
+        {
+            if ((MngUsers_FirstNameCmbo.Text.Length > 0) && (MngUsers_LastNameCmbo.Text.Length > 0) &&
+                (MngUsers_PasswordTxt.Text.Length >= 4) && (MngUsers_ConfirmPasswordTxt.Text.Length >= 4))
+                MngUsers_SaveUserBtm.Enabled = true;
+            else
+                MngUsers_SaveUserBtm.Enabled = false;
         }
     }
 }

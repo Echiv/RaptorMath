@@ -32,6 +32,10 @@ Cycle 3 Changes:
  * • No longer display passwords as plain text
  * Date: 4/13/14
  * • Repalced generic message boxes with error message boxes where needed.
+ * Date: 4/15/14
+ * • Changed it so that extra white space in the login name is handled correctly.
+ * • Cannot put spaces into the password box anymore.
+ * • Changed the minimal length of a password to 4 and the maximum length to 8
 */
 
 using System;
@@ -175,6 +179,18 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/15/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersAndDigitsKeyPressNoSpace event.</summary>
+        private void RaptorMath_LettersAndDigitsKeyPressNoSpace(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        //------------------------------------------------------------------//
         // Kyle Bridges, Harvey Kreitzer                                    //
         // Date: 2/12/2014                                                  //
         //------------------------------------------------------------------//
@@ -200,7 +216,7 @@ namespace RaptorMath
             UseDesg_LoginCmbo.Select();
 
             this.UseDesg_LoginCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
-            this.UseDesg_passwordBox.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
+            this.UseDesg_passwordBox.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPressNoSpace);
         }
 
         //------------------------------------------------------------------//
@@ -308,10 +324,14 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/15/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Handle Selection Change event.</summary>
         private void UseDesg_LoginDdl_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            localManager.currentUser = UseDesg_LoginCmbo.Text;
+            localManager.currentUser = localManager.RemoveExtraWhiteSpace(UseDesg_LoginCmbo.Text);
             if (localManager.isStudent())
             {
                 UseDesg_passwordBox.Enabled = false;
@@ -328,11 +348,15 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 3/13/14                                                    //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/15/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Enables 'Login' button on 'Password' textbox text 
         /// change.</summary>
         private void passwordBox_TextChanged(object sender, EventArgs e)
         {
-            if((localManager.currentUser != string.Empty) && (UseDesg_passwordBox.Text.Length > 0))
+            if((localManager.currentUser != string.Empty) && (UseDesg_passwordBox.Text.Length >= 4))
                 UseDesg_LoginBtn.Enabled = true;
             else
                 UseDesg_LoginBtn.Enabled = false;
@@ -342,10 +366,14 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/15/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Handle Text Change event.</summary>
         private void UseDesg_LoginCmbo_TextChanged(object sender, EventArgs e)
         {
-            localManager.currentUser = UseDesg_LoginCmbo.Text;
+            localManager.currentUser = localManager.RemoveExtraWhiteSpace(UseDesg_LoginCmbo.Text);
             if (localManager.isStudent())
             {
                 UseDesg_LoginBtn.Enabled = true;

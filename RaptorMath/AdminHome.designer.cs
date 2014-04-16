@@ -340,7 +340,7 @@
             // 
             this.AdminHome_NewPWTxt.ContextMenuStrip = this.doNothingContextMenu;
             this.AdminHome_NewPWTxt.Location = new System.Drawing.Point(144, 54);
-            this.AdminHome_NewPWTxt.MaxLength = 10;
+            this.AdminHome_NewPWTxt.MaxLength = 8;
             this.AdminHome_NewPWTxt.Name = "AdminHome_NewPWTxt";
             this.AdminHome_NewPWTxt.Size = new System.Drawing.Size(174, 20);
             this.AdminHome_NewPWTxt.TabIndex = 1;
@@ -356,7 +356,7 @@
             // 
             this.AdminHome_CurrentPWTxt.ContextMenuStrip = this.doNothingContextMenu;
             this.AdminHome_CurrentPWTxt.Location = new System.Drawing.Point(144, 24);
-            this.AdminHome_CurrentPWTxt.MaxLength = 10;
+            this.AdminHome_CurrentPWTxt.MaxLength = 8;
             this.AdminHome_CurrentPWTxt.Name = "AdminHome_CurrentPWTxt";
             this.AdminHome_CurrentPWTxt.Size = new System.Drawing.Size(174, 20);
             this.AdminHome_CurrentPWTxt.TabIndex = 0;

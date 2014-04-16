@@ -112,13 +112,14 @@
             this.UseDesg_LoginCmbo.FormattingEnabled = true;
             this.UseDesg_LoginCmbo.Location = new System.Drawing.Point(153, 69);
             this.UseDesg_LoginCmbo.Margin = new System.Windows.Forms.Padding(4);
-            this.UseDesg_LoginCmbo.MaxLength = 25;
+            this.UseDesg_LoginCmbo.MaxLength = 30;
             this.UseDesg_LoginCmbo.Name = "UseDesg_LoginCmbo";
             this.UseDesg_LoginCmbo.Size = new System.Drawing.Size(227, 30);
             this.UseDesg_LoginCmbo.TabIndex = 0;
             this.UseDesg_LoginCmbo.SelectedIndexChanged += new System.EventHandler(this.UseDesg_LoginCmbo_TextChanged);
             this.UseDesg_LoginCmbo.TextChanged += new System.EventHandler(this.UseDesg_LoginCmbo_TextChanged);
             this.UseDesg_LoginCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
+            this.UseDesg_LoginCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LettersKeyPress);
             this.UseDesg_LoginCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // doNothingContextMenu
@@ -153,7 +154,7 @@
             this.UseDesg_passwordBox.ContextMenuStrip = this.doNothingContextMenu;
             this.UseDesg_passwordBox.Location = new System.Drawing.Point(152, 115);
             this.UseDesg_passwordBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.UseDesg_passwordBox.MaxLength = 10;
+            this.UseDesg_passwordBox.MaxLength = 8;
             this.UseDesg_passwordBox.Name = "UseDesg_passwordBox";
             this.UseDesg_passwordBox.Size = new System.Drawing.Size(228, 26);
             this.UseDesg_passwordBox.TabIndex = 1;
