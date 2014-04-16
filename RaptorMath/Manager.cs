@@ -118,6 +118,62 @@ namespace RaptorMath
             XMLDriver.StartUp(adminList, studentList, groupList, mainDrillList);
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Validate the administrator's info and then add the administrator to the admin XML
+        /// </summary>
+        /// <param name="adminFName">Admin's first name.</param>
+        /// <param name="adminLName">Admin's last mame.</param>
+        /// <param name="password">Admin's password.</param>
+        /// <param name="LastLogin">Admin's last login date.</param>
+        /// <param name="filePath">Admin XML filepath.</param>
+        /// <returns>Boolean confirming creation success.</returns>
+        public bool CreateAdmin(string adminFName, string adminLName, string password, string LastLogin, string filePath)
+        {
+            bool isCreatedUser = false;
+            Admin newAdmin = new Admin(adminFName, adminLName, password, LastLogin, filePath);
+
+            bool isUserInfoValid = isAdminInfoValid(newAdmin);
+            if (isUserInfoValid)
+                isCreatedUser = XMLDriver.AddUserToXML(newAdmin, adminList);
+
+            return isCreatedUser;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Validate the student info and then add the student to the student XML</summary>
+        /// <param name="groupID">Student's group ID.</param>
+        /// <param name="firstName">Student's first name.</param>
+        /// <param name="lastName">Student's last name.</param>
+        /// <param name="lastLogin">Student's last login date.</param>
+        /// <returns>Boolean confirming creation success.</returns>
+        public int CreateStudent(string groupName, string firstName, string lastName, string lastLogin)
+        {
+            int returnCode = 0;
+            int groupID = FindGroupIDByName(groupName);
+            if (groupID == 0)
+            {
+                returnCode = 1;
+            }
+            bool isCreatedUser = false;
+            Student newStudent = new Student(groupID, firstName, lastName, lastLogin);
+
+            bool isUserInfoValid = isStudentInfoValid(newStudent);
+            if (isUserInfoValid)
+                isCreatedUser = XMLDriver.AddUserToXML(newStudent, studentList);
+            if (isCreatedUser)
+            {
+                Group group = groupList.Where(grp => grp.ID.ToString().Equals(newStudent.GroupID.ToString())).FirstOrDefault();
+                AddGroupDrillsToStudent(group, newStudent);
+            }
+            return returnCode;
+        }
+
         //----------------------------------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                                            //
         // Date: 4/3/14                                                                                 //

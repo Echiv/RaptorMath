@@ -42,6 +42,8 @@ Cycle 3 Changes:
  * Date: 4/15/14
  * • Changed the minimal length of a password to 4 and the maximum length to 8.
  * • Added logic to keep the save button disabled until all boxes have the correct data in them.
+ * Date: 4/16/14
+ * • Updated logic for the radio buttons so the they enable/disbale the save button correctly when clicked.
 */
 
 using System;
@@ -428,9 +430,81 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
+        /// <summary>Handle 'Save User' button click.</summary>
+        //private void MngUsers_SaveUserBtm_Click2(object sender, EventArgs e)
+        //{
+        //    if (MngUsers_StudentRdo.Checked)
+        //    {
+        //        int isCreatedUser = localManager.CreateStudent(MngUsers_GroupCmbo.Text.Trim(), MngUsers_FirstNameCmbo.Text, MngUsers_LastNameCmbo.Text, "Unknown");
+
+        //        if (isCreatedUser == 0)
+        //        {
+        //            MessageBox.Show("The group entered does not match any groups.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //        else
+        //        {
+        //            isCreatedUser = localManager.CreateUser(groupID, MngUsers_FirstNameCmbo.Text, MngUsers_LastNameCmbo.Text, "Unknown");
+        //            if (isCreatedUser)
+        //            {
+        //                RefreshComboBoxes();
+        //                MessageBox.Show("New user created.", "Raptor Math", MessageBoxButtons.OK);
+        //                MngUsers_FirstNameCmbo.Text = string.Empty;
+        //                MngUsers_LastNameCmbo.Text = string.Empty;
+        //                MngUsers_GroupCmbo.Text = string.Empty;
+        //                MngUsers_FirstNameCmbo.Select();
+        //            }
+        //            else
+        //            {
+        //                MessageBox.Show("Entered name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //            }
+        //        }
+        //    }
+        //    else if (MngUsers_AdminRdo.Checked)
+        //    {
+        //        bool isCreatedUser = false;
+        //        if (MngUsers_PasswordTxt.Text == MngUsers_ConfirmPasswordTxt.Text)
+        //        {
+        //            isCreatedUser = localManager.CreateUser(MngUsers_FirstNameCmbo.Text, MngUsers_LastNameCmbo.Text, MngUsers_PasswordTxt.Text, "Unknown", "RaptorMathStudents.xml");
+        //            if (isCreatedUser)
+        //            {
+        //                MessageBox.Show("New user created.", "Raptor Math", MessageBoxButtons.OK);
+        //                MngUsers_FirstNameCmbo.Text = string.Empty;
+        //                MngUsers_LastNameCmbo.Text = string.Empty;
+        //                MngUsers_PasswordTxt.Text = string.Empty;
+        //                MngUsers_ConfirmPasswordTxt.Text = string.Empty;
+        //                RefreshComboBoxes();
+        //            }
+        //            else
+        //            {
+        //                MessageBox.Show("Entered name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //                MngUsers_FirstNameCmbo.Focus();
+        //            }
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Entered passwords do not match. Please try again.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //            MngUsers_PasswordTxt.Text = string.Empty;
+        //            MngUsers_ConfirmPasswordTxt.Text = string.Empty;
+        //            MngUsers_PasswordTxt.Focus();
+        //        }
+        //    }
+        //}
+
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/4/14                                                     //
+        //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Handle 'Student' radiobutton click.</summary>
         private void MngUsers_StudentRdo_CheckedChanged(object sender, EventArgs e)
         {
+            if (MngUsers_FirstNameCmbo.Text.Length > 0 && MngUsers_LastNameCmbo.Text.Length > 0)
+            {
+                MngUsers_SaveUserBtm.Enabled = true;
+            }
             MngUsers_PasswordTxt.Enabled = false;
             MngUsers_ConfirmPasswordTxt.Enabled = false;
             MngUsers_GroupCmbo.Enabled = true;
@@ -442,9 +516,14 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/4/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Handle 'Admin' radiobutton click.</summary>
         private void MngUsers_AdminRdo_CheckedChanged(object sender, EventArgs e)
         {
+            MngUsers_SaveUserBtm.Enabled = false;
             MngUsers_PasswordTxt.Enabled = true;
             //MngUsers_ConfirmPasswordTxt.Enabled = true;
             MngUsers_GroupCmbo.Enabled = false;
@@ -544,10 +623,20 @@ namespace RaptorMath
         private void MngUsers_FirstAndLastNameCmbo_TextChanged(object sender, EventArgs e)
         {
             if ((MngUsers_FirstNameCmbo.Text.Length > 0) && (MngUsers_LastNameCmbo.Text.Length > 0) &&
-                (MngUsers_PasswordTxt.Text.Length >= 4) && (MngUsers_ConfirmPasswordTxt.Text.Length >= 4))
+                (MngUsers_PasswordTxt.Text.Length >= 4) && (MngUsers_ConfirmPasswordTxt.Text.Length >= 4) &&
+                MngUsers_AdminRdo.Checked)
+            {
                 MngUsers_SaveUserBtm.Enabled = true;
+            }
+            else if ((MngUsers_FirstNameCmbo.Text.Length > 0) && (MngUsers_LastNameCmbo.Text.Length > 0) &&
+                MngUsers_StudentRdo.Checked)
+            {
+                MngUsers_SaveUserBtm.Enabled = true;
+            }
             else
+            {
                 MngUsers_SaveUserBtm.Enabled = false;
+            }
         }
 
         //------------------------------------------------------------------//
