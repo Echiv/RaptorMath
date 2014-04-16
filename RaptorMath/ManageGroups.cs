@@ -28,6 +28,9 @@ Cycle 3 Changes:
  * • Added logic so that the porgram only allows interaction with the new name combox when there is valid group selected.
  * • Added error message boxes instead of just messages boxes.
  * • Changed it so the enter will call the correct button associated with the program's focus.
+ * Date: 4/16/14
+ * • Added logic to to remove leading and trailing white space from group names along with changing spaces in between
+ *   words down to onlt one space if there is more than that.
 */
 
 using System;
@@ -326,18 +329,25 @@ namespace RaptorMath
         /// <summary>Handle 'Create Group' button click.</summary>
         private void MngGroups_CreateBtn_Click(object sender, EventArgs e)
         {
-            string newGroupName = MngGroups_GroupNameCmbo.Text;
-            bool isGroupAdded = localManager.CreateGroup(newGroupName);
-            if (isGroupAdded)
+            string newGroupName = localManager.RemoveExtraWhiteSpace(MngGroups_GroupNameCmbo.Text);
+            if (newGroupName != string.Empty)
             {
-                MessageBox.Show("New group created.", "Raptor Math", MessageBoxButtons.OK);
-                RefreshCmboBoxes();
-                ClearCmboBoxes();
-                MngGroups_GroupNameCmbo.Select();
+                bool isGroupAdded = localManager.CreateGroup(newGroupName);
+                if (isGroupAdded)
+                {
+                    MessageBox.Show("New group created.", "Raptor Math", MessageBoxButtons.OK);
+                    RefreshCmboBoxes();
+                    ClearCmboBoxes();
+                    MngGroups_GroupNameCmbo.Select();
+                }
+                else
+                {
+                    MessageBox.Show("A group with the provided name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("A group with the provided name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("A group name cannot be blank.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -382,17 +392,25 @@ namespace RaptorMath
             {
                 if (!MngGroups_SelectGroupCmbo.Text.Equals(MngGroups_NewNameCmbo.Text))
                 {
-                    bool isGroupRenamed = localManager.RenameGroup(MngGroups_NewNameCmbo.Text, MngGroups_SelectGroupCmbo.Text, localManager.groupList);
-                    if (isGroupRenamed)
+                    string newGroupName = localManager.RemoveExtraWhiteSpace(MngGroups_NewNameCmbo.Text);
+                    if (newGroupName != string.Empty)
                     {
-                        MessageBox.Show("Group has been renamed.", "Raptor Math", MessageBoxButtons.OK);
-                        RefreshCmboBoxes();
-                        ClearCmboBoxes();
-                        MngGroups_SelectGroupCmbo.Select();
+                        bool isGroupRenamed = localManager.RenameGroup(newGroupName, MngGroups_SelectGroupCmbo.Text, localManager.groupList);
+                        if (isGroupRenamed)
+                        {
+                            MessageBox.Show("Group has been renamed.", "Raptor Math", MessageBoxButtons.OK);
+                            RefreshCmboBoxes();
+                            ClearCmboBoxes();
+                            MngGroups_SelectGroupCmbo.Select();
+                        }
+                        else
+                        {
+                            MessageBox.Show("The entered group doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("The entered group doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("A group name cannot be blank.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
