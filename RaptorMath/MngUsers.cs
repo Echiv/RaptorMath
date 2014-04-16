@@ -540,7 +540,7 @@ namespace RaptorMath
         {
             if ((keyData == (Keys.Control | Keys.C)) || (keyData == (Keys.Control | Keys.V)) || (keyData == (Keys.Control | Keys.X)))
             {
-
+              
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
