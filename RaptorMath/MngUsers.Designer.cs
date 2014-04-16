@@ -37,6 +37,8 @@
             this.MngUsers_TimeLbl = new System.Windows.Forms.Label();
             this.MngUsers_DateLbl = new System.Windows.Forms.Label();
             this.MngUsers_AddUserBox = new System.Windows.Forms.GroupBox();
+            this.MngUsers_ConfirmPasswordTxt = new System.Windows.Forms.TextBox();
+            this.MngUsers_PasswordTxt = new System.Windows.Forms.TextBox();
             this.MngUsers_LastNameCmbo = new System.Windows.Forms.ComboBox();
             this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MngUsers_LastNameLbl = new System.Windows.Forms.Label();
@@ -59,8 +61,7 @@
             this.MngUsers_ExitBtn = new System.Windows.Forms.Button();
             this.MngUsers_Timer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.MngUsers_PasswordTxt = new System.Windows.Forms.TextBox();
-            this.MngUsers_ConfirmPasswordTxt = new System.Windows.Forms.TextBox();
+            this.MngUsers_ImportBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.MngUsers_UserInfoBox.SuspendLayout();
             this.MngUsers_AddUserBox.SuspendLayout();
@@ -172,6 +173,20 @@
             this.MngUsers_AddUserBox.TabIndex = 1;
             this.MngUsers_AddUserBox.TabStop = false;
             this.MngUsers_AddUserBox.Text = "Add a User";
+            // 
+            // MngUsers_ConfirmPasswordTxt
+            // 
+            this.MngUsers_ConfirmPasswordTxt.Location = new System.Drawing.Point(155, 161);
+            this.MngUsers_ConfirmPasswordTxt.Name = "MngUsers_ConfirmPasswordTxt";
+            this.MngUsers_ConfirmPasswordTxt.Size = new System.Drawing.Size(169, 19);
+            this.MngUsers_ConfirmPasswordTxt.TabIndex = 6;
+            // 
+            // MngUsers_PasswordTxt
+            // 
+            this.MngUsers_PasswordTxt.Location = new System.Drawing.Point(155, 129);
+            this.MngUsers_PasswordTxt.Name = "MngUsers_PasswordTxt";
+            this.MngUsers_PasswordTxt.Size = new System.Drawing.Size(169, 19);
+            this.MngUsers_PasswordTxt.TabIndex = 5;
             // 
             // MngUsers_LastNameCmbo
             // 
@@ -389,6 +404,7 @@
             // 
             // MngUsers_ButtonBox
             // 
+            this.MngUsers_ButtonBox.Controls.Add(this.MngUsers_ImportBtn);
             this.MngUsers_ButtonBox.Controls.Add(this.MngUsers_CloseBtn);
             this.MngUsers_ButtonBox.Controls.Add(this.MngUsers_ExitBtn);
             this.MngUsers_ButtonBox.Location = new System.Drawing.Point(15, 450);
@@ -430,19 +446,15 @@
             this.MngUsers_Timer.Interval = 1000;
             this.MngUsers_Timer.Tick += new System.EventHandler(this.MngUsers_Timer_Tick);
             // 
-            // MngUsers_PasswordTxt
+            // MngUsers_ImportBtn
             // 
-            this.MngUsers_PasswordTxt.Location = new System.Drawing.Point(155, 129);
-            this.MngUsers_PasswordTxt.Name = "MngUsers_PasswordTxt";
-            this.MngUsers_PasswordTxt.Size = new System.Drawing.Size(169, 19);
-            this.MngUsers_PasswordTxt.TabIndex = 5;
-            // 
-            // MngUsers_ConfirmPasswordTxt
-            // 
-            this.MngUsers_ConfirmPasswordTxt.Location = new System.Drawing.Point(155, 161);
-            this.MngUsers_ConfirmPasswordTxt.Name = "MngUsers_ConfirmPasswordTxt";
-            this.MngUsers_ConfirmPasswordTxt.Size = new System.Drawing.Size(169, 19);
-            this.MngUsers_ConfirmPasswordTxt.TabIndex = 6;
+            this.MngUsers_ImportBtn.Location = new System.Drawing.Point(8, 12);
+            this.MngUsers_ImportBtn.Name = "MngUsers_ImportBtn";
+            this.MngUsers_ImportBtn.Size = new System.Drawing.Size(115, 30);
+            this.MngUsers_ImportBtn.TabIndex = 1;
+            this.MngUsers_ImportBtn.Text = "Import Students";
+            this.MngUsers_ImportBtn.UseVisualStyleBackColor = true;
+            this.MngUsers_ImportBtn.Click += new System.EventHandler(this.MngUsers_ImportBtn_Click);
             // 
             // MngUsers_Form
             // 
@@ -504,5 +516,6 @@
         private System.Windows.Forms.ContextMenuStrip doNothingContextMenu;
         private System.Windows.Forms.TextBox MngUsers_ConfirmPasswordTxt;
         private System.Windows.Forms.TextBox MngUsers_PasswordTxt;
+        private System.Windows.Forms.Button MngUsers_ImportBtn;
     }
 }

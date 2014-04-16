@@ -23,6 +23,11 @@ Cycle 3 Changes:
  * Date: 4/12/14
  * • Added logic to disallow interaction with a form's border close button.
  * • Added logic to disallow copy, paste, and cut.
+ * Date: 4/14/14
+ * • Added logic to disallow renaming a group to its current name.
+ * • Added logic so that the porgram only allows interaction with the new name combox when there is valid group selected.
+ * • Added error message boxes instead of just messages boxes.
+ * • Changed it so the enter will call the correct button associated with the program's focus.
 */
 
 using System;
@@ -141,6 +146,27 @@ namespace RaptorMath
             e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == ' ' || (char.IsControl(e.KeyChar)));
             if (e.Handled)
                 System.Media.SystemSounds.Beep.Play();
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersAndDigitsKeyPress event.</summary>
+        private void RaptorMath_LettersAndDigitsEnterKeyPress(object sender, KeyPressEventArgs e)
+        {
+            Console.WriteLine(e.KeyChar);
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                Console.WriteLine("CLICK");
+                MngGroups_RenameBtn.PerformClick();
+            }
+            else
+            {
+                e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == ' ' || (char.IsControl(e.KeyChar)));
+                if (e.Handled)
+                    System.Media.SystemSounds.Beep.Play();
+            }
         }
 
         //------------------------------------------------------------------//
@@ -271,12 +297,16 @@ namespace RaptorMath
             MngGroups_GroupNameCmbo.Select();
             MngGroups_CreateBtn.Enabled = false;
             MngGroups_RenameBtn.Enabled = false;
+            MngGroups_NewNameCmbo.Enabled = false;
 
             this.MngGroups_SelectGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
-            this.MngGroups_NewNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
+            this.MngGroups_NewNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsEnterKeyPress);
             this.MngGroups_GroupNameCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
 
             this.AdminName = localManager.currentUser.Remove(0, 8);
+            MngGroups_NewNameCmbo.GotFocus += new EventHandler(MngGroups_NewNameCmbo_GotFocus);
+            MngGroups_GroupNameCmbo.GotFocus += new EventHandler(MngGroups_GroupNameCmbo_GotFocus);
+            MngGroups_SelectGroupCmbo.GotFocus += new EventHandler(MngGroups_NewNameCmbo_GotFocus);
         }
 
         //------------------------------------------------------------------//
@@ -307,7 +337,7 @@ namespace RaptorMath
             }
             else
             {
-                MessageBox.Show("A group with the provided name already exists.", "Raptor Math", MessageBoxButtons.OK);
+                MessageBox.Show("A group with the provided name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -341,27 +371,38 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Handle 'Rename Group' button click.</summary>
         private void MngGroups_RenameBtn_Click(object sender, EventArgs e)
         {
             if (MngGroups_SelectGroupCmbo.Text.Trim() != "Unassigned")
             {
-                bool isGroupRenamed = localManager.RenameGroup(MngGroups_NewNameCmbo.Text, MngGroups_SelectGroupCmbo.Text, localManager.groupList);
-                if (isGroupRenamed)
+                if (!MngGroups_SelectGroupCmbo.Text.Equals(MngGroups_NewNameCmbo.Text))
                 {
-                    MessageBox.Show("Group has been renamed.", "Raptor Math", MessageBoxButtons.OK);
-                    RefreshCmboBoxes();
-                    ClearCmboBoxes();
-                    MngGroups_SelectGroupCmbo.Select();
+                    bool isGroupRenamed = localManager.RenameGroup(MngGroups_NewNameCmbo.Text, MngGroups_SelectGroupCmbo.Text, localManager.groupList);
+                    if (isGroupRenamed)
+                    {
+                        MessageBox.Show("Group has been renamed.", "Raptor Math", MessageBoxButtons.OK);
+                        RefreshCmboBoxes();
+                        ClearCmboBoxes();
+                        MngGroups_SelectGroupCmbo.Select();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The entered group doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("The entered group doesn't exist", "Raptor Math", MessageBoxButtons.OK);
+                    MessageBox.Show("Cannot give a group the name it already has.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Cannot rename the default group", "Raptor Math", MessageBoxButtons.OK);
+                MessageBox.Show("Cannot rename the default group.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -408,9 +449,25 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/11/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Handle Text Changed event.</summary>
         private void MngGroups_SelectGroupAndNewNameCmbo_TextChanged(object sender, EventArgs e)
         {
+            if (MngGroups_SelectGroupCmbo.Text.Length > 0)
+            {
+                if (localManager.FindGroupByName(MngGroups_SelectGroupCmbo.Text) != null)
+                {
+                    MngGroups_NewNameCmbo.Enabled = true;
+                }
+                else
+                {
+                    MngGroups_NewNameCmbo.Enabled = false;
+                }
+            }
+
             if ((MngGroups_NewNameCmbo.Text.Length > 0) && (MngGroups_SelectGroupCmbo.Text.Length > 0))
                 MngGroups_RenameBtn.Enabled = true;
             else
@@ -419,7 +476,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/11/14                                                     //
+        // Date: 4/11/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Disallows copy, paste, cut from keyboard.</summary>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -430,6 +487,26 @@ namespace RaptorMath
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Custom method to set the enter button to the "Rename" button.</summary>
+        private void MngGroups_NewNameCmbo_GotFocus(Object sender, EventArgs e)
+        {
+            this.AcceptButton = MngGroups_RenameBtn;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Custom method to set the enter button to the "Create Group" button.</summary>
+        private void MngGroups_GroupNameCmbo_GotFocus(Object sender, EventArgs e)
+        {
+            this.AcceptButton = MngGroups_CreateBtn;
         }
     }
 }

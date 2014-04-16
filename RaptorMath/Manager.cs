@@ -25,6 +25,9 @@ Cycle 3 Changes:
  * Date: 4/12/14
  * • Added new methods for editing a student
  * • Added a method to find if there exists any group records within a given date range
+ * Date: 4/13/14
+ * • Added new method for importing students from a text file
+ * • Added variables to keep track of students that were not added into the system from a file
 */
 
 using System;
@@ -32,6 +35,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace RaptorMath
 {
@@ -77,6 +81,8 @@ namespace RaptorMath
         public int currSolution;
         //XMLParser XML = new XMLParser();
         XMLDriver XMLDriver = new XMLDriver();
+        // Added 4/13/14
+        public List<string> studentsNotAdded = new List<string>();
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
@@ -365,7 +371,7 @@ namespace RaptorMath
         }
         //----------------------------------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                                                           //
-        // Date: 4/3/14                                                                                 //
+        // Date: 4/13/14                                                                                 //
         //----------------------------------------------------------------------------------------------//
         /// <summary>Checks to see if the new name is valid.</summary>
         /// <param name="newFName">Student's new first name.</param>
@@ -378,7 +384,7 @@ namespace RaptorMath
             bool isValid = true;
             // Used to to see if there already exists a student in the system with the new name selected
             Student existStudent;
-            // USed to hold the split name of the current student so we can easily get his first and last name
+            // Used to hold the split name of the current student so we can easily get his first and last name
             string[] wholeName;
             // Holds the valid chars to split a string on
             string[] separators = {" "};
@@ -1737,6 +1743,103 @@ namespace RaptorMath
             }
 
            return recordsExist;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/13/14                                                    //
+        //------------------------------------------------------------------//
+        /// <param name="fileName">Name of the file to open</param>
+        /// <summary>Attempts to import a list of students into the sysem from a file.</summary>
+        public Tuple<int, int, int, int> ImportStudents(string fileName)
+        {
+            // Integers to represent how the attempt to add students went
+            // 0 means everything went well and users were added
+            // 1 means there was an error
+            // Item1
+            int okayCode = 1;
+            // Item2
+            int noFileCode = 0;
+            // Item3
+            int emptyFileCode = 0;
+            // Item4
+            int invalidNameCode = 0;
+
+            System.IO.StreamReader file = new System.IO.StreamReader(fileName);
+            if (file == null)
+            {
+                noFileCode = 1;
+            }
+            else if (new FileInfo(fileName).Length == 0)
+            {
+                emptyFileCode = 1;
+            }
+            else
+            {
+                // Line to read from the file
+                string line = "";
+                // The default unassigned group
+                int groupID = 1;
+                string firstName = "Unknwon";
+                string lastName = "Unknwon";
+                string loginname = "Unknwon";
+                // USed to hold the split name of the current student so we can easily get his first and last name
+                string[] wholeName;
+                // Holds the valid chars to split a string on
+                string[] separators = { " " };
+                while ((line = file.ReadLine()) != null)
+                {
+                    // Now split the string
+                    wholeName = line.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                    if (wholeName.Length != 2)
+                    {
+                        // Added the invalid line to the list and set the error code
+                        studentsNotAdded.Add(line);
+                        invalidNameCode = 1;
+                        continue;
+                    }
+                    else
+                    {
+                        firstName = wholeName[0];
+                        lastName = wholeName[1];
+                        loginname = firstName + " " + lastName;
+                        if (FindStudentWithName(loginname) == null)
+                        {
+                            if (!CreateUser(groupID, firstName, lastName, "Unknown"))
+                            {
+                                // Added the invalid line to the list and set the error code
+                                studentsNotAdded.Add((firstName + " " + lastName));
+                                invalidNameCode = 1;
+                            }
+                            else
+                            {
+                                // We had at least 1 student added
+                                okayCode = 0;
+                            }
+                        }
+                        else
+                        {
+                            // Added the invalid line to the list and set the error code
+                            studentsNotAdded.Add((firstName + " " + lastName));
+                            invalidNameCode = 1;
+                        }
+                    }
+                }
+            }
+
+            return Tuple.Create(okayCode, noFileCode, emptyFileCode, invalidNameCode);
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/13/14                                                    //
+        //------------------------------------------------------------------//
+        /// <param name="fileName">Name of the file to open</param>
+        /// <summary>Attempts to import a list of students into the sysem from a file.</summary>
+        public void UpdateRewards()
+        {
+            currentStudent.RewardTotal = currentStudent.RewardTotal + Convert.ToInt32(currentStudent.curDrill.Questions) - Convert.ToInt32(currentStudent.curDrill.Wrong);
+            XMLDriver.EditRewardAmount(currentStudent);
         }
     }
 }

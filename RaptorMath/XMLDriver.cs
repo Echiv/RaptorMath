@@ -11,6 +11,8 @@ Authors: Joshua Boone and Justine Dinh
 Cycle 3 Changes:
  * Date: 4/12/14
  * • Added new methods for editing a student
+ * Date: 4/14/14
+ * • Added helper method for updating a student's rewards total
 */
 
 using System;
@@ -487,21 +489,21 @@ namespace RaptorMath
             return false;
         }
 
-        //------------------------------------------------------------------//
-        // Authors: Cody Jordan, Cian Carota                                //
-        // Date: 4/5/14                                                     //
-        //------------------------------------------------------------------//
-        /// <summary>Edit data in Student XML.</summary>
-        /// <param name="newFName">Student's first name.</param>
-        /// <param name="newLName">Student's last name.</param>
-        /// <param name="selectedStudent">Student object to be modified</param>
-        /// <param name="group">Group object associated with student.</param>
-        /// <param name="studentList">List of student objects.</param>
-        /// <returns>bool, bool</returns>
-        public Tuple<bool, bool> editStudent(string newFName, string newLName, Student selectedStudent, Group group, List<Student> studentList)
-        {
-            return XMLStudentDriver.editStudent(newFName, newLName, selectedStudent, group, studentList, studentXMLPath, groupXMLPath, dataDirectory);
-        }
+        ////------------------------------------------------------------------//
+        //// Authors: Cody Jordan, Cian Carota                                //
+        //// Date: 4/5/14                                                     //
+        ////------------------------------------------------------------------//
+        ///// <summary>Edit data in Student XML.</summary>
+        ///// <param name="newFName">Student's first name.</param>
+        ///// <param name="newLName">Student's last name.</param>
+        ///// <param name="selectedStudent">Student object to be modified</param>
+        ///// <param name="group">Group object associated with student.</param>
+        ///// <param name="studentList">List of student objects.</param>
+        ///// <returns>bool, bool</returns>
+        //public Tuple<bool, bool> editStudent(string newFName, string newLName, Student selectedStudent, Group group, List<Student> studentList)
+        //{
+        //    return XMLStudentDriver.editStudent(newFName, newLName, selectedStudent, group, studentList, studentXMLPath, groupXMLPath, dataDirectory);
+        //}
 
         //----------------------------------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                                                       //
@@ -527,7 +529,19 @@ namespace RaptorMath
         /// <param name="group">Group object associated with student.</param>
         public void EditName(Student selectedStudent)
         {
-            XMLStudentDriver.EditName(selectedStudent, studentXMLPath, groupXMLPath, dataDirectory);
+            XMLStudentDriver.EditName(selectedStudent, studentXMLPath, dataDirectory);
+        }
+
+        //----------------------------------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                                                       //
+        // Date: 4/14/14                                                                                //
+        //----------------------------------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        /// <summary>Calls the update student's reward data in student XML function.</summary>
+        /// <param name="student">Student object to be modified.</param>
+        public void EditRewardAmount(Student selectedStudent)
+        {
+            XMLStudentDriver.EditRewardAmount(selectedStudent, studentXMLPath, dataDirectory);
         }
 
         //------------------------------------------------------------------//

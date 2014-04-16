@@ -21,6 +21,8 @@ Cycle 3 Changes:
  * Date: 4/12/14
  * • Added logic to disallow interaction with a form's border close button.
  * • Added logic to disallow copy, paste, and cut.
+ * Date: 4/14/14
+ * • Added error message boxes instead of just messages boxes.
 */
 
 using System;
@@ -262,7 +264,7 @@ namespace RaptorMath
                 || (localManager.InvalidQuestionCount(CreateDrill_NumQuestionsTxt.Text))
                 || !(CreateDrill_DrillNameTxt.Text.Trim().Length > 0))
             {
-                MessageBox.Show("You are missing a selection or have entered an invalid range.", "Raptor Math", MessageBoxButtons.OK);
+                MessageBox.Show("You are missing a selection or have entered an invalid range.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

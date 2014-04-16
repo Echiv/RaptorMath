@@ -34,6 +34,11 @@ Cycle 3 Changes:
  * • Fixed a tabbing issue where tabs wouldn't work in the right order when certain boxes had data in them
  * • Added some UI enhancements to better direct the user during errors.
  * • Added a confirmation box when removing a user from the system.
+ * • Added new button for importing students from a text file
+ * Date: 4/14/14
+ * • Changed some logic when creating a new user that was causing to error messages boxes to appear
+ *   so that only one is shown
+ * • Fixed a bug that allowed numbers and special characters into the selection combo for removing a user.
 */
 
 using System;
@@ -51,7 +56,8 @@ namespace RaptorMath
     {
         public Manager localManager;
         private bool isKeyPressed = false;
-
+        // Used when importing students from a txt file
+        OpenFileDialog openFile;
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/12/14                                                     //
@@ -129,10 +135,10 @@ namespace RaptorMath
         // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersWithOneWhiteSpaceKeyPress event.</summary>
-        private void RaptorMath_LettersWithOneWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
+        private void RaptorMath_LettersAndWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
         {
             ComboBox cmbobx = (ComboBox)sender;
-            e.Handled = (!(char.IsLetter(e.KeyChar) || (e.KeyChar == ' ') || (!cmbobx.Text.Contains(' ')) || (char.IsControl(e.KeyChar))));
+            e.Handled = !(char.IsLetter(e.KeyChar) || (e.KeyChar == ' ') || (char.IsControl(e.KeyChar)));
             if (e.Handled)
                 System.Media.SystemSounds.Beep.Play();
         }
@@ -295,6 +301,10 @@ namespace RaptorMath
             InitializeTimer();
             RefreshComboBoxes();
 
+            if (MngUsers_RemoveUserCmbo.Items.Count == 0)
+            {
+                MngUsers_RemoveUserCmbo.Enabled = false;
+            }
             MngUsers_RemoveUserBtn.Enabled = false;
             MngUsers_SaveUserBtm.Enabled = false;
             MngUsers_PasswordTxt.PasswordChar = '*';
@@ -306,7 +316,7 @@ namespace RaptorMath
             this.MngUsers_PasswordTxt.KeyPress += new KeyPressEventHandler(RaptorMath_OnlyLettersAndDigitsKeyPress);
             this.MngUsers_ConfirmPasswordTxt.KeyPress += new KeyPressEventHandler(RaptorMath_OnlyLettersAndDigitsKeyPress);
             this.MngUsers_GroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
-            this.MngUsers_RemoveUserCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWithOneWhiteSpaceKeyPress);
+            this.MngUsers_RemoveUserCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndWhiteSpaceKeyPress);
 
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
@@ -355,21 +365,21 @@ namespace RaptorMath
                 }
                 else
                 {
+                    // 4/14/14 Moved the if/else into this else to prevent two error boxes from displaying
                     isCreatedUser = localManager.CreateUser(groupID, MngUsers_FirstNameCmbo.Text, MngUsers_LastNameCmbo.Text, "Unknown");
-                }
-
-                if (isCreatedUser)
-                {
-                    RefreshComboBoxes();
-                    MessageBox.Show("New user created.", "Raptor Math", MessageBoxButtons.OK);
-                    MngUsers_FirstNameCmbo.Text = string.Empty;
-                    MngUsers_LastNameCmbo.Text = string.Empty;
-                    MngUsers_GroupCmbo.Text = string.Empty;
-                    MngUsers_FirstNameCmbo.Select();
-                }
-                else
-                {
-                    MessageBox.Show("Entered name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (isCreatedUser)
+                    {
+                        RefreshComboBoxes();
+                        MessageBox.Show("New user created.", "Raptor Math", MessageBoxButtons.OK);
+                        MngUsers_FirstNameCmbo.Text = string.Empty;
+                        MngUsers_LastNameCmbo.Text = string.Empty;
+                        MngUsers_GroupCmbo.Text = string.Empty;
+                        MngUsers_FirstNameCmbo.Select();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Entered name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else if ((MngUsers_AdminRdo.Checked)
@@ -533,7 +543,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/11/14                                                     //
+        // Date: 4/11/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Disallows copy, paste, cut from keyboard.</summary>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -544,6 +554,44 @@ namespace RaptorMath
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        // TODO: Need to come up with a way to show the admin which lines in the file were not added
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/13/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Attempts to import a list of students into the sysem from a file.</summary>
+        private void MngUsers_ImportBtn_Click(object sender, EventArgs e)
+        {
+            openFile = new OpenFileDialog();
+            openFile.Filter = "Text Files|*.txt";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                Tuple<int, int, int, int> code = localManager.ImportStudents(openFile.FileName);
+                if (code.Item1 == 0 && code.Item4 == 0)
+                {
+                    MessageBox.Show("All users in the file were added.", "Raptor Math", MessageBoxButtons.OK);
+                    RefreshComboBoxes();
+                }
+                else if (code.Item2 == 1)
+                {
+                    MessageBox.Show("Unable to open the file.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (code.Item3 == 1)
+                {
+                    MessageBox.Show("Provided file is empty.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (code.Item4 == 1 && code.Item1 == 0)
+                {
+                    MessageBox.Show("Unable to add some students but some were added.", "Raptor Math", MessageBoxButtons.OK);
+                    RefreshComboBoxes();
+                }
+                else if (code.Item4 == 1 && code.Item1 == 1)
+                {
+                    MessageBox.Show("Unable to add any students.", "Raptor Math", MessageBoxButtons.OK);
+                }
+            }
         }
     }
 }

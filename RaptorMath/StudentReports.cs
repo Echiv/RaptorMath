@@ -26,6 +26,9 @@ Cycle 3 Changes:
  * • Added logic to only enable report buttons if there are records in the given date range
  * Date: 4/13/14
  * • Fixed two bugs that would kill the program when entering in names that don't exist
+ * Date: 4/14/14
+ * • Fixed a bug that allowed numbers and special characters into the selection combo for removing a user.
+ * • The user can no longer interact with the student combo box or the group combo box if they do not have data in them
 */
 
 using System;
@@ -122,11 +125,14 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
-        /// <summary>Handle LettersWithOneWhiteSpaceKeyPress event.</summary>
-        private void RaptorMath_LettersWithOneWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Handle Letters and white space KeyPress event.</summary>
+        private void RaptorMath_LettersAndWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
         {
             ComboBox cmbobx = (ComboBox)sender;
-            e.Handled = (!(char.IsLetter(e.KeyChar) || (e.KeyChar == ' ') || (!cmbobx.Text.Contains(' ')) || (char.IsControl(e.KeyChar))));
+            e.Handled = (!(char.IsLetter(e.KeyChar) || (e.KeyChar == ' ') || (char.IsControl(e.KeyChar))));
             if (e.Handled)
                 System.Media.SystemSounds.Beep.Play();
         }
@@ -234,18 +240,26 @@ namespace RaptorMath
             localManager.EndDate = ReportHome_EndDate.Value;
 
             this.ReportHome_StudentCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
-            this.ReportHome_GroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWithOneWhiteSpaceKeyPress); 
+            this.ReportHome_GroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndWhiteSpaceKeyPress); 
             
             foreach (Student student in localManager.studentList)
             {
                 ReportHome_StudentCmbo.Items.Add(student.LoginName);
             }
-
+            // Go ahead and disable the student combo box if there are no students in the system
+            if (ReportHome_StudentCmbo.Items.Count == 0)
+            {
+                ReportHome_StudentCmbo.Enabled = false;
+            }
             foreach (Group group in localManager.groupList)
             {
                 ReportHome_GroupCmbo.Items.Add(group.Name);
             }
-
+            // Go ahead and disable the group combo box if there are no groups in the system
+            if (ReportHome_GroupCmbo.Items.Count == 0)
+            {
+                ReportHome_GroupCmbo.Enabled = false;
+            }
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
 
