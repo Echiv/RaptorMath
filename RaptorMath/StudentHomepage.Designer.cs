@@ -60,22 +60,26 @@
             // StuHome_TimeLbl
             // 
             this.StuHome_TimeLbl.AutoSize = true;
-            this.StuHome_TimeLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StuHome_TimeLbl.Location = new System.Drawing.Point(710, 44);
+            this.StuHome_TimeLbl.BackColor = System.Drawing.Color.Transparent;
+            this.StuHome_TimeLbl.Font = new System.Drawing.Font("Elephant", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StuHome_TimeLbl.ForeColor = System.Drawing.Color.Yellow;
+            this.StuHome_TimeLbl.Location = new System.Drawing.Point(638, 41);
             this.StuHome_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuHome_TimeLbl.Name = "StuHome_TimeLbl";
-            this.StuHome_TimeLbl.Size = new System.Drawing.Size(62, 22);
+            this.StuHome_TimeLbl.Size = new System.Drawing.Size(117, 31);
             this.StuHome_TimeLbl.TabIndex = 29;
             this.StuHome_TimeLbl.Text = "<Time>";
             // 
             // StuHome_DateLbl
             // 
             this.StuHome_DateLbl.AutoSize = true;
-            this.StuHome_DateLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StuHome_DateLbl.Location = new System.Drawing.Point(710, 9);
+            this.StuHome_DateLbl.BackColor = System.Drawing.Color.Transparent;
+            this.StuHome_DateLbl.Font = new System.Drawing.Font("Elephant", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StuHome_DateLbl.ForeColor = System.Drawing.Color.Yellow;
+            this.StuHome_DateLbl.Location = new System.Drawing.Point(641, 10);
             this.StuHome_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuHome_DateLbl.Name = "StuHome_DateLbl";
-            this.StuHome_DateLbl.Size = new System.Drawing.Size(59, 22);
+            this.StuHome_DateLbl.Size = new System.Drawing.Size(114, 31);
             this.StuHome_DateLbl.TabIndex = 26;
             this.StuHome_DateLbl.Text = "<Date>";
             // 
@@ -95,22 +99,26 @@
             // StuHome_LoginDateLbl
             // 
             this.StuHome_LoginDateLbl.AutoSize = true;
-            this.StuHome_LoginDateLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StuHome_LoginDateLbl.Location = new System.Drawing.Point(114, 37);
+            this.StuHome_LoginDateLbl.BackColor = System.Drawing.Color.Transparent;
+            this.StuHome_LoginDateLbl.Font = new System.Drawing.Font("Elephant", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StuHome_LoginDateLbl.ForeColor = System.Drawing.Color.Yellow;
+            this.StuHome_LoginDateLbl.Location = new System.Drawing.Point(186, 37);
             this.StuHome_LoginDateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuHome_LoginDateLbl.Name = "StuHome_LoginDateLbl";
-            this.StuHome_LoginDateLbl.Size = new System.Drawing.Size(59, 22);
+            this.StuHome_LoginDateLbl.Size = new System.Drawing.Size(114, 31);
             this.StuHome_LoginDateLbl.TabIndex = 28;
             this.StuHome_LoginDateLbl.Text = "<Date>";
             // 
             // StuHome_LastLoginLbl
             // 
             this.StuHome_LastLoginLbl.AutoSize = true;
-            this.StuHome_LastLoginLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StuHome_LastLoginLbl.BackColor = System.Drawing.Color.Transparent;
+            this.StuHome_LastLoginLbl.Font = new System.Drawing.Font("Elephant", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StuHome_LastLoginLbl.ForeColor = System.Drawing.Color.Yellow;
             this.StuHome_LastLoginLbl.Location = new System.Drawing.Point(8, 37);
             this.StuHome_LastLoginLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuHome_LastLoginLbl.Name = "StuHome_LastLoginLbl";
-            this.StuHome_LastLoginLbl.Size = new System.Drawing.Size(83, 22);
+            this.StuHome_LastLoginLbl.Size = new System.Drawing.Size(142, 31);
             this.StuHome_LastLoginLbl.TabIndex = 25;
             this.StuHome_LastLoginLbl.Text = "Last login:";
             // 
