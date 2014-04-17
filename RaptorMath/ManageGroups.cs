@@ -330,25 +330,25 @@ namespace RaptorMath
         private void MngGroups_CreateBtn_Click(object sender, EventArgs e)
         {
             string newGroupName = localManager.RemoveExtraWhiteSpace(MngGroups_GroupNameCmbo.Text);
-            if (newGroupName != string.Empty)
-            {
-                bool isGroupAdded = localManager.CreateGroup(newGroupName);
-                if (isGroupAdded)
+                if (newGroupName != string.Empty)
                 {
-                    MessageBox.Show("New group created.", "Raptor Math", MessageBoxButtons.OK);
-                    RefreshCmboBoxes();
-                    ClearCmboBoxes();
-                    MngGroups_GroupNameCmbo.Select();
+                    bool isGroupAdded = localManager.CreateGroup(newGroupName);
+                    if (isGroupAdded)
+                    {
+                        MessageBox.Show("New group created.", "Raptor Math", MessageBoxButtons.OK);
+                        RefreshCmboBoxes();
+                        ClearCmboBoxes();
+                        MngGroups_GroupNameCmbo.Select();
+                    }
+                    else
+                    {
+                        MessageBox.Show("A group with the provided name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("A group with the provided name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("A group name cannot be blank.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            else
-            {
-                MessageBox.Show("A group name cannot be blank.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         //------------------------------------------------------------------//
