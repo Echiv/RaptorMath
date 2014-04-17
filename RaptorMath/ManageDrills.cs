@@ -31,6 +31,7 @@ Cycle 3 Changes:
  * • Added logic to keep the user from entering numbers into the student/group selection box if they are selecting a student.
  * • Added loginc to handle white space problems.
  * • Fixed the issue were the error sound would play when entering numbers for a group name.
+ * • Added logic to enable/disable the select drill combo box and the add/remove button correctly.
 */
 
 using System;
@@ -126,26 +127,24 @@ namespace RaptorMath
             }
         }
 
-        //------------------------------------------------------------------//
-        // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/15/14                                                    //
-        //------------------------------------------------------------------//
-        /// <summary>Handle LettersAndDigitsKeyDownEvent event.</summary>
-        private void RaptorMath_LettersAndDigitsKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (MngDrills_StudentRdo.Checked)
-            {
-                Console.WriteLine("RaptorMath_LettersAndDigitsKeyDownEvent: RaptorMath_LettersWhiteSpaceKeyPress(sender, e);");
-                //RaptorMath_LettersWhiteSpaceKeyPress(sender, e);
-                RaptorMath_LettersKeyDown(sender, e);
-            }
-            else if (MngDrills_GroupRdo.Checked)
-            {
-                Console.WriteLine("RaptorMath_LettersAndDigitsKeyDownEvent: RaptorMath_LettersDigitWhiteSpaceKeyPress(sender, e);");
-                //RaptorMath_LettersDigitWhiteSpaceKeyPress(sender, e);
-                RaptorMath_LettersAndDigitsKeyDown(sender, e);
-            }
-        }
+        ////------------------------------------------------------------------//
+        //// Authors: Joshua Boone and Justine Dinh                           //
+        //// Date: 4/15/14                                                    //
+        ////------------------------------------------------------------------//
+        ///// <summary>Handle LettersAndDigitsKeyDownEvent event.</summary>
+        //private void RaptorMath_LettersAndDigitsKeyDownEvent(object sender, KeyEventArgs e)
+        //{
+        //    if (MngDrills_StudentRdo.Checked)
+        //    {
+        //        //RaptorMath_LettersWhiteSpaceKeyPress(sender, e);
+        //        RaptorMath_LettersKeyDown(sender, e);
+        //    }
+        //    else if (MngDrills_GroupRdo.Checked)
+        //    {
+        //        //RaptorMath_LettersDigitWhiteSpaceKeyPress(sender, e);
+        //        RaptorMath_LettersAndDigitsKeyDown(sender, e);
+        //    }
+        //}
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
@@ -279,6 +278,10 @@ namespace RaptorMath
             foreach (Student student in localManager.studentList)
             {
                 MngDrills_StudentOrGroupCmbo.Items.Add(student.LoginName);
+            }
+            if (MngDrills_StudentRdo.Checked && MngDrills_StudentOrGroupCmbo.Items.Count == 0)
+            {
+                MngDrills_StudentOrGroupCmbo.Enabled = false;
             }
         }
 
@@ -477,7 +480,7 @@ namespace RaptorMath
 
             MngDrills_AssignDrillRdo.Select();
             MngDrills_StudentRdo.Select();
-
+            MngDrills_SelectDrillCmbo.Enabled = false;
             //this.MngDrills_StudentOrGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWhiteSpaceKeyPress);
             this.MngDrills_SelectDrillCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
             this.AdminName = localManager.currentUser.Remove(0, 8);
@@ -642,11 +645,12 @@ namespace RaptorMath
         /// <summary>Handle 'student' radiobutton click.</summary>
         private void MngDrills_StudentRdo_CheckedChanged(object sender, EventArgs e)
         {
-            //this.MngDrills_StudentOrGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWhiteSpaceKeyPress);
             MngDrills_StudentOrGroupCmbo.Text = string.Empty;
             RefreshStudentCmboBox();
             RefreshAllDrillBoxesWithRdoChoices();
             MngDrills_StudentOrGroupLbl.Text = "Student";
+            MngDrills_SelectDrillCmbo.Enabled = false;
+            MngDrills_AddRmvDrillBtn.Enabled = false;
         }
 
         //------------------------------------------------------------------//
@@ -660,11 +664,12 @@ namespace RaptorMath
         /// <summary>Handle 'group' radiobutton click.</summary>
         private void MngDrills_GroupRdo_CheckedChanged(object sender, EventArgs e)
         {
-            //this.MngDrills_StudentOrGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
             MngDrills_StudentOrGroupCmbo.Text = string.Empty;
             RefreshGroupCmboBox();
             RefreshAllDrillBoxesWithRdoChoices();
             MngDrills_StudentOrGroupLbl.Text = "Group";
+            MngDrills_SelectDrillCmbo.Enabled = false;
+            MngDrills_AddRmvDrillBtn.Enabled = false;
         }
 
         //------------------------------------------------------------------//
@@ -688,6 +693,20 @@ namespace RaptorMath
         private void MngDrills_StudentOrGroupCmbo_TextChanged(object sender, EventArgs e)
         {
             RefreshAllDrillBoxesWithRdoChoices();
+            if (MngDrills_StudentOrGroupCmbo.Text.Length > 0 && MngDrills_SelectDrillCmbo.Text.Length > 0)
+            {
+                MngDrills_SelectDrillCmbo.Enabled = true;
+                MngDrills_AddRmvDrillBtn.Enabled = true;
+            }
+            else if (MngDrills_StudentOrGroupCmbo.Text.Length > 0)
+            {
+                MngDrills_SelectDrillCmbo.Enabled = true;
+            }
+            else
+            {
+                MngDrills_SelectDrillCmbo.Enabled = false;
+                MngDrills_AddRmvDrillBtn.Enabled = false;
+            }
         }
 
         //------------------------------------------------------------------//
@@ -727,7 +746,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/11/14                                                     //
+        // Date: 4/11/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Disallows copy, paste, cut from keyboard.</summary>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -738,6 +757,23 @@ namespace RaptorMath
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Handles the enabling of the add/remove button.</summary>
+        private void MngDrills_SelectDrillCmbo_TextChanged(object sender, EventArgs e)
+        {
+            if (MngDrills_SelectDrillCmbo.Text.Length > 0)
+            {
+                MngDrills_AddRmvDrillBtn.Enabled = true;
+            }
+            else
+            {
+                MngDrills_AddRmvDrillBtn.Enabled = false;
+            }
         }
     }
 }

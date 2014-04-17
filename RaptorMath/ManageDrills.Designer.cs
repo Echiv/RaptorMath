@@ -279,6 +279,7 @@
             this.MngDrills_SelectDrillCmbo.Name = "MngDrills_SelectDrillCmbo";
             this.MngDrills_SelectDrillCmbo.Size = new System.Drawing.Size(178, 21);
             this.MngDrills_SelectDrillCmbo.TabIndex = 1;
+            this.MngDrills_SelectDrillCmbo.TextChanged += new System.EventHandler(this.MngDrills_SelectDrillCmbo_TextChanged);
             this.MngDrills_SelectDrillCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_DigitsKeyDown);
             this.MngDrills_SelectDrillCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngDrills_PerformBoxTextBoxes_KeyPress);
             this.MngDrills_SelectDrillCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
