@@ -46,6 +46,7 @@
             this.MngDrills_AssignDrillRdo = new System.Windows.Forms.RadioButton();
             this.MngDrills_PerformBox = new System.Windows.Forms.GroupBox();
             this.MngDrills_SelectDrillCmbo = new System.Windows.Forms.ComboBox();
+            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MngDrills_StudentOrGroupCmbo = new System.Windows.Forms.ComboBox();
             this.MngDrills_AddRmvDrillBtn = new System.Windows.Forms.Button();
             this.MngDrills_SelectDrillLbl = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.MngDrills_Timer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MngDrills_UserInfoBox.SuspendLayout();
             this.MngDrills_DrillBox.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -269,6 +269,8 @@
             // 
             // MngDrills_SelectDrillCmbo
             // 
+            this.MngDrills_SelectDrillCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.MngDrills_SelectDrillCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.MngDrills_SelectDrillCmbo.ContextMenuStrip = this.doNothingContextMenu;
             this.MngDrills_SelectDrillCmbo.FormattingEnabled = true;
             this.MngDrills_SelectDrillCmbo.Location = new System.Drawing.Point(156, 69);
@@ -281,9 +283,15 @@
             this.MngDrills_SelectDrillCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngDrills_PerformBoxTextBoxes_KeyPress);
             this.MngDrills_SelectDrillCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
+            // doNothingContextMenu
+            // 
+            this.doNothingContextMenu.Name = "doNothingContextMenu";
+            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
+            // 
             // MngDrills_StudentOrGroupCmbo
             // 
             this.MngDrills_StudentOrGroupCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.MngDrills_StudentOrGroupCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.MngDrills_StudentOrGroupCmbo.ContextMenuStrip = this.doNothingContextMenu;
             this.MngDrills_StudentOrGroupCmbo.FormattingEnabled = true;
             this.MngDrills_StudentOrGroupCmbo.Location = new System.Drawing.Point(156, 37);
@@ -393,11 +401,6 @@
             this.MngDrills_Timer.Enabled = true;
             this.MngDrills_Timer.Interval = 1000;
             this.MngDrills_Timer.Tick += new System.EventHandler(this.MngDrills_Timer_Tick);
-            // 
-            // doNothingContextMenu
-            // 
-            this.doNothingContextMenu.Name = "doNothingContextMenu";
-            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
             // 
             // ManageDrills_Form
             // 

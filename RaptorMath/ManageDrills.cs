@@ -27,6 +27,9 @@ Cycle 3 Changes:
  * • Added logic to disallow copy, paste, and cut.
  * Date: 4/13/14
  * • Repalced generic message boxes with error message boxes where needed.
+ * Date: 4/16/14
+ * • Added logic to keep the user from entering numbers into the student/group selection box if they are selecting a student.
+ * • Added loginc to handle white space problems.
 */
 
 using System;
@@ -167,6 +170,18 @@ namespace RaptorMath
         private void RaptorMath_LettersKeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersKeyPress event.</summary>
+        private void RaptorMath_LettersWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || (char.IsControl(e.KeyChar)) || (e.KeyChar == ' '));
             if (e.Handled)
                 System.Media.SystemSounds.Beep.Play();
         }
@@ -395,6 +410,10 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Create Drill form constructor.</summary>
         /// <param name="manager">The program management class.</param>
         public ManageDrills_Form(Manager manager)
@@ -408,7 +427,7 @@ namespace RaptorMath
             MngDrills_AssignDrillRdo.Select();
             MngDrills_StudentRdo.Select();
 
-            this.MngDrills_StudentOrGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
+            this.MngDrills_StudentOrGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWhiteSpaceKeyPress);
             this.MngDrills_SelectDrillCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
@@ -427,25 +446,30 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Handle 'Add/Rmv Drill' button click.</summary>
         private void MngDrills_AddRmvDrillBtn_Click(object sender, EventArgs e)
         {
             if (MngDrills_AssignDrillRdo.Checked)
             {
+                string studentOrGroupName = localManager.RemoveExtraWhiteSpace(MngDrills_StudentOrGroupCmbo.Text);
                 bool isAssigned = false;
                 bool isStudent = false;
                 // Assigning to a group
                 if((MngDrills_GroupRdo.Checked) && (!MngDrills_StudentRdo.Checked))
                 {
-                    isAssigned = localManager.AssignDrillToGroup(MngDrills_StudentOrGroupCmbo.Text, MngDrills_SelectDrillCmbo.Text);
-                    RefreshSelectUnassignedDrillCmbo(localManager.FindGroupByName(MngDrills_StudentOrGroupCmbo.Text));
+                    isAssigned = localManager.AssignDrillToGroup(studentOrGroupName, MngDrills_SelectDrillCmbo.Text);
+                    RefreshSelectUnassignedDrillCmbo(localManager.FindGroupByName(studentOrGroupName));
                     isStudent = false;
                 }
                 // Assigning to a student
                 else if ((MngDrills_StudentRdo.Checked) && (!MngDrills_GroupRdo.Checked))
                 {
-                    isAssigned = localManager.AssignDrillToStudent(MngDrills_StudentOrGroupCmbo.Text, MngDrills_SelectDrillCmbo.Text);
-                    RefreshSelectUnassignedDrillCmbo(localManager.FindStudentWithName(MngDrills_StudentOrGroupCmbo.Text));
+                    isAssigned = localManager.AssignDrillToStudent(studentOrGroupName, MngDrills_SelectDrillCmbo.Text);
+                    RefreshSelectUnassignedDrillCmbo(localManager.FindStudentWithName(studentOrGroupName));
                     isStudent = true;
                 }
 
@@ -470,20 +494,21 @@ namespace RaptorMath
             }
             else if(MngDrills_RemoveDrillRdo.Checked)
             {
+                string studentOrGroupName = localManager.RemoveExtraWhiteSpace(MngDrills_StudentOrGroupCmbo.Text);
                 bool isUnassigned = false;
                 bool isStudent = false;
                 // Removing from group
                 if ((MngDrills_GroupRdo.Checked) && (!MngDrills_StudentRdo.Checked))
                 {
-                    isUnassigned = localManager.UnassignDrillFromGroup(MngDrills_StudentOrGroupCmbo.Text, MngDrills_SelectDrillCmbo.Text);
-                    RefreshSelectAssignedDrillCmbo(localManager.FindGroupByName(MngDrills_StudentOrGroupCmbo.Text));
+                    isUnassigned = localManager.UnassignDrillFromGroup(studentOrGroupName, MngDrills_SelectDrillCmbo.Text);
+                    RefreshSelectAssignedDrillCmbo(localManager.FindGroupByName(studentOrGroupName));
                     isStudent = false;
                 }
                 // Removing from student
                 if ((MngDrills_StudentRdo.Checked) && (!MngDrills_GroupRdo.Checked))
                 {
-                    isUnassigned = localManager.UnassignDrillFromStudent(MngDrills_StudentOrGroupCmbo.Text, MngDrills_SelectDrillCmbo.Text);
-                    RefreshSelectAssignedDrillCmbo(localManager.FindStudentWithName(MngDrills_StudentOrGroupCmbo.Text));
+                    isUnassigned = localManager.UnassignDrillFromStudent(studentOrGroupName, MngDrills_SelectDrillCmbo.Text);
+                    RefreshSelectAssignedDrillCmbo(localManager.FindStudentWithName(studentOrGroupName));
                     isStudent = true;
                 }
                 if ((isUnassigned == true) && (isStudent == true))
@@ -559,9 +584,14 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Handle 'student' radiobutton click.</summary>
         private void MngDrills_StudentRdo_CheckedChanged(object sender, EventArgs e)
         {
+            this.MngDrills_StudentOrGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWhiteSpaceKeyPress);
             MngDrills_StudentOrGroupCmbo.Text = string.Empty;
             RefreshStudentCmboBox();
             RefreshAllDrillBoxesWithRdoChoices();
@@ -572,9 +602,14 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Handle 'group' radiobutton click.</summary>
         private void MngDrills_GroupRdo_CheckedChanged(object sender, EventArgs e)
         {
+            this.MngDrills_StudentOrGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
             MngDrills_StudentOrGroupCmbo.Text = string.Empty;
             RefreshGroupCmboBox();
             RefreshAllDrillBoxesWithRdoChoices();
@@ -608,29 +643,34 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Refreshes all combo boxes, which will be repopulated 
         /// relative to radiobutton selections.</summary>
         private void RefreshAllDrillBoxesWithRdoChoices()
         {
+            string studentOrGroupName = localManager.RemoveExtraWhiteSpace(MngDrills_StudentOrGroupCmbo.Text);
             // Assigning to student
             if ((MngDrills_AssignDrillRdo.Checked) && (MngDrills_StudentRdo.Checked))
             {
-                RefreshSelectUnassignedDrillCmbo(localManager.FindStudentWithName(MngDrills_StudentOrGroupCmbo.Text));
+                RefreshSelectUnassignedDrillCmbo(localManager.FindStudentWithName(studentOrGroupName));
             }
             // Assigning to group
             else if ((MngDrills_AssignDrillRdo.Checked) && (MngDrills_GroupRdo.Checked))
             {
-                RefreshSelectUnassignedDrillCmbo(localManager.FindGroupByName(MngDrills_StudentOrGroupCmbo.Text));
+                RefreshSelectUnassignedDrillCmbo(localManager.FindGroupByName(studentOrGroupName));
             }
             // Removing from student
             else if ((MngDrills_RemoveDrillRdo.Checked) && (MngDrills_StudentRdo.Checked))
             {
-                RefreshSelectAssignedDrillCmbo(localManager.FindStudentWithName(MngDrills_StudentOrGroupCmbo.Text));
+                RefreshSelectAssignedDrillCmbo(localManager.FindStudentWithName(studentOrGroupName));
             }
             // Removing from group
             else if ((MngDrills_RemoveDrillRdo.Checked) && (MngDrills_GroupRdo.Checked))
             {
-                RefreshSelectAssignedDrillCmbo(localManager.FindGroupByName(MngDrills_StudentOrGroupCmbo.Text));
+                RefreshSelectAssignedDrillCmbo(localManager.FindGroupByName(studentOrGroupName));
             }
         }
 

@@ -64,7 +64,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/12/14                                                     //
+        // Date: 4/12/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Disallows closing a window with the window's 'X' button.</summary>
         private const int CP_NOCLOSE_BUTTON = 0x200;
