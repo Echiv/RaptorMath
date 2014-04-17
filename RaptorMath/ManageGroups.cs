@@ -31,6 +31,7 @@ Cycle 3 Changes:
  * Date: 4/16/14
  * • Added logic to to remove leading and trailing white space from group names along with changing spaces in between
  *   words down to onlt one space if there is more than that.
+ * • Fixed a small bug that would let you rename a group to its current name if you added leading or trailing white space.  
 */
 
 using System;
@@ -388,14 +389,15 @@ namespace RaptorMath
         /// <summary>Handle 'Rename Group' button click.</summary>
         private void MngGroups_RenameBtn_Click(object sender, EventArgs e)
         {
-            if (MngGroups_SelectGroupCmbo.Text.Trim() != "Unassigned")
+            string groupName = localManager.RemoveExtraWhiteSpace(MngGroups_SelectGroupCmbo.Text);
+            string newGroupName = localManager.RemoveExtraWhiteSpace(MngGroups_NewNameCmbo.Text);
+            if (groupName != "Unassigned")
             {
-                if (!MngGroups_SelectGroupCmbo.Text.Equals(MngGroups_NewNameCmbo.Text))
+                if (!groupName.Equals(newGroupName))
                 {
-                    string newGroupName = localManager.RemoveExtraWhiteSpace(MngGroups_NewNameCmbo.Text);
                     if (newGroupName != string.Empty)
                     {
-                        bool isGroupRenamed = localManager.RenameGroup(newGroupName, MngGroups_SelectGroupCmbo.Text, localManager.groupList);
+                        bool isGroupRenamed = localManager.RenameGroup(newGroupName, groupName, localManager.groupList);
                         if (isGroupRenamed)
                         {
                             MessageBox.Show("Group has been renamed.", "Raptor Math", MessageBoxButtons.OK);
