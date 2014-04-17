@@ -30,6 +30,7 @@ Cycle 3 Changes:
  * Date: 4/16/14
  * • Added logic to keep the user from entering numbers into the student/group selection box if they are selecting a student.
  * • Added loginc to handle white space problems.
+ * • Fixed the issue were the error sound would play when entering numbers for a group name.
 */
 
 using System;
@@ -126,6 +127,27 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/15/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersAndDigitsKeyDownEvent event.</summary>
+        private void RaptorMath_LettersAndDigitsKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (MngDrills_StudentRdo.Checked)
+            {
+                Console.WriteLine("RaptorMath_LettersAndDigitsKeyDownEvent: RaptorMath_LettersWhiteSpaceKeyPress(sender, e);");
+                //RaptorMath_LettersWhiteSpaceKeyPress(sender, e);
+                RaptorMath_LettersKeyDown(sender, e);
+            }
+            else if (MngDrills_GroupRdo.Checked)
+            {
+                Console.WriteLine("RaptorMath_LettersAndDigitsKeyDownEvent: RaptorMath_LettersDigitWhiteSpaceKeyPress(sender, e);");
+                //RaptorMath_LettersDigitWhiteSpaceKeyPress(sender, e);
+                RaptorMath_LettersAndDigitsKeyDown(sender, e);
+            }
+        }
+
+        //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
@@ -175,13 +197,42 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
-        // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/16/14                                                    //
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/7/14                                                     //
         //------------------------------------------------------------------//
         /// <summary>Handle LettersKeyPress event.</summary>
         private void RaptorMath_LettersWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || (char.IsControl(e.KeyChar)) || (e.KeyChar == ' '));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Handles deciding which key press event to allow based on the radio button selectged.</summary>
+        private void RaptorMath_SpecialKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (MngDrills_StudentRdo.Checked)
+            {
+                RaptorMath_LettersWhiteSpaceKeyPress(sender, e);
+            }
+            else if (MngDrills_GroupRdo.Checked)
+            {
+                RaptorMath_LettersDigitWhiteSpaceKeyPress(sender, e);
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Handle LettersKeyPress event.</summary>
+        private void RaptorMath_LettersDigitWhiteSpaceKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == ' ');
             if (e.Handled)
                 System.Media.SystemSounds.Beep.Play();
         }
@@ -427,7 +478,7 @@ namespace RaptorMath
             MngDrills_AssignDrillRdo.Select();
             MngDrills_StudentRdo.Select();
 
-            this.MngDrills_StudentOrGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWhiteSpaceKeyPress);
+            //this.MngDrills_StudentOrGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWhiteSpaceKeyPress);
             this.MngDrills_SelectDrillCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
             this.AdminName = localManager.currentUser.Remove(0, 8);
         }
@@ -591,7 +642,7 @@ namespace RaptorMath
         /// <summary>Handle 'student' radiobutton click.</summary>
         private void MngDrills_StudentRdo_CheckedChanged(object sender, EventArgs e)
         {
-            this.MngDrills_StudentOrGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWhiteSpaceKeyPress);
+            //this.MngDrills_StudentOrGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersWhiteSpaceKeyPress);
             MngDrills_StudentOrGroupCmbo.Text = string.Empty;
             RefreshStudentCmboBox();
             RefreshAllDrillBoxesWithRdoChoices();
@@ -609,7 +660,7 @@ namespace RaptorMath
         /// <summary>Handle 'group' radiobutton click.</summary>
         private void MngDrills_GroupRdo_CheckedChanged(object sender, EventArgs e)
         {
-            this.MngDrills_StudentOrGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
+            //this.MngDrills_StudentOrGroupCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPress);
             MngDrills_StudentOrGroupCmbo.Text = string.Empty;
             RefreshGroupCmboBox();
             RefreshAllDrillBoxesWithRdoChoices();

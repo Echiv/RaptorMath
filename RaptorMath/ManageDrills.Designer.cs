@@ -302,8 +302,7 @@
             this.MngDrills_StudentOrGroupCmbo.TabIndex = 0;
             this.MngDrills_StudentOrGroupCmbo.SelectedIndexChanged += new System.EventHandler(this.MngDrills_StudentOrGroupCmbo_TextChanged);
             this.MngDrills_StudentOrGroupCmbo.TextChanged += new System.EventHandler(this.MngDrills_StudentOrGroupCmbo_TextChanged);
-            this.MngDrills_StudentOrGroupCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
-            this.MngDrills_StudentOrGroupCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngDrills_PerformBoxTextBoxes_KeyPress);
+            this.MngDrills_StudentOrGroupCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_SpecialKeyPress);
             this.MngDrills_StudentOrGroupCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
             // MngDrills_AddRmvDrillBtn
