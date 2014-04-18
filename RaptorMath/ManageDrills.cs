@@ -728,34 +728,6 @@ namespace RaptorMath
                 MngDrills_AddRmvDrillBtn.Enabled = false;
             }
 
-            //// If the student radio button is selected check to see if there any drills not assigned to the student
-            //// else do the same check but for groups
-            //if (MngDrills_StudentRdo.Checked)
-            //{
-            //    if (localManager.IsExistUnassignedStudentDrills(localManager.RemoveExtraWhiteSpace(MngDrills_StudentOrGroupCmbo.Text)))
-            //    {
-            //        MngDrills_SelectDrillCmbo.Enabled = true;
-            //    }
-            //    else
-            //    {
-            //        MngDrills_SelectDrillCmbo.Enabled = false;
-            //    }
-            //}
-            //else if (MngDrills_GroupRdo.Checked)
-            //{
-            //    if (localManager.IsExistUnassignedGroupDrills(localManager.RemoveExtraWhiteSpace(MngDrills_StudentOrGroupCmbo.Text)))
-            //    {
-            //        MngDrills_SelectDrillCmbo.Enabled = true;
-            //    }
-            //    else
-            //    {
-            //        MngDrills_SelectDrillCmbo.Enabled = false;
-            //        MngDrills_SelectDrillCmbo.Text = string.Empty;
-            //    }
-            //}
-            System.Diagnostics.Debug.WriteLine("MngDrills_StudentOrGroupCmbo_TextChanged");
-
-            // Now to handle text change when assign drill or remove drill is selected
             if (MngDrills_AssignDrillRdo.Checked)
             {
                 System.Diagnostics.Debug.WriteLine("MngDrills_AssignDrillRdo");
@@ -811,16 +783,6 @@ namespace RaptorMath
                         MngDrills_SelectDrillCmbo.Text = string.Empty;
                     }
                 }
-
-                //if (localManager.IsExistAssignedGroupDrills(localManager.RemoveExtraWhiteSpace(MngDrills_StudentOrGroupCmbo.Text)))
-                //{
-                //    MngDrills_SelectDrillCmbo.Enabled = true;
-                //}
-                //else
-                //{
-                //    MngDrills_SelectDrillCmbo.Enabled = false;
-                //    MngDrills_SelectDrillCmbo.Text = string.Empty;
-                //}
             }
         }
 
