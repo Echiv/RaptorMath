@@ -44,6 +44,8 @@ Cycle 3 Changes:
  * • Added logic to keep the save button disabled until all boxes have the correct data in them.
  * Date: 4/16/14
  * • Updated logic for the radio buttons so the they enable/disbale the save button correctly when clicked.
+ * Date: 4/17/14
+ * • Changed a UI issue where the confirm password text box was not cleared when the password text box was emptied.
 */
 
 using System;
@@ -65,7 +67,7 @@ namespace RaptorMath
         OpenFileDialog openFile;
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/12/14                                                     //
+        // Date: 4/12/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Disallows closing a window with the window's 'X' button.</summary>
         private const int CP_NOCLOSE_BUTTON = 0x200;
@@ -698,6 +700,11 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void MngUsers_PasswordTxt_TextChanged(object sender, EventArgs e)
         {
+            if (MngUsers_PasswordTxt.Text.Length == 0)
+            {
+                MngUsers_ConfirmPasswordTxt.Text = string.Empty;
+            }
+
             if (MngUsers_PasswordTxt.Text.Length >= 4)
             {
                 MngUsers_ConfirmPasswordTxt.Enabled = true;

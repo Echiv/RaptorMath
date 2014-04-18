@@ -36,6 +36,8 @@ Cycle 3 Changes:
  * • Changed it so that extra white space in the login name is handled correctly.
  * • Cannot put spaces into the password box anymore.
  * • Changed the minimal length of a password to 4 and the maximum length to 8
+ * Date: 4/17/14
+ * • Fixed a small issue where the password box wasn't cleared when selecting a different user after entering a password.
 */
 
 using System;
@@ -388,7 +390,7 @@ namespace RaptorMath
                 UseDesg_LoginBtn.Enabled = false;
                 UseDesg_passwordBox.Enabled = false;
             }
-
+            UseDesg_passwordBox.Text = string.Empty;
         }
 
         //------------------------------------------------------------------//

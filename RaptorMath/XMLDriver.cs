@@ -427,6 +427,28 @@ namespace RaptorMath
         }
 
         //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Adding a new drill to Drill XML. </summary>
+        /// <param name="drill">Drill name.</param>
+        /// <param name="drillList">List of drill objects.</param>
+        /// <returns>Returns the total amount of drills in the systemn.</returns>
+        public int NumberOfDrills()
+        {
+            int numDrills = 0;
+            XDocument data = XDocument.Load(drillXMLPath);
+            if (data != null)
+            {
+                foreach (XElement drill in data.Root.Nodes())
+                {
+                    numDrills++;
+                }
+            }
+            return numDrills;
+        }
+
+        //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//

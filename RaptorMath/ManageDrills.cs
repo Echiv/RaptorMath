@@ -57,7 +57,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/12/14                                                     //
+        // Date: 4/12/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Disallows closing a window with the window's 'X' button.</summary>
         private const int CP_NOCLOSE_BUTTON = 0x200;
@@ -620,6 +620,9 @@ namespace RaptorMath
         private void MngDrills_AssignDrillRdo_CheckedChanged(object sender, EventArgs e)
         {
             RefreshAllDrillBoxesWithRdoChoices();
+            MngDrills_SelectDrillCmbo.Text = string.Empty;
+            MngDrills_StudentOrGroupCmbo.Text = string.Empty;
+            MngDrills_AddRmvDrillBtn.Enabled = false;
             MngDrills_AddRmvDrillBtn.Text = "Add Drill";
         }
 
@@ -627,11 +630,26 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/3/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Handle 'remove' radiobutton click.</summary>
         private void MngDrills_RemoveDrillRdo_CheckedChanged(object sender, EventArgs e)
         {
             RefreshAllDrillBoxesWithRdoChoices();
             MngDrills_AddRmvDrillBtn.Text = "Remove Drill";
+            MngDrills_SelectDrillCmbo.Text = string.Empty;
+            MngDrills_StudentOrGroupCmbo.Text = string.Empty;
+            MngDrills_AddRmvDrillBtn.Enabled = false;
+            if (localManager.NumStudentDrills(localManager.RemoveExtraWhiteSpace(MngDrills_StudentOrGroupCmbo.Text)) > 0)
+            {
+                MngDrills_AddRmvDrillBtn.Enabled = true;
+            }
+            else
+            {
+                MngDrills_AddRmvDrillBtn.Enabled = false;
+            }
         }
 
         //------------------------------------------------------------------//
@@ -646,6 +664,7 @@ namespace RaptorMath
         private void MngDrills_StudentRdo_CheckedChanged(object sender, EventArgs e)
         {
             MngDrills_StudentOrGroupCmbo.Text = string.Empty;
+            MngDrills_SelectDrillCmbo.Text = string.Empty;
             RefreshStudentCmboBox();
             RefreshAllDrillBoxesWithRdoChoices();
             MngDrills_StudentOrGroupLbl.Text = "Student";
@@ -665,6 +684,7 @@ namespace RaptorMath
         private void MngDrills_GroupRdo_CheckedChanged(object sender, EventArgs e)
         {
             MngDrills_StudentOrGroupCmbo.Text = string.Empty;
+            MngDrills_SelectDrillCmbo.Text = string.Empty;
             RefreshGroupCmboBox();
             RefreshAllDrillBoxesWithRdoChoices();
             MngDrills_StudentOrGroupLbl.Text = "Group";
@@ -706,6 +726,101 @@ namespace RaptorMath
             {
                 MngDrills_SelectDrillCmbo.Enabled = false;
                 MngDrills_AddRmvDrillBtn.Enabled = false;
+            }
+
+            //// If the student radio button is selected check to see if there any drills not assigned to the student
+            //// else do the same check but for groups
+            //if (MngDrills_StudentRdo.Checked)
+            //{
+            //    if (localManager.IsExistUnassignedStudentDrills(localManager.RemoveExtraWhiteSpace(MngDrills_StudentOrGroupCmbo.Text)))
+            //    {
+            //        MngDrills_SelectDrillCmbo.Enabled = true;
+            //    }
+            //    else
+            //    {
+            //        MngDrills_SelectDrillCmbo.Enabled = false;
+            //    }
+            //}
+            //else if (MngDrills_GroupRdo.Checked)
+            //{
+            //    if (localManager.IsExistUnassignedGroupDrills(localManager.RemoveExtraWhiteSpace(MngDrills_StudentOrGroupCmbo.Text)))
+            //    {
+            //        MngDrills_SelectDrillCmbo.Enabled = true;
+            //    }
+            //    else
+            //    {
+            //        MngDrills_SelectDrillCmbo.Enabled = false;
+            //        MngDrills_SelectDrillCmbo.Text = string.Empty;
+            //    }
+            //}
+            System.Diagnostics.Debug.WriteLine("MngDrills_StudentOrGroupCmbo_TextChanged");
+
+            // Now to handle text change when assign drill or remove drill is selected
+            if (MngDrills_AssignDrillRdo.Checked)
+            {
+                System.Diagnostics.Debug.WriteLine("MngDrills_AssignDrillRdo");
+
+                if (MngDrills_StudentRdo.Checked)
+                {
+                    if (localManager.IsExistUnassignedStudentDrills(localManager.RemoveExtraWhiteSpace(MngDrills_StudentOrGroupCmbo.Text)))
+                    {
+                        MngDrills_SelectDrillCmbo.Enabled = true;
+                    }
+                    else
+                    {
+                        MngDrills_SelectDrillCmbo.Enabled = false;
+                    }
+                }
+                else if (MngDrills_GroupRdo.Checked)
+                {
+                    if (localManager.IsExistUnassignedGroupDrills(localManager.RemoveExtraWhiteSpace(MngDrills_StudentOrGroupCmbo.Text)))
+                    {
+                        MngDrills_SelectDrillCmbo.Enabled = true;
+                    }
+                    else
+                    {
+                        MngDrills_SelectDrillCmbo.Enabled = false;
+                        MngDrills_SelectDrillCmbo.Text = string.Empty;
+                    }
+                }
+            }
+            else if (MngDrills_RemoveDrillRdo.Checked)
+            {
+                System.Diagnostics.Debug.WriteLine("MngDrills_RemoveDrillRdo");
+                System.Diagnostics.Debug.WriteLine(MngDrills_StudentOrGroupCmbo.Text);
+                if (MngDrills_StudentRdo.Checked)
+                {
+                    if (localManager.IsExistAssignedStudentDrills(localManager.RemoveExtraWhiteSpace(MngDrills_StudentOrGroupCmbo.Text)))
+                    {
+                        MngDrills_SelectDrillCmbo.Enabled = true;
+                    }
+                    else
+                    {
+                        MngDrills_SelectDrillCmbo.Enabled = false;
+                    }
+                }
+                else if (MngDrills_GroupRdo.Checked)
+                {
+                    if (localManager.IsExistAssignedGroupDrills(localManager.RemoveExtraWhiteSpace(MngDrills_StudentOrGroupCmbo.Text)))
+                    {
+                        MngDrills_SelectDrillCmbo.Enabled = true;
+                    }
+                    else
+                    {
+                        MngDrills_SelectDrillCmbo.Enabled = false;
+                        MngDrills_SelectDrillCmbo.Text = string.Empty;
+                    }
+                }
+
+                //if (localManager.IsExistAssignedGroupDrills(localManager.RemoveExtraWhiteSpace(MngDrills_StudentOrGroupCmbo.Text)))
+                //{
+                //    MngDrills_SelectDrillCmbo.Enabled = true;
+                //}
+                //else
+                //{
+                //    MngDrills_SelectDrillCmbo.Enabled = false;
+                //    MngDrills_SelectDrillCmbo.Text = string.Empty;
+                //}
             }
         }
 

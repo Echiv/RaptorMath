@@ -1966,5 +1966,115 @@ namespace RaptorMath
             sorted.Sort();
             return sorted;
         }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/18/14                                                    //
+        //------------------------------------------------------------------//
+        /// <param name="studentName">The name of the student to look up</param>
+        /// <summary>Returns whether or not there exists assigned driils for the selected student.</summary>
+        public bool IsExistAssignedStudentDrills(string studentName)
+        {
+            bool assigned = false;
+            if (FindStudentWithName(studentName) != null)
+            {
+                if (NumStudentDrills(studentName) > 0)
+                    assigned = true;
+
+            }
+            return assigned;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/18/14                                                    //
+        //------------------------------------------------------------------//
+        /// <param name="studentName">The name of the group to look up</param>
+        /// <summary>Returns whether or not there exists assigned driils for the group student.</summary>
+        public bool IsExistAssignedGroupDrills(string studentName)
+        {
+            bool assigned = false;
+            if (FindGroupByName(studentName) != null)
+            {
+                if (NumGroupDrills(studentName) > 0)
+                    assigned = true;
+
+            }
+            return assigned;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
+        /// <param name="studentName">The name of the student to look up</param>
+        /// <summary>Returns whether or not there exists unassigned driils for the selected student.</summary>
+        public bool IsExistUnassignedStudentDrills(string studentName)
+        {
+            bool unassigned = false;
+            if (FindStudentWithName(studentName) != null)
+            {
+                int numSystemDrills = XMLDriver.NumberOfDrills();
+                int numStudentDriils = NumStudentDrills(studentName);
+                if ((numSystemDrills-numStudentDriils) > 0)
+                {
+                    unassigned = true;
+                }
+            }
+            return unassigned;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/18/14                                                    //
+        //------------------------------------------------------------------//
+        /// <param name="groupName">The name of the group to look up</param>
+        /// <summary>Returns whether or not there exists unassigned driils for the selected group.</summary>
+        public bool IsExistUnassignedGroupDrills(string groupName)
+        {
+            bool unassigned = false;
+            if (FindGroupByName(groupName) != null)
+            {
+                int numSystemDrills = XMLDriver.NumberOfDrills();
+                int numGrouptDriils = NumGroupDrills(groupName);
+                if ((numSystemDrills - numGrouptDriils) > 0)
+                {
+                    unassigned = true;
+                }
+            }
+            return unassigned;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/16/14                                                    //
+        //------------------------------------------------------------------//
+        /// <param name="studentName">The name of the student to look up</param
+        /// <summary>Returns the number of drills a student has assigned.</summary>
+        public int NumStudentDrills(string studentName)
+        {
+            int numDrills = 0;
+            if (FindStudentWithName(studentName) != null)
+            {
+                numDrills = FindStudentWithName(studentName).curDrillList.Count;
+            }
+            return numDrills;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/18/14                                                    //
+        //------------------------------------------------------------------//
+        /// <param name="groupName">The name of the group to look up</param>
+        /// <summary>Returns the number of drills a student has assigned.</summary>
+        public int NumGroupDrills(string groupName)
+        {
+            int numDrills = 0;
+            if (FindGroupByName(groupName) != null)
+            {
+                numDrills = FindGroupByName(groupName).groupDrillList.Count;
+            }
+            return numDrills;
+        }
     }
 }
