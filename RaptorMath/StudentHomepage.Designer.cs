@@ -190,7 +190,9 @@
             this.Controls.Add(this.StuHome_LoginDateLbl);
             this.Controls.Add(this.StuHome_LastLoginLbl);
             this.Controls.Add(this.StuHome_StudentNameLbl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StudentHomepage";
+            this.Text = "RaptorMath";
             this.ResumeLayout(false);
             this.PerformLayout();
 
