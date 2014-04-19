@@ -27,6 +27,11 @@ namespace RaptorMath
                 localManager.currentStudent.LoginName, DateTime.Now.ToString("M/d/yyyy"));
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/19/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Controls what happens when a drill is selected.</summary>
         private void StuHome_DrillDdl_SelectedIndexChanged(object sender, EventArgs e)
         {
             Drill currentDrill = localManager.currentStudent.curDrillList.Where(dri => dri.DrillName.Equals(StuHome_DrillDdl.Text)).FirstOrDefault();
@@ -34,6 +39,11 @@ namespace RaptorMath
             StuHome_StartDrillBtn.Enabled = true;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/19/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Returns the student to the user login window.</summary>
         private void StuHome_LogoutBtn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to log out?",
@@ -46,6 +56,11 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/19/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Open up the drill window so the student can take the selected drill.</summary>
         private void StuHome_StartDrillBtn_Click(object sender, EventArgs e)
         {
             localManager.SetWindow(Window.stuDrill);
