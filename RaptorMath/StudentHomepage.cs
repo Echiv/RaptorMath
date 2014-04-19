@@ -15,5 +15,20 @@ namespace RaptorMath
         {
             InitializeComponent();
         }
+
+        private void StuHome_ChooseLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StuHome_DrillDdl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
