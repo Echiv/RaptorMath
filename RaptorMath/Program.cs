@@ -68,7 +68,7 @@ namespace RaptorMath
                         }
                     case Window.stuHome:
                         {
-                            Application.Run(new StuHome_Form(allManager));
+                            Application.Run(new StudentHomepage(allManager));
                             break;
                         }
                     case Window.stuDrill:

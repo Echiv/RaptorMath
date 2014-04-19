@@ -41,6 +41,8 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.StuHome_LogoutBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.StuHome_Timer = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // StuHome_WindowLbl
@@ -109,12 +111,12 @@
             // 
             this.StuHome_StudentNameLbl.AutoSize = true;
             this.StuHome_StudentNameLbl.BackColor = System.Drawing.Color.Transparent;
-            this.StuHome_StudentNameLbl.Font = new System.Drawing.Font("Elephant", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StuHome_StudentNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_StudentNameLbl.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.StuHome_StudentNameLbl.Location = new System.Drawing.Point(334, 91);
             this.StuHome_StudentNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StuHome_StudentNameLbl.Name = "StuHome_StudentNameLbl";
-            this.StuHome_StudentNameLbl.Size = new System.Drawing.Size(129, 27);
+            this.StuHome_StudentNameLbl.Size = new System.Drawing.Size(110, 25);
             this.StuHome_StudentNameLbl.TabIndex = 27;
             this.StuHome_StudentNameLbl.Text = "<Student>";
             // 
@@ -143,6 +145,7 @@
             this.StuHome_StartDrillBtn.TabIndex = 32;
             this.StuHome_StartDrillBtn.Text = "Start";
             this.StuHome_StartDrillBtn.UseVisualStyleBackColor = true;
+            this.StuHome_StartDrillBtn.Click += new System.EventHandler(this.StuHome_StartDrillBtn_Click);
             // 
             // imageList1
             // 
@@ -162,6 +165,7 @@
             this.StuHome_LogoutBtn.TabIndex = 36;
             this.StuHome_LogoutBtn.Text = "Logout";
             this.StuHome_LogoutBtn.UseVisualStyleBackColor = true;
+            this.StuHome_LogoutBtn.Click += new System.EventHandler(this.StuHome_LogoutBtn_Click);
             // 
             // label1
             // 
@@ -190,9 +194,8 @@
             this.Controls.Add(this.StuHome_LoginDateLbl);
             this.Controls.Add(this.StuHome_LastLoginLbl);
             this.Controls.Add(this.StuHome_StudentNameLbl);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StudentHomepage";
-            this.Text = "RaptorMath";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,5 +214,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button StuHome_LogoutBtn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer StuHome_Timer;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
