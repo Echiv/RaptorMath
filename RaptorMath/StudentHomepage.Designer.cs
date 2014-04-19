@@ -137,14 +137,16 @@
             // StuHome_StartDrillBtn
             // 
             this.StuHome_StartDrillBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.StuHome_StartDrillBtn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StuHome_StartDrillBtn.Location = new System.Drawing.Point(339, 233);
+            this.StuHome_StartDrillBtn.BackColor = System.Drawing.Color.Green;
+            this.StuHome_StartDrillBtn.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StuHome_StartDrillBtn.ForeColor = System.Drawing.Color.Black;
+            this.StuHome_StartDrillBtn.Location = new System.Drawing.Point(367, 209);
             this.StuHome_StartDrillBtn.Margin = new System.Windows.Forms.Padding(4);
             this.StuHome_StartDrillBtn.Name = "StuHome_StartDrillBtn";
-            this.StuHome_StartDrillBtn.Size = new System.Drawing.Size(125, 40);
+            this.StuHome_StartDrillBtn.Size = new System.Drawing.Size(77, 48);
             this.StuHome_StartDrillBtn.TabIndex = 32;
-            this.StuHome_StartDrillBtn.Text = "Start";
-            this.StuHome_StartDrillBtn.UseVisualStyleBackColor = true;
+            this.StuHome_StartDrillBtn.Text = "Go!";
+            this.StuHome_StartDrillBtn.UseVisualStyleBackColor = false;
             this.StuHome_StartDrillBtn.Click += new System.EventHandler(this.StuHome_StartDrillBtn_Click);
             // 
             // imageList1
