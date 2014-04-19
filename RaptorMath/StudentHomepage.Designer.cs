@@ -194,8 +194,11 @@
             this.Controls.Add(this.StuHome_LoginDateLbl);
             this.Controls.Add(this.StuHome_LastLoginLbl);
             this.Controls.Add(this.StuHome_StudentNameLbl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StudentHomepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "RaptorMath";
+            this.Load += new System.EventHandler(this.StudentHomepage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

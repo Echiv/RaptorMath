@@ -142,5 +142,10 @@ namespace RaptorMath
                 StuHome_DrillDdl.Items.Add(drill.DrillName);
             }
         }
+
+        private void StudentHomepage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
