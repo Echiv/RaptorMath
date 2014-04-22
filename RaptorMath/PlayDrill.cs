@@ -15,5 +15,15 @@ namespace RaptorMath
         {
             InitializeComponent();
         }
+
+        private void MathDrill_WindowLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MathDrill_InputTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

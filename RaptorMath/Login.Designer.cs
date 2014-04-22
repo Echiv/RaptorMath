@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.StudentNameCmbo = new System.Windows.Forms.ComboBox();
             this.StartGameBtn = new System.Windows.Forms.Button();
             this.linkAdminLogin = new System.Windows.Forms.LinkLabel();
@@ -39,7 +40,7 @@
             this.StudentNameCmbo.FormattingEnabled = true;
             this.StudentNameCmbo.Items.AddRange(new object[] {
             "Select Your Name"});
-            this.StudentNameCmbo.Location = new System.Drawing.Point(303, 191);
+            this.StudentNameCmbo.Location = new System.Drawing.Point(306, 191);
             this.StudentNameCmbo.Name = "StudentNameCmbo";
             this.StudentNameCmbo.Size = new System.Drawing.Size(151, 21);
             this.StudentNameCmbo.TabIndex = 1;
@@ -47,9 +48,9 @@
             // 
             // StartGameBtn
             // 
-            this.StartGameBtn.Location = new System.Drawing.Point(282, 249);
+            this.StartGameBtn.Location = new System.Drawing.Point(314, 231);
             this.StartGameBtn.Name = "StartGameBtn";
-            this.StartGameBtn.Size = new System.Drawing.Size(188, 46);
+            this.StartGameBtn.Size = new System.Drawing.Size(135, 44);
             this.StartGameBtn.TabIndex = 2;
             this.StartGameBtn.Text = "Start Game";
             this.StartGameBtn.UseVisualStyleBackColor = true;
@@ -59,10 +60,11 @@
             // 
             this.linkAdminLogin.AutoSize = true;
             this.linkAdminLogin.BackColor = System.Drawing.Color.Transparent;
-            this.linkAdminLogin.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.linkAdminLogin.Location = new System.Drawing.Point(648, 392);
+            this.linkAdminLogin.Font = new System.Drawing.Font("Copperplate Gothic Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkAdminLogin.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.linkAdminLogin.Location = new System.Drawing.Point(644, 518);
             this.linkAdminLogin.Name = "linkAdminLogin";
-            this.linkAdminLogin.Size = new System.Drawing.Size(79, 13);
+            this.linkAdminLogin.Size = new System.Drawing.Size(110, 14);
             this.linkAdminLogin.TabIndex = 4;
             this.linkAdminLogin.TabStop = true;
             this.linkAdminLogin.Text = "Login as Admin";
@@ -72,7 +74,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Matisse ITC", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(215, 57);
+            this.label1.Location = new System.Drawing.Point(201, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(342, 82);
             this.label1.TabIndex = 5;
@@ -82,7 +84,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 428);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(776, 556);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.linkAdminLogin);
             this.Controls.Add(this.StartGameBtn);

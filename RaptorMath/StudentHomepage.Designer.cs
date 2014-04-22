@@ -137,7 +137,7 @@
             // StuHome_StartDrillBtn
             // 
             this.StuHome_StartDrillBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.StuHome_StartDrillBtn.BackColor = System.Drawing.Color.Green;
+            this.StuHome_StartDrillBtn.BackColor = System.Drawing.Color.Transparent;
             this.StuHome_StartDrillBtn.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_StartDrillBtn.ForeColor = System.Drawing.Color.Black;
             this.StuHome_StartDrillBtn.Location = new System.Drawing.Point(367, 209);
