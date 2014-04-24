@@ -389,40 +389,48 @@ namespace RaptorMath
         /// <summary>Handle 'Rename Group' button click.</summary>
         private void MngGroups_RenameBtn_Click(object sender, EventArgs e)
         {
+            // Problem. No error message for trying to rename a group to another group
             string groupName = localManager.RemoveExtraWhiteSpace(MngGroups_SelectGroupCmbo.Text);
             string newGroupName = localManager.RemoveExtraWhiteSpace(MngGroups_NewNameCmbo.Text);
-            if (groupName != "Unassigned")
+            if (newGroupName != "Unassigned")
             {
-                if (!groupName.Equals(newGroupName))
+                if (groupName != "Unassigned")
                 {
-                    if (newGroupName != string.Empty)
+                    if (!groupName.Equals(newGroupName))
                     {
-                        bool isGroupRenamed = localManager.RenameGroup(newGroupName, groupName, localManager.groupList);
-                        if (isGroupRenamed)
+                        if (newGroupName != string.Empty)
                         {
-                            MessageBox.Show("Group has been renamed.", "Raptor Math", MessageBoxButtons.OK);
-                            RefreshCmboBoxes();
-                            ClearCmboBoxes();
-                            MngGroups_SelectGroupCmbo.Select();
+                            bool isGroupRenamed = localManager.RenameGroup(newGroupName, groupName, localManager.groupList);
+                            if (isGroupRenamed)
+                            {
+                                MessageBox.Show("Group has been renamed.", "Raptor Math", MessageBoxButtons.OK);
+                                RefreshCmboBoxes();
+                                ClearCmboBoxes();
+                                MngGroups_SelectGroupCmbo.Select();
+                            }
+                            else
+                            {
+                                MessageBox.Show("The entered group doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("The entered group doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("A group name cannot be blank.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("A group name cannot be blank.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Cannot give a group the name it already has.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Cannot give a group the name it already has.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Cannot rename the default group.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Cannot rename the default group.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Cannot rename a group to the default group's name.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

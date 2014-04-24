@@ -29,43 +29,43 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomepage));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tab1 = new System.Windows.Forms.TabControl();
             this.Statistics = new System.Windows.Forms.TabPage();
-            this.GroupSearchGroupBox = new System.Windows.Forms.GroupBox();
+            this.GroupSearchBox = new System.Windows.Forms.GroupBox();
             this.GroupReportBtn = new System.Windows.Forms.Button();
             this.StudentReportBtn = new System.Windows.Forms.Button();
-            this.ExportToTxtBtn = new System.Windows.Forms.Button();
+            this.ExportToTextBtn = new System.Windows.Forms.Button();
             this.ExportToExcelBtn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.GroupSnapshotDataDisplay = new System.Windows.Forms.DataGridView();
             this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DrillsAssigned = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DrillsCompleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AveragePercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GroupNameDataGridView = new System.Windows.Forms.DataGridView();
+            this.GroupNameDataDisplay = new System.Windows.Forms.DataGridView();
             this.GroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchTxtBox = new System.Windows.Forms.TextBox();
             this.Setup = new System.Windows.Forms.TabPage();
-            this.DrillsGroupBox = new System.Windows.Forms.GroupBox();
+            this.ManageDrillsBox = new System.Windows.Forms.GroupBox();
             this.ManageDrillsGroupBox = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.AssignedDrillsBox = new System.Windows.Forms.GroupBox();
+            this.AssignedDrillDataDisplay = new System.Windows.Forms.DataGridView();
             this.Drillname_Assigned = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.AvailableDrillsBox = new System.Windows.Forms.GroupBox();
+            this.AvailableDrillDataDisplay = new System.Windows.Forms.DataGridView();
             this.DrillName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AddDrillBtn = new System.Windows.Forms.Button();
+            this.NewDrillBtn = new System.Windows.Forms.Button();
             this.DeleteDrillBtn = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.DeleteDrillLbl = new System.Windows.Forms.Label();
+            this.NewDrillLbl = new System.Windows.Forms.Label();
             this.RemoveAllLbl = new System.Windows.Forms.Label();
             this.AssignAllLbl = new System.Windows.Forms.Label();
             this.RemoveSelectedLbl = new System.Windows.Forms.Label();
@@ -74,7 +74,7 @@
             this.AssignAllBtn = new System.Windows.Forms.Button();
             this.RemoveSelectedBtn = new System.Windows.Forms.Button();
             this.AssignSelectedBtn = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ExistingUsersSetupBox = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.StudentAdminName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupName_Setup = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,6 +83,22 @@
             this.GroupsRdo = new System.Windows.Forms.RadioButton();
             this.EditUsers = new System.Windows.Forms.TabPage();
             this.EditUsersGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.ExistingUserDataEditUsersDisplay = new System.Windows.Forms.DataGridView();
+            this.StudentAdminNameEditUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupNameEditUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SearchEditUsersTxtbox = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.RemoveUserGroupBtn = new System.Windows.Forms.Button();
+            this.SaveChangesBtn = new System.Windows.Forms.Button();
+            this.LastNameTxtBox = new System.Windows.Forms.RichTextBox();
+            this.FirstNameTxtBox = new System.Windows.Forms.RichTextBox();
+            this.DeleteGroupChkBox = new System.Windows.Forms.CheckBox();
+            this.RemoveUserGroupLbl = new System.Windows.Forms.Label();
+            this.SaveChangesLbl = new System.Windows.Forms.Label();
+            this.LastNameLbl = new System.Windows.Forms.Label();
+            this.FirstNameLbl = new System.Windows.Forms.Label();
+            this.GroupNameLbl = new System.Windows.Forms.Label();
             this.AddUsers = new System.Windows.Forms.TabPage();
             this.About = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -95,86 +111,101 @@
             this.WelcomeLbl = new System.Windows.Forms.Label();
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.SearchEditUsersTxtbox = new System.Windows.Forms.TextBox();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.StudentAdminNameEditUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GroupNameEditUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GroupNameLbl = new System.Windows.Forms.Label();
-            this.FirstNameLbl = new System.Windows.Forms.Label();
-            this.LastNameLbl = new System.Windows.Forms.Label();
-            this.SaveChangesLbl = new System.Windows.Forms.Label();
-            this.RemoveUserGroupLbl = new System.Windows.Forms.Label();
-            this.DeleteGroupChkBox = new System.Windows.Forms.CheckBox();
-            this.NameTxtBox = new System.Windows.Forms.RichTextBox();
-            this.FirstNameTxtBox = new System.Windows.Forms.RichTextBox();
-            this.LastNameTxtBox = new System.Windows.Forms.RichTextBox();
-            this.SaveChangesBtn = new System.Windows.Forms.Button();
-            this.RemoveUserGroupBtn = new System.Windows.Forms.Button();
-            this.tabControl1.SuspendLayout();
+            this.AddUsersGroupBox = new System.Windows.Forms.GroupBox();
+            this.ExistingUsersBox = new System.Windows.Forms.GroupBox();
+            this.AddNewUserBox = new System.Windows.Forms.GroupBox();
+            this.UserTypeBox = new System.Windows.Forms.GroupBox();
+            this.SearchAddUsersTxtBox = new System.Windows.Forms.TextBox();
+            this.ExistingUserDataDisplay = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentRdo = new System.Windows.Forms.RadioButton();
+            this.AdminRdo = new System.Windows.Forms.RadioButton();
+            this.ImportFromTextFileBtn = new System.Windows.Forms.Button();
+            this.SaveNewUserBtn = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SaveNewUserLbl = new System.Windows.Forms.Label();
+            this.LastNameAddUsersLbl = new System.Windows.Forms.Label();
+            this.FirstNameAddUsersLbl = new System.Windows.Forms.Label();
+            this.GroupNameAddUsersLbl = new System.Windows.Forms.Label();
+            this.ConfirmPasswordLbl = new System.Windows.Forms.Label();
+            this.PadsswordLbl = new System.Windows.Forms.Label();
+            this.GroupNameCmbBox = new System.Windows.Forms.ComboBox();
+            this.FirstNameCmboBox = new System.Windows.Forms.ComboBox();
+            this.LastNameCmboBox = new System.Windows.Forms.ComboBox();
+            this.NameComboBox = new System.Windows.Forms.ComboBox();
+            this.PasswordTextBox = new System.Windows.Forms.TextBox();
+            this.ConfirmPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.tab1.SuspendLayout();
             this.Statistics.SuspendLayout();
-            this.GroupSearchGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GroupNameDataGridView)).BeginInit();
+            this.GroupSearchBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupSnapshotDataDisplay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupNameDataDisplay)).BeginInit();
             this.Setup.SuspendLayout();
-            this.DrillsGroupBox.SuspendLayout();
+            this.ManageDrillsBox.SuspendLayout();
             this.ManageDrillsGroupBox.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.AssignedDrillsBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AssignedDrillDataDisplay)).BeginInit();
+            this.AvailableDrillsBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AvailableDrillDataDisplay)).BeginInit();
+            this.ExistingUsersSetupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.EditUsers.SuspendLayout();
             this.EditUsersGroupBox.SuspendLayout();
-            this.ReportGroupBox.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ExistingUserDataEditUsersDisplay)).BeginInit();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            this.AddUsers.SuspendLayout();
+            this.ReportGroupBox.SuspendLayout();
+            this.AddUsersGroupBox.SuspendLayout();
+            this.ExistingUsersBox.SuspendLayout();
+            this.AddNewUserBox.SuspendLayout();
+            this.UserTypeBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ExistingUserDataDisplay)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tab1
             // 
-            this.tabControl1.Controls.Add(this.Statistics);
-            this.tabControl1.Controls.Add(this.Setup);
-            this.tabControl1.Controls.Add(this.EditUsers);
-            this.tabControl1.Controls.Add(this.AddUsers);
-            this.tabControl1.Controls.Add(this.About);
-            this.tabControl1.Location = new System.Drawing.Point(11, 49);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1348, 664);
-            this.tabControl1.TabIndex = 0;
+            this.tab1.Controls.Add(this.Statistics);
+            this.tab1.Controls.Add(this.Setup);
+            this.tab1.Controls.Add(this.EditUsers);
+            this.tab1.Controls.Add(this.AddUsers);
+            this.tab1.Controls.Add(this.About);
+            this.tab1.Location = new System.Drawing.Point(11, 45);
+            this.tab1.Name = "tab1";
+            this.tab1.SelectedIndex = 0;
+            this.tab1.Size = new System.Drawing.Size(1348, 668);
+            this.tab1.TabIndex = 0;
             // 
             // Statistics
             // 
             this.Statistics.BackColor = System.Drawing.Color.LightBlue;
             this.Statistics.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Statistics.Controls.Add(this.GroupSearchGroupBox);
+            this.Statistics.Controls.Add(this.GroupSearchBox);
             this.Statistics.Location = new System.Drawing.Point(4, 22);
             this.Statistics.Name = "Statistics";
             this.Statistics.Padding = new System.Windows.Forms.Padding(3);
-            this.Statistics.Size = new System.Drawing.Size(1340, 638);
+            this.Statistics.Size = new System.Drawing.Size(1340, 642);
             this.Statistics.TabIndex = 0;
             this.Statistics.Text = "Statistics";
             // 
-            // GroupSearchGroupBox
+            // GroupSearchBox
             // 
-            this.GroupSearchGroupBox.Controls.Add(this.GroupReportBtn);
-            this.GroupSearchGroupBox.Controls.Add(this.StudentReportBtn);
-            this.GroupSearchGroupBox.Controls.Add(this.ExportToTxtBtn);
-            this.GroupSearchGroupBox.Controls.Add(this.ExportToExcelBtn);
-            this.GroupSearchGroupBox.Controls.Add(this.dataGridView1);
-            this.GroupSearchGroupBox.Controls.Add(this.GroupNameDataGridView);
-            this.GroupSearchGroupBox.Controls.Add(this.SearchTxtBox);
-            this.GroupSearchGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GroupSearchGroupBox.Location = new System.Drawing.Point(3, 3);
-            this.GroupSearchGroupBox.Name = "GroupSearchGroupBox";
-            this.GroupSearchGroupBox.Size = new System.Drawing.Size(1334, 632);
-            this.GroupSearchGroupBox.TabIndex = 2;
-            this.GroupSearchGroupBox.TabStop = false;
-            this.GroupSearchGroupBox.Text = "Group Search";
+            this.GroupSearchBox.Controls.Add(this.GroupReportBtn);
+            this.GroupSearchBox.Controls.Add(this.StudentReportBtn);
+            this.GroupSearchBox.Controls.Add(this.ExportToTextBtn);
+            this.GroupSearchBox.Controls.Add(this.ExportToExcelBtn);
+            this.GroupSearchBox.Controls.Add(this.GroupSnapshotDataDisplay);
+            this.GroupSearchBox.Controls.Add(this.GroupNameDataDisplay);
+            this.GroupSearchBox.Controls.Add(this.SearchTxtBox);
+            this.GroupSearchBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GroupSearchBox.Location = new System.Drawing.Point(3, 3);
+            this.GroupSearchBox.Name = "GroupSearchBox";
+            this.GroupSearchBox.Size = new System.Drawing.Size(1334, 636);
+            this.GroupSearchBox.TabIndex = 2;
+            this.GroupSearchBox.TabStop = false;
+            this.GroupSearchBox.Text = "Group Search";
             // 
             // GroupReportBtn
             // 
@@ -194,14 +225,14 @@
             this.StudentReportBtn.Text = "Student Report";
             this.StudentReportBtn.UseVisualStyleBackColor = true;
             // 
-            // ExportToTxtBtn
+            // ExportToTextBtn
             // 
-            this.ExportToTxtBtn.Location = new System.Drawing.Point(1119, 540);
-            this.ExportToTxtBtn.Name = "ExportToTxtBtn";
-            this.ExportToTxtBtn.Size = new System.Drawing.Size(95, 30);
-            this.ExportToTxtBtn.TabIndex = 3;
-            this.ExportToTxtBtn.Text = "Export to Text";
-            this.ExportToTxtBtn.UseVisualStyleBackColor = true;
+            this.ExportToTextBtn.Location = new System.Drawing.Point(1119, 540);
+            this.ExportToTextBtn.Name = "ExportToTextBtn";
+            this.ExportToTextBtn.Size = new System.Drawing.Size(95, 30);
+            this.ExportToTextBtn.TabIndex = 3;
+            this.ExportToTextBtn.Text = "Export to Text";
+            this.ExportToTextBtn.UseVisualStyleBackColor = true;
             // 
             // ExportToExcelBtn
             // 
@@ -212,19 +243,19 @@
             this.ExportToExcelBtn.Text = "Export to Excel";
             this.ExportToExcelBtn.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // GroupSnapshotDataDisplay
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GroupSnapshotDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GroupSnapshotDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StudentName,
             this.DrillsAssigned,
             this.DrillsCompleted,
             this.AveragePercent,
             this.LastLogin});
-            this.dataGridView1.Location = new System.Drawing.Point(268, 45);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1049, 489);
-            this.dataGridView1.TabIndex = 2;
+            this.GroupSnapshotDataDisplay.Location = new System.Drawing.Point(268, 45);
+            this.GroupSnapshotDataDisplay.Name = "GroupSnapshotDataDisplay";
+            this.GroupSnapshotDataDisplay.Size = new System.Drawing.Size(1049, 489);
+            this.GroupSnapshotDataDisplay.TabIndex = 2;
             // 
             // StudentName
             // 
@@ -258,23 +289,23 @@
             this.LastLogin.HeaderText = "Last Login";
             this.LastLogin.Name = "LastLogin";
             // 
-            // GroupNameDataGridView
+            // GroupNameDataDisplay
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GroupNameDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.GroupNameDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GroupNameDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.GroupNameDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GroupNameDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GroupName});
-            this.GroupNameDataGridView.Location = new System.Drawing.Point(27, 45);
-            this.GroupNameDataGridView.Name = "GroupNameDataGridView";
-            this.GroupNameDataGridView.Size = new System.Drawing.Size(224, 489);
-            this.GroupNameDataGridView.TabIndex = 1;
+            this.GroupNameDataDisplay.Location = new System.Drawing.Point(27, 45);
+            this.GroupNameDataDisplay.Name = "GroupNameDataDisplay";
+            this.GroupNameDataDisplay.Size = new System.Drawing.Size(224, 489);
+            this.GroupNameDataDisplay.TabIndex = 1;
             // 
             // GroupName
             // 
@@ -294,30 +325,31 @@
             // Setup
             // 
             this.Setup.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.Setup.Controls.Add(this.DrillsGroupBox);
+            this.Setup.Controls.Add(this.ManageDrillsBox);
             this.Setup.Location = new System.Drawing.Point(4, 22);
             this.Setup.Name = "Setup";
             this.Setup.Padding = new System.Windows.Forms.Padding(3);
-            this.Setup.Size = new System.Drawing.Size(1340, 638);
+            this.Setup.Size = new System.Drawing.Size(1340, 642);
             this.Setup.TabIndex = 1;
             this.Setup.Text = "Setup";
             // 
-            // DrillsGroupBox
+            // ManageDrillsBox
             // 
-            this.DrillsGroupBox.Controls.Add(this.ManageDrillsGroupBox);
-            this.DrillsGroupBox.Controls.Add(this.groupBox2);
-            this.DrillsGroupBox.Location = new System.Drawing.Point(3, 6);
-            this.DrillsGroupBox.Name = "DrillsGroupBox";
-            this.DrillsGroupBox.Size = new System.Drawing.Size(1334, 626);
-            this.DrillsGroupBox.TabIndex = 0;
-            this.DrillsGroupBox.TabStop = false;
-            this.DrillsGroupBox.Text = "Manage Drills";
+            this.ManageDrillsBox.Controls.Add(this.ManageDrillsGroupBox);
+            this.ManageDrillsBox.Controls.Add(this.ExistingUsersSetupBox);
+            this.ManageDrillsBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ManageDrillsBox.Location = new System.Drawing.Point(3, 3);
+            this.ManageDrillsBox.Name = "ManageDrillsBox";
+            this.ManageDrillsBox.Size = new System.Drawing.Size(1334, 636);
+            this.ManageDrillsBox.TabIndex = 0;
+            this.ManageDrillsBox.TabStop = false;
+            this.ManageDrillsBox.Text = "Manage Drills";
             // 
             // ManageDrillsGroupBox
             // 
             this.ManageDrillsGroupBox.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ManageDrillsGroupBox.Controls.Add(this.groupBox3);
-            this.ManageDrillsGroupBox.Controls.Add(this.groupBox1);
+            this.ManageDrillsGroupBox.Controls.Add(this.AssignedDrillsBox);
+            this.ManageDrillsGroupBox.Controls.Add(this.AvailableDrillsBox);
             this.ManageDrillsGroupBox.Controls.Add(this.RemoveAllLbl);
             this.ManageDrillsGroupBox.Controls.Add(this.AssignAllLbl);
             this.ManageDrillsGroupBox.Controls.Add(this.RemoveSelectedLbl);
@@ -329,40 +361,40 @@
             this.ManageDrillsGroupBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.ManageDrillsGroupBox.Location = new System.Drawing.Point(259, 16);
             this.ManageDrillsGroupBox.Name = "ManageDrillsGroupBox";
-            this.ManageDrillsGroupBox.Size = new System.Drawing.Size(1072, 607);
+            this.ManageDrillsGroupBox.Size = new System.Drawing.Size(1072, 617);
             this.ManageDrillsGroupBox.TabIndex = 0;
             this.ManageDrillsGroupBox.TabStop = false;
             this.ManageDrillsGroupBox.Text = "Drills";
             // 
-            // groupBox3
+            // AssignedDrillsBox
             // 
-            this.groupBox3.Controls.Add(this.dataGridView4);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox3.Location = new System.Drawing.Point(632, 16);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(437, 588);
-            this.groupBox3.TabIndex = 5;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Assigned Drills";
+            this.AssignedDrillsBox.Controls.Add(this.AssignedDrillDataDisplay);
+            this.AssignedDrillsBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.AssignedDrillsBox.Location = new System.Drawing.Point(632, 16);
+            this.AssignedDrillsBox.Name = "AssignedDrillsBox";
+            this.AssignedDrillsBox.Size = new System.Drawing.Size(437, 598);
+            this.AssignedDrillsBox.TabIndex = 5;
+            this.AssignedDrillsBox.TabStop = false;
+            this.AssignedDrillsBox.Text = "Assigned Drills";
             // 
-            // dataGridView4
+            // AssignedDrillDataDisplay
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AssignedDrillDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.AssignedDrillDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AssignedDrillDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Drillname_Assigned});
-            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView4.Location = new System.Drawing.Point(3, 106);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(431, 479);
-            this.dataGridView4.TabIndex = 1;
+            this.AssignedDrillDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AssignedDrillDataDisplay.Location = new System.Drawing.Point(3, 116);
+            this.AssignedDrillDataDisplay.Name = "AssignedDrillDataDisplay";
+            this.AssignedDrillDataDisplay.Size = new System.Drawing.Size(431, 479);
+            this.AssignedDrillDataDisplay.TabIndex = 1;
             // 
             // Drillname_Assigned
             // 
@@ -370,61 +402,61 @@
             this.Drillname_Assigned.HeaderText = "Drill name";
             this.Drillname_Assigned.Name = "Drillname_Assigned";
             // 
-            // groupBox1
+            // AvailableDrillsBox
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.groupBox1.Controls.Add(this.dataGridView3);
-            this.groupBox1.Controls.Add(this.AddDrillBtn);
-            this.groupBox1.Controls.Add(this.DeleteDrillBtn);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox1.Location = new System.Drawing.Point(3, 16);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(420, 588);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Aviable Drills";
+            this.AvailableDrillsBox.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.AvailableDrillsBox.Controls.Add(this.AvailableDrillDataDisplay);
+            this.AvailableDrillsBox.Controls.Add(this.NewDrillBtn);
+            this.AvailableDrillsBox.Controls.Add(this.DeleteDrillBtn);
+            this.AvailableDrillsBox.Controls.Add(this.DeleteDrillLbl);
+            this.AvailableDrillsBox.Controls.Add(this.NewDrillLbl);
+            this.AvailableDrillsBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.AvailableDrillsBox.Location = new System.Drawing.Point(3, 16);
+            this.AvailableDrillsBox.Name = "AvailableDrillsBox";
+            this.AvailableDrillsBox.Size = new System.Drawing.Size(420, 598);
+            this.AvailableDrillsBox.TabIndex = 10;
+            this.AvailableDrillsBox.TabStop = false;
+            this.AvailableDrillsBox.Text = "Aviable Drills";
             // 
-            // dataGridView3
+            // AvailableDrillDataDisplay
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AvailableDrillDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.AvailableDrillDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AvailableDrillDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DrillName});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 106);
-            this.dataGridView3.Name = "dataGridView3";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle14;
-            this.dataGridView3.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView3.Size = new System.Drawing.Size(414, 479);
-            this.dataGridView3.TabIndex = 0;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle5;
+            this.AvailableDrillDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AvailableDrillDataDisplay.Location = new System.Drawing.Point(3, 116);
+            this.AvailableDrillDataDisplay.Name = "AvailableDrillDataDisplay";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.AvailableDrillDataDisplay.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.Size = new System.Drawing.Size(414, 479);
+            this.AvailableDrillDataDisplay.TabIndex = 0;
             // 
             // DrillName
             // 
@@ -432,15 +464,15 @@
             this.DrillName.HeaderText = "Drill Name";
             this.DrillName.Name = "DrillName";
             // 
-            // AddDrillBtn
+            // NewDrillBtn
             // 
-            this.AddDrillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddDrillBtn.Location = new System.Drawing.Point(93, 19);
-            this.AddDrillBtn.Name = "AddDrillBtn";
-            this.AddDrillBtn.Size = new System.Drawing.Size(75, 45);
-            this.AddDrillBtn.TabIndex = 1;
-            this.AddDrillBtn.Text = "+";
-            this.AddDrillBtn.UseVisualStyleBackColor = true;
+            this.NewDrillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewDrillBtn.Location = new System.Drawing.Point(93, 19);
+            this.NewDrillBtn.Name = "NewDrillBtn";
+            this.NewDrillBtn.Size = new System.Drawing.Size(75, 45);
+            this.NewDrillBtn.TabIndex = 1;
+            this.NewDrillBtn.Text = "+";
+            this.NewDrillBtn.UseVisualStyleBackColor = true;
             // 
             // DeleteDrillBtn
             // 
@@ -453,25 +485,25 @@
             this.DeleteDrillBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.DeleteDrillBtn.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // DeleteDrillLbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(221, 67);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 24);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Delete Drill";
+            this.DeleteDrillLbl.AutoSize = true;
+            this.DeleteDrillLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteDrillLbl.Location = new System.Drawing.Point(221, 67);
+            this.DeleteDrillLbl.Name = "DeleteDrillLbl";
+            this.DeleteDrillLbl.Size = new System.Drawing.Size(100, 24);
+            this.DeleteDrillLbl.TabIndex = 4;
+            this.DeleteDrillLbl.Text = "Delete Drill";
             // 
-            // label5
+            // NewDrillLbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(89, 67);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 24);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "New Drill";
+            this.NewDrillLbl.AutoSize = true;
+            this.NewDrillLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewDrillLbl.Location = new System.Drawing.Point(89, 67);
+            this.NewDrillLbl.Name = "NewDrillLbl";
+            this.NewDrillLbl.Size = new System.Drawing.Size(85, 24);
+            this.NewDrillLbl.TabIndex = 3;
+            this.NewDrillLbl.Text = "New Drill";
             // 
             // RemoveAllLbl
             // 
@@ -546,20 +578,20 @@
             this.AssignSelectedBtn.Text = ">";
             this.AssignSelectedBtn.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // ExistingUsersSetupBox
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Cyan;
-            this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Controls.Add(this.NarrowListTxtBox);
-            this.groupBox2.Controls.Add(this.StudentsRdo);
-            this.groupBox2.Controls.Add(this.GroupsRdo);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox2.Location = new System.Drawing.Point(3, 16);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(253, 607);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Existing Users";
+            this.ExistingUsersSetupBox.BackColor = System.Drawing.Color.Cyan;
+            this.ExistingUsersSetupBox.Controls.Add(this.dataGridView2);
+            this.ExistingUsersSetupBox.Controls.Add(this.NarrowListTxtBox);
+            this.ExistingUsersSetupBox.Controls.Add(this.StudentsRdo);
+            this.ExistingUsersSetupBox.Controls.Add(this.GroupsRdo);
+            this.ExistingUsersSetupBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ExistingUsersSetupBox.Location = new System.Drawing.Point(3, 16);
+            this.ExistingUsersSetupBox.Name = "ExistingUsersSetupBox";
+            this.ExistingUsersSetupBox.Size = new System.Drawing.Size(253, 617);
+            this.ExistingUsersSetupBox.TabIndex = 0;
+            this.ExistingUsersSetupBox.TabStop = false;
+            this.ExistingUsersSetupBox.Text = "Existing Users";
             // 
             // dataGridView2
             // 
@@ -568,7 +600,7 @@
             this.StudentAdminName,
             this.GroupName_Setup});
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 119);
+            this.dataGridView2.Location = new System.Drawing.Point(3, 129);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(247, 485);
             this.dataGridView2.TabIndex = 3;
@@ -589,7 +621,7 @@
             // 
             this.NarrowListTxtBox.Location = new System.Drawing.Point(38, 63);
             this.NarrowListTxtBox.Name = "NarrowListTxtBox";
-            this.NarrowListTxtBox.Size = new System.Drawing.Size(166, 20);
+            this.NarrowListTxtBox.Size = new System.Drawing.Size(170, 20);
             this.NarrowListTxtBox.TabIndex = 2;
             this.NarrowListTxtBox.Text = "Search";
             // 
@@ -621,7 +653,7 @@
             this.EditUsers.Controls.Add(this.EditUsersGroupBox);
             this.EditUsers.Location = new System.Drawing.Point(4, 22);
             this.EditUsers.Name = "EditUsers";
-            this.EditUsers.Size = new System.Drawing.Size(1340, 638);
+            this.EditUsers.Size = new System.Drawing.Size(1340, 642);
             this.EditUsers.TabIndex = 2;
             this.EditUsers.Text = "Edit Users";
             // 
@@ -632,16 +664,171 @@
             this.EditUsersGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EditUsersGroupBox.Location = new System.Drawing.Point(0, 0);
             this.EditUsersGroupBox.Name = "EditUsersGroupBox";
-            this.EditUsersGroupBox.Size = new System.Drawing.Size(1340, 638);
+            this.EditUsersGroupBox.Size = new System.Drawing.Size(1340, 642);
             this.EditUsersGroupBox.TabIndex = 0;
             this.EditUsersGroupBox.TabStop = false;
             this.EditUsersGroupBox.Text = "Manage Users";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.groupBox4.Controls.Add(this.ExistingUserDataEditUsersDisplay);
+            this.groupBox4.Controls.Add(this.SearchEditUsersTxtbox);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox4.Location = new System.Drawing.Point(3, 16);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(370, 623);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Existing Users";
+            // 
+            // ExistingUserDataEditUsersDisplay
+            // 
+            this.ExistingUserDataEditUsersDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ExistingUserDataEditUsersDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.StudentAdminNameEditUsers,
+            this.GroupNameEditUsers});
+            this.ExistingUserDataEditUsersDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ExistingUserDataEditUsersDisplay.Location = new System.Drawing.Point(3, 64);
+            this.ExistingUserDataEditUsersDisplay.Name = "ExistingUserDataEditUsersDisplay";
+            this.ExistingUserDataEditUsersDisplay.Size = new System.Drawing.Size(364, 556);
+            this.ExistingUserDataEditUsersDisplay.TabIndex = 1;
+            // 
+            // StudentAdminNameEditUsers
+            // 
+            this.StudentAdminNameEditUsers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.StudentAdminNameEditUsers.HeaderText = "Student/Admin Name";
+            this.StudentAdminNameEditUsers.Name = "StudentAdminNameEditUsers";
+            // 
+            // GroupNameEditUsers
+            // 
+            this.GroupNameEditUsers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GroupNameEditUsers.HeaderText = "Group Name";
+            this.GroupNameEditUsers.Name = "GroupNameEditUsers";
+            // 
+            // SearchEditUsersTxtbox
+            // 
+            this.SearchEditUsersTxtbox.Location = new System.Drawing.Point(88, 29);
+            this.SearchEditUsersTxtbox.Name = "SearchEditUsersTxtbox";
+            this.SearchEditUsersTxtbox.Size = new System.Drawing.Size(170, 20);
+            this.SearchEditUsersTxtbox.TabIndex = 0;
+            this.SearchEditUsersTxtbox.Text = "Search";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.DarkSalmon;
+            this.groupBox5.Controls.Add(this.NameComboBox);
+            this.groupBox5.Controls.Add(this.RemoveUserGroupBtn);
+            this.groupBox5.Controls.Add(this.SaveChangesBtn);
+            this.groupBox5.Controls.Add(this.LastNameTxtBox);
+            this.groupBox5.Controls.Add(this.FirstNameTxtBox);
+            this.groupBox5.Controls.Add(this.DeleteGroupChkBox);
+            this.groupBox5.Controls.Add(this.RemoveUserGroupLbl);
+            this.groupBox5.Controls.Add(this.SaveChangesLbl);
+            this.groupBox5.Controls.Add(this.LastNameLbl);
+            this.groupBox5.Controls.Add(this.FirstNameLbl);
+            this.groupBox5.Controls.Add(this.GroupNameLbl);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox5.Location = new System.Drawing.Point(967, 16);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(370, 623);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Modify Existing User";
+            // 
+            // RemoveUserGroupBtn
+            // 
+            this.RemoveUserGroupBtn.Location = new System.Drawing.Point(248, 289);
+            this.RemoveUserGroupBtn.Name = "RemoveUserGroupBtn";
+            this.RemoveUserGroupBtn.Size = new System.Drawing.Size(100, 40);
+            this.RemoveUserGroupBtn.TabIndex = 11;
+            this.RemoveUserGroupBtn.UseVisualStyleBackColor = true;
+            // 
+            // SaveChangesBtn
+            // 
+            this.SaveChangesBtn.Location = new System.Drawing.Point(79, 289);
+            this.SaveChangesBtn.Name = "SaveChangesBtn";
+            this.SaveChangesBtn.Size = new System.Drawing.Size(100, 40);
+            this.SaveChangesBtn.TabIndex = 10;
+            this.SaveChangesBtn.UseVisualStyleBackColor = true;
+            // 
+            // LastNameTxtBox
+            // 
+            this.LastNameTxtBox.Location = new System.Drawing.Point(74, 163);
+            this.LastNameTxtBox.Name = "LastNameTxtBox";
+            this.LastNameTxtBox.Size = new System.Drawing.Size(274, 25);
+            this.LastNameTxtBox.TabIndex = 9;
+            this.LastNameTxtBox.Text = "";
+            // 
+            // FirstNameTxtBox
+            // 
+            this.FirstNameTxtBox.Location = new System.Drawing.Point(74, 130);
+            this.FirstNameTxtBox.Name = "FirstNameTxtBox";
+            this.FirstNameTxtBox.Size = new System.Drawing.Size(274, 25);
+            this.FirstNameTxtBox.TabIndex = 8;
+            this.FirstNameTxtBox.Text = "";
+            // 
+            // DeleteGroupChkBox
+            // 
+            this.DeleteGroupChkBox.AutoSize = true;
+            this.DeleteGroupChkBox.Location = new System.Drawing.Point(9, 97);
+            this.DeleteGroupChkBox.Name = "DeleteGroupChkBox";
+            this.DeleteGroupChkBox.Size = new System.Drawing.Size(165, 17);
+            this.DeleteGroupChkBox.TabIndex = 6;
+            this.DeleteGroupChkBox.Text = "Check to Delete Entire Group";
+            this.DeleteGroupChkBox.UseVisualStyleBackColor = true;
+            // 
+            // RemoveUserGroupLbl
+            // 
+            this.RemoveUserGroupLbl.AutoSize = true;
+            this.RemoveUserGroupLbl.Location = new System.Drawing.Point(237, 332);
+            this.RemoveUserGroupLbl.Name = "RemoveUserGroupLbl";
+            this.RemoveUserGroupLbl.Size = new System.Drawing.Size(106, 13);
+            this.RemoveUserGroupLbl.TabIndex = 5;
+            this.RemoveUserGroupLbl.Text = "Remove User/Group";
+            // 
+            // SaveChangesLbl
+            // 
+            this.SaveChangesLbl.AutoSize = true;
+            this.SaveChangesLbl.Location = new System.Drawing.Point(76, 332);
+            this.SaveChangesLbl.Name = "SaveChangesLbl";
+            this.SaveChangesLbl.Size = new System.Drawing.Size(77, 13);
+            this.SaveChangesLbl.TabIndex = 4;
+            this.SaveChangesLbl.Text = "Save Changes";
+            // 
+            // LastNameLbl
+            // 
+            this.LastNameLbl.AutoSize = true;
+            this.LastNameLbl.Location = new System.Drawing.Point(6, 166);
+            this.LastNameLbl.Name = "LastNameLbl";
+            this.LastNameLbl.Size = new System.Drawing.Size(58, 13);
+            this.LastNameLbl.TabIndex = 3;
+            this.LastNameLbl.Text = "Last Name";
+            // 
+            // FirstNameLbl
+            // 
+            this.FirstNameLbl.AutoSize = true;
+            this.FirstNameLbl.Location = new System.Drawing.Point(6, 133);
+            this.FirstNameLbl.Name = "FirstNameLbl";
+            this.FirstNameLbl.Size = new System.Drawing.Size(57, 13);
+            this.FirstNameLbl.TabIndex = 2;
+            this.FirstNameLbl.Text = "First Name";
+            // 
+            // GroupNameLbl
+            // 
+            this.GroupNameLbl.AutoSize = true;
+            this.GroupNameLbl.Location = new System.Drawing.Point(6, 60);
+            this.GroupNameLbl.Name = "GroupNameLbl";
+            this.GroupNameLbl.Size = new System.Drawing.Size(67, 13);
+            this.GroupNameLbl.TabIndex = 0;
+            this.GroupNameLbl.Text = "Group Name";
+            // 
             // AddUsers
             // 
+            this.AddUsers.Controls.Add(this.AddUsersGroupBox);
             this.AddUsers.Location = new System.Drawing.Point(4, 22);
             this.AddUsers.Name = "AddUsers";
-            this.AddUsers.Size = new System.Drawing.Size(1340, 638);
+            this.AddUsers.Size = new System.Drawing.Size(1340, 642);
             this.AddUsers.TabIndex = 3;
             this.AddUsers.Text = "Add Users";
             this.AddUsers.UseVisualStyleBackColor = true;
@@ -650,7 +837,7 @@
             // 
             this.About.Location = new System.Drawing.Point(4, 22);
             this.About.Name = "About";
-            this.About.Size = new System.Drawing.Size(1340, 638);
+            this.About.Size = new System.Drawing.Size(1340, 642);
             this.About.TabIndex = 4;
             this.About.Text = "About";
             this.About.UseVisualStyleBackColor = true;
@@ -671,9 +858,10 @@
             this.ReportGroupBox.Controls.Add(this.WelcomeLbl);
             this.ReportGroupBox.Controls.Add(this.LogoutBtn);
             this.ReportGroupBox.Controls.Add(this.ExitBtn);
-            this.ReportGroupBox.Location = new System.Drawing.Point(5, 12);
+            this.ReportGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ReportGroupBox.Location = new System.Drawing.Point(0, 0);
             this.ReportGroupBox.Name = "ReportGroupBox";
-            this.ReportGroupBox.Size = new System.Drawing.Size(1360, 735);
+            this.ReportGroupBox.Size = new System.Drawing.Size(1370, 750);
             this.ReportGroupBox.TabIndex = 0;
             this.ReportGroupBox.TabStop = false;
             this.ReportGroupBox.Text = "Admin Home";
@@ -735,7 +923,7 @@
             // 
             // LogoutBtn
             // 
-            this.LogoutBtn.Location = new System.Drawing.Point(1132, 703);
+            this.LogoutBtn.Location = new System.Drawing.Point(1163, 715);
             this.LogoutBtn.Name = "LogoutBtn";
             this.LogoutBtn.Size = new System.Drawing.Size(95, 30);
             this.LogoutBtn.TabIndex = 0;
@@ -744,218 +932,318 @@
             // 
             // ExitBtn
             // 
-            this.ExitBtn.Location = new System.Drawing.Point(1252, 703);
+            this.ExitBtn.Location = new System.Drawing.Point(1264, 715);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(95, 30);
             this.ExitBtn.TabIndex = 1;
             this.ExitBtn.Text = "Exit";
             this.ExitBtn.UseVisualStyleBackColor = true;
             // 
-            // groupBox4
+            // AddUsersGroupBox
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.groupBox4.Controls.Add(this.dataGridView5);
-            this.groupBox4.Controls.Add(this.SearchEditUsersTxtbox);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox4.Location = new System.Drawing.Point(3, 16);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(370, 619);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Existing Users";
+            this.AddUsersGroupBox.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.AddUsersGroupBox.Controls.Add(this.AddNewUserBox);
+            this.AddUsersGroupBox.Controls.Add(this.ExistingUsersBox);
+            this.AddUsersGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddUsersGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.AddUsersGroupBox.Name = "AddUsersGroupBox";
+            this.AddUsersGroupBox.Size = new System.Drawing.Size(1340, 642);
+            this.AddUsersGroupBox.TabIndex = 0;
+            this.AddUsersGroupBox.TabStop = false;
+            this.AddUsersGroupBox.Text = "Add Users";
             // 
-            // groupBox5
+            // ExistingUsersBox
             // 
-            this.groupBox5.BackColor = System.Drawing.Color.DarkSalmon;
-            this.groupBox5.Controls.Add(this.RemoveUserGroupBtn);
-            this.groupBox5.Controls.Add(this.SaveChangesBtn);
-            this.groupBox5.Controls.Add(this.LastNameTxtBox);
-            this.groupBox5.Controls.Add(this.FirstNameTxtBox);
-            this.groupBox5.Controls.Add(this.NameTxtBox);
-            this.groupBox5.Controls.Add(this.DeleteGroupChkBox);
-            this.groupBox5.Controls.Add(this.RemoveUserGroupLbl);
-            this.groupBox5.Controls.Add(this.SaveChangesLbl);
-            this.groupBox5.Controls.Add(this.LastNameLbl);
-            this.groupBox5.Controls.Add(this.FirstNameLbl);
-            this.groupBox5.Controls.Add(this.GroupNameLbl);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox5.Location = new System.Drawing.Point(967, 16);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(370, 619);
-            this.groupBox5.TabIndex = 0;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Modify Existing User";
+            this.ExistingUsersBox.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.ExistingUsersBox.Controls.Add(this.ExistingUserDataDisplay);
+            this.ExistingUsersBox.Controls.Add(this.SearchAddUsersTxtBox);
+            this.ExistingUsersBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ExistingUsersBox.Location = new System.Drawing.Point(3, 16);
+            this.ExistingUsersBox.Name = "ExistingUsersBox";
+            this.ExistingUsersBox.Size = new System.Drawing.Size(350, 623);
+            this.ExistingUsersBox.TabIndex = 0;
+            this.ExistingUsersBox.TabStop = false;
+            this.ExistingUsersBox.Text = "Existing Users";
             // 
-            // SearchEditUsersTxtbox
+            // AddNewUserBox
             // 
-            this.SearchEditUsersTxtbox.Location = new System.Drawing.Point(87, 28);
-            this.SearchEditUsersTxtbox.Name = "SearchEditUsersTxtbox";
-            this.SearchEditUsersTxtbox.Size = new System.Drawing.Size(171, 20);
-            this.SearchEditUsersTxtbox.TabIndex = 0;
-            this.SearchEditUsersTxtbox.Text = "Search";
+            this.AddNewUserBox.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.AddNewUserBox.Controls.Add(this.ConfirmPasswordTextBox);
+            this.AddNewUserBox.Controls.Add(this.PasswordTextBox);
+            this.AddNewUserBox.Controls.Add(this.LastNameCmboBox);
+            this.AddNewUserBox.Controls.Add(this.FirstNameCmboBox);
+            this.AddNewUserBox.Controls.Add(this.GroupNameCmbBox);
+            this.AddNewUserBox.Controls.Add(this.ConfirmPasswordLbl);
+            this.AddNewUserBox.Controls.Add(this.PadsswordLbl);
+            this.AddNewUserBox.Controls.Add(this.ImportFromTextFileBtn);
+            this.AddNewUserBox.Controls.Add(this.SaveNewUserBtn);
+            this.AddNewUserBox.Controls.Add(this.checkBox1);
+            this.AddNewUserBox.Controls.Add(this.label1);
+            this.AddNewUserBox.Controls.Add(this.SaveNewUserLbl);
+            this.AddNewUserBox.Controls.Add(this.LastNameAddUsersLbl);
+            this.AddNewUserBox.Controls.Add(this.FirstNameAddUsersLbl);
+            this.AddNewUserBox.Controls.Add(this.GroupNameAddUsersLbl);
+            this.AddNewUserBox.Controls.Add(this.UserTypeBox);
+            this.AddNewUserBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.AddNewUserBox.Location = new System.Drawing.Point(987, 16);
+            this.AddNewUserBox.Name = "AddNewUserBox";
+            this.AddNewUserBox.Size = new System.Drawing.Size(350, 623);
+            this.AddNewUserBox.TabIndex = 0;
+            this.AddNewUserBox.TabStop = false;
+            this.AddNewUserBox.Text = "Add New user";
             // 
-            // dataGridView5
+            // UserTypeBox
             // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.StudentAdminNameEditUsers,
-            this.GroupNameEditUsers});
-            this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView5.Location = new System.Drawing.Point(3, 60);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(364, 556);
-            this.dataGridView5.TabIndex = 1;
+            this.UserTypeBox.Controls.Add(this.StudentRdo);
+            this.UserTypeBox.Controls.Add(this.AdminRdo);
+            this.UserTypeBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.UserTypeBox.Location = new System.Drawing.Point(3, 16);
+            this.UserTypeBox.Name = "UserTypeBox";
+            this.UserTypeBox.Size = new System.Drawing.Size(344, 73);
+            this.UserTypeBox.TabIndex = 0;
+            this.UserTypeBox.TabStop = false;
+            this.UserTypeBox.Text = "User Type";
             // 
-            // StudentAdminNameEditUsers
+            // SearchAddUsersTxtBox
             // 
-            this.StudentAdminNameEditUsers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.StudentAdminNameEditUsers.HeaderText = "Student/Admin Name";
-            this.StudentAdminNameEditUsers.Name = "StudentAdminNameEditUsers";
+            this.SearchAddUsersTxtBox.Location = new System.Drawing.Point(70, 38);
+            this.SearchAddUsersTxtBox.Name = "SearchAddUsersTxtBox";
+            this.SearchAddUsersTxtBox.Size = new System.Drawing.Size(170, 20);
+            this.SearchAddUsersTxtBox.TabIndex = 0;
+            this.SearchAddUsersTxtBox.Text = "Search";
             // 
-            // GroupNameEditUsers
+            // ExistingUserDataDisplay
             // 
-            this.GroupNameEditUsers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GroupNameEditUsers.HeaderText = "Group Name";
-            this.GroupNameEditUsers.Name = "GroupNameEditUsers";
+            this.ExistingUserDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ExistingUserDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.ExistingUserDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ExistingUserDataDisplay.Location = new System.Drawing.Point(3, 64);
+            this.ExistingUserDataDisplay.Name = "ExistingUserDataDisplay";
+            this.ExistingUserDataDisplay.Size = new System.Drawing.Size(344, 556);
+            this.ExistingUserDataDisplay.TabIndex = 2;
             // 
-            // GroupNameLbl
+            // dataGridViewTextBoxColumn1
             // 
-            this.GroupNameLbl.AutoSize = true;
-            this.GroupNameLbl.Location = new System.Drawing.Point(6, 60);
-            this.GroupNameLbl.Name = "GroupNameLbl";
-            this.GroupNameLbl.Size = new System.Drawing.Size(67, 13);
-            this.GroupNameLbl.TabIndex = 0;
-            this.GroupNameLbl.Text = "Group Name";
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Student/Admin Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // FirstNameLbl
+            // dataGridViewTextBoxColumn2
             // 
-            this.FirstNameLbl.AutoSize = true;
-            this.FirstNameLbl.Location = new System.Drawing.Point(6, 133);
-            this.FirstNameLbl.Name = "FirstNameLbl";
-            this.FirstNameLbl.Size = new System.Drawing.Size(57, 13);
-            this.FirstNameLbl.TabIndex = 2;
-            this.FirstNameLbl.Text = "First Name";
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Group Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // LastNameLbl
+            // StudentRdo
             // 
-            this.LastNameLbl.AutoSize = true;
-            this.LastNameLbl.Location = new System.Drawing.Point(6, 166);
-            this.LastNameLbl.Name = "LastNameLbl";
-            this.LastNameLbl.Size = new System.Drawing.Size(58, 13);
-            this.LastNameLbl.TabIndex = 3;
-            this.LastNameLbl.Text = "Last Name";
+            this.StudentRdo.AutoSize = true;
+            this.StudentRdo.Location = new System.Drawing.Point(32, 38);
+            this.StudentRdo.Name = "StudentRdo";
+            this.StudentRdo.Size = new System.Drawing.Size(62, 17);
+            this.StudentRdo.TabIndex = 3;
+            this.StudentRdo.TabStop = true;
+            this.StudentRdo.Text = "Student";
+            this.StudentRdo.UseVisualStyleBackColor = true;
             // 
-            // SaveChangesLbl
+            // AdminRdo
             // 
-            this.SaveChangesLbl.AutoSize = true;
-            this.SaveChangesLbl.Location = new System.Drawing.Point(30, 332);
-            this.SaveChangesLbl.Name = "SaveChangesLbl";
-            this.SaveChangesLbl.Size = new System.Drawing.Size(77, 13);
-            this.SaveChangesLbl.TabIndex = 4;
-            this.SaveChangesLbl.Text = "Save Changes";
+            this.AdminRdo.AutoSize = true;
+            this.AdminRdo.Location = new System.Drawing.Point(230, 38);
+            this.AdminRdo.Name = "AdminRdo";
+            this.AdminRdo.Size = new System.Drawing.Size(85, 17);
+            this.AdminRdo.TabIndex = 4;
+            this.AdminRdo.TabStop = true;
+            this.AdminRdo.Text = "Administrator";
+            this.AdminRdo.UseVisualStyleBackColor = true;
             // 
-            // RemoveUserGroupLbl
+            // ImportFromTextFileBtn
             // 
-            this.RemoveUserGroupLbl.AutoSize = true;
-            this.RemoveUserGroupLbl.Location = new System.Drawing.Point(237, 332);
-            this.RemoveUserGroupLbl.Name = "RemoveUserGroupLbl";
-            this.RemoveUserGroupLbl.Size = new System.Drawing.Size(106, 13);
-            this.RemoveUserGroupLbl.TabIndex = 5;
-            this.RemoveUserGroupLbl.Text = "Remove User/Group";
+            this.ImportFromTextFileBtn.Location = new System.Drawing.Point(233, 399);
+            this.ImportFromTextFileBtn.Name = "ImportFromTextFileBtn";
+            this.ImportFromTextFileBtn.Size = new System.Drawing.Size(77, 40);
+            this.ImportFromTextFileBtn.TabIndex = 22;
+            this.ImportFromTextFileBtn.UseVisualStyleBackColor = true;
             // 
-            // DeleteGroupChkBox
+            // SaveNewUserBtn
             // 
-            this.DeleteGroupChkBox.AutoSize = true;
-            this.DeleteGroupChkBox.Location = new System.Drawing.Point(9, 97);
-            this.DeleteGroupChkBox.Name = "DeleteGroupChkBox";
-            this.DeleteGroupChkBox.Size = new System.Drawing.Size(165, 17);
-            this.DeleteGroupChkBox.TabIndex = 6;
-            this.DeleteGroupChkBox.Text = "Check to Delete Entire Group";
-            this.DeleteGroupChkBox.UseVisualStyleBackColor = true;
+            this.SaveNewUserBtn.Location = new System.Drawing.Point(85, 399);
+            this.SaveNewUserBtn.Name = "SaveNewUserBtn";
+            this.SaveNewUserBtn.Size = new System.Drawing.Size(77, 40);
+            this.SaveNewUserBtn.TabIndex = 21;
+            this.SaveNewUserBtn.UseVisualStyleBackColor = true;
             // 
-            // NameTxtBox
+            // checkBox1
             // 
-            this.NameTxtBox.Location = new System.Drawing.Point(74, 57);
-            this.NameTxtBox.Name = "NameTxtBox";
-            this.NameTxtBox.Size = new System.Drawing.Size(274, 25);
-            this.NameTxtBox.TabIndex = 7;
-            this.NameTxtBox.Text = "";
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(13, 142);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(111, 17);
+            this.checkBox1.TabIndex = 17;
+            this.checkBox1.Text = "Lock Group name";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // FirstNameTxtBox
+            // label1
             // 
-            this.FirstNameTxtBox.Location = new System.Drawing.Point(74, 130);
-            this.FirstNameTxtBox.Name = "FirstNameTxtBox";
-            this.FirstNameTxtBox.Size = new System.Drawing.Size(274, 25);
-            this.FirstNameTxtBox.TabIndex = 8;
-            this.FirstNameTxtBox.Text = "";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(213, 442);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Import From Text File";
             // 
-            // LastNameTxtBox
+            // SaveNewUserLbl
             // 
-            this.LastNameTxtBox.Location = new System.Drawing.Point(74, 163);
-            this.LastNameTxtBox.Name = "LastNameTxtBox";
-            this.LastNameTxtBox.Size = new System.Drawing.Size(274, 25);
-            this.LastNameTxtBox.TabIndex = 9;
-            this.LastNameTxtBox.Text = "";
+            this.SaveNewUserLbl.AutoSize = true;
+            this.SaveNewUserLbl.Location = new System.Drawing.Point(82, 442);
+            this.SaveNewUserLbl.Name = "SaveNewUserLbl";
+            this.SaveNewUserLbl.Size = new System.Drawing.Size(82, 13);
+            this.SaveNewUserLbl.TabIndex = 15;
+            this.SaveNewUserLbl.Text = "Save New User";
             // 
-            // SaveChangesBtn
+            // LastNameAddUsersLbl
             // 
-            this.SaveChangesBtn.Location = new System.Drawing.Point(33, 276);
-            this.SaveChangesBtn.Name = "SaveChangesBtn";
-            this.SaveChangesBtn.Size = new System.Drawing.Size(100, 40);
-            this.SaveChangesBtn.TabIndex = 10;
-            this.SaveChangesBtn.UseVisualStyleBackColor = true;
+            this.LastNameAddUsersLbl.AutoSize = true;
+            this.LastNameAddUsersLbl.Location = new System.Drawing.Point(10, 214);
+            this.LastNameAddUsersLbl.Name = "LastNameAddUsersLbl";
+            this.LastNameAddUsersLbl.Size = new System.Drawing.Size(58, 13);
+            this.LastNameAddUsersLbl.TabIndex = 14;
+            this.LastNameAddUsersLbl.Text = "Last Name";
             // 
-            // RemoveUserGroupBtn
+            // FirstNameAddUsersLbl
             // 
-            this.RemoveUserGroupBtn.Location = new System.Drawing.Point(243, 276);
-            this.RemoveUserGroupBtn.Name = "RemoveUserGroupBtn";
-            this.RemoveUserGroupBtn.Size = new System.Drawing.Size(100, 40);
-            this.RemoveUserGroupBtn.TabIndex = 11;
-            this.RemoveUserGroupBtn.UseVisualStyleBackColor = true;
+            this.FirstNameAddUsersLbl.AutoSize = true;
+            this.FirstNameAddUsersLbl.Location = new System.Drawing.Point(10, 184);
+            this.FirstNameAddUsersLbl.Name = "FirstNameAddUsersLbl";
+            this.FirstNameAddUsersLbl.Size = new System.Drawing.Size(57, 13);
+            this.FirstNameAddUsersLbl.TabIndex = 13;
+            this.FirstNameAddUsersLbl.Text = "First Name";
+            // 
+            // GroupNameAddUsersLbl
+            // 
+            this.GroupNameAddUsersLbl.AutoSize = true;
+            this.GroupNameAddUsersLbl.Location = new System.Drawing.Point(10, 114);
+            this.GroupNameAddUsersLbl.Name = "GroupNameAddUsersLbl";
+            this.GroupNameAddUsersLbl.Size = new System.Drawing.Size(67, 13);
+            this.GroupNameAddUsersLbl.TabIndex = 12;
+            this.GroupNameAddUsersLbl.Text = "Group Name";
+            // 
+            // ConfirmPasswordLbl
+            // 
+            this.ConfirmPasswordLbl.Location = new System.Drawing.Point(10, 296);
+            this.ConfirmPasswordLbl.Name = "ConfirmPasswordLbl";
+            this.ConfirmPasswordLbl.Size = new System.Drawing.Size(64, 29);
+            this.ConfirmPasswordLbl.TabIndex = 24;
+            this.ConfirmPasswordLbl.Text = "Confirm Password";
+            // 
+            // PadsswordLbl
+            // 
+            this.PadsswordLbl.AutoSize = true;
+            this.PadsswordLbl.Location = new System.Drawing.Point(10, 266);
+            this.PadsswordLbl.Name = "PadsswordLbl";
+            this.PadsswordLbl.Size = new System.Drawing.Size(53, 13);
+            this.PadsswordLbl.TabIndex = 23;
+            this.PadsswordLbl.Text = "Password";
+            // 
+            // GroupNameCmbBox
+            // 
+            this.GroupNameCmbBox.FormattingEnabled = true;
+            this.GroupNameCmbBox.Location = new System.Drawing.Point(83, 111);
+            this.GroupNameCmbBox.Name = "GroupNameCmbBox";
+            this.GroupNameCmbBox.Size = new System.Drawing.Size(235, 21);
+            this.GroupNameCmbBox.TabIndex = 27;
+            // 
+            // FirstNameCmboBox
+            // 
+            this.FirstNameCmboBox.FormattingEnabled = true;
+            this.FirstNameCmboBox.Location = new System.Drawing.Point(83, 181);
+            this.FirstNameCmboBox.Name = "FirstNameCmboBox";
+            this.FirstNameCmboBox.Size = new System.Drawing.Size(235, 21);
+            this.FirstNameCmboBox.TabIndex = 28;
+            // 
+            // LastNameCmboBox
+            // 
+            this.LastNameCmboBox.FormattingEnabled = true;
+            this.LastNameCmboBox.Location = new System.Drawing.Point(83, 211);
+            this.LastNameCmboBox.Name = "LastNameCmboBox";
+            this.LastNameCmboBox.Size = new System.Drawing.Size(235, 21);
+            this.LastNameCmboBox.TabIndex = 29;
+            // 
+            // NameComboBox
+            // 
+            this.NameComboBox.FormattingEnabled = true;
+            this.NameComboBox.Location = new System.Drawing.Point(79, 57);
+            this.NameComboBox.Name = "NameComboBox";
+            this.NameComboBox.Size = new System.Drawing.Size(269, 21);
+            this.NameComboBox.TabIndex = 12;
+            // 
+            // PasswordTextBox
+            // 
+            this.PasswordTextBox.Location = new System.Drawing.Point(83, 263);
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.Size = new System.Drawing.Size(235, 20);
+            this.PasswordTextBox.TabIndex = 30;
+            // 
+            // ConfirmPasswordTextBox
+            // 
+            this.ConfirmPasswordTextBox.Location = new System.Drawing.Point(83, 296);
+            this.ConfirmPasswordTextBox.Name = "ConfirmPasswordTextBox";
+            this.ConfirmPasswordTextBox.Size = new System.Drawing.Size(235, 20);
+            this.ConfirmPasswordTextBox.TabIndex = 31;
             // 
             // AdminHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 750);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tab1);
             this.Controls.Add(this.ReportGroupBox);
             this.Name = "AdminHomepage";
             this.Text = "AdminHomepage";
-            this.tabControl1.ResumeLayout(false);
+            this.tab1.ResumeLayout(false);
             this.Statistics.ResumeLayout(false);
-            this.GroupSearchGroupBox.ResumeLayout(false);
-            this.GroupSearchGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GroupNameDataGridView)).EndInit();
+            this.GroupSearchBox.ResumeLayout(false);
+            this.GroupSearchBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupSnapshotDataDisplay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GroupNameDataDisplay)).EndInit();
             this.Setup.ResumeLayout(false);
-            this.DrillsGroupBox.ResumeLayout(false);
+            this.ManageDrillsBox.ResumeLayout(false);
             this.ManageDrillsGroupBox.ResumeLayout(false);
             this.ManageDrillsGroupBox.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.AssignedDrillsBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.AssignedDrillDataDisplay)).EndInit();
+            this.AvailableDrillsBox.ResumeLayout(false);
+            this.AvailableDrillsBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AvailableDrillDataDisplay)).EndInit();
+            this.ExistingUsersSetupBox.ResumeLayout(false);
+            this.ExistingUsersSetupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.EditUsers.ResumeLayout(false);
             this.EditUsersGroupBox.ResumeLayout(false);
-            this.ReportGroupBox.ResumeLayout(false);
-            this.ReportGroupBox.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ExistingUserDataEditUsersDisplay)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            this.AddUsers.ResumeLayout(false);
+            this.ReportGroupBox.ResumeLayout(false);
+            this.ReportGroupBox.PerformLayout();
+            this.AddUsersGroupBox.ResumeLayout(false);
+            this.ExistingUsersBox.ResumeLayout(false);
+            this.ExistingUsersBox.PerformLayout();
+            this.AddNewUserBox.ResumeLayout(false);
+            this.AddNewUserBox.PerformLayout();
+            this.UserTypeBox.ResumeLayout(false);
+            this.UserTypeBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ExistingUserDataDisplay)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tab1;
         private System.Windows.Forms.TabPage Statistics;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.TabPage Setup;
@@ -965,7 +1253,7 @@
         private System.Windows.Forms.GroupBox ReportGroupBox;
         private System.Windows.Forms.Button LogoutBtn;
         private System.Windows.Forms.Button ExitBtn;
-        private System.Windows.Forms.GroupBox GroupSearchGroupBox;
+        private System.Windows.Forms.GroupBox GroupSearchBox;
         private System.Windows.Forms.Label WelcomeLbl;
         private System.Windows.Forms.Label AdminNameLbl;
         private System.Windows.Forms.Label TimeLbl;
@@ -973,20 +1261,20 @@
         private System.Windows.Forms.Label LastLoginDateLbl;
         private System.Windows.Forms.Label LastLoginLbl;
         private System.Windows.Forms.TextBox SearchTxtBox;
-        private System.Windows.Forms.DataGridView GroupNameDataGridView;
+        private System.Windows.Forms.DataGridView GroupNameDataDisplay;
         private System.Windows.Forms.DataGridViewTextBoxColumn GroupName;
         private System.Windows.Forms.Button GroupReportBtn;
         private System.Windows.Forms.Button StudentReportBtn;
-        private System.Windows.Forms.Button ExportToTxtBtn;
+        private System.Windows.Forms.Button ExportToTextBtn;
         private System.Windows.Forms.Button ExportToExcelBtn;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView GroupSnapshotDataDisplay;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DrillsAssigned;
         private System.Windows.Forms.DataGridViewTextBoxColumn DrillsCompleted;
         private System.Windows.Forms.DataGridViewTextBoxColumn AveragePercent;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastLogin;
-        private System.Windows.Forms.GroupBox DrillsGroupBox;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox ManageDrillsBox;
+        private System.Windows.Forms.GroupBox ExistingUsersSetupBox;
         private System.Windows.Forms.RadioButton StudentsRdo;
         private System.Windows.Forms.RadioButton GroupsRdo;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -1002,33 +1290,58 @@
         private System.Windows.Forms.Button AssignAllBtn;
         private System.Windows.Forms.Button RemoveSelectedBtn;
         private System.Windows.Forms.Button AssignSelectedBtn;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button AddDrillBtn;
+        private System.Windows.Forms.DataGridView AssignedDrillDataDisplay;
+        private System.Windows.Forms.DataGridView AvailableDrillDataDisplay;
+        private System.Windows.Forms.GroupBox AvailableDrillsBox;
+        private System.Windows.Forms.Button NewDrillBtn;
         private System.Windows.Forms.Button DeleteDrillBtn;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label DeleteDrillLbl;
+        private System.Windows.Forms.Label NewDrillLbl;
         private System.Windows.Forms.DataGridViewTextBoxColumn DrillName;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox AssignedDrillsBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn Drillname_Assigned;
         private System.Windows.Forms.GroupBox EditUsersGroupBox;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox SearchEditUsersTxtbox;
-        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridView ExistingUserDataEditUsersDisplay;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentAdminNameEditUsers;
         private System.Windows.Forms.DataGridViewTextBoxColumn GroupNameEditUsers;
         private System.Windows.Forms.Button RemoveUserGroupBtn;
         private System.Windows.Forms.Button SaveChangesBtn;
         private System.Windows.Forms.RichTextBox LastNameTxtBox;
         private System.Windows.Forms.RichTextBox FirstNameTxtBox;
-        private System.Windows.Forms.RichTextBox NameTxtBox;
         private System.Windows.Forms.CheckBox DeleteGroupChkBox;
         private System.Windows.Forms.Label RemoveUserGroupLbl;
         private System.Windows.Forms.Label SaveChangesLbl;
         private System.Windows.Forms.Label LastNameLbl;
         private System.Windows.Forms.Label FirstNameLbl;
         private System.Windows.Forms.Label GroupNameLbl;
+        private System.Windows.Forms.GroupBox AddUsersGroupBox;
+        private System.Windows.Forms.GroupBox AddNewUserBox;
+        private System.Windows.Forms.GroupBox UserTypeBox;
+        private System.Windows.Forms.GroupBox ExistingUsersBox;
+        private System.Windows.Forms.TextBox SearchAddUsersTxtBox;
+        private System.Windows.Forms.DataGridView ExistingUserDataDisplay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.RadioButton StudentRdo;
+        private System.Windows.Forms.RadioButton AdminRdo;
+        private System.Windows.Forms.Button ImportFromTextFileBtn;
+        private System.Windows.Forms.Button SaveNewUserBtn;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label SaveNewUserLbl;
+        private System.Windows.Forms.Label LastNameAddUsersLbl;
+        private System.Windows.Forms.Label FirstNameAddUsersLbl;
+        private System.Windows.Forms.Label GroupNameAddUsersLbl;
+        private System.Windows.Forms.Label ConfirmPasswordLbl;
+        private System.Windows.Forms.Label PadsswordLbl;
+        private System.Windows.Forms.ComboBox LastNameCmboBox;
+        private System.Windows.Forms.ComboBox FirstNameCmboBox;
+        private System.Windows.Forms.ComboBox GroupNameCmbBox;
+        private System.Windows.Forms.ComboBox NameComboBox;
+        private System.Windows.Forms.TextBox ConfirmPasswordTextBox;
+        private System.Windows.Forms.TextBox PasswordTextBox;
     }
 }
