@@ -25,5 +25,20 @@ namespace RaptorMath
         {
 
         }
+
+        private void MathDrill_SkipBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PlayDrill_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
