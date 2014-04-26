@@ -51,11 +51,11 @@
             // 
             this.MathDrill_WindowLbl.AutoSize = true;
             this.MathDrill_WindowLbl.BackColor = System.Drawing.Color.Transparent;
-            this.MathDrill_WindowLbl.Font = new System.Drawing.Font("Copperplate Gothic Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MathDrill_WindowLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_WindowLbl.Location = new System.Drawing.Point(13, 9);
             this.MathDrill_WindowLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_WindowLbl.Name = "MathDrill_WindowLbl";
-            this.MathDrill_WindowLbl.Size = new System.Drawing.Size(151, 26);
+            this.MathDrill_WindowLbl.Size = new System.Drawing.Size(114, 29);
             this.MathDrill_WindowLbl.TabIndex = 30;
             this.MathDrill_WindowLbl.Text = "Math Drill";
             this.MathDrill_WindowLbl.Click += new System.EventHandler(this.MathDrill_WindowLbl_Click);
@@ -65,11 +65,11 @@
             this.MathDrill_TimeLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MathDrill_TimeLbl.AutoSize = true;
             this.MathDrill_TimeLbl.BackColor = System.Drawing.Color.Transparent;
-            this.MathDrill_TimeLbl.Font = new System.Drawing.Font("Copperplate Gothic Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MathDrill_TimeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_TimeLbl.Location = new System.Drawing.Point(900, 9);
             this.MathDrill_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_TimeLbl.Name = "MathDrill_TimeLbl";
-            this.MathDrill_TimeLbl.Size = new System.Drawing.Size(80, 22);
+            this.MathDrill_TimeLbl.Size = new System.Drawing.Size(83, 25);
             this.MathDrill_TimeLbl.TabIndex = 29;
             this.MathDrill_TimeLbl.Text = "<Time>";
             // 
@@ -77,11 +77,11 @@
             // 
             this.MathDrill_StudentNameLbl.AutoSize = true;
             this.MathDrill_StudentNameLbl.BackColor = System.Drawing.Color.Transparent;
-            this.MathDrill_StudentNameLbl.Font = new System.Drawing.Font("Copperplate Gothic Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MathDrill_StudentNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_StudentNameLbl.Location = new System.Drawing.Point(421, 27);
             this.MathDrill_StudentNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_StudentNameLbl.Name = "MathDrill_StudentNameLbl";
-            this.MathDrill_StudentNameLbl.Size = new System.Drawing.Size(179, 33);
+            this.MathDrill_StudentNameLbl.Size = new System.Drawing.Size(148, 33);
             this.MathDrill_StudentNameLbl.TabIndex = 28;
             this.MathDrill_StudentNameLbl.Text = "<Student>";
             // 
@@ -90,11 +90,11 @@
             this.MathDrill_DateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MathDrill_DateLbl.AutoSize = true;
             this.MathDrill_DateLbl.BackColor = System.Drawing.Color.Transparent;
-            this.MathDrill_DateLbl.Font = new System.Drawing.Font("Copperplate Gothic Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MathDrill_DateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_DateLbl.Location = new System.Drawing.Point(794, 9);
             this.MathDrill_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_DateLbl.Name = "MathDrill_DateLbl";
-            this.MathDrill_DateLbl.Size = new System.Drawing.Size(87, 22);
+            this.MathDrill_DateLbl.Size = new System.Drawing.Size(81, 25);
             this.MathDrill_DateLbl.TabIndex = 27;
             this.MathDrill_DateLbl.Text = "<Date>";
             // 
@@ -280,7 +280,10 @@
             this.Controls.Add(this.MathDrill_TimeLbl);
             this.Controls.Add(this.MathDrill_StudentNameLbl);
             this.Controls.Add(this.MathDrill_DateLbl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PlayDrill";
             this.Text = "PlayDrill";
             this.Load += new System.EventHandler(this.PlayDrill_Load);
