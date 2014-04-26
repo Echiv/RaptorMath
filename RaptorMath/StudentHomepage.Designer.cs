@@ -61,7 +61,7 @@
             this.StuHome_TimeLbl.BackColor = System.Drawing.Color.Transparent;
             this.StuHome_TimeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_TimeLbl.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.StuHome_TimeLbl.Location = new System.Drawing.Point(907, 59);
+            this.StuHome_TimeLbl.Location = new System.Drawing.Point(882, 59);
             this.StuHome_TimeLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.StuHome_TimeLbl.Name = "StuHome_TimeLbl";
             this.StuHome_TimeLbl.Size = new System.Drawing.Size(83, 25);
@@ -87,7 +87,7 @@
             this.StuHome_LoginDateLbl.BackColor = System.Drawing.Color.Transparent;
             this.StuHome_LoginDateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_LoginDateLbl.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.StuHome_LoginDateLbl.Location = new System.Drawing.Point(907, 10);
+            this.StuHome_LoginDateLbl.Location = new System.Drawing.Point(882, 9);
             this.StuHome_LoginDateLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.StuHome_LoginDateLbl.Name = "StuHome_LoginDateLbl";
             this.StuHome_LoginDateLbl.Size = new System.Drawing.Size(81, 25);
