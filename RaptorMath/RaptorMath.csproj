@@ -229,6 +229,57 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Submit Button Gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Submit Button Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Submit Button Green1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\submit green3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\submit green31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Submit gray1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skip1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skip2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skip3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adventure.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quit drill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quitdrill1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
