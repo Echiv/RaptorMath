@@ -416,6 +416,8 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void LogoutBtn_Click(object sender, EventArgs e)
         {
+            localManager.ClearAdminUser();
+            localManager.currentUser = string.Empty;
             localManager.SetWindow(Window.authUser);
             this.Close();
         }
