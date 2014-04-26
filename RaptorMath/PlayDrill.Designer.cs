@@ -191,7 +191,7 @@
             this.MathDrill_InputTxt.TabIndex = 31;
             this.MathDrill_InputTxt.Text = "";
             this.MathDrill_InputTxt.TextChanged += new System.EventHandler(this.PlayDrill_InputTxt_TextChanged);
-            this.MathDrill_InputTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_DigitsKeyPress);
+            this.MathDrill_InputTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PlayDrill_DigitsKeyPress);
             // 
             // MathDrill_OfLbl
             // 
@@ -279,6 +279,7 @@
             // 
             // PlayDrill
             // 
+            this.AcceptButton = this.MathDrill_SubmitBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));

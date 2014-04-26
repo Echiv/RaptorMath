@@ -32,7 +32,7 @@ namespace RaptorMath
             MathDrill_InputTxt.Select();
             MathDrill_SubmitBtn.Enabled = false;
 
-            MathDrill_InputTxt.KeyPress += new KeyPressEventHandler(RaptorMath_DigitsKeyPress);
+            MathDrill_InputTxt.KeyPress += new KeyPressEventHandler(PlayDrill_DigitsKeyPress);
             MathDrill_CurrentNumLbl.Text = localManager.GetCurrentNumber();
             MathDrill_StudentNameLbl.Text = localManager.currentStudent.LoginName;
             MathDrill_TotalNumberLbl.Text = localManager.GetNumQuestions().Replace("questions.", "");
@@ -197,36 +197,15 @@ namespace RaptorMath
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Handle DigitsKeyPress event.</summary>
-        private void RaptorMath_DigitsKeyPress(object sender, KeyPressEventArgs e)
+        private void PlayDrill_DigitsKeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13)
+            e.Handled = !(char.IsDigit(e.KeyChar) || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
             {
-                MathDrill_SubmitBtn_Click(sender, e);
-            }
-            else
-            {
-                e.Handled = !(char.IsDigit(e.KeyChar) || (char.IsControl(e.KeyChar)));
-                if (e.Handled)
-                {
-                    System.Media.SystemSounds.Beep.Play();
-                }
-            }
-        }
-
-        //------------------------------------------------------------------//
-        // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/24/14                                                    //
-        //------------------------------------------------------------------//
-        private void MathDrill_InputType_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // If the enter key is pressed, perform the same code on the click of the submit button
-            if (e.KeyChar == 13)
-            {
-                MathDrill_SubmitBtn_Click(sender, e);
+                System.Media.SystemSounds.Beep.Play();
             }
         }
             
-
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
