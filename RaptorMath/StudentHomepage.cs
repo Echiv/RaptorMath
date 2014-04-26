@@ -46,14 +46,10 @@ namespace RaptorMath
         /// <summary>Returns the student to the user login window.</summary>
         private void StuHome_LogoutBtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to log out?",
-                "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
-                localManager.ClearStudentUser();
-                localManager.currentUser = string.Empty;
-                localManager.SetWindow(Window.authUser);
-                this.Close();
-            }
+            localManager.ClearStudentUser();
+            localManager.currentUser = string.Empty;
+            localManager.SetWindow(Window.authUser);
+            this.Close();
         }
 
         //------------------------------------------------------------------//
