@@ -55,6 +55,8 @@ namespace RaptorMath
             {
                 // Refresh the group names
                 RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
+                SaveChangesBtn.Enabled = false;
+                RemoveUserGroupBtn.Enabled = false;
             }
             // The Add Users tab
             else if (e.TabPageIndex == 3)
@@ -74,7 +76,7 @@ namespace RaptorMath
 
         }
 
-        // The code in this section is for the Edit Users Tab only
+        /* The code in this section is for the Edit Users Tab only*/
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
@@ -123,6 +125,14 @@ namespace RaptorMath
                         GroupNameComboBox.Text = localManager.FindGroupByID(selectedStudent.GroupID).Name;
                         FirstNameTxtBox.Text = selectedStudent.FirstName;
                         LastNameTxtBox.Text = selectedStudent.LastName;
+                        SaveChangesBtn.Enabled = true;
+                        RemoveUserGroupBtn.Enabled = true;
+                        break;
+                    }
+                    else
+                    {
+                        SaveChangesBtn.Enabled = false;
+                        RemoveUserGroupBtn.Enabled = false;
                     }
                 }
             }
@@ -154,8 +164,108 @@ namespace RaptorMath
 
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/24/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Resets the boxes sued to modify a student.</summary>
+        private void SaveChangesBtn_Click(object sender, EventArgs e)
+        {
+            int selectedrowindex = ExistingUserDataEditUsersDisplay.SelectedCells[0].RowIndex;
+            DataGridViewRow row = ExistingUserDataEditUsersDisplay.Rows[selectedrowindex]; 
 
+            string selectedStudent = localManager.GetStudentNameFromCellFormat(row.Cells[0].Value.ToString());
+            if (selectedStudent != "Unknown Student")
+            {
+                int isValidEdit = localManager.IsValidEdit(FirstNameTxtBox.Text, LastNameTxtBox.Text, selectedStudent, GroupNameComboBox.Text, localManager.studentList, localManager.groupList);
+                if (isValidEdit == 0)
+                {
+                    localManager.EditStudent(FirstNameTxtBox.Text, LastNameTxtBox.Text, selectedStudent, GroupNameComboBox.Text, localManager.studentList, localManager.groupList);
+                    MessageBox.Show("Student changes saved.", "Raptor Math", MessageBoxButtons.OK);
+                    GroupNameComboBox.Text = string.Empty;
+                    FirstNameTxtBox.Text = string.Empty;
+                    LastNameTxtBox.Text = string.Empty;
+                    RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
+                    RefreshDataGrid();
+                }
+                else if (isValidEdit == 1)
+                {
+                    MessageBox.Show("Error. Entered student doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (isValidEdit == 2)
+                {
+                    MessageBox.Show("Error. That student already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    FirstNameTxtBox.Focus();
+                }
+                else if (isValidEdit == 3)
+                {
+                    MessageBox.Show("Error. Entered group doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    EditUsersGroupBox.Focus();
+                }
+                else if (isValidEdit == 4)
+                {
+                    MessageBox.Show("Error. Student already belongs to this group.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    EditUsersGroupBox.Focus();
+                }
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/24/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Handle 'Remove User' button click.</summary>
+        private void RemoveUserGroupBtn_Click(object sender, EventArgs e)
+        {
+            string userToBeRemoved = FirstNameTxtBox.Text + " " + LastNameTxtBox.Text;
+            bool isUserRemoved = false;
+            string checkForDefaultUser = string.Empty;
+
+            if (userToBeRemoved.Length > 9)
+                checkForDefaultUser = userToBeRemoved.Remove(0, 8);
+
+            if (checkForDefaultUser.Trim() != "Default Admin")
+            {
+                if (MessageBox.Show("Are you sure you want to remove this user? All their data will be removed from the system.",
+                    "Raptor Math", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    isUserRemoved = localManager.removeUser(userToBeRemoved);
+                    if (isUserRemoved == true)
+                    {
+                        MessageBox.Show("The selected user has been removed", "Raptor Math", MessageBoxButtons.OK);
+                        RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
+                        GroupNameComboBox.Text = string.Empty;
+                        FirstNameTxtBox.Text = string.Empty;
+                        LastNameTxtBox.Text = string.Empty;
+                        RefreshDataGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The selected user does not match any known users and cannot be removed", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+                MessageBox.Show("Cannot remove the default admin", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/24/14                                                    //
+        //------------------------------------------------------------------//
+        private void RefreshDataGrid()
+        {
+            ExistingUserDataEditUsersDisplay.Rows.Clear();
+            List<Student> matches = localManager.FindLastNameMatches(SearchEditUsersTxtbox.Text);
+            if (matches.Count > 0)
+            {
+                DisplayFoundStudents(matches, ExistingUserDataEditUsersDisplay);
+            }
+        }
+        
         /* This part of the code is for the Add Users tab*/
+
+        //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
@@ -389,7 +499,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
-        /// <summary>Resets the boxes sued to modify a student.</summary>
+        /// <summary>Resets the boxes used to modify a student.</summary>
         private void ClearModifyUserBoxes()
         {
             GroupNameComboBox.Text = string.Empty;
