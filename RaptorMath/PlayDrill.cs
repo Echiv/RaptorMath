@@ -143,7 +143,7 @@ namespace RaptorMath
             if (MathDrill_InputTxt.Text.Length > 0)
             {
                 MathDrill_SubmitBtn.Enabled = true;
-                if (File.Exists(Properties.Resources.submit_green31.ToString()))
+                if (true)
                 {
                     MathDrill_SubmitBtn.Image = Properties.Resources.submit_green31;
                 }
@@ -151,7 +151,7 @@ namespace RaptorMath
             else
             {
                 MathDrill_SubmitBtn.Enabled = false;
-                if (File.Exists(Properties.Resources.Submit_gray1.ToString()))
+                if (true)
                 {
                     MathDrill_SubmitBtn.Image = Properties.Resources.Submit_gray1;
                 }
