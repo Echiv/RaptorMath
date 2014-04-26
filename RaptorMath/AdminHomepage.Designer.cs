@@ -58,6 +58,7 @@
             this.ManageDrillsGroupBox = new System.Windows.Forms.GroupBox();
             this.AssignedDrillsBox = new System.Windows.Forms.GroupBox();
             this.AssignedDrillDataDisplay = new System.Windows.Forms.DataGridView();
+            this.Drillname_Assigned = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AvailableDrillsBox = new System.Windows.Forms.GroupBox();
             this.AvailableDrillDataDisplay = new System.Windows.Forms.DataGridView();
             this.DrillName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -130,7 +131,6 @@
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.AdminHome = new System.Windows.Forms.Timer(this.components);
-            this.Drillname_Assigned = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab1.SuspendLayout();
             this.Statistics.SuspendLayout();
             this.GroupSearchBox.SuspendLayout();
@@ -392,6 +392,13 @@
             this.AssignedDrillDataDisplay.Name = "AssignedDrillDataDisplay";
             this.AssignedDrillDataDisplay.Size = new System.Drawing.Size(431, 482);
             this.AssignedDrillDataDisplay.TabIndex = 1;
+            // 
+            // Drillname_Assigned
+            // 
+            this.Drillname_Assigned.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Drillname_Assigned.HeaderText = "Drill Name";
+            this.Drillname_Assigned.Name = "Drillname_Assigned";
+            this.Drillname_Assigned.ReadOnly = true;
             // 
             // AvailableDrillsBox
             // 
@@ -1155,17 +1162,9 @@
             // 
             this.AdminHome.Tick += new System.EventHandler(this.AdminHome_Tick);
             // 
-            // Drillname_Assigned
-            // 
-            this.Drillname_Assigned.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Drillname_Assigned.HeaderText = "Drill Name";
-            this.Drillname_Assigned.Name = "Drillname_Assigned";
-            this.Drillname_Assigned.ReadOnly = true;
-            // 
             // AdminHomepage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1370, 750);
             this.Controls.Add(this.tab1);
             this.Controls.Add(this.ReportGroupBox);
