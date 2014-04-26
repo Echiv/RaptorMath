@@ -60,7 +60,26 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void MathDrill_SkipBtn_Click(object sender, EventArgs e)
         {
+            MathDrill_InputTxt.Clear();
+            MathDrill_ResponseLbl.ForeColor = Color.Blue;
+            MathDrill_ResponseLbl.Text = "Skipped!";
+            MathDrill_ResponseLbl.Visible = true;
+            localManager.currentStudent.curDrill.IncrementSkipped();
+            localManager.currentStudent.curDrill.IncrementWrong();
+            RefreshRange();
+            // CASE: Don't skip the last problem.
+            if (localManager.ReachesEnd(localManager.GetCurrentNumber(), MathDrill_TotalNumberLbl.Text.Trim()) == true)
+            {
+                MathDrill_InputTxt.Enabled = false;
+                MathDrill_SkipBtn.Enabled = false;
+                MathDrill_SubmitBtn.Enabled = false;
+                MessageBox.Show("Completed! Good job!", "Raptor Math", MessageBoxButtons.OK);
+                localManager.UpdateCurrentNumber();
+                return;
+            }
 
+            MathDrill_CurrentNumLbl.Text = localManager.UpdateCurrentNumber();
+            this.MathDrill_InputTxt.Focus();
         }
 
         //------------------------------------------------------------------//
