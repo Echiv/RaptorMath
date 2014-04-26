@@ -209,6 +209,10 @@ namespace RaptorMath
                         MessageBox.Show("Error. Student already belongs to this group.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         EditUsersGroupBox.Focus();
                     }
+                    else if (isValidEdit == 5)
+                    {
+                        MessageBox.Show("Error. You must choose something to change about the student.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -510,6 +514,11 @@ namespace RaptorMath
             GroupNameComboBox.Text = string.Empty;
             FirstNameTxtBox.Text = string.Empty;
             LastNameTxtBox.Text = string.Empty;
+        }
+
+        private void AdminHome_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }
