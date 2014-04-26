@@ -129,11 +129,11 @@ namespace RaptorMath
                         RemoveUserGroupBtn.Enabled = true;
                         break;
                     }
-                    else
-                    {
-                        SaveChangesBtn.Enabled = false;
-                        RemoveUserGroupBtn.Enabled = false;
-                    }
+                }
+                else
+                {
+                    SaveChangesBtn.Enabled = false;
+                    RemoveUserGroupBtn.Enabled = false;
                 }
             }
         }
