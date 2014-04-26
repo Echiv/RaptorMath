@@ -1,7 +1,7 @@
 ﻿/* 
 Authors: Joshua Boone and Justine Dinh                     
  * Date: 4/24/14
- * • Added the functionality to do stuff.
+ * • Added the the whole class
 */
 
 using System;
@@ -411,6 +411,10 @@ namespace RaptorMath
             }
         }
 
+        private void AdminHome_Tick(object sender, EventArgs e)
+        {
+
+        }
 
         // This section of code handles button clciks
         // This first part is for the two buttons that can be clicked from any any tab
@@ -516,9 +520,30 @@ namespace RaptorMath
             LastNameTxtBox.Text = string.Empty;
         }
 
-        private void AdminHome_Tick(object sender, EventArgs e)
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/24/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Clears the search message out of the search text boxes.</summary>
+        private void SearchAddUsersTxtBox_Click(object sender, EventArgs e)
         {
+            if (SearchAddUsersTxtBox.Text.Equals("Search"))
+            {
+                SearchAddUsersTxtBox.Text = string.Empty;
+            }
+        }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/24/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Clears the search message out of the search text boxes.</summary>
+        private void SearchEditUsersTxtbox_Click(object sender, EventArgs e)
+        {
+            if (SearchEditUsersTxtbox.Text == "Search")
+            {
+                SearchEditUsersTxtbox.Text = string.Empty;
+            }
         }
     }
 }
