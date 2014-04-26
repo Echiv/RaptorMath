@@ -172,40 +172,43 @@ namespace RaptorMath
         private void SaveChangesBtn_Click(object sender, EventArgs e)
         {
             int selectedrowindex = ExistingUserDataEditUsersDisplay.SelectedCells[0].RowIndex;
-            DataGridViewRow row = ExistingUserDataEditUsersDisplay.Rows[selectedrowindex]; 
+            DataGridViewRow row = ExistingUserDataEditUsersDisplay.Rows[selectedrowindex];
 
-            string selectedStudent = localManager.GetStudentNameFromCellFormat(row.Cells[0].Value.ToString());
-            if (selectedStudent != "Unknown Student")
+            if (row.Cells[0].Value != null)
             {
-                int isValidEdit = localManager.IsValidEdit(FirstNameTxtBox.Text, LastNameTxtBox.Text, selectedStudent, GroupNameComboBox.Text, localManager.studentList, localManager.groupList);
-                if (isValidEdit == 0)
+                string selectedStudent = localManager.GetStudentNameFromCellFormat(row.Cells[0].Value.ToString());
+                if (selectedStudent != "Unknown Student")
                 {
-                    localManager.EditStudent(FirstNameTxtBox.Text, LastNameTxtBox.Text, selectedStudent, GroupNameComboBox.Text, localManager.studentList, localManager.groupList);
-                    MessageBox.Show("Student changes saved.", "Raptor Math", MessageBoxButtons.OK);
-                    GroupNameComboBox.Text = string.Empty;
-                    FirstNameTxtBox.Text = string.Empty;
-                    LastNameTxtBox.Text = string.Empty;
-                    RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
-                    RefreshDataGrid();
-                }
-                else if (isValidEdit == 1)
-                {
-                    MessageBox.Show("Error. Entered student doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (isValidEdit == 2)
-                {
-                    MessageBox.Show("Error. That student already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    FirstNameTxtBox.Focus();
-                }
-                else if (isValidEdit == 3)
-                {
-                    MessageBox.Show("Error. Entered group doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    EditUsersGroupBox.Focus();
-                }
-                else if (isValidEdit == 4)
-                {
-                    MessageBox.Show("Error. Student already belongs to this group.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    EditUsersGroupBox.Focus();
+                    int isValidEdit = localManager.IsValidEdit(FirstNameTxtBox.Text, LastNameTxtBox.Text, selectedStudent, GroupNameComboBox.Text, localManager.studentList, localManager.groupList);
+                    if (isValidEdit == 0)
+                    {
+                        localManager.EditStudent(FirstNameTxtBox.Text, LastNameTxtBox.Text, selectedStudent, GroupNameComboBox.Text, localManager.studentList, localManager.groupList);
+                        MessageBox.Show("Student changes saved.", "Raptor Math", MessageBoxButtons.OK);
+                        GroupNameComboBox.Text = string.Empty;
+                        FirstNameTxtBox.Text = string.Empty;
+                        LastNameTxtBox.Text = string.Empty;
+                        RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
+                        RefreshDataGrid();
+                    }
+                    else if (isValidEdit == 1)
+                    {
+                        MessageBox.Show("Error. Entered student doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (isValidEdit == 2)
+                    {
+                        MessageBox.Show("Error. That student already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        FirstNameTxtBox.Focus();
+                    }
+                    else if (isValidEdit == 3)
+                    {
+                        MessageBox.Show("Error. Entered group doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        EditUsersGroupBox.Focus();
+                    }
+                    else if (isValidEdit == 4)
+                    {
+                        MessageBox.Show("Error. Student already belongs to this group.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        EditUsersGroupBox.Focus();
+                    }
                 }
             }
         }
