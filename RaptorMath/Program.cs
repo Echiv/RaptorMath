@@ -63,7 +63,7 @@ namespace RaptorMath
                         }
                     case Window.adminHome:
                         {
-                            Application.Run(new AdminHome_Form(allManager));
+                            Application.Run(new AdminHomepage(allManager));
                             break;
                         }
                     case Window.stuHome:

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomepage));
             this.tab1 = new System.Windows.Forms.TabControl();
             this.Statistics = new System.Windows.Forms.TabPage();
@@ -76,8 +76,6 @@
             this.AssignSelectedBtn = new System.Windows.Forms.Button();
             this.ExistingUsersSetupBox = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.StudentAdminName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GroupName_Setup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NarrowListTxtBox = new System.Windows.Forms.TextBox();
             this.StudentsRdo = new System.Windows.Forms.RadioButton();
             this.GroupsRdo = new System.Windows.Forms.RadioButton();
@@ -85,10 +83,9 @@
             this.EditUsersGroupBox = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.ExistingUserDataEditUsersDisplay = new System.Windows.Forms.DataGridView();
-            this.StudentAdminNameEditUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GroupNameEditUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchEditUsersTxtbox = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.GroupNameComboBox = new System.Windows.Forms.ComboBox();
             this.RemoveUserGroupBtn = new System.Windows.Forms.Button();
             this.SaveChangesBtn = new System.Windows.Forms.Button();
             this.LastNameTxtBox = new System.Windows.Forms.RichTextBox();
@@ -100,6 +97,22 @@
             this.FirstNameLbl = new System.Windows.Forms.Label();
             this.GroupNameLbl = new System.Windows.Forms.Label();
             this.AddUsers = new System.Windows.Forms.TabPage();
+            this.AddUsersGroupBox = new System.Windows.Forms.GroupBox();
+            this.AddNewUserBox = new System.Windows.Forms.GroupBox();
+            this.LastNameCmboBox = new System.Windows.Forms.ComboBox();
+            this.FirstNameCmboBox = new System.Windows.Forms.ComboBox();
+            this.GroupNameCmbBox = new System.Windows.Forms.ComboBox();
+            this.ImportFromTextFileBtn = new System.Windows.Forms.Button();
+            this.SaveNewUserBtn = new System.Windows.Forms.Button();
+            this.LockGroupNameCheckBox = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SaveNewUserLbl = new System.Windows.Forms.Label();
+            this.LastNameAddUsersLbl = new System.Windows.Forms.Label();
+            this.FirstNameAddUsersLbl = new System.Windows.Forms.Label();
+            this.GroupNameAddUsersLbl = new System.Windows.Forms.Label();
+            this.ExistingUsersBox = new System.Windows.Forms.GroupBox();
+            this.ExistingUserDataDisplay = new System.Windows.Forms.DataGridView();
+            this.SearchAddUsersTxtBox = new System.Windows.Forms.TextBox();
             this.About = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.ReportGroupBox = new System.Windows.Forms.GroupBox();
@@ -111,32 +124,12 @@
             this.WelcomeLbl = new System.Windows.Forms.Label();
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
-            this.AddUsersGroupBox = new System.Windows.Forms.GroupBox();
-            this.ExistingUsersBox = new System.Windows.Forms.GroupBox();
-            this.AddNewUserBox = new System.Windows.Forms.GroupBox();
-            this.UserTypeBox = new System.Windows.Forms.GroupBox();
-            this.SearchAddUsersTxtBox = new System.Windows.Forms.TextBox();
-            this.ExistingUserDataDisplay = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StudentRdo = new System.Windows.Forms.RadioButton();
-            this.AdminRdo = new System.Windows.Forms.RadioButton();
-            this.ImportFromTextFileBtn = new System.Windows.Forms.Button();
-            this.SaveNewUserBtn = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SaveNewUserLbl = new System.Windows.Forms.Label();
-            this.LastNameAddUsersLbl = new System.Windows.Forms.Label();
-            this.FirstNameAddUsersLbl = new System.Windows.Forms.Label();
-            this.GroupNameAddUsersLbl = new System.Windows.Forms.Label();
-            this.ConfirmPasswordLbl = new System.Windows.Forms.Label();
-            this.PadsswordLbl = new System.Windows.Forms.Label();
-            this.GroupNameCmbBox = new System.Windows.Forms.ComboBox();
-            this.FirstNameCmboBox = new System.Windows.Forms.ComboBox();
-            this.LastNameCmboBox = new System.Windows.Forms.ComboBox();
-            this.NameComboBox = new System.Windows.Forms.ComboBox();
-            this.PasswordTextBox = new System.Windows.Forms.TextBox();
-            this.ConfirmPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.StudentAdminNameEditUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupNameEditUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentAdminName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupName_Setup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab1.SuspendLayout();
             this.Statistics.SuspendLayout();
             this.GroupSearchBox.SuspendLayout();
@@ -157,12 +150,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.ExistingUserDataEditUsersDisplay)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.AddUsers.SuspendLayout();
-            this.ReportGroupBox.SuspendLayout();
             this.AddUsersGroupBox.SuspendLayout();
-            this.ExistingUsersBox.SuspendLayout();
             this.AddNewUserBox.SuspendLayout();
-            this.UserTypeBox.SuspendLayout();
+            this.ExistingUsersBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExistingUserDataDisplay)).BeginInit();
+            this.ReportGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
@@ -177,6 +169,7 @@
             this.tab1.SelectedIndex = 0;
             this.tab1.Size = new System.Drawing.Size(1348, 668);
             this.tab1.TabIndex = 0;
+            this.tab1.Selected += new System.Windows.Forms.TabControlEventHandler(this.Tab1_Selected);
             // 
             // Statistics
             // 
@@ -291,14 +284,14 @@
             // 
             // GroupNameDataDisplay
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle71.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle71.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle71.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle71;
             this.GroupNameDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GroupNameDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GroupName});
@@ -379,14 +372,14 @@
             // 
             // AssignedDrillDataDisplay
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AssignedDrillDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle72.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle72.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle72.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle72.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AssignedDrillDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle72;
             this.AssignedDrillDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AssignedDrillDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Drillname_Assigned});
@@ -420,40 +413,40 @@
             // 
             // AvailableDrillDataDisplay
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AvailableDrillDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle73;
+            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle74.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle74.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle74.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle74.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle74.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle74.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AvailableDrillDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle74;
             this.AvailableDrillDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AvailableDrillDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DrillName});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle75.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle75.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle75.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle75.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle75.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle75.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle75;
             this.AvailableDrillDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.AvailableDrillDataDisplay.Location = new System.Drawing.Point(3, 116);
             this.AvailableDrillDataDisplay.Name = "AvailableDrillDataDisplay";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle76.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle76.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle76.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle76.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle76.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle76.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle76;
+            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle77;
             this.AvailableDrillDataDisplay.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.AvailableDrillDataDisplay.Size = new System.Drawing.Size(414, 479);
             this.AvailableDrillDataDisplay.TabIndex = 0;
@@ -605,18 +598,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(247, 485);
             this.dataGridView2.TabIndex = 3;
             // 
-            // StudentAdminName
-            // 
-            this.StudentAdminName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.StudentAdminName.HeaderText = "Student/Admin Name";
-            this.StudentAdminName.Name = "StudentAdminName";
-            // 
-            // GroupName_Setup
-            // 
-            this.GroupName_Setup.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GroupName_Setup.HeaderText = "Group Name";
-            this.GroupName_Setup.Name = "GroupName_Setup";
-            // 
             // NarrowListTxtBox
             // 
             this.NarrowListTxtBox.Location = new System.Drawing.Point(38, 63);
@@ -693,18 +674,8 @@
             this.ExistingUserDataEditUsersDisplay.Name = "ExistingUserDataEditUsersDisplay";
             this.ExistingUserDataEditUsersDisplay.Size = new System.Drawing.Size(364, 556);
             this.ExistingUserDataEditUsersDisplay.TabIndex = 1;
-            // 
-            // StudentAdminNameEditUsers
-            // 
-            this.StudentAdminNameEditUsers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.StudentAdminNameEditUsers.HeaderText = "Student/Admin Name";
-            this.StudentAdminNameEditUsers.Name = "StudentAdminNameEditUsers";
-            // 
-            // GroupNameEditUsers
-            // 
-            this.GroupNameEditUsers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GroupNameEditUsers.HeaderText = "Group Name";
-            this.GroupNameEditUsers.Name = "GroupNameEditUsers";
+            this.ExistingUserDataEditUsersDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExistingUserDataEditUsersDisplay_CellContentClick);
+            this.ExistingUserDataEditUsersDisplay.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
             // 
             // SearchEditUsersTxtbox
             // 
@@ -713,11 +684,13 @@
             this.SearchEditUsersTxtbox.Size = new System.Drawing.Size(170, 20);
             this.SearchEditUsersTxtbox.TabIndex = 0;
             this.SearchEditUsersTxtbox.Text = "Search";
+            this.SearchEditUsersTxtbox.TextChanged += new System.EventHandler(this.SearchEditUsersTxtbox_TextChanged);
+            this.SearchEditUsersTxtbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LetterssKeyPressNoSpace);
             // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.DarkSalmon;
-            this.groupBox5.Controls.Add(this.NameComboBox);
+            this.groupBox5.Controls.Add(this.GroupNameComboBox);
             this.groupBox5.Controls.Add(this.RemoveUserGroupBtn);
             this.groupBox5.Controls.Add(this.SaveChangesBtn);
             this.groupBox5.Controls.Add(this.LastNameTxtBox);
@@ -735,6 +708,16 @@
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Modify Existing User";
+            // 
+            // GroupNameComboBox
+            // 
+            this.GroupNameComboBox.FormattingEnabled = true;
+            this.GroupNameComboBox.Location = new System.Drawing.Point(79, 57);
+            this.GroupNameComboBox.Name = "GroupNameComboBox";
+            this.GroupNameComboBox.Size = new System.Drawing.Size(269, 21);
+            this.GroupNameComboBox.TabIndex = 12;
+            this.GroupNameComboBox.SelectedIndexChanged += new System.EventHandler(this.GroupNameComboBox_SelectedIndexChanged);
+            this.GroupNameComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LettersAndDigitsKeyPress);
             // 
             // RemoveUserGroupBtn
             // 
@@ -759,6 +742,7 @@
             this.LastNameTxtBox.Size = new System.Drawing.Size(274, 25);
             this.LastNameTxtBox.TabIndex = 9;
             this.LastNameTxtBox.Text = "";
+            this.LastNameTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LetterssKeyPressNoSpace);
             // 
             // FirstNameTxtBox
             // 
@@ -767,6 +751,7 @@
             this.FirstNameTxtBox.Size = new System.Drawing.Size(274, 25);
             this.FirstNameTxtBox.TabIndex = 8;
             this.FirstNameTxtBox.Text = "";
+            this.FirstNameTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LetterssKeyPressNoSpace);
             // 
             // DeleteGroupChkBox
             // 
@@ -832,6 +817,178 @@
             this.AddUsers.TabIndex = 3;
             this.AddUsers.Text = "Add Users";
             this.AddUsers.UseVisualStyleBackColor = true;
+            // 
+            // AddUsersGroupBox
+            // 
+            this.AddUsersGroupBox.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.AddUsersGroupBox.Controls.Add(this.AddNewUserBox);
+            this.AddUsersGroupBox.Controls.Add(this.ExistingUsersBox);
+            this.AddUsersGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddUsersGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.AddUsersGroupBox.Name = "AddUsersGroupBox";
+            this.AddUsersGroupBox.Size = new System.Drawing.Size(1340, 642);
+            this.AddUsersGroupBox.TabIndex = 0;
+            this.AddUsersGroupBox.TabStop = false;
+            this.AddUsersGroupBox.Text = "Add Users";
+            // 
+            // AddNewUserBox
+            // 
+            this.AddNewUserBox.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.AddNewUserBox.Controls.Add(this.LastNameCmboBox);
+            this.AddNewUserBox.Controls.Add(this.FirstNameCmboBox);
+            this.AddNewUserBox.Controls.Add(this.GroupNameCmbBox);
+            this.AddNewUserBox.Controls.Add(this.ImportFromTextFileBtn);
+            this.AddNewUserBox.Controls.Add(this.SaveNewUserBtn);
+            this.AddNewUserBox.Controls.Add(this.LockGroupNameCheckBox);
+            this.AddNewUserBox.Controls.Add(this.label1);
+            this.AddNewUserBox.Controls.Add(this.SaveNewUserLbl);
+            this.AddNewUserBox.Controls.Add(this.LastNameAddUsersLbl);
+            this.AddNewUserBox.Controls.Add(this.FirstNameAddUsersLbl);
+            this.AddNewUserBox.Controls.Add(this.GroupNameAddUsersLbl);
+            this.AddNewUserBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.AddNewUserBox.Location = new System.Drawing.Point(987, 16);
+            this.AddNewUserBox.Name = "AddNewUserBox";
+            this.AddNewUserBox.Size = new System.Drawing.Size(350, 623);
+            this.AddNewUserBox.TabIndex = 0;
+            this.AddNewUserBox.TabStop = false;
+            this.AddNewUserBox.Text = "Add New user";
+            // 
+            // LastNameCmboBox
+            // 
+            this.LastNameCmboBox.FormattingEnabled = true;
+            this.LastNameCmboBox.Location = new System.Drawing.Point(92, 138);
+            this.LastNameCmboBox.Name = "LastNameCmboBox";
+            this.LastNameCmboBox.Size = new System.Drawing.Size(235, 21);
+            this.LastNameCmboBox.TabIndex = 29;
+            this.LastNameCmboBox.TextChanged += new System.EventHandler(this.FirstAndLastNameCmbo_TextChanged);
+            this.LastNameCmboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LetterssKeyPressNoSpace);
+            // 
+            // FirstNameCmboBox
+            // 
+            this.FirstNameCmboBox.FormattingEnabled = true;
+            this.FirstNameCmboBox.Location = new System.Drawing.Point(92, 108);
+            this.FirstNameCmboBox.Name = "FirstNameCmboBox";
+            this.FirstNameCmboBox.Size = new System.Drawing.Size(235, 21);
+            this.FirstNameCmboBox.TabIndex = 28;
+            this.FirstNameCmboBox.TextChanged += new System.EventHandler(this.FirstAndLastNameCmbo_TextChanged);
+            this.FirstNameCmboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LetterssKeyPressNoSpace);
+            // 
+            // GroupNameCmbBox
+            // 
+            this.GroupNameCmbBox.FormattingEnabled = true;
+            this.GroupNameCmbBox.Location = new System.Drawing.Point(92, 38);
+            this.GroupNameCmbBox.Name = "GroupNameCmbBox";
+            this.GroupNameCmbBox.Size = new System.Drawing.Size(235, 21);
+            this.GroupNameCmbBox.TabIndex = 27;
+            this.GroupNameCmbBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LettersAndDigitsKeyPress);
+            // 
+            // ImportFromTextFileBtn
+            // 
+            this.ImportFromTextFileBtn.Location = new System.Drawing.Point(204, 192);
+            this.ImportFromTextFileBtn.Name = "ImportFromTextFileBtn";
+            this.ImportFromTextFileBtn.Size = new System.Drawing.Size(77, 40);
+            this.ImportFromTextFileBtn.TabIndex = 22;
+            this.ImportFromTextFileBtn.UseVisualStyleBackColor = true;
+            this.ImportFromTextFileBtn.Click += new System.EventHandler(this.ImportFromTextFileBtn_Click);
+            // 
+            // SaveNewUserBtn
+            // 
+            this.SaveNewUserBtn.Location = new System.Drawing.Point(56, 192);
+            this.SaveNewUserBtn.Name = "SaveNewUserBtn";
+            this.SaveNewUserBtn.Size = new System.Drawing.Size(77, 40);
+            this.SaveNewUserBtn.TabIndex = 21;
+            this.SaveNewUserBtn.UseVisualStyleBackColor = true;
+            this.SaveNewUserBtn.Click += new System.EventHandler(this.SaveNewUserBtn_Click);
+            // 
+            // LockGroupNameCheckBox
+            // 
+            this.LockGroupNameCheckBox.AutoSize = true;
+            this.LockGroupNameCheckBox.Location = new System.Drawing.Point(22, 69);
+            this.LockGroupNameCheckBox.Name = "LockGroupNameCheckBox";
+            this.LockGroupNameCheckBox.Size = new System.Drawing.Size(113, 17);
+            this.LockGroupNameCheckBox.TabIndex = 17;
+            this.LockGroupNameCheckBox.Text = "Lock Group Name";
+            this.LockGroupNameCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(184, 235);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Import From Text File";
+            // 
+            // SaveNewUserLbl
+            // 
+            this.SaveNewUserLbl.AutoSize = true;
+            this.SaveNewUserLbl.Location = new System.Drawing.Point(53, 235);
+            this.SaveNewUserLbl.Name = "SaveNewUserLbl";
+            this.SaveNewUserLbl.Size = new System.Drawing.Size(82, 13);
+            this.SaveNewUserLbl.TabIndex = 15;
+            this.SaveNewUserLbl.Text = "Save New User";
+            // 
+            // LastNameAddUsersLbl
+            // 
+            this.LastNameAddUsersLbl.AutoSize = true;
+            this.LastNameAddUsersLbl.Location = new System.Drawing.Point(19, 141);
+            this.LastNameAddUsersLbl.Name = "LastNameAddUsersLbl";
+            this.LastNameAddUsersLbl.Size = new System.Drawing.Size(58, 13);
+            this.LastNameAddUsersLbl.TabIndex = 14;
+            this.LastNameAddUsersLbl.Text = "Last Name";
+            // 
+            // FirstNameAddUsersLbl
+            // 
+            this.FirstNameAddUsersLbl.AutoSize = true;
+            this.FirstNameAddUsersLbl.Location = new System.Drawing.Point(19, 111);
+            this.FirstNameAddUsersLbl.Name = "FirstNameAddUsersLbl";
+            this.FirstNameAddUsersLbl.Size = new System.Drawing.Size(57, 13);
+            this.FirstNameAddUsersLbl.TabIndex = 13;
+            this.FirstNameAddUsersLbl.Text = "First Name";
+            // 
+            // GroupNameAddUsersLbl
+            // 
+            this.GroupNameAddUsersLbl.AutoSize = true;
+            this.GroupNameAddUsersLbl.Location = new System.Drawing.Point(19, 41);
+            this.GroupNameAddUsersLbl.Name = "GroupNameAddUsersLbl";
+            this.GroupNameAddUsersLbl.Size = new System.Drawing.Size(67, 13);
+            this.GroupNameAddUsersLbl.TabIndex = 12;
+            this.GroupNameAddUsersLbl.Text = "Group Name";
+            // 
+            // ExistingUsersBox
+            // 
+            this.ExistingUsersBox.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.ExistingUsersBox.Controls.Add(this.ExistingUserDataDisplay);
+            this.ExistingUsersBox.Controls.Add(this.SearchAddUsersTxtBox);
+            this.ExistingUsersBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ExistingUsersBox.Location = new System.Drawing.Point(3, 16);
+            this.ExistingUsersBox.Name = "ExistingUsersBox";
+            this.ExistingUsersBox.Size = new System.Drawing.Size(350, 623);
+            this.ExistingUsersBox.TabIndex = 0;
+            this.ExistingUsersBox.TabStop = false;
+            this.ExistingUsersBox.Text = "Existing Users";
+            // 
+            // ExistingUserDataDisplay
+            // 
+            this.ExistingUserDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ExistingUserDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.ExistingUserDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ExistingUserDataDisplay.Location = new System.Drawing.Point(3, 64);
+            this.ExistingUserDataDisplay.Name = "ExistingUserDataDisplay";
+            this.ExistingUserDataDisplay.Size = new System.Drawing.Size(344, 556);
+            this.ExistingUserDataDisplay.TabIndex = 2;
+            // 
+            // SearchAddUsersTxtBox
+            // 
+            this.SearchAddUsersTxtBox.Location = new System.Drawing.Point(70, 38);
+            this.SearchAddUsersTxtBox.Name = "SearchAddUsersTxtBox";
+            this.SearchAddUsersTxtBox.Size = new System.Drawing.Size(170, 20);
+            this.SearchAddUsersTxtBox.TabIndex = 0;
+            this.SearchAddUsersTxtBox.Text = "Search";
+            this.SearchAddUsersTxtBox.TextChanged += new System.EventHandler(this.SearchAddUsersTxtbox_TextChanged);
+            this.SearchAddUsersTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LetterssKeyPressNoSpace);
             // 
             // About
             // 
@@ -929,6 +1086,7 @@
             this.LogoutBtn.TabIndex = 0;
             this.LogoutBtn.Text = "Logout";
             this.LogoutBtn.UseVisualStyleBackColor = true;
+            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
             // 
             // ExitBtn
             // 
@@ -938,96 +1096,12 @@
             this.ExitBtn.TabIndex = 1;
             this.ExitBtn.Text = "Exit";
             this.ExitBtn.UseVisualStyleBackColor = true;
-            // 
-            // AddUsersGroupBox
-            // 
-            this.AddUsersGroupBox.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.AddUsersGroupBox.Controls.Add(this.AddNewUserBox);
-            this.AddUsersGroupBox.Controls.Add(this.ExistingUsersBox);
-            this.AddUsersGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddUsersGroupBox.Location = new System.Drawing.Point(0, 0);
-            this.AddUsersGroupBox.Name = "AddUsersGroupBox";
-            this.AddUsersGroupBox.Size = new System.Drawing.Size(1340, 642);
-            this.AddUsersGroupBox.TabIndex = 0;
-            this.AddUsersGroupBox.TabStop = false;
-            this.AddUsersGroupBox.Text = "Add Users";
-            // 
-            // ExistingUsersBox
-            // 
-            this.ExistingUsersBox.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ExistingUsersBox.Controls.Add(this.ExistingUserDataDisplay);
-            this.ExistingUsersBox.Controls.Add(this.SearchAddUsersTxtBox);
-            this.ExistingUsersBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ExistingUsersBox.Location = new System.Drawing.Point(3, 16);
-            this.ExistingUsersBox.Name = "ExistingUsersBox";
-            this.ExistingUsersBox.Size = new System.Drawing.Size(350, 623);
-            this.ExistingUsersBox.TabIndex = 0;
-            this.ExistingUsersBox.TabStop = false;
-            this.ExistingUsersBox.Text = "Existing Users";
-            // 
-            // AddNewUserBox
-            // 
-            this.AddNewUserBox.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.AddNewUserBox.Controls.Add(this.ConfirmPasswordTextBox);
-            this.AddNewUserBox.Controls.Add(this.PasswordTextBox);
-            this.AddNewUserBox.Controls.Add(this.LastNameCmboBox);
-            this.AddNewUserBox.Controls.Add(this.FirstNameCmboBox);
-            this.AddNewUserBox.Controls.Add(this.GroupNameCmbBox);
-            this.AddNewUserBox.Controls.Add(this.ConfirmPasswordLbl);
-            this.AddNewUserBox.Controls.Add(this.PadsswordLbl);
-            this.AddNewUserBox.Controls.Add(this.ImportFromTextFileBtn);
-            this.AddNewUserBox.Controls.Add(this.SaveNewUserBtn);
-            this.AddNewUserBox.Controls.Add(this.checkBox1);
-            this.AddNewUserBox.Controls.Add(this.label1);
-            this.AddNewUserBox.Controls.Add(this.SaveNewUserLbl);
-            this.AddNewUserBox.Controls.Add(this.LastNameAddUsersLbl);
-            this.AddNewUserBox.Controls.Add(this.FirstNameAddUsersLbl);
-            this.AddNewUserBox.Controls.Add(this.GroupNameAddUsersLbl);
-            this.AddNewUserBox.Controls.Add(this.UserTypeBox);
-            this.AddNewUserBox.Dock = System.Windows.Forms.DockStyle.Right;
-            this.AddNewUserBox.Location = new System.Drawing.Point(987, 16);
-            this.AddNewUserBox.Name = "AddNewUserBox";
-            this.AddNewUserBox.Size = new System.Drawing.Size(350, 623);
-            this.AddNewUserBox.TabIndex = 0;
-            this.AddNewUserBox.TabStop = false;
-            this.AddNewUserBox.Text = "Add New user";
-            // 
-            // UserTypeBox
-            // 
-            this.UserTypeBox.Controls.Add(this.StudentRdo);
-            this.UserTypeBox.Controls.Add(this.AdminRdo);
-            this.UserTypeBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.UserTypeBox.Location = new System.Drawing.Point(3, 16);
-            this.UserTypeBox.Name = "UserTypeBox";
-            this.UserTypeBox.Size = new System.Drawing.Size(344, 73);
-            this.UserTypeBox.TabIndex = 0;
-            this.UserTypeBox.TabStop = false;
-            this.UserTypeBox.Text = "User Type";
-            // 
-            // SearchAddUsersTxtBox
-            // 
-            this.SearchAddUsersTxtBox.Location = new System.Drawing.Point(70, 38);
-            this.SearchAddUsersTxtBox.Name = "SearchAddUsersTxtBox";
-            this.SearchAddUsersTxtBox.Size = new System.Drawing.Size(170, 20);
-            this.SearchAddUsersTxtBox.TabIndex = 0;
-            this.SearchAddUsersTxtBox.Text = "Search";
-            // 
-            // ExistingUserDataDisplay
-            // 
-            this.ExistingUserDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ExistingUserDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            this.ExistingUserDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ExistingUserDataDisplay.Location = new System.Drawing.Point(3, 64);
-            this.ExistingUserDataDisplay.Name = "ExistingUserDataDisplay";
-            this.ExistingUserDataDisplay.Size = new System.Drawing.Size(344, 556);
-            this.ExistingUserDataDisplay.TabIndex = 2;
+            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Student/Admin Name";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Student Name";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
@@ -1036,161 +1110,29 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Group Name";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // StudentRdo
+            // StudentAdminNameEditUsers
             // 
-            this.StudentRdo.AutoSize = true;
-            this.StudentRdo.Location = new System.Drawing.Point(32, 38);
-            this.StudentRdo.Name = "StudentRdo";
-            this.StudentRdo.Size = new System.Drawing.Size(62, 17);
-            this.StudentRdo.TabIndex = 3;
-            this.StudentRdo.TabStop = true;
-            this.StudentRdo.Text = "Student";
-            this.StudentRdo.UseVisualStyleBackColor = true;
+            this.StudentAdminNameEditUsers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.StudentAdminNameEditUsers.HeaderText = "Student Name";
+            this.StudentAdminNameEditUsers.Name = "StudentAdminNameEditUsers";
             // 
-            // AdminRdo
+            // GroupNameEditUsers
             // 
-            this.AdminRdo.AutoSize = true;
-            this.AdminRdo.Location = new System.Drawing.Point(230, 38);
-            this.AdminRdo.Name = "AdminRdo";
-            this.AdminRdo.Size = new System.Drawing.Size(85, 17);
-            this.AdminRdo.TabIndex = 4;
-            this.AdminRdo.TabStop = true;
-            this.AdminRdo.Text = "Administrator";
-            this.AdminRdo.UseVisualStyleBackColor = true;
+            this.GroupNameEditUsers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GroupNameEditUsers.HeaderText = "Group Name";
+            this.GroupNameEditUsers.Name = "GroupNameEditUsers";
             // 
-            // ImportFromTextFileBtn
+            // StudentAdminName
             // 
-            this.ImportFromTextFileBtn.Location = new System.Drawing.Point(233, 399);
-            this.ImportFromTextFileBtn.Name = "ImportFromTextFileBtn";
-            this.ImportFromTextFileBtn.Size = new System.Drawing.Size(77, 40);
-            this.ImportFromTextFileBtn.TabIndex = 22;
-            this.ImportFromTextFileBtn.UseVisualStyleBackColor = true;
+            this.StudentAdminName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.StudentAdminName.HeaderText = "Student Name";
+            this.StudentAdminName.Name = "StudentAdminName";
             // 
-            // SaveNewUserBtn
+            // GroupName_Setup
             // 
-            this.SaveNewUserBtn.Location = new System.Drawing.Point(85, 399);
-            this.SaveNewUserBtn.Name = "SaveNewUserBtn";
-            this.SaveNewUserBtn.Size = new System.Drawing.Size(77, 40);
-            this.SaveNewUserBtn.TabIndex = 21;
-            this.SaveNewUserBtn.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(13, 142);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(111, 17);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "Lock Group name";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(213, 442);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 13);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Import From Text File";
-            // 
-            // SaveNewUserLbl
-            // 
-            this.SaveNewUserLbl.AutoSize = true;
-            this.SaveNewUserLbl.Location = new System.Drawing.Point(82, 442);
-            this.SaveNewUserLbl.Name = "SaveNewUserLbl";
-            this.SaveNewUserLbl.Size = new System.Drawing.Size(82, 13);
-            this.SaveNewUserLbl.TabIndex = 15;
-            this.SaveNewUserLbl.Text = "Save New User";
-            // 
-            // LastNameAddUsersLbl
-            // 
-            this.LastNameAddUsersLbl.AutoSize = true;
-            this.LastNameAddUsersLbl.Location = new System.Drawing.Point(10, 214);
-            this.LastNameAddUsersLbl.Name = "LastNameAddUsersLbl";
-            this.LastNameAddUsersLbl.Size = new System.Drawing.Size(58, 13);
-            this.LastNameAddUsersLbl.TabIndex = 14;
-            this.LastNameAddUsersLbl.Text = "Last Name";
-            // 
-            // FirstNameAddUsersLbl
-            // 
-            this.FirstNameAddUsersLbl.AutoSize = true;
-            this.FirstNameAddUsersLbl.Location = new System.Drawing.Point(10, 184);
-            this.FirstNameAddUsersLbl.Name = "FirstNameAddUsersLbl";
-            this.FirstNameAddUsersLbl.Size = new System.Drawing.Size(57, 13);
-            this.FirstNameAddUsersLbl.TabIndex = 13;
-            this.FirstNameAddUsersLbl.Text = "First Name";
-            // 
-            // GroupNameAddUsersLbl
-            // 
-            this.GroupNameAddUsersLbl.AutoSize = true;
-            this.GroupNameAddUsersLbl.Location = new System.Drawing.Point(10, 114);
-            this.GroupNameAddUsersLbl.Name = "GroupNameAddUsersLbl";
-            this.GroupNameAddUsersLbl.Size = new System.Drawing.Size(67, 13);
-            this.GroupNameAddUsersLbl.TabIndex = 12;
-            this.GroupNameAddUsersLbl.Text = "Group Name";
-            // 
-            // ConfirmPasswordLbl
-            // 
-            this.ConfirmPasswordLbl.Location = new System.Drawing.Point(10, 296);
-            this.ConfirmPasswordLbl.Name = "ConfirmPasswordLbl";
-            this.ConfirmPasswordLbl.Size = new System.Drawing.Size(64, 29);
-            this.ConfirmPasswordLbl.TabIndex = 24;
-            this.ConfirmPasswordLbl.Text = "Confirm Password";
-            // 
-            // PadsswordLbl
-            // 
-            this.PadsswordLbl.AutoSize = true;
-            this.PadsswordLbl.Location = new System.Drawing.Point(10, 266);
-            this.PadsswordLbl.Name = "PadsswordLbl";
-            this.PadsswordLbl.Size = new System.Drawing.Size(53, 13);
-            this.PadsswordLbl.TabIndex = 23;
-            this.PadsswordLbl.Text = "Password";
-            // 
-            // GroupNameCmbBox
-            // 
-            this.GroupNameCmbBox.FormattingEnabled = true;
-            this.GroupNameCmbBox.Location = new System.Drawing.Point(83, 111);
-            this.GroupNameCmbBox.Name = "GroupNameCmbBox";
-            this.GroupNameCmbBox.Size = new System.Drawing.Size(235, 21);
-            this.GroupNameCmbBox.TabIndex = 27;
-            // 
-            // FirstNameCmboBox
-            // 
-            this.FirstNameCmboBox.FormattingEnabled = true;
-            this.FirstNameCmboBox.Location = new System.Drawing.Point(83, 181);
-            this.FirstNameCmboBox.Name = "FirstNameCmboBox";
-            this.FirstNameCmboBox.Size = new System.Drawing.Size(235, 21);
-            this.FirstNameCmboBox.TabIndex = 28;
-            // 
-            // LastNameCmboBox
-            // 
-            this.LastNameCmboBox.FormattingEnabled = true;
-            this.LastNameCmboBox.Location = new System.Drawing.Point(83, 211);
-            this.LastNameCmboBox.Name = "LastNameCmboBox";
-            this.LastNameCmboBox.Size = new System.Drawing.Size(235, 21);
-            this.LastNameCmboBox.TabIndex = 29;
-            // 
-            // NameComboBox
-            // 
-            this.NameComboBox.FormattingEnabled = true;
-            this.NameComboBox.Location = new System.Drawing.Point(79, 57);
-            this.NameComboBox.Name = "NameComboBox";
-            this.NameComboBox.Size = new System.Drawing.Size(269, 21);
-            this.NameComboBox.TabIndex = 12;
-            // 
-            // PasswordTextBox
-            // 
-            this.PasswordTextBox.Location = new System.Drawing.Point(83, 263);
-            this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.Size = new System.Drawing.Size(235, 20);
-            this.PasswordTextBox.TabIndex = 30;
-            // 
-            // ConfirmPasswordTextBox
-            // 
-            this.ConfirmPasswordTextBox.Location = new System.Drawing.Point(83, 296);
-            this.ConfirmPasswordTextBox.Name = "ConfirmPasswordTextBox";
-            this.ConfirmPasswordTextBox.Size = new System.Drawing.Size(235, 20);
-            this.ConfirmPasswordTextBox.TabIndex = 31;
+            this.GroupName_Setup.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GroupName_Setup.HeaderText = "Group Name";
+            this.GroupName_Setup.Name = "GroupName_Setup";
             // 
             // AdminHomepage
             // 
@@ -1227,16 +1169,14 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.AddUsers.ResumeLayout(false);
-            this.ReportGroupBox.ResumeLayout(false);
-            this.ReportGroupBox.PerformLayout();
             this.AddUsersGroupBox.ResumeLayout(false);
-            this.ExistingUsersBox.ResumeLayout(false);
-            this.ExistingUsersBox.PerformLayout();
             this.AddNewUserBox.ResumeLayout(false);
             this.AddNewUserBox.PerformLayout();
-            this.UserTypeBox.ResumeLayout(false);
-            this.UserTypeBox.PerformLayout();
+            this.ExistingUsersBox.ResumeLayout(false);
+            this.ExistingUsersBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExistingUserDataDisplay)).EndInit();
+            this.ReportGroupBox.ResumeLayout(false);
+            this.ReportGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1278,8 +1218,6 @@
         private System.Windows.Forms.RadioButton StudentsRdo;
         private System.Windows.Forms.RadioButton GroupsRdo;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudentAdminName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GroupName_Setup;
         private System.Windows.Forms.TextBox NarrowListTxtBox;
         private System.Windows.Forms.GroupBox ManageDrillsGroupBox;
         private System.Windows.Forms.Label RemoveAllLbl;
@@ -1305,8 +1243,6 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox SearchEditUsersTxtbox;
         private System.Windows.Forms.DataGridView ExistingUserDataEditUsersDisplay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudentAdminNameEditUsers;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GroupNameEditUsers;
         private System.Windows.Forms.Button RemoveUserGroupBtn;
         private System.Windows.Forms.Button SaveChangesBtn;
         private System.Windows.Forms.RichTextBox LastNameTxtBox;
@@ -1319,29 +1255,26 @@
         private System.Windows.Forms.Label GroupNameLbl;
         private System.Windows.Forms.GroupBox AddUsersGroupBox;
         private System.Windows.Forms.GroupBox AddNewUserBox;
-        private System.Windows.Forms.GroupBox UserTypeBox;
         private System.Windows.Forms.GroupBox ExistingUsersBox;
         private System.Windows.Forms.TextBox SearchAddUsersTxtBox;
         private System.Windows.Forms.DataGridView ExistingUserDataDisplay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.RadioButton StudentRdo;
-        private System.Windows.Forms.RadioButton AdminRdo;
         private System.Windows.Forms.Button ImportFromTextFileBtn;
         private System.Windows.Forms.Button SaveNewUserBtn;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox LockGroupNameCheckBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label SaveNewUserLbl;
         private System.Windows.Forms.Label LastNameAddUsersLbl;
         private System.Windows.Forms.Label FirstNameAddUsersLbl;
         private System.Windows.Forms.Label GroupNameAddUsersLbl;
-        private System.Windows.Forms.Label ConfirmPasswordLbl;
-        private System.Windows.Forms.Label PadsswordLbl;
         private System.Windows.Forms.ComboBox LastNameCmboBox;
         private System.Windows.Forms.ComboBox FirstNameCmboBox;
         private System.Windows.Forms.ComboBox GroupNameCmbBox;
-        private System.Windows.Forms.ComboBox NameComboBox;
-        private System.Windows.Forms.TextBox ConfirmPasswordTextBox;
-        private System.Windows.Forms.TextBox PasswordTextBox;
+        private System.Windows.Forms.ComboBox GroupNameComboBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentAdminName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GroupName_Setup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentAdminNameEditUsers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GroupNameEditUsers;
     }
 }

@@ -33,6 +33,8 @@ Cycle 3 Changes:
  * • Expaned logic in IsValidEdit() to catch the user trying to assign a student to the group they are already in.
  * Date: 4/16/14
  * • Added two functions to support changing a password.
+ * Date: 4/24/14
+ * • Added function to find student's based on some entered string
 */
 
 using System;
@@ -1881,7 +1883,7 @@ namespace RaptorMath
                 string firstName = "Unknwon";
                 string lastName = "Unknwon";
                 string loginname = "Unknwon";
-                // USed to hold the split name of the current student so we can easily get his first and last name
+                // Used to hold the split name of the current student so we can easily get his first and last name
                 string[] wholeName;
                 // Holds the valid chars to split a string on
                 string[] separators = { " ", "," };
@@ -2075,6 +2077,68 @@ namespace RaptorMath
                 numDrills = FindGroupByName(groupName).groupDrillList.Count;
             }
             return numDrills;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/24/14                                                    //
+        //------------------------------------------------------------------//
+        /// <param name="studentName">A string used to narrow down a student serach</param>
+        /// <summary>Returns a list of students whose last name at least partial matches the passed in string.</summary>
+        public List<Student> FindLastNameMatches(string studentLastName)
+        {
+            studentLastName = studentLastName.ToLower();
+            List<Student> students = new List<Student>();
+            string currentLastName = "";
+            for (int iter = 0; iter < studentList.Count; iter++)
+            {
+                currentLastName = studentList.ElementAt(iter).LastName.ToLower();
+                if (studentLastName.Length <= currentLastName.Length)
+                {
+                    if (currentLastName.Substring(0, studentLastName.Length).Equals(studentLastName))
+                    {
+                        students.Add(studentList.ElementAt(iter));
+                    }
+                }
+            }
+
+            return students;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/24/14                                                    //
+        //------------------------------------------------------------------//
+        /// <param name="studentName">the string conatining the student's name in "lastName, firstName" format</param>
+        /// <summary>Returns a student's name as "firstName lastName" so the system can use it to find said student.</summary>
+        public string GetStudentNameFromCellFormat(string cellName)
+        {
+            string studentName = "Unknown Student";
+            string[] wholeName;
+            // Holds the valid chars to split a string on
+            string[] separators = { " ", "," };
+            // Now split the string
+            wholeName = cellName.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+            if (wholeName.Length >= 2)
+            {
+                studentName = wholeName[1] + " " + wholeName[0];
+            }
+            return studentName;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/24/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Returns a list holding all the names of the groups in the system.</summary>
+        public List<string> GetGroupNames()
+        {
+            List<string> groupNames = new List<string>();
+            foreach (Group group in groupList)
+            {
+                groupNames.Add(group.Name);
+            }
+            return groupNames;
         }
     }
 }
