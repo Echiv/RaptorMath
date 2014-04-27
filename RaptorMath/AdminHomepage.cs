@@ -104,31 +104,18 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void ExistingUserDataEditUsersDisplay_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            GroupNameComboBox.Text = "";
-        }
-
-        //------------------------------------------------------------------//
-        // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/24/14                                                    //
-        //------------------------------------------------------------------//
-        private void dataGridView_SelectionChanged(object sender, EventArgs e)
-        {
-            ClearModifyUserBoxes();
-            Student selectedStudent;
-            foreach (DataGridViewRow row in ExistingUserDataEditUsersDisplay.SelectedRows)
+            if (ExistingUserDataEditUsersDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
-                if (row.Cells[0].Value != null)
+                ClearModifyUserBoxes();
+                Student selectedStudent;
+                selectedStudent = localManager.FindStudentWithName(localManager.GetStudentNameFromCellFormat(ExistingUserDataEditUsersDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()));
+                if (selectedStudent != null)
                 {
-                    selectedStudent = localManager.FindStudentWithName(localManager.GetStudentNameFromCellFormat(row.Cells[0].Value.ToString()));
-                    if (selectedStudent != null)
-                    {
-                        GroupNameComboBox.Text = localManager.FindGroupByID(selectedStudent.GroupID).Name;
-                        FirstNameTxtBox.Text = selectedStudent.FirstName;
-                        LastNameTxtBox.Text = selectedStudent.LastName;
-                        SaveChangesBtn.Enabled = true;
-                        RemoveUserGroupBtn.Enabled = true;
-                        break;
-                    }
+                    GroupNameComboBox.Text = localManager.FindGroupByID(selectedStudent.GroupID).Name;
+                    FirstNameTxtBox.Text = selectedStudent.FirstName;
+                    LastNameTxtBox.Text = selectedStudent.LastName;
+                    SaveChangesBtn.Enabled = true;
+                    RemoveUserGroupBtn.Enabled = true;
                 }
                 else
                 {
@@ -136,7 +123,46 @@ namespace RaptorMath
                     RemoveUserGroupBtn.Enabled = false;
                 }
             }
+            else
+            {
+                GroupNameComboBox.Text = string.Empty;
+                FirstNameTxtBox.Text = string.Empty;
+                LastNameTxtBox.Text = string.Empty;
+                SaveChangesBtn.Enabled = false;
+                RemoveUserGroupBtn.Enabled = false;
+            }
         }
+
+        ////------------------------------------------------------------------//
+        //// Authors: Joshua Boone and Justine Dinh                           //
+        //// Date: 4/24/14                                                    //
+        ////------------------------------------------------------------------//
+        //private void dataGridView_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    ClearModifyUserBoxes();
+        //    Student selectedStudent;
+        //    foreach (DataGridViewRow row in ExistingUserDataEditUsersDisplay.SelectedRows)
+        //    {
+        //        if (row.Cells[0].Value != null)
+        //        {
+        //            selectedStudent = localManager.FindStudentWithName(localManager.GetStudentNameFromCellFormat(row.Cells[0].Value.ToString()));
+        //            if (selectedStudent != null)
+        //            {
+        //                GroupNameComboBox.Text = localManager.FindGroupByID(selectedStudent.GroupID).Name;
+        //                FirstNameTxtBox.Text = selectedStudent.FirstName;
+        //                LastNameTxtBox.Text = selectedStudent.LastName;
+        //                SaveChangesBtn.Enabled = true;
+        //                RemoveUserGroupBtn.Enabled = true;
+        //                break;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            SaveChangesBtn.Enabled = false;
+        //            RemoveUserGroupBtn.Enabled = false;
+        //        }
+        //    }
+        //}
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //

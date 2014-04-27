@@ -45,15 +45,23 @@
             this.ExportToTextBtn = new System.Windows.Forms.Button();
             this.ExportToExcelBtn = new System.Windows.Forms.Button();
             this.GroupSnapshotDataDisplay = new System.Windows.Forms.DataGridView();
+            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DrillsAssigned = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DrillsCompleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AveragePercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupNameDataDisplay = new System.Windows.Forms.DataGridView();
+            this.GroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchTxtBox = new System.Windows.Forms.TextBox();
             this.Setup = new System.Windows.Forms.TabPage();
             this.ManageDrillsBox = new System.Windows.Forms.GroupBox();
             this.ManageDrillsGroupBox = new System.Windows.Forms.GroupBox();
             this.AssignedDrillsBox = new System.Windows.Forms.GroupBox();
             this.AssignedDrillDataDisplay = new System.Windows.Forms.DataGridView();
+            this.Drillname_Assigned = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AvailableDrillsBox = new System.Windows.Forms.GroupBox();
             this.AvailableDrillDataDisplay = new System.Windows.Forms.DataGridView();
+            this.DrillName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NewDrillBtn = new System.Windows.Forms.Button();
             this.DeleteDrillBtn = new System.Windows.Forms.Button();
             this.DeleteDrillLbl = new System.Windows.Forms.Label();
@@ -68,6 +76,8 @@
             this.AssignSelectedBtn = new System.Windows.Forms.Button();
             this.ExistingUsersSetupBox = new System.Windows.Forms.GroupBox();
             this.SetupExistingUserDataDisplay = new System.Windows.Forms.DataGridView();
+            this.StudentAdminName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupName_Setup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NarrowListTxtBox = new System.Windows.Forms.TextBox();
             this.StudentsRdo = new System.Windows.Forms.RadioButton();
             this.GroupsRdo = new System.Windows.Forms.RadioButton();
@@ -75,6 +85,8 @@
             this.EditUsersGroupBox = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.ExistingUserDataEditUsersDisplay = new System.Windows.Forms.DataGridView();
+            this.StudentAdminNameEditUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupNameEditUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchEditUsersTxtbox = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.GroupNameComboBox = new System.Windows.Forms.ComboBox();
@@ -104,6 +116,8 @@
             this.GroupNameAddUsersLbl = new System.Windows.Forms.Label();
             this.ExistingUsersBox = new System.Windows.Forms.GroupBox();
             this.ExistingUserDataDisplay = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchAddUsersTxtBox = new System.Windows.Forms.TextBox();
             this.About = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -117,20 +131,6 @@
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.AdminHome = new System.Windows.Forms.Timer(this.components);
-            this.StudentAdminName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GroupName_Setup = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DrillName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Drillname_Assigned = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DrillsAssigned = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DrillsCompleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AveragePercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StudentAdminNameEditUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GroupNameEditUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab1.SuspendLayout();
             this.Statistics.SuspendLayout();
             this.GroupSearchBox.SuspendLayout();
@@ -251,6 +251,46 @@
             this.GroupSnapshotDataDisplay.Size = new System.Drawing.Size(1049, 489);
             this.GroupSnapshotDataDisplay.TabIndex = 2;
             // 
+            // StudentName
+            // 
+            this.StudentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.StudentName.HeaderText = "Student Name";
+            this.StudentName.Name = "StudentName";
+            this.StudentName.ReadOnly = true;
+            this.StudentName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // DrillsAssigned
+            // 
+            this.DrillsAssigned.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DrillsAssigned.HeaderText = "# Drills Assigned";
+            this.DrillsAssigned.Name = "DrillsAssigned";
+            this.DrillsAssigned.ReadOnly = true;
+            this.DrillsAssigned.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // DrillsCompleted
+            // 
+            this.DrillsCompleted.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DrillsCompleted.HeaderText = "# Drills Completed";
+            this.DrillsCompleted.Name = "DrillsCompleted";
+            this.DrillsCompleted.ReadOnly = true;
+            this.DrillsCompleted.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // AveragePercent
+            // 
+            this.AveragePercent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AveragePercent.HeaderText = "Average Percent";
+            this.AveragePercent.Name = "AveragePercent";
+            this.AveragePercent.ReadOnly = true;
+            this.AveragePercent.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // LastLogin
+            // 
+            this.LastLogin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.LastLogin.HeaderText = "Last Login";
+            this.LastLogin.Name = "LastLogin";
+            this.LastLogin.ReadOnly = true;
+            this.LastLogin.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // GroupNameDataDisplay
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -268,6 +308,14 @@
             this.GroupNameDataDisplay.Name = "GroupNameDataDisplay";
             this.GroupNameDataDisplay.Size = new System.Drawing.Size(224, 489);
             this.GroupNameDataDisplay.TabIndex = 1;
+            // 
+            // GroupName
+            // 
+            this.GroupName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GroupName.HeaderText = "Group Name";
+            this.GroupName.Name = "GroupName";
+            this.GroupName.ReadOnly = true;
+            this.GroupName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // SearchTxtBox
             // 
@@ -351,6 +399,14 @@
             this.AssignedDrillDataDisplay.Size = new System.Drawing.Size(431, 482);
             this.AssignedDrillDataDisplay.TabIndex = 1;
             // 
+            // Drillname_Assigned
+            // 
+            this.Drillname_Assigned.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Drillname_Assigned.HeaderText = "Drill Name";
+            this.Drillname_Assigned.Name = "Drillname_Assigned";
+            this.Drillname_Assigned.ReadOnly = true;
+            this.Drillname_Assigned.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // AvailableDrillsBox
             // 
             this.AvailableDrillsBox.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -406,6 +462,14 @@
             this.AvailableDrillDataDisplay.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.AvailableDrillDataDisplay.Size = new System.Drawing.Size(414, 482);
             this.AvailableDrillDataDisplay.TabIndex = 0;
+            // 
+            // DrillName
+            // 
+            this.DrillName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DrillName.HeaderText = "Drill Name";
+            this.DrillName.Name = "DrillName";
+            this.DrillName.ReadOnly = true;
+            this.DrillName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // NewDrillBtn
             // 
@@ -548,6 +612,22 @@
             this.SetupExistingUserDataDisplay.Size = new System.Drawing.Size(247, 485);
             this.SetupExistingUserDataDisplay.TabIndex = 3;
             // 
+            // StudentAdminName
+            // 
+            this.StudentAdminName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.StudentAdminName.HeaderText = "Student Name";
+            this.StudentAdminName.Name = "StudentAdminName";
+            this.StudentAdminName.ReadOnly = true;
+            this.StudentAdminName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // GroupName_Setup
+            // 
+            this.GroupName_Setup.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GroupName_Setup.HeaderText = "Group Name";
+            this.GroupName_Setup.Name = "GroupName_Setup";
+            this.GroupName_Setup.ReadOnly = true;
+            this.GroupName_Setup.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // NarrowListTxtBox
             // 
             this.NarrowListTxtBox.Location = new System.Drawing.Point(38, 63);
@@ -624,8 +704,23 @@
             this.ExistingUserDataEditUsersDisplay.Name = "ExistingUserDataEditUsersDisplay";
             this.ExistingUserDataEditUsersDisplay.Size = new System.Drawing.Size(364, 556);
             this.ExistingUserDataEditUsersDisplay.TabIndex = 1;
+            this.ExistingUserDataEditUsersDisplay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExistingUserDataEditUsersDisplay_CellContentClick);
             this.ExistingUserDataEditUsersDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExistingUserDataEditUsersDisplay_CellContentClick);
-            this.ExistingUserDataEditUsersDisplay.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
+            // 
+            // StudentAdminNameEditUsers
+            // 
+            this.StudentAdminNameEditUsers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.StudentAdminNameEditUsers.HeaderText = "Student Name";
+            this.StudentAdminNameEditUsers.Name = "StudentAdminNameEditUsers";
+            this.StudentAdminNameEditUsers.ReadOnly = true;
+            this.StudentAdminNameEditUsers.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // GroupNameEditUsers
+            // 
+            this.GroupNameEditUsers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GroupNameEditUsers.HeaderText = "Group Name";
+            this.GroupNameEditUsers.Name = "GroupNameEditUsers";
+            this.GroupNameEditUsers.ReadOnly = true;
             // 
             // SearchEditUsersTxtbox
             // 
@@ -941,6 +1036,21 @@
             this.ExistingUserDataDisplay.Size = new System.Drawing.Size(344, 556);
             this.ExistingUserDataDisplay.TabIndex = 2;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Student Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Group Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
             // SearchAddUsersTxtBox
             // 
             this.SearchAddUsersTxtBox.Location = new System.Drawing.Point(70, 38);
@@ -1063,116 +1173,6 @@
             // AdminHome
             // 
             this.AdminHome.Tick += new System.EventHandler(this.AdminHome_Tick);
-            // 
-            // StudentAdminName
-            // 
-            this.StudentAdminName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.StudentAdminName.HeaderText = "Student Name";
-            this.StudentAdminName.Name = "StudentAdminName";
-            this.StudentAdminName.ReadOnly = true;
-            this.StudentAdminName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // GroupName_Setup
-            // 
-            this.GroupName_Setup.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GroupName_Setup.HeaderText = "Group Name";
-            this.GroupName_Setup.Name = "GroupName_Setup";
-            this.GroupName_Setup.ReadOnly = true;
-            this.GroupName_Setup.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // DrillName
-            // 
-            this.DrillName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DrillName.HeaderText = "Drill Name";
-            this.DrillName.Name = "DrillName";
-            this.DrillName.ReadOnly = true;
-            this.DrillName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Drillname_Assigned
-            // 
-            this.Drillname_Assigned.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Drillname_Assigned.HeaderText = "Drill Name";
-            this.Drillname_Assigned.Name = "Drillname_Assigned";
-            this.Drillname_Assigned.ReadOnly = true;
-            this.Drillname_Assigned.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // GroupName
-            // 
-            this.GroupName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GroupName.HeaderText = "Group Name";
-            this.GroupName.Name = "GroupName";
-            this.GroupName.ReadOnly = true;
-            this.GroupName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // StudentName
-            // 
-            this.StudentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.StudentName.HeaderText = "Student Name";
-            this.StudentName.Name = "StudentName";
-            this.StudentName.ReadOnly = true;
-            this.StudentName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // DrillsAssigned
-            // 
-            this.DrillsAssigned.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DrillsAssigned.HeaderText = "# Drills Assigned";
-            this.DrillsAssigned.Name = "DrillsAssigned";
-            this.DrillsAssigned.ReadOnly = true;
-            this.DrillsAssigned.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // DrillsCompleted
-            // 
-            this.DrillsCompleted.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DrillsCompleted.HeaderText = "# Drills Completed";
-            this.DrillsCompleted.Name = "DrillsCompleted";
-            this.DrillsCompleted.ReadOnly = true;
-            this.DrillsCompleted.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // AveragePercent
-            // 
-            this.AveragePercent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AveragePercent.HeaderText = "Average Percent";
-            this.AveragePercent.Name = "AveragePercent";
-            this.AveragePercent.ReadOnly = true;
-            this.AveragePercent.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // LastLogin
-            // 
-            this.LastLogin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.LastLogin.HeaderText = "Last Login";
-            this.LastLogin.Name = "LastLogin";
-            this.LastLogin.ReadOnly = true;
-            this.LastLogin.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // StudentAdminNameEditUsers
-            // 
-            this.StudentAdminNameEditUsers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.StudentAdminNameEditUsers.HeaderText = "Student Name";
-            this.StudentAdminNameEditUsers.Name = "StudentAdminNameEditUsers";
-            this.StudentAdminNameEditUsers.ReadOnly = true;
-            this.StudentAdminNameEditUsers.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // GroupNameEditUsers
-            // 
-            this.GroupNameEditUsers.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GroupNameEditUsers.HeaderText = "Group Name";
-            this.GroupNameEditUsers.Name = "GroupNameEditUsers";
-            this.GroupNameEditUsers.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Student Name";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Group Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // AdminHomepage
             // 
