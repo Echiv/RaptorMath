@@ -61,7 +61,7 @@
             this.StuHome_TimeLbl.BackColor = System.Drawing.Color.Transparent;
             this.StuHome_TimeLbl.Font = new System.Drawing.Font("Copperplate Gothic Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_TimeLbl.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.StuHome_TimeLbl.Location = new System.Drawing.Point(907, 59);
+            this.StuHome_TimeLbl.Location = new System.Drawing.Point(837, 59);
             this.StuHome_TimeLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.StuHome_TimeLbl.Name = "StuHome_TimeLbl";
             this.StuHome_TimeLbl.Size = new System.Drawing.Size(80, 22);
@@ -74,7 +74,7 @@
             this.StuHome_DateLbl.BackColor = System.Drawing.Color.Transparent;
             this.StuHome_DateLbl.Font = new System.Drawing.Font("Copperplate Gothic Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_DateLbl.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.StuHome_DateLbl.Location = new System.Drawing.Point(765, 59);
+            this.StuHome_DateLbl.Location = new System.Drawing.Point(661, 59);
             this.StuHome_DateLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.StuHome_DateLbl.Name = "StuHome_DateLbl";
             this.StuHome_DateLbl.Size = new System.Drawing.Size(87, 22);
@@ -87,7 +87,7 @@
             this.StuHome_LoginDateLbl.BackColor = System.Drawing.Color.Transparent;
             this.StuHome_LoginDateLbl.Font = new System.Drawing.Font("Copperplate Gothic Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_LoginDateLbl.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.StuHome_LoginDateLbl.Location = new System.Drawing.Point(907, 10);
+            this.StuHome_LoginDateLbl.Location = new System.Drawing.Point(830, 9);
             this.StuHome_LoginDateLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.StuHome_LoginDateLbl.Name = "StuHome_LoginDateLbl";
             this.StuHome_LoginDateLbl.Size = new System.Drawing.Size(87, 22);
@@ -100,7 +100,7 @@
             this.StuHome_LastLoginLbl.BackColor = System.Drawing.Color.Transparent;
             this.StuHome_LastLoginLbl.Font = new System.Drawing.Font("Copperplate Gothic Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_LastLoginLbl.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.StuHome_LastLoginLbl.Location = new System.Drawing.Point(761, 10);
+            this.StuHome_LastLoginLbl.Location = new System.Drawing.Point(644, 8);
             this.StuHome_LastLoginLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.StuHome_LastLoginLbl.Name = "StuHome_LastLoginLbl";
             this.StuHome_LastLoginLbl.Size = new System.Drawing.Size(136, 22);
@@ -113,7 +113,7 @@
             this.StuHome_StudentNameLbl.BackColor = System.Drawing.Color.Transparent;
             this.StuHome_StudentNameLbl.Font = new System.Drawing.Font("Copperplate Gothic Light", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_StudentNameLbl.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.StuHome_StudentNameLbl.Location = new System.Drawing.Point(382, 167);
+            this.StuHome_StudentNameLbl.Location = new System.Drawing.Point(399, 167);
             this.StuHome_StudentNameLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.StuHome_StudentNameLbl.Name = "StuHome_StudentNameLbl";
             this.StuHome_StudentNameLbl.Size = new System.Drawing.Size(288, 52);
@@ -125,7 +125,7 @@
             this.StuHome_DrillDdl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.StuHome_DrillDdl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StuHome_DrillDdl.FormattingEnabled = true;
-            this.StuHome_DrillDdl.Location = new System.Drawing.Point(400, 290);
+            this.StuHome_DrillDdl.Location = new System.Drawing.Point(417, 308);
             this.StuHome_DrillDdl.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.StuHome_DrillDdl.MaxDropDownItems = 100;
             this.StuHome_DrillDdl.MaxLength = 25;
@@ -140,7 +140,7 @@
             this.StuHome_StartDrillBtn.BackColor = System.Drawing.Color.Transparent;
             this.StuHome_StartDrillBtn.Font = new System.Drawing.Font("Copperplate Gothic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_StartDrillBtn.ForeColor = System.Drawing.Color.Black;
-            this.StuHome_StartDrillBtn.Location = new System.Drawing.Point(489, 328);
+            this.StuHome_StartDrillBtn.Location = new System.Drawing.Point(514, 362);
             this.StuHome_StartDrillBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.StuHome_StartDrillBtn.Name = "StuHome_StartDrillBtn";
             this.StuHome_StartDrillBtn.Size = new System.Drawing.Size(90, 48);
@@ -164,7 +164,7 @@
             this.StuHome_LogoutBtn.Font = new System.Drawing.Font("Copperplate Gothic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_LogoutBtn.ForeColor = System.Drawing.Color.Transparent;
             this.StuHome_LogoutBtn.Image = global::RaptorMath.Properties.Resources.logout3;
-            this.StuHome_LogoutBtn.Location = new System.Drawing.Point(911, 639);
+            this.StuHome_LogoutBtn.Location = new System.Drawing.Point(787, 545);
             this.StuHome_LogoutBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.StuHome_LogoutBtn.Name = "StuHome_LogoutBtn";
             this.StuHome_LogoutBtn.Size = new System.Drawing.Size(83, 78);
@@ -191,7 +191,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::RaptorMath.Properties.Resources.adventure;
-            this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.ClientSize = new System.Drawing.Size(884, 636);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.StuHome_LogoutBtn);
             this.Controls.Add(this.StuHome_DrillDdl);
@@ -205,6 +205,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "StudentHomepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RaptorMath";
