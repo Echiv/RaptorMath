@@ -416,6 +416,7 @@ namespace RaptorMath
             // 2 means the entered new name(s) are not valid
             // 3 means the entered group is not valid
             // 4 means the student is already assigned to the passed in group
+            // 5 means the user didn't actually change anything
             int errorCode = 0;
 
             // Check to see if student to edit exists
@@ -439,6 +440,10 @@ namespace RaptorMath
                 {
                     errorCode = 4;
                 }
+            }
+            else if (newFName.Equals(string.Empty) && newLName.Equals(string.Empty) && newGroup.Equals(string.Empty))
+            {
+                errorCode = 5;
             }
 
             return errorCode;

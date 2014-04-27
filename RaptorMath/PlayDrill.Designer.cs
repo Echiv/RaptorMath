@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayDrill));
             this.MathDrill_WindowLbl = new System.Windows.Forms.Label();
             this.MathDrill_TimeLbl = new System.Windows.Forms.Label();
@@ -45,17 +46,19 @@
             this.MathDrill_QuitBtn = new System.Windows.Forms.Button();
             this.SubmitLbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.PlayDrill_TimeLbl = new System.Windows.Forms.Timer(this.components);
+            this.PlayDrillImageList = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // MathDrill_WindowLbl
             // 
             this.MathDrill_WindowLbl.AutoSize = true;
             this.MathDrill_WindowLbl.BackColor = System.Drawing.Color.Transparent;
-            this.MathDrill_WindowLbl.Font = new System.Drawing.Font("Copperplate Gothic Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MathDrill_WindowLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_WindowLbl.Location = new System.Drawing.Point(13, 9);
             this.MathDrill_WindowLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_WindowLbl.Name = "MathDrill_WindowLbl";
-            this.MathDrill_WindowLbl.Size = new System.Drawing.Size(151, 26);
+            this.MathDrill_WindowLbl.Size = new System.Drawing.Size(114, 29);
             this.MathDrill_WindowLbl.TabIndex = 30;
             this.MathDrill_WindowLbl.Text = "Math Drill";
             this.MathDrill_WindowLbl.Click += new System.EventHandler(this.MathDrill_WindowLbl_Click);
@@ -65,11 +68,11 @@
             this.MathDrill_TimeLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MathDrill_TimeLbl.AutoSize = true;
             this.MathDrill_TimeLbl.BackColor = System.Drawing.Color.Transparent;
-            this.MathDrill_TimeLbl.Font = new System.Drawing.Font("Copperplate Gothic Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MathDrill_TimeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_TimeLbl.Location = new System.Drawing.Point(900, 9);
             this.MathDrill_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_TimeLbl.Name = "MathDrill_TimeLbl";
-            this.MathDrill_TimeLbl.Size = new System.Drawing.Size(80, 22);
+            this.MathDrill_TimeLbl.Size = new System.Drawing.Size(83, 25);
             this.MathDrill_TimeLbl.TabIndex = 29;
             this.MathDrill_TimeLbl.Text = "<Time>";
             // 
@@ -77,11 +80,11 @@
             // 
             this.MathDrill_StudentNameLbl.AutoSize = true;
             this.MathDrill_StudentNameLbl.BackColor = System.Drawing.Color.Transparent;
-            this.MathDrill_StudentNameLbl.Font = new System.Drawing.Font("Copperplate Gothic Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MathDrill_StudentNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_StudentNameLbl.Location = new System.Drawing.Point(421, 27);
             this.MathDrill_StudentNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_StudentNameLbl.Name = "MathDrill_StudentNameLbl";
-            this.MathDrill_StudentNameLbl.Size = new System.Drawing.Size(179, 33);
+            this.MathDrill_StudentNameLbl.Size = new System.Drawing.Size(148, 33);
             this.MathDrill_StudentNameLbl.TabIndex = 28;
             this.MathDrill_StudentNameLbl.Text = "<Student>";
             // 
@@ -90,11 +93,11 @@
             this.MathDrill_DateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MathDrill_DateLbl.AutoSize = true;
             this.MathDrill_DateLbl.BackColor = System.Drawing.Color.Transparent;
-            this.MathDrill_DateLbl.Font = new System.Drawing.Font("Copperplate Gothic Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MathDrill_DateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_DateLbl.Location = new System.Drawing.Point(794, 9);
             this.MathDrill_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_DateLbl.Name = "MathDrill_DateLbl";
-            this.MathDrill_DateLbl.Size = new System.Drawing.Size(87, 22);
+            this.MathDrill_DateLbl.Size = new System.Drawing.Size(81, 25);
             this.MathDrill_DateLbl.TabIndex = 27;
             this.MathDrill_DateLbl.Text = "<Date>";
             // 
@@ -114,6 +117,7 @@
             // 
             this.MathDrill_SkipBtn.AutoSize = true;
             this.MathDrill_SkipBtn.BackColor = System.Drawing.Color.Transparent;
+            this.MathDrill_SkipBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.MathDrill_SkipBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MathDrill_SkipBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_SkipBtn.ForeColor = System.Drawing.Color.Transparent;
@@ -146,7 +150,7 @@
             this.MathDrill_ProblemPrompt.AutoSize = true;
             this.MathDrill_ProblemPrompt.BackColor = System.Drawing.Color.Transparent;
             this.MathDrill_ProblemPrompt.Font = new System.Drawing.Font("Trebuchet MS", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MathDrill_ProblemPrompt.Location = new System.Drawing.Point(330, 209);
+            this.MathDrill_ProblemPrompt.Location = new System.Drawing.Point(330, 213);
             this.MathDrill_ProblemPrompt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_ProblemPrompt.Name = "MathDrill_ProblemPrompt";
             this.MathDrill_ProblemPrompt.Size = new System.Drawing.Size(130, 61);
@@ -156,18 +160,20 @@
             // MathDrill_SubmitBtn
             // 
             this.MathDrill_SubmitBtn.BackColor = System.Drawing.Color.Transparent;
+            this.MathDrill_SubmitBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.MathDrill_SubmitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MathDrill_SubmitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_SubmitBtn.ForeColor = System.Drawing.Color.Transparent;
             this.MathDrill_SubmitBtn.Image = global::RaptorMath.Properties.Resources.Submit_gray1;
             this.MathDrill_SubmitBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.MathDrill_SubmitBtn.Location = new System.Drawing.Point(512, 419);
+            this.MathDrill_SubmitBtn.Location = new System.Drawing.Point(512, 412);
             this.MathDrill_SubmitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_SubmitBtn.Name = "MathDrill_SubmitBtn";
-            this.MathDrill_SubmitBtn.Size = new System.Drawing.Size(194, 203);
+            this.MathDrill_SubmitBtn.Size = new System.Drawing.Size(194, 210);
             this.MathDrill_SubmitBtn.TabIndex = 33;
             this.MathDrill_SubmitBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MathDrill_SubmitBtn.UseVisualStyleBackColor = false;
+            this.MathDrill_SubmitBtn.Click += new System.EventHandler(this.MathDrill_SubmitBtn_Click);
             // 
             // MathDrill_InputTxt
             // 
@@ -181,10 +187,11 @@
             this.MathDrill_InputTxt.Multiline = false;
             this.MathDrill_InputTxt.Name = "MathDrill_InputTxt";
             this.MathDrill_InputTxt.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.MathDrill_InputTxt.Size = new System.Drawing.Size(126, 52);
+            this.MathDrill_InputTxt.Size = new System.Drawing.Size(126, 61);
             this.MathDrill_InputTxt.TabIndex = 31;
             this.MathDrill_InputTxt.Text = "";
-            this.MathDrill_InputTxt.TextChanged += new System.EventHandler(this.MathDrill_InputTxt_TextChanged);
+            this.MathDrill_InputTxt.TextChanged += new System.EventHandler(this.PlayDrill_InputTxt_TextChanged);
+            this.MathDrill_InputTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PlayDrill_DigitsKeyPress);
             // 
             // MathDrill_OfLbl
             // 
@@ -222,6 +229,7 @@
             // MathDrill_QuitBtn
             // 
             this.MathDrill_QuitBtn.BackColor = System.Drawing.Color.Transparent;
+            this.MathDrill_QuitBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.MathDrill_QuitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MathDrill_QuitBtn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_QuitBtn.ForeColor = System.Drawing.Color.Black;
@@ -235,6 +243,7 @@
             this.MathDrill_QuitBtn.Text = "Quit";
             this.MathDrill_QuitBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MathDrill_QuitBtn.UseVisualStyleBackColor = false;
+            this.MathDrill_QuitBtn.Click += new System.EventHandler(this.MathDrill_QuitBtn_Click);
             // 
             // SubmitLbl
             // 
@@ -258,10 +267,20 @@
             this.label2.TabIndex = 43;
             this.label2.Text = "Skip";
             // 
+            // PlayDrill_TimeLbl
+            // 
+            this.PlayDrill_TimeLbl.Tick += new System.EventHandler(this.PlayDrill_TimeLbl_Tick);
+            // 
+            // PlayDrillImageList
+            // 
+            this.PlayDrillImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.PlayDrillImageList.ImageSize = new System.Drawing.Size(16, 16);
+            this.PlayDrillImageList.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // PlayDrill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AcceptButton = this.MathDrill_SubmitBtn;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.label2);
@@ -280,8 +299,12 @@
             this.Controls.Add(this.MathDrill_TimeLbl);
             this.Controls.Add(this.MathDrill_StudentNameLbl);
             this.Controls.Add(this.MathDrill_DateLbl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PlayDrill";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PlayDrill";
             this.Load += new System.EventHandler(this.PlayDrill_Load);
             this.ResumeLayout(false);
@@ -307,5 +330,7 @@
         private System.Windows.Forms.Button MathDrill_QuitBtn;
         private System.Windows.Forms.Label SubmitLbl;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer PlayDrill_TimeLbl;
+        private System.Windows.Forms.ImageList PlayDrillImageList;
     }
 }

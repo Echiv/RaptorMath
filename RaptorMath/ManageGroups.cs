@@ -159,10 +159,8 @@ namespace RaptorMath
         /// <summary>Handle LettersAndDigitsKeyPress event.</summary>
         private void RaptorMath_LettersAndDigitsEnterKeyPress(object sender, KeyPressEventArgs e)
         {
-            Console.WriteLine(e.KeyChar);
             if (e.KeyChar == (char)Keys.Enter)
             {
-                Console.WriteLine("CLICK");
                 MngGroups_RenameBtn.PerformClick();
             }
             else
