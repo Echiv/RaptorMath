@@ -104,32 +104,35 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void ExistingUserDataEditUsersDisplay_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (ExistingUserDataEditUsersDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                ClearModifyUserBoxes();
-                Student selectedStudent;
-                selectedStudent = localManager.FindStudentWithName(localManager.GetStudentNameFromCellFormat(ExistingUserDataEditUsersDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()));
-                if (selectedStudent != null)
+                if (ExistingUserDataEditUsersDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
-                    GroupNameComboBox.Text = localManager.FindGroupByID(selectedStudent.GroupID).Name;
-                    FirstNameTxtBox.Text = selectedStudent.FirstName;
-                    LastNameTxtBox.Text = selectedStudent.LastName;
-                    SaveChangesBtn.Enabled = true;
-                    RemoveUserGroupBtn.Enabled = true;
+                    ClearModifyUserBoxes();
+                    Student selectedStudent;
+                    selectedStudent = localManager.FindStudentWithName(localManager.GetStudentNameFromCellFormat(ExistingUserDataEditUsersDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()));
+                    if (selectedStudent != null)
+                    {
+                        GroupNameComboBox.Text = localManager.FindGroupByID(selectedStudent.GroupID).Name;
+                        FirstNameTxtBox.Text = selectedStudent.FirstName;
+                        LastNameTxtBox.Text = selectedStudent.LastName;
+                        SaveChangesBtn.Enabled = true;
+                        RemoveUserGroupBtn.Enabled = true;
+                    }
+                    else
+                    {
+                        SaveChangesBtn.Enabled = false;
+                        RemoveUserGroupBtn.Enabled = false;
+                    }
                 }
                 else
                 {
+                    GroupNameComboBox.Text = string.Empty;
+                    FirstNameTxtBox.Text = string.Empty;
+                    LastNameTxtBox.Text = string.Empty;
                     SaveChangesBtn.Enabled = false;
                     RemoveUserGroupBtn.Enabled = false;
                 }
-            }
-            else
-            {
-                GroupNameComboBox.Text = string.Empty;
-                FirstNameTxtBox.Text = string.Empty;
-                LastNameTxtBox.Text = string.Empty;
-                SaveChangesBtn.Enabled = false;
-                RemoveUserGroupBtn.Enabled = false;
             }
         }
 
