@@ -704,8 +704,8 @@
             this.ExistingUserDataEditUsersDisplay.Name = "ExistingUserDataEditUsersDisplay";
             this.ExistingUserDataEditUsersDisplay.Size = new System.Drawing.Size(364, 556);
             this.ExistingUserDataEditUsersDisplay.TabIndex = 1;
+            this.ExistingUserDataEditUsersDisplay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExistingUserDataEditUsersDisplay_CellContentClick);
             this.ExistingUserDataEditUsersDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExistingUserDataEditUsersDisplay_CellContentClick);
-            this.ExistingUserDataEditUsersDisplay.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
             // 
             // StudentAdminNameEditUsers
             // 
