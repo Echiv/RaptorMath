@@ -150,7 +150,7 @@
             this.MathDrill_ProblemPrompt.AutoSize = true;
             this.MathDrill_ProblemPrompt.BackColor = System.Drawing.Color.Transparent;
             this.MathDrill_ProblemPrompt.Font = new System.Drawing.Font("Trebuchet MS", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MathDrill_ProblemPrompt.Location = new System.Drawing.Point(330, 209);
+            this.MathDrill_ProblemPrompt.Location = new System.Drawing.Point(330, 213);
             this.MathDrill_ProblemPrompt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_ProblemPrompt.Name = "MathDrill_ProblemPrompt";
             this.MathDrill_ProblemPrompt.Size = new System.Drawing.Size(130, 61);
@@ -166,10 +166,10 @@
             this.MathDrill_SubmitBtn.ForeColor = System.Drawing.Color.Transparent;
             this.MathDrill_SubmitBtn.Image = global::RaptorMath.Properties.Resources.Submit_gray1;
             this.MathDrill_SubmitBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.MathDrill_SubmitBtn.Location = new System.Drawing.Point(512, 419);
+            this.MathDrill_SubmitBtn.Location = new System.Drawing.Point(512, 412);
             this.MathDrill_SubmitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_SubmitBtn.Name = "MathDrill_SubmitBtn";
-            this.MathDrill_SubmitBtn.Size = new System.Drawing.Size(194, 203);
+            this.MathDrill_SubmitBtn.Size = new System.Drawing.Size(194, 210);
             this.MathDrill_SubmitBtn.TabIndex = 33;
             this.MathDrill_SubmitBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MathDrill_SubmitBtn.UseVisualStyleBackColor = false;
@@ -187,7 +187,7 @@
             this.MathDrill_InputTxt.Multiline = false;
             this.MathDrill_InputTxt.Name = "MathDrill_InputTxt";
             this.MathDrill_InputTxt.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.MathDrill_InputTxt.Size = new System.Drawing.Size(126, 52);
+            this.MathDrill_InputTxt.Size = new System.Drawing.Size(126, 61);
             this.MathDrill_InputTxt.TabIndex = 31;
             this.MathDrill_InputTxt.Text = "";
             this.MathDrill_InputTxt.TextChanged += new System.EventHandler(this.PlayDrill_InputTxt_TextChanged);
