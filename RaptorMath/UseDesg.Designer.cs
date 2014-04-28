@@ -70,7 +70,7 @@
             this.UseDesg_LoginBox.Controls.Add(this.UseDesg_passwordBox);
             this.UseDesg_LoginBox.Controls.Add(this.UseDesg_LoginBtn);
             this.UseDesg_LoginBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UseDesg_LoginBox.Location = new System.Drawing.Point(155, 137);
+            this.UseDesg_LoginBox.Location = new System.Drawing.Point(147, 169);
             this.UseDesg_LoginBox.Margin = new System.Windows.Forms.Padding(4);
             this.UseDesg_LoginBox.Name = "UseDesg_LoginBox";
             this.UseDesg_LoginBox.Padding = new System.Windows.Forms.Padding(4);
@@ -182,7 +182,7 @@
             this.UseDesg_UserInfoBox.Controls.Add(this.UseDesg_WindowLbl);
             this.UseDesg_UserInfoBox.Controls.Add(this.UseDesg_DateLbl);
             this.UseDesg_UserInfoBox.Controls.Add(this.UseDesg_TimeLbl);
-            this.UseDesg_UserInfoBox.Location = new System.Drawing.Point(3, 3);
+            this.UseDesg_UserInfoBox.Location = new System.Drawing.Point(3, 13);
             this.UseDesg_UserInfoBox.Margin = new System.Windows.Forms.Padding(4);
             this.UseDesg_UserInfoBox.Name = "UseDesg_UserInfoBox";
             this.UseDesg_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
