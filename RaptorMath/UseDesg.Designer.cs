@@ -84,8 +84,8 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.UseDesg_ButtonBox, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.UseDesg_LoginBox, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.UseDesg_UserInfoBox, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.UseDesg_LoginBox, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -168,7 +168,7 @@
             this.UseDesg_LoginBtn.Location = new System.Drawing.Point(191, 152);
             this.UseDesg_LoginBtn.Margin = new System.Windows.Forms.Padding(4);
             this.UseDesg_LoginBtn.Name = "UseDesg_LoginBtn";
-            this.UseDesg_LoginBtn.Size = new System.Drawing.Size(138, 43);
+            this.UseDesg_LoginBtn.Size = new System.Drawing.Size(0, 0);
             this.UseDesg_LoginBtn.TabIndex = 2;
             this.UseDesg_LoginBtn.Text = "Login";
             this.toolTip1.SetToolTip(this.UseDesg_LoginBtn, "Takes you to your homepage");
@@ -236,13 +236,12 @@
             this.UseDesg_LoginBox.Controls.Add(this.label1);
             this.UseDesg_LoginBox.Controls.Add(this.UseDesg_passwordBox);
             this.UseDesg_LoginBox.Controls.Add(this.UseDesg_LoginBtn);
-            this.UseDesg_LoginBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UseDesg_LoginBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UseDesg_LoginBox.Location = new System.Drawing.Point(4, 125);
             this.UseDesg_LoginBox.Margin = new System.Windows.Forms.Padding(4);
             this.UseDesg_LoginBox.Name = "UseDesg_LoginBox";
             this.UseDesg_LoginBox.Padding = new System.Windows.Forms.Padding(4);
-            this.UseDesg_LoginBox.Size = new System.Drawing.Size(776, 346);
+            this.UseDesg_LoginBox.Size = new System.Drawing.Size(401, 164);
             this.UseDesg_LoginBox.TabIndex = 1;
             this.UseDesg_LoginBox.TabStop = false;
             this.UseDesg_LoginBox.Text = "Select Your Name";
