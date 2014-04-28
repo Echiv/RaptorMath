@@ -33,23 +33,21 @@
             this.UseDesg_Timer = new System.Windows.Forms.Timer(this.components);
             this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.UseDesg_ExitBtn = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.UseDesg_ButtonBox = new System.Windows.Forms.GroupBox();
-            this.UseDesg_UserInfoBox = new System.Windows.Forms.GroupBox();
-            this.UseDesg_WindowLbl = new System.Windows.Forms.Label();
-            this.UseDesg_DateLbl = new System.Windows.Forms.Label();
-            this.UseDesg_TimeLbl = new System.Windows.Forms.Label();
+            this.UseDesg_LoginBox = new System.Windows.Forms.GroupBox();
             this.UseDesg_LoginBtn = new System.Windows.Forms.Button();
             this.UseDesg_passwordBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.UseDesg_LoginCmbo = new System.Windows.Forms.ComboBox();
-            this.UseDesg_LoginBox = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.UseDesg_ButtonBox = new System.Windows.Forms.GroupBox();
+            this.UseDesg_ExitBtn = new System.Windows.Forms.Button();
+            this.UseDesg_UserInfoBox = new System.Windows.Forms.GroupBox();
+            this.UseDesg_TimeLbl = new System.Windows.Forms.Label();
+            this.UseDesg_DateLbl = new System.Windows.Forms.Label();
+            this.UseDesg_WindowLbl = new System.Windows.Forms.Label();
+            this.UseDesg_LoginBox.SuspendLayout();
             this.UseDesg_ButtonBox.SuspendLayout();
             this.UseDesg_UserInfoBox.SuspendLayout();
-            this.UseDesg_LoginBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // UseDesg_Timer
@@ -63,101 +61,22 @@
             this.doNothingContextMenu.Name = "doNothingContextMenu";
             this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
             // 
-            // UseDesg_ExitBtn
+            // UseDesg_LoginBox
             // 
-            this.UseDesg_ExitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.UseDesg_ExitBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.UseDesg_ExitBtn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UseDesg_ExitBtn.Location = new System.Drawing.Point(633, 22);
-            this.UseDesg_ExitBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.UseDesg_ExitBtn.Name = "UseDesg_ExitBtn";
-            this.UseDesg_ExitBtn.Size = new System.Drawing.Size(125, 40);
-            this.UseDesg_ExitBtn.TabIndex = 0;
-            this.UseDesg_ExitBtn.Text = "Exit";
-            this.toolTip1.SetToolTip(this.UseDesg_ExitBtn, "Closes the program.");
-            this.UseDesg_ExitBtn.UseVisualStyleBackColor = true;
-            this.UseDesg_ExitBtn.Click += new System.EventHandler(this.UseDesg_ExitBtn_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.BackgroundImage = global::RaptorMath.Properties.Resources.JungleBackground;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.UseDesg_ButtonBox, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.UseDesg_UserInfoBox, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.UseDesg_LoginBox, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.4902F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 74.5098F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 86F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 562);
-            this.tableLayoutPanel1.TabIndex = 21;
-            // 
-            // UseDesg_ButtonBox
-            // 
-            this.UseDesg_ButtonBox.Controls.Add(this.UseDesg_ExitBtn);
-            this.UseDesg_ButtonBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UseDesg_ButtonBox.Location = new System.Drawing.Point(4, 479);
-            this.UseDesg_ButtonBox.Margin = new System.Windows.Forms.Padding(4);
-            this.UseDesg_ButtonBox.Name = "UseDesg_ButtonBox";
-            this.UseDesg_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
-            this.UseDesg_ButtonBox.Size = new System.Drawing.Size(776, 79);
-            this.UseDesg_ButtonBox.TabIndex = 2;
-            this.UseDesg_ButtonBox.TabStop = false;
-            // 
-            // UseDesg_UserInfoBox
-            // 
-            this.UseDesg_UserInfoBox.Controls.Add(this.UseDesg_WindowLbl);
-            this.UseDesg_UserInfoBox.Controls.Add(this.UseDesg_DateLbl);
-            this.UseDesg_UserInfoBox.Controls.Add(this.UseDesg_TimeLbl);
-            this.UseDesg_UserInfoBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UseDesg_UserInfoBox.Location = new System.Drawing.Point(4, 4);
-            this.UseDesg_UserInfoBox.Margin = new System.Windows.Forms.Padding(4);
-            this.UseDesg_UserInfoBox.Name = "UseDesg_UserInfoBox";
-            this.UseDesg_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
-            this.UseDesg_UserInfoBox.Size = new System.Drawing.Size(776, 113);
-            this.UseDesg_UserInfoBox.TabIndex = 0;
-            this.UseDesg_UserInfoBox.TabStop = false;
-            this.UseDesg_UserInfoBox.Enter += new System.EventHandler(this.UseDesg_UserInfoBox_Enter);
-            // 
-            // UseDesg_WindowLbl
-            // 
-            this.UseDesg_WindowLbl.AutoSize = true;
-            this.UseDesg_WindowLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UseDesg_WindowLbl.Location = new System.Drawing.Point(8, 10);
-            this.UseDesg_WindowLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.UseDesg_WindowLbl.Name = "UseDesg_WindowLbl";
-            this.UseDesg_WindowLbl.Size = new System.Drawing.Size(52, 22);
-            this.UseDesg_WindowLbl.TabIndex = 15;
-            this.UseDesg_WindowLbl.Text = "Login";
-            // 
-            // UseDesg_DateLbl
-            // 
-            this.UseDesg_DateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UseDesg_DateLbl.AutoSize = true;
-            this.UseDesg_DateLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UseDesg_DateLbl.Location = new System.Drawing.Point(680, 10);
-            this.UseDesg_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.UseDesg_DateLbl.Name = "UseDesg_DateLbl";
-            this.UseDesg_DateLbl.Size = new System.Drawing.Size(59, 22);
-            this.UseDesg_DateLbl.TabIndex = 9;
-            this.UseDesg_DateLbl.Text = "<Date>";
-            // 
-            // UseDesg_TimeLbl
-            // 
-            this.UseDesg_TimeLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UseDesg_TimeLbl.AutoSize = true;
-            this.UseDesg_TimeLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UseDesg_TimeLbl.Location = new System.Drawing.Point(680, 42);
-            this.UseDesg_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.UseDesg_TimeLbl.Name = "UseDesg_TimeLbl";
-            this.UseDesg_TimeLbl.Size = new System.Drawing.Size(62, 22);
-            this.UseDesg_TimeLbl.TabIndex = 11;
-            this.UseDesg_TimeLbl.Text = "<Time>";
+            this.UseDesg_LoginBox.Controls.Add(this.UseDesg_LoginCmbo);
+            this.UseDesg_LoginBox.Controls.Add(this.label2);
+            this.UseDesg_LoginBox.Controls.Add(this.label1);
+            this.UseDesg_LoginBox.Controls.Add(this.UseDesg_passwordBox);
+            this.UseDesg_LoginBox.Controls.Add(this.UseDesg_LoginBtn);
+            this.UseDesg_LoginBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UseDesg_LoginBox.Location = new System.Drawing.Point(155, 137);
+            this.UseDesg_LoginBox.Margin = new System.Windows.Forms.Padding(4);
+            this.UseDesg_LoginBox.Name = "UseDesg_LoginBox";
+            this.UseDesg_LoginBox.Padding = new System.Windows.Forms.Padding(4);
+            this.UseDesg_LoginBox.Size = new System.Drawing.Size(509, 250);
+            this.UseDesg_LoginBox.TabIndex = 1;
+            this.UseDesg_LoginBox.TabStop = false;
+            this.UseDesg_LoginBox.Text = "Select Your Name";
             // 
             // UseDesg_LoginBtn
             // 
@@ -168,7 +87,7 @@
             this.UseDesg_LoginBtn.Location = new System.Drawing.Point(191, 152);
             this.UseDesg_LoginBtn.Margin = new System.Windows.Forms.Padding(4);
             this.UseDesg_LoginBtn.Name = "UseDesg_LoginBtn";
-            this.UseDesg_LoginBtn.Size = new System.Drawing.Size(0, 0);
+            this.UseDesg_LoginBtn.Size = new System.Drawing.Size(108, 86);
             this.UseDesg_LoginBtn.TabIndex = 2;
             this.UseDesg_LoginBtn.Text = "Login";
             this.toolTip1.SetToolTip(this.UseDesg_LoginBtn, "Takes you to your homepage");
@@ -229,31 +148,93 @@
             this.UseDesg_LoginCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LettersKeyPress);
             this.UseDesg_LoginCmbo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
             // 
-            // UseDesg_LoginBox
+            // UseDesg_ButtonBox
             // 
-            this.UseDesg_LoginBox.Controls.Add(this.UseDesg_LoginCmbo);
-            this.UseDesg_LoginBox.Controls.Add(this.label2);
-            this.UseDesg_LoginBox.Controls.Add(this.label1);
-            this.UseDesg_LoginBox.Controls.Add(this.UseDesg_passwordBox);
-            this.UseDesg_LoginBox.Controls.Add(this.UseDesg_LoginBtn);
-            this.UseDesg_LoginBox.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UseDesg_LoginBox.Location = new System.Drawing.Point(4, 125);
-            this.UseDesg_LoginBox.Margin = new System.Windows.Forms.Padding(4);
-            this.UseDesg_LoginBox.Name = "UseDesg_LoginBox";
-            this.UseDesg_LoginBox.Padding = new System.Windows.Forms.Padding(4);
-            this.UseDesg_LoginBox.Size = new System.Drawing.Size(401, 164);
-            this.UseDesg_LoginBox.TabIndex = 1;
-            this.UseDesg_LoginBox.TabStop = false;
-            this.UseDesg_LoginBox.Text = "Select Your Name";
+            this.UseDesg_ButtonBox.Controls.Add(this.UseDesg_ExitBtn);
+            this.UseDesg_ButtonBox.Location = new System.Drawing.Point(3, 475);
+            this.UseDesg_ButtonBox.Margin = new System.Windows.Forms.Padding(4);
+            this.UseDesg_ButtonBox.Name = "UseDesg_ButtonBox";
+            this.UseDesg_ButtonBox.Padding = new System.Windows.Forms.Padding(4);
+            this.UseDesg_ButtonBox.Size = new System.Drawing.Size(776, 74);
+            this.UseDesg_ButtonBox.TabIndex = 2;
+            this.UseDesg_ButtonBox.TabStop = false;
+            // 
+            // UseDesg_ExitBtn
+            // 
+            this.UseDesg_ExitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.UseDesg_ExitBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.UseDesg_ExitBtn.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UseDesg_ExitBtn.Location = new System.Drawing.Point(633, 17);
+            this.UseDesg_ExitBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.UseDesg_ExitBtn.Name = "UseDesg_ExitBtn";
+            this.UseDesg_ExitBtn.Size = new System.Drawing.Size(125, 40);
+            this.UseDesg_ExitBtn.TabIndex = 0;
+            this.UseDesg_ExitBtn.Text = "Exit";
+            this.toolTip1.SetToolTip(this.UseDesg_ExitBtn, "Closes the program.");
+            this.UseDesg_ExitBtn.UseVisualStyleBackColor = true;
+            this.UseDesg_ExitBtn.Click += new System.EventHandler(this.UseDesg_ExitBtn_Click);
+            // 
+            // UseDesg_UserInfoBox
+            // 
+            this.UseDesg_UserInfoBox.Controls.Add(this.UseDesg_WindowLbl);
+            this.UseDesg_UserInfoBox.Controls.Add(this.UseDesg_DateLbl);
+            this.UseDesg_UserInfoBox.Controls.Add(this.UseDesg_TimeLbl);
+            this.UseDesg_UserInfoBox.Location = new System.Drawing.Point(3, 3);
+            this.UseDesg_UserInfoBox.Margin = new System.Windows.Forms.Padding(4);
+            this.UseDesg_UserInfoBox.Name = "UseDesg_UserInfoBox";
+            this.UseDesg_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
+            this.UseDesg_UserInfoBox.Size = new System.Drawing.Size(786, 59);
+            this.UseDesg_UserInfoBox.TabIndex = 0;
+            this.UseDesg_UserInfoBox.TabStop = false;
+            this.UseDesg_UserInfoBox.Enter += new System.EventHandler(this.UseDesg_UserInfoBox_Enter);
+            // 
+            // UseDesg_TimeLbl
+            // 
+            this.UseDesg_TimeLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.UseDesg_TimeLbl.AutoSize = true;
+            this.UseDesg_TimeLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UseDesg_TimeLbl.Location = new System.Drawing.Point(690, 42);
+            this.UseDesg_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.UseDesg_TimeLbl.Name = "UseDesg_TimeLbl";
+            this.UseDesg_TimeLbl.Size = new System.Drawing.Size(62, 22);
+            this.UseDesg_TimeLbl.TabIndex = 11;
+            this.UseDesg_TimeLbl.Text = "<Time>";
+            // 
+            // UseDesg_DateLbl
+            // 
+            this.UseDesg_DateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.UseDesg_DateLbl.AutoSize = true;
+            this.UseDesg_DateLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UseDesg_DateLbl.Location = new System.Drawing.Point(690, 10);
+            this.UseDesg_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.UseDesg_DateLbl.Name = "UseDesg_DateLbl";
+            this.UseDesg_DateLbl.Size = new System.Drawing.Size(59, 22);
+            this.UseDesg_DateLbl.TabIndex = 9;
+            this.UseDesg_DateLbl.Text = "<Date>";
+            // 
+            // UseDesg_WindowLbl
+            // 
+            this.UseDesg_WindowLbl.AutoSize = true;
+            this.UseDesg_WindowLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UseDesg_WindowLbl.Location = new System.Drawing.Point(8, 10);
+            this.UseDesg_WindowLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.UseDesg_WindowLbl.Name = "UseDesg_WindowLbl";
+            this.UseDesg_WindowLbl.Size = new System.Drawing.Size(52, 22);
+            this.UseDesg_WindowLbl.TabIndex = 15;
+            this.UseDesg_WindowLbl.Text = "Login";
             // 
             // UseDesg_Form
             // 
             this.AcceptButton = this.UseDesg_LoginBtn;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackgroundImage = global::RaptorMath.Properties.Resources.JungleBackground;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.UseDesg_ExitBtn;
             this.ClientSize = new System.Drawing.Size(784, 562);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.UseDesg_UserInfoBox);
+            this.Controls.Add(this.UseDesg_ButtonBox);
+            this.Controls.Add(this.UseDesg_LoginBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -263,27 +244,19 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raptor Math";
             this.Load += new System.EventHandler(this.UseDesg_Form_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.UseDesg_LoginBox.ResumeLayout(false);
+            this.UseDesg_LoginBox.PerformLayout();
             this.UseDesg_ButtonBox.ResumeLayout(false);
             this.UseDesg_UserInfoBox.ResumeLayout(false);
             this.UseDesg_UserInfoBox.PerformLayout();
-            this.UseDesg_LoginBox.ResumeLayout(false);
-            this.UseDesg_LoginBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label UseDesg_DateLbl;
-        private System.Windows.Forms.Button UseDesg_ExitBtn;
         private System.Windows.Forms.Timer UseDesg_Timer;
-        private System.Windows.Forms.Label UseDesg_WindowLbl;
-        private System.Windows.Forms.Label UseDesg_TimeLbl;
-        private System.Windows.Forms.GroupBox UseDesg_UserInfoBox;
-        private System.Windows.Forms.GroupBox UseDesg_ButtonBox;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ContextMenuStrip doNothingContextMenu;
         private System.Windows.Forms.GroupBox UseDesg_LoginBox;
         private System.Windows.Forms.ComboBox UseDesg_LoginCmbo;
@@ -291,6 +264,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox UseDesg_passwordBox;
         private System.Windows.Forms.Button UseDesg_LoginBtn;
+        private System.Windows.Forms.GroupBox UseDesg_ButtonBox;
+        private System.Windows.Forms.Button UseDesg_ExitBtn;
+        private System.Windows.Forms.GroupBox UseDesg_UserInfoBox;
+        private System.Windows.Forms.Label UseDesg_WindowLbl;
+        private System.Windows.Forms.Label UseDesg_DateLbl;
+        private System.Windows.Forms.Label UseDesg_TimeLbl;
 
 
     }
