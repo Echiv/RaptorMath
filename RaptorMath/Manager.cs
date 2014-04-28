@@ -1811,6 +1811,21 @@ namespace RaptorMath
             //return recordList;
         }
 
+        public float GetAveragePercentStudent(Student student)
+        {
+            float average = 0.0f;
+
+            if (student.curRecordList.Count > 0)
+            {
+                foreach (Record currentRecord in student.curRecordList)
+                {
+                    average = average + float.Parse(currentRecord.Percent);
+                }
+                average = average / student.curRecordList.Count;
+            }
+
+            return average;
+        }
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/12/14                                                    //
@@ -2142,6 +2157,30 @@ namespace RaptorMath
             foreach (Group group in groupList)
             {
                 groupNames.Add(group.Name);
+            }
+            return groupNames;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/24/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Returns a list holding all the names of the groups that sort of match the inputed string.</summary>
+        public List<string> GetMatchingGroupNames(string narrow)
+        {
+            narrow = narrow.ToLower();
+            List<string> groupNames = new List<string>();
+            string currentGroupName = "";
+            for (int iter = 0; iter < groupList.Count; iter++)
+            {
+                currentGroupName = groupList.ElementAt(iter).Name.ToLower();
+                if (narrow.Length <= currentGroupName.Length)
+                {
+                    if (currentGroupName.Substring(0, narrow.Length).Equals(narrow))
+                    {
+                        groupNames.Add(groupList.ElementAt(iter).Name);
+                    }
+                }
             }
             return groupNames;
         }
