@@ -113,7 +113,7 @@
             this.StuHome_StudentNameLbl.BackColor = System.Drawing.Color.Transparent;
             this.StuHome_StudentNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_StudentNameLbl.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.StuHome_StudentNameLbl.Location = new System.Drawing.Point(406, 167);
+            this.StuHome_StudentNameLbl.Location = new System.Drawing.Point(358, 173);
             this.StuHome_StudentNameLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.StuHome_StudentNameLbl.Name = "StuHome_StudentNameLbl";
             this.StuHome_StudentNameLbl.Size = new System.Drawing.Size(246, 55);
@@ -140,8 +140,8 @@
             this.StuHome_StartDrillBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.StuHome_StartDrillBtn.BackColor = System.Drawing.Color.Transparent;
             this.StuHome_StartDrillBtn.FlatAppearance.BorderSize = 0;
-            this.StuHome_StartDrillBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LimeGreen;
-            this.StuHome_StartDrillBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.StuHome_StartDrillBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.StuHome_StartDrillBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.StuHome_StartDrillBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StuHome_StartDrillBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_StartDrillBtn.ForeColor = System.Drawing.Color.Transparent;
@@ -167,8 +167,8 @@
             this.StuHome_LogoutBtn.BackColor = System.Drawing.Color.Transparent;
             this.StuHome_LogoutBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.StuHome_LogoutBtn.FlatAppearance.BorderSize = 0;
-            this.StuHome_LogoutBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGray;
-            this.StuHome_LogoutBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray;
+            this.StuHome_LogoutBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.StuHome_LogoutBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.StuHome_LogoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StuHome_LogoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_LogoutBtn.ForeColor = System.Drawing.Color.Transparent;

@@ -295,6 +295,51 @@
   <ItemGroup>
     <None Include="Resources\quit game.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\letsplay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\letsplay1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\letsplay2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\letsplay3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\letsplay4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scroll1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scroll3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scroll4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scroll5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quitdrill2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quitdrill3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JungleBackground.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

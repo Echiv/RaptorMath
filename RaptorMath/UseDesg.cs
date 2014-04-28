@@ -412,5 +412,10 @@ namespace RaptorMath
         {
 
         }
+
+        private void UseDesg_UserInfoBox_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
