@@ -243,10 +243,14 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/25/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Handle 'Close' button click.</summary>
         private void CreateDrill_CloseBtn_Click(object sender, EventArgs e)
         {
-            localManager.SetWindow(Window.adminHome);
+            //localManager.SetWindow(Window.adminHome);
             this.Close();
         }
 

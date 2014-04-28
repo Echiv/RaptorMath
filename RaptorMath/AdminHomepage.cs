@@ -31,6 +31,7 @@ namespace RaptorMath
         {
             InitializeComponent();
             localManager = manager;
+            FillSingleColumnDataGrid(localManager.GetGroupNames() , GroupNameDataDisplay);
         }
 
         //------------------------------------------------------------------//
@@ -76,7 +77,99 @@ namespace RaptorMath
 
         }
 
-        /* The code in this section is for the Edit Users Tab only*/
+        /* The code in this section is for the Statistics tab only*/
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/24/14                                                    //
+        //------------------------------------------------------------------//
+        private void SearchTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            if (SearchTxtBox.Text.Length > 0)
+            {
+                GroupNameDataDisplay.Rows.Clear();
+                GroupSnapshotDataDisplay.Rows.Clear();
+                List<string> matches = localManager.GetMatchingGroupNames(SearchTxtBox.Text);
+                if (matches.Count > 0)
+                {
+                    FillSingleColumnDataGrid(matches, GroupNameDataDisplay);
+                }
+            }
+            else
+            {
+                GroupNameDataDisplay.Rows.Clear();
+                FillSingleColumnDataGrid(localManager.GetGroupNames(), GroupNameDataDisplay);
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/24/14                                                    //
+        //------------------------------------------------------------------//
+        private void GroupNameDataDisplay_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (GroupNameDataDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    GroupSnapshotDataDisplay.Rows.Clear();
+                    List<Student> groupStudents = localManager.FindStudentsByGroupID(localManager.FindGroupByName(GroupNameDataDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()).ID);
+                    if (groupStudents.Count > 0)
+                    {
+                        foreach (Student student in groupStudents)
+                        {
+                            DataGridViewRow newRow = (DataGridViewRow)GroupSnapshotDataDisplay.Rows[0].Clone();
+                            newRow.Cells[0].Value = student.LoginName;
+                            newRow.Cells[1].Value = student.curDrillList.Count;
+                            newRow.Cells[2].Value = student.curRecordList.Count;
+                            newRow.Cells[3].Value = localManager.GetAveragePercentStudent(student);
+                            newRow.Cells[4].Value = student.LastLogin;
+
+                            GroupSnapshotDataDisplay.Rows.Add(newRow);
+                        }
+                    }
+                }
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/24/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Clears the search message out of the search group box.</summary>
+        private void SearchStatisticsTxtbox_Click(object sender, EventArgs e)
+        {
+            if (SearchTxtBox.Text == "Search for Group")
+            {
+                SearchTxtBox.Text = string.Empty;
+            }
+        }
+
+        /* The code in this section is for the Setup tab only*/
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/25/14                                                    //
+        //------------------------------------------------------------------//
+        private void NewDrillBtn_Click(object sender, EventArgs e)
+        {
+            CreateDrill_Form createDrillDialog = new CreateDrill_Form(localManager);
+
+            // Show testDialog as a modal dialog and determine if DialogResult = OK.
+            if (createDrillDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                // Read the contents of testDialog's TextBox.
+                //this.txtResult.Text = testDialog.TextBox1.Text;
+            }
+            else
+            {
+                //this.txtResult.Text = "Cancelled";
+            }
+            createDrillDialog.Dispose();
+        }
+
+        /* The code in this section is for the Edit Users tab only*/
+
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
@@ -104,32 +197,35 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void ExistingUserDataEditUsersDisplay_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (ExistingUserDataEditUsersDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                ClearModifyUserBoxes();
-                Student selectedStudent;
-                selectedStudent = localManager.FindStudentWithName(localManager.GetStudentNameFromCellFormat(ExistingUserDataEditUsersDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()));
-                if (selectedStudent != null)
+                if (ExistingUserDataEditUsersDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
-                    GroupNameComboBox.Text = localManager.FindGroupByID(selectedStudent.GroupID).Name;
-                    FirstNameTxtBox.Text = selectedStudent.FirstName;
-                    LastNameTxtBox.Text = selectedStudent.LastName;
-                    SaveChangesBtn.Enabled = true;
-                    RemoveUserGroupBtn.Enabled = true;
+                    ClearModifyUserBoxes();
+                    Student selectedStudent;
+                    selectedStudent = localManager.FindStudentWithName(localManager.GetStudentNameFromCellFormat(ExistingUserDataEditUsersDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()));
+                    if (selectedStudent != null)
+                    {
+                        GroupNameComboBox.Text = localManager.FindGroupByID(selectedStudent.GroupID).Name;
+                        FirstNameTxtBox.Text = selectedStudent.FirstName;
+                        LastNameTxtBox.Text = selectedStudent.LastName;
+                        SaveChangesBtn.Enabled = true;
+                        RemoveUserGroupBtn.Enabled = true;
+                    }
+                    else
+                    {
+                        SaveChangesBtn.Enabled = false;
+                        RemoveUserGroupBtn.Enabled = false;
+                    }
                 }
                 else
                 {
+                    GroupNameComboBox.Text = string.Empty;
+                    FirstNameTxtBox.Text = string.Empty;
+                    LastNameTxtBox.Text = string.Empty;
                     SaveChangesBtn.Enabled = false;
                     RemoveUserGroupBtn.Enabled = false;
                 }
-            }
-            else
-            {
-                GroupNameComboBox.Text = string.Empty;
-                FirstNameTxtBox.Text = string.Empty;
-                LastNameTxtBox.Text = string.Empty;
-                SaveChangesBtn.Enabled = false;
-                RemoveUserGroupBtn.Enabled = false;
             }
         }
 
@@ -424,6 +520,7 @@ namespace RaptorMath
         }
 
         /* This part of the code is for utility functions that anyone can use*/
+
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
@@ -441,8 +538,23 @@ namespace RaptorMath
         {
 
         }
+        
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/24/14                                                    //
+        //------------------------------------------------------------------//
+        private void FillSingleColumnDataGrid(List<string> matches, DataGridView dataGrid)
+        {
+            foreach (String groupName in matches)
+            {
+                DataGridViewRow newRow = (DataGridViewRow)dataGrid.Rows[0].Clone();
+                newRow.Cells[0].Value = groupName;
+                dataGrid.Rows.Add(newRow);
+            }
+        }
 
-        // This section of code handles button clciks
+        /* This section of code handles button clciks*/
+
         // This first part is for the two buttons that can be clicked from any any tab
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
@@ -470,7 +582,8 @@ namespace RaptorMath
             }
         }
 
-        // The code below is for restricting user input and actions
+        /*The code below is for restricting user input and actions*/
+
         // The first part if for functions that affect all tabs
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
@@ -531,7 +644,7 @@ namespace RaptorMath
                 System.Media.SystemSounds.Beep.Play();
         }
 
-        // The code in this section is for resetting text boxes and the like
+        /* The code in this section is for resetting text boxes and the like*/
 
         // This part is for the Edit Users tab
         //------------------------------------------------------------------//

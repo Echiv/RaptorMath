@@ -37,6 +37,7 @@ namespace RaptorMath
             Drill currentDrill = localManager.currentStudent.curDrillList.Where(dri => dri.DrillName.Equals(StuHome_DrillDdl.Text)).FirstOrDefault();
             localManager.currentStudent.curDrill = currentDrill;
             StuHome_StartDrillBtn.Enabled = true;
+            StuHome_StartDrillBtn.Image = Properties.Resources.go_green;
         }
 
         //------------------------------------------------------------------//
