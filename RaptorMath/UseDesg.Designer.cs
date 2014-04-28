@@ -63,6 +63,7 @@
             // 
             // UseDesg_LoginBox
             // 
+            this.UseDesg_LoginBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UseDesg_LoginBox.Controls.Add(this.UseDesg_LoginCmbo);
             this.UseDesg_LoginBox.Controls.Add(this.label2);
             this.UseDesg_LoginBox.Controls.Add(this.label1);
@@ -150,6 +151,7 @@
             // 
             // UseDesg_ButtonBox
             // 
+            this.UseDesg_ButtonBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UseDesg_ButtonBox.Controls.Add(this.UseDesg_ExitBtn);
             this.UseDesg_ButtonBox.Location = new System.Drawing.Point(3, 475);
             this.UseDesg_ButtonBox.Margin = new System.Windows.Forms.Padding(4);
@@ -176,6 +178,7 @@
             // 
             // UseDesg_UserInfoBox
             // 
+            this.UseDesg_UserInfoBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.UseDesg_UserInfoBox.Controls.Add(this.UseDesg_WindowLbl);
             this.UseDesg_UserInfoBox.Controls.Add(this.UseDesg_DateLbl);
             this.UseDesg_UserInfoBox.Controls.Add(this.UseDesg_TimeLbl);
@@ -183,7 +186,7 @@
             this.UseDesg_UserInfoBox.Margin = new System.Windows.Forms.Padding(4);
             this.UseDesg_UserInfoBox.Name = "UseDesg_UserInfoBox";
             this.UseDesg_UserInfoBox.Padding = new System.Windows.Forms.Padding(4);
-            this.UseDesg_UserInfoBox.Size = new System.Drawing.Size(786, 59);
+            this.UseDesg_UserInfoBox.Size = new System.Drawing.Size(786, 92);
             this.UseDesg_UserInfoBox.TabIndex = 0;
             this.UseDesg_UserInfoBox.TabStop = false;
             this.UseDesg_UserInfoBox.Enter += new System.EventHandler(this.UseDesg_UserInfoBox_Enter);
