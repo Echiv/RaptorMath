@@ -22,6 +22,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace RaptorMath
 {
@@ -918,6 +919,27 @@ namespace RaptorMath
                 Drill.Skipped = drill.Element("skipped").Value;
                 Drill.Percent = drill.Element("percent").Value;
                 drillList.Add(Drill);
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Deletes a drill from the xml.</summary>
+        /// <param name="drill">The drill to remove.</param>
+        /// <param name="fileName">XML file name.</param>
+        public void DeleteDrill(Drill drill, string fileName)
+        {
+            XDocument drillXML = XDocument.Load(fileName);
+
+            XElement drillElement = drillXML.Descendants("drill").Where(s => s.Attribute("ID").Value.Equals(drill.ID.ToString())).FirstOrDefault();
+            Debug.WriteLine(drill.DrillName);
+            Debug.WriteLine(drillElement);
+            if (drillElement != null)
+            {
+                drillElement.Remove();
+                drillXML.Save(fileName);
             }
         }
 

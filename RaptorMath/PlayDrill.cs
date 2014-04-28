@@ -116,8 +116,12 @@ namespace RaptorMath
                     MathDrill_InputTxt.Enabled = false;
                     MathDrill_SkipBtn.Enabled = false;
                     MathDrill_SubmitBtn.Enabled = false;
-                    MessageBox.Show("All done!", "Raptor Math", MessageBoxButtons.OK);
                     localManager.UpdateCurrentNumber();
+                    localManager.UpdateRewards();
+                    localManager.SaveDrill();
+                    localManager.ResetCurrentNumber();
+                    localManager.currentStudent.ResetCurrentDrill();
+                    MessageBox.Show("All done!", "Raptor Math", MessageBoxButtons.OK);
                 }
                 else
                 {

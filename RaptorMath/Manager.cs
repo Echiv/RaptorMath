@@ -471,7 +471,7 @@ namespace RaptorMath
             wholeName = currentName.Split(separators, StringSplitOptions.RemoveEmptyEntries);
             // Check to see if a student by the passed names already exists
             // Need to find out if we are changing the student's name and if so what parts of it
-            if (newFName.Equals(string.Empty) && newLName.Equals(string.Empty))
+            if ((newFName.Equals(string.Empty) && newLName.Equals(string.Empty)) || (newFName.Equals(wholeName[0]) && newLName.Equals(wholeName[1])))
             {
                 // We are not trying to change the student's name
                 // Do nothing because this valid
@@ -2183,6 +2183,51 @@ namespace RaptorMath
                 }
             }
             return groupNames;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Passes the provided drill name to the xml handler to try and delete said drill.</summary>
+        public void DeleteDrill(string drillName)
+        {
+            Drill drill = FindDrill(drillName);
+            if (drill != null)
+            {
+                XMLDriver.DeleteDrill(drill, drillXMLPath);
+                RemoveDrillFromSystem(drill);
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Tries to find and return the drill with the given name.</summary>
+        public Drill FindDrill(string drillName)
+        {
+            Drill toReturn = new Drill();
+            foreach (Drill drill in mainDrillList)
+            {
+                if (drill.DrillName == drillName)
+                {
+                    toReturn = drill;
+                    break;
+                }
+            }
+
+            return toReturn;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Removes the passed in drill from the manger's drill list.</summary>
+        public void RemoveDrillFromSystem(Drill drill)
+        {
+            mainDrillList.Remove(drill);
         }
     }
 }

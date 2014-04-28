@@ -31,6 +31,7 @@ namespace RaptorMath
         {
             InitializeComponent();
             localManager = manager;
+            AdminNameLbl.Text = localManager.currentAdmin.LoginName;
             FillSingleColumnDataGrid(localManager.GetGroupNames() , GroupNameDataDisplay);
         }
 
@@ -44,12 +45,20 @@ namespace RaptorMath
             // The Statistics tab
             if (e.TabPageIndex == 0)
             {
-                // Do nothing here because current design doesn't need to load anything on entry
+                GroupSnapshotDataDisplay.Rows.Clear();
+                FillSingleColumnDataGrid(localManager.GetGroupNames(), GroupNameDataDisplay);
             }
             // The Setup tab
             else if (e.TabPageIndex == 1)
             {
-                // Do nothing here because current design doesn't need to load anything on entry
+                StudentsRdo.Checked = true;
+                DisableSetupButtons();
+                SetupExistingUserDataDisplay.Rows.Clear();
+                AvailableDrillDataDisplay.Rows.Clear();
+                AssignedDrillDataDisplay.Rows.Clear();
+                DisplayFoundStudents(localManager.studentList, SetupExistingUserDataDisplay);
+                //SetupExistingUserDataDisplay.CurrentCell.Selected = false;
+                //SetupExistingUserDataDisplay.ClearSelection();
             }
             // The Edit Users tab
             else if (e.TabPageIndex == 2)
@@ -151,22 +160,507 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/25/14                                                    //
         //------------------------------------------------------------------//
-        private void NewDrillBtn_Click(object sender, EventArgs e)
+        private void StudentsRdo_CheckedChanged(object sender, EventArgs e)
         {
-            CreateDrill_Form createDrillDialog = new CreateDrill_Form(localManager);
+            NarrowListTxtBox.Text = string.Empty;
+            SetupExistingUserDataDisplay.Columns[1].Visible = true;
+            SetupExistingUserDataDisplay.Columns[0].HeaderText = "Student Name";
+            SetupExistingUserDataDisplay.Rows.Clear();
+            AvailableDrillDataDisplay.Rows.Clear();
+            AssignedDrillDataDisplay.Rows.Clear();
+            DisableSetupButtons();
+            DisplayFoundStudents(localManager.studentList, SetupExistingUserDataDisplay);
+        }
 
-            // Show testDialog as a modal dialog and determine if DialogResult = OK.
-            if (createDrillDialog.ShowDialog(this) == DialogResult.OK)
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/25/14                                                    //
+        //------------------------------------------------------------------//
+        private void GroupsRdo_CheckedChanged(object sender, EventArgs e)
+        {
+            NarrowListTxtBox.Text = string.Empty;
+            SetupExistingUserDataDisplay.Columns[1].Visible = false;
+            SetupExistingUserDataDisplay.Columns[0].HeaderText = "Group Name";
+            SetupExistingUserDataDisplay.Rows.Clear();
+            AvailableDrillDataDisplay.Rows.Clear();
+            AssignedDrillDataDisplay.Rows.Clear();
+            DisableSetupButtons();
+            DisplayFoundGroups(localManager.groupList, SetupExistingUserDataDisplay);
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/25/14                                                    //
+        //------------------------------------------------------------------//
+        private void NarrowListTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            if (StudentsRdo.Checked)
             {
-                // Read the contents of testDialog's TextBox.
-                //this.txtResult.Text = testDialog.TextBox1.Text;
+                if (NarrowListTxtBox.Text.Length > 0)
+                {
+                    SetupExistingUserDataDisplay.Rows.Clear();
+                    List<Student> matches = localManager.FindLastNameMatches(NarrowListTxtBox.Text);
+                    if (matches.Count > 0)
+                    {
+                        DisplayFoundStudents(matches, SetupExistingUserDataDisplay);
+                    }
+                }
+                else
+                {
+                    SetupExistingUserDataDisplay.Rows.Clear();
+                    DisplayFoundStudents(localManager.studentList, SetupExistingUserDataDisplay);
+                }
+            }
+            else if (GroupsRdo.Checked)
+            {
+                if (NarrowListTxtBox.Text.Length > 0)
+                {
+                    SetupExistingUserDataDisplay.Rows.Clear();
+                    List<string> matches = localManager.GetMatchingGroupNames(NarrowListTxtBox.Text);
+                    if (matches.Count > 0)
+                    {
+                        FillSingleColumnDataGrid(matches, SetupExistingUserDataDisplay);
+                    }
+                }
+                else
+                {
+                    SetupExistingUserDataDisplay.Rows.Clear();
+                    FillSingleColumnDataGrid(localManager.GetGroupNames(), SetupExistingUserDataDisplay);
+                }
+            }
+            //SetupExistingUserDataDisplay.CurrentCell.Selected = false;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/25/14                                                    //
+        //------------------------------------------------------------------//
+        private void NarrowListTxtBox_Click(object sender, EventArgs e)
+        {
+            if (NarrowListTxtBox.Text == "Search")
+            {
+                NarrowListTxtBox.Text = string.Empty;
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/24/14                                                    //
+        //------------------------------------------------------------------//
+        private void SetupExistingUserDataDisplay_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (SetupExistingUserDataDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    DisableSetupButtons();
+                    if (StudentsRdo.Checked)
+                    {
+                        FillStudentDrills(e);
+                    }
+                    else if (GroupsRdo.Checked)
+                    {
+                        FillGroupDrills(e);
+                    }
+                    SetupDrillButtons(AvailableDrillDataDisplay, AssignedDrillDataDisplay);
+                }
+                else
+                {
+                    AvailableDrillDataDisplay.Rows.Clear();
+                    AssignedDrillDataDisplay.Rows.Clear();
+                    DisableSetupButtons();
+                }
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        private void FillStudentDrills(DataGridViewCellEventArgs e)
+        {
+            AvailableDrillDataDisplay.Rows.Clear();
+            AssignedDrillDataDisplay.Rows.Clear();
+            Student selectedStudent;
+            selectedStudent = localManager.FindStudentWithName(localManager.GetStudentNameFromCellFormat(SetupExistingUserDataDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()));
+            if (selectedStudent != null)
+            {
+                FillAvailableDrillsStudentDataGrid(selectedStudent);
+                FillAssignedDrillsDataGrid(selectedStudent.CurDrillList);
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        private void FillGroupDrills(DataGridViewCellEventArgs e)
+        {
+            AvailableDrillDataDisplay.Rows.Clear();
+            AssignedDrillDataDisplay.Rows.Clear();
+            Group selectedGroup;
+            selectedGroup = localManager.FindGroupByName(SetupExistingUserDataDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+            if (selectedGroup != null)
+            {
+                FillAvailableDrillsGroupDataGrid(selectedGroup);
+                FillAssignedDrillsDataGrid(selectedGroup.groupDrillList);
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        private void FillAvailableDrillsStudentDataGrid(Student student)
+        {
+            foreach (Drill drill in localManager.mainDrillList)
+            {
+                Drill studentDrill = student.CurDrillList.Where(dri => dri.ID.ToString().Equals(drill.ID.ToString())).FirstOrDefault();
+                if (studentDrill == null)
+                {
+                    DataGridViewRow newRow = (DataGridViewRow)AvailableDrillDataDisplay.Rows[0].Clone();
+                    newRow.Cells[0].Value = drill.DrillName;
+                    AvailableDrillDataDisplay.Rows.Add(newRow);
+                }
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        private void FillAssignedDrillsDataGrid(List<Drill> currentDrills)
+        {
+            foreach (Drill drill in currentDrills)
+            {
+                DataGridViewRow newRow = (DataGridViewRow)AssignedDrillDataDisplay.Rows[0].Clone();
+                newRow.Cells[0].Value = drill.DrillName;
+                AssignedDrillDataDisplay.Rows.Add(newRow);
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        private void FillAvailableDrillsGroupDataGrid(Group group)
+        {
+            foreach (Drill drill in localManager.mainDrillList)
+            {
+                Drill Drill = group.groupDrillList.Where(dri => dri.ID.ToString().Equals(drill.ID.ToString())).FirstOrDefault();
+                if (Drill == null)
+                {
+                    DataGridViewRow newRow = (DataGridViewRow)AvailableDrillDataDisplay.Rows[0].Clone();
+                    newRow.Cells[0].Value = drill.DrillName;
+                    AvailableDrillDataDisplay.Rows.Add(newRow);
+                }
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        private void SetupDrillButtons(DataGridView avialable, DataGridView assigned)
+        {
+            if (avialable.Rows.Count < 2)
+            {
+                AssignSelectedBtn.Enabled = false;
+                AssignAllBtn.Enabled = false;
             }
             else
             {
-                //this.txtResult.Text = "Cancelled";
+                AssignSelectedBtn.Enabled = true;
+                AssignAllBtn.Enabled = true;
             }
-            createDrillDialog.Dispose();
+
+            if (assigned.Rows.Count < 2)
+            {
+                RemoveSelectedBtn.Enabled = false;
+                RemoveAllBtn.Enabled = false;
+            }
+            else
+            {
+                RemoveSelectedBtn.Enabled = true;
+                RemoveAllBtn.Enabled = true;
+            }
         }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/25/14                                                    //
+        //------------------------------------------------------------------//
+        private void NewDrillBtn_Click(object sender, EventArgs e)
+        {
+            CreateDrill_Form createDrillDialog = new CreateDrill_Form(localManager);
+            createDrillDialog.ShowDialog(this);
+            createDrillDialog.Dispose();
+
+            System.Windows.Forms.DataGridViewCell selectedCell = SetupExistingUserDataDisplay.CurrentCell;
+            if (selectedCell.RowIndex >= 0 && selectedCell.ColumnIndex >= 0)
+            {
+                if (SetupExistingUserDataDisplay.Rows[selectedCell.RowIndex].Cells[selectedCell.ColumnIndex].Value != null)
+                {
+                    DataGridViewCellEventArgs update = new DataGridViewCellEventArgs(selectedCell.ColumnIndex, selectedCell.RowIndex);
+                    if (StudentsRdo.Checked)
+                    {
+                        FillStudentDrills(update);
+                    }
+                    else if (GroupsRdo.Checked)
+                    {
+                        FillGroupDrills(update);
+                    }
+                }
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/25/14                                                    //
+        //------------------------------------------------------------------//
+        private void DeleteDrillBtn_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.DataGridViewCell drillCell = AvailableDrillDataDisplay.CurrentCell;
+            if (drillCell != null)
+            {
+                string drillName = AvailableDrillDataDisplay.Rows[drillCell.RowIndex].Cells[drillCell.ColumnIndex].Value.ToString();
+                foreach (Group group in localManager.groupList)
+                {
+                    localManager.UnassignDrillFromGroup(group.Name, drillName);
+                }
+                foreach (Student student in localManager.studentList)
+                {
+                    localManager.UnassignDrillFromStudent(student.LoginName, drillName);
+                }
+                localManager.DeleteDrill(drillName);
+                System.Windows.Forms.DataGridViewCell studentGroupCell = SetupExistingUserDataDisplay.CurrentCell;
+                DataGridViewCellEventArgs update = new DataGridViewCellEventArgs(studentGroupCell.ColumnIndex, studentGroupCell.RowIndex);
+                string studentGroupName = "";
+
+                if (StudentsRdo.Checked)
+                {
+                    studentGroupName = localManager.GetStudentNameFromCellFormat(SetupExistingUserDataDisplay.Rows[studentGroupCell.RowIndex].Cells[studentGroupCell.ColumnIndex].Value.ToString());
+                    FillStudentDrills(update);
+                }
+                else if (GroupsRdo.Checked)
+                {
+                    studentGroupName = SetupExistingUserDataDisplay.Rows[studentGroupCell.RowIndex].Cells[studentGroupCell.ColumnIndex].Value.ToString();
+                    FillGroupDrills(update);
+                }
+            }
+            SetupDrillButtons(AvailableDrillDataDisplay, AssignedDrillDataDisplay);
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/25/14                                                    //
+        //------------------------------------------------------------------//
+        private void AvailableDrillDataDisplay_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (AvailableDrillDataDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    AssignSelectedBtn.Enabled = true;
+                    DeleteDrillBtn.Enabled = true;
+                }
+                else
+                {
+                    AssignSelectedBtn.Enabled = false;
+                    DeleteDrillBtn.Enabled = false;
+                }
+            }
+            else
+            {
+                AssignSelectedBtn.Enabled = false;
+                DeleteDrillBtn.Enabled = false;
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        private void AssignedDrillDataDisplay_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (AssignedDrillDataDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    RemoveSelectedBtn.Enabled = true;
+                }
+                else
+                {
+                    RemoveSelectedBtn.Enabled = false;
+                }
+            }
+            else
+            {
+                RemoveSelectedBtn.Enabled = false;
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        private void AssignSelectedBtn_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.DataGridViewCell drillCell = AvailableDrillDataDisplay.CurrentCell;
+            if (drillCell != null)
+            {
+                string drillName = AvailableDrillDataDisplay.Rows[drillCell.RowIndex].Cells[drillCell.ColumnIndex].Value.ToString();
+                System.Windows.Forms.DataGridViewCell studentGroupCell = SetupExistingUserDataDisplay.CurrentCell;
+                DataGridViewCellEventArgs update = new DataGridViewCellEventArgs(studentGroupCell.ColumnIndex, studentGroupCell.RowIndex);
+                string studentGroupName = "";
+
+                if (StudentsRdo.Checked)
+                {
+                    studentGroupName = localManager.GetStudentNameFromCellFormat(SetupExistingUserDataDisplay.Rows[studentGroupCell.RowIndex].Cells[studentGroupCell.ColumnIndex].Value.ToString());
+                    localManager.AssignDrillToStudent(studentGroupName, drillName);
+                    FillStudentDrills(update);
+                }
+                else if (GroupsRdo.Checked)
+                {
+                    studentGroupName = SetupExistingUserDataDisplay.Rows[studentGroupCell.RowIndex].Cells[studentGroupCell.ColumnIndex].Value.ToString();
+                    localManager.AssignDrillToGroup(studentGroupName, drillName);
+                    FillGroupDrills(update);
+                }
+            }
+            SetupDrillButtons(AvailableDrillDataDisplay, AssignedDrillDataDisplay);
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        private void RemoveSelectedBtn_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.DataGridViewCell drillCell = AssignedDrillDataDisplay.CurrentCell;
+            if (drillCell != null)
+            {
+                string drillName = AssignedDrillDataDisplay.Rows[drillCell.RowIndex].Cells[drillCell.ColumnIndex].Value.ToString();
+                System.Windows.Forms.DataGridViewCell studentGroupCell = SetupExistingUserDataDisplay.CurrentCell;
+                DataGridViewCellEventArgs update = new DataGridViewCellEventArgs(studentGroupCell.ColumnIndex, studentGroupCell.RowIndex);
+                string studentGroupName = "";
+
+                if (StudentsRdo.Checked)
+                {
+                    studentGroupName = localManager.GetStudentNameFromCellFormat(SetupExistingUserDataDisplay.Rows[studentGroupCell.RowIndex].Cells[studentGroupCell.ColumnIndex].Value.ToString());
+                    localManager.UnassignDrillFromStudent(studentGroupName, drillName);
+                    FillStudentDrills(update);
+                }
+                else if (GroupsRdo.Checked)
+                {
+                    studentGroupName = SetupExistingUserDataDisplay.Rows[studentGroupCell.RowIndex].Cells[studentGroupCell.ColumnIndex].Value.ToString();
+                    localManager.UnassignDrillFromGroup(studentGroupName, drillName);
+                    FillGroupDrills(update);
+                }
+            }
+            SetupDrillButtons(AvailableDrillDataDisplay, AssignedDrillDataDisplay);
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        private void AssignAllBtn_Click(object sender, EventArgs e)
+        {
+            List<string> drillNames = new List<string>();
+            for (int iter = 0; iter < (AvailableDrillDataDisplay.Rows.Count - 1); iter++)
+            {
+                drillNames.Add(AvailableDrillDataDisplay.Rows[iter].Cells[0].Value.ToString());
+            }
+
+            string studentGroupName = "";
+            System.Windows.Forms.DataGridViewCell studentGroupCell = SetupExistingUserDataDisplay.CurrentCell;
+            DataGridViewCellEventArgs update = new DataGridViewCellEventArgs(studentGroupCell.ColumnIndex, studentGroupCell.RowIndex);
+            if (StudentsRdo.Checked)
+            {
+                studentGroupName = localManager.GetStudentNameFromCellFormat(SetupExistingUserDataDisplay.Rows[studentGroupCell.RowIndex].Cells[studentGroupCell.ColumnIndex].Value.ToString());
+                foreach (string drillName in drillNames)
+                {
+                    localManager.AssignDrillToStudent(studentGroupName, drillName);
+                    FillStudentDrills(update);
+                }
+            }
+            else if (GroupsRdo.Checked)
+            {
+                studentGroupName = SetupExistingUserDataDisplay.Rows[studentGroupCell.RowIndex].Cells[studentGroupCell.ColumnIndex].Value.ToString();
+                foreach (string drillName in drillNames)
+                {
+                    localManager.AssignDrillToGroup(studentGroupName, drillName);
+                    FillGroupDrills(update); 
+                }
+            }
+            SetupDrillButtons(AvailableDrillDataDisplay, AssignedDrillDataDisplay);
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        private void RemoveAllBtn_Click(object sender, EventArgs e)
+        {
+            List<string> drillNames = new List<string>();
+            for (int iter = 0; iter < (AssignedDrillDataDisplay.Rows.Count - 1); iter++)
+            {
+                drillNames.Add(AssignedDrillDataDisplay.Rows[iter].Cells[0].Value.ToString());
+                Debug.WriteLine(AssignedDrillDataDisplay.Rows[iter].Cells[0].Value.ToString());
+            }
+
+            string studentGroupName = "";
+            System.Windows.Forms.DataGridViewCell studentGroupCell = SetupExistingUserDataDisplay.CurrentCell;
+            DataGridViewCellEventArgs update = new DataGridViewCellEventArgs(studentGroupCell.ColumnIndex, studentGroupCell.RowIndex);
+            if (StudentsRdo.Checked)
+            {
+                studentGroupName = localManager.GetStudentNameFromCellFormat(SetupExistingUserDataDisplay.Rows[studentGroupCell.RowIndex].Cells[studentGroupCell.ColumnIndex].Value.ToString());
+                foreach (string drillName in drillNames)
+                {
+                    localManager.UnassignDrillFromStudent(studentGroupName, drillName);
+                    FillStudentDrills(update);
+                }
+            }
+            else if (GroupsRdo.Checked)
+            {
+                studentGroupName = SetupExistingUserDataDisplay.Rows[studentGroupCell.RowIndex].Cells[studentGroupCell.ColumnIndex].Value.ToString();
+                foreach (string drillName in drillNames)
+                {
+                    localManager.UnassignDrillFromGroup(studentGroupName, drillName);
+                    FillGroupDrills(update);
+                }
+            }
+            SetupDrillButtons(AvailableDrillDataDisplay, AssignedDrillDataDisplay);
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        private void DisableSetupButtons()
+        {
+            DeleteDrillBtn.Enabled = false;
+            AssignSelectedBtn.Enabled = false;
+            RemoveSelectedBtn.Enabled = false;
+            AssignAllBtn.Enabled = false;
+            RemoveAllBtn.Enabled = false;
+        }
+
+        /*
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         *
+         * 
+         * 
+         * */
 
         /* The code in this section is for the Edit Users tab only*/
 
@@ -229,37 +723,6 @@ namespace RaptorMath
             }
         }
 
-        ////------------------------------------------------------------------//
-        //// Authors: Joshua Boone and Justine Dinh                           //
-        //// Date: 4/24/14                                                    //
-        ////------------------------------------------------------------------//
-        //private void dataGridView_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    ClearModifyUserBoxes();
-        //    Student selectedStudent;
-        //    foreach (DataGridViewRow row in ExistingUserDataEditUsersDisplay.SelectedRows)
-        //    {
-        //        if (row.Cells[0].Value != null)
-        //        {
-        //            selectedStudent = localManager.FindStudentWithName(localManager.GetStudentNameFromCellFormat(row.Cells[0].Value.ToString()));
-        //            if (selectedStudent != null)
-        //            {
-        //                GroupNameComboBox.Text = localManager.FindGroupByID(selectedStudent.GroupID).Name;
-        //                FirstNameTxtBox.Text = selectedStudent.FirstName;
-        //                LastNameTxtBox.Text = selectedStudent.LastName;
-        //                SaveChangesBtn.Enabled = true;
-        //                RemoveUserGroupBtn.Enabled = true;
-        //                break;
-        //            }
-        //        }
-        //        else
-        //        {
-        //            SaveChangesBtn.Enabled = false;
-        //            RemoveUserGroupBtn.Enabled = false;
-        //        }
-        //    }
-        //}
-
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
@@ -273,6 +736,20 @@ namespace RaptorMath
                 DataGridViewRow newRow = (DataGridViewRow)dataGrid.Rows[0].Clone();
                 newRow.Cells[0].Value = fullName;
                 newRow.Cells[1].Value = localManager.FindGroupByID(stu.GroupID).Name;
+                dataGrid.Rows.Add(newRow);
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/24/14                                                    //
+        //------------------------------------------------------------------//
+        private void  DisplayFoundGroups(List<Group> matches, DataGridView dataGrid)
+        {
+            foreach (Group group in matches)
+            {
+                DataGridViewRow newRow = (DataGridViewRow)dataGrid.Rows[0].Clone();
+                newRow.Cells[0].Value = group.Name;
                 dataGrid.Rows.Add(newRow);
             }
         }
@@ -545,6 +1022,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void FillSingleColumnDataGrid(List<string> matches, DataGridView dataGrid)
         {
+            dataGrid.Rows.Clear();
             foreach (String groupName in matches)
             {
                 DataGridViewRow newRow = (DataGridViewRow)dataGrid.Rows[0].Clone();
