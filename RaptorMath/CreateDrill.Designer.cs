@@ -36,12 +36,12 @@
             this.CreateDrill_AdminNameLbl = new System.Windows.Forms.Label();
             this.CreateDrill_TimeLbl = new System.Windows.Forms.Label();
             this.CreateDrill_ButtonBox = new System.Windows.Forms.GroupBox();
-            this.CreateDrill_ExitBtn = new System.Windows.Forms.Button();
             this.CreateDrill_CloseBtn = new System.Windows.Forms.Button();
             this.CreateDrill_SaveDrillBtn = new System.Windows.Forms.Button();
             this.CreateDrill_CreateBox = new System.Windows.Forms.GroupBox();
             this.CreateDrill_QuestionBox = new System.Windows.Forms.GroupBox();
             this.CreateDrill_NumQuestionsTxt = new System.Windows.Forms.TextBox();
+            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CreateDrill_OpRangeBox = new System.Windows.Forms.GroupBox();
             this.CreateDrill_DashLbl = new System.Windows.Forms.Label();
             this.CreateDrill_MaxValueTxt = new System.Windows.Forms.TextBox();
@@ -57,7 +57,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.CreateDrill_Timer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CreateDrill_UserInfoBox.SuspendLayout();
             this.CreateDrill_ButtonBox.SuspendLayout();
             this.CreateDrill_CreateBox.SuspendLayout();
@@ -127,7 +126,6 @@
             // 
             // CreateDrill_ButtonBox
             // 
-            this.CreateDrill_ButtonBox.Controls.Add(this.CreateDrill_ExitBtn);
             this.CreateDrill_ButtonBox.Controls.Add(this.CreateDrill_CloseBtn);
             this.CreateDrill_ButtonBox.Location = new System.Drawing.Point(4, 449);
             this.CreateDrill_ButtonBox.Margin = new System.Windows.Forms.Padding(4);
@@ -137,24 +135,11 @@
             this.CreateDrill_ButtonBox.TabIndex = 2;
             this.CreateDrill_ButtonBox.TabStop = false;
             // 
-            // CreateDrill_ExitBtn
-            // 
-            this.CreateDrill_ExitBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.CreateDrill_ExitBtn.Location = new System.Drawing.Point(296, 11);
-            this.CreateDrill_ExitBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CreateDrill_ExitBtn.Name = "CreateDrill_ExitBtn";
-            this.CreateDrill_ExitBtn.Size = new System.Drawing.Size(121, 32);
-            this.CreateDrill_ExitBtn.TabIndex = 1;
-            this.CreateDrill_ExitBtn.Text = "Exit";
-            this.toolTip1.SetToolTip(this.CreateDrill_ExitBtn, "Closes the program.");
-            this.CreateDrill_ExitBtn.UseVisualStyleBackColor = true;
-            this.CreateDrill_ExitBtn.Click += new System.EventHandler(this.CreateDrill_ExitBtn_Click);
-            // 
             // CreateDrill_CloseBtn
             // 
             this.CreateDrill_CloseBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.CreateDrill_CloseBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CreateDrill_CloseBtn.Location = new System.Drawing.Point(149, 11);
+            this.CreateDrill_CloseBtn.Location = new System.Drawing.Point(296, 11);
             this.CreateDrill_CloseBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateDrill_CloseBtn.Name = "CreateDrill_CloseBtn";
             this.CreateDrill_CloseBtn.Size = new System.Drawing.Size(121, 32);
@@ -223,6 +208,11 @@
             this.CreateDrill_NumQuestionsTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_DigitsKeyDown);
             this.CreateDrill_NumQuestionsTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CreateDrill_CreateBoxTextBoxes_KeyPress);
             this.CreateDrill_NumQuestionsTxt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
+            // 
+            // doNothingContextMenu
+            // 
+            this.doNothingContextMenu.Name = "doNothingContextMenu";
+            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
             // 
             // CreateDrill_OpRangeBox
             // 
@@ -398,11 +388,6 @@
             this.CreateDrill_Timer.Interval = 1000;
             this.CreateDrill_Timer.Tick += new System.EventHandler(this.CreateDrill_Timer_Tick);
             // 
-            // doNothingContextMenu
-            // 
-            this.doNothingContextMenu.Name = "doNothingContextMenu";
-            this.doNothingContextMenu.Size = new System.Drawing.Size(61, 4);
-            // 
             // CreateDrill_Form
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -453,7 +438,6 @@
         private System.Windows.Forms.Label CreateDrill_MinValueLbl;
         private System.Windows.Forms.TextBox CreateDrill_NumQuestionsTxt;
         private System.Windows.Forms.GroupBox CreateDrill_OpTypeBox;
-        private System.Windows.Forms.Button CreateDrill_ExitBtn;
         private System.Windows.Forms.RadioButton CreateDrill_SubtactionRdo;
         private System.Windows.Forms.RadioButton CreateDrill_AdditionRdo;
         private System.Windows.Forms.GroupBox CreateDrill_DrillBox;

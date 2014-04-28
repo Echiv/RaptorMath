@@ -132,6 +132,42 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/24/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Clears the search message out of the search group box.</summary>
+        private void SearchStatisticsTxtbox_Click(object sender, EventArgs e)
+        {
+            if (SearchTxtBox.Text == "Search for Group")
+            {
+                SearchTxtBox.Text = string.Empty;
+            }
+        }
+
+        /* The code in this section is for the Setup tab only*/
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/25/14                                                    //
+        //------------------------------------------------------------------//
+        private void NewDrillBtn_Click(object sender, EventArgs e)
+        {
+            CreateDrill_Form createDrillDialog = new CreateDrill_Form(localManager);
+
+            // Show testDialog as a modal dialog and determine if DialogResult = OK.
+            if (createDrillDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                // Read the contents of testDialog's TextBox.
+                //this.txtResult.Text = testDialog.TextBox1.Text;
+            }
+            else
+            {
+                //this.txtResult.Text = "Cancelled";
+            }
+            createDrillDialog.Dispose();
+        }
+
         /* The code in this section is for the Edit Users tab only*/
 
         //------------------------------------------------------------------//
