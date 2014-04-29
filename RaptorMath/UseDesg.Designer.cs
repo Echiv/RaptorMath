@@ -39,7 +39,6 @@
             this.UseDesg_ExitBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.UserSelectionBox = new System.Windows.Forms.GroupBox();
-            this.RaptorMathLbl = new System.Windows.Forms.Label();
             this.UseDesg_LoginBtn = new System.Windows.Forms.Button();
             this.UseDesg_Timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,6 +57,7 @@
             this.UseDesg_DateLbl.Size = new System.Drawing.Size(59, 22);
             this.UseDesg_DateLbl.TabIndex = 21;
             this.UseDesg_DateLbl.Text = "<Date>";
+            this.UseDesg_DateLbl.Visible = false;
             // 
             // UseDesg_TimeLbl
             // 
@@ -71,6 +71,7 @@
             this.UseDesg_TimeLbl.Size = new System.Drawing.Size(62, 22);
             this.UseDesg_TimeLbl.TabIndex = 22;
             this.UseDesg_TimeLbl.Text = "<Time>";
+            this.UseDesg_TimeLbl.Visible = false;
             // 
             // UseDesg_LoginCmbo
             // 
@@ -129,7 +130,7 @@
             this.UseDesg_ExitBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.UseDesg_ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UseDesg_ExitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UseDesg_ExitBtn.Location = new System.Drawing.Point(703, 528);
+            this.UseDesg_ExitBtn.Location = new System.Drawing.Point(688, 517);
             this.UseDesg_ExitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.UseDesg_ExitBtn.Name = "UseDesg_ExitBtn";
             this.UseDesg_ExitBtn.Size = new System.Drawing.Size(84, 67);
@@ -142,11 +143,12 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::RaptorMath.Properties.Resources.cloud1;
-            this.pictureBox1.Location = new System.Drawing.Point(473, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(473, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(299, 71);
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // UserSelectionBox
             // 
@@ -157,32 +159,21 @@
             this.UserSelectionBox.Controls.Add(this.UseDesg_passwordBox);
             this.UserSelectionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserSelectionBox.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.UserSelectionBox.Location = new System.Drawing.Point(248, 229);
+            this.UserSelectionBox.Location = new System.Drawing.Point(386, 232);
             this.UserSelectionBox.Name = "UserSelectionBox";
             this.UserSelectionBox.Size = new System.Drawing.Size(350, 122);
             this.UserSelectionBox.TabIndex = 26;
             this.UserSelectionBox.TabStop = false;
             this.UserSelectionBox.Text = "Select Your Name";
             // 
-            // RaptorMathLbl
-            // 
-            this.RaptorMathLbl.AutoSize = true;
-            this.RaptorMathLbl.BackColor = System.Drawing.Color.Transparent;
-            this.RaptorMathLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RaptorMathLbl.Location = new System.Drawing.Point(152, 77);
-            this.RaptorMathLbl.Name = "RaptorMathLbl";
-            this.RaptorMathLbl.Size = new System.Drawing.Size(555, 108);
-            this.RaptorMathLbl.TabIndex = 27;
-            this.RaptorMathLbl.Text = "RaptorMath";
-            // 
             // UseDesg_LoginBtn
             // 
             this.UseDesg_LoginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UseDesg_LoginBtn.Location = new System.Drawing.Point(335, 372);
+            this.UseDesg_LoginBtn.Location = new System.Drawing.Point(546, 365);
             this.UseDesg_LoginBtn.Name = "UseDesg_LoginBtn";
             this.UseDesg_LoginBtn.Size = new System.Drawing.Size(169, 32);
             this.UseDesg_LoginBtn.TabIndex = 28;
-            this.UseDesg_LoginBtn.Text = "Log In";
+            this.UseDesg_LoginBtn.Text = "Login";
             this.UseDesg_LoginBtn.UseVisualStyleBackColor = true;
             this.UseDesg_LoginBtn.Click += new System.EventHandler(this.UseDesg_LoginBtn_Click);
             // 
@@ -196,7 +187,7 @@
             this.AcceptButton = this.UseDesg_LoginBtn;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackgroundImage = global::RaptorMath.Properties.Resources.loginbackground3;
+            this.BackgroundImage = global::RaptorMath.Properties.Resources.AuthenticationBackground1;
             this.ClientSize = new System.Drawing.Size(784, 597);
             this.Controls.Add(this.UseDesg_LoginBtn);
             this.Controls.Add(this.UserSelectionBox);
@@ -204,7 +195,6 @@
             this.Controls.Add(this.UseDesg_TimeLbl);
             this.Controls.Add(this.UseDesg_ExitBtn);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.RaptorMathLbl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -233,7 +223,6 @@
         private System.Windows.Forms.Button UseDesg_ExitBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox UserSelectionBox;
-        private System.Windows.Forms.Label RaptorMathLbl;
         private System.Windows.Forms.Button UseDesg_LoginBtn;
         private System.Windows.Forms.Timer UseDesg_Timer;
 

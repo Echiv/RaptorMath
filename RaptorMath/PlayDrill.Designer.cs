@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayDrill));
-            this.MathDrill_WindowLbl = new System.Windows.Forms.Label();
             this.MathDrill_TimeLbl = new System.Windows.Forms.Label();
             this.MathDrill_StudentNameLbl = new System.Windows.Forms.Label();
             this.MathDrill_DateLbl = new System.Windows.Forms.Label();
@@ -53,21 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ScrollForNamePicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // MathDrill_WindowLbl
-            // 
-            this.MathDrill_WindowLbl.AutoSize = true;
-            this.MathDrill_WindowLbl.BackColor = System.Drawing.Color.Transparent;
-            this.MathDrill_WindowLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MathDrill_WindowLbl.ForeColor = System.Drawing.Color.DarkRed;
-            this.MathDrill_WindowLbl.Image = global::RaptorMath.Properties.Resources.letsplay4;
-            this.MathDrill_WindowLbl.Location = new System.Drawing.Point(13, -15);
-            this.MathDrill_WindowLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.MathDrill_WindowLbl.Name = "MathDrill_WindowLbl";
-            this.MathDrill_WindowLbl.Size = new System.Drawing.Size(168, 219);
-            this.MathDrill_WindowLbl.TabIndex = 30;
-            this.MathDrill_WindowLbl.Text = "        \r\n        \r\n        ";
-            this.MathDrill_WindowLbl.Click += new System.EventHandler(this.MathDrill_WindowLbl_Click);
             // 
             // MathDrill_TimeLbl
             // 
@@ -170,7 +154,7 @@
             // MathDrill_SubmitBtn
             // 
             this.MathDrill_SubmitBtn.BackColor = System.Drawing.Color.Transparent;
-            this.MathDrill_SubmitBtn.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
+            this.MathDrill_SubmitBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(210)))), ((int)(((byte)(162)))));
             this.MathDrill_SubmitBtn.FlatAppearance.BorderSize = 0;
             this.MathDrill_SubmitBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.MathDrill_SubmitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -330,7 +314,6 @@
             this.Controls.Add(this.MathDrill_InputTxt);
             this.Controls.Add(this.MathDrill_OfLbl);
             this.Controls.Add(this.MathDrill_CurrentNumLbl);
-            this.Controls.Add(this.MathDrill_WindowLbl);
             this.Controls.Add(this.MathDrill_TimeLbl);
             this.Controls.Add(this.MathDrill_DateLbl);
             this.Controls.Add(this.pictureBox1);
@@ -351,7 +334,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label MathDrill_WindowLbl;
         private System.Windows.Forms.Label MathDrill_TimeLbl;
         private System.Windows.Forms.Label MathDrill_StudentNameLbl;
         private System.Windows.Forms.Label MathDrill_DateLbl;
