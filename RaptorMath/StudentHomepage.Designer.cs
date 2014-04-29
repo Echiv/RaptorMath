@@ -113,7 +113,7 @@
             this.StuHome_StudentNameLbl.BackColor = System.Drawing.Color.Transparent;
             this.StuHome_StudentNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_StudentNameLbl.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.StuHome_StudentNameLbl.Location = new System.Drawing.Point(358, 173);
+            this.StuHome_StudentNameLbl.Location = new System.Drawing.Point(405, 173);
             this.StuHome_StudentNameLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.StuHome_StudentNameLbl.Name = "StuHome_StudentNameLbl";
             this.StuHome_StudentNameLbl.Size = new System.Drawing.Size(246, 55);
@@ -126,12 +126,12 @@
             this.StuHome_DrillDdl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.StuHome_DrillDdl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StuHome_DrillDdl.FormattingEnabled = true;
-            this.StuHome_DrillDdl.Location = new System.Drawing.Point(400, 290);
+            this.StuHome_DrillDdl.Location = new System.Drawing.Point(415, 290);
             this.StuHome_DrillDdl.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.StuHome_DrillDdl.MaxDropDownItems = 100;
             this.StuHome_DrillDdl.MaxLength = 25;
             this.StuHome_DrillDdl.Name = "StuHome_DrillDdl";
-            this.StuHome_DrillDdl.Size = new System.Drawing.Size(259, 21);
+            this.StuHome_DrillDdl.Size = new System.Drawing.Size(236, 21);
             this.StuHome_DrillDdl.TabIndex = 31;
             this.StuHome_DrillDdl.SelectedIndexChanged += new System.EventHandler(this.StuHome_DrillDdl_SelectedIndexChanged);
             // 
@@ -194,6 +194,10 @@
             this.ChooseYourAdventureLbl.TabIndex = 37;
             this.ChooseYourAdventureLbl.Text = "Choose Your Adventure";
             this.ChooseYourAdventureLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // StuHome_Timer
+            // 
+            this.StuHome_Timer.Tick += new System.EventHandler(this.StuHome_Timer_Tick);
             // 
             // StudentHomepage
             // 

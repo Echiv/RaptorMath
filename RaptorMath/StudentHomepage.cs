@@ -144,5 +144,14 @@ namespace RaptorMath
         {
 
         }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/19/14                                                    //
+        //------------------------------------------------------------------//
+        private void StuHome_Timer_Tick(object sender, EventArgs e)
+        {
+            StuHome_TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
+        }
     }
 }

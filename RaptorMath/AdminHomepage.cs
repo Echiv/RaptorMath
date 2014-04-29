@@ -30,8 +30,11 @@ namespace RaptorMath
         public AdminHomepage(Manager manager)
         {
             InitializeComponent();
+            InitializeTimer();
+            InitializeDate();
             localManager = manager;
             AdminNameLbl.Text = localManager.currentAdmin.LoginName;
+            LastLoginDateLbl.Text = localManager.currentAdmin.LastLogin;
             FillSingleColumnDataGrid(localManager.GetGroupNames() , GroupNameDataDisplay);
         }
 
@@ -1011,9 +1014,33 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/19/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Sets today's date in the window.</summary>
+        private void InitializeDate()
+        {
+            DateLbl.Text = DateTime.Now.ToString("M/d/yyyy");
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/19/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Sets the current time in the window.</summary>
+        private void InitializeTimer()
+        {
+            TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/19/14                                                    //
+        //------------------------------------------------------------------//
         private void AdminHome_Tick(object sender, EventArgs e)
         {
-
+            TimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
         
         //------------------------------------------------------------------//
