@@ -197,6 +197,7 @@
             // 
             // StuHome_Timer
             // 
+            this.StuHome_Timer.Enabled = true;
             this.StuHome_Timer.Tick += new System.EventHandler(this.StuHome_Timer_Tick);
             // 
             // StudentHomepage

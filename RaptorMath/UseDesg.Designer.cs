@@ -188,6 +188,7 @@
             // 
             // UseDesg_Timer
             // 
+            this.UseDesg_Timer.Enabled = true;
             this.UseDesg_Timer.Tick += new System.EventHandler(this.UseDesg_Timer_Tick);
             // 
             // UseDesg_Form
