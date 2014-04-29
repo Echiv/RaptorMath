@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UseDesg_Form));
             this.UseDesg_DateLbl = new System.Windows.Forms.Label();
             this.UseDesg_TimeLbl = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@
             this.UserSelectionBox = new System.Windows.Forms.GroupBox();
             this.RaptorMathLbl = new System.Windows.Forms.Label();
             this.UseDesg_LoginBtn = new System.Windows.Forms.Button();
+            this.UseDesg_Timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.UserSelectionBox.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +84,7 @@
             this.UseDesg_LoginCmbo.Name = "UseDesg_LoginCmbo";
             this.UseDesg_LoginCmbo.Size = new System.Drawing.Size(227, 32);
             this.UseDesg_LoginCmbo.TabIndex = 18;
+            this.UseDesg_LoginCmbo.TextChanged += new System.EventHandler(this.UseDesg_LoginCmbo_TextChanged);
             // 
             // label2
             // 
@@ -113,6 +116,7 @@
             this.UseDesg_passwordBox.Name = "UseDesg_passwordBox";
             this.UseDesg_passwordBox.Size = new System.Drawing.Size(228, 29);
             this.UseDesg_passwordBox.TabIndex = 20;
+            this.UseDesg_passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
             // 
             // UseDesg_ExitBtn
             // 
@@ -132,6 +136,7 @@
             this.UseDesg_ExitBtn.TabIndex = 19;
             this.UseDesg_ExitBtn.Text = "Exit";
             this.UseDesg_ExitBtn.UseVisualStyleBackColor = false;
+            this.UseDesg_ExitBtn.Click += new System.EventHandler(this.UseDesg_ExitBtn_Click);
             // 
             // pictureBox1
             // 
@@ -163,25 +168,31 @@
             // 
             this.RaptorMathLbl.AutoSize = true;
             this.RaptorMathLbl.BackColor = System.Drawing.Color.Transparent;
-            this.RaptorMathLbl.Font = new System.Drawing.Font("Matisse ITC", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RaptorMathLbl.Location = new System.Drawing.Point(172, 61);
+            this.RaptorMathLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RaptorMathLbl.Location = new System.Drawing.Point(152, 77);
             this.RaptorMathLbl.Name = "RaptorMathLbl";
-            this.RaptorMathLbl.Size = new System.Drawing.Size(487, 119);
+            this.RaptorMathLbl.Size = new System.Drawing.Size(555, 108);
             this.RaptorMathLbl.TabIndex = 27;
             this.RaptorMathLbl.Text = "RaptorMath";
             // 
             // UseDesg_LoginBtn
             // 
             this.UseDesg_LoginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UseDesg_LoginBtn.Location = new System.Drawing.Point(408, 369);
+            this.UseDesg_LoginBtn.Location = new System.Drawing.Point(335, 372);
             this.UseDesg_LoginBtn.Name = "UseDesg_LoginBtn";
             this.UseDesg_LoginBtn.Size = new System.Drawing.Size(169, 32);
             this.UseDesg_LoginBtn.TabIndex = 28;
             this.UseDesg_LoginBtn.Text = "Log In";
             this.UseDesg_LoginBtn.UseVisualStyleBackColor = true;
+            this.UseDesg_LoginBtn.Click += new System.EventHandler(this.UseDesg_LoginBtn_Click);
+            // 
+            // UseDesg_Timer
+            // 
+            this.UseDesg_Timer.Tick += new System.EventHandler(this.UseDesg_Timer_Tick);
             // 
             // UseDesg_Form
             // 
+            this.AcceptButton = this.UseDesg_LoginBtn;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::RaptorMath.Properties.Resources.loginbackground3;
@@ -223,6 +234,7 @@
         private System.Windows.Forms.GroupBox UserSelectionBox;
         private System.Windows.Forms.Label RaptorMathLbl;
         private System.Windows.Forms.Button UseDesg_LoginBtn;
+        private System.Windows.Forms.Timer UseDesg_Timer;
 
 
 
