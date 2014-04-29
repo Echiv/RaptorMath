@@ -73,8 +73,10 @@ namespace RaptorMath
                 MathDrill_InputTxt.Enabled = false;
                 MathDrill_SkipBtn.Enabled = false;
                 MathDrill_SubmitBtn.Enabled = false;
-                MessageBox.Show("Completed! Good job!", "Raptor Math", MessageBoxButtons.OK);
                 localManager.UpdateCurrentNumber();
+                SaveDrill();
+                localManager.currentStudent.ResetCurrentDrill();
+                MessageBox.Show("Completed! Good job!", "Raptor Math", MessageBoxButtons.OK);
                 return;
             }
 
@@ -117,9 +119,7 @@ namespace RaptorMath
                     MathDrill_SkipBtn.Enabled = false;
                     MathDrill_SubmitBtn.Enabled = false;
                     localManager.UpdateCurrentNumber();
-                    localManager.UpdateRewards();
-                    localManager.SaveDrill();
-                    localManager.ResetCurrentNumber();
+                    SaveDrill();
                     localManager.currentStudent.ResetCurrentDrill();
                     MessageBox.Show("All done!", "Raptor Math", MessageBoxButtons.OK);
                 }
@@ -129,6 +129,17 @@ namespace RaptorMath
                     RefreshRange();
                 }
             }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        private void SaveDrill()
+        {
+            localManager.UpdateRewards();
+            localManager.SaveDrill();
+            localManager.ResetCurrentNumber();
         }
 
         //------------------------------------------------------------------//
