@@ -73,6 +73,8 @@ namespace RaptorMath
                 RemoveUserGroupBtn.Enabled = false;
                 ExistingUserDataEditUsersDisplay.Rows.Clear();
                 DisplayFoundStudents(localManager.studentList, ExistingUserDataEditUsersDisplay);
+                ExistingUserDataEditUsersDisplay.CurrentCell = ExistingUserDataEditUsersDisplay[0, 0];
+                SetupEditableUser();
             }
             // The Add Users tab
             else if (e.TabPageIndex == 3)
@@ -714,6 +716,7 @@ namespace RaptorMath
                 ExistingUserDataEditUsersDisplay.Rows.Clear();
                 DisplayFoundStudents(localManager.studentList, ExistingUserDataEditUsersDisplay);
             }
+            SetupEditableUser();
         }
 
         //------------------------------------------------------------------//
@@ -750,6 +753,27 @@ namespace RaptorMath
                     LastNameTxtBox.Text = string.Empty;
                     SaveChangesBtn.Enabled = false;
                     RemoveUserGroupBtn.Enabled = false;
+                }
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        private void SetupEditableUser()
+        {
+            System.Windows.Forms.DataGridViewCell selectedCell = ExistingUserDataEditUsersDisplay.CurrentCell;
+            if (selectedCell != null)
+            {
+                if (selectedCell.RowIndex >= 0 && selectedCell.ColumnIndex >= 0)
+                {
+                    if (ExistingUserDataEditUsersDisplay.Rows[selectedCell.RowIndex].Cells[selectedCell.ColumnIndex].Value != null)
+                    {
+                        DataGridViewCellEventArgs update = new DataGridViewCellEventArgs(selectedCell.ColumnIndex, selectedCell.RowIndex);
+                        object sender = new object();
+                        ExistingUserDataEditUsersDisplay_CellContentClick(sender, update);
+                    }
                 }
             }
         }
