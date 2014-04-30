@@ -205,6 +205,7 @@
             this.CreateDrill_NumQuestionsTxt.Name = "CreateDrill_NumQuestionsTxt";
             this.CreateDrill_NumQuestionsTxt.Size = new System.Drawing.Size(40, 20);
             this.CreateDrill_NumQuestionsTxt.TabIndex = 0;
+            this.CreateDrill_NumQuestionsTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.CreateDrill_NumQuestionsTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_DigitsKeyDown);
             this.CreateDrill_NumQuestionsTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CreateDrill_CreateBoxTextBoxes_KeyPress);
             this.CreateDrill_NumQuestionsTxt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
@@ -249,6 +250,7 @@
             this.CreateDrill_MaxValueTxt.Name = "CreateDrill_MaxValueTxt";
             this.CreateDrill_MaxValueTxt.Size = new System.Drawing.Size(60, 20);
             this.CreateDrill_MaxValueTxt.TabIndex = 1;
+            this.CreateDrill_MaxValueTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.CreateDrill_MaxValueTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_DigitsKeyDown);
             this.CreateDrill_MaxValueTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CreateDrill_CreateBoxTextBoxes_KeyPress);
             this.CreateDrill_MaxValueTxt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
@@ -262,6 +264,7 @@
             this.CreateDrill_MinValueTxt.Name = "CreateDrill_MinValueTxt";
             this.CreateDrill_MinValueTxt.Size = new System.Drawing.Size(60, 20);
             this.CreateDrill_MinValueTxt.TabIndex = 0;
+            this.CreateDrill_MinValueTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.CreateDrill_MinValueTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_DigitsKeyDown);
             this.CreateDrill_MinValueTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CreateDrill_CreateBoxTextBoxes_KeyPress);
             this.CreateDrill_MinValueTxt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);

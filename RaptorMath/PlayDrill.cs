@@ -36,6 +36,7 @@ namespace RaptorMath
             MathDrill_CurrentNumLbl.Text = localManager.GetCurrentNumber();
             MathDrill_StudentNameLbl.Text = localManager.currentStudent.LoginName;
             MathDrill_TotalNumberLbl.Text = localManager.GetNumQuestions().Replace("questions.", "");
+            MathDrill_InputTxt.SelectionAlignment = HorizontalAlignment.Right;
             RefreshRange();
         }
 
