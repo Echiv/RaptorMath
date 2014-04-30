@@ -60,8 +60,9 @@ namespace RaptorMath
                 AvailableDrillDataDisplay.Rows.Clear();
                 AssignedDrillDataDisplay.Rows.Clear();
                 DisplayFoundStudents(localManager.studentList, SetupExistingUserDataDisplay);
-                //SetupExistingUserDataDisplay.CurrentCell.Selected = false;
-                //SetupExistingUserDataDisplay.ClearSelection();
+                SetupExistingUserDataDisplay.CurrentCell = SetupExistingUserDataDisplay[0, 0];
+                SetupDrills();
+                SetupDrillButtons(AvailableDrillDataDisplay, AssignedDrillDataDisplay);
             }
             // The Edit Users tab
             else if (e.TabPageIndex == 2)
@@ -70,6 +71,8 @@ namespace RaptorMath
                 RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
                 SaveChangesBtn.Enabled = false;
                 RemoveUserGroupBtn.Enabled = false;
+                ExistingUserDataEditUsersDisplay.Rows.Clear();
+                DisplayFoundStudents(localManager.studentList, ExistingUserDataEditUsersDisplay);
             }
             // The Add Users tab
             else if (e.TabPageIndex == 3)
@@ -81,6 +84,8 @@ namespace RaptorMath
                 // Refesh the last names
                 RefreshComboBox(LastNameCmboBox, localManager.GetUsersLastNames());
                 SaveNewUserBtn.Enabled = false;
+                ExistingUserDataDisplay.Rows.Clear();
+                DisplayFoundStudents(localManager.studentList, ExistingUserDataDisplay);
             }
         }
 
@@ -170,6 +175,9 @@ namespace RaptorMath
             AssignedDrillDataDisplay.Rows.Clear();
             DisableSetupButtons();
             DisplayFoundStudents(localManager.studentList, SetupExistingUserDataDisplay);
+            SetupExistingUserDataDisplay.CurrentCell = SetupExistingUserDataDisplay[0, 0];
+            SetupDrills();
+            SetupDrillButtons(AvailableDrillDataDisplay, AssignedDrillDataDisplay);
         }
 
         //------------------------------------------------------------------//
@@ -186,6 +194,9 @@ namespace RaptorMath
             AssignedDrillDataDisplay.Rows.Clear();
             DisableSetupButtons();
             DisplayFoundGroups(localManager.groupList, SetupExistingUserDataDisplay);
+            SetupExistingUserDataDisplay.CurrentCell = SetupExistingUserDataDisplay[0, 0];
+            SetupDrills();
+            SetupDrillButtons(AvailableDrillDataDisplay, AssignedDrillDataDisplay);
         }
 
         //------------------------------------------------------------------//
@@ -203,12 +214,16 @@ namespace RaptorMath
                     if (matches.Count > 0)
                     {
                         DisplayFoundStudents(matches, SetupExistingUserDataDisplay);
+                        SetupExistingUserDataDisplay.CurrentCell = SetupExistingUserDataDisplay[0, 0];
+                        SetupDrills();
                     }
                 }
                 else
                 {
                     SetupExistingUserDataDisplay.Rows.Clear();
                     DisplayFoundStudents(localManager.studentList, SetupExistingUserDataDisplay);
+                    SetupExistingUserDataDisplay.CurrentCell = SetupExistingUserDataDisplay[0, 0];
+                    SetupDrills();
                 }
             }
             else if (GroupsRdo.Checked)
@@ -220,15 +235,19 @@ namespace RaptorMath
                     if (matches.Count > 0)
                     {
                         FillSingleColumnDataGrid(matches, SetupExistingUserDataDisplay);
+                        SetupExistingUserDataDisplay.CurrentCell = SetupExistingUserDataDisplay[0, 0];
+                        SetupDrills();
                     }
                 }
                 else
                 {
                     SetupExistingUserDataDisplay.Rows.Clear();
                     FillSingleColumnDataGrid(localManager.GetGroupNames(), SetupExistingUserDataDisplay);
+                    SetupExistingUserDataDisplay.CurrentCell = SetupExistingUserDataDisplay[0, 0];
+                    SetupDrills();
                 }
             }
-            //SetupExistingUserDataDisplay.CurrentCell.Selected = false;
+            SetupDrillButtons(AvailableDrillDataDisplay, AssignedDrillDataDisplay);
         }
 
         //------------------------------------------------------------------//
@@ -266,6 +285,33 @@ namespace RaptorMath
                     AvailableDrillDataDisplay.Rows.Clear();
                     AssignedDrillDataDisplay.Rows.Clear();
                     DisableSetupButtons();
+                }
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        private void SetupDrills()
+        {
+            System.Windows.Forms.DataGridViewCell selectedCell = SetupExistingUserDataDisplay.CurrentCell;
+            if (selectedCell != null)
+            {
+                if (selectedCell.RowIndex >= 0 && selectedCell.ColumnIndex >= 0)
+                {
+                    if (SetupExistingUserDataDisplay.Rows[selectedCell.RowIndex].Cells[selectedCell.ColumnIndex].Value != null)
+                    {
+                        DataGridViewCellEventArgs update = new DataGridViewCellEventArgs(selectedCell.ColumnIndex, selectedCell.RowIndex);
+                        if (StudentsRdo.Checked)
+                        {
+                            FillStudentDrills(update);
+                        }
+                        else if (GroupsRdo.Checked)
+                        {
+                            FillGroupDrills(update);
+                        }
+                    }
                 }
             }
         }
@@ -360,18 +406,20 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void SetupDrillButtons(DataGridView avialable, DataGridView assigned)
         {
-            if (avialable.Rows.Count < 2)
+            if (avialable.Rows.Count <= 1)
             {
                 AssignSelectedBtn.Enabled = false;
                 AssignAllBtn.Enabled = false;
+                DeleteDrillBtn.Enabled = false;
             }
             else
             {
                 AssignSelectedBtn.Enabled = true;
                 AssignAllBtn.Enabled = true;
+                DeleteDrillBtn.Enabled = true;
             }
 
-            if (assigned.Rows.Count < 2)
+            if (assigned.Rows.Count <= 1)
             {
                 RemoveSelectedBtn.Enabled = false;
                 RemoveAllBtn.Enabled = false;
@@ -392,23 +440,8 @@ namespace RaptorMath
             CreateDrill_Form createDrillDialog = new CreateDrill_Form(localManager);
             createDrillDialog.ShowDialog(this);
             createDrillDialog.Dispose();
-
-            System.Windows.Forms.DataGridViewCell selectedCell = SetupExistingUserDataDisplay.CurrentCell;
-            if (selectedCell.RowIndex >= 0 && selectedCell.ColumnIndex >= 0)
-            {
-                if (SetupExistingUserDataDisplay.Rows[selectedCell.RowIndex].Cells[selectedCell.ColumnIndex].Value != null)
-                {
-                    DataGridViewCellEventArgs update = new DataGridViewCellEventArgs(selectedCell.ColumnIndex, selectedCell.RowIndex);
-                    if (StudentsRdo.Checked)
-                    {
-                        FillStudentDrills(update);
-                    }
-                    else if (GroupsRdo.Checked)
-                    {
-                        FillGroupDrills(update);
-                    }
-                }
-            }
+            SetupDrills();
+            SetupDrillButtons(AvailableDrillDataDisplay, AssignedDrillDataDisplay);
         }
 
         //------------------------------------------------------------------//
@@ -679,6 +712,7 @@ namespace RaptorMath
             else
             {
                 ExistingUserDataEditUsersDisplay.Rows.Clear();
+                DisplayFoundStudents(localManager.studentList, ExistingUserDataEditUsersDisplay);
             }
         }
 
@@ -886,6 +920,7 @@ namespace RaptorMath
             else
             {
                 ExistingUserDataDisplay.Rows.Clear();
+                DisplayFoundStudents(localManager.studentList, ExistingUserDataDisplay);
             }
         }
 
