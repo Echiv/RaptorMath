@@ -179,7 +179,7 @@ namespace RaptorMath
                 MathDrill_SubmitBtn.Enabled = true;
                 if (true)
                 {
-                    MathDrill_SubmitBtn.Image = Properties.Resources.submit_green31;
+                    MathDrill_SubmitBtn.Image = Properties.Resources.greenbutton;
                 }
             }
             else
@@ -187,7 +187,7 @@ namespace RaptorMath
                 MathDrill_SubmitBtn.Enabled = false;
                 if (true)
                 {
-                    MathDrill_SubmitBtn.Image = Properties.Resources.Submit_gray1;
+                    MathDrill_SubmitBtn.Image = Properties.Resources.Gray_button;
                 }
             }
         }
