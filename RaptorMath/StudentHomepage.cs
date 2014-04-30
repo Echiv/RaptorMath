@@ -87,6 +87,7 @@ namespace RaptorMath
         /// <summary>Sets this windows buttons.</summary>
         public void SetButtons()
         {
+            StuHome_StartDrillBtn.NotifyDefault(false);
             StuHome_StartDrillBtn.Enabled = false;
             StuHome_DrillDdl.Enabled = false;
             if (localManager.currentStudent.CurDrillList.Count > 0)

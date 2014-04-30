@@ -202,6 +202,7 @@
             // 
             // StudentHomepage
             // 
+            this.AcceptButton = this.StuHome_StartDrillBtn;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::RaptorMath.Properties.Resources.adventure;
