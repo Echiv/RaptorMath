@@ -354,14 +354,16 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/15/14                                                    //
         //------------------------------------------------------------------//
-        /// <summary>Enables 'Login' button on 'Password' textbox text 
-        /// change.</summary>
+        /// <summary>Enables 'Login' button on 'Password' textbox text change.</summary>
         private void passwordBox_TextChanged(object sender, EventArgs e)
         {
-            if((localManager.currentUser != string.Empty) && (UseDesg_passwordBox.Text.Length >= 4))
-                UseDesg_LoginBtn.Enabled = true;
-            else
-                UseDesg_LoginBtn.Enabled = false;
+            if (!localManager.isStudent())
+            {
+                if((localManager.currentUser != string.Empty) && (UseDesg_passwordBox.Text.Length >= 4))
+                    UseDesg_LoginBtn.Enabled = true;
+                else
+                    UseDesg_LoginBtn.Enabled = false;
+            }
         }
 
         //------------------------------------------------------------------//
@@ -384,6 +386,7 @@ namespace RaptorMath
             else if (localManager.isAdmin() && localManager.currentUser.Length > 8)
             {
                 UseDesg_passwordBox.Enabled = true;
+                UseDesg_LoginBtn.Enabled = false;
             }
             else
             {
