@@ -103,6 +103,16 @@ namespace RaptorMath.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap drillbackground3 {
+            get {
+                object obj = ResourceManager.GetObject("drillbackground3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap exit {
             get {
                 object obj = ResourceManager.GetObject("exit", resourceCulture);
@@ -146,6 +156,26 @@ namespace RaptorMath.Properties {
         internal static System.Drawing.Bitmap go_green {
             get {
                 object obj = ResourceManager.GetObject("go green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gray_button {
+            get {
+                object obj = ResourceManager.GetObject("Gray button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap greenbutton {
+            get {
+                object obj = ResourceManager.GetObject("greenbutton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -426,6 +456,26 @@ namespace RaptorMath.Properties {
         internal static System.Drawing.Bitmap skip3 {
             get {
                 object obj = ResourceManager.GetObject("skip3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap skipquestion {
+            get {
+                object obj = ResourceManager.GetObject("skipquestion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap skipquestion2 {
+            get {
+                object obj = ResourceManager.GetObject("skipquestion2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
