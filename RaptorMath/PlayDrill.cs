@@ -65,6 +65,7 @@ namespace RaptorMath
             MathDrill_ResponseLbl.ForeColor = Color.Blue;
             MathDrill_ResponseLbl.Text = "Skipped!";
             MathDrill_ResponseLbl.Visible = true;
+            PlayDrillAnswerLbl.Text = MathDrill_ProblemPrompt.Text + " " + localManager.currSolution.ToString();
             localManager.currentStudent.curDrill.IncrementSkipped();
             localManager.currentStudent.curDrill.IncrementWrong();
             RefreshRange();
@@ -100,6 +101,7 @@ namespace RaptorMath
                     MathDrill_ResponseLbl.ForeColor = Color.Green;
                     MathDrill_ResponseLbl.Text = "Correct!";
                     MathDrill_ResponseLbl.Visible = true;
+                    PlayDrillAnswerLbl.Text = string.Empty;
                     this.MathDrill_InputTxt.Focus();
                 }
                 else
@@ -107,6 +109,7 @@ namespace RaptorMath
                     MathDrill_ResponseLbl.ForeColor = Color.Red;
                     MathDrill_ResponseLbl.Text = "Incorrect.";
                     MathDrill_ResponseLbl.Visible = true;
+                    PlayDrillAnswerLbl.Text = MathDrill_ProblemPrompt.Text + " " + localManager.currSolution.ToString();
                     localManager.currentStudent.curDrill.IncrementWrong();
                     this.MathDrill_InputTxt.Focus();
                 }

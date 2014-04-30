@@ -41,7 +41,7 @@
             this.MathDrill_InputTxt = new System.Windows.Forms.RichTextBox();
             this.MathDrill_OfLbl = new System.Windows.Forms.Label();
             this.MathDrill_CurrentNumLbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.PlayDrillAnswerLbl = new System.Windows.Forms.Label();
             this.MathDrill_QuitBtn = new System.Windows.Forms.Button();
             this.SubmitLbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -214,14 +214,13 @@
             this.MathDrill_CurrentNumLbl.Text = "<#>";
             this.MathDrill_CurrentNumLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // PlayDrillAnswerLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(847, 423);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Answer";
+            this.PlayDrillAnswerLbl.AutoSize = true;
+            this.PlayDrillAnswerLbl.Location = new System.Drawing.Point(847, 423);
+            this.PlayDrillAnswerLbl.Name = "PlayDrillAnswerLbl";
+            this.PlayDrillAnswerLbl.Size = new System.Drawing.Size(0, 13);
+            this.PlayDrillAnswerLbl.TabIndex = 41;
             // 
             // MathDrill_QuitBtn
             // 
@@ -303,7 +302,7 @@
             this.Controls.Add(this.MathDrill_StudentNameLbl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SubmitLbl);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.PlayDrillAnswerLbl);
             this.Controls.Add(this.MathDrill_QuitBtn);
             this.Controls.Add(this.MathDrill_TotalNumberLbl);
             this.Controls.Add(this.MathDrill_SkipBtn);
@@ -345,7 +344,7 @@
         private System.Windows.Forms.RichTextBox MathDrill_InputTxt;
         private System.Windows.Forms.Label MathDrill_OfLbl;
         private System.Windows.Forms.Label MathDrill_CurrentNumLbl;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label PlayDrillAnswerLbl;
         private System.Windows.Forms.Button MathDrill_QuitBtn;
         private System.Windows.Forms.Label SubmitLbl;
         private System.Windows.Forms.Label label2;
