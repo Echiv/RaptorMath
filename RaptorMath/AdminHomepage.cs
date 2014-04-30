@@ -36,6 +36,7 @@ namespace RaptorMath
             AdminNameLbl.Text = localManager.currentAdmin.LoginName;
             LastLoginDateLbl.Text = localManager.currentAdmin.LastLogin;
             FillSingleColumnDataGrid(localManager.GetGroupNames() , GroupNameDataDisplay);
+            SetupStatisticsGrid();
         }
 
         //------------------------------------------------------------------//
@@ -50,6 +51,7 @@ namespace RaptorMath
             {
                 GroupSnapshotDataDisplay.Rows.Clear();
                 FillSingleColumnDataGrid(localManager.GetGroupNames(), GroupNameDataDisplay);
+                SetupStatisticsGrid();
             }
             // The Setup tab
             else if (e.TabPageIndex == 1)
@@ -119,6 +121,7 @@ namespace RaptorMath
                 GroupNameDataDisplay.Rows.Clear();
                 FillSingleColumnDataGrid(localManager.GetGroupNames(), GroupNameDataDisplay);
             }
+            SetupStatisticsGrid();
         }
 
         //------------------------------------------------------------------//
@@ -146,6 +149,28 @@ namespace RaptorMath
 
                             GroupSnapshotDataDisplay.Rows.Add(newRow);
                         }
+                    }
+                }
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/28/14                                                    //
+        //------------------------------------------------------------------//
+        private void SetupStatisticsGrid()
+        {
+            GroupNameDataDisplay.CurrentCell = GroupNameDataDisplay[0, 0];
+            System.Windows.Forms.DataGridViewCell selectedCell = GroupNameDataDisplay.CurrentCell;
+            if (selectedCell != null)
+            {
+                if (selectedCell.RowIndex >= 0 && selectedCell.ColumnIndex >= 0)
+                {
+                    if (GroupNameDataDisplay.Rows[selectedCell.RowIndex].Cells[selectedCell.ColumnIndex].Value != null)
+                    {
+                        DataGridViewCellEventArgs update = new DataGridViewCellEventArgs(selectedCell.ColumnIndex, selectedCell.RowIndex);
+                        object sender = new object();
+                        GroupNameDataDisplay_CellContentClick(sender, update);
                     }
                 }
             }
