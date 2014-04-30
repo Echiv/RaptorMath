@@ -151,10 +151,7 @@ namespace RaptorMath
         /// <summary>Clears the search message out of the search group box.</summary>
         private void SearchStatisticsTxtbox_Click(object sender, EventArgs e)
         {
-            if (SearchTxtBox.Text == "Search for Group")
-            {
-                SearchTxtBox.Text = string.Empty;
-            }
+
         }
 
         /* The code in this section is for the Setup tab only*/
@@ -240,10 +237,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void NarrowListTxtBox_Click(object sender, EventArgs e)
         {
-            if (NarrowListTxtBox.Text == "Search")
-            {
-                NarrowListTxtBox.Text = string.Empty;
-            }
+
         }
 
         //------------------------------------------------------------------//
@@ -1171,10 +1165,7 @@ namespace RaptorMath
         /// <summary>Clears the search message out of the search text boxes.</summary>
         private void SearchAddUsersTxtBox_Click(object sender, EventArgs e)
         {
-            if (SearchAddUsersTxtBox.Text.Equals("Search"))
-            {
-                SearchAddUsersTxtBox.Text = string.Empty;
-            }
+
         }
 
         //------------------------------------------------------------------//
@@ -1184,10 +1175,7 @@ namespace RaptorMath
         /// <summary>Clears the search message out of the search text boxes.</summary>
         private void SearchEditUsersTxtbox_Click(object sender, EventArgs e)
         {
-            if (SearchEditUsersTxtbox.Text == "Search")
-            {
-                SearchEditUsersTxtbox.Text = string.Empty;
-            }
+
         }
     }
 }
