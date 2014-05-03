@@ -71,6 +71,12 @@
       <DependentUpon>CreateDrill.cs</DependentUpon>
     </Compile>
     <Compile Include="Drill.cs" />
+    <Compile Include="DrillReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DrillReport.Designer.cs">
+      <DependentUpon>DrillReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditStudents.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateDrill.resx">
       <DependentUpon>CreateDrill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrillReport.resx">
+      <DependentUpon>DrillReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditStudents.resx">
       <DependentUpon>EditStudents.cs</DependentUpon>
@@ -372,6 +381,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\skipquestion2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FreeVector-Jungle-Background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
