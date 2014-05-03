@@ -835,6 +835,7 @@
             // 
             // AddUsers
             // 
+            this.AddUsers.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.AddUsers.Controls.Add(this.AddUsersGroupBox);
             this.AddUsers.ImageIndex = 8;
             this.AddUsers.Location = new System.Drawing.Point(4, 44);
@@ -844,7 +845,6 @@
             this.AddUsers.Size = new System.Drawing.Size(1353, 622);
             this.AddUsers.TabIndex = 3;
             this.AddUsers.Text = "Add Users";
-            this.AddUsers.UseVisualStyleBackColor = true;
             // 
             // AddUsersGroupBox
             // 
@@ -1057,6 +1057,7 @@
             this.ReportGroupBox.Controls.Add(this.LogoutBtn);
             this.ReportGroupBox.Controls.Add(this.ExitBtn);
             this.ReportGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ReportGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportGroupBox.Location = new System.Drawing.Point(0, 0);
             this.ReportGroupBox.Name = "ReportGroupBox";
             this.ReportGroupBox.Size = new System.Drawing.Size(1370, 750);
@@ -1068,54 +1069,60 @@
             // LastLoginDateLbl
             // 
             this.LastLoginDateLbl.AutoSize = true;
-            this.LastLoginDateLbl.Location = new System.Drawing.Point(1296, 16);
+            this.LastLoginDateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastLoginDateLbl.Location = new System.Drawing.Point(1264, 16);
             this.LastLoginDateLbl.Name = "LastLoginDateLbl";
-            this.LastLoginDateLbl.Size = new System.Drawing.Size(55, 13);
+            this.LastLoginDateLbl.Size = new System.Drawing.Size(72, 18);
             this.LastLoginDateLbl.TabIndex = 8;
             this.LastLoginDateLbl.Text = "mm/dd/yy";
             // 
             // LastLoginLbl
             // 
             this.LastLoginLbl.AutoSize = true;
-            this.LastLoginLbl.Location = new System.Drawing.Point(1232, 16);
+            this.LastLoginLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastLoginLbl.Location = new System.Drawing.Point(1178, 16);
             this.LastLoginLbl.Name = "LastLoginLbl";
-            this.LastLoginLbl.Size = new System.Drawing.Size(59, 13);
+            this.LastLoginLbl.Size = new System.Drawing.Size(80, 18);
             this.LastLoginLbl.TabIndex = 7;
             this.LastLoginLbl.Text = "Last Login:";
             // 
             // TimeLbl
             // 
             this.TimeLbl.AutoSize = true;
-            this.TimeLbl.Location = new System.Drawing.Point(677, 16);
+            this.TimeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeLbl.Location = new System.Drawing.Point(640, 13);
             this.TimeLbl.Name = "TimeLbl";
-            this.TimeLbl.Size = new System.Drawing.Size(51, 13);
+            this.TimeLbl.Size = new System.Drawing.Size(69, 18);
             this.TimeLbl.TabIndex = 6;
             this.TimeLbl.Text = "and Time";
             // 
             // DateLbl
             // 
             this.DateLbl.AutoSize = true;
-            this.DateLbl.Location = new System.Drawing.Point(614, 16);
+            this.DateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateLbl.Location = new System.Drawing.Point(551, 13);
             this.DateLbl.Name = "DateLbl";
-            this.DateLbl.Size = new System.Drawing.Size(67, 13);
+            this.DateLbl.Size = new System.Drawing.Size(92, 18);
             this.DateLbl.TabIndex = 5;
             this.DateLbl.Text = "Current Date";
             // 
             // AdminNameLbl
             // 
             this.AdminNameLbl.AutoSize = true;
-            this.AdminNameLbl.Location = new System.Drawing.Point(146, 16);
+            this.AdminNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminNameLbl.Location = new System.Drawing.Point(217, 16);
             this.AdminNameLbl.Name = "AdminNameLbl";
-            this.AdminNameLbl.Size = new System.Drawing.Size(47, 13);
+            this.AdminNameLbl.Size = new System.Drawing.Size(66, 18);
             this.AdminNameLbl.TabIndex = 4;
             this.AdminNameLbl.Text = "<admin>";
             // 
             // WelcomeLbl
             // 
             this.WelcomeLbl.AutoSize = true;
-            this.WelcomeLbl.Location = new System.Drawing.Point(85, 16);
+            this.WelcomeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WelcomeLbl.Location = new System.Drawing.Point(141, 16);
             this.WelcomeLbl.Name = "WelcomeLbl";
-            this.WelcomeLbl.Size = new System.Drawing.Size(55, 13);
+            this.WelcomeLbl.Size = new System.Drawing.Size(76, 18);
             this.WelcomeLbl.TabIndex = 3;
             this.WelcomeLbl.Text = "Welcome,";
             // 
