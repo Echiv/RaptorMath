@@ -758,7 +758,7 @@
             // 
             // LastNameTxtBox
             // 
-            this.LastNameTxtBox.Location = new System.Drawing.Point(98, 163);
+            this.LastNameTxtBox.Location = new System.Drawing.Point(98, 209);
             this.LastNameTxtBox.MaxLength = 12;
             this.LastNameTxtBox.Multiline = false;
             this.LastNameTxtBox.Name = "LastNameTxtBox";
@@ -769,7 +769,7 @@
             // 
             // FirstNameTxtBox
             // 
-            this.FirstNameTxtBox.Location = new System.Drawing.Point(98, 130);
+            this.FirstNameTxtBox.Location = new System.Drawing.Point(98, 150);
             this.FirstNameTxtBox.MaxLength = 12;
             this.FirstNameTxtBox.Multiline = false;
             this.FirstNameTxtBox.Name = "FirstNameTxtBox";
@@ -800,7 +800,7 @@
             // SaveChangesLbl
             // 
             this.SaveChangesLbl.AutoSize = true;
-            this.SaveChangesLbl.Location = new System.Drawing.Point(54, 344);
+            this.SaveChangesLbl.Location = new System.Drawing.Point(64, 344);
             this.SaveChangesLbl.Name = "SaveChangesLbl";
             this.SaveChangesLbl.Size = new System.Drawing.Size(113, 20);
             this.SaveChangesLbl.TabIndex = 4;
@@ -809,7 +809,7 @@
             // LastNameLbl
             // 
             this.LastNameLbl.AutoSize = true;
-            this.LastNameLbl.Location = new System.Drawing.Point(6, 166);
+            this.LastNameLbl.Location = new System.Drawing.Point(6, 212);
             this.LastNameLbl.Name = "LastNameLbl";
             this.LastNameLbl.Size = new System.Drawing.Size(86, 20);
             this.LastNameLbl.TabIndex = 3;
@@ -818,7 +818,7 @@
             // FirstNameLbl
             // 
             this.FirstNameLbl.AutoSize = true;
-            this.FirstNameLbl.Location = new System.Drawing.Point(6, 133);
+            this.FirstNameLbl.Location = new System.Drawing.Point(6, 153);
             this.FirstNameLbl.Name = "FirstNameLbl";
             this.FirstNameLbl.Size = new System.Drawing.Size(86, 20);
             this.FirstNameLbl.TabIndex = 2;
@@ -928,7 +928,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(184, 397);
+            this.label1.Location = new System.Drawing.Point(112, 462);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 18);
             this.label1.TabIndex = 16;
@@ -937,7 +937,7 @@
             // SaveNewUserLbl
             // 
             this.SaveNewUserLbl.AutoSize = true;
-            this.SaveNewUserLbl.Location = new System.Drawing.Point(37, 397);
+            this.SaveNewUserLbl.Location = new System.Drawing.Point(133, 352);
             this.SaveNewUserLbl.Name = "SaveNewUserLbl";
             this.SaveNewUserLbl.Size = new System.Drawing.Size(111, 18);
             this.SaveNewUserLbl.TabIndex = 15;
@@ -1146,44 +1146,44 @@
             // 
             // RemoveUserGroupBtn
             // 
-            this.RemoveUserGroupBtn.BackgroundImage = global::RaptorMath.Properties.Resources.trash_icon1;
-            this.RemoveUserGroupBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.RemoveUserGroupBtn.Location = new System.Drawing.Point(220, 259);
+            this.RemoveUserGroupBtn.BackgroundImage = global::RaptorMath.Properties.Resources.trash_icon__1_;
+            this.RemoveUserGroupBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.RemoveUserGroupBtn.Location = new System.Drawing.Point(248, 301);
             this.RemoveUserGroupBtn.Name = "RemoveUserGroupBtn";
-            this.RemoveUserGroupBtn.Size = new System.Drawing.Size(84, 84);
+            this.RemoveUserGroupBtn.Size = new System.Drawing.Size(40, 40);
             this.RemoveUserGroupBtn.TabIndex = 11;
             this.RemoveUserGroupBtn.UseVisualStyleBackColor = true;
             this.RemoveUserGroupBtn.Click += new System.EventHandler(this.RemoveUserGroupBtn_Click);
             // 
             // SaveChangesBtn
             // 
-            this.SaveChangesBtn.BackgroundImage = global::RaptorMath.Properties.Resources.System_Save_icon2;
-            this.SaveChangesBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.SaveChangesBtn.Location = new System.Drawing.Point(72, 257);
+            this.SaveChangesBtn.BackgroundImage = global::RaptorMath.Properties.Resources.System_Save_icon__1_;
+            this.SaveChangesBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.SaveChangesBtn.Location = new System.Drawing.Point(98, 301);
             this.SaveChangesBtn.Name = "SaveChangesBtn";
-            this.SaveChangesBtn.Size = new System.Drawing.Size(84, 84);
+            this.SaveChangesBtn.Size = new System.Drawing.Size(40, 40);
             this.SaveChangesBtn.TabIndex = 10;
             this.SaveChangesBtn.UseVisualStyleBackColor = true;
             this.SaveChangesBtn.Click += new System.EventHandler(this.SaveChangesBtn_Click);
             // 
             // ImportFromTextFileBtn
             // 
-            this.ImportFromTextFileBtn.BackgroundImage = global::RaptorMath.Properties.Resources.import_icon1;
-            this.ImportFromTextFileBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ImportFromTextFileBtn.Location = new System.Drawing.Point(210, 303);
+            this.ImportFromTextFileBtn.BackgroundImage = global::RaptorMath.Properties.Resources.import_icon__1_;
+            this.ImportFromTextFileBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ImportFromTextFileBtn.Location = new System.Drawing.Point(166, 410);
             this.ImportFromTextFileBtn.Name = "ImportFromTextFileBtn";
-            this.ImportFromTextFileBtn.Size = new System.Drawing.Size(84, 91);
+            this.ImportFromTextFileBtn.Size = new System.Drawing.Size(40, 40);
             this.ImportFromTextFileBtn.TabIndex = 22;
             this.ImportFromTextFileBtn.UseVisualStyleBackColor = true;
             this.ImportFromTextFileBtn.Click += new System.EventHandler(this.ImportFromTextFileBtn_Click);
             // 
             // SaveNewUserBtn
             // 
-            this.SaveNewUserBtn.BackgroundImage = global::RaptorMath.Properties.Resources.System_Save_icon2;
+            this.SaveNewUserBtn.BackgroundImage = global::RaptorMath.Properties.Resources.System_Save_icon__1_;
             this.SaveNewUserBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.SaveNewUserBtn.Location = new System.Drawing.Point(52, 310);
+            this.SaveNewUserBtn.Location = new System.Drawing.Point(166, 298);
             this.SaveNewUserBtn.Name = "SaveNewUserBtn";
-            this.SaveNewUserBtn.Size = new System.Drawing.Size(84, 84);
+            this.SaveNewUserBtn.Size = new System.Drawing.Size(40, 40);
             this.SaveNewUserBtn.TabIndex = 21;
             this.SaveNewUserBtn.UseVisualStyleBackColor = true;
             this.SaveNewUserBtn.Click += new System.EventHandler(this.SaveNewUserBtn_Click);

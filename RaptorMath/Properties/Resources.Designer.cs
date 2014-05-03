@@ -193,6 +193,16 @@ namespace RaptorMath.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap import_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("import-icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap import_icon1 {
             get {
                 object obj = ResourceManager.GetObject("import-icon1", resourceCulture);
@@ -573,6 +583,16 @@ namespace RaptorMath.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap System_Save_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("System-Save-icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap System_Save_icon1 {
             get {
                 object obj = ResourceManager.GetObject("System-Save-icon1", resourceCulture);
@@ -586,6 +606,16 @@ namespace RaptorMath.Properties {
         internal static System.Drawing.Bitmap System_Save_icon2 {
             get {
                 object obj = ResourceManager.GetObject("System-Save-icon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("trash-icon (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
