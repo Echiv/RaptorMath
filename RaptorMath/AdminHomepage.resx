@@ -117,12 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Have questions about Raptor Math? 
+
+Unfortunately this is the product of a class; All the 
+individuals involved in this project have graduated 
+and are engulfed into their careers. Therefore, your 
+luck of reacing them is slim to none. If you have any
+questions regarding Raptor Math, please contact 
+Rikki Fletcher at CSUSM.
+
+If you're concerned about copyright issues, we are 
+only students. Sorry :(</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Our hope is to offer teachers and their students an 
+easy way to practice math drills and keep track of 
+progress. Helping the children is our first priority. 
+We hope that we were able to provide a program
+that you find useful and a great addition to your
+classroom!</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Thanks for using our product! Raptor Math is intended for 
+elementary school students who want a fun and interactive 
+way to practice math problems. Raptor Math specifically 
+focuses on addition and subtraction. 
+
+Teachers are able to customize their student's drills according to 
+their skill level. Raptor Math also allows the Admin to view the 
+current progress and statistics of each student. </value>
+  </data>
   <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -380,40 +405,21 @@
   <metadata name="GroupNameEditUsers.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="AdminHome.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>127, 17</value>
   </metadata>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Thanks for using our product! Raptor Math is intended for 
-elementary school students who want a fun and interactive 
-way to practice math problems. Raptor Math specifically 
-focuses on addition and subtraction. 
-
-Teachers are able to customize their student's drills according to 
-their skill level. Raptor Math also allows the Admin to view the 
-current progress and statistics of each student. </value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Our hope is to offer teachers and their students an 
-easy way to practice math drills and keep track of 
-progress. Helping the children is our first priority. 
-We hope that we were able to provide a program
-that you find useful and a great addition to your
-classroom!</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Have questions about Raptor Math? 
-
-Unfortunately this is the product of a class; All the 
-individuals involved in this project have graduated 
-and are engulfed into their careers. Therefore, your 
-luck of reacing them is slim to none. If you have any
-questions regarding Raptor Math, please contact 
-Rikki Fletcher at CSUSM.
-
-If you're concerned about copyright issues, we are 
-only students. Sorry :(</value>
-  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>26</value>
   </metadata>
