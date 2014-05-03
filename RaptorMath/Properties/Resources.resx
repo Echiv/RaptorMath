@@ -136,8 +136,8 @@
   <data name="skip3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\skip3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cloud.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="System-Save-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\System-Save-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="scroll4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\scroll4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,9 +154,6 @@
   <data name="go gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\go gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="skip2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\skip2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="logout41" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout41.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -165,6 +162,12 @@
   </data>
   <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trash-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trash-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="letsplay3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\letsplay3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,14 +178,17 @@
   <data name="Submit Button Gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Submit Button Gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loginbackground1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loginbackground1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FreeVector-Jungle-Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FreeVector-Jungle-Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="System-Save-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\System-Save-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logout2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="quitdrill3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\quitdrill3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="drillbackground3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drillbackground3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,11 +205,17 @@
   <data name="exit2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exit2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="skipquestion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\skipquestion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="skipquestion2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\skipquestion2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="greenbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\greenbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="quitdrill1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\quitdrill1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="loginbackground2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loginbackground2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,14 +223,14 @@
   <data name="submit green3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\submit green3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="skipquestion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\skipquestion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="System-Save-icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\System-Save-icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="quitdrill3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\quitdrill3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="skip2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\skip2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Submit Button Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Submit Button Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cloud.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="letsplay" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\letsplay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -228,6 +240,9 @@
   </data>
   <data name="logout4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Submit Button Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Submit Button Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="letsplay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\letsplay1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,8 +256,8 @@
   <data name="scroll3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\scroll3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="quitdrill1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\quitdrill1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="loginbackground1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loginbackground1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="quit game" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\quit game.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -262,7 +277,7 @@
   <data name="scroll1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\scroll1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FreeVector-Jungle-Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FreeVector-Jungle-Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="import-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\import-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

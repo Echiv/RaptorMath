@@ -193,6 +193,16 @@ namespace RaptorMath.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap import_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("import-icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap JungleBackground {
             get {
                 object obj = ResourceManager.GetObject("JungleBackground", resourceCulture);
@@ -546,6 +556,46 @@ namespace RaptorMath.Properties {
         internal static System.Drawing.Bitmap submit_green31 {
             get {
                 object obj = ResourceManager.GetObject("submit green31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap System_Save_icon {
+            get {
+                object obj = ResourceManager.GetObject("System-Save-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap System_Save_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("System-Save-icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap System_Save_icon2 {
+            get {
+                object obj = ResourceManager.GetObject("System-Save-icon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("trash-icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

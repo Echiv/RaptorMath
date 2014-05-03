@@ -87,8 +87,6 @@
             this.SearchEditUsersTxtbox = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.GroupNameComboBox = new System.Windows.Forms.ComboBox();
-            this.RemoveUserGroupBtn = new System.Windows.Forms.Button();
-            this.SaveChangesBtn = new System.Windows.Forms.Button();
             this.LastNameTxtBox = new System.Windows.Forms.RichTextBox();
             this.FirstNameTxtBox = new System.Windows.Forms.RichTextBox();
             this.DeleteGroupChkBox = new System.Windows.Forms.CheckBox();
@@ -103,8 +101,6 @@
             this.LastNameCmboBox = new System.Windows.Forms.ComboBox();
             this.FirstNameCmboBox = new System.Windows.Forms.ComboBox();
             this.GroupNameCmbBox = new System.Windows.Forms.ComboBox();
-            this.ImportFromTextFileBtn = new System.Windows.Forms.Button();
-            this.SaveNewUserBtn = new System.Windows.Forms.Button();
             this.LockGroupNameCheckBox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SaveNewUserLbl = new System.Windows.Forms.Label();
@@ -128,6 +124,10 @@
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.AdminHome = new System.Windows.Forms.Timer(this.components);
+            this.RemoveUserGroupBtn = new System.Windows.Forms.Button();
+            this.SaveChangesBtn = new System.Windows.Forms.Button();
+            this.ImportFromTextFileBtn = new System.Windows.Forms.Button();
+            this.SaveNewUserBtn = new System.Windows.Forms.Button();
             this.tab1.SuspendLayout();
             this.Statistics.SuspendLayout();
             this.GroupSearchBox.SuspendLayout();
@@ -429,7 +429,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle3;
             this.AvailableDrillDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AvailableDrillDataDisplay.Location = new System.Drawing.Point(3, 81);
+            this.AvailableDrillDataDisplay.Location = new System.Drawing.Point(3, 90);
             this.AvailableDrillDataDisplay.Name = "AvailableDrillDataDisplay";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -442,7 +442,7 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.AvailableDrillDataDisplay.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.Size = new System.Drawing.Size(414, 482);
+            this.AvailableDrillDataDisplay.Size = new System.Drawing.Size(414, 473);
             this.AvailableDrillDataDisplay.TabIndex = 0;
             this.AvailableDrillDataDisplay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AvailableDrillDataDisplay_CellClick);
             // 
@@ -480,20 +480,20 @@
             // DeleteDrillLbl
             // 
             this.DeleteDrillLbl.AutoSize = true;
-            this.DeleteDrillLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteDrillLbl.Location = new System.Drawing.Point(221, 67);
+            this.DeleteDrillLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteDrillLbl.Location = new System.Drawing.Point(230, 63);
             this.DeleteDrillLbl.Name = "DeleteDrillLbl";
-            this.DeleteDrillLbl.Size = new System.Drawing.Size(100, 24);
+            this.DeleteDrillLbl.Size = new System.Drawing.Size(86, 20);
             this.DeleteDrillLbl.TabIndex = 4;
             this.DeleteDrillLbl.Text = "Delete Drill";
             // 
             // NewDrillLbl
             // 
             this.NewDrillLbl.AutoSize = true;
-            this.NewDrillLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewDrillLbl.Location = new System.Drawing.Point(89, 67);
+            this.NewDrillLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewDrillLbl.Location = new System.Drawing.Point(98, 63);
             this.NewDrillLbl.Name = "NewDrillLbl";
-            this.NewDrillLbl.Size = new System.Drawing.Size(85, 24);
+            this.NewDrillLbl.Size = new System.Drawing.Size(70, 20);
             this.NewDrillLbl.TabIndex = 3;
             this.NewDrillLbl.Text = "New Drill";
             // 
@@ -501,7 +501,7 @@
             // 
             this.RemoveAllLbl.Location = new System.Drawing.Point(488, 524);
             this.RemoveAllLbl.Name = "RemoveAllLbl";
-            this.RemoveAllLbl.Size = new System.Drawing.Size(75, 13);
+            this.RemoveAllLbl.Size = new System.Drawing.Size(75, 21);
             this.RemoveAllLbl.TabIndex = 9;
             this.RemoveAllLbl.Text = "Remove All";
             this.RemoveAllLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -510,7 +510,7 @@
             // 
             this.AssignAllLbl.Location = new System.Drawing.Point(488, 435);
             this.AssignAllLbl.Name = "AssignAllLbl";
-            this.AssignAllLbl.Size = new System.Drawing.Size(75, 13);
+            this.AssignAllLbl.Size = new System.Drawing.Size(75, 18);
             this.AssignAllLbl.TabIndex = 8;
             this.AssignAllLbl.Text = "Assign All";
             this.AssignAllLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -518,7 +518,7 @@
             // RemoveSelectedLbl
             // 
             this.RemoveSelectedLbl.AutoSize = true;
-            this.RemoveSelectedLbl.Location = new System.Drawing.Point(484, 345);
+            this.RemoveSelectedLbl.Location = new System.Drawing.Point(462, 345);
             this.RemoveSelectedLbl.Name = "RemoveSelectedLbl";
             this.RemoveSelectedLbl.Size = new System.Drawing.Size(135, 20);
             this.RemoveSelectedLbl.TabIndex = 7;
@@ -529,7 +529,7 @@
             // 
             this.AssignSelectedLbl.Location = new System.Drawing.Point(484, 258);
             this.AssignSelectedLbl.Name = "AssignSelectedLbl";
-            this.AssignSelectedLbl.Size = new System.Drawing.Size(93, 13);
+            this.AssignSelectedLbl.Size = new System.Drawing.Size(93, 22);
             this.AssignSelectedLbl.TabIndex = 6;
             this.AssignSelectedLbl.Text = "Assign Selected";
             this.AssignSelectedLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -693,9 +693,9 @@
             this.StudentAdminNameEditUsers,
             this.GroupNameEditUsers});
             this.ExistingUserDataEditUsersDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ExistingUserDataEditUsersDisplay.Location = new System.Drawing.Point(3, 38);
+            this.ExistingUserDataEditUsersDisplay.Location = new System.Drawing.Point(3, 61);
             this.ExistingUserDataEditUsersDisplay.Name = "ExistingUserDataEditUsersDisplay";
-            this.ExistingUserDataEditUsersDisplay.Size = new System.Drawing.Size(364, 556);
+            this.ExistingUserDataEditUsersDisplay.Size = new System.Drawing.Size(364, 533);
             this.ExistingUserDataEditUsersDisplay.TabIndex = 1;
             this.ExistingUserDataEditUsersDisplay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExistingUserDataEditUsersDisplay_CellContentClick);
             this.ExistingUserDataEditUsersDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExistingUserDataEditUsersDisplay_CellContentClick);
@@ -717,7 +717,7 @@
             // 
             // SearchEditUsersTxtbox
             // 
-            this.SearchEditUsersTxtbox.Location = new System.Drawing.Point(88, 29);
+            this.SearchEditUsersTxtbox.Location = new System.Drawing.Point(88, 26);
             this.SearchEditUsersTxtbox.Name = "SearchEditUsersTxtbox";
             this.SearchEditUsersTxtbox.Size = new System.Drawing.Size(170, 26);
             this.SearchEditUsersTxtbox.TabIndex = 0;
@@ -749,49 +749,31 @@
             // GroupNameComboBox
             // 
             this.GroupNameComboBox.FormattingEnabled = true;
-            this.GroupNameComboBox.Location = new System.Drawing.Point(79, 57);
+            this.GroupNameComboBox.Location = new System.Drawing.Point(112, 57);
             this.GroupNameComboBox.Name = "GroupNameComboBox";
-            this.GroupNameComboBox.Size = new System.Drawing.Size(269, 28);
+            this.GroupNameComboBox.Size = new System.Drawing.Size(236, 28);
             this.GroupNameComboBox.TabIndex = 12;
             this.GroupNameComboBox.SelectedIndexChanged += new System.EventHandler(this.GroupNameComboBox_SelectedIndexChanged);
             this.GroupNameComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LettersAndDigitsKeyPress);
             // 
-            // RemoveUserGroupBtn
-            // 
-            this.RemoveUserGroupBtn.Location = new System.Drawing.Point(248, 289);
-            this.RemoveUserGroupBtn.Name = "RemoveUserGroupBtn";
-            this.RemoveUserGroupBtn.Size = new System.Drawing.Size(100, 40);
-            this.RemoveUserGroupBtn.TabIndex = 11;
-            this.RemoveUserGroupBtn.UseVisualStyleBackColor = true;
-            this.RemoveUserGroupBtn.Click += new System.EventHandler(this.RemoveUserGroupBtn_Click);
-            // 
-            // SaveChangesBtn
-            // 
-            this.SaveChangesBtn.Location = new System.Drawing.Point(79, 289);
-            this.SaveChangesBtn.Name = "SaveChangesBtn";
-            this.SaveChangesBtn.Size = new System.Drawing.Size(100, 40);
-            this.SaveChangesBtn.TabIndex = 10;
-            this.SaveChangesBtn.UseVisualStyleBackColor = true;
-            this.SaveChangesBtn.Click += new System.EventHandler(this.SaveChangesBtn_Click);
-            // 
             // LastNameTxtBox
             // 
-            this.LastNameTxtBox.Location = new System.Drawing.Point(74, 163);
+            this.LastNameTxtBox.Location = new System.Drawing.Point(98, 163);
             this.LastNameTxtBox.MaxLength = 12;
             this.LastNameTxtBox.Multiline = false;
             this.LastNameTxtBox.Name = "LastNameTxtBox";
-            this.LastNameTxtBox.Size = new System.Drawing.Size(274, 25);
+            this.LastNameTxtBox.Size = new System.Drawing.Size(250, 25);
             this.LastNameTxtBox.TabIndex = 9;
             this.LastNameTxtBox.Text = "";
             this.LastNameTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LetterssKeyPressNoSpace);
             // 
             // FirstNameTxtBox
             // 
-            this.FirstNameTxtBox.Location = new System.Drawing.Point(74, 130);
+            this.FirstNameTxtBox.Location = new System.Drawing.Point(98, 130);
             this.FirstNameTxtBox.MaxLength = 12;
             this.FirstNameTxtBox.Multiline = false;
             this.FirstNameTxtBox.Name = "FirstNameTxtBox";
-            this.FirstNameTxtBox.Size = new System.Drawing.Size(274, 25);
+            this.FirstNameTxtBox.Size = new System.Drawing.Size(250, 25);
             this.FirstNameTxtBox.TabIndex = 8;
             this.FirstNameTxtBox.Text = "";
             this.FirstNameTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LetterssKeyPressNoSpace);
@@ -809,7 +791,7 @@
             // RemoveUserGroupLbl
             // 
             this.RemoveUserGroupLbl.AutoSize = true;
-            this.RemoveUserGroupLbl.Location = new System.Drawing.Point(237, 332);
+            this.RemoveUserGroupLbl.Location = new System.Drawing.Point(193, 344);
             this.RemoveUserGroupLbl.Name = "RemoveUserGroupLbl";
             this.RemoveUserGroupLbl.Size = new System.Drawing.Size(155, 20);
             this.RemoveUserGroupLbl.TabIndex = 5;
@@ -818,7 +800,7 @@
             // SaveChangesLbl
             // 
             this.SaveChangesLbl.AutoSize = true;
-            this.SaveChangesLbl.Location = new System.Drawing.Point(76, 332);
+            this.SaveChangesLbl.Location = new System.Drawing.Point(54, 344);
             this.SaveChangesLbl.Name = "SaveChangesLbl";
             this.SaveChangesLbl.Size = new System.Drawing.Size(113, 20);
             this.SaveChangesLbl.TabIndex = 4;
@@ -903,7 +885,7 @@
             // LastNameCmboBox
             // 
             this.LastNameCmboBox.FormattingEnabled = true;
-            this.LastNameCmboBox.Location = new System.Drawing.Point(92, 138);
+            this.LastNameCmboBox.Location = new System.Drawing.Point(91, 212);
             this.LastNameCmboBox.MaxLength = 12;
             this.LastNameCmboBox.Name = "LastNameCmboBox";
             this.LastNameCmboBox.Size = new System.Drawing.Size(235, 26);
@@ -915,7 +897,7 @@
             // FirstNameCmboBox
             // 
             this.FirstNameCmboBox.FormattingEnabled = true;
-            this.FirstNameCmboBox.Location = new System.Drawing.Point(92, 108);
+            this.FirstNameCmboBox.Location = new System.Drawing.Point(91, 146);
             this.FirstNameCmboBox.MaxLength = 12;
             this.FirstNameCmboBox.Name = "FirstNameCmboBox";
             this.FirstNameCmboBox.Size = new System.Drawing.Size(235, 26);
@@ -933,28 +915,10 @@
             this.GroupNameCmbBox.TabIndex = 27;
             this.GroupNameCmbBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LettersAndDigitsKeyPress);
             // 
-            // ImportFromTextFileBtn
-            // 
-            this.ImportFromTextFileBtn.Location = new System.Drawing.Point(204, 192);
-            this.ImportFromTextFileBtn.Name = "ImportFromTextFileBtn";
-            this.ImportFromTextFileBtn.Size = new System.Drawing.Size(77, 40);
-            this.ImportFromTextFileBtn.TabIndex = 22;
-            this.ImportFromTextFileBtn.UseVisualStyleBackColor = true;
-            this.ImportFromTextFileBtn.Click += new System.EventHandler(this.ImportFromTextFileBtn_Click);
-            // 
-            // SaveNewUserBtn
-            // 
-            this.SaveNewUserBtn.Location = new System.Drawing.Point(56, 192);
-            this.SaveNewUserBtn.Name = "SaveNewUserBtn";
-            this.SaveNewUserBtn.Size = new System.Drawing.Size(77, 40);
-            this.SaveNewUserBtn.TabIndex = 21;
-            this.SaveNewUserBtn.UseVisualStyleBackColor = true;
-            this.SaveNewUserBtn.Click += new System.EventHandler(this.SaveNewUserBtn_Click);
-            // 
             // LockGroupNameCheckBox
             // 
             this.LockGroupNameCheckBox.AutoSize = true;
-            this.LockGroupNameCheckBox.Location = new System.Drawing.Point(22, 69);
+            this.LockGroupNameCheckBox.Location = new System.Drawing.Point(20, 90);
             this.LockGroupNameCheckBox.Name = "LockGroupNameCheckBox";
             this.LockGroupNameCheckBox.Size = new System.Drawing.Size(150, 22);
             this.LockGroupNameCheckBox.TabIndex = 17;
@@ -964,7 +928,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(178, 235);
+            this.label1.Location = new System.Drawing.Point(184, 397);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 18);
             this.label1.TabIndex = 16;
@@ -973,7 +937,7 @@
             // SaveNewUserLbl
             // 
             this.SaveNewUserLbl.AutoSize = true;
-            this.SaveNewUserLbl.Location = new System.Drawing.Point(41, 235);
+            this.SaveNewUserLbl.Location = new System.Drawing.Point(37, 397);
             this.SaveNewUserLbl.Name = "SaveNewUserLbl";
             this.SaveNewUserLbl.Size = new System.Drawing.Size(111, 18);
             this.SaveNewUserLbl.TabIndex = 15;
@@ -982,7 +946,7 @@
             // LastNameAddUsersLbl
             // 
             this.LastNameAddUsersLbl.AutoSize = true;
-            this.LastNameAddUsersLbl.Location = new System.Drawing.Point(7, 141);
+            this.LastNameAddUsersLbl.Location = new System.Drawing.Point(6, 215);
             this.LastNameAddUsersLbl.Name = "LastNameAddUsersLbl";
             this.LastNameAddUsersLbl.Size = new System.Drawing.Size(80, 18);
             this.LastNameAddUsersLbl.TabIndex = 14;
@@ -991,7 +955,7 @@
             // FirstNameAddUsersLbl
             // 
             this.FirstNameAddUsersLbl.AutoSize = true;
-            this.FirstNameAddUsersLbl.Location = new System.Drawing.Point(6, 111);
+            this.FirstNameAddUsersLbl.Location = new System.Drawing.Point(5, 149);
             this.FirstNameAddUsersLbl.Name = "FirstNameAddUsersLbl";
             this.FirstNameAddUsersLbl.Size = new System.Drawing.Size(81, 18);
             this.FirstNameAddUsersLbl.TabIndex = 13;
@@ -1179,6 +1143,50 @@
             // 
             this.AdminHome.Enabled = true;
             this.AdminHome.Tick += new System.EventHandler(this.AdminHome_Tick);
+            // 
+            // RemoveUserGroupBtn
+            // 
+            this.RemoveUserGroupBtn.BackgroundImage = global::RaptorMath.Properties.Resources.trash_icon1;
+            this.RemoveUserGroupBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.RemoveUserGroupBtn.Location = new System.Drawing.Point(220, 259);
+            this.RemoveUserGroupBtn.Name = "RemoveUserGroupBtn";
+            this.RemoveUserGroupBtn.Size = new System.Drawing.Size(84, 84);
+            this.RemoveUserGroupBtn.TabIndex = 11;
+            this.RemoveUserGroupBtn.UseVisualStyleBackColor = true;
+            this.RemoveUserGroupBtn.Click += new System.EventHandler(this.RemoveUserGroupBtn_Click);
+            // 
+            // SaveChangesBtn
+            // 
+            this.SaveChangesBtn.BackgroundImage = global::RaptorMath.Properties.Resources.System_Save_icon2;
+            this.SaveChangesBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SaveChangesBtn.Location = new System.Drawing.Point(72, 257);
+            this.SaveChangesBtn.Name = "SaveChangesBtn";
+            this.SaveChangesBtn.Size = new System.Drawing.Size(84, 84);
+            this.SaveChangesBtn.TabIndex = 10;
+            this.SaveChangesBtn.UseVisualStyleBackColor = true;
+            this.SaveChangesBtn.Click += new System.EventHandler(this.SaveChangesBtn_Click);
+            // 
+            // ImportFromTextFileBtn
+            // 
+            this.ImportFromTextFileBtn.BackgroundImage = global::RaptorMath.Properties.Resources.import_icon1;
+            this.ImportFromTextFileBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ImportFromTextFileBtn.Location = new System.Drawing.Point(210, 303);
+            this.ImportFromTextFileBtn.Name = "ImportFromTextFileBtn";
+            this.ImportFromTextFileBtn.Size = new System.Drawing.Size(84, 91);
+            this.ImportFromTextFileBtn.TabIndex = 22;
+            this.ImportFromTextFileBtn.UseVisualStyleBackColor = true;
+            this.ImportFromTextFileBtn.Click += new System.EventHandler(this.ImportFromTextFileBtn_Click);
+            // 
+            // SaveNewUserBtn
+            // 
+            this.SaveNewUserBtn.BackgroundImage = global::RaptorMath.Properties.Resources.System_Save_icon2;
+            this.SaveNewUserBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SaveNewUserBtn.Location = new System.Drawing.Point(52, 310);
+            this.SaveNewUserBtn.Name = "SaveNewUserBtn";
+            this.SaveNewUserBtn.Size = new System.Drawing.Size(84, 84);
+            this.SaveNewUserBtn.TabIndex = 21;
+            this.SaveNewUserBtn.UseVisualStyleBackColor = true;
+            this.SaveNewUserBtn.Click += new System.EventHandler(this.SaveNewUserBtn_Click);
             // 
             // AdminHomepage
             // 
