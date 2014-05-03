@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomepage));
             this.tab1 = new System.Windows.Forms.TabControl();
             this.Statistics = new System.Windows.Forms.TabPage();
@@ -87,8 +87,6 @@
             this.SearchEditUsersTxtbox = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.GroupNameComboBox = new System.Windows.Forms.ComboBox();
-            this.RemoveUserGroupBtn = new System.Windows.Forms.Button();
-            this.SaveChangesBtn = new System.Windows.Forms.Button();
             this.LastNameTxtBox = new System.Windows.Forms.RichTextBox();
             this.FirstNameTxtBox = new System.Windows.Forms.RichTextBox();
             this.DeleteGroupChkBox = new System.Windows.Forms.CheckBox();
@@ -103,8 +101,6 @@
             this.LastNameCmboBox = new System.Windows.Forms.ComboBox();
             this.FirstNameCmboBox = new System.Windows.Forms.ComboBox();
             this.GroupNameCmbBox = new System.Windows.Forms.ComboBox();
-            this.ImportFromTextFileBtn = new System.Windows.Forms.Button();
-            this.SaveNewUserBtn = new System.Windows.Forms.Button();
             this.LockGroupNameCheckBox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SaveNewUserLbl = new System.Windows.Forms.Label();
@@ -116,7 +112,6 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchAddUsersTxtBox = new System.Windows.Forms.TextBox();
-            this.About = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.ReportGroupBox = new System.Windows.Forms.GroupBox();
             this.LastLoginDateLbl = new System.Windows.Forms.Label();
@@ -128,6 +123,26 @@
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.AdminHome = new System.Windows.Forms.Timer(this.components);
+            this.searchLbl = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.RemoveUserGroupBtn = new System.Windows.Forms.Button();
+            this.SaveChangesBtn = new System.Windows.Forms.Button();
+            this.ImportFromTextFileBtn = new System.Windows.Forms.Button();
+            this.SaveNewUserBtn = new System.Windows.Forms.Button();
+            this.About = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.tab1.SuspendLayout();
             this.Statistics.SuspendLayout();
             this.GroupSearchBox.SuspendLayout();
@@ -153,6 +168,7 @@
             this.ExistingUsersBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExistingUserDataDisplay)).BeginInit();
             this.ReportGroupBox.SuspendLayout();
+            this.About.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
@@ -288,14 +304,14 @@
             // 
             // GroupNameDataDisplay
             // 
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.GroupNameDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GroupNameDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GroupName});
@@ -325,7 +341,7 @@
             // 
             this.Setup.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.Setup.Controls.Add(this.ManageDrillsBox);
-            this.Setup.ImageIndex = 10;
+            this.Setup.ImageIndex = 11;
             this.Setup.Location = new System.Drawing.Point(4, 44);
             this.Setup.Name = "Setup";
             this.Setup.Padding = new System.Windows.Forms.Padding(3);
@@ -415,32 +431,32 @@
             // 
             // AvailableDrillDataDisplay
             // 
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
             this.AvailableDrillDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AvailableDrillDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DrillName});
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle13;
             this.AvailableDrillDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.AvailableDrillDataDisplay.Location = new System.Drawing.Point(3, 86);
             this.AvailableDrillDataDisplay.Name = "AvailableDrillDataDisplay";
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.AvailableDrillDataDisplay.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.AvailableDrillDataDisplay.Size = new System.Drawing.Size(414, 468);
             this.AvailableDrillDataDisplay.TabIndex = 0;
@@ -666,22 +682,25 @@
             this.EditUsersGroupBox.Controls.Add(this.groupBox4);
             this.EditUsersGroupBox.Controls.Add(this.groupBox5);
             this.EditUsersGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EditUsersGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditUsersGroupBox.Location = new System.Drawing.Point(0, 0);
             this.EditUsersGroupBox.Name = "EditUsersGroupBox";
             this.EditUsersGroupBox.Size = new System.Drawing.Size(1362, 613);
             this.EditUsersGroupBox.TabIndex = 0;
             this.EditUsersGroupBox.TabStop = false;
-            this.EditUsersGroupBox.Text = "Manage Users";
+            this.EditUsersGroupBox.Enter += new System.EventHandler(this.EditUsersGroupBox_Enter);
             // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.groupBox4.Controls.Add(this.searchLbl);
             this.groupBox4.Controls.Add(this.ExistingUserDataEditUsersDisplay);
             this.groupBox4.Controls.Add(this.SearchEditUsersTxtbox);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(3, 22);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(370, 588);
+            this.groupBox4.Size = new System.Drawing.Size(636, 588);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Existing Users";
@@ -693,9 +712,9 @@
             this.StudentAdminNameEditUsers,
             this.GroupNameEditUsers});
             this.ExistingUserDataEditUsersDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ExistingUserDataEditUsersDisplay.Location = new System.Drawing.Point(3, 60);
+            this.ExistingUserDataEditUsersDisplay.Location = new System.Drawing.Point(3, 75);
             this.ExistingUserDataEditUsersDisplay.Name = "ExistingUserDataEditUsersDisplay";
-            this.ExistingUserDataEditUsersDisplay.Size = new System.Drawing.Size(364, 525);
+            this.ExistingUserDataEditUsersDisplay.Size = new System.Drawing.Size(630, 510);
             this.ExistingUserDataEditUsersDisplay.TabIndex = 1;
             this.ExistingUserDataEditUsersDisplay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExistingUserDataEditUsersDisplay_CellContentClick);
             this.ExistingUserDataEditUsersDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExistingUserDataEditUsersDisplay_CellContentClick);
@@ -717,9 +736,9 @@
             // 
             // SearchEditUsersTxtbox
             // 
-            this.SearchEditUsersTxtbox.Location = new System.Drawing.Point(88, 26);
+            this.SearchEditUsersTxtbox.Location = new System.Drawing.Point(207, 28);
             this.SearchEditUsersTxtbox.Name = "SearchEditUsersTxtbox";
-            this.SearchEditUsersTxtbox.Size = new System.Drawing.Size(170, 26);
+            this.SearchEditUsersTxtbox.Size = new System.Drawing.Size(196, 26);
             this.SearchEditUsersTxtbox.TabIndex = 0;
             this.SearchEditUsersTxtbox.TextChanged += new System.EventHandler(this.SearchEditUsersTxtbox_TextChanged);
             this.SearchEditUsersTxtbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LetterssKeyPressNoSpace);
@@ -739,9 +758,10 @@
             this.groupBox5.Controls.Add(this.FirstNameLbl);
             this.groupBox5.Controls.Add(this.GroupNameLbl);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox5.Location = new System.Drawing.Point(989, 22);
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Location = new System.Drawing.Point(729, 22);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(370, 588);
+            this.groupBox5.Size = new System.Drawing.Size(630, 588);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Modify Existing User";
@@ -749,38 +769,16 @@
             // GroupNameComboBox
             // 
             this.GroupNameComboBox.FormattingEnabled = true;
-            this.GroupNameComboBox.Location = new System.Drawing.Point(112, 57);
+            this.GroupNameComboBox.Location = new System.Drawing.Point(229, 65);
             this.GroupNameComboBox.Name = "GroupNameComboBox";
             this.GroupNameComboBox.Size = new System.Drawing.Size(236, 28);
             this.GroupNameComboBox.TabIndex = 12;
             this.GroupNameComboBox.SelectedIndexChanged += new System.EventHandler(this.GroupNameComboBox_SelectedIndexChanged);
             this.GroupNameComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LettersAndDigitsKeyPress);
             // 
-            // RemoveUserGroupBtn
-            // 
-            this.RemoveUserGroupBtn.BackgroundImage = global::RaptorMath.Properties.Resources.trash_icon__1_;
-            this.RemoveUserGroupBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.RemoveUserGroupBtn.Location = new System.Drawing.Point(248, 301);
-            this.RemoveUserGroupBtn.Name = "RemoveUserGroupBtn";
-            this.RemoveUserGroupBtn.Size = new System.Drawing.Size(40, 40);
-            this.RemoveUserGroupBtn.TabIndex = 11;
-            this.RemoveUserGroupBtn.UseVisualStyleBackColor = true;
-            this.RemoveUserGroupBtn.Click += new System.EventHandler(this.RemoveUserGroupBtn_Click);
-            // 
-            // SaveChangesBtn
-            // 
-            this.SaveChangesBtn.BackgroundImage = global::RaptorMath.Properties.Resources.System_Save_icon__1_;
-            this.SaveChangesBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.SaveChangesBtn.Location = new System.Drawing.Point(98, 301);
-            this.SaveChangesBtn.Name = "SaveChangesBtn";
-            this.SaveChangesBtn.Size = new System.Drawing.Size(40, 40);
-            this.SaveChangesBtn.TabIndex = 10;
-            this.SaveChangesBtn.UseVisualStyleBackColor = true;
-            this.SaveChangesBtn.Click += new System.EventHandler(this.SaveChangesBtn_Click);
-            // 
             // LastNameTxtBox
             // 
-            this.LastNameTxtBox.Location = new System.Drawing.Point(98, 209);
+            this.LastNameTxtBox.Location = new System.Drawing.Point(229, 270);
             this.LastNameTxtBox.MaxLength = 12;
             this.LastNameTxtBox.Multiline = false;
             this.LastNameTxtBox.Name = "LastNameTxtBox";
@@ -791,7 +789,7 @@
             // 
             // FirstNameTxtBox
             // 
-            this.FirstNameTxtBox.Location = new System.Drawing.Point(98, 150);
+            this.FirstNameTxtBox.Location = new System.Drawing.Point(229, 194);
             this.FirstNameTxtBox.MaxLength = 12;
             this.FirstNameTxtBox.Multiline = false;
             this.FirstNameTxtBox.Name = "FirstNameTxtBox";
@@ -803,7 +801,8 @@
             // DeleteGroupChkBox
             // 
             this.DeleteGroupChkBox.AutoSize = true;
-            this.DeleteGroupChkBox.Location = new System.Drawing.Point(9, 97);
+            this.DeleteGroupChkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteGroupChkBox.Location = new System.Drawing.Point(229, 112);
             this.DeleteGroupChkBox.Name = "DeleteGroupChkBox";
             this.DeleteGroupChkBox.Size = new System.Drawing.Size(237, 24);
             this.DeleteGroupChkBox.TabIndex = 6;
@@ -813,7 +812,8 @@
             // RemoveUserGroupLbl
             // 
             this.RemoveUserGroupLbl.AutoSize = true;
-            this.RemoveUserGroupLbl.Location = new System.Drawing.Point(193, 344);
+            this.RemoveUserGroupLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemoveUserGroupLbl.Location = new System.Drawing.Point(354, 442);
             this.RemoveUserGroupLbl.Name = "RemoveUserGroupLbl";
             this.RemoveUserGroupLbl.Size = new System.Drawing.Size(155, 20);
             this.RemoveUserGroupLbl.TabIndex = 5;
@@ -822,7 +822,8 @@
             // SaveChangesLbl
             // 
             this.SaveChangesLbl.AutoSize = true;
-            this.SaveChangesLbl.Location = new System.Drawing.Point(64, 344);
+            this.SaveChangesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveChangesLbl.Location = new System.Drawing.Point(132, 442);
             this.SaveChangesLbl.Name = "SaveChangesLbl";
             this.SaveChangesLbl.Size = new System.Drawing.Size(113, 20);
             this.SaveChangesLbl.TabIndex = 4;
@@ -831,29 +832,32 @@
             // LastNameLbl
             // 
             this.LastNameLbl.AutoSize = true;
-            this.LastNameLbl.Location = new System.Drawing.Point(6, 212);
+            this.LastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastNameLbl.Location = new System.Drawing.Point(113, 273);
             this.LastNameLbl.Name = "LastNameLbl";
-            this.LastNameLbl.Size = new System.Drawing.Size(86, 20);
+            this.LastNameLbl.Size = new System.Drawing.Size(90, 20);
             this.LastNameLbl.TabIndex = 3;
-            this.LastNameLbl.Text = "Last Name";
+            this.LastNameLbl.Text = "Last Name:";
             // 
             // FirstNameLbl
             // 
             this.FirstNameLbl.AutoSize = true;
-            this.FirstNameLbl.Location = new System.Drawing.Point(6, 153);
+            this.FirstNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstNameLbl.Location = new System.Drawing.Point(113, 194);
             this.FirstNameLbl.Name = "FirstNameLbl";
-            this.FirstNameLbl.Size = new System.Drawing.Size(86, 20);
+            this.FirstNameLbl.Size = new System.Drawing.Size(90, 20);
             this.FirstNameLbl.TabIndex = 2;
-            this.FirstNameLbl.Text = "First Name";
+            this.FirstNameLbl.Text = "First Name:";
             // 
             // GroupNameLbl
             // 
             this.GroupNameLbl.AutoSize = true;
-            this.GroupNameLbl.Location = new System.Drawing.Point(6, 60);
+            this.GroupNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupNameLbl.Location = new System.Drawing.Point(95, 68);
             this.GroupNameLbl.Name = "GroupNameLbl";
-            this.GroupNameLbl.Size = new System.Drawing.Size(100, 20);
+            this.GroupNameLbl.Size = new System.Drawing.Size(104, 20);
             this.GroupNameLbl.TabIndex = 0;
-            this.GroupNameLbl.Text = "Group Name";
+            this.GroupNameLbl.Text = "Group Name:";
             // 
             // AddUsers
             // 
@@ -879,7 +883,6 @@
             this.AddUsersGroupBox.Size = new System.Drawing.Size(1357, 607);
             this.AddUsersGroupBox.TabIndex = 0;
             this.AddUsersGroupBox.TabStop = false;
-            this.AddUsersGroupBox.Text = "Add Users";
             // 
             // AddNewUserBox
             // 
@@ -896,9 +899,9 @@
             this.AddNewUserBox.Controls.Add(this.FirstNameAddUsersLbl);
             this.AddNewUserBox.Controls.Add(this.GroupNameAddUsersLbl);
             this.AddNewUserBox.Dock = System.Windows.Forms.DockStyle.Right;
-            this.AddNewUserBox.Location = new System.Drawing.Point(1004, 22);
+            this.AddNewUserBox.Location = new System.Drawing.Point(724, 22);
             this.AddNewUserBox.Name = "AddNewUserBox";
-            this.AddNewUserBox.Size = new System.Drawing.Size(350, 582);
+            this.AddNewUserBox.Size = new System.Drawing.Size(630, 582);
             this.AddNewUserBox.TabIndex = 0;
             this.AddNewUserBox.TabStop = false;
             this.AddNewUserBox.Text = "Add New User";
@@ -906,7 +909,7 @@
             // LastNameCmboBox
             // 
             this.LastNameCmboBox.FormattingEnabled = true;
-            this.LastNameCmboBox.Location = new System.Drawing.Point(91, 212);
+            this.LastNameCmboBox.Location = new System.Drawing.Point(267, 310);
             this.LastNameCmboBox.MaxLength = 12;
             this.LastNameCmboBox.Name = "LastNameCmboBox";
             this.LastNameCmboBox.Size = new System.Drawing.Size(235, 28);
@@ -918,7 +921,7 @@
             // FirstNameCmboBox
             // 
             this.FirstNameCmboBox.FormattingEnabled = true;
-            this.FirstNameCmboBox.Location = new System.Drawing.Point(91, 146);
+            this.FirstNameCmboBox.Location = new System.Drawing.Point(267, 214);
             this.FirstNameCmboBox.MaxLength = 12;
             this.FirstNameCmboBox.Name = "FirstNameCmboBox";
             this.FirstNameCmboBox.Size = new System.Drawing.Size(235, 28);
@@ -930,38 +933,16 @@
             // GroupNameCmbBox
             // 
             this.GroupNameCmbBox.FormattingEnabled = true;
-            this.GroupNameCmbBox.Location = new System.Drawing.Point(104, 38);
+            this.GroupNameCmbBox.Location = new System.Drawing.Point(267, 82);
             this.GroupNameCmbBox.Name = "GroupNameCmbBox";
             this.GroupNameCmbBox.Size = new System.Drawing.Size(229, 28);
             this.GroupNameCmbBox.TabIndex = 27;
             this.GroupNameCmbBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LettersAndDigitsKeyPress);
             // 
-            // ImportFromTextFileBtn
-            // 
-            this.ImportFromTextFileBtn.BackgroundImage = global::RaptorMath.Properties.Resources.import_icon__1_;
-            this.ImportFromTextFileBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ImportFromTextFileBtn.Location = new System.Drawing.Point(166, 410);
-            this.ImportFromTextFileBtn.Name = "ImportFromTextFileBtn";
-            this.ImportFromTextFileBtn.Size = new System.Drawing.Size(40, 40);
-            this.ImportFromTextFileBtn.TabIndex = 22;
-            this.ImportFromTextFileBtn.UseVisualStyleBackColor = true;
-            this.ImportFromTextFileBtn.Click += new System.EventHandler(this.ImportFromTextFileBtn_Click);
-            // 
-            // SaveNewUserBtn
-            // 
-            this.SaveNewUserBtn.BackgroundImage = global::RaptorMath.Properties.Resources.System_Save_icon__1_;
-            this.SaveNewUserBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.SaveNewUserBtn.Location = new System.Drawing.Point(166, 298);
-            this.SaveNewUserBtn.Name = "SaveNewUserBtn";
-            this.SaveNewUserBtn.Size = new System.Drawing.Size(40, 40);
-            this.SaveNewUserBtn.TabIndex = 21;
-            this.SaveNewUserBtn.UseVisualStyleBackColor = true;
-            this.SaveNewUserBtn.Click += new System.EventHandler(this.SaveNewUserBtn_Click);
-            // 
             // LockGroupNameCheckBox
             // 
             this.LockGroupNameCheckBox.AutoSize = true;
-            this.LockGroupNameCheckBox.Location = new System.Drawing.Point(20, 90);
+            this.LockGroupNameCheckBox.Location = new System.Drawing.Point(267, 116);
             this.LockGroupNameCheckBox.Name = "LockGroupNameCheckBox";
             this.LockGroupNameCheckBox.Size = new System.Drawing.Size(157, 24);
             this.LockGroupNameCheckBox.TabIndex = 17;
@@ -971,7 +952,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(112, 462);
+            this.label1.Location = new System.Drawing.Point(369, 473);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 20);
             this.label1.TabIndex = 16;
@@ -980,7 +961,7 @@
             // SaveNewUserLbl
             // 
             this.SaveNewUserLbl.AutoSize = true;
-            this.SaveNewUserLbl.Location = new System.Drawing.Point(133, 352);
+            this.SaveNewUserLbl.Location = new System.Drawing.Point(155, 473);
             this.SaveNewUserLbl.Name = "SaveNewUserLbl";
             this.SaveNewUserLbl.Size = new System.Drawing.Size(118, 20);
             this.SaveNewUserLbl.TabIndex = 15;
@@ -989,39 +970,41 @@
             // LastNameAddUsersLbl
             // 
             this.LastNameAddUsersLbl.AutoSize = true;
-            this.LastNameAddUsersLbl.Location = new System.Drawing.Point(6, 215);
+            this.LastNameAddUsersLbl.Location = new System.Drawing.Point(169, 314);
             this.LastNameAddUsersLbl.Name = "LastNameAddUsersLbl";
-            this.LastNameAddUsersLbl.Size = new System.Drawing.Size(86, 20);
+            this.LastNameAddUsersLbl.Size = new System.Drawing.Size(90, 20);
             this.LastNameAddUsersLbl.TabIndex = 14;
-            this.LastNameAddUsersLbl.Text = "Last Name";
+            this.LastNameAddUsersLbl.Text = "Last Name:";
             // 
             // FirstNameAddUsersLbl
             // 
             this.FirstNameAddUsersLbl.AutoSize = true;
-            this.FirstNameAddUsersLbl.Location = new System.Drawing.Point(5, 149);
+            this.FirstNameAddUsersLbl.Location = new System.Drawing.Point(169, 218);
             this.FirstNameAddUsersLbl.Name = "FirstNameAddUsersLbl";
-            this.FirstNameAddUsersLbl.Size = new System.Drawing.Size(86, 20);
+            this.FirstNameAddUsersLbl.Size = new System.Drawing.Size(90, 20);
             this.FirstNameAddUsersLbl.TabIndex = 13;
-            this.FirstNameAddUsersLbl.Text = "First Name";
+            this.FirstNameAddUsersLbl.Text = "First Name:";
             // 
             // GroupNameAddUsersLbl
             // 
             this.GroupNameAddUsersLbl.AutoSize = true;
-            this.GroupNameAddUsersLbl.Location = new System.Drawing.Point(5, 41);
+            this.GroupNameAddUsersLbl.Location = new System.Drawing.Point(155, 86);
             this.GroupNameAddUsersLbl.Name = "GroupNameAddUsersLbl";
-            this.GroupNameAddUsersLbl.Size = new System.Drawing.Size(100, 20);
+            this.GroupNameAddUsersLbl.Size = new System.Drawing.Size(104, 20);
             this.GroupNameAddUsersLbl.TabIndex = 12;
-            this.GroupNameAddUsersLbl.Text = "Group Name";
+            this.GroupNameAddUsersLbl.Text = "Group Name:";
+            this.GroupNameAddUsersLbl.Click += new System.EventHandler(this.GroupNameAddUsersLbl_Click);
             // 
             // ExistingUsersBox
             // 
             this.ExistingUsersBox.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.ExistingUsersBox.Controls.Add(this.label2);
             this.ExistingUsersBox.Controls.Add(this.ExistingUserDataDisplay);
             this.ExistingUsersBox.Controls.Add(this.SearchAddUsersTxtBox);
             this.ExistingUsersBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.ExistingUsersBox.Location = new System.Drawing.Point(3, 22);
             this.ExistingUsersBox.Name = "ExistingUsersBox";
-            this.ExistingUsersBox.Size = new System.Drawing.Size(350, 582);
+            this.ExistingUsersBox.Size = new System.Drawing.Size(630, 582);
             this.ExistingUsersBox.TabIndex = 0;
             this.ExistingUsersBox.TabStop = false;
             this.ExistingUsersBox.Text = "Existing Users";
@@ -1033,10 +1016,11 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.ExistingUserDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ExistingUserDataDisplay.Location = new System.Drawing.Point(3, 75);
+            this.ExistingUserDataDisplay.Location = new System.Drawing.Point(3, 70);
             this.ExistingUserDataDisplay.Name = "ExistingUserDataDisplay";
-            this.ExistingUserDataDisplay.Size = new System.Drawing.Size(344, 504);
+            this.ExistingUserDataDisplay.Size = new System.Drawing.Size(624, 509);
             this.ExistingUserDataDisplay.TabIndex = 2;
+            this.ExistingUserDataDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExistingUserDataDisplay_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1055,22 +1039,12 @@
             // 
             // SearchAddUsersTxtBox
             // 
-            this.SearchAddUsersTxtBox.Location = new System.Drawing.Point(60, 25);
+            this.SearchAddUsersTxtBox.Location = new System.Drawing.Point(223, 25);
             this.SearchAddUsersTxtBox.Name = "SearchAddUsersTxtBox";
             this.SearchAddUsersTxtBox.Size = new System.Drawing.Size(229, 26);
             this.SearchAddUsersTxtBox.TabIndex = 0;
             this.SearchAddUsersTxtBox.TextChanged += new System.EventHandler(this.SearchAddUsersTxtbox_TextChanged);
             this.SearchAddUsersTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LetterssKeyPressNoSpace);
-            // 
-            // About
-            // 
-            this.About.ImageIndex = 7;
-            this.About.Location = new System.Drawing.Point(4, 44);
-            this.About.Name = "About";
-            this.About.Size = new System.Drawing.Size(1362, 613);
-            this.About.TabIndex = 4;
-            this.About.Text = "About";
-            this.About.UseVisualStyleBackColor = true;
             // 
             // imageList1
             // 
@@ -1087,6 +1061,7 @@
             this.imageList1.Images.SetKeyName(8, "Users-Add-user-icon.png");
             this.imageList1.Images.SetKeyName(9, "Users-Edit-user-icon.png");
             this.imageList1.Images.SetKeyName(10, "Basic-Settings-icon.png");
+            this.imageList1.Images.SetKeyName(11, "settings-icon.png");
             // 
             // ReportGroupBox
             // 
@@ -1133,7 +1108,7 @@
             // 
             this.TimeLbl.AutoSize = true;
             this.TimeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeLbl.Location = new System.Drawing.Point(640, 13);
+            this.TimeLbl.Location = new System.Drawing.Point(736, 16);
             this.TimeLbl.Name = "TimeLbl";
             this.TimeLbl.Size = new System.Drawing.Size(69, 18);
             this.TimeLbl.TabIndex = 6;
@@ -1143,7 +1118,7 @@
             // 
             this.DateLbl.AutoSize = true;
             this.DateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateLbl.Location = new System.Drawing.Point(551, 13);
+            this.DateLbl.Location = new System.Drawing.Point(647, 16);
             this.DateLbl.Name = "DateLbl";
             this.DateLbl.Size = new System.Drawing.Size(92, 18);
             this.DateLbl.TabIndex = 5;
@@ -1194,6 +1169,232 @@
             this.AdminHome.Enabled = true;
             this.AdminHome.Tick += new System.EventHandler(this.AdminHome_Tick);
             // 
+            // searchLbl
+            // 
+            this.searchLbl.AutoSize = true;
+            this.searchLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchLbl.Location = new System.Drawing.Point(137, 31);
+            this.searchLbl.Name = "searchLbl";
+            this.searchLbl.Size = new System.Drawing.Size(64, 20);
+            this.searchLbl.TabIndex = 2;
+            this.searchLbl.Text = "Search:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(153, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Search:";
+            // 
+            // RemoveUserGroupBtn
+            // 
+            this.RemoveUserGroupBtn.BackgroundImage = global::RaptorMath.Properties.Resources.trash_icon__1_;
+            this.RemoveUserGroupBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.RemoveUserGroupBtn.Location = new System.Drawing.Point(409, 399);
+            this.RemoveUserGroupBtn.Name = "RemoveUserGroupBtn";
+            this.RemoveUserGroupBtn.Size = new System.Drawing.Size(40, 40);
+            this.RemoveUserGroupBtn.TabIndex = 11;
+            this.RemoveUserGroupBtn.UseVisualStyleBackColor = true;
+            this.RemoveUserGroupBtn.Click += new System.EventHandler(this.RemoveUserGroupBtn_Click);
+            // 
+            // SaveChangesBtn
+            // 
+            this.SaveChangesBtn.BackgroundImage = global::RaptorMath.Properties.Resources.System_Save_icon__1_;
+            this.SaveChangesBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.SaveChangesBtn.Location = new System.Drawing.Point(166, 399);
+            this.SaveChangesBtn.Name = "SaveChangesBtn";
+            this.SaveChangesBtn.Size = new System.Drawing.Size(40, 40);
+            this.SaveChangesBtn.TabIndex = 10;
+            this.SaveChangesBtn.UseVisualStyleBackColor = true;
+            this.SaveChangesBtn.Click += new System.EventHandler(this.SaveChangesBtn_Click);
+            // 
+            // ImportFromTextFileBtn
+            // 
+            this.ImportFromTextFileBtn.BackgroundImage = global::RaptorMath.Properties.Resources.import_icon__1_;
+            this.ImportFromTextFileBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ImportFromTextFileBtn.Location = new System.Drawing.Point(423, 421);
+            this.ImportFromTextFileBtn.Name = "ImportFromTextFileBtn";
+            this.ImportFromTextFileBtn.Size = new System.Drawing.Size(40, 40);
+            this.ImportFromTextFileBtn.TabIndex = 22;
+            this.ImportFromTextFileBtn.UseVisualStyleBackColor = true;
+            this.ImportFromTextFileBtn.Click += new System.EventHandler(this.ImportFromTextFileBtn_Click);
+            // 
+            // SaveNewUserBtn
+            // 
+            this.SaveNewUserBtn.BackgroundImage = global::RaptorMath.Properties.Resources.System_Save_icon__1_;
+            this.SaveNewUserBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SaveNewUserBtn.Location = new System.Drawing.Point(188, 419);
+            this.SaveNewUserBtn.Name = "SaveNewUserBtn";
+            this.SaveNewUserBtn.Size = new System.Drawing.Size(40, 40);
+            this.SaveNewUserBtn.TabIndex = 21;
+            this.SaveNewUserBtn.UseVisualStyleBackColor = true;
+            this.SaveNewUserBtn.Click += new System.EventHandler(this.SaveNewUserBtn_Click);
+            // 
+            // About
+            // 
+            this.About.BackgroundImage = global::RaptorMath.Properties.Resources.aboutbackground;
+            this.About.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.About.Controls.Add(this.label15);
+            this.About.Controls.Add(this.label14);
+            this.About.Controls.Add(this.label13);
+            this.About.Controls.Add(this.label12);
+            this.About.Controls.Add(this.label11);
+            this.About.Controls.Add(this.label10);
+            this.About.Controls.Add(this.label9);
+            this.About.Controls.Add(this.label8);
+            this.About.Controls.Add(this.label7);
+            this.About.Controls.Add(this.label6);
+            this.About.Controls.Add(this.label4);
+            this.About.Controls.Add(this.label3);
+            this.About.Controls.Add(this.label5);
+            this.About.ImageIndex = 7;
+            this.About.Location = new System.Drawing.Point(4, 44);
+            this.About.Name = "About";
+            this.About.Size = new System.Drawing.Size(1362, 613);
+            this.About.TabIndex = 4;
+            this.About.Text = "About";
+            this.About.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Matisse ITC", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(93, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(166, 39);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Raptor Math";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(265, 59);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(105, 39);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "About ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(242, 49);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 59);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "|";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(209, 134);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(216, 23);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Welcome to Raptor Math!";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(209, 346);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 23);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Our Goal";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(828, 134);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(143, 23);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Have Questions?";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(828, 398);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(110, 23);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Who We Are";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label10.Location = new System.Drawing.Point(212, 167);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(432, 152);
+            this.label10.TabIndex = 8;
+            this.label10.Text = resources.GetString("label10.Text");
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label11.Location = new System.Drawing.Point(212, 386);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(341, 114);
+            this.label11.TabIndex = 9;
+            this.label11.Text = resources.GetString("label11.Text");
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label12.Location = new System.Drawing.Point(843, 167);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(346, 209);
+            this.label12.TabIndex = 10;
+            this.label12.Text = resources.GetString("label12.Text");
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label13.Location = new System.Drawing.Point(843, 431);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(273, 95);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "Team Velociraptor:\r\n\r\nJoshua Boone                    Kyle Bridges\r\nCian Carota  " +
+    "                      Justine Dinh\r\nCody Jordan                      Harvey Krei" +
+    "tzer";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Matisse ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(635, 552);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(83, 20);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Raptor Math";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(716, 553);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(54, 19);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "©2014";
+            // 
             // AdminHomepage
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1240,6 +1441,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ExistingUserDataDisplay)).EndInit();
             this.ReportGroupBox.ResumeLayout(false);
             this.ReportGroupBox.PerformLayout();
+            this.About.ResumeLayout(false);
+            this.About.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1339,5 +1542,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GroupNameEditUsers;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Label searchLbl;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label15;
     }
 }

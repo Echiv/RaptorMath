@@ -409,6 +409,15 @@
   <ItemGroup>
     <None Include="Resources\trash-icon %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aboutbackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\raptorMath.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\raptorMath1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

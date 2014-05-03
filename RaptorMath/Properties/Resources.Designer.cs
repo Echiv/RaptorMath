@@ -63,6 +63,16 @@ namespace RaptorMath.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aboutbackground {
+            get {
+                object obj = ResourceManager.GetObject("aboutbackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap adventure {
             get {
                 object obj = ResourceManager.GetObject("adventure", resourceCulture);
@@ -406,6 +416,26 @@ namespace RaptorMath.Properties {
         internal static System.Drawing.Bitmap quitdrill3 {
             get {
                 object obj = ResourceManager.GetObject("quitdrill3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap raptorMath {
+            get {
+                object obj = ResourceManager.GetObject("raptorMath", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap raptorMath1 {
+            get {
+                object obj = ResourceManager.GetObject("raptorMath1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
