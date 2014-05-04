@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
+using Microsoft.Office.Interop.Excel;
 
 namespace RaptorMath
 {
@@ -22,6 +23,7 @@ namespace RaptorMath
     //------------------------------------------------------------------//
     public partial class AdminHomepage : Form
     {
+        private Microsoft.Office.Interop.Excel.Application excel;
         // The main class the the UI goes through to get information
         Manager localManager;
         // Used when importing students from a txt file
@@ -190,12 +192,12 @@ namespace RaptorMath
                         {
                             DataGridViewRow newRow = (DataGridViewRow)GroupSnapshotDataDisplay.Rows[0].Clone();
                             newRow.Cells[0].Value = student.LoginName;
-                            newRow.Cells[6].Value = student.curDrillList.Count;
-                            newRow.Cells[7].Value = student.curRecordList.Count;
-                            newRow.Cells[8].Value = localManager.GetAveragePercentStudent(student);
-                            newRow.Cells[9].Value = localManager.GetAverageWrongStudent(student);
-                            newRow.Cells[10].Value = localManager.GetAverageSkippedStudent(student);
-                            newRow.Cells[11].Value = student.LastLogin;
+                            newRow.Cells[1].Value = student.curDrillList.Count;
+                            newRow.Cells[2].Value = student.curRecordList.Count;
+                            newRow.Cells[3].Value = localManager.GetAveragePercentStudent(student);
+                            newRow.Cells[4].Value = localManager.GetAverageWrongStudent(student);
+                            newRow.Cells[5].Value = localManager.GetAverageSkippedStudent(student);
+                            newRow.Cells[6].Value = student.LastLogin;
 
                             GroupSnapshotDataDisplay.Rows.Add(newRow);
                         }
@@ -225,11 +227,11 @@ namespace RaptorMath
                             if ((DateTime.Parse(date) >= localManager.StartDate) && (DateTime.Parse(date) <= localManager.EndDate))
                             {
                                 DataGridViewRow newRow = (DataGridViewRow)GroupSnapshotDataDisplay.Rows[0].Clone();
-                                newRow.Cells[1].Value = currentRecord.DrillName;
-                                newRow.Cells[2].Value = currentRecord.DateTaken;
-                                newRow.Cells[3].Value = currentRecord.Question;
-                                newRow.Cells[4].Value = (Convert.ToInt32(currentRecord.Question) - Convert.ToInt32(currentRecord.Wrong)) * 10;
-                                newRow.Cells[5].Value = currentRecord.Skipped;
+                                newRow.Cells[7].Value = currentRecord.DrillName;
+                                newRow.Cells[8].Value = currentRecord.DateTaken;
+                                newRow.Cells[9].Value = currentRecord.Question;
+                                newRow.Cells[10].Value = (Convert.ToInt32(currentRecord.Question) - Convert.ToInt32(currentRecord.Wrong)) * 10;
+                                newRow.Cells[11].Value = currentRecord.Skipped;
                                 GroupSnapshotDataDisplay.Rows.Add(newRow);
                             }
                         }
@@ -295,9 +297,12 @@ namespace RaptorMath
         /// <summary>Registers 'Start Date' date box item selection.</summary>
         private void StartDate_ValueChanged(object sender, EventArgs e)
         {
-            localManager.StartDate = DateTime.Parse(StartDate.Text);
-            EndDate.MinDate = StartDate.Value;
-            FillGroupStatisticsGrid();
+            if (!StartDate.Text.Equals(string.Empty))
+            {
+                localManager.StartDate = DateTime.Parse(StartDate.Text);
+                EndDate.MinDate = StartDate.Value;
+                FillGroupStatisticsGrid();
+            }
         }
 
         //------------------------------------------------------------------//
@@ -307,9 +312,12 @@ namespace RaptorMath
         /// <summary>Registers 'End Date' date box item selection.</summary>
         private void EndDate_ValueChanged(object sender, EventArgs e)
         {
-            localManager.EndDate = DateTime.Parse(EndDate.Text);
-            StartDate.MaxDate = EndDate.Value;
-            FillGroupStatisticsGrid();
+            if (!EndDate.Text.Equals(string.Empty))
+            {
+                localManager.EndDate = DateTime.Parse(EndDate.Text);
+                StartDate.MaxDate = EndDate.Value;
+                FillGroupStatisticsGrid();
+            }
         }
 
         //------------------------------------------------------------------//
@@ -1255,7 +1263,23 @@ namespace RaptorMath
 
         /* This section of code handles button clciks*/
 
-        // This first part is for the two buttons that can be clicked from any any tab
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
+        private void ExportToExcelBtn_Click(object sender, EventArgs e)
+        {
+            if (SelectReportBtn.Text.Equals("View Students"))
+            {
+                GroupReportExcel(sender, e);
+            }
+            else
+            {
+                StudentReportExcel(sender, e);
+            }
+        }
+
+        // This part is for the two buttons that can be clicked from any any tab
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
@@ -1410,33 +1434,33 @@ namespace RaptorMath
         private void SetupStudentStatisticsGrid()
         {
             GroupSnapshotDataDisplay.Columns[0].Visible = false;
-            GroupSnapshotDataDisplay.Columns[1].Visible = true;
-            GroupSnapshotDataDisplay.Columns[2].Visible = true;
-            GroupSnapshotDataDisplay.Columns[3].Visible = true;
-            GroupSnapshotDataDisplay.Columns[4].Visible = true;
-            GroupSnapshotDataDisplay.Columns[5].Visible = true;
-            GroupSnapshotDataDisplay.Columns[6].Visible = false;
-            GroupSnapshotDataDisplay.Columns[7].Visible = false;
-            GroupSnapshotDataDisplay.Columns[8].Visible = false;
-            GroupSnapshotDataDisplay.Columns[9].Visible = false;
-            GroupSnapshotDataDisplay.Columns[10].Visible = false;
-            GroupSnapshotDataDisplay.Columns[11].Visible = false;
-        }
-
-        private void SetupGroupStatisticsGrid()
-        {
-            GroupSnapshotDataDisplay.Columns[0].Visible = true;
             GroupSnapshotDataDisplay.Columns[1].Visible = false;
             GroupSnapshotDataDisplay.Columns[2].Visible = false;
             GroupSnapshotDataDisplay.Columns[3].Visible = false;
             GroupSnapshotDataDisplay.Columns[4].Visible = false;
             GroupSnapshotDataDisplay.Columns[5].Visible = false;
-            GroupSnapshotDataDisplay.Columns[6].Visible = true;
+            GroupSnapshotDataDisplay.Columns[6].Visible = false;
             GroupSnapshotDataDisplay.Columns[7].Visible = true;
             GroupSnapshotDataDisplay.Columns[8].Visible = true;
             GroupSnapshotDataDisplay.Columns[9].Visible = true;
             GroupSnapshotDataDisplay.Columns[10].Visible = true;
             GroupSnapshotDataDisplay.Columns[11].Visible = true;
+        }
+
+        private void SetupGroupStatisticsGrid()
+        {
+            GroupSnapshotDataDisplay.Columns[0].Visible = true;
+            GroupSnapshotDataDisplay.Columns[1].Visible = true;
+            GroupSnapshotDataDisplay.Columns[2].Visible = true;
+            GroupSnapshotDataDisplay.Columns[3].Visible = true;
+            GroupSnapshotDataDisplay.Columns[4].Visible = true;
+            GroupSnapshotDataDisplay.Columns[5].Visible = true;
+            GroupSnapshotDataDisplay.Columns[6].Visible = true;
+            GroupSnapshotDataDisplay.Columns[7].Visible = false;
+            GroupSnapshotDataDisplay.Columns[8].Visible = false;
+            GroupSnapshotDataDisplay.Columns[9].Visible = false;
+            GroupSnapshotDataDisplay.Columns[10].Visible = false;
+            GroupSnapshotDataDisplay.Columns[11].Visible = false;
         }
 
         private void SetupStudentReports()
@@ -1459,6 +1483,171 @@ namespace RaptorMath
             FillSingleColumnDataGrid(localManager.GetGroupNames(), GroupNameDataDisplay);
             SetupGroupStatisticsGrid();
             FillGroupStatisticsGrid();
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/10/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Exports the opened report to an excel file.</summary>
+        private void StudentReportExcel(object sender, EventArgs e)
+        {
+            System.Windows.Forms.DataGridViewCell studentCell = GroupNameDataDisplay.CurrentCell;
+            if (studentCell != null)
+            {
+                Student student = localManager.FindStudentWithName(localManager.GetStudentNameFromCellFormat(GroupNameDataDisplay.Rows[studentCell.RowIndex].Cells[studentCell.ColumnIndex].Value.ToString()));
+                if (student != null)
+                {
+                    excel = new Microsoft.Office.Interop.Excel.Application();
+                    excel.DisplayAlerts = false;
+                    Workbook wb = excel.Workbooks.Add(XlSheetType.xlWorksheet);
+                    Worksheet ws = (Worksheet)excel.ActiveSheet;
+                    ws.Cells[1, 1] = "Date Generated";
+                    ws.Cells[1, 2] = DateTime.Now;
+                    ws.Cells[2, 1] = "Student Name";
+                    ws.Cells[2, 2] = student.LoginName;
+                    ws.Cells[3, 1] = "Date Range";
+                    ws.Cells[3, 2] = localManager.StartDate.ToString() + " through " + localManager.EndDate.ToString();
+                    ws.Cells[4, 1] = "Drill Name";
+                    ws.Cells[4, 2] = "Date Taken";
+                    ws.Cells[4, 3] = "# Questions";
+                    ws.Cells[4, 4] = "% Correct";
+                    ws.Cells[4, 5] = "Skipped";
+
+                    for (int i = 0; i < GroupSnapshotDataDisplay.Rows.Count; i++)
+                    {
+                        for (int j = 7; j < GroupSnapshotDataDisplay.Columns.Count; j++)
+                        {
+                            ws.Cells[i + 5, j - 6] = GroupSnapshotDataDisplay.Rows[i].Cells[j].Value;
+                        }
+                    }
+                    ws.Cells.Columns.AutoFit();
+                    ws.Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                    using (SaveFileDialog exportSaveFileDialog = new SaveFileDialog())
+                    {
+                        exportSaveFileDialog.Title = "Select Excel File";
+                        exportSaveFileDialog.Filter = "Microsoft Office Excel Workbook(*.xlsx)|*.xlsx";
+
+                        if (DialogResult.OK == exportSaveFileDialog.ShowDialog())
+                        {
+                            string fullFileName = exportSaveFileDialog.FileName;
+                            // currentWorkbook.SaveCopyAs(fullFileName);
+                            // indicating that we already saved the workbook, otherwise call to Quit() will pop up
+                            // the save file dialogue box
+                            object misValue = System.Reflection.Missing.Value;
+                            try
+                            {
+                                wb.SaveAs(fullFileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlOpenXMLWorkbook, System.Reflection.Missing.Value, misValue, false, false, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Microsoft.Office.Interop.Excel.XlSaveConflictResolution.xlUserResolution, true, misValue, misValue, misValue);
+                                wb.Saved = true;
+                                MessageBox.Show("Exported successfully", "Exported to Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            catch (System.Runtime.InteropServices.COMException error)
+                            {
+                                MessageBox.Show("Error. File is in use.", "Exported to Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+
+                    if (excel != null)
+                    {
+                        wb.Close(Type.Missing, Type.Missing, Type.Missing);
+                        excel.Quit();
+                        excel = null;
+                    }
+                } // student null check
+            } // studentCell null check
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/10/14                                                     //
+        //------------------------------------------------------------------//
+        /// <summary>Exports the opened report to an excel file.</summary>
+        private void GroupReportExcel(object sender, EventArgs e)
+        {
+            System.Windows.Forms.DataGridViewCell groupCell = GroupNameDataDisplay.CurrentCell;
+            if (groupCell != null)
+            {
+                Group group = localManager.FindGroupByName(GroupNameDataDisplay.Rows[groupCell.RowIndex].Cells[groupCell.ColumnIndex].Value.ToString());
+                if (group != null)
+                {
+                    excel = new Microsoft.Office.Interop.Excel.Application();
+                    excel.DisplayAlerts = false;
+                    Workbook wb = excel.Workbooks.Add(XlSheetType.xlWorksheet);
+                    Worksheet ws = (Worksheet)excel.ActiveSheet;
+                    ws.Cells[1, 1] = "Date Generated";
+                    ws.Cells[1, 2] = DateTime.Now;
+                    ws.Cells[2, 1] = "Group Name";
+                    ws.Cells[2, 2] = group.Name;
+                    ws.Cells[3, 1] = "Date Range";
+                    ws.Cells[3, 2] = localManager.StartDate.ToString() + " through " + localManager.EndDate.ToString();
+                    ws.Cells[4, 1] = "Name";
+                    ws.Cells[4, 2] = "# Drills Assigned";
+                    ws.Cells[4, 3] = "# Drills Completed";
+                    ws.Cells[4, 4] = "Average Percent";
+                    ws.Cells[4, 5] = "Average Wrong";
+                    ws.Cells[4, 6] = "Average Skipped";
+                    ws.Cells[4, 7] = "Last Login";
+
+                    for (int i = 0; i < GroupSnapshotDataDisplay.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < GroupSnapshotDataDisplay.Columns.Count; j++)
+                        {
+                            Debug.WriteLine(GroupSnapshotDataDisplay.Rows[i].Cells[j].Value);
+                            ws.Cells[i + 5, j + 1] = GroupSnapshotDataDisplay.Rows[i].Cells[j].Value;
+                        }
+                    }
+                    ws.Cells.Columns.AutoFit();
+                    ws.Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                    using (SaveFileDialog exportSaveFileDialog = new SaveFileDialog())
+                    {
+                        exportSaveFileDialog.Title = "Select Excel File";
+                        exportSaveFileDialog.Filter = "Microsoft Office Excel Workbook(*.xlsx)|*.xlsx";
+
+                        if (DialogResult.OK == exportSaveFileDialog.ShowDialog())
+                        {
+                            string fullFileName = exportSaveFileDialog.FileName;
+                            // currentWorkbook.SaveCopyAs(fullFileName);
+                            // indicating that we already saved the workbook, otherwise call to Quit() will pop up
+                            // the save file dialogue box
+                            object misValue = System.Reflection.Missing.Value;
+                            try
+                            {
+                                wb.SaveAs(fullFileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlOpenXMLWorkbook, System.Reflection.Missing.Value, misValue, false, false, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Microsoft.Office.Interop.Excel.XlSaveConflictResolution.xlUserResolution, true, misValue, misValue, misValue);
+                                wb.Saved = true;
+                                MessageBox.Show("Exported successfully", "Exported to Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            catch (System.Runtime.InteropServices.COMException error)
+                            {
+                                MessageBox.Show("Error. File is in use.", "Exported to Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+
+                    if (excel != null)
+                    {
+                        wb.Close(Type.Missing, Type.Missing, Type.Missing);
+                        excel.Quit();
+                        excel = null;
+                    }
+                }
+            }
+        }
+
+        private void GroupSnapshotDataDisplay_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (GroupSnapshotDataDisplay.Rows.Count > 1)
+            {
+                ExportToExcelBtn.Enabled = true;
+            }
+        }
+
+        private void GroupSnapshotDataDisplay_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if (GroupSnapshotDataDisplay.Rows.Count < 2)
+            {
+                ExportToExcelBtn.Enabled = false;
+            }
         }
     }
 }
