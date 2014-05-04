@@ -36,7 +36,13 @@ namespace RaptorMath
             AdminNameLbl.Text = localManager.currentAdmin.LoginName;
             LastLoginDateLbl.Text = localManager.currentAdmin.LastLogin;
             FillSingleColumnDataGrid(localManager.GetGroupNames() , GroupNameDataDisplay);
-            SetupStatisticsGrid();
+            SetupGroupReports();
+            SetUpReportDate();
+
+            //foreach (Control control in this.Controls)
+            //{
+            //    control.PreviewKeyDown += new PreviewKeyDownEventHandler(Control_PreviewKeyDown);
+            //}
         }
 
         //------------------------------------------------------------------//
@@ -49,9 +55,10 @@ namespace RaptorMath
             // The Statistics tab
             if (e.TabPageIndex == 0)
             {
+                SetupGroupReports();
                 GroupSnapshotDataDisplay.Rows.Clear();
                 FillSingleColumnDataGrid(localManager.GetGroupNames(), GroupNameDataDisplay);
-                SetupStatisticsGrid();
+                SetupGroupReports();
             }
             // The Setup tab
             else if (e.TabPageIndex == 1)
@@ -106,22 +113,44 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void SearchTxtBox_TextChanged(object sender, EventArgs e)
         {
-            if (SearchTxtBox.Text.Length > 0)
+            if (SelectReportBtn.Text.Equals("View Students"))
             {
-                GroupNameDataDisplay.Rows.Clear();
-                GroupSnapshotDataDisplay.Rows.Clear();
-                List<string> matches = localManager.GetMatchingGroupNames(SearchTxtBox.Text);
-                if (matches.Count > 0)
+                if (SearchTxtBox.Text.Length > 0)
                 {
-                    FillSingleColumnDataGrid(matches, GroupNameDataDisplay);
+                    GroupNameDataDisplay.Rows.Clear();
+                    GroupSnapshotDataDisplay.Rows.Clear();
+                    List<string> matches = localManager.GetMatchingGroupNames(SearchTxtBox.Text);
+                    if (matches.Count > 0)
+                    {
+                        FillSingleColumnDataGrid(matches, GroupNameDataDisplay);
+                    }
                 }
+                else
+                {
+                    GroupNameDataDisplay.Rows.Clear();
+                    FillSingleColumnDataGrid(localManager.GetGroupNames(), GroupNameDataDisplay);
+                }
+                FillGroupStatisticsGrid();
             }
             else
             {
-                GroupNameDataDisplay.Rows.Clear();
-                FillSingleColumnDataGrid(localManager.GetGroupNames(), GroupNameDataDisplay);
+                if (SearchTxtBox.Text.Length > 0)
+                {
+                    GroupNameDataDisplay.Rows.Clear();
+                    GroupSnapshotDataDisplay.Rows.Clear();
+                    List<Student> matches = localManager.FindLastNameMatches(SearchTxtBox.Text);
+                    if (matches.Count > 0)
+                    {
+                        DisplayFoundStudents(matches, GroupNameDataDisplay);
+                    }
+                }
+                else
+                {
+                    GroupNameDataDisplay.Rows.Clear();
+                    DisplayFoundStudents(localManager.studentList, GroupNameDataDisplay);
+                }
+                FillStudentStatisticsGrid();
             }
-            SetupStatisticsGrid();
         }
 
         //------------------------------------------------------------------//
@@ -130,11 +159,30 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void GroupNameDataDisplay_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (SelectReportBtn.Text.Equals("View Students"))
+            {
+                GroupCellClick(sender, e);
+            }
+            else
+            {
+                StudentCellClick(sender, e);
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
+        private void GroupCellClick(object sender, DataGridViewCellEventArgs e)
+        {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 if (GroupNameDataDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
-                    GroupSnapshotDataDisplay.Rows.Clear();
+                    if (GroupSnapshotDataDisplay.Rows.Count > 0)
+                    {
+                        GroupSnapshotDataDisplay.Rows.Clear();
+                    }
                     List<Student> groupStudents = localManager.FindStudentsByGroupID(localManager.FindGroupByName(GroupNameDataDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()).ID);
                     if (groupStudents.Count > 0)
                     {
@@ -142,10 +190,12 @@ namespace RaptorMath
                         {
                             DataGridViewRow newRow = (DataGridViewRow)GroupSnapshotDataDisplay.Rows[0].Clone();
                             newRow.Cells[0].Value = student.LoginName;
-                            newRow.Cells[1].Value = student.curDrillList.Count;
-                            newRow.Cells[2].Value = student.curRecordList.Count;
-                            newRow.Cells[3].Value = localManager.GetAveragePercentStudent(student);
-                            newRow.Cells[4].Value = student.LastLogin;
+                            newRow.Cells[6].Value = student.curDrillList.Count;
+                            newRow.Cells[7].Value = student.curRecordList.Count;
+                            newRow.Cells[8].Value = localManager.GetAveragePercentStudent(student);
+                            newRow.Cells[9].Value = localManager.GetAverageWrongStudent(student);
+                            newRow.Cells[10].Value = localManager.GetAverageSkippedStudent(student);
+                            newRow.Cells[11].Value = student.LastLogin;
 
                             GroupSnapshotDataDisplay.Rows.Add(newRow);
                         }
@@ -156,11 +206,48 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
+        private void StudentCellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (GroupNameDataDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    GroupSnapshotDataDisplay.Rows.Clear();
+                    Student student = localManager.FindStudentWithName(localManager.GetStudentNameFromCellFormat(GroupNameDataDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()));
+                    if (student != null)
+                    {
+                        string date = "";
+                        foreach (Record currentRecord in student.curRecordList)
+                        {
+                            date = currentRecord.DateTaken;
+                            if ((DateTime.Parse(date) >= localManager.StartDate) && (DateTime.Parse(date) <= localManager.EndDate))
+                            {
+                                DataGridViewRow newRow = (DataGridViewRow)GroupSnapshotDataDisplay.Rows[0].Clone();
+                                newRow.Cells[1].Value = currentRecord.DrillName;
+                                newRow.Cells[2].Value = currentRecord.DateTaken;
+                                newRow.Cells[3].Value = currentRecord.Question;
+                                newRow.Cells[4].Value = (Convert.ToInt32(currentRecord.Question) - Convert.ToInt32(currentRecord.Wrong)) * 10;
+                                newRow.Cells[5].Value = currentRecord.Skipped;
+                                GroupSnapshotDataDisplay.Rows.Add(newRow);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
-        private void SetupStatisticsGrid()
+        private void FillStudentStatisticsGrid()
         {
-            GroupNameDataDisplay.CurrentCell = GroupNameDataDisplay[0, 0];
+            if (GroupNameDataDisplay.CurrentCell == null)
+            {
+                GroupNameDataDisplay.CurrentCell = GroupNameDataDisplay[0, 0];
+            }
             System.Windows.Forms.DataGridViewCell selectedCell = GroupNameDataDisplay.CurrentCell;
             if (selectedCell != null)
             {
@@ -178,12 +265,67 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/24/14                                                    //
+        // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
-        /// <summary>Clears the search message out of the search group box.</summary>
-        private void SearchStatisticsTxtbox_Click(object sender, EventArgs e)
+        private void FillGroupStatisticsGrid()
         {
+            if (GroupNameDataDisplay.CurrentCell == null)
+            {
+                GroupNameDataDisplay.CurrentCell = GroupNameDataDisplay[0, 0];
+            }
+            System.Windows.Forms.DataGridViewCell selectedCell = GroupNameDataDisplay.CurrentCell;
+            if (selectedCell != null)
+            {
+                if (selectedCell.RowIndex >= 0 && selectedCell.ColumnIndex >= 0)
+                {
+                    if (GroupNameDataDisplay.Rows[selectedCell.RowIndex].Cells[selectedCell.ColumnIndex].Value != null)
+                    {
+                        DataGridViewCellEventArgs update = new DataGridViewCellEventArgs(selectedCell.ColumnIndex, selectedCell.RowIndex);
+                        object sender = new object();
+                        GroupNameDataDisplay_CellContentClick(sender, update);
+                    }
+                }
+            }
+        }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Registers 'Start Date' date box item selection.</summary>
+        private void StartDate_ValueChanged(object sender, EventArgs e)
+        {
+            localManager.StartDate = DateTime.Parse(StartDate.Text);
+            EndDate.MinDate = StartDate.Value;
+            FillGroupStatisticsGrid();
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Registers 'End Date' date box item selection.</summary>
+        private void EndDate_ValueChanged(object sender, EventArgs e)
+        {
+            localManager.EndDate = DateTime.Parse(EndDate.Text);
+            StartDate.MaxDate = EndDate.Value;
+            FillGroupStatisticsGrid();
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Sets up the report range to start at midnight.</summary>
+        private void SetUpReportDate()
+        {
+            StartDate.MaxDate = DateTime.Now;
+            TimeSpan sinceMidnight = DateTime.Now - DateTime.Today;
+            StartDate.MaxDate.Subtract(sinceMidnight);
+            localManager.StartDate = DateTime.Today;
+            EndDate.MaxDate = DateTime.Now;
+            EndDate.MinDate = StartDate.Value;
+            localManager.EndDate = EndDate.Value;
         }
 
         /* The code in this section is for the Setup tab only*/
@@ -275,15 +417,6 @@ namespace RaptorMath
                 }
             }
             SetupDrillButtons(AvailableDrillDataDisplay, AssignedDrillDataDisplay);
-        }
-
-        //------------------------------------------------------------------//
-        // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/25/14                                                    //
-        //------------------------------------------------------------------//
-        private void NarrowListTxtBox_Click(object sender, EventArgs e)
-        {
-
         }
 
         //------------------------------------------------------------------//
@@ -702,22 +835,6 @@ namespace RaptorMath
             AssignAllBtn.Enabled = false;
             RemoveAllBtn.Enabled = false;
         }
-
-        /*
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         * 
-         *
-         * 
-         * 
-         * */
 
         /* The code in this section is for the Edit Users tab only*/
 
@@ -1227,6 +1344,19 @@ namespace RaptorMath
                 System.Media.SystemSounds.Beep.Play();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
+        void Control_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down || e.KeyCode == Keys.Left || e.KeyCode == Keys.Right || 
+                e.KeyCode == Keys.Tab)
+            {
+                e.Handled = true;
+            }
+        }
+
         /* The code in this section is for resetting text boxes and the like*/
 
         // This part is for the Edit Users tab
@@ -1240,26 +1370,6 @@ namespace RaptorMath
             GroupNameComboBox.Text = string.Empty;
             FirstNameTxtBox.Text = string.Empty;
             LastNameTxtBox.Text = string.Empty;
-        }
-
-        //------------------------------------------------------------------//
-        // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/24/14                                                    //
-        //------------------------------------------------------------------//
-        /// <summary>Clears the search message out of the search text boxes.</summary>
-        private void SearchAddUsersTxtBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //------------------------------------------------------------------//
-        // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/24/14                                                    //
-        //------------------------------------------------------------------//
-        /// <summary>Clears the search message out of the search text boxes.</summary>
-        private void SearchEditUsersTxtbox_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void EditUsersGroupBox_Enter(object sender, EventArgs e)
@@ -1280,6 +1390,75 @@ namespace RaptorMath
         private void ExistingUserDataDisplay_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void SelectReportBtn_Click(object sender, EventArgs e)
+        {
+            SearchTxtBox.Text = string.Empty;
+            if (SelectReportBtn.Text.Equals("View Students"))
+            {
+                SelectReportBtn.Text = "View Groups";
+                SetupStudentReports();
+            }
+            else
+            {
+                SelectReportBtn.Text = "View Students";
+                SetupGroupReports();
+            }
+        }
+
+        private void SetupStudentStatisticsGrid()
+        {
+            GroupSnapshotDataDisplay.Columns[0].Visible = false;
+            GroupSnapshotDataDisplay.Columns[1].Visible = true;
+            GroupSnapshotDataDisplay.Columns[2].Visible = true;
+            GroupSnapshotDataDisplay.Columns[3].Visible = true;
+            GroupSnapshotDataDisplay.Columns[4].Visible = true;
+            GroupSnapshotDataDisplay.Columns[5].Visible = true;
+            GroupSnapshotDataDisplay.Columns[6].Visible = false;
+            GroupSnapshotDataDisplay.Columns[7].Visible = false;
+            GroupSnapshotDataDisplay.Columns[8].Visible = false;
+            GroupSnapshotDataDisplay.Columns[9].Visible = false;
+            GroupSnapshotDataDisplay.Columns[10].Visible = false;
+            GroupSnapshotDataDisplay.Columns[11].Visible = false;
+        }
+
+        private void SetupGroupStatisticsGrid()
+        {
+            GroupSnapshotDataDisplay.Columns[0].Visible = true;
+            GroupSnapshotDataDisplay.Columns[1].Visible = false;
+            GroupSnapshotDataDisplay.Columns[2].Visible = false;
+            GroupSnapshotDataDisplay.Columns[3].Visible = false;
+            GroupSnapshotDataDisplay.Columns[4].Visible = false;
+            GroupSnapshotDataDisplay.Columns[5].Visible = false;
+            GroupSnapshotDataDisplay.Columns[6].Visible = true;
+            GroupSnapshotDataDisplay.Columns[7].Visible = true;
+            GroupSnapshotDataDisplay.Columns[8].Visible = true;
+            GroupSnapshotDataDisplay.Columns[9].Visible = true;
+            GroupSnapshotDataDisplay.Columns[10].Visible = true;
+            GroupSnapshotDataDisplay.Columns[11].Visible = true;
+        }
+
+        private void SetupStudentReports()
+        {
+            GroupNameDataDisplay.Columns[1].Visible = true;
+            GroupNameDataDisplay.Columns[0].HeaderText = "Student Name";
+            GroupNameDataDisplay.Rows.Clear();
+            GroupSnapshotDataDisplay.Rows.Clear();
+            DisplayFoundStudents(localManager.studentList, GroupNameDataDisplay);
+            SetupStudentStatisticsGrid();
+            FillStudentStatisticsGrid();
+        }
+
+        private void SetupGroupReports()
+        {
+            GroupNameDataDisplay.Columns[1].Visible = false;
+            GroupNameDataDisplay.Columns[0].HeaderText = "Group Name";
+            GroupNameDataDisplay.Rows.Clear();
+            GroupSnapshotDataDisplay.Rows.Clear();
+            FillSingleColumnDataGrid(localManager.GetGroupNames(), GroupNameDataDisplay);
+            SetupGroupStatisticsGrid();
+            FillGroupStatisticsGrid();
         }
     }
 }

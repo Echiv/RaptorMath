@@ -1811,21 +1811,88 @@ namespace RaptorMath
             //return recordList;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
+        //------------------------------------------------------------------//
         public float GetAveragePercentStudent(Student student)
         {
             float average = 0.0f;
-
+            string date = "";
             if (student.curRecordList.Count > 0)
             {
                 foreach (Record currentRecord in student.curRecordList)
                 {
-                    average = average + float.Parse(currentRecord.Percent);
+                    date = currentRecord.DateTaken;
+                    if ((DateTime.Parse(date) >= StartDate) && (DateTime.Parse(date) <= EndDate))
+                    {
+                        average = average + float.Parse(currentRecord.Percent);
+                    }
                 }
                 average = average / student.curRecordList.Count;
             }
 
             return average;
         }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
+        //------------------------------------------------------------------//
+        public float GetAverageWrongStudent(Student student)
+        {
+            float average = 0.0f;
+            int totalQuestions = 0;
+            string date = "";
+            if (student.curRecordList.Count > 0)
+            {
+                foreach (Record currentRecord in student.curRecordList)
+                {
+                    date = currentRecord.DateTaken;
+                    if ((DateTime.Parse(date) >= StartDate) && (DateTime.Parse(date) <= EndDate))
+                    {
+                        average = average + Convert.ToInt32(currentRecord.Wrong);
+                        totalQuestions = totalQuestions + Convert.ToInt32(currentRecord.Question);
+                    }
+                }
+                if (totalQuestions != 0)
+                {
+                    average = (average / totalQuestions)*100;
+                }
+            }
+
+            return average;
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                    //
+        //------------------------------------------------------------------//
+        public float GetAverageSkippedStudent(Student student)
+        {
+            float average = 0.0f;
+            int totalQuestions = 0;
+            string date = "";
+            if (student.curRecordList.Count > 0)
+            {
+                foreach (Record currentRecord in student.curRecordList)
+                {
+                    date = currentRecord.DateTaken;
+                    if ((DateTime.Parse(date) >= StartDate) && (DateTime.Parse(date) <= EndDate))
+                    {
+                        average = average + Convert.ToInt32(currentRecord.Skipped);
+                        totalQuestions = totalQuestions + Convert.ToInt32(currentRecord.Question);
+                    }
+                }
+                if (totalQuestions != 0)
+                {
+                    average = (average / totalQuestions) * 100;
+                }
+            }
+
+            return average;
+        }
+
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/12/14                                                    //

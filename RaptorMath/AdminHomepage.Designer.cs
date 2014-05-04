@@ -29,26 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomepage));
             this.tab1 = new System.Windows.Forms.TabControl();
             this.Statistics = new System.Windows.Forms.TabPage();
             this.GroupSearchBox = new System.Windows.Forms.GroupBox();
-            this.GroupReportBtn = new System.Windows.Forms.Button();
-            this.StudentReportBtn = new System.Windows.Forms.Button();
-            this.ExportToExcelBtn = new System.Windows.Forms.Button();
+            this.EndDate = new System.Windows.Forms.DateTimePicker();
+            this.ReportHome_EndDateLbl = new System.Windows.Forms.Label();
+            this.StartDate = new System.Windows.Forms.DateTimePicker();
+            this.ReportHome_StartDateLbl = new System.Windows.Forms.Label();
+            this.SelectReportBtn = new System.Windows.Forms.Button();
             this.GroupSnapshotDataDisplay = new System.Windows.Forms.DataGridView();
             this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AssignedDrillName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateTaken = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumQuestions = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PercentCorrect = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumSkipped = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DrillsAssigned = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DrillsCompleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AveragePercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AvgWrong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AvgSkipped = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupNameDataDisplay = new System.Windows.Forms.DataGridView();
             this.GroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentGroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchTxtBox = new System.Windows.Forms.TextBox();
             this.Setup = new System.Windows.Forms.TabPage();
             this.ManageDrillsBox = new System.Windows.Forms.GroupBox();
@@ -81,12 +91,15 @@
             this.EditUsers = new System.Windows.Forms.TabPage();
             this.EditUsersGroupBox = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.searchLbl = new System.Windows.Forms.Label();
             this.ExistingUserDataEditUsersDisplay = new System.Windows.Forms.DataGridView();
             this.StudentAdminNameEditUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupNameEditUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchEditUsersTxtbox = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.GroupNameComboBox = new System.Windows.Forms.ComboBox();
+            this.RemoveUserGroupBtn = new System.Windows.Forms.Button();
+            this.SaveChangesBtn = new System.Windows.Forms.Button();
             this.LastNameTxtBox = new System.Windows.Forms.RichTextBox();
             this.FirstNameTxtBox = new System.Windows.Forms.RichTextBox();
             this.DeleteGroupChkBox = new System.Windows.Forms.CheckBox();
@@ -101,6 +114,8 @@
             this.LastNameCmboBox = new System.Windows.Forms.ComboBox();
             this.FirstNameCmboBox = new System.Windows.Forms.ComboBox();
             this.GroupNameCmbBox = new System.Windows.Forms.ComboBox();
+            this.ImportFromTextFileBtn = new System.Windows.Forms.Button();
+            this.SaveNewUserBtn = new System.Windows.Forms.Button();
             this.LockGroupNameCheckBox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SaveNewUserLbl = new System.Windows.Forms.Label();
@@ -108,11 +123,27 @@
             this.FirstNameAddUsersLbl = new System.Windows.Forms.Label();
             this.GroupNameAddUsersLbl = new System.Windows.Forms.Label();
             this.ExistingUsersBox = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.ExistingUserDataDisplay = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchAddUsersTxtBox = new System.Windows.Forms.TextBox();
+            this.About = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.ExportToExcelBtn = new System.Windows.Forms.Button();
             this.ReportGroupBox = new System.Windows.Forms.GroupBox();
             this.LastLoginDateLbl = new System.Windows.Forms.Label();
             this.LastLoginLbl = new System.Windows.Forms.Label();
@@ -123,26 +154,6 @@
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.AdminHome = new System.Windows.Forms.Timer(this.components);
-            this.searchLbl = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.RemoveUserGroupBtn = new System.Windows.Forms.Button();
-            this.SaveChangesBtn = new System.Windows.Forms.Button();
-            this.ImportFromTextFileBtn = new System.Windows.Forms.Button();
-            this.SaveNewUserBtn = new System.Windows.Forms.Button();
-            this.About = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.tab1.SuspendLayout();
             this.Statistics.SuspendLayout();
             this.GroupSearchBox.SuspendLayout();
@@ -167,8 +178,8 @@
             this.AddNewUserBox.SuspendLayout();
             this.ExistingUsersBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExistingUserDataDisplay)).BeginInit();
-            this.ReportGroupBox.SuspendLayout();
             this.About.SuspendLayout();
+            this.ReportGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
@@ -206,9 +217,11 @@
             // 
             // GroupSearchBox
             // 
-            this.GroupSearchBox.Controls.Add(this.GroupReportBtn);
-            this.GroupSearchBox.Controls.Add(this.StudentReportBtn);
-            this.GroupSearchBox.Controls.Add(this.ExportToExcelBtn);
+            this.GroupSearchBox.Controls.Add(this.EndDate);
+            this.GroupSearchBox.Controls.Add(this.ReportHome_EndDateLbl);
+            this.GroupSearchBox.Controls.Add(this.StartDate);
+            this.GroupSearchBox.Controls.Add(this.ReportHome_StartDateLbl);
+            this.GroupSearchBox.Controls.Add(this.SelectReportBtn);
             this.GroupSearchBox.Controls.Add(this.GroupSnapshotDataDisplay);
             this.GroupSearchBox.Controls.Add(this.GroupNameDataDisplay);
             this.GroupSearchBox.Controls.Add(this.SearchTxtBox);
@@ -221,46 +234,84 @@
             this.GroupSearchBox.TabStop = false;
             this.GroupSearchBox.Text = "Group Search";
             // 
-            // GroupReportBtn
+            // EndDate
             // 
-            this.GroupReportBtn.Location = new System.Drawing.Point(268, 540);
-            this.GroupReportBtn.Name = "GroupReportBtn";
-            this.GroupReportBtn.Size = new System.Drawing.Size(95, 30);
-            this.GroupReportBtn.TabIndex = 1;
-            this.GroupReportBtn.Text = "Group Report";
-            this.GroupReportBtn.UseVisualStyleBackColor = true;
+            this.EndDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.EndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EndDate.Location = new System.Drawing.Point(774, 83);
+            this.EndDate.Margin = new System.Windows.Forms.Padding(4);
+            this.EndDate.Name = "EndDate";
+            this.EndDate.Size = new System.Drawing.Size(264, 20);
+            this.EndDate.TabIndex = 25;
+            this.EndDate.ValueChanged += new System.EventHandler(this.EndDate_ValueChanged);
             // 
-            // StudentReportBtn
+            // ReportHome_EndDateLbl
             // 
-            this.StudentReportBtn.Location = new System.Drawing.Point(369, 540);
-            this.StudentReportBtn.Name = "StudentReportBtn";
-            this.StudentReportBtn.Size = new System.Drawing.Size(95, 30);
-            this.StudentReportBtn.TabIndex = 2;
-            this.StudentReportBtn.Text = "Student Report";
-            this.StudentReportBtn.UseVisualStyleBackColor = true;
+            this.ReportHome_EndDateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ReportHome_EndDateLbl.AutoSize = true;
+            this.ReportHome_EndDateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportHome_EndDateLbl.Location = new System.Drawing.Point(694, 85);
+            this.ReportHome_EndDateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ReportHome_EndDateLbl.Name = "ReportHome_EndDateLbl";
+            this.ReportHome_EndDateLbl.Size = new System.Drawing.Size(52, 13);
+            this.ReportHome_EndDateLbl.TabIndex = 26;
+            this.ReportHome_EndDateLbl.Text = "End Date";
             // 
-            // ExportToExcelBtn
+            // StartDate
             // 
-            this.ExportToExcelBtn.Location = new System.Drawing.Point(1222, 540);
-            this.ExportToExcelBtn.Name = "ExportToExcelBtn";
-            this.ExportToExcelBtn.Size = new System.Drawing.Size(95, 30);
-            this.ExportToExcelBtn.TabIndex = 4;
-            this.ExportToExcelBtn.Text = "Export to Excel";
-            this.ExportToExcelBtn.UseVisualStyleBackColor = true;
+            this.StartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.StartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartDate.Location = new System.Drawing.Point(394, 81);
+            this.StartDate.Margin = new System.Windows.Forms.Padding(4);
+            this.StartDate.Name = "StartDate";
+            this.StartDate.Size = new System.Drawing.Size(264, 20);
+            this.StartDate.TabIndex = 23;
+            this.StartDate.ValueChanged += new System.EventHandler(this.StartDate_ValueChanged);
+            // 
+            // ReportHome_StartDateLbl
+            // 
+            this.ReportHome_StartDateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ReportHome_StartDateLbl.AutoSize = true;
+            this.ReportHome_StartDateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportHome_StartDateLbl.Location = new System.Drawing.Point(317, 87);
+            this.ReportHome_StartDateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ReportHome_StartDateLbl.Name = "ReportHome_StartDateLbl";
+            this.ReportHome_StartDateLbl.Size = new System.Drawing.Size(55, 13);
+            this.ReportHome_StartDateLbl.TabIndex = 24;
+            this.ReportHome_StartDateLbl.Text = "Start Date";
+            // 
+            // SelectReportBtn
+            // 
+            this.SelectReportBtn.Location = new System.Drawing.Point(59, 46);
+            this.SelectReportBtn.Name = "SelectReportBtn";
+            this.SelectReportBtn.Size = new System.Drawing.Size(159, 30);
+            this.SelectReportBtn.TabIndex = 2;
+            this.SelectReportBtn.Text = "View Students";
+            this.SelectReportBtn.UseVisualStyleBackColor = true;
+            this.SelectReportBtn.Click += new System.EventHandler(this.SelectReportBtn_Click);
             // 
             // GroupSnapshotDataDisplay
             // 
             this.GroupSnapshotDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GroupSnapshotDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StudentName,
+            this.AssignedDrillName,
+            this.DateTaken,
+            this.NumQuestions,
+            this.PercentCorrect,
+            this.NumSkipped,
             this.DrillsAssigned,
             this.DrillsCompleted,
             this.AveragePercent,
+            this.AvgWrong,
+            this.AvgSkipped,
             this.LastLogin});
-            this.GroupSnapshotDataDisplay.Location = new System.Drawing.Point(268, 45);
+            this.GroupSnapshotDataDisplay.Location = new System.Drawing.Point(269, 108);
             this.GroupSnapshotDataDisplay.Name = "GroupSnapshotDataDisplay";
             this.GroupSnapshotDataDisplay.Size = new System.Drawing.Size(1049, 489);
             this.GroupSnapshotDataDisplay.TabIndex = 2;
+            this.GroupSnapshotDataDisplay.TabStop = false;
+            this.GroupSnapshotDataDisplay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             // 
             // StudentName
             // 
@@ -269,6 +320,46 @@
             this.StudentName.Name = "StudentName";
             this.StudentName.ReadOnly = true;
             this.StudentName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // AssignedDrillName
+            // 
+            this.AssignedDrillName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AssignedDrillName.HeaderText = "Drill Name";
+            this.AssignedDrillName.Name = "AssignedDrillName";
+            this.AssignedDrillName.ReadOnly = true;
+            this.AssignedDrillName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // DateTaken
+            // 
+            this.DateTaken.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DateTaken.HeaderText = "Date Taken";
+            this.DateTaken.Name = "DateTaken";
+            this.DateTaken.ReadOnly = true;
+            this.DateTaken.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // NumQuestions
+            // 
+            this.NumQuestions.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NumQuestions.HeaderText = "# Questions";
+            this.NumQuestions.Name = "NumQuestions";
+            this.NumQuestions.ReadOnly = true;
+            this.NumQuestions.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // PercentCorrect
+            // 
+            this.PercentCorrect.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PercentCorrect.HeaderText = "% Correct";
+            this.PercentCorrect.Name = "PercentCorrect";
+            this.PercentCorrect.ReadOnly = true;
+            this.PercentCorrect.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // NumSkipped
+            // 
+            this.NumSkipped.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NumSkipped.HeaderText = "# Skipped";
+            this.NumSkipped.Name = "NumSkipped";
+            this.NumSkipped.ReadOnly = true;
+            this.NumSkipped.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // DrillsAssigned
             // 
@@ -294,6 +385,22 @@
             this.AveragePercent.ReadOnly = true;
             this.AveragePercent.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
+            // AvgWrong
+            // 
+            this.AvgWrong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AvgWrong.HeaderText = "Average Wrong";
+            this.AvgWrong.Name = "AvgWrong";
+            this.AvgWrong.ReadOnly = true;
+            this.AvgWrong.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // AvgSkipped
+            // 
+            this.AvgSkipped.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AvgSkipped.HeaderText = "Average Skipped";
+            this.AvgSkipped.Name = "AvgSkipped";
+            this.AvgSkipped.ReadOnly = true;
+            this.AvgSkipped.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // LastLogin
             // 
             this.LastLogin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -304,34 +411,42 @@
             // 
             // GroupNameDataDisplay
             // 
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.GroupNameDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GroupNameDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.GroupName});
-            this.GroupNameDataDisplay.Location = new System.Drawing.Point(27, 45);
+            this.GroupName,
+            this.StudentGroupName});
+            this.GroupNameDataDisplay.Location = new System.Drawing.Point(28, 108);
             this.GroupNameDataDisplay.Name = "GroupNameDataDisplay";
             this.GroupNameDataDisplay.Size = new System.Drawing.Size(224, 489);
             this.GroupNameDataDisplay.TabIndex = 1;
+            this.GroupNameDataDisplay.TabStop = false;
             this.GroupNameDataDisplay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GroupNameDataDisplay_CellContentClick);
+            this.GroupNameDataDisplay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             // 
             // GroupName
             // 
             this.GroupName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GroupName.HeaderText = "Group Name";
+            this.GroupName.HeaderText = "Student Name";
             this.GroupName.Name = "GroupName";
             this.GroupName.ReadOnly = true;
             this.GroupName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
+            // StudentGroupName
+            // 
+            this.StudentGroupName.HeaderText = "Group Name";
+            this.StudentGroupName.Name = "StudentGroupName";
+            // 
             // SearchTxtBox
             // 
-            this.SearchTxtBox.Location = new System.Drawing.Point(27, 19);
+            this.SearchTxtBox.Location = new System.Drawing.Point(28, 82);
             this.SearchTxtBox.Name = "SearchTxtBox";
             this.SearchTxtBox.Size = new System.Drawing.Size(224, 24);
             this.SearchTxtBox.TabIndex = 1;
@@ -403,7 +518,9 @@
             this.AssignedDrillDataDisplay.Name = "AssignedDrillDataDisplay";
             this.AssignedDrillDataDisplay.Size = new System.Drawing.Size(431, 468);
             this.AssignedDrillDataDisplay.TabIndex = 1;
+            this.AssignedDrillDataDisplay.TabStop = false;
             this.AssignedDrillDataDisplay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AssignedDrillDataDisplay_CellClick);
+            this.AssignedDrillDataDisplay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             // 
             // Drillname_Assigned
             // 
@@ -431,36 +548,38 @@
             // 
             // AvailableDrillDataDisplay
             // 
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
             this.AvailableDrillDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AvailableDrillDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DrillName});
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle23;
             this.AvailableDrillDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.AvailableDrillDataDisplay.Location = new System.Drawing.Point(3, 86);
             this.AvailableDrillDataDisplay.Name = "AvailableDrillDataDisplay";
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle29;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle25;
             this.AvailableDrillDataDisplay.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.AvailableDrillDataDisplay.Size = new System.Drawing.Size(414, 468);
             this.AvailableDrillDataDisplay.TabIndex = 0;
+            this.AvailableDrillDataDisplay.TabStop = false;
             this.AvailableDrillDataDisplay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AvailableDrillDataDisplay_CellClick);
+            this.AvailableDrillDataDisplay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             // 
             // DrillName
             // 
@@ -515,18 +634,18 @@
             // 
             // RemoveAllLbl
             // 
-            this.RemoveAllLbl.Location = new System.Drawing.Point(476, 509);
+            this.RemoveAllLbl.Location = new System.Drawing.Point(450, 509);
             this.RemoveAllLbl.Name = "RemoveAllLbl";
-            this.RemoveAllLbl.Size = new System.Drawing.Size(75, 21);
+            this.RemoveAllLbl.Size = new System.Drawing.Size(127, 21);
             this.RemoveAllLbl.TabIndex = 9;
             this.RemoveAllLbl.Text = "Remove All";
             this.RemoveAllLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AssignAllLbl
             // 
-            this.AssignAllLbl.Location = new System.Drawing.Point(476, 420);
+            this.AssignAllLbl.Location = new System.Drawing.Point(454, 420);
             this.AssignAllLbl.Name = "AssignAllLbl";
-            this.AssignAllLbl.Size = new System.Drawing.Size(75, 18);
+            this.AssignAllLbl.Size = new System.Drawing.Size(123, 18);
             this.AssignAllLbl.TabIndex = 8;
             this.AssignAllLbl.Text = "Assign All";
             this.AssignAllLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -616,7 +735,9 @@
             this.SetupExistingUserDataDisplay.Name = "SetupExistingUserDataDisplay";
             this.SetupExistingUserDataDisplay.Size = new System.Drawing.Size(288, 471);
             this.SetupExistingUserDataDisplay.TabIndex = 3;
+            this.SetupExistingUserDataDisplay.TabStop = false;
             this.SetupExistingUserDataDisplay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SetupExistingUserDataDisplay_CellContentClick);
+            this.SetupExistingUserDataDisplay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             // 
             // StudentAdminName
             // 
@@ -705,6 +826,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Existing Users";
             // 
+            // searchLbl
+            // 
+            this.searchLbl.AutoSize = true;
+            this.searchLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchLbl.Location = new System.Drawing.Point(137, 31);
+            this.searchLbl.Name = "searchLbl";
+            this.searchLbl.Size = new System.Drawing.Size(64, 20);
+            this.searchLbl.TabIndex = 2;
+            this.searchLbl.Text = "Search:";
+            // 
             // ExistingUserDataEditUsersDisplay
             // 
             this.ExistingUserDataEditUsersDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -716,8 +847,10 @@
             this.ExistingUserDataEditUsersDisplay.Name = "ExistingUserDataEditUsersDisplay";
             this.ExistingUserDataEditUsersDisplay.Size = new System.Drawing.Size(630, 510);
             this.ExistingUserDataEditUsersDisplay.TabIndex = 1;
+            this.ExistingUserDataEditUsersDisplay.TabStop = false;
             this.ExistingUserDataEditUsersDisplay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExistingUserDataEditUsersDisplay_CellContentClick);
             this.ExistingUserDataEditUsersDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExistingUserDataEditUsersDisplay_CellContentClick);
+            this.ExistingUserDataEditUsersDisplay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             // 
             // StudentAdminNameEditUsers
             // 
@@ -775,6 +908,28 @@
             this.GroupNameComboBox.TabIndex = 12;
             this.GroupNameComboBox.SelectedIndexChanged += new System.EventHandler(this.GroupNameComboBox_SelectedIndexChanged);
             this.GroupNameComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LettersAndDigitsKeyPress);
+            // 
+            // RemoveUserGroupBtn
+            // 
+            this.RemoveUserGroupBtn.BackgroundImage = global::RaptorMath.Properties.Resources.trash_icon__1_;
+            this.RemoveUserGroupBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.RemoveUserGroupBtn.Location = new System.Drawing.Point(409, 399);
+            this.RemoveUserGroupBtn.Name = "RemoveUserGroupBtn";
+            this.RemoveUserGroupBtn.Size = new System.Drawing.Size(40, 40);
+            this.RemoveUserGroupBtn.TabIndex = 11;
+            this.RemoveUserGroupBtn.UseVisualStyleBackColor = true;
+            this.RemoveUserGroupBtn.Click += new System.EventHandler(this.RemoveUserGroupBtn_Click);
+            // 
+            // SaveChangesBtn
+            // 
+            this.SaveChangesBtn.BackgroundImage = global::RaptorMath.Properties.Resources.System_Save_icon__1_;
+            this.SaveChangesBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.SaveChangesBtn.Location = new System.Drawing.Point(166, 399);
+            this.SaveChangesBtn.Name = "SaveChangesBtn";
+            this.SaveChangesBtn.Size = new System.Drawing.Size(40, 40);
+            this.SaveChangesBtn.TabIndex = 10;
+            this.SaveChangesBtn.UseVisualStyleBackColor = true;
+            this.SaveChangesBtn.Click += new System.EventHandler(this.SaveChangesBtn_Click);
             // 
             // LastNameTxtBox
             // 
@@ -939,6 +1094,28 @@
             this.GroupNameCmbBox.TabIndex = 27;
             this.GroupNameCmbBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LettersAndDigitsKeyPress);
             // 
+            // ImportFromTextFileBtn
+            // 
+            this.ImportFromTextFileBtn.BackgroundImage = global::RaptorMath.Properties.Resources.import_icon__1_;
+            this.ImportFromTextFileBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ImportFromTextFileBtn.Location = new System.Drawing.Point(423, 421);
+            this.ImportFromTextFileBtn.Name = "ImportFromTextFileBtn";
+            this.ImportFromTextFileBtn.Size = new System.Drawing.Size(40, 40);
+            this.ImportFromTextFileBtn.TabIndex = 22;
+            this.ImportFromTextFileBtn.UseVisualStyleBackColor = true;
+            this.ImportFromTextFileBtn.Click += new System.EventHandler(this.ImportFromTextFileBtn_Click);
+            // 
+            // SaveNewUserBtn
+            // 
+            this.SaveNewUserBtn.BackgroundImage = global::RaptorMath.Properties.Resources.System_Save_icon__1_;
+            this.SaveNewUserBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SaveNewUserBtn.Location = new System.Drawing.Point(188, 419);
+            this.SaveNewUserBtn.Name = "SaveNewUserBtn";
+            this.SaveNewUserBtn.Size = new System.Drawing.Size(40, 40);
+            this.SaveNewUserBtn.TabIndex = 21;
+            this.SaveNewUserBtn.UseVisualStyleBackColor = true;
+            this.SaveNewUserBtn.Click += new System.EventHandler(this.SaveNewUserBtn_Click);
+            // 
             // LockGroupNameCheckBox
             // 
             this.LockGroupNameCheckBox.AutoSize = true;
@@ -1009,6 +1186,16 @@
             this.ExistingUsersBox.TabStop = false;
             this.ExistingUsersBox.Text = "Existing Users";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(153, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Search:";
+            // 
             // ExistingUserDataDisplay
             // 
             this.ExistingUserDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1020,7 +1207,9 @@
             this.ExistingUserDataDisplay.Name = "ExistingUserDataDisplay";
             this.ExistingUserDataDisplay.Size = new System.Drawing.Size(624, 509);
             this.ExistingUserDataDisplay.TabIndex = 2;
+            this.ExistingUserDataDisplay.TabStop = false;
             this.ExistingUserDataDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExistingUserDataDisplay_CellContentClick);
+            this.ExistingUserDataDisplay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1046,6 +1235,168 @@
             this.SearchAddUsersTxtBox.TextChanged += new System.EventHandler(this.SearchAddUsersTxtbox_TextChanged);
             this.SearchAddUsersTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LetterssKeyPressNoSpace);
             // 
+            // About
+            // 
+            this.About.BackgroundImage = global::RaptorMath.Properties.Resources.aboutbackground;
+            this.About.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.About.Controls.Add(this.label15);
+            this.About.Controls.Add(this.label14);
+            this.About.Controls.Add(this.label13);
+            this.About.Controls.Add(this.label12);
+            this.About.Controls.Add(this.label11);
+            this.About.Controls.Add(this.label10);
+            this.About.Controls.Add(this.label9);
+            this.About.Controls.Add(this.label8);
+            this.About.Controls.Add(this.label7);
+            this.About.Controls.Add(this.label6);
+            this.About.Controls.Add(this.label4);
+            this.About.Controls.Add(this.label3);
+            this.About.Controls.Add(this.label5);
+            this.About.ImageIndex = 7;
+            this.About.Location = new System.Drawing.Point(4, 44);
+            this.About.Name = "About";
+            this.About.Size = new System.Drawing.Size(1362, 613);
+            this.About.TabIndex = 4;
+            this.About.Text = "About";
+            this.About.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(716, 553);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(54, 19);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "©2014";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(635, 552);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(98, 20);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Raptor Math";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label13.Location = new System.Drawing.Point(843, 431);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(273, 95);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "Team Velociraptor:\r\n\r\nJoshua Boone                    Kyle Bridges\r\nCian Carota  " +
+    "                     Justine Dinh\r\nCody Jordan                      Harvey Kreit" +
+    "zer";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label12.Location = new System.Drawing.Point(843, 167);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(346, 209);
+            this.label12.TabIndex = 10;
+            this.label12.Text = resources.GetString("label12.Text");
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label11.Location = new System.Drawing.Point(212, 386);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(341, 114);
+            this.label11.TabIndex = 9;
+            this.label11.Text = resources.GetString("label11.Text");
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label10.Location = new System.Drawing.Point(212, 167);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(432, 152);
+            this.label10.TabIndex = 8;
+            this.label10.Text = resources.GetString("label10.Text");
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(828, 398);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(110, 23);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Who We Are";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(828, 134);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(143, 23);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Have Questions?";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(209, 346);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 23);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Our Goal";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(209, 134);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(216, 23);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Welcome to Raptor Math!";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(309, 59);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(105, 39);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "About ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(93, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(193, 37);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Raptor Math";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(256, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 59);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "|";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -1063,9 +1414,19 @@
             this.imageList1.Images.SetKeyName(10, "Basic-Settings-icon.png");
             this.imageList1.Images.SetKeyName(11, "settings-icon.png");
             // 
+            // ExportToExcelBtn
+            // 
+            this.ExportToExcelBtn.Location = new System.Drawing.Point(897, 705);
+            this.ExportToExcelBtn.Name = "ExportToExcelBtn";
+            this.ExportToExcelBtn.Size = new System.Drawing.Size(150, 35);
+            this.ExportToExcelBtn.TabIndex = 4;
+            this.ExportToExcelBtn.Text = "Export to Excel";
+            this.ExportToExcelBtn.UseVisualStyleBackColor = true;
+            // 
             // ReportGroupBox
             // 
             this.ReportGroupBox.Controls.Add(this.tab1);
+            this.ReportGroupBox.Controls.Add(this.ExportToExcelBtn);
             this.ReportGroupBox.Controls.Add(this.LastLoginDateLbl);
             this.ReportGroupBox.Controls.Add(this.LastLoginLbl);
             this.ReportGroupBox.Controls.Add(this.TimeLbl);
@@ -1146,9 +1507,9 @@
             // 
             // LogoutBtn
             // 
-            this.LogoutBtn.Location = new System.Drawing.Point(1163, 705);
+            this.LogoutBtn.Location = new System.Drawing.Point(1053, 705);
             this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.Size = new System.Drawing.Size(95, 35);
+            this.LogoutBtn.Size = new System.Drawing.Size(150, 35);
             this.LogoutBtn.TabIndex = 0;
             this.LogoutBtn.Text = "Logout";
             this.LogoutBtn.UseVisualStyleBackColor = true;
@@ -1156,9 +1517,9 @@
             // 
             // ExitBtn
             // 
-            this.ExitBtn.Location = new System.Drawing.Point(1264, 705);
+            this.ExitBtn.Location = new System.Drawing.Point(1208, 705);
             this.ExitBtn.Name = "ExitBtn";
-            this.ExitBtn.Size = new System.Drawing.Size(95, 35);
+            this.ExitBtn.Size = new System.Drawing.Size(150, 35);
             this.ExitBtn.TabIndex = 1;
             this.ExitBtn.Text = "Exit";
             this.ExitBtn.UseVisualStyleBackColor = true;
@@ -1168,232 +1529,6 @@
             // 
             this.AdminHome.Enabled = true;
             this.AdminHome.Tick += new System.EventHandler(this.AdminHome_Tick);
-            // 
-            // searchLbl
-            // 
-            this.searchLbl.AutoSize = true;
-            this.searchLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLbl.Location = new System.Drawing.Point(137, 31);
-            this.searchLbl.Name = "searchLbl";
-            this.searchLbl.Size = new System.Drawing.Size(64, 20);
-            this.searchLbl.TabIndex = 2;
-            this.searchLbl.Text = "Search:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(153, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Search:";
-            // 
-            // RemoveUserGroupBtn
-            // 
-            this.RemoveUserGroupBtn.BackgroundImage = global::RaptorMath.Properties.Resources.trash_icon__1_;
-            this.RemoveUserGroupBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.RemoveUserGroupBtn.Location = new System.Drawing.Point(409, 399);
-            this.RemoveUserGroupBtn.Name = "RemoveUserGroupBtn";
-            this.RemoveUserGroupBtn.Size = new System.Drawing.Size(40, 40);
-            this.RemoveUserGroupBtn.TabIndex = 11;
-            this.RemoveUserGroupBtn.UseVisualStyleBackColor = true;
-            this.RemoveUserGroupBtn.Click += new System.EventHandler(this.RemoveUserGroupBtn_Click);
-            // 
-            // SaveChangesBtn
-            // 
-            this.SaveChangesBtn.BackgroundImage = global::RaptorMath.Properties.Resources.System_Save_icon__1_;
-            this.SaveChangesBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.SaveChangesBtn.Location = new System.Drawing.Point(166, 399);
-            this.SaveChangesBtn.Name = "SaveChangesBtn";
-            this.SaveChangesBtn.Size = new System.Drawing.Size(40, 40);
-            this.SaveChangesBtn.TabIndex = 10;
-            this.SaveChangesBtn.UseVisualStyleBackColor = true;
-            this.SaveChangesBtn.Click += new System.EventHandler(this.SaveChangesBtn_Click);
-            // 
-            // ImportFromTextFileBtn
-            // 
-            this.ImportFromTextFileBtn.BackgroundImage = global::RaptorMath.Properties.Resources.import_icon__1_;
-            this.ImportFromTextFileBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ImportFromTextFileBtn.Location = new System.Drawing.Point(423, 421);
-            this.ImportFromTextFileBtn.Name = "ImportFromTextFileBtn";
-            this.ImportFromTextFileBtn.Size = new System.Drawing.Size(40, 40);
-            this.ImportFromTextFileBtn.TabIndex = 22;
-            this.ImportFromTextFileBtn.UseVisualStyleBackColor = true;
-            this.ImportFromTextFileBtn.Click += new System.EventHandler(this.ImportFromTextFileBtn_Click);
-            // 
-            // SaveNewUserBtn
-            // 
-            this.SaveNewUserBtn.BackgroundImage = global::RaptorMath.Properties.Resources.System_Save_icon__1_;
-            this.SaveNewUserBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.SaveNewUserBtn.Location = new System.Drawing.Point(188, 419);
-            this.SaveNewUserBtn.Name = "SaveNewUserBtn";
-            this.SaveNewUserBtn.Size = new System.Drawing.Size(40, 40);
-            this.SaveNewUserBtn.TabIndex = 21;
-            this.SaveNewUserBtn.UseVisualStyleBackColor = true;
-            this.SaveNewUserBtn.Click += new System.EventHandler(this.SaveNewUserBtn_Click);
-            // 
-            // About
-            // 
-            this.About.BackgroundImage = global::RaptorMath.Properties.Resources.aboutbackground;
-            this.About.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.About.Controls.Add(this.label15);
-            this.About.Controls.Add(this.label14);
-            this.About.Controls.Add(this.label13);
-            this.About.Controls.Add(this.label12);
-            this.About.Controls.Add(this.label11);
-            this.About.Controls.Add(this.label10);
-            this.About.Controls.Add(this.label9);
-            this.About.Controls.Add(this.label8);
-            this.About.Controls.Add(this.label7);
-            this.About.Controls.Add(this.label6);
-            this.About.Controls.Add(this.label4);
-            this.About.Controls.Add(this.label3);
-            this.About.Controls.Add(this.label5);
-            this.About.ImageIndex = 7;
-            this.About.Location = new System.Drawing.Point(4, 44);
-            this.About.Name = "About";
-            this.About.Size = new System.Drawing.Size(1362, 613);
-            this.About.TabIndex = 4;
-            this.About.Text = "About";
-            this.About.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Matisse ITC", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(93, 59);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 39);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Raptor Math";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(309, 59);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 39);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "About ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(256, 45);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 59);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "|";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(209, 134);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(216, 23);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Welcome to Raptor Math!";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(209, 346);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 23);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Our Goal";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(828, 134);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(143, 23);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Have Questions?";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(828, 398);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 23);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Who We Are";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(212, 167);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(432, 152);
-            this.label10.TabIndex = 8;
-            this.label10.Text = resources.GetString("label10.Text");
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(212, 386);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(341, 114);
-            this.label11.TabIndex = 9;
-            this.label11.Text = resources.GetString("label11.Text");
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label12.Location = new System.Drawing.Point(843, 167);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(346, 209);
-            this.label12.TabIndex = 10;
-            this.label12.Text = resources.GetString("label12.Text");
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label13.Location = new System.Drawing.Point(843, 431);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(273, 95);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "Team Velociraptor:\r\n\r\nJoshua Boone                    Kyle Bridges\r\nCian Carota  " +
-    "                     Justine Dinh\r\nCody Jordan                      Harvey Kreit" +
-    "zer";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Matisse ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(635, 552);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(83, 20);
-            this.label14.TabIndex = 12;
-            this.label14.Text = "Raptor Math";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(716, 553);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(54, 19);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "©2014";
             // 
             // AdminHomepage
             // 
@@ -1439,10 +1574,10 @@
             this.ExistingUsersBox.ResumeLayout(false);
             this.ExistingUsersBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExistingUserDataDisplay)).EndInit();
-            this.ReportGroupBox.ResumeLayout(false);
-            this.ReportGroupBox.PerformLayout();
             this.About.ResumeLayout(false);
             this.About.PerformLayout();
+            this.ReportGroupBox.ResumeLayout(false);
+            this.ReportGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1468,8 +1603,7 @@
         private System.Windows.Forms.Label LastLoginLbl;
         private System.Windows.Forms.TextBox SearchTxtBox;
         private System.Windows.Forms.DataGridView GroupNameDataDisplay;
-        private System.Windows.Forms.Button GroupReportBtn;
-        private System.Windows.Forms.Button StudentReportBtn;
+        private System.Windows.Forms.Button SelectReportBtn;
         private System.Windows.Forms.Button ExportToExcelBtn;
         private System.Windows.Forms.DataGridView GroupSnapshotDataDisplay;
         private System.Windows.Forms.GroupBox ManageDrillsBox;
@@ -1528,12 +1662,6 @@
         private System.Windows.Forms.ComboBox GroupNameCmbBox;
         private System.Windows.Forms.ComboBox GroupNameComboBox;
         private System.Windows.Forms.Timer AdminHome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DrillsAssigned;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DrillsCompleted;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AveragePercent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastLogin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GroupName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Drillname_Assigned;
         private System.Windows.Forms.DataGridViewTextBoxColumn DrillName;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentAdminName;
@@ -1557,5 +1685,23 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DateTimePicker StartDate;
+        private System.Windows.Forms.Label ReportHome_StartDateLbl;
+        private System.Windows.Forms.DateTimePicker EndDate;
+        private System.Windows.Forms.Label ReportHome_EndDateLbl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GroupName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentGroupName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AssignedDrillName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateTaken;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumQuestions;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PercentCorrect;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumSkipped;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DrillsAssigned;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DrillsCompleted;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AveragePercent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AvgWrong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AvgSkipped;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastLogin;
     }
 }
