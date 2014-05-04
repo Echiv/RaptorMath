@@ -77,7 +77,7 @@ namespace RaptorMath
                 localManager.UpdateCurrentNumber();
                 //SaveDrill();
                 //localManager.currentStudent.ResetCurrentDrill();
-                MessageBox.Show("Too the report page!", "Raptor Math", MessageBoxButtons.OK);
+                MessageBox.Show("To the report page!", "Raptor Math", MessageBoxButtons.OK);
                 localManager.SetWindow(Window.drillReport);
                 this.Close();
             }
@@ -125,7 +125,7 @@ namespace RaptorMath
                     localManager.UpdateCurrentNumber();
                     //SaveDrill();
                     //localManager.currentStudent.ResetCurrentDrill();
-                    MessageBox.Show("Too the report page!", "Raptor Math", MessageBoxButtons.OK);
+                    MessageBox.Show("To the report page!", "Raptor Math", MessageBoxButtons.OK);
                     localManager.SetWindow(Window.drillReport);
                     this.Close();
                 }

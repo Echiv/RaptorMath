@@ -1138,6 +1138,8 @@ namespace RaptorMath
                         GroupNameCmbBox.Text = string.Empty;
                     }
                     FirstNameCmboBox.Select();
+                    ExistingUserDataDisplay.Rows.Clear();
+                    DisplayFoundStudents(localManager.studentList, ExistingUserDataDisplay);
                 }
                 else
                 {
