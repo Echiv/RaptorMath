@@ -65,6 +65,7 @@ namespace RaptorMath
             // The Setup tab
             else if (e.TabPageIndex == 1)
             {
+                ExportToExcelBtn.Enabled = false;
                 StudentsRdo.Checked = true;
                 DisableSetupButtons();
                 SetupExistingUserDataDisplay.Rows.Clear();
@@ -78,6 +79,7 @@ namespace RaptorMath
             // The Edit Users tab
             else if (e.TabPageIndex == 2)
             {
+                ExportToExcelBtn.Enabled = false;
                 // Refresh the group names
                 RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
                 SaveChangesBtn.Enabled = false;
@@ -90,6 +92,7 @@ namespace RaptorMath
             // The Add Users tab
             else if (e.TabPageIndex == 3)
             {
+                ExportToExcelBtn.Enabled = false;
                 // Refresh the group names
                 RefreshComboBox(GroupNameCmbBox, localManager.GetGroupNames());
                 // Refesh the first names
@@ -99,6 +102,11 @@ namespace RaptorMath
                 SaveNewUserBtn.Enabled = false;
                 ExistingUserDataDisplay.Rows.Clear();
                 DisplayFoundStudents(localManager.studentList, ExistingUserDataDisplay);
+            }
+            // The About tab
+            else if (e.TabPageIndex == 3)
+            {
+                ExportToExcelBtn.Enabled = false;
             }
         }
 
