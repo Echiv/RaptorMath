@@ -68,7 +68,6 @@ namespace RaptorMath
             PlayDrillAnswerLbl.Text = MathDrill_ProblemPrompt.Text + " " + localManager.currSolution.ToString();
             localManager.currentStudent.curDrill.IncrementSkipped();
             localManager.currentStudent.curDrill.IncrementWrong();
-            RefreshRange();
             // CASE: Don't skip the last problem.
             if (localManager.ReachesEnd(localManager.GetCurrentNumber(), MathDrill_TotalNumberLbl.Text.Trim()) == true)
             {
@@ -76,12 +75,13 @@ namespace RaptorMath
                 MathDrill_SkipBtn.Enabled = false;
                 MathDrill_SubmitBtn.Enabled = false;
                 localManager.UpdateCurrentNumber();
-                SaveDrill();
-                localManager.currentStudent.ResetCurrentDrill();
-                MessageBox.Show("Completed! Good job!", "Raptor Math", MessageBoxButtons.OK);
-                return;
+                //SaveDrill();
+                //localManager.currentStudent.ResetCurrentDrill();
+                MessageBox.Show("Too the report page!", "Raptor Math", MessageBoxButtons.OK);
+                localManager.SetWindow(Window.drillReport);
+                this.Close();
             }
-
+            RefreshRange();
             MathDrill_CurrentNumLbl.Text = localManager.UpdateCurrentNumber();
             this.MathDrill_InputTxt.Focus();
         }
@@ -123,9 +123,11 @@ namespace RaptorMath
                     MathDrill_SkipBtn.Enabled = false;
                     MathDrill_SubmitBtn.Enabled = false;
                     localManager.UpdateCurrentNumber();
-                    SaveDrill();
-                    localManager.currentStudent.ResetCurrentDrill();
-                    MessageBox.Show("All done!", "Raptor Math", MessageBoxButtons.OK);
+                    //SaveDrill();
+                    //localManager.currentStudent.ResetCurrentDrill();
+                    MessageBox.Show("Too the report page!", "Raptor Math", MessageBoxButtons.OK);
+                    localManager.SetWindow(Window.drillReport);
+                    this.Close();
                 }
                 else
                 {

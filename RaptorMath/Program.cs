@@ -76,6 +76,11 @@ namespace RaptorMath
                             Application.Run(new PlayDrill(allManager));
                             break;
                         }
+                    case Window.drillReport:
+                        {
+                            Application.Run(new DrillReport(allManager));
+                            break;
+                        }
                     case Window.mngUsers:
                         {
                             Application.Run(new MngUsers_Form(allManager));

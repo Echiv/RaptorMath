@@ -58,7 +58,7 @@ namespace RaptorMath
         authUser, adminHome, adminReport,
         stuHome
         , stuDrill, mngUsers, createDrill, editStudents, mngDrills
-        , mngGroups, reportGroup, reportSingle, studentReports };
+        , mngGroups, reportGroup, reportSingle, studentReports, drillReport };
     public class Manager
     {
         Window form = Window.authUser;

@@ -28,114 +28,115 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.NameLbl = new System.Windows.Forms.Label();
+            this.TitleLbl = new System.Windows.Forms.Label();
+            this.StudentPercentageLbl = new System.Windows.Forms.Label();
+            this.PercentageLbl = new System.Windows.Forms.Label();
+            this.NumberIncorretLbl = new System.Windows.Forms.Label();
+            this.CorrectLbl = new System.Windows.Forms.Label();
+            this.IncorrectLbl = new System.Windows.Forms.Label();
+            this.NumberCorrectlbl = new System.Windows.Forms.Label();
+            this.FinishBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // NameLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(346, 218);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 42);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "<Student Name>";
+            this.NameLbl.AutoSize = true;
+            this.NameLbl.BackColor = System.Drawing.Color.Transparent;
+            this.NameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLbl.Location = new System.Drawing.Point(346, 218);
+            this.NameLbl.Name = "NameLbl";
+            this.NameLbl.Size = new System.Drawing.Size(300, 42);
+            this.NameLbl.TabIndex = 0;
+            this.NameLbl.Text = "<Student Name>";
             // 
-            // label2
+            // TitleLbl
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(340, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(306, 73);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Results";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TitleLbl.BackColor = System.Drawing.Color.Transparent;
+            this.TitleLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleLbl.Location = new System.Drawing.Point(340, 96);
+            this.TitleLbl.Name = "TitleLbl";
+            this.TitleLbl.Size = new System.Drawing.Size(306, 73);
+            this.TitleLbl.TabIndex = 1;
+            this.TitleLbl.Text = "Results";
+            this.TitleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // StudentPercentageLbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(541, 318);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 24);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "<drill percentage>";
+            this.StudentPercentageLbl.AutoSize = true;
+            this.StudentPercentageLbl.BackColor = System.Drawing.Color.Transparent;
+            this.StudentPercentageLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StudentPercentageLbl.Location = new System.Drawing.Point(541, 318);
+            this.StudentPercentageLbl.Name = "StudentPercentageLbl";
+            this.StudentPercentageLbl.Size = new System.Drawing.Size(162, 24);
+            this.StudentPercentageLbl.TabIndex = 2;
+            this.StudentPercentageLbl.Text = "<drill percentage>";
             // 
-            // label4
+            // PercentageLbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(302, 318);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 24);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Percentage:";
+            this.PercentageLbl.AutoSize = true;
+            this.PercentageLbl.BackColor = System.Drawing.Color.Transparent;
+            this.PercentageLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PercentageLbl.Location = new System.Drawing.Point(302, 318);
+            this.PercentageLbl.Name = "PercentageLbl";
+            this.PercentageLbl.Size = new System.Drawing.Size(197, 24);
+            this.PercentageLbl.TabIndex = 3;
+            this.PercentageLbl.Text = "Percentage Correct:";
             // 
-            // label5
+            // NumberIncorretLbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(541, 440);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 24);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "<incorrect>";
+            this.NumberIncorretLbl.AutoSize = true;
+            this.NumberIncorretLbl.BackColor = System.Drawing.Color.Transparent;
+            this.NumberIncorretLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumberIncorretLbl.Location = new System.Drawing.Point(541, 440);
+            this.NumberIncorretLbl.Name = "NumberIncorretLbl";
+            this.NumberIncorretLbl.Size = new System.Drawing.Size(105, 24);
+            this.NumberIncorretLbl.TabIndex = 4;
+            this.NumberIncorretLbl.Text = "<incorrect>";
             // 
-            // label6
+            // CorrectLbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(302, 382);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(184, 24);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Questions Correct:";
+            this.CorrectLbl.AutoSize = true;
+            this.CorrectLbl.BackColor = System.Drawing.Color.Transparent;
+            this.CorrectLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CorrectLbl.Location = new System.Drawing.Point(302, 382);
+            this.CorrectLbl.Name = "CorrectLbl";
+            this.CorrectLbl.Size = new System.Drawing.Size(184, 24);
+            this.CorrectLbl.TabIndex = 5;
+            this.CorrectLbl.Text = "Questions Correct:";
             // 
-            // label7
+            // IncorrectLbl
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(302, 440);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(178, 24);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Questions Wrong:";
+            this.IncorrectLbl.AutoSize = true;
+            this.IncorrectLbl.BackColor = System.Drawing.Color.Transparent;
+            this.IncorrectLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IncorrectLbl.Location = new System.Drawing.Point(302, 440);
+            this.IncorrectLbl.Name = "IncorrectLbl";
+            this.IncorrectLbl.Size = new System.Drawing.Size(178, 24);
+            this.IncorrectLbl.TabIndex = 6;
+            this.IncorrectLbl.Text = "Questions Wrong:";
             // 
-            // label8
+            // NumberCorrectlbl
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(541, 382);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 24);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "<correct>";
+            this.NumberCorrectlbl.AutoSize = true;
+            this.NumberCorrectlbl.BackColor = System.Drawing.Color.Transparent;
+            this.NumberCorrectlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumberCorrectlbl.Location = new System.Drawing.Point(541, 382);
+            this.NumberCorrectlbl.Name = "NumberCorrectlbl";
+            this.NumberCorrectlbl.Size = new System.Drawing.Size(90, 24);
+            this.NumberCorrectlbl.TabIndex = 7;
+            this.NumberCorrectlbl.Text = "<correct>";
             // 
-            // button1
+            // FinishBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(452, 521);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 44);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Finish";
-            this.button1.UseVisualStyleBackColor = true;
+            this.FinishBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FinishBtn.Location = new System.Drawing.Point(452, 521);
+            this.FinishBtn.Name = "FinishBtn";
+            this.FinishBtn.Size = new System.Drawing.Size(96, 44);
+            this.FinishBtn.TabIndex = 8;
+            this.FinishBtn.Text = "Finish";
+            this.FinishBtn.UseVisualStyleBackColor = true;
+            this.FinishBtn.Click += new System.EventHandler(this.FinishBtn_Click);
             // 
             // DrillReport
             // 
@@ -143,16 +144,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::RaptorMath.Properties.Resources.FreeVector_Jungle_Background;
             this.ClientSize = new System.Drawing.Size(1008, 730);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.FinishBtn);
+            this.Controls.Add(this.NumberCorrectlbl);
+            this.Controls.Add(this.IncorrectLbl);
+            this.Controls.Add(this.CorrectLbl);
+            this.Controls.Add(this.NumberIncorretLbl);
+            this.Controls.Add(this.PercentageLbl);
+            this.Controls.Add(this.StudentPercentageLbl);
+            this.Controls.Add(this.TitleLbl);
+            this.Controls.Add(this.NameLbl);
             this.Name = "DrillReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DrillReport";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -161,14 +163,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label NameLbl;
+        private System.Windows.Forms.Label TitleLbl;
+        private System.Windows.Forms.Label StudentPercentageLbl;
+        private System.Windows.Forms.Label PercentageLbl;
+        private System.Windows.Forms.Label NumberIncorretLbl;
+        private System.Windows.Forms.Label CorrectLbl;
+        private System.Windows.Forms.Label IncorrectLbl;
+        private System.Windows.Forms.Label NumberCorrectlbl;
+        private System.Windows.Forms.Button FinishBtn;
     }
 }
