@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomepage));
             this.tab1 = new System.Windows.Forms.TabControl();
             this.Statistics = new System.Windows.Forms.TabPage();
@@ -44,6 +44,18 @@
             this.ReportHome_StartDateLbl = new System.Windows.Forms.Label();
             this.SelectReportBtn = new System.Windows.Forms.Button();
             this.GroupSnapshotDataDisplay = new System.Windows.Forms.DataGridView();
+            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DrillsAssigned = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DrillsCompleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AveragePercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AvgWrong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AvgSkipped = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AssignedDrillName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateTaken = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumQuestions = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PercentCorrect = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumSkipped = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupNameDataDisplay = new System.Windows.Forms.DataGridView();
             this.GroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentGroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -142,18 +154,7 @@
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.AdminHome = new System.Windows.Forms.Timer(this.components);
-            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DrillsAssigned = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DrillsCompleted = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AveragePercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AvgWrong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AvgSkipped = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AssignedDrillName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateTaken = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumQuestions = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PercentCorrect = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumSkipped = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreateGroupBtn = new System.Windows.Forms.Button();
             this.tab1.SuspendLayout();
             this.Statistics.SuspendLayout();
             this.GroupSearchBox.SuspendLayout();
@@ -315,16 +316,112 @@
             this.GroupSnapshotDataDisplay.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.GroupSnapshotDataDisplay_RowsRemoved);
             this.GroupSnapshotDataDisplay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             // 
+            // StudentName
+            // 
+            this.StudentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.StudentName.HeaderText = "Student Name";
+            this.StudentName.Name = "StudentName";
+            this.StudentName.ReadOnly = true;
+            this.StudentName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // DrillsAssigned
+            // 
+            this.DrillsAssigned.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DrillsAssigned.HeaderText = "# Drills Assigned";
+            this.DrillsAssigned.Name = "DrillsAssigned";
+            this.DrillsAssigned.ReadOnly = true;
+            this.DrillsAssigned.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // DrillsCompleted
+            // 
+            this.DrillsCompleted.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DrillsCompleted.HeaderText = "# Drills Completed";
+            this.DrillsCompleted.Name = "DrillsCompleted";
+            this.DrillsCompleted.ReadOnly = true;
+            this.DrillsCompleted.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // AveragePercent
+            // 
+            this.AveragePercent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AveragePercent.HeaderText = "Average Percent";
+            this.AveragePercent.Name = "AveragePercent";
+            this.AveragePercent.ReadOnly = true;
+            this.AveragePercent.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // AvgWrong
+            // 
+            this.AvgWrong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AvgWrong.HeaderText = "Average Wrong";
+            this.AvgWrong.Name = "AvgWrong";
+            this.AvgWrong.ReadOnly = true;
+            this.AvgWrong.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // AvgSkipped
+            // 
+            this.AvgSkipped.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AvgSkipped.HeaderText = "Average Skipped";
+            this.AvgSkipped.Name = "AvgSkipped";
+            this.AvgSkipped.ReadOnly = true;
+            this.AvgSkipped.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // LastLogin
+            // 
+            this.LastLogin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.LastLogin.HeaderText = "Last Login";
+            this.LastLogin.Name = "LastLogin";
+            this.LastLogin.ReadOnly = true;
+            this.LastLogin.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // AssignedDrillName
+            // 
+            this.AssignedDrillName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AssignedDrillName.HeaderText = "Drill Name";
+            this.AssignedDrillName.Name = "AssignedDrillName";
+            this.AssignedDrillName.ReadOnly = true;
+            this.AssignedDrillName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // DateTaken
+            // 
+            this.DateTaken.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DateTaken.HeaderText = "Date Taken";
+            this.DateTaken.Name = "DateTaken";
+            this.DateTaken.ReadOnly = true;
+            this.DateTaken.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // NumQuestions
+            // 
+            this.NumQuestions.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NumQuestions.HeaderText = "# Questions";
+            this.NumQuestions.Name = "NumQuestions";
+            this.NumQuestions.ReadOnly = true;
+            this.NumQuestions.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // PercentCorrect
+            // 
+            this.PercentCorrect.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PercentCorrect.HeaderText = "% Correct";
+            this.PercentCorrect.Name = "PercentCorrect";
+            this.PercentCorrect.ReadOnly = true;
+            this.PercentCorrect.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // NumSkipped
+            // 
+            this.NumSkipped.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NumSkipped.HeaderText = "# Skipped";
+            this.NumSkipped.Name = "NumSkipped";
+            this.NumSkipped.ReadOnly = true;
+            this.NumSkipped.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // GroupNameDataDisplay
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.GroupNameDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GroupNameDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GroupName,
@@ -454,32 +551,32 @@
             // 
             // AvailableDrillDataDisplay
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.AvailableDrillDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AvailableDrillDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DrillName});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle18;
             this.AvailableDrillDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.AvailableDrillDataDisplay.Location = new System.Drawing.Point(3, 86);
             this.AvailableDrillDataDisplay.Name = "AvailableDrillDataDisplay";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.AvailableDrillDataDisplay.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.AvailableDrillDataDisplay.Size = new System.Drawing.Size(414, 468);
             this.AvailableDrillDataDisplay.TabIndex = 0;
@@ -948,6 +1045,7 @@
             // AddNewUserBox
             // 
             this.AddNewUserBox.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.AddNewUserBox.Controls.Add(this.CreateGroupBtn);
             this.AddNewUserBox.Controls.Add(this.LastNameCmboBox);
             this.AddNewUserBox.Controls.Add(this.FirstNameCmboBox);
             this.AddNewUserBox.Controls.Add(this.GroupNameCmbBox);
@@ -996,8 +1094,9 @@
             this.GroupNameCmbBox.FormattingEnabled = true;
             this.GroupNameCmbBox.Location = new System.Drawing.Point(267, 82);
             this.GroupNameCmbBox.Name = "GroupNameCmbBox";
-            this.GroupNameCmbBox.Size = new System.Drawing.Size(229, 28);
+            this.GroupNameCmbBox.Size = new System.Drawing.Size(235, 28);
             this.GroupNameCmbBox.TabIndex = 27;
+            this.GroupNameCmbBox.TextChanged += new System.EventHandler(this.GroupNameCmbBox_TextChanged);
             this.GroupNameCmbBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LettersAndDigitsKeyPress);
             // 
             // ImportFromTextFileBtn
@@ -1025,7 +1124,7 @@
             // LockGroupNameCheckBox
             // 
             this.LockGroupNameCheckBox.AutoSize = true;
-            this.LockGroupNameCheckBox.Location = new System.Drawing.Point(267, 116);
+            this.LockGroupNameCheckBox.Location = new System.Drawing.Point(303, 116);
             this.LockGroupNameCheckBox.Name = "LockGroupNameCheckBox";
             this.LockGroupNameCheckBox.Size = new System.Drawing.Size(157, 24);
             this.LockGroupNameCheckBox.TabIndex = 17;
@@ -1437,101 +1536,15 @@
             this.AdminHome.Enabled = true;
             this.AdminHome.Tick += new System.EventHandler(this.AdminHome_Tick);
             // 
-            // StudentName
+            // CreateGroupBtn
             // 
-            this.StudentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.StudentName.HeaderText = "Student Name";
-            this.StudentName.Name = "StudentName";
-            this.StudentName.ReadOnly = true;
-            this.StudentName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // DrillsAssigned
-            // 
-            this.DrillsAssigned.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DrillsAssigned.HeaderText = "# Drills Assigned";
-            this.DrillsAssigned.Name = "DrillsAssigned";
-            this.DrillsAssigned.ReadOnly = true;
-            this.DrillsAssigned.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // DrillsCompleted
-            // 
-            this.DrillsCompleted.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DrillsCompleted.HeaderText = "# Drills Completed";
-            this.DrillsCompleted.Name = "DrillsCompleted";
-            this.DrillsCompleted.ReadOnly = true;
-            this.DrillsCompleted.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // AveragePercent
-            // 
-            this.AveragePercent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AveragePercent.HeaderText = "Average Percent";
-            this.AveragePercent.Name = "AveragePercent";
-            this.AveragePercent.ReadOnly = true;
-            this.AveragePercent.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // AvgWrong
-            // 
-            this.AvgWrong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AvgWrong.HeaderText = "Average Wrong";
-            this.AvgWrong.Name = "AvgWrong";
-            this.AvgWrong.ReadOnly = true;
-            this.AvgWrong.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // AvgSkipped
-            // 
-            this.AvgSkipped.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AvgSkipped.HeaderText = "Average Skipped";
-            this.AvgSkipped.Name = "AvgSkipped";
-            this.AvgSkipped.ReadOnly = true;
-            this.AvgSkipped.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // LastLogin
-            // 
-            this.LastLogin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.LastLogin.HeaderText = "Last Login";
-            this.LastLogin.Name = "LastLogin";
-            this.LastLogin.ReadOnly = true;
-            this.LastLogin.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // AssignedDrillName
-            // 
-            this.AssignedDrillName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AssignedDrillName.HeaderText = "Drill Name";
-            this.AssignedDrillName.Name = "AssignedDrillName";
-            this.AssignedDrillName.ReadOnly = true;
-            this.AssignedDrillName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // DateTaken
-            // 
-            this.DateTaken.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DateTaken.HeaderText = "Date Taken";
-            this.DateTaken.Name = "DateTaken";
-            this.DateTaken.ReadOnly = true;
-            this.DateTaken.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // NumQuestions
-            // 
-            this.NumQuestions.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NumQuestions.HeaderText = "# Questions";
-            this.NumQuestions.Name = "NumQuestions";
-            this.NumQuestions.ReadOnly = true;
-            this.NumQuestions.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // PercentCorrect
-            // 
-            this.PercentCorrect.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PercentCorrect.HeaderText = "% Correct";
-            this.PercentCorrect.Name = "PercentCorrect";
-            this.PercentCorrect.ReadOnly = true;
-            this.PercentCorrect.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // NumSkipped
-            // 
-            this.NumSkipped.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NumSkipped.HeaderText = "# Skipped";
-            this.NumSkipped.Name = "NumSkipped";
-            this.NumSkipped.ReadOnly = true;
-            this.NumSkipped.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.CreateGroupBtn.Location = new System.Drawing.Point(303, 146);
+            this.CreateGroupBtn.Name = "CreateGroupBtn";
+            this.CreateGroupBtn.Size = new System.Drawing.Size(150, 35);
+            this.CreateGroupBtn.TabIndex = 1;
+            this.CreateGroupBtn.Text = "Create Group";
+            this.CreateGroupBtn.UseVisualStyleBackColor = true;
+            this.CreateGroupBtn.Click += new System.EventHandler(this.CreateGroupBtn_Click);
             // 
             // AdminHomepage
             // 
@@ -1706,5 +1719,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NumQuestions;
         private System.Windows.Forms.DataGridViewTextBoxColumn PercentCorrect;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumSkipped;
+        private System.Windows.Forms.Button CreateGroupBtn;
     }
 }

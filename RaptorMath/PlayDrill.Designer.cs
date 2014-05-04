@@ -59,7 +59,7 @@
             this.MathDrill_TimeLbl.AutoSize = true;
             this.MathDrill_TimeLbl.BackColor = System.Drawing.Color.White;
             this.MathDrill_TimeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MathDrill_TimeLbl.Location = new System.Drawing.Point(871, 30);
+            this.MathDrill_TimeLbl.Location = new System.Drawing.Point(868, 32);
             this.MathDrill_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_TimeLbl.Name = "MathDrill_TimeLbl";
             this.MathDrill_TimeLbl.Size = new System.Drawing.Size(83, 25);
@@ -68,18 +68,17 @@
             // 
             // MathDrill_StudentNameLbl
             // 
-            this.MathDrill_StudentNameLbl.AutoSize = true;
             this.MathDrill_StudentNameLbl.BackColor = System.Drawing.Color.White;
             this.MathDrill_StudentNameLbl.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.MathDrill_StudentNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MathDrill_StudentNameLbl.Image = global::RaptorMath.Properties.Resources.scroll1;
-            this.MathDrill_StudentNameLbl.Location = new System.Drawing.Point(59, 22);
+            this.MathDrill_StudentNameLbl.Location = new System.Drawing.Point(38, 22);
             this.MathDrill_StudentNameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_StudentNameLbl.Name = "MathDrill_StudentNameLbl";
-            this.MathDrill_StudentNameLbl.Size = new System.Drawing.Size(123, 29);
+            this.MathDrill_StudentNameLbl.Size = new System.Drawing.Size(210, 29);
             this.MathDrill_StudentNameLbl.TabIndex = 28;
             this.MathDrill_StudentNameLbl.Text = "<Student>";
-            this.MathDrill_StudentNameLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.MathDrill_StudentNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MathDrill_DateLbl
             // 

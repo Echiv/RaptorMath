@@ -1391,6 +1391,19 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Handle Text Changed event.</summary>
+        private void GroupNameCmbBox_TextChanged(object sender, EventArgs e)
+        {
+            if (GroupNameCmbBox.Text.Length > 0)
+                CreateGroupBtn.Enabled = true;
+            else
+                CreateGroupBtn.Enabled = false;
+        }
+
         /* The code in this section is for resetting text boxes and the like*/
 
         // This part is for the Edit Users tab
@@ -1657,6 +1670,28 @@ namespace RaptorMath
             if (GroupSnapshotDataDisplay.Rows.Count < 2)
             {
                 ExportToExcelBtn.Enabled = false;
+            }
+        }
+
+        private void CreateGroupBtn_Click(object sender, EventArgs e)
+        {
+            string newGroupName = localManager.RemoveExtraWhiteSpace(GroupNameCmbBox.Text);
+            if (newGroupName != string.Empty)
+            {
+                bool isGroupAdded = localManager.CreateGroup(newGroupName);
+                if (isGroupAdded)
+                {
+                    MessageBox.Show("New group created.", "Raptor Math", MessageBoxButtons.OK);
+                    GroupNameCmbBox.Text = string.Empty;
+                }
+                else
+                {
+                    MessageBox.Show("A group with the provided name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("A group name cannot be blank.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
