@@ -109,14 +109,13 @@
             // 
             // StuHome_StudentNameLbl
             // 
-            this.StuHome_StudentNameLbl.AutoSize = true;
             this.StuHome_StudentNameLbl.BackColor = System.Drawing.Color.Transparent;
             this.StuHome_StudentNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StuHome_StudentNameLbl.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.StuHome_StudentNameLbl.Location = new System.Drawing.Point(405, 173);
+            this.StuHome_StudentNameLbl.Location = new System.Drawing.Point(183, 173);
             this.StuHome_StudentNameLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.StuHome_StudentNameLbl.Name = "StuHome_StudentNameLbl";
-            this.StuHome_StudentNameLbl.Size = new System.Drawing.Size(246, 55);
+            this.StuHome_StudentNameLbl.Size = new System.Drawing.Size(704, 55);
             this.StuHome_StudentNameLbl.TabIndex = 27;
             this.StuHome_StudentNameLbl.Text = "<Student>";
             this.StuHome_StudentNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

@@ -101,7 +101,7 @@ namespace RaptorMath
         /// <summary>Sets this windows labels.</summary>
         public void SetLabels()
         {
-            StuHome_StudentNameLbl.Text = localManager.currentUser;
+            StuHome_StudentNameLbl.Text = localManager.currentStudent.FirstName;
             if (localManager.currentStudent.LastLogin == "Unknown")
                 StuHome_LoginDateLbl.Text = "--/--/----";
             else
