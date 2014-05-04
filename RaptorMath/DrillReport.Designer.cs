@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DrillReport));
             this.NameLbl = new System.Windows.Forms.Label();
             this.TitleLbl = new System.Windows.Forms.Label();
             this.StudentPercentageLbl = new System.Windows.Forms.Label();
@@ -140,8 +141,7 @@
             // 
             // DrillReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::RaptorMath.Properties.Resources.FreeVector_Jungle_Background;
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.FinishBtn);
@@ -153,6 +153,8 @@
             this.Controls.Add(this.StudentPercentageLbl);
             this.Controls.Add(this.TitleLbl);
             this.Controls.Add(this.NameLbl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DrillReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DrillReport";
