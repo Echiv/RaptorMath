@@ -40,11 +40,6 @@ namespace RaptorMath
             FillSingleColumnDataGrid(localManager.GetGroupNames() , GroupNameDataDisplay);
             SetupGroupReports();
             SetUpReportDate();
-
-            //foreach (Control control in this.Controls)
-            //{
-            //    control.PreviewKeyDown += new PreviewKeyDownEventHandler(Control_PreviewKeyDown);
-            //}
         }
 
         //------------------------------------------------------------------//
@@ -972,15 +967,6 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
-        private void GroupNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        //------------------------------------------------------------------//
-        // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/24/14                                                    //
-        //------------------------------------------------------------------//
         /// <summary>Resets the boxes sued to modify a student.</summary>
         private void SaveChangesBtn_Click(object sender, EventArgs e)
         {
@@ -1003,6 +989,7 @@ namespace RaptorMath
                         NumberRewardsTxt.Text = string.Empty;
                         RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
                         RefreshDataGrid();
+                        SetupEditableUser();
                     }
                     else if (isValidEdit == 1)
                     {
@@ -1058,6 +1045,7 @@ namespace RaptorMath
                         GroupNameComboBox.Text = string.Empty;
                         FirstNameTxtBox.Text = string.Empty;
                         LastNameTxtBox.Text = string.Empty;
+                        NumberRewardsTxt.Text = string.Empty;
                         RefreshDataGrid();
                     }
                     else
@@ -1413,7 +1401,7 @@ namespace RaptorMath
         /// <summary>Handle Text Changed event.</summary>
         private void GroupNameCmbBox_TextChanged(object sender, EventArgs e)
         {
-            if (GroupNameCmbBox.Text.Length > 0)
+            if (GroupNameComboBox.Text.Length > 0)
                 CreateGroupBtn.Enabled = true;
             else
                 CreateGroupBtn.Enabled = false;
@@ -1454,6 +1442,10 @@ namespace RaptorMath
 
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
         private void SelectReportBtn_Click(object sender, EventArgs e)
         {
             SearchTxtBox.Text = string.Empty;
@@ -1469,6 +1461,10 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
         private void SetupStudentStatisticsGrid()
         {
             GroupSnapshotDataDisplay.Columns[0].Visible = false;
@@ -1485,6 +1481,10 @@ namespace RaptorMath
             GroupSnapshotDataDisplay.Columns[11].Visible = true;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
         private void SetupGroupStatisticsGrid()
         {
             GroupSnapshotDataDisplay.Columns[0].Visible = true;
@@ -1501,6 +1501,10 @@ namespace RaptorMath
             GroupSnapshotDataDisplay.Columns[11].Visible = false;
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
         private void SetupStudentReports()
         {
             GroupNameDataDisplay.Columns[1].Visible = true;
@@ -1512,6 +1516,10 @@ namespace RaptorMath
             FillStudentStatisticsGrid();
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
         private void SetupGroupReports()
         {
             GroupNameDataDisplay.Columns[1].Visible = false;
@@ -1598,7 +1606,7 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/10/14                                                     //
+        // Date: 4/10/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Exports the opened report to an excel file.</summary>
         private void GroupReportExcel(object sender, EventArgs e)
@@ -1672,6 +1680,10 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
         private void GroupSnapshotDataDisplay_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             if (GroupSnapshotDataDisplay.Rows.Count > 1)
@@ -1680,6 +1692,10 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
         private void GroupSnapshotDataDisplay_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             if (GroupSnapshotDataDisplay.Rows.Count < 2)
@@ -1688,9 +1704,13 @@ namespace RaptorMath
             }
         }
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
         private void CreateGroupBtn_Click(object sender, EventArgs e)
         {
-            string newGroupName = localManager.RemoveExtraWhiteSpace(GroupNameCmbBox.Text);
+            string newGroupName = localManager.RemoveExtraWhiteSpace(GroupNameComboBox.Text);
             if (newGroupName != string.Empty)
             {
                 bool isGroupAdded = localManager.CreateGroup(newGroupName);
@@ -1710,14 +1730,19 @@ namespace RaptorMath
             }
         }
 
-        private void GroupNameDataDisplay_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
+        private void CreateStudentBtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void groupBox4_Enter(object sender, EventArgs e)
-        {
-
+            MngUsers_Form manageUsersDialog = new MngUsers_Form(localManager);
+            manageUsersDialog.ShowDialog(this);
+            manageUsersDialog.Dispose();
+            SearchEditUsersTxtbox.Text = string.Empty;
+            ExistingUserDataEditUsersDisplay.Rows.Clear();
+            DisplayFoundStudents(localManager.studentList, ExistingUserDataEditUsersDisplay);
+            SetupEditableUser();
         }
     }
 }

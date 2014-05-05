@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomepage));
             this.tab1 = new System.Windows.Forms.TabControl();
             this.Statistics = new System.Windows.Forms.TabPage();
             this.GroupSearchBox = new System.Windows.Forms.GroupBox();
+            this.StatsSearchLbl = new System.Windows.Forms.Label();
             this.EndDate = new System.Windows.Forms.DateTimePicker();
             this.ReportHome_EndDateLbl = new System.Windows.Forms.Label();
             this.StartDate = new System.Windows.Forms.DateTimePicker();
@@ -82,6 +83,7 @@
             this.RemoveSelectedBtn = new System.Windows.Forms.Button();
             this.AssignSelectedBtn = new System.Windows.Forms.Button();
             this.ExistingUsersSetupBox = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.SetupExistingUserDataDisplay = new System.Windows.Forms.DataGridView();
             this.StudentAdminName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupName_Setup = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,6 +99,11 @@
             this.GroupNameEditUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchEditUsersTxtbox = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.CreateGroupBtn = new System.Windows.Forms.Button();
+            this.CreateStudentLbl = new System.Windows.Forms.Label();
+            this.CreateStudentBtn = new System.Windows.Forms.Button();
+            this.NumberRewardsTxt = new System.Windows.Forms.RichTextBox();
+            this.RewardLbl = new System.Windows.Forms.Label();
             this.GroupNameComboBox = new System.Windows.Forms.ComboBox();
             this.RemoveUserGroupBtn = new System.Windows.Forms.Button();
             this.SaveChangesBtn = new System.Windows.Forms.Button();
@@ -110,7 +117,6 @@
             this.AddUsers = new System.Windows.Forms.TabPage();
             this.AddUsersGroupBox = new System.Windows.Forms.GroupBox();
             this.AddNewUserBox = new System.Windows.Forms.GroupBox();
-            this.CreateGroupBtn = new System.Windows.Forms.Button();
             this.LastNameCmboBox = new System.Windows.Forms.ComboBox();
             this.FirstNameCmboBox = new System.Windows.Forms.ComboBox();
             this.GroupNameCmbBox = new System.Windows.Forms.ComboBox();
@@ -154,10 +160,6 @@
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.AdminHome = new System.Windows.Forms.Timer(this.components);
-            this.RewardLbl = new System.Windows.Forms.Label();
-            this.NumberRewardsTxt = new System.Windows.Forms.RichTextBox();
-            this.StatsSearchLbl = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.tab1.SuspendLayout();
             this.Statistics.SuspendLayout();
             this.GroupSearchBox.SuspendLayout();
@@ -238,6 +240,16 @@
             this.GroupSearchBox.TabIndex = 2;
             this.GroupSearchBox.TabStop = false;
             this.GroupSearchBox.Text = "Group Search";
+            // 
+            // StatsSearchLbl
+            // 
+            this.StatsSearchLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatsSearchLbl.Location = new System.Drawing.Point(28, 70);
+            this.StatsSearchLbl.Name = "StatsSearchLbl";
+            this.StatsSearchLbl.Size = new System.Drawing.Size(78, 24);
+            this.StatsSearchLbl.TabIndex = 27;
+            this.StatsSearchLbl.Text = "Search:";
+            this.StatsSearchLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EndDate
             // 
@@ -418,14 +430,14 @@
             // 
             // GroupNameDataDisplay
             // 
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.GroupNameDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GroupNameDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GroupName,
@@ -436,7 +448,6 @@
             this.GroupNameDataDisplay.TabIndex = 1;
             this.GroupNameDataDisplay.TabStop = false;
             this.GroupNameDataDisplay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GroupNameDataDisplay_CellContentClick);
-            this.GroupNameDataDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GroupNameDataDisplay_CellContentClick_1);
             this.GroupNameDataDisplay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             // 
             // GroupName
@@ -558,32 +569,32 @@
             // 
             // AvailableDrillDataDisplay
             // 
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
             this.AvailableDrillDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AvailableDrillDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DrillName});
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle13;
             this.AvailableDrillDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.AvailableDrillDataDisplay.Location = new System.Drawing.Point(3, 90);
             this.AvailableDrillDataDisplay.Name = "AvailableDrillDataDisplay";
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle44;
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.AvailableDrillDataDisplay.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.AvailableDrillDataDisplay.Size = new System.Drawing.Size(324, 468);
             this.AvailableDrillDataDisplay.TabIndex = 0;
@@ -735,6 +746,16 @@
             this.ExistingUsersSetupBox.TabStop = false;
             this.ExistingUsersSetupBox.Text = "Existing Users";
             // 
+            // label16
+            // 
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(61, 62);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(81, 24);
+            this.label16.TabIndex = 28;
+            this.label16.Text = "Search:";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // SetupExistingUserDataDisplay
             // 
             this.SetupExistingUserDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -837,7 +858,6 @@
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Existing Users";
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // searchLbl
             // 
@@ -892,6 +912,9 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.LightCoral;
+            this.groupBox5.Controls.Add(this.CreateGroupBtn);
+            this.groupBox5.Controls.Add(this.CreateStudentLbl);
+            this.groupBox5.Controls.Add(this.CreateStudentBtn);
             this.groupBox5.Controls.Add(this.NumberRewardsTxt);
             this.groupBox5.Controls.Add(this.RewardLbl);
             this.groupBox5.Controls.Add(this.GroupNameComboBox);
@@ -913,6 +936,56 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Modify Existing User";
             // 
+            // CreateGroupBtn
+            // 
+            this.CreateGroupBtn.Location = new System.Drawing.Point(471, 65);
+            this.CreateGroupBtn.Name = "CreateGroupBtn";
+            this.CreateGroupBtn.Size = new System.Drawing.Size(109, 26);
+            this.CreateGroupBtn.TabIndex = 17;
+            this.CreateGroupBtn.Text = "Create Group";
+            this.CreateGroupBtn.UseVisualStyleBackColor = true;
+            this.CreateGroupBtn.Click += new System.EventHandler(this.CreateGroupBtn_Click);
+            // 
+            // CreateStudentLbl
+            // 
+            this.CreateStudentLbl.AutoSize = true;
+            this.CreateStudentLbl.Location = new System.Drawing.Point(105, 422);
+            this.CreateStudentLbl.Name = "CreateStudentLbl";
+            this.CreateStudentLbl.Size = new System.Drawing.Size(106, 18);
+            this.CreateStudentLbl.TabIndex = 16;
+            this.CreateStudentLbl.Text = "Create Student";
+            this.CreateStudentLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CreateStudentBtn
+            // 
+            this.CreateStudentBtn.Location = new System.Drawing.Point(110, 365);
+            this.CreateStudentBtn.Name = "CreateStudentBtn";
+            this.CreateStudentBtn.Size = new System.Drawing.Size(87, 54);
+            this.CreateStudentBtn.TabIndex = 15;
+            this.CreateStudentBtn.UseVisualStyleBackColor = true;
+            this.CreateStudentBtn.Click += new System.EventHandler(this.CreateStudentBtn_Click);
+            // 
+            // NumberRewardsTxt
+            // 
+            this.NumberRewardsTxt.Location = new System.Drawing.Point(229, 224);
+            this.NumberRewardsTxt.MaxLength = 5;
+            this.NumberRewardsTxt.Multiline = false;
+            this.NumberRewardsTxt.Name = "NumberRewardsTxt";
+            this.NumberRewardsTxt.Size = new System.Drawing.Size(236, 25);
+            this.NumberRewardsTxt.TabIndex = 14;
+            this.NumberRewardsTxt.Text = "";
+            this.NumberRewardsTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_DigitKeyPress);
+            // 
+            // RewardLbl
+            // 
+            this.RewardLbl.AutoSize = true;
+            this.RewardLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RewardLbl.Location = new System.Drawing.Point(79, 227);
+            this.RewardLbl.Name = "RewardLbl";
+            this.RewardLbl.Size = new System.Drawing.Size(118, 18);
+            this.RewardLbl.TabIndex = 13;
+            this.RewardLbl.Text = "Reward Amount:";
+            // 
             // GroupNameComboBox
             // 
             this.GroupNameComboBox.FormattingEnabled = true;
@@ -920,7 +993,7 @@
             this.GroupNameComboBox.Name = "GroupNameComboBox";
             this.GroupNameComboBox.Size = new System.Drawing.Size(236, 26);
             this.GroupNameComboBox.TabIndex = 12;
-            this.GroupNameComboBox.SelectedIndexChanged += new System.EventHandler(this.GroupNameComboBox_SelectedIndexChanged);
+            this.GroupNameComboBox.TextChanged += new System.EventHandler(this.GroupNameCmbBox_TextChanged);
             this.GroupNameComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LettersAndDigitsKeyPress);
             // 
             // RemoveUserGroupBtn
@@ -1045,7 +1118,6 @@
             // AddNewUserBox
             // 
             this.AddNewUserBox.BackColor = System.Drawing.Color.Thistle;
-            this.AddNewUserBox.Controls.Add(this.CreateGroupBtn);
             this.AddNewUserBox.Controls.Add(this.LastNameCmboBox);
             this.AddNewUserBox.Controls.Add(this.FirstNameCmboBox);
             this.AddNewUserBox.Controls.Add(this.GroupNameCmbBox);
@@ -1065,16 +1137,6 @@
             this.AddNewUserBox.TabIndex = 0;
             this.AddNewUserBox.TabStop = false;
             this.AddNewUserBox.Text = "Add New User";
-            // 
-            // CreateGroupBtn
-            // 
-            this.CreateGroupBtn.Location = new System.Drawing.Point(267, 140);
-            this.CreateGroupBtn.Name = "CreateGroupBtn";
-            this.CreateGroupBtn.Size = new System.Drawing.Size(150, 35);
-            this.CreateGroupBtn.TabIndex = 1;
-            this.CreateGroupBtn.Text = "Create Group";
-            this.CreateGroupBtn.UseVisualStyleBackColor = true;
-            this.CreateGroupBtn.Click += new System.EventHandler(this.CreateGroupBtn_Click);
             // 
             // LastNameCmboBox
             // 
@@ -1549,47 +1611,6 @@
             this.AdminHome.Enabled = true;
             this.AdminHome.Tick += new System.EventHandler(this.AdminHome_Tick);
             // 
-            // RewardLbl
-            // 
-            this.RewardLbl.AutoSize = true;
-            this.RewardLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RewardLbl.Location = new System.Drawing.Point(79, 227);
-            this.RewardLbl.Name = "RewardLbl";
-            this.RewardLbl.Size = new System.Drawing.Size(118, 18);
-            this.RewardLbl.TabIndex = 13;
-            this.RewardLbl.Text = "Reward Amount:";
-            // 
-            // NumberRewardsTxt
-            // 
-            this.NumberRewardsTxt.Location = new System.Drawing.Point(229, 224);
-            this.NumberRewardsTxt.MaxLength = 5;
-            this.NumberRewardsTxt.Multiline = false;
-            this.NumberRewardsTxt.Name = "NumberRewardsTxt";
-            this.NumberRewardsTxt.Size = new System.Drawing.Size(236, 25);
-            this.NumberRewardsTxt.TabIndex = 14;
-            this.NumberRewardsTxt.Text = "";
-            this.NumberRewardsTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_DigitKeyPress);
-            // 
-            // StatsSearchLbl
-            // 
-            this.StatsSearchLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatsSearchLbl.Location = new System.Drawing.Point(28, 70);
-            this.StatsSearchLbl.Name = "StatsSearchLbl";
-            this.StatsSearchLbl.Size = new System.Drawing.Size(78, 24);
-            this.StatsSearchLbl.TabIndex = 27;
-            this.StatsSearchLbl.Text = "Search:";
-            this.StatsSearchLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label16
-            // 
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(61, 62);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(81, 24);
-            this.label16.TabIndex = 28;
-            this.label16.Text = "Search:";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // AdminHomepage
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1762,10 +1783,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NumQuestions;
         private System.Windows.Forms.DataGridViewTextBoxColumn PercentCorrect;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumSkipped;
-        private System.Windows.Forms.Button CreateGroupBtn;
         private System.Windows.Forms.RichTextBox NumberRewardsTxt;
         private System.Windows.Forms.Label RewardLbl;
         private System.Windows.Forms.Label StatsSearchLbl;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label CreateStudentLbl;
+        private System.Windows.Forms.Button CreateStudentBtn;
+        private System.Windows.Forms.Button CreateGroupBtn;
     }
 }
