@@ -83,7 +83,7 @@
             this.RemoveSelectedBtn = new System.Windows.Forms.Button();
             this.AssignSelectedBtn = new System.Windows.Forms.Button();
             this.ExistingUsersSetupBox = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.SetupSearchLbl = new System.Windows.Forms.Label();
             this.SetupExistingUserDataDisplay = new System.Windows.Forms.DataGridView();
             this.StudentAdminName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupName_Setup = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -115,18 +115,18 @@
             this.FirstNameLbl = new System.Windows.Forms.Label();
             this.GroupNameLbl = new System.Windows.Forms.Label();
             this.About = new System.Windows.Forms.TabPage();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.CopyRightLbl = new System.Windows.Forms.Label();
+            this.SecondProjectNameLbl = new System.Windows.Forms.Label();
+            this.IntroductionLbl = new System.Windows.Forms.Label();
+            this.NoQuestionsLbl = new System.Windows.Forms.Label();
+            this.GoalLbl = new System.Windows.Forms.Label();
+            this.ProductLbl = new System.Windows.Forms.Label();
+            this.IntroLbl = new System.Windows.Forms.Label();
+            this.QuestionsLbl = new System.Windows.Forms.Label();
+            this.StatedGoalLbl = new System.Windows.Forms.Label();
+            this.AboutWelcomeLbl = new System.Windows.Forms.Label();
+            this.AboutLbl = new System.Windows.Forms.Label();
+            this.ProjectNameLbl = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.ExportToExcelBtn = new System.Windows.Forms.Button();
@@ -707,7 +707,7 @@
             // ExistingUsersSetupBox
             // 
             this.ExistingUsersSetupBox.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ExistingUsersSetupBox.Controls.Add(this.label16);
+            this.ExistingUsersSetupBox.Controls.Add(this.SetupSearchLbl);
             this.ExistingUsersSetupBox.Controls.Add(this.SetupExistingUserDataDisplay);
             this.ExistingUsersSetupBox.Controls.Add(this.NarrowListTxtBox);
             this.ExistingUsersSetupBox.Controls.Add(this.StudentsRdo);
@@ -720,15 +720,15 @@
             this.ExistingUsersSetupBox.TabStop = false;
             this.ExistingUsersSetupBox.Text = "Existing Users";
             // 
-            // label16
+            // SetupSearchLbl
             // 
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(61, 62);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(81, 24);
-            this.label16.TabIndex = 28;
-            this.label16.Text = "Search:";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SetupSearchLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SetupSearchLbl.Location = new System.Drawing.Point(61, 62);
+            this.SetupSearchLbl.Name = "SetupSearchLbl";
+            this.SetupSearchLbl.Size = new System.Drawing.Size(81, 24);
+            this.SetupSearchLbl.TabIndex = 28;
+            this.SetupSearchLbl.Text = "Search:";
+            this.SetupSearchLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SetupExistingUserDataDisplay
             // 
@@ -816,7 +816,6 @@
             this.EditUsersGroupBox.Size = new System.Drawing.Size(1362, 613);
             this.EditUsersGroupBox.TabIndex = 0;
             this.EditUsersGroupBox.TabStop = false;
-            this.EditUsersGroupBox.Enter += new System.EventHandler(this.EditUsersGroupBox_Enter);
             // 
             // groupBox4
             // 
@@ -856,7 +855,6 @@
             this.ExistingUserDataEditUsersDisplay.TabIndex = 1;
             this.ExistingUserDataEditUsersDisplay.TabStop = false;
             this.ExistingUserDataEditUsersDisplay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExistingUserDataEditUsersDisplay_CellContentClick);
-            this.ExistingUserDataEditUsersDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExistingUserDataEditUsersDisplay_CellContentClick);
             this.ExistingUserDataEditUsersDisplay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
             // 
             // StudentAdminNameEditUsers
@@ -1068,18 +1066,18 @@
             // 
             this.About.BackgroundImage = global::RaptorMath.Properties.Resources.aboutbackground;
             this.About.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.About.Controls.Add(this.label15);
-            this.About.Controls.Add(this.label14);
-            this.About.Controls.Add(this.label13);
-            this.About.Controls.Add(this.label12);
-            this.About.Controls.Add(this.label11);
-            this.About.Controls.Add(this.label10);
-            this.About.Controls.Add(this.label9);
-            this.About.Controls.Add(this.label8);
-            this.About.Controls.Add(this.label7);
-            this.About.Controls.Add(this.label6);
-            this.About.Controls.Add(this.label4);
-            this.About.Controls.Add(this.label3);
+            this.About.Controls.Add(this.CopyRightLbl);
+            this.About.Controls.Add(this.SecondProjectNameLbl);
+            this.About.Controls.Add(this.IntroductionLbl);
+            this.About.Controls.Add(this.NoQuestionsLbl);
+            this.About.Controls.Add(this.GoalLbl);
+            this.About.Controls.Add(this.ProductLbl);
+            this.About.Controls.Add(this.IntroLbl);
+            this.About.Controls.Add(this.QuestionsLbl);
+            this.About.Controls.Add(this.StatedGoalLbl);
+            this.About.Controls.Add(this.AboutWelcomeLbl);
+            this.About.Controls.Add(this.AboutLbl);
+            this.About.Controls.Add(this.ProjectNameLbl);
             this.About.Controls.Add(this.label5);
             this.About.ImageIndex = 7;
             this.About.Location = new System.Drawing.Point(4, 44);
@@ -1089,131 +1087,131 @@
             this.About.Text = "About";
             this.About.UseVisualStyleBackColor = true;
             // 
-            // label15
+            // CopyRightLbl
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(716, 553);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(54, 19);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "©2014";
+            this.CopyRightLbl.AutoSize = true;
+            this.CopyRightLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CopyRightLbl.Location = new System.Drawing.Point(716, 553);
+            this.CopyRightLbl.Name = "CopyRightLbl";
+            this.CopyRightLbl.Size = new System.Drawing.Size(54, 19);
+            this.CopyRightLbl.TabIndex = 13;
+            this.CopyRightLbl.Text = "©2014";
             // 
-            // label14
+            // SecondProjectNameLbl
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(613, 552);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(98, 20);
-            this.label14.TabIndex = 12;
-            this.label14.Text = "Raptor Math";
+            this.SecondProjectNameLbl.AutoSize = true;
+            this.SecondProjectNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SecondProjectNameLbl.Location = new System.Drawing.Point(613, 552);
+            this.SecondProjectNameLbl.Name = "SecondProjectNameLbl";
+            this.SecondProjectNameLbl.Size = new System.Drawing.Size(98, 20);
+            this.SecondProjectNameLbl.TabIndex = 12;
+            this.SecondProjectNameLbl.Text = "Raptor Math";
             // 
-            // label13
+            // IntroductionLbl
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label13.Location = new System.Drawing.Point(843, 386);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(273, 95);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "Team Velociraptor:\r\n\r\nJoshua Boone                    Kyle Bridges\r\nCian Carota  " +
+            this.IntroductionLbl.AutoSize = true;
+            this.IntroductionLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IntroductionLbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.IntroductionLbl.Location = new System.Drawing.Point(843, 386);
+            this.IntroductionLbl.Name = "IntroductionLbl";
+            this.IntroductionLbl.Size = new System.Drawing.Size(273, 95);
+            this.IntroductionLbl.TabIndex = 11;
+            this.IntroductionLbl.Text = "Team Velociraptor:\r\n\r\nJoshua Boone                    Kyle Bridges\r\nCian Carota  " +
     "                     Justine Dinh\r\nCody Jordan                      Harvey Kreit" +
     "zer";
             // 
-            // label12
+            // NoQuestionsLbl
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label12.Location = new System.Drawing.Point(843, 167);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(357, 133);
-            this.label12.TabIndex = 10;
-            this.label12.Text = resources.GetString("label12.Text");
+            this.NoQuestionsLbl.AutoSize = true;
+            this.NoQuestionsLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoQuestionsLbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.NoQuestionsLbl.Location = new System.Drawing.Point(843, 167);
+            this.NoQuestionsLbl.Name = "NoQuestionsLbl";
+            this.NoQuestionsLbl.Size = new System.Drawing.Size(357, 133);
+            this.NoQuestionsLbl.TabIndex = 10;
+            this.NoQuestionsLbl.Text = resources.GetString("NoQuestionsLbl.Text");
             // 
-            // label11
+            // GoalLbl
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(212, 386);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(341, 114);
-            this.label11.TabIndex = 9;
-            this.label11.Text = resources.GetString("label11.Text");
+            this.GoalLbl.AutoSize = true;
+            this.GoalLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GoalLbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.GoalLbl.Location = new System.Drawing.Point(212, 386);
+            this.GoalLbl.Name = "GoalLbl";
+            this.GoalLbl.Size = new System.Drawing.Size(341, 114);
+            this.GoalLbl.TabIndex = 9;
+            this.GoalLbl.Text = resources.GetString("GoalLbl.Text");
             // 
-            // label10
+            // ProductLbl
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(212, 167);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(432, 152);
-            this.label10.TabIndex = 8;
-            this.label10.Text = resources.GetString("label10.Text");
+            this.ProductLbl.AutoSize = true;
+            this.ProductLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductLbl.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ProductLbl.Location = new System.Drawing.Point(212, 167);
+            this.ProductLbl.Name = "ProductLbl";
+            this.ProductLbl.Size = new System.Drawing.Size(432, 152);
+            this.ProductLbl.TabIndex = 8;
+            this.ProductLbl.Text = resources.GetString("ProductLbl.Text");
             // 
-            // label9
+            // IntroLbl
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(828, 346);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 23);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Who We Are";
+            this.IntroLbl.AutoSize = true;
+            this.IntroLbl.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IntroLbl.Location = new System.Drawing.Point(828, 346);
+            this.IntroLbl.Name = "IntroLbl";
+            this.IntroLbl.Size = new System.Drawing.Size(110, 23);
+            this.IntroLbl.TabIndex = 7;
+            this.IntroLbl.Text = "Who We Are";
             // 
-            // label8
+            // QuestionsLbl
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(828, 134);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(143, 23);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Have Questions?";
+            this.QuestionsLbl.AutoSize = true;
+            this.QuestionsLbl.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QuestionsLbl.Location = new System.Drawing.Point(828, 134);
+            this.QuestionsLbl.Name = "QuestionsLbl";
+            this.QuestionsLbl.Size = new System.Drawing.Size(143, 23);
+            this.QuestionsLbl.TabIndex = 6;
+            this.QuestionsLbl.Text = "Have Questions?";
             // 
-            // label7
+            // StatedGoalLbl
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(209, 346);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 23);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Our Goal";
+            this.StatedGoalLbl.AutoSize = true;
+            this.StatedGoalLbl.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatedGoalLbl.Location = new System.Drawing.Point(209, 346);
+            this.StatedGoalLbl.Name = "StatedGoalLbl";
+            this.StatedGoalLbl.Size = new System.Drawing.Size(80, 23);
+            this.StatedGoalLbl.TabIndex = 5;
+            this.StatedGoalLbl.Text = "Our Goal";
             // 
-            // label6
+            // AboutWelcomeLbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(209, 134);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(216, 23);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Welcome to Raptor Math!";
+            this.AboutWelcomeLbl.AutoSize = true;
+            this.AboutWelcomeLbl.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AboutWelcomeLbl.Location = new System.Drawing.Point(209, 134);
+            this.AboutWelcomeLbl.Name = "AboutWelcomeLbl";
+            this.AboutWelcomeLbl.Size = new System.Drawing.Size(216, 23);
+            this.AboutWelcomeLbl.TabIndex = 4;
+            this.AboutWelcomeLbl.Text = "Welcome to Raptor Math!";
             // 
-            // label4
+            // AboutLbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(309, 59);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 39);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "About ";
+            this.AboutLbl.AutoSize = true;
+            this.AboutLbl.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AboutLbl.Location = new System.Drawing.Point(309, 59);
+            this.AboutLbl.Name = "AboutLbl";
+            this.AboutLbl.Size = new System.Drawing.Size(105, 39);
+            this.AboutLbl.TabIndex = 2;
+            this.AboutLbl.Text = "About ";
             // 
-            // label3
+            // ProjectNameLbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(93, 59);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(193, 37);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Raptor Math";
+            this.ProjectNameLbl.AutoSize = true;
+            this.ProjectNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectNameLbl.Location = new System.Drawing.Point(93, 59);
+            this.ProjectNameLbl.Name = "ProjectNameLbl";
+            this.ProjectNameLbl.Size = new System.Drawing.Size(193, 37);
+            this.ProjectNameLbl.TabIndex = 1;
+            this.ProjectNameLbl.Text = "Raptor Math";
             // 
             // label5
             // 
@@ -1224,7 +1222,6 @@
             this.label5.Size = new System.Drawing.Size(47, 59);
             this.label5.TabIndex = 3;
             this.label5.Text = "|";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // imageList1
             // 
@@ -1474,19 +1471,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentAdminNameEditUsers;
         private System.Windows.Forms.DataGridViewTextBoxColumn GroupNameEditUsers;
         private System.Windows.Forms.Label searchLbl;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label ProjectNameLbl;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label AboutLbl;
+        private System.Windows.Forms.Label ProductLbl;
+        private System.Windows.Forms.Label IntroLbl;
+        private System.Windows.Forms.Label QuestionsLbl;
+        private System.Windows.Forms.Label StatedGoalLbl;
+        private System.Windows.Forms.Label AboutWelcomeLbl;
+        private System.Windows.Forms.Label SecondProjectNameLbl;
+        private System.Windows.Forms.Label IntroductionLbl;
+        private System.Windows.Forms.Label NoQuestionsLbl;
+        private System.Windows.Forms.Label GoalLbl;
+        private System.Windows.Forms.Label CopyRightLbl;
         private System.Windows.Forms.DateTimePicker StartDate;
         private System.Windows.Forms.Label ReportHome_StartDateLbl;
         private System.Windows.Forms.DateTimePicker EndDate;
@@ -1508,7 +1505,7 @@
         private System.Windows.Forms.RichTextBox NumberRewardsTxt;
         private System.Windows.Forms.Label RewardLbl;
         private System.Windows.Forms.Label StatsSearchLbl;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label SetupSearchLbl;
         private System.Windows.Forms.Label CreateStudentLbl;
         private System.Windows.Forms.Button CreateStudentBtn;
         private System.Windows.Forms.Button CreateGroupBtn;

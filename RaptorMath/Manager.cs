@@ -417,6 +417,7 @@ namespace RaptorMath
             // 3 means the entered group is not valid
             // 4 means the student is already assigned to the passed in group
             // 5 means the user didn't actually change anything
+            // 6 means the user didn't change anything about the student but left in the pre-filled data
             int errorCode = 0;
 
             // Check to see if student to edit exists
@@ -434,21 +435,51 @@ namespace RaptorMath
             {
                 errorCode = 3;
             }
-            else if (FindGroupByName(newGroup) != null)
-            {
-                if (FindGroupByName(newGroup).ID == FindStudentWithName(currentName).GroupID)
-                {
-                    errorCode = 4;
-                }
-            }
+            //else if (FindGroupByName(newGroup) != null)
+            //{
+            //    if (FindGroupByName(newGroup).ID == FindStudentWithName(currentName).GroupID)
+            //    {
+            //        errorCode = 4;
+            //    }
+            //}
             else if (newFName.Equals(string.Empty) && newLName.Equals(string.Empty) && newGroup.Equals(string.Empty)
                 && rewardTotal.Equals(string.Empty))
             {
                 errorCode = 5;
             }
+            else if (!IsStudentChanged(newFName, newLName, currentName, newGroup, rewardTotal))
+            {
+                errorCode = 6;
+            }
 
             return errorCode;
         }
+
+        private bool IsStudentChanged(string newFName, string newLName, string currentName, string newGroup, string rewardTotal)
+        {
+            bool changed = true;
+            string updateName = newFName + " " + newLName;
+            Student stu = FindStudentWithName(currentName);
+            if (stu != null)
+            {
+                if (FindGroupByName(newGroup) != null)
+                {
+                    if (FindGroupByName(newGroup).ID == FindStudentWithName(currentName).GroupID)
+                    {
+                        if (updateName.Equals(stu.LoginName))
+                        {
+                            if (stu.RewardTotal == Convert.ToInt32(rewardTotal))
+                            {
+                                changed = false;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return changed;
+        }
+
         //----------------------------------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                                                           //
         // Date: 4/13/14                                                                                 //

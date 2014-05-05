@@ -1003,16 +1003,22 @@ namespace RaptorMath
                     else if (isValidEdit == 3)
                     {
                         MessageBox.Show("Error. Entered group doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        EditUsersGroupBox.Focus();
+                        GroupNameComboBox.Focus();
                     }
-                    else if (isValidEdit == 4)
-                    {
-                        MessageBox.Show("Error. Student already belongs to this group.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        EditUsersGroupBox.Focus();
-                    }
+                    //else if (isValidEdit == 4)
+                    //{
+                    //    MessageBox.Show("Error. Student already belongs to this group.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //    EditUsersGroupBox.Focus();
+                    //}
                     else if (isValidEdit == 5)
                     {
                         MessageBox.Show("Error. You must choose something to change about the student.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        GroupNameComboBox.Focus();
+                    }
+                    else if (isValidEdit == 6)
+                    {
+                        MessageBox.Show("Error. You cannot save the pre-filled data. Something must be changed.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        GroupNameComboBox.Focus();
                     }
                 }
             }
@@ -1422,26 +1428,6 @@ namespace RaptorMath
             LastNameTxtBox.Text = string.Empty;
         }
 
-        private void EditUsersGroupBox_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GroupNameAddUsersLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ExistingUserDataDisplay_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 5/01/14                                                    //
@@ -1717,6 +1703,8 @@ namespace RaptorMath
                 if (isGroupAdded)
                 {
                     MessageBox.Show("New group created.", "Raptor Math", MessageBoxButtons.OK);
+                    RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
+                    GroupNameComboBox.Text = newGroupName;
                 }
                 else
                 {
