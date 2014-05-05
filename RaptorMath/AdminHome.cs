@@ -52,6 +52,8 @@ Cycle 3 Changes:
  * • Changed the minimal length of a password to 4 and the maximum length to 8.
  * Date: 4/16/14
  * • Changed the password logic so the user cannot change their password to the current password.
+ * Date: 5/01/14
+ * • Completely deprecated.
 */
 
 using System;

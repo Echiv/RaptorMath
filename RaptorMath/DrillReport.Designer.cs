@@ -198,7 +198,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DrillReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DrillReport";
+            this.Text = "Raptor Math";
             ((System.ComponentModel.ISupportInitialize)(this.dinoegg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
