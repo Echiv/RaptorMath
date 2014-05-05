@@ -40,7 +40,7 @@
             this.FinishBtn = new System.Windows.Forms.Button();
             this.dinoegg = new System.Windows.Forms.PictureBox();
             this.dinoeggsearnedlbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.RewardsEarnedLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dinoegg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,23 +165,23 @@
             this.dinoeggsearnedlbl.TabIndex = 10;
             this.dinoeggsearnedlbl.Text = "Eggs Earned:";
             // 
-            // label1
+            // RewardsEarnedLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(517, 451);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 55);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "<#>";
+            this.RewardsEarnedLbl.AutoSize = true;
+            this.RewardsEarnedLbl.BackColor = System.Drawing.Color.Transparent;
+            this.RewardsEarnedLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RewardsEarnedLbl.Location = new System.Drawing.Point(517, 451);
+            this.RewardsEarnedLbl.Name = "RewardsEarnedLbl";
+            this.RewardsEarnedLbl.Size = new System.Drawing.Size(110, 55);
+            this.RewardsEarnedLbl.TabIndex = 11;
+            this.RewardsEarnedLbl.Text = "<#>";
             // 
             // DrillReport
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::RaptorMath.Properties.Resources.FreeVector_Jungle_Background;
             this.ClientSize = new System.Drawing.Size(1008, 730);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.RewardsEarnedLbl);
             this.Controls.Add(this.dinoeggsearnedlbl);
             this.Controls.Add(this.dinoegg);
             this.Controls.Add(this.FinishBtn);
@@ -217,6 +217,6 @@
         private System.Windows.Forms.Button FinishBtn;
         private System.Windows.Forms.PictureBox dinoegg;
         private System.Windows.Forms.Label dinoeggsearnedlbl;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label RewardsEarnedLbl;
     }
 }

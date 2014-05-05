@@ -102,6 +102,7 @@ namespace RaptorMath
         public void SetLabels()
         {
             StuHome_StudentNameLbl.Text = localManager.currentStudent.FirstName;
+            eggsearnedvalue.Text = localManager.currentStudent.RewardTotal.ToString();
             if (localManager.currentStudent.LastLogin == "Unknown")
                 StuHome_LoginDateLbl.Text = "--/--/----";
             else

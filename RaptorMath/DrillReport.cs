@@ -48,6 +48,7 @@ namespace RaptorMath
             StudentPercentageLbl.Text = localManager.CalculatePercentage();
             NumberCorrectlbl.Text = (Convert.ToInt32(localManager.currentStudent.curDrill.Questions) - Convert.ToInt32(localManager.currentStudent.curDrill.Wrong)).ToString();
             NumberIncorretLbl.Text = localManager.currentStudent.curDrill.Wrong;
+            RewardsEarnedLbl.Text = (Convert.ToInt32(localManager.currentStudent.curDrill.Questions) - Convert.ToInt32(localManager.currentStudent.curDrill.Wrong)).ToString();
         }
 
         private void NameLbl_Click(object sender, EventArgs e)
