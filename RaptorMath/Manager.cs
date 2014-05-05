@@ -408,7 +408,7 @@ namespace RaptorMath
         /// <param name="newGroup">Student's new group name.</param>
         /// <param name="studentList">List containing student objects.</param>
         /// <param name="groupList">List containing group objects.</param>
-        public int IsValidEdit(string newFName, string newLName, string currentName, string newGroup, List<Student> studentList, List<Group> groupList)
+        public int IsValidEdit(string newFName, string newLName, string currentName, string newGroup, string rewardTotal, List<Student> studentList)
         {
             // Error code can be 0 through 3. 
             // 0 means the edit is valid
@@ -441,7 +441,8 @@ namespace RaptorMath
                     errorCode = 4;
                 }
             }
-            else if (newFName.Equals(string.Empty) && newLName.Equals(string.Empty) && newGroup.Equals(string.Empty))
+            else if (newFName.Equals(string.Empty) && newLName.Equals(string.Empty) && newGroup.Equals(string.Empty)
+                && rewardTotal.Equals(string.Empty))
             {
                 errorCode = 5;
             }
@@ -526,7 +527,7 @@ namespace RaptorMath
         /// <param name="newGroup">Student's new group name.</param>
         /// <param name="studentList">List containing student objects.</param>
         /// <param name="groupList">List containing group objects.</param>
-        public void EditStudent(string newFName, string newLName, string currentName, string newGroup, List<Student> studentList, List<Group> groupList)
+        public void EditStudent(string newFName, string newLName, string currentName, string newGroup, string rewardTotal, List<Student> studentList, List<Group> groupList)
         {
             // Get the student we need to edit
             Student selectedStudent = FindStudentWithName(currentName);
@@ -558,6 +559,12 @@ namespace RaptorMath
                 XMLDriver.EditGroup(selectedStudent, selectedGroup);
                 RemoveGroupDrillsFromStudent(oldGroup, selectedStudent);
                 AddGroupDrillsToStudent(selectedGroup, selectedStudent);
+            }
+            // Check to see if the student's reward amount had been changed
+            if (!rewardTotal.Equals(string.Empty))
+            {
+                selectedStudent.RewardTotal = Convert.ToInt32(rewardTotal);
+                XMLDriver.EditRewardAmount(selectedStudent);
             }
         }
 

@@ -895,6 +895,7 @@ namespace RaptorMath
                         GroupNameComboBox.Text = localManager.FindGroupByID(selectedStudent.GroupID).Name;
                         FirstNameTxtBox.Text = selectedStudent.FirstName;
                         LastNameTxtBox.Text = selectedStudent.LastName;
+                        NumberRewardsTxt.Text = selectedStudent.RewardTotal.ToString();
                         SaveChangesBtn.Enabled = true;
                         RemoveUserGroupBtn.Enabled = true;
                     }
@@ -991,14 +992,15 @@ namespace RaptorMath
                 string selectedStudent = localManager.GetStudentNameFromCellFormat(row.Cells[0].Value.ToString());
                 if (selectedStudent != "Unknown Student")
                 {
-                    int isValidEdit = localManager.IsValidEdit(FirstNameTxtBox.Text, LastNameTxtBox.Text, selectedStudent, GroupNameComboBox.Text, localManager.studentList, localManager.groupList);
+                    int isValidEdit = localManager.IsValidEdit(FirstNameTxtBox.Text, LastNameTxtBox.Text, selectedStudent, GroupNameComboBox.Text, NumberRewardsTxt.Text, localManager.studentList);
                     if (isValidEdit == 0)
                     {
-                        localManager.EditStudent(FirstNameTxtBox.Text, LastNameTxtBox.Text, selectedStudent, GroupNameComboBox.Text, localManager.studentList, localManager.groupList);
+                        localManager.EditStudent(FirstNameTxtBox.Text, LastNameTxtBox.Text, selectedStudent, GroupNameComboBox.Text, NumberRewardsTxt.Text, localManager.studentList, localManager.groupList);
                         MessageBox.Show("Student changes saved.", "Raptor Math", MessageBoxButtons.OK);
                         GroupNameComboBox.Text = string.Empty;
                         FirstNameTxtBox.Text = string.Empty;
                         LastNameTxtBox.Text = string.Empty;
+                        NumberRewardsTxt.Text = string.Empty;
                         RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
                         RefreshDataGrid();
                     }
@@ -1357,7 +1359,7 @@ namespace RaptorMath
         // Currently used for SearchEditUsersTxtbox, FirstNameTxtBox,       //
         // LastNameTxtBox                                                   //
         //------------------------------------------------------------------//
-        /// <summary>Handle LettersAndDigitsKeyPressNoSpace event.</summary>
+        /// <summary>Handles LettersAndDigitsKeyPressNoSpace event.</summary>
         private void RaptorMath_LetterssKeyPressNoSpace(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || (char.IsControl(e.KeyChar)));
@@ -1367,10 +1369,23 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/02/14                                                    //
+        // Currently used for NumberRewardsTxt                              //
+        //------------------------------------------------------------------//
+        /// <summary>Handles the key press event for text boxes that only accept numbers.</summary>
+        private void RaptorMath_DigitKeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsDigit(e.KeyChar) || (char.IsControl(e.KeyChar)));
+            if (e.Handled)
+                System.Media.SystemSounds.Beep.Play();
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         // Currently used for GroupNameComboBox                             //
         //------------------------------------------------------------------//
-        /// <summary>Handle LettersAndDigitsKeyPress event.</summary>
+        /// <summary>Handles LettersAndDigitsKeyPress event.</summary>
         private void RaptorMath_LettersAndDigitsKeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == ' ' || (char.IsControl(e.KeyChar)));

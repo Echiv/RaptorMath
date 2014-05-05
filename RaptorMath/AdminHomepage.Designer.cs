@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomepage));
             this.tab1 = new System.Windows.Forms.TabControl();
             this.Statistics = new System.Windows.Forms.TabPage();
@@ -102,7 +102,6 @@
             this.SaveChangesBtn = new System.Windows.Forms.Button();
             this.LastNameTxtBox = new System.Windows.Forms.RichTextBox();
             this.FirstNameTxtBox = new System.Windows.Forms.RichTextBox();
-            this.DeleteGroupChkBox = new System.Windows.Forms.CheckBox();
             this.RemoveUserGroupLbl = new System.Windows.Forms.Label();
             this.SaveChangesLbl = new System.Windows.Forms.Label();
             this.LastNameLbl = new System.Windows.Forms.Label();
@@ -419,14 +418,14 @@
             // 
             // GroupNameDataDisplay
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
             this.GroupNameDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GroupNameDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GroupName,
@@ -559,32 +558,32 @@
             // 
             // AvailableDrillDataDisplay
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle42;
             this.AvailableDrillDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AvailableDrillDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DrillName});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle43;
             this.AvailableDrillDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.AvailableDrillDataDisplay.Location = new System.Drawing.Point(3, 90);
             this.AvailableDrillDataDisplay.Name = "AvailableDrillDataDisplay";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle45;
             this.AvailableDrillDataDisplay.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.AvailableDrillDataDisplay.Size = new System.Drawing.Size(324, 468);
             this.AvailableDrillDataDisplay.TabIndex = 0;
@@ -900,7 +899,6 @@
             this.groupBox5.Controls.Add(this.SaveChangesBtn);
             this.groupBox5.Controls.Add(this.LastNameTxtBox);
             this.groupBox5.Controls.Add(this.FirstNameTxtBox);
-            this.groupBox5.Controls.Add(this.DeleteGroupChkBox);
             this.groupBox5.Controls.Add(this.RemoveUserGroupLbl);
             this.groupBox5.Controls.Add(this.SaveChangesLbl);
             this.groupBox5.Controls.Add(this.LastNameLbl);
@@ -929,7 +927,7 @@
             // 
             this.RemoveUserGroupBtn.BackgroundImage = global::RaptorMath.Properties.Resources.trash_icon__1_;
             this.RemoveUserGroupBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.RemoveUserGroupBtn.Location = new System.Drawing.Point(410, 360);
+            this.RemoveUserGroupBtn.Location = new System.Drawing.Point(378, 285);
             this.RemoveUserGroupBtn.Name = "RemoveUserGroupBtn";
             this.RemoveUserGroupBtn.Size = new System.Drawing.Size(40, 40);
             this.RemoveUserGroupBtn.TabIndex = 11;
@@ -940,7 +938,7 @@
             // 
             this.SaveChangesBtn.BackgroundImage = global::RaptorMath.Properties.Resources.System_Save_icon__1_;
             this.SaveChangesBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.SaveChangesBtn.Location = new System.Drawing.Point(167, 360);
+            this.SaveChangesBtn.Location = new System.Drawing.Point(135, 285);
             this.SaveChangesBtn.Name = "SaveChangesBtn";
             this.SaveChangesBtn.Size = new System.Drawing.Size(40, 40);
             this.SaveChangesBtn.TabIndex = 10;
@@ -949,52 +947,41 @@
             // 
             // LastNameTxtBox
             // 
-            this.LastNameTxtBox.Location = new System.Drawing.Point(229, 248);
+            this.LastNameTxtBox.Location = new System.Drawing.Point(229, 169);
             this.LastNameTxtBox.MaxLength = 12;
             this.LastNameTxtBox.Multiline = false;
             this.LastNameTxtBox.Name = "LastNameTxtBox";
-            this.LastNameTxtBox.Size = new System.Drawing.Size(250, 25);
+            this.LastNameTxtBox.Size = new System.Drawing.Size(236, 25);
             this.LastNameTxtBox.TabIndex = 9;
             this.LastNameTxtBox.Text = "";
             this.LastNameTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LetterssKeyPressNoSpace);
             // 
             // FirstNameTxtBox
             // 
-            this.FirstNameTxtBox.Location = new System.Drawing.Point(229, 194);
+            this.FirstNameTxtBox.Location = new System.Drawing.Point(229, 115);
             this.FirstNameTxtBox.MaxLength = 12;
             this.FirstNameTxtBox.Multiline = false;
             this.FirstNameTxtBox.Name = "FirstNameTxtBox";
-            this.FirstNameTxtBox.Size = new System.Drawing.Size(250, 25);
+            this.FirstNameTxtBox.Size = new System.Drawing.Size(236, 25);
             this.FirstNameTxtBox.TabIndex = 8;
             this.FirstNameTxtBox.Text = "";
             this.FirstNameTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LetterssKeyPressNoSpace);
-            // 
-            // DeleteGroupChkBox
-            // 
-            this.DeleteGroupChkBox.AutoSize = true;
-            this.DeleteGroupChkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteGroupChkBox.Location = new System.Drawing.Point(229, 112);
-            this.DeleteGroupChkBox.Name = "DeleteGroupChkBox";
-            this.DeleteGroupChkBox.Size = new System.Drawing.Size(221, 22);
-            this.DeleteGroupChkBox.TabIndex = 6;
-            this.DeleteGroupChkBox.Text = "Check to Delete Entire Group";
-            this.DeleteGroupChkBox.UseVisualStyleBackColor = true;
             // 
             // RemoveUserGroupLbl
             // 
             this.RemoveUserGroupLbl.AutoSize = true;
             this.RemoveUserGroupLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RemoveUserGroupLbl.Location = new System.Drawing.Point(355, 403);
+            this.RemoveUserGroupLbl.Location = new System.Drawing.Point(345, 328);
             this.RemoveUserGroupLbl.Name = "RemoveUserGroupLbl";
-            this.RemoveUserGroupLbl.Size = new System.Drawing.Size(146, 18);
+            this.RemoveUserGroupLbl.Size = new System.Drawing.Size(100, 18);
             this.RemoveUserGroupLbl.TabIndex = 5;
-            this.RemoveUserGroupLbl.Text = "Remove User/Group";
+            this.RemoveUserGroupLbl.Text = "Remove User";
             // 
             // SaveChangesLbl
             // 
             this.SaveChangesLbl.AutoSize = true;
             this.SaveChangesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveChangesLbl.Location = new System.Drawing.Point(134, 403);
+            this.SaveChangesLbl.Location = new System.Drawing.Point(107, 328);
             this.SaveChangesLbl.Name = "SaveChangesLbl";
             this.SaveChangesLbl.Size = new System.Drawing.Size(104, 18);
             this.SaveChangesLbl.TabIndex = 4;
@@ -1004,7 +991,7 @@
             // 
             this.LastNameLbl.AutoSize = true;
             this.LastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastNameLbl.Location = new System.Drawing.Point(79, 255);
+            this.LastNameLbl.Location = new System.Drawing.Point(79, 176);
             this.LastNameLbl.Name = "LastNameLbl";
             this.LastNameLbl.Size = new System.Drawing.Size(84, 18);
             this.LastNameLbl.TabIndex = 3;
@@ -1014,7 +1001,7 @@
             // 
             this.FirstNameLbl.AutoSize = true;
             this.FirstNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstNameLbl.Location = new System.Drawing.Point(79, 197);
+            this.FirstNameLbl.Location = new System.Drawing.Point(78, 118);
             this.FirstNameLbl.Name = "FirstNameLbl";
             this.FirstNameLbl.Size = new System.Drawing.Size(85, 18);
             this.FirstNameLbl.TabIndex = 2;
@@ -1024,7 +1011,7 @@
             // 
             this.GroupNameLbl.AutoSize = true;
             this.GroupNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupNameLbl.Location = new System.Drawing.Point(79, 68);
+            this.GroupNameLbl.Location = new System.Drawing.Point(78, 68);
             this.GroupNameLbl.Name = "GroupNameLbl";
             this.GroupNameLbl.Size = new System.Drawing.Size(98, 18);
             this.GroupNameLbl.TabIndex = 0;
@@ -1566,7 +1553,7 @@
             // 
             this.RewardLbl.AutoSize = true;
             this.RewardLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RewardLbl.Location = new System.Drawing.Point(79, 306);
+            this.RewardLbl.Location = new System.Drawing.Point(79, 227);
             this.RewardLbl.Name = "RewardLbl";
             this.RewardLbl.Size = new System.Drawing.Size(118, 18);
             this.RewardLbl.TabIndex = 13;
@@ -1574,13 +1561,14 @@
             // 
             // NumberRewardsTxt
             // 
-            this.NumberRewardsTxt.Location = new System.Drawing.Point(229, 303);
-            this.NumberRewardsTxt.MaxLength = 12;
+            this.NumberRewardsTxt.Location = new System.Drawing.Point(229, 224);
+            this.NumberRewardsTxt.MaxLength = 5;
             this.NumberRewardsTxt.Multiline = false;
             this.NumberRewardsTxt.Name = "NumberRewardsTxt";
-            this.NumberRewardsTxt.Size = new System.Drawing.Size(250, 25);
+            this.NumberRewardsTxt.Size = new System.Drawing.Size(236, 25);
             this.NumberRewardsTxt.TabIndex = 14;
             this.NumberRewardsTxt.Text = "";
+            this.NumberRewardsTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_DigitKeyPress);
             // 
             // StatsSearchLbl
             // 
@@ -1710,7 +1698,6 @@
         private System.Windows.Forms.Button SaveChangesBtn;
         private System.Windows.Forms.RichTextBox LastNameTxtBox;
         private System.Windows.Forms.RichTextBox FirstNameTxtBox;
-        private System.Windows.Forms.CheckBox DeleteGroupChkBox;
         private System.Windows.Forms.Label RemoveUserGroupLbl;
         private System.Windows.Forms.Label SaveChangesLbl;
         private System.Windows.Forms.Label LastNameLbl;

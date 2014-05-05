@@ -91,11 +91,11 @@ namespace RaptorMath
                             Application.Run(new CreateDrill_Form(allManager));
                             break;
                         }
-                    case Window.editStudents:
-                        {
-                            Application.Run(new EditStudents_Form(allManager));
-                            break;
-                        }
+                    //case Window.editStudents:
+                    //    {
+                    //        Application.Run(new EditStudents_Form(allManager));
+                    //        break;
+                    //    }
                     case Window.mngDrills:
                         {
                             Application.Run(new ManageDrills_Form(allManager));
