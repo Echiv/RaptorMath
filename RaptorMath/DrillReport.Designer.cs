@@ -139,7 +139,7 @@
             this.FinishBtn.Location = new System.Drawing.Point(452, 601);
             this.FinishBtn.Name = "FinishBtn";
             this.FinishBtn.Size = new System.Drawing.Size(96, 44);
-            this.FinishBtn.TabIndex = 8;
+            this.FinishBtn.TabIndex = 1;
             this.FinishBtn.Text = "Finish";
             this.FinishBtn.UseVisualStyleBackColor = true;
             this.FinishBtn.Click += new System.EventHandler(this.FinishBtn_Click);
@@ -178,6 +178,7 @@
             // 
             // DrillReport
             // 
+            this.AcceptButton = this.FinishBtn;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::RaptorMath.Properties.Resources.FreeVector_Jungle_Background;
             this.ClientSize = new System.Drawing.Size(1008, 730);

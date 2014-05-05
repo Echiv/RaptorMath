@@ -121,7 +121,7 @@
             this.MathDrill_SkipBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_SkipBtn.Name = "MathDrill_SkipBtn";
             this.MathDrill_SkipBtn.Size = new System.Drawing.Size(145, 130);
-            this.MathDrill_SkipBtn.TabIndex = 32;
+            this.MathDrill_SkipBtn.TabIndex = 3;
             this.MathDrill_SkipBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.PlayDrillToolTip.SetToolTip(this.MathDrill_SkipBtn, "Skips the current problem.");
             this.MathDrill_SkipBtn.UseVisualStyleBackColor = false;
@@ -167,7 +167,7 @@
             this.MathDrill_SubmitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_SubmitBtn.Name = "MathDrill_SubmitBtn";
             this.MathDrill_SubmitBtn.Size = new System.Drawing.Size(144, 128);
-            this.MathDrill_SubmitBtn.TabIndex = 33;
+            this.MathDrill_SubmitBtn.TabIndex = 2;
             this.MathDrill_SubmitBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.PlayDrillToolTip.SetToolTip(this.MathDrill_SubmitBtn, "Submit your answer for grading.");
             this.MathDrill_SubmitBtn.UseVisualStyleBackColor = false;
@@ -186,7 +186,7 @@
             this.MathDrill_InputTxt.Name = "MathDrill_InputTxt";
             this.MathDrill_InputTxt.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.MathDrill_InputTxt.Size = new System.Drawing.Size(176, 54);
-            this.MathDrill_InputTxt.TabIndex = 31;
+            this.MathDrill_InputTxt.TabIndex = 1;
             this.MathDrill_InputTxt.Text = "";
             this.MathDrill_InputTxt.TextChanged += new System.EventHandler(this.PlayDrill_InputTxt_TextChanged);
             this.MathDrill_InputTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PlayDrill_DigitsKeyPress);
@@ -238,7 +238,7 @@
             this.MathDrill_QuitBtn.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_QuitBtn.Name = "MathDrill_QuitBtn";
             this.MathDrill_QuitBtn.Size = new System.Drawing.Size(90, 91);
-            this.MathDrill_QuitBtn.TabIndex = 40;
+            this.MathDrill_QuitBtn.TabIndex = 4;
             this.MathDrill_QuitBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.PlayDrillToolTip.SetToolTip(this.MathDrill_QuitBtn, "Ends the adventure! If you finished saves the results.");
             this.MathDrill_QuitBtn.UseVisualStyleBackColor = false;

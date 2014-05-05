@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle86 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle87 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle88 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle89 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle90 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomepage));
             this.tab1 = new System.Windows.Forms.TabControl();
             this.Statistics = new System.Windows.Forms.TabPage();
@@ -213,7 +213,7 @@
             this.GroupSearchBox.Location = new System.Drawing.Point(5, 5);
             this.GroupSearchBox.Name = "GroupSearchBox";
             this.GroupSearchBox.Size = new System.Drawing.Size(1352, 603);
-            this.GroupSearchBox.TabIndex = 2;
+            this.GroupSearchBox.TabIndex = 1;
             this.GroupSearchBox.TabStop = false;
             this.GroupSearchBox.Text = "Group Search";
             // 
@@ -235,7 +235,7 @@
             this.EndDate.Margin = new System.Windows.Forms.Padding(4);
             this.EndDate.Name = "EndDate";
             this.EndDate.Size = new System.Drawing.Size(264, 24);
-            this.EndDate.TabIndex = 25;
+            this.EndDate.TabIndex = 5;
             this.EndDate.ValueChanged += new System.EventHandler(this.EndDate_ValueChanged);
             // 
             // ReportHome_EndDateLbl
@@ -258,7 +258,7 @@
             this.StartDate.Margin = new System.Windows.Forms.Padding(4);
             this.StartDate.Name = "StartDate";
             this.StartDate.Size = new System.Drawing.Size(264, 24);
-            this.StartDate.TabIndex = 23;
+            this.StartDate.TabIndex = 4;
             this.StartDate.ValueChanged += new System.EventHandler(this.StartDate_ValueChanged);
             // 
             // ReportHome_StartDateLbl
@@ -406,14 +406,14 @@
             // 
             // GroupNameDataDisplay
             // 
-            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle66.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle66.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle66.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle66.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle66.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle66.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle66;
+            dataGridViewCellStyle86.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle86.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle86.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle86.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle86.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle86.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle86.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle86;
             this.GroupNameDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GroupNameDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GroupName,
@@ -444,7 +444,7 @@
             this.SearchTxtBox.Location = new System.Drawing.Point(112, 70);
             this.SearchTxtBox.Name = "SearchTxtBox";
             this.SearchTxtBox.Size = new System.Drawing.Size(140, 24);
-            this.SearchTxtBox.TabIndex = 1;
+            this.SearchTxtBox.TabIndex = 3;
             this.SearchTxtBox.TextChanged += new System.EventHandler(this.SearchTxtBox_TextChanged);
             // 
             // Setup
@@ -491,7 +491,7 @@
             this.ManageDrillsGroupBox.Location = new System.Drawing.Point(543, 20);
             this.ManageDrillsGroupBox.Name = "ManageDrillsGroupBox";
             this.ManageDrillsGroupBox.Size = new System.Drawing.Size(810, 584);
-            this.ManageDrillsGroupBox.TabIndex = 0;
+            this.ManageDrillsGroupBox.TabIndex = 8;
             this.ManageDrillsGroupBox.TabStop = false;
             this.ManageDrillsGroupBox.Text = "Drills";
             // 
@@ -540,38 +540,38 @@
             this.AvailableDrillsBox.Location = new System.Drawing.Point(3, 20);
             this.AvailableDrillsBox.Name = "AvailableDrillsBox";
             this.AvailableDrillsBox.Size = new System.Drawing.Size(330, 561);
-            this.AvailableDrillsBox.TabIndex = 10;
+            this.AvailableDrillsBox.TabIndex = 5;
             this.AvailableDrillsBox.TabStop = false;
             this.AvailableDrillsBox.Text = "Available Drills";
             // 
             // AvailableDrillDataDisplay
             // 
-            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle67;
+            dataGridViewCellStyle87.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle87;
             this.AvailableDrillDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AvailableDrillDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DrillName});
-            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle68.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle68.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle68.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle68;
+            dataGridViewCellStyle88.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle88.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle88.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle88.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle88.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle88.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle88.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle88;
             this.AvailableDrillDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.AvailableDrillDataDisplay.Location = new System.Drawing.Point(3, 90);
             this.AvailableDrillDataDisplay.Name = "AvailableDrillDataDisplay";
-            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle69.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle69.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle69.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle69;
-            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle70;
+            dataGridViewCellStyle89.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle89.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle89.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle89.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle89.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle89.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle89.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle89;
+            dataGridViewCellStyle90.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle90;
             this.AvailableDrillDataDisplay.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.AvailableDrillDataDisplay.Size = new System.Drawing.Size(324, 468);
             this.AvailableDrillDataDisplay.TabIndex = 0;
@@ -593,7 +593,7 @@
             this.NewDrillBtn.Location = new System.Drawing.Point(67, 30);
             this.NewDrillBtn.Name = "NewDrillBtn";
             this.NewDrillBtn.Size = new System.Drawing.Size(67, 36);
-            this.NewDrillBtn.TabIndex = 1;
+            this.NewDrillBtn.TabIndex = 6;
             this.NewDrillBtn.Text = "+";
             this.AdminHomepageToolTip.SetToolTip(this.NewDrillBtn, "Create New Drill.");
             this.NewDrillBtn.UseVisualStyleBackColor = true;
@@ -605,7 +605,7 @@
             this.DeleteDrillBtn.Location = new System.Drawing.Point(186, 29);
             this.DeleteDrillBtn.Name = "DeleteDrillBtn";
             this.DeleteDrillBtn.Size = new System.Drawing.Size(66, 36);
-            this.DeleteDrillBtn.TabIndex = 2;
+            this.DeleteDrillBtn.TabIndex = 7;
             this.DeleteDrillBtn.Text = "-";
             this.DeleteDrillBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.AdminHomepageToolTip.SetToolTip(this.DeleteDrillBtn, "Delete Selected Drill.");
@@ -674,7 +674,7 @@
             this.RemoveAllBtn.Location = new System.Drawing.Point(366, 421);
             this.RemoveAllBtn.Name = "RemoveAllBtn";
             this.RemoveAllBtn.Size = new System.Drawing.Size(75, 45);
-            this.RemoveAllBtn.TabIndex = 5;
+            this.RemoveAllBtn.TabIndex = 12;
             this.RemoveAllBtn.Text = "<<<";
             this.AdminHomepageToolTip.SetToolTip(this.RemoveAllBtn, "Remove All Assigned Drills.");
             this.RemoveAllBtn.UseVisualStyleBackColor = true;
@@ -685,7 +685,7 @@
             this.AssignAllBtn.Location = new System.Drawing.Point(366, 332);
             this.AssignAllBtn.Name = "AssignAllBtn";
             this.AssignAllBtn.Size = new System.Drawing.Size(75, 45);
-            this.AssignAllBtn.TabIndex = 4;
+            this.AssignAllBtn.TabIndex = 11;
             this.AssignAllBtn.Text = ">>>";
             this.AdminHomepageToolTip.SetToolTip(this.AssignAllBtn, "Assign All Available Drills.");
             this.AssignAllBtn.UseVisualStyleBackColor = true;
@@ -696,7 +696,7 @@
             this.RemoveSelectedBtn.Location = new System.Drawing.Point(366, 242);
             this.RemoveSelectedBtn.Name = "RemoveSelectedBtn";
             this.RemoveSelectedBtn.Size = new System.Drawing.Size(75, 45);
-            this.RemoveSelectedBtn.TabIndex = 3;
+            this.RemoveSelectedBtn.TabIndex = 10;
             this.RemoveSelectedBtn.Text = "<";
             this.AdminHomepageToolTip.SetToolTip(this.RemoveSelectedBtn, "Remove Selected Drill.");
             this.RemoveSelectedBtn.UseVisualStyleBackColor = true;
@@ -707,7 +707,7 @@
             this.AssignSelectedBtn.Location = new System.Drawing.Point(366, 155);
             this.AssignSelectedBtn.Name = "AssignSelectedBtn";
             this.AssignSelectedBtn.Size = new System.Drawing.Size(75, 45);
-            this.AssignSelectedBtn.TabIndex = 2;
+            this.AssignSelectedBtn.TabIndex = 9;
             this.AssignSelectedBtn.Text = ">";
             this.AdminHomepageToolTip.SetToolTip(this.AssignSelectedBtn, "Assign Selected Drill.");
             this.AssignSelectedBtn.UseVisualStyleBackColor = true;
@@ -725,7 +725,7 @@
             this.ExistingUsersSetupBox.Location = new System.Drawing.Point(3, 20);
             this.ExistingUsersSetupBox.Name = "ExistingUsersSetupBox";
             this.ExistingUsersSetupBox.Size = new System.Drawing.Size(496, 584);
-            this.ExistingUsersSetupBox.TabIndex = 0;
+            this.ExistingUsersSetupBox.TabIndex = 1;
             this.ExistingUsersSetupBox.TabStop = false;
             this.ExistingUsersSetupBox.Text = "Existing Users";
             // 
@@ -775,7 +775,7 @@
             this.NarrowListTxtBox.Location = new System.Drawing.Point(148, 61);
             this.NarrowListTxtBox.Name = "NarrowListTxtBox";
             this.NarrowListTxtBox.Size = new System.Drawing.Size(187, 24);
-            this.NarrowListTxtBox.TabIndex = 2;
+            this.NarrowListTxtBox.TabIndex = 4;
             this.NarrowListTxtBox.TextChanged += new System.EventHandler(this.NarrowListTxtBox_TextChanged);
             // 
             // StudentsRdo
@@ -784,7 +784,7 @@
             this.StudentsRdo.Location = new System.Drawing.Point(148, 35);
             this.StudentsRdo.Name = "StudentsRdo";
             this.StudentsRdo.Size = new System.Drawing.Size(84, 22);
-            this.StudentsRdo.TabIndex = 0;
+            this.StudentsRdo.TabIndex = 2;
             this.StudentsRdo.TabStop = true;
             this.StudentsRdo.Text = "Students";
             this.StudentsRdo.UseVisualStyleBackColor = true;
@@ -796,7 +796,7 @@
             this.GroupsRdo.Location = new System.Drawing.Point(255, 35);
             this.GroupsRdo.Name = "GroupsRdo";
             this.GroupsRdo.Size = new System.Drawing.Size(76, 22);
-            this.GroupsRdo.TabIndex = 1;
+            this.GroupsRdo.TabIndex = 3;
             this.GroupsRdo.TabStop = true;
             this.GroupsRdo.Text = "Groups";
             this.GroupsRdo.UseVisualStyleBackColor = true;
@@ -887,7 +887,7 @@
             this.SearchEditUsersTxtbox.Location = new System.Drawing.Point(207, 28);
             this.SearchEditUsersTxtbox.Name = "SearchEditUsersTxtbox";
             this.SearchEditUsersTxtbox.Size = new System.Drawing.Size(196, 24);
-            this.SearchEditUsersTxtbox.TabIndex = 0;
+            this.SearchEditUsersTxtbox.TabIndex = 2;
             this.SearchEditUsersTxtbox.TextChanged += new System.EventHandler(this.SearchEditUsersTxtbox_TextChanged);
             this.SearchEditUsersTxtbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LetterssKeyPressNoSpace);
             // 
@@ -914,7 +914,7 @@
             this.groupBox5.Location = new System.Drawing.Point(729, 22);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(630, 588);
-            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Modify Existing User";
             // 
@@ -923,7 +923,7 @@
             this.CreateGroupBtn.Location = new System.Drawing.Point(471, 65);
             this.CreateGroupBtn.Name = "CreateGroupBtn";
             this.CreateGroupBtn.Size = new System.Drawing.Size(109, 26);
-            this.CreateGroupBtn.TabIndex = 17;
+            this.CreateGroupBtn.TabIndex = 5;
             this.CreateGroupBtn.Text = "Create Group";
             this.CreateGroupBtn.UseVisualStyleBackColor = true;
             this.CreateGroupBtn.Click += new System.EventHandler(this.CreateGroupBtn_Click);
@@ -943,7 +943,7 @@
             this.CreateStudentBtn.Location = new System.Drawing.Point(110, 365);
             this.CreateStudentBtn.Name = "CreateStudentBtn";
             this.CreateStudentBtn.Size = new System.Drawing.Size(87, 54);
-            this.CreateStudentBtn.TabIndex = 15;
+            this.CreateStudentBtn.TabIndex = 11;
             this.CreateStudentBtn.UseVisualStyleBackColor = true;
             this.CreateStudentBtn.Click += new System.EventHandler(this.CreateStudentBtn_Click);
             // 
@@ -954,7 +954,7 @@
             this.NumberRewardsTxt.Multiline = false;
             this.NumberRewardsTxt.Name = "NumberRewardsTxt";
             this.NumberRewardsTxt.Size = new System.Drawing.Size(236, 25);
-            this.NumberRewardsTxt.TabIndex = 14;
+            this.NumberRewardsTxt.TabIndex = 8;
             this.NumberRewardsTxt.Text = "";
             this.NumberRewardsTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_DigitKeyPress);
             // 
@@ -974,7 +974,7 @@
             this.GroupNameComboBox.Location = new System.Drawing.Point(229, 65);
             this.GroupNameComboBox.Name = "GroupNameComboBox";
             this.GroupNameComboBox.Size = new System.Drawing.Size(236, 26);
-            this.GroupNameComboBox.TabIndex = 12;
+            this.GroupNameComboBox.TabIndex = 4;
             this.GroupNameComboBox.TextChanged += new System.EventHandler(this.GroupNameCmbBox_TextChanged);
             this.GroupNameComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LettersAndDigitsKeyPress);
             // 
@@ -985,7 +985,7 @@
             this.RemoveUserGroupBtn.Location = new System.Drawing.Point(378, 285);
             this.RemoveUserGroupBtn.Name = "RemoveUserGroupBtn";
             this.RemoveUserGroupBtn.Size = new System.Drawing.Size(40, 40);
-            this.RemoveUserGroupBtn.TabIndex = 11;
+            this.RemoveUserGroupBtn.TabIndex = 10;
             this.AdminHomepageToolTip.SetToolTip(this.RemoveUserGroupBtn, "Permanently removes the user.");
             this.RemoveUserGroupBtn.UseVisualStyleBackColor = true;
             this.RemoveUserGroupBtn.Click += new System.EventHandler(this.RemoveUserGroupBtn_Click);
@@ -997,7 +997,7 @@
             this.SaveChangesBtn.Location = new System.Drawing.Point(135, 285);
             this.SaveChangesBtn.Name = "SaveChangesBtn";
             this.SaveChangesBtn.Size = new System.Drawing.Size(40, 40);
-            this.SaveChangesBtn.TabIndex = 10;
+            this.SaveChangesBtn.TabIndex = 9;
             this.AdminHomepageToolTip.SetToolTip(this.SaveChangesBtn, "Saves the changes made to the user.");
             this.SaveChangesBtn.UseVisualStyleBackColor = true;
             this.SaveChangesBtn.Click += new System.EventHandler(this.SaveChangesBtn_Click);
@@ -1009,7 +1009,7 @@
             this.LastNameTxtBox.Multiline = false;
             this.LastNameTxtBox.Name = "LastNameTxtBox";
             this.LastNameTxtBox.Size = new System.Drawing.Size(236, 25);
-            this.LastNameTxtBox.TabIndex = 9;
+            this.LastNameTxtBox.TabIndex = 7;
             this.LastNameTxtBox.Text = "";
             this.LastNameTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LetterssKeyPressNoSpace);
             // 
@@ -1020,7 +1020,7 @@
             this.FirstNameTxtBox.Multiline = false;
             this.FirstNameTxtBox.Name = "FirstNameTxtBox";
             this.FirstNameTxtBox.Size = new System.Drawing.Size(236, 25);
-            this.FirstNameTxtBox.TabIndex = 8;
+            this.FirstNameTxtBox.TabIndex = 6;
             this.FirstNameTxtBox.Text = "";
             this.FirstNameTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LetterssKeyPressNoSpace);
             // 
@@ -1258,7 +1258,7 @@
             this.ExportToExcelBtn.Location = new System.Drawing.Point(897, 705);
             this.ExportToExcelBtn.Name = "ExportToExcelBtn";
             this.ExportToExcelBtn.Size = new System.Drawing.Size(150, 35);
-            this.ExportToExcelBtn.TabIndex = 4;
+            this.ExportToExcelBtn.TabIndex = 14;
             this.ExportToExcelBtn.Text = "Export to Excel";
             this.AdminHomepageToolTip.SetToolTip(this.ExportToExcelBtn, "Exports the report to an Excel file.");
             this.ExportToExcelBtn.UseVisualStyleBackColor = true;
@@ -1281,7 +1281,7 @@
             this.ReportGroupBox.Location = new System.Drawing.Point(0, 0);
             this.ReportGroupBox.Name = "ReportGroupBox";
             this.ReportGroupBox.Size = new System.Drawing.Size(1370, 750);
-            this.ReportGroupBox.TabIndex = 0;
+            this.ReportGroupBox.TabIndex = 13;
             this.ReportGroupBox.TabStop = false;
             this.ReportGroupBox.Text = "Admin Home";
             this.ReportGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -1351,7 +1351,7 @@
             this.LogoutBtn.Location = new System.Drawing.Point(1053, 705);
             this.LogoutBtn.Name = "LogoutBtn";
             this.LogoutBtn.Size = new System.Drawing.Size(150, 35);
-            this.LogoutBtn.TabIndex = 0;
+            this.LogoutBtn.TabIndex = 15;
             this.LogoutBtn.Text = "Logout";
             this.AdminHomepageToolTip.SetToolTip(this.LogoutBtn, "Returns you to the login homepage.");
             this.LogoutBtn.UseVisualStyleBackColor = true;
@@ -1362,7 +1362,7 @@
             this.ExitBtn.Location = new System.Drawing.Point(1208, 705);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(150, 35);
-            this.ExitBtn.TabIndex = 1;
+            this.ExitBtn.TabIndex = 16;
             this.ExitBtn.Text = "Exit";
             this.AdminHomepageToolTip.SetToolTip(this.ExitBtn, "Closes the program.");
             this.ExitBtn.UseVisualStyleBackColor = true;

@@ -44,6 +44,7 @@ namespace RaptorMath
         //------------------------------------------------------------------//
         private void SetupLabels()
         {
+            FinishBtn.NotifyDefault(false);
             NameLbl.Text = localManager.currentStudent.FirstName;
             StudentPercentageLbl.Text = localManager.CalculatePercentage();
             NumberCorrectlbl.Text = (Convert.ToInt32(localManager.currentStudent.curDrill.Questions) - Convert.ToInt32(localManager.currentStudent.curDrill.Wrong)).ToString();

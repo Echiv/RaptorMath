@@ -135,7 +135,7 @@
             this.StuHome_DrillDdl.MaxLength = 25;
             this.StuHome_DrillDdl.Name = "StuHome_DrillDdl";
             this.StuHome_DrillDdl.Size = new System.Drawing.Size(236, 21);
-            this.StuHome_DrillDdl.TabIndex = 31;
+            this.StuHome_DrillDdl.TabIndex = 1;
             this.StuHome_DrillDdl.SelectedIndexChanged += new System.EventHandler(this.StuHome_DrillDdl_SelectedIndexChanged);
             // 
             // StuHome_StartDrillBtn
@@ -153,7 +153,7 @@
             this.StuHome_StartDrillBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.StuHome_StartDrillBtn.Name = "StuHome_StartDrillBtn";
             this.StuHome_StartDrillBtn.Size = new System.Drawing.Size(142, 141);
-            this.StuHome_StartDrillBtn.TabIndex = 32;
+            this.StuHome_StartDrillBtn.TabIndex = 2;
             this.StuHome_StartDrillBtn.Text = "  Go!";
             this.StudentHomepageToolTip.SetToolTip(this.StuHome_StartDrillBtn, "Start your adventure!!");
             this.StuHome_StartDrillBtn.UseVisualStyleBackColor = false;
@@ -181,7 +181,7 @@
             this.StuHome_LogoutBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.StuHome_LogoutBtn.Name = "StuHome_LogoutBtn";
             this.StuHome_LogoutBtn.Size = new System.Drawing.Size(112, 78);
-            this.StuHome_LogoutBtn.TabIndex = 36;
+            this.StuHome_LogoutBtn.TabIndex = 3;
             this.StuHome_LogoutBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.StudentHomepageToolTip.SetToolTip(this.StuHome_LogoutBtn, "Takes you back to the login screen.");
             this.StuHome_LogoutBtn.UseVisualStyleBackColor = false;
