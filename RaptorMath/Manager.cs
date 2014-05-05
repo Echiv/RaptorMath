@@ -410,14 +410,14 @@ namespace RaptorMath
         /// <param name="groupList">List containing group objects.</param>
         public int IsValidEdit(string newFName, string newLName, string currentName, string newGroup, string rewardTotal, List<Student> studentList)
         {
-            // Error code can be 0 through 3. 
+            // Error code can be 0 through 6. 
             // 0 means the edit is valid
             // 1 means the entered student doesn't exist
             // 2 means the entered new name(s) are not valid
             // 3 means the entered group is not valid
-            // 4 means the student is already assigned to the passed in group
+            // 4 means the user didn't change anything about the student but left in the pre-filled data
             // 5 means the user didn't actually change anything
-            // 6 means the user didn't change anything about the student but left in the pre-filled data
+            // 6 means the student is already assigned to the passed in group
             int errorCode = 0;
 
             // Check to see if student to edit exists
@@ -430,26 +430,26 @@ namespace RaptorMath
             {
                 errorCode = 2;
             }
-            // Check to see if the desirted new group is valid
             else if (FindGroupByName(newGroup) == null && !newGroup.Equals(string.Empty))
             {
                 errorCode = 3;
             }
-            //else if (FindGroupByName(newGroup) != null)
-            //{
-            //    if (FindGroupByName(newGroup).ID == FindStudentWithName(currentName).GroupID)
-            //    {
-            //        errorCode = 4;
-            //    }
-            //}
+            else if (!IsStudentChanged(newFName, newLName, currentName, newGroup, rewardTotal))
+            {
+                errorCode = 4;
+            }
             else if (newFName.Equals(string.Empty) && newLName.Equals(string.Empty) && newGroup.Equals(string.Empty)
                 && rewardTotal.Equals(string.Empty))
             {
                 errorCode = 5;
             }
-            else if (!IsStudentChanged(newFName, newLName, currentName, newGroup, rewardTotal))
+            // Check to see if the desirted new group is valid
+            else if (FindGroupByName(newGroup) != null)
             {
-                errorCode = 6;
+                if (FindGroupByName(newGroup).ID == FindStudentWithName(currentName).GroupID)
+                {
+                    errorCode = 6;
+                }
             }
 
             return errorCode;
@@ -503,10 +503,15 @@ namespace RaptorMath
             wholeName = currentName.Split(separators, StringSplitOptions.RemoveEmptyEntries);
             // Check to see if a student by the passed names already exists
             // Need to find out if we are changing the student's name and if so what parts of it
-            if ((newFName.Equals(string.Empty) && newLName.Equals(string.Empty)) || (newFName.Equals(wholeName[0]) && newLName.Equals(wholeName[1])))
+            if ((newFName.Equals(string.Empty) && newLName.Equals(string.Empty)))
             {
                 // We are not trying to change the student's name
                 // Do nothing because this valid
+            }
+            else if ((newFName.Equals(wholeName[0]) && newLName.Equals(wholeName[1])))
+            {
+                // We are trying to rename to student the the name they already have
+                isValid = false;
             }
             else if (newFName.Equals(string.Empty) && !newLName.Equals(string.Empty))
             {

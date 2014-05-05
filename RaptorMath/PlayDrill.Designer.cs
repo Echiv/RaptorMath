@@ -49,6 +49,7 @@
             this.PlayDrillImageList = new System.Windows.Forms.ImageList(this.components);
             this.CloudImageTimeDate = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PlayDrillToolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.CloudImageTimeDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -122,6 +123,7 @@
             this.MathDrill_SkipBtn.Size = new System.Drawing.Size(145, 130);
             this.MathDrill_SkipBtn.TabIndex = 32;
             this.MathDrill_SkipBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.PlayDrillToolTip.SetToolTip(this.MathDrill_SkipBtn, "Skips the current problem.");
             this.MathDrill_SkipBtn.UseVisualStyleBackColor = false;
             this.MathDrill_SkipBtn.Click += new System.EventHandler(this.MathDrill_SkipBtn_Click);
             // 
@@ -167,6 +169,7 @@
             this.MathDrill_SubmitBtn.Size = new System.Drawing.Size(144, 128);
             this.MathDrill_SubmitBtn.TabIndex = 33;
             this.MathDrill_SubmitBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.PlayDrillToolTip.SetToolTip(this.MathDrill_SubmitBtn, "Submit your answer for grading.");
             this.MathDrill_SubmitBtn.UseVisualStyleBackColor = false;
             this.MathDrill_SubmitBtn.Click += new System.EventHandler(this.MathDrill_SubmitBtn_Click);
             // 
@@ -237,6 +240,7 @@
             this.MathDrill_QuitBtn.Size = new System.Drawing.Size(90, 91);
             this.MathDrill_QuitBtn.TabIndex = 40;
             this.MathDrill_QuitBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.PlayDrillToolTip.SetToolTip(this.MathDrill_QuitBtn, "Ends the adventure! If you finished saves the results.");
             this.MathDrill_QuitBtn.UseVisualStyleBackColor = false;
             this.MathDrill_QuitBtn.Click += new System.EventHandler(this.MathDrill_QuitBtn_Click);
             // 
@@ -351,5 +355,6 @@
         private System.Windows.Forms.ImageList PlayDrillImageList;
         private System.Windows.Forms.PictureBox CloudImageTimeDate;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolTip PlayDrillToolTip;
     }
 }

@@ -42,7 +42,7 @@
             this.StuHome_LogoutBtn = new System.Windows.Forms.Button();
             this.ChooseYourAdventureLbl = new System.Windows.Forms.Label();
             this.StuHome_Timer = new System.Windows.Forms.Timer(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.StudentHomepageToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.dinoeggspic = new System.Windows.Forms.PictureBox();
             this.eggsearnedlbl = new System.Windows.Forms.Label();
             this.eggsearnedvalue = new System.Windows.Forms.Label();
@@ -155,6 +155,7 @@
             this.StuHome_StartDrillBtn.Size = new System.Drawing.Size(142, 141);
             this.StuHome_StartDrillBtn.TabIndex = 32;
             this.StuHome_StartDrillBtn.Text = "  Go!";
+            this.StudentHomepageToolTip.SetToolTip(this.StuHome_StartDrillBtn, "Start your adventure!!");
             this.StuHome_StartDrillBtn.UseVisualStyleBackColor = false;
             this.StuHome_StartDrillBtn.Click += new System.EventHandler(this.StuHome_StartDrillBtn_Click);
             // 
@@ -182,6 +183,7 @@
             this.StuHome_LogoutBtn.Size = new System.Drawing.Size(112, 78);
             this.StuHome_LogoutBtn.TabIndex = 36;
             this.StuHome_LogoutBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.StudentHomepageToolTip.SetToolTip(this.StuHome_LogoutBtn, "Takes you back to the login screen.");
             this.StuHome_LogoutBtn.UseVisualStyleBackColor = false;
             this.StuHome_LogoutBtn.Click += new System.EventHandler(this.StuHome_LogoutBtn_Click);
             // 
@@ -288,7 +290,7 @@
         private System.Windows.Forms.Button StuHome_LogoutBtn;
         private System.Windows.Forms.Label ChooseYourAdventureLbl;
         private System.Windows.Forms.Timer StuHome_Timer;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip StudentHomepageToolTip;
         private System.Windows.Forms.PictureBox dinoeggspic;
         private System.Windows.Forms.Label eggsearnedlbl;
         private System.Windows.Forms.Label eggsearnedvalue;

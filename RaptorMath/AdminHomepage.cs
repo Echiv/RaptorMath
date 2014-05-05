@@ -1005,11 +1005,11 @@ namespace RaptorMath
                         MessageBox.Show("Error. Entered group doesn't exist.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         GroupNameComboBox.Focus();
                     }
-                    //else if (isValidEdit == 4)
-                    //{
-                    //    MessageBox.Show("Error. Student already belongs to this group.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //    EditUsersGroupBox.Focus();
-                    //}
+                    else if (isValidEdit == 4)
+                    {
+                        MessageBox.Show("Error. You cannot save the pre-filled data. Something must be changed.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        GroupNameComboBox.Focus();
+                    }
                     else if (isValidEdit == 5)
                     {
                         MessageBox.Show("Error. You must choose something to change about the student.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1017,7 +1017,7 @@ namespace RaptorMath
                     }
                     else if (isValidEdit == 6)
                     {
-                        MessageBox.Show("Error. You cannot save the pre-filled data. Something must be changed.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error. Student already belongs to this group.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         GroupNameComboBox.Focus();
                     }
                 }

@@ -41,6 +41,7 @@
             this.UserSelectionBox = new System.Windows.Forms.GroupBox();
             this.UseDesg_LoginBtn = new System.Windows.Forms.Button();
             this.UseDesg_Timer = new System.Windows.Forms.Timer(this.components);
+            this.UseDesgToolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.UserSelectionBox.SuspendLayout();
             this.SuspendLayout();
@@ -137,6 +138,7 @@
             this.UseDesg_ExitBtn.Size = new System.Drawing.Size(84, 67);
             this.UseDesg_ExitBtn.TabIndex = 19;
             this.UseDesg_ExitBtn.Text = "Exit";
+            this.UseDesgToolTip.SetToolTip(this.UseDesg_ExitBtn, "Closes the program.");
             this.UseDesg_ExitBtn.UseVisualStyleBackColor = false;
             this.UseDesg_ExitBtn.Click += new System.EventHandler(this.UseDesg_ExitBtn_Click);
             // 
@@ -175,6 +177,7 @@
             this.UseDesg_LoginBtn.Size = new System.Drawing.Size(169, 32);
             this.UseDesg_LoginBtn.TabIndex = 28;
             this.UseDesg_LoginBtn.Text = "Login";
+            this.UseDesgToolTip.SetToolTip(this.UseDesg_LoginBtn, "Takes you to your homepage.");
             this.UseDesg_LoginBtn.UseVisualStyleBackColor = true;
             this.UseDesg_LoginBtn.Click += new System.EventHandler(this.UseDesg_LoginBtn_Click);
             // 
@@ -226,6 +229,7 @@
         private System.Windows.Forms.GroupBox UserSelectionBox;
         private System.Windows.Forms.Button UseDesg_LoginBtn;
         private System.Windows.Forms.Timer UseDesg_Timer;
+        private System.Windows.Forms.ToolTip UseDesgToolTip;
 
 
 
