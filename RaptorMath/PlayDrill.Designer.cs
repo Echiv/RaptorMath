@@ -325,7 +325,7 @@
             this.MinimizeBox = false;
             this.Name = "PlayDrill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PlayDrill";
+            this.Text = "Raptor Math";
             this.Load += new System.EventHandler(this.PlayDrill_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CloudImageTimeDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
