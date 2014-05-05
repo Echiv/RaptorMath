@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomepage));
             this.tab1 = new System.Windows.Forms.TabControl();
             this.Statistics = new System.Windows.Forms.TabPage();
@@ -195,6 +195,7 @@
             this.Statistics.Size = new System.Drawing.Size(1362, 613);
             this.Statistics.TabIndex = 0;
             this.Statistics.Text = "Statistics";
+            this.Statistics.ToolTipText = "Opens the tab that displays user reports.";
             // 
             // GroupSearchBox
             // 
@@ -405,14 +406,14 @@
             // 
             // GroupNameDataDisplay
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle66.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle66.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle66.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle66.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle66.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle66.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle66;
             this.GroupNameDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GroupNameDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GroupName,
@@ -457,6 +458,7 @@
             this.Setup.Size = new System.Drawing.Size(1362, 613);
             this.Setup.TabIndex = 1;
             this.Setup.Text = "Setup";
+            this.Setup.ToolTipText = "Opens the tab that deals with creating, assigning, and removing drills.";
             // 
             // ManageDrillsBox
             // 
@@ -544,32 +546,32 @@
             // 
             // AvailableDrillDataDisplay
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle67;
             this.AvailableDrillDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AvailableDrillDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DrillName});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle68.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle68.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle68.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle68;
             this.AvailableDrillDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.AvailableDrillDataDisplay.Location = new System.Drawing.Point(3, 90);
             this.AvailableDrillDataDisplay.Name = "AvailableDrillDataDisplay";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle69.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle69.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle69.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle69;
+            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle70;
             this.AvailableDrillDataDisplay.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.AvailableDrillDataDisplay.Size = new System.Drawing.Size(324, 468);
             this.AvailableDrillDataDisplay.TabIndex = 0;
@@ -593,6 +595,7 @@
             this.NewDrillBtn.Size = new System.Drawing.Size(67, 36);
             this.NewDrillBtn.TabIndex = 1;
             this.NewDrillBtn.Text = "+";
+            this.AdminHomepageToolTip.SetToolTip(this.NewDrillBtn, "Create New Drill.");
             this.NewDrillBtn.UseVisualStyleBackColor = true;
             this.NewDrillBtn.Click += new System.EventHandler(this.NewDrillBtn_Click);
             // 
@@ -605,6 +608,7 @@
             this.DeleteDrillBtn.TabIndex = 2;
             this.DeleteDrillBtn.Text = "-";
             this.DeleteDrillBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.AdminHomepageToolTip.SetToolTip(this.DeleteDrillBtn, "Delete Selected Drill.");
             this.DeleteDrillBtn.UseVisualStyleBackColor = true;
             this.DeleteDrillBtn.Click += new System.EventHandler(this.DeleteDrillBtn_Click);
             // 
@@ -672,6 +676,7 @@
             this.RemoveAllBtn.Size = new System.Drawing.Size(75, 45);
             this.RemoveAllBtn.TabIndex = 5;
             this.RemoveAllBtn.Text = "<<<";
+            this.AdminHomepageToolTip.SetToolTip(this.RemoveAllBtn, "Remove All Assigned Drills.");
             this.RemoveAllBtn.UseVisualStyleBackColor = true;
             this.RemoveAllBtn.Click += new System.EventHandler(this.RemoveAllBtn_Click);
             // 
@@ -682,6 +687,7 @@
             this.AssignAllBtn.Size = new System.Drawing.Size(75, 45);
             this.AssignAllBtn.TabIndex = 4;
             this.AssignAllBtn.Text = ">>>";
+            this.AdminHomepageToolTip.SetToolTip(this.AssignAllBtn, "Assign All Available Drills.");
             this.AssignAllBtn.UseVisualStyleBackColor = true;
             this.AssignAllBtn.Click += new System.EventHandler(this.AssignAllBtn_Click);
             // 
@@ -692,6 +698,7 @@
             this.RemoveSelectedBtn.Size = new System.Drawing.Size(75, 45);
             this.RemoveSelectedBtn.TabIndex = 3;
             this.RemoveSelectedBtn.Text = "<";
+            this.AdminHomepageToolTip.SetToolTip(this.RemoveSelectedBtn, "Remove Selected Drill.");
             this.RemoveSelectedBtn.UseVisualStyleBackColor = true;
             this.RemoveSelectedBtn.Click += new System.EventHandler(this.RemoveSelectedBtn_Click);
             // 
@@ -702,6 +709,7 @@
             this.AssignSelectedBtn.Size = new System.Drawing.Size(75, 45);
             this.AssignSelectedBtn.TabIndex = 2;
             this.AssignSelectedBtn.Text = ">";
+            this.AdminHomepageToolTip.SetToolTip(this.AssignSelectedBtn, "Assign Selected Drill.");
             this.AssignSelectedBtn.UseVisualStyleBackColor = true;
             this.AssignSelectedBtn.Click += new System.EventHandler(this.AssignSelectedBtn_Click);
             // 
@@ -804,6 +812,7 @@
             this.EditUsers.Size = new System.Drawing.Size(1362, 613);
             this.EditUsers.TabIndex = 2;
             this.EditUsers.Text = "Edit Users";
+            this.EditUsers.ToolTipText = "Opens the tab that deals with editing existing students.";
             // 
             // EditUsersGroupBox
             // 
@@ -977,6 +986,7 @@
             this.RemoveUserGroupBtn.Name = "RemoveUserGroupBtn";
             this.RemoveUserGroupBtn.Size = new System.Drawing.Size(40, 40);
             this.RemoveUserGroupBtn.TabIndex = 11;
+            this.AdminHomepageToolTip.SetToolTip(this.RemoveUserGroupBtn, "Permanently removes the user.");
             this.RemoveUserGroupBtn.UseVisualStyleBackColor = true;
             this.RemoveUserGroupBtn.Click += new System.EventHandler(this.RemoveUserGroupBtn_Click);
             // 
@@ -988,6 +998,7 @@
             this.SaveChangesBtn.Name = "SaveChangesBtn";
             this.SaveChangesBtn.Size = new System.Drawing.Size(40, 40);
             this.SaveChangesBtn.TabIndex = 10;
+            this.AdminHomepageToolTip.SetToolTip(this.SaveChangesBtn, "Saves the changes made to the user.");
             this.SaveChangesBtn.UseVisualStyleBackColor = true;
             this.SaveChangesBtn.Click += new System.EventHandler(this.SaveChangesBtn_Click);
             // 
@@ -1086,6 +1097,7 @@
             this.About.Size = new System.Drawing.Size(1362, 613);
             this.About.TabIndex = 4;
             this.About.Text = "About";
+            this.About.ToolTipText = "Opens the tab that gives basic application information.";
             this.About.UseVisualStyleBackColor = true;
             // 
             // CopyRightLbl
@@ -1248,6 +1260,7 @@
             this.ExportToExcelBtn.Size = new System.Drawing.Size(150, 35);
             this.ExportToExcelBtn.TabIndex = 4;
             this.ExportToExcelBtn.Text = "Export to Excel";
+            this.AdminHomepageToolTip.SetToolTip(this.ExportToExcelBtn, "Exports the report to an Excel file.");
             this.ExportToExcelBtn.UseVisualStyleBackColor = true;
             this.ExportToExcelBtn.Click += new System.EventHandler(this.ExportToExcelBtn_Click);
             // 
@@ -1340,6 +1353,7 @@
             this.LogoutBtn.Size = new System.Drawing.Size(150, 35);
             this.LogoutBtn.TabIndex = 0;
             this.LogoutBtn.Text = "Logout";
+            this.AdminHomepageToolTip.SetToolTip(this.LogoutBtn, "Returns you to the login homepage.");
             this.LogoutBtn.UseVisualStyleBackColor = true;
             this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
             // 
@@ -1350,6 +1364,7 @@
             this.ExitBtn.Size = new System.Drawing.Size(150, 35);
             this.ExitBtn.TabIndex = 1;
             this.ExitBtn.Text = "Exit";
+            this.AdminHomepageToolTip.SetToolTip(this.ExitBtn, "Closes the program.");
             this.ExitBtn.UseVisualStyleBackColor = true;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
