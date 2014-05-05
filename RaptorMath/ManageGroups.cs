@@ -32,6 +32,8 @@ Cycle 3 Changes:
  * • Added logic to to remove leading and trailing white space from group names along with changing spaces in between
  *   words down to onlt one space if there is more than that.
  * • Fixed a small bug that would let you rename a group to its current name if you added leading or trailing white space.  
+ * Date: 5/01/14
+ * • Completely deprecated.
 */
 
 using System;

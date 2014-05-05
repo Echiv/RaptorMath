@@ -29,6 +29,8 @@ Cycle 3 Changes:
  * Date: 4/14/14
  * • Fixed a bug that allowed numbers and special characters into the selection combo for removing a user.
  * • The user can no longer interact with the student combo box or the group combo box if they do not have data in them
+ * Date: 5/01/14
+ * • Completely deprecated.
 */
 
 using System;

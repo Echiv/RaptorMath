@@ -40,6 +40,8 @@ Cycle 3 Changes:
  * • Added logic to disallow copy, paste, and cut.
  * Date: 4/16/14
  * • Added key event handler to stop the user from entering anything but a number into the answer box.
+ * Date: 5/01/14
+ * • Completely deprecated.
 */
 
 using System;

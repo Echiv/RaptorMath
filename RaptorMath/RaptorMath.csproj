@@ -52,12 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs" />
-    <Compile Include="AdminHome.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminHome.designer.cs">
-      <DependentUpon>AdminHome.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdminHomepage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,31 +71,7 @@
     <Compile Include="DrillReport.Designer.cs">
       <DependentUpon>DrillReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditStudents.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditStudents.Designer.cs">
-      <DependentUpon>EditStudents.cs</DependentUpon>
-    </Compile>
     <Compile Include="Group.cs" />
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManageDrills.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManageDrills.Designer.cs">
-      <DependentUpon>ManageDrills.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManageGroups.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManageGroups.Designer.cs">
-      <DependentUpon>ManageGroups.cs</DependentUpon>
-    </Compile>
     <Compile Include="MngUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,47 +84,17 @@
     <Compile Include="PlayDrill.Designer.cs">
       <DependentUpon>PlayDrill.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportGroup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportGroup.Designer.cs">
-      <DependentUpon>ReportGroup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ReportSingle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportSingle.Designer.cs">
-      <DependentUpon>ReportSingle.cs</DependentUpon>
-    </Compile>
     <Compile Include="StudentHomepage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StudentHomepage.Designer.cs">
       <DependentUpon>StudentHomepage.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentReports.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StudentReports.Designer.cs">
-      <DependentUpon>StudentReports.cs</DependentUpon>
-    </Compile>
     <Compile Include="XMLDriver.cs" />
     <Compile Include="XMLParser.cs" />
     <Compile Include="Manager.cs" />
-    <Compile Include="MathDrill.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MathDrill.designer.cs">
-      <DependentUpon>MathDrill.cs</DependentUpon>
-    </Compile>
     <Compile Include="Record.cs" />
     <Compile Include="Student.cs" />
-    <Compile Include="StudentHome.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StudentHome.designer.cs">
-      <DependentUpon>StudentHome.cs</DependentUpon>
-    </Compile>
     <Compile Include="UseDesg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,9 +104,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XMLStudentDriver.cs" />
-    <EmbeddedResource Include="AdminHome.resx">
-      <DependentUpon>AdminHome.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AdminHomepage.resx">
       <DependentUpon>AdminHomepage.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,41 +113,14 @@
     <EmbeddedResource Include="DrillReport.resx">
       <DependentUpon>DrillReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditStudents.resx">
-      <DependentUpon>EditStudents.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManageDrills.resx">
-      <DependentUpon>ManageDrills.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManageGroups.resx">
-      <DependentUpon>ManageGroups.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MathDrill.resx">
-      <DependentUpon>MathDrill.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MngUsers.resx">
       <DependentUpon>MngUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayDrill.resx">
       <DependentUpon>PlayDrill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportGroup.resx">
-      <DependentUpon>ReportGroup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReportSingle.resx">
-      <DependentUpon>ReportSingle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StudentHome.resx">
-      <DependentUpon>StudentHome.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="StudentHomepage.resx">
       <DependentUpon>StudentHomepage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StudentReports.resx">
-      <DependentUpon>StudentReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UseDesg.resx">
       <DependentUpon>UseDesg.cs</DependentUpon>

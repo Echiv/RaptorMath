@@ -32,6 +32,8 @@ Cycle 3 Changes:
  * • Added loginc to handle white space problems.
  * • Fixed the issue were the error sound would play when entering numbers for a group name.
  * • Added logic to enable/disable the select drill combo box and the add/remove button correctly.
+ * Date: 5/01/14
+ * • Completely deprecated.
 */
 
 using System;

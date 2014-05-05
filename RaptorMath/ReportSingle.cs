@@ -17,6 +17,8 @@ Cycle 3 Changes:
  * Date: 4/12/14
  * • Added logic to disallow interaction with a form's border close button.
  * • Added logic to disallow copy, paste, and cut.
+ * Date: 5/01/14
+ * • Completely deprecated.
 */
 
 using System;
