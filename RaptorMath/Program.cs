@@ -16,6 +16,9 @@
 /* 
 Authors: Joshua Boone and Justine Dinh                     
 Cycle 3 Changes:
+ * Date: 5/01/14
+ * • Commented out the code to open the old windows.
+ * • Added in the new windows
 */
 
 using System;
@@ -34,14 +37,20 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>The main entry point for the application.</summary>
         static Manager allManager = new Manager();
         [STAThread]
 
         static void Main()
         {
-            System.Threading.Mutex mutexMyapplication = new System.Threading.Mutex(false, "RaptorMath.exe");
-            if (!mutexMyapplication.WaitOne(TimeSpan.Zero, true))
+            bool onlyOneInstance = true;
+            System.Threading.Mutex mutexMyapplication = new System.Threading.Mutex(false, "RaptorMath.exe", out onlyOneInstance);
+            //if (!mutexMyapplication.WaitOne(TimeSpan.Zero, true))
+            if (!onlyOneInstance)
             {
                 MessageBox.Show(Application.ProductName + " is already running!", Application.ProductName,
                 MessageBoxButtons.OK, MessageBoxIcon.Error);

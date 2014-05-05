@@ -27,7 +27,7 @@ namespace RaptorMath
         // The main class the the UI goes through to get information
         Manager localManager;
         // Used when importing students from a txt file
-        OpenFileDialog openFile;
+        //OpenFileDialog openFile;
 
         public AdminHomepage(Manager manager)
         {
