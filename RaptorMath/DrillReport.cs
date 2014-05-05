@@ -49,5 +49,10 @@ namespace RaptorMath
             NumberCorrectlbl.Text = (Convert.ToInt32(localManager.currentStudent.curDrill.Questions) - Convert.ToInt32(localManager.currentStudent.curDrill.Wrong)).ToString();
             NumberIncorretLbl.Text = localManager.currentStudent.curDrill.Wrong;
         }
+
+        private void NameLbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
