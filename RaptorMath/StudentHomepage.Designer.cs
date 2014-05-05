@@ -217,16 +217,16 @@
             // 
             // eggsearnedlbl
             // 
-            this.eggsearnedlbl.AutoSize = true;
             this.eggsearnedlbl.BackColor = System.Drawing.Color.Transparent;
             this.eggsearnedlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eggsearnedlbl.ForeColor = System.Drawing.Color.Linen;
             this.eggsearnedlbl.Image = global::RaptorMath.Properties.Resources.eggsearned1;
             this.eggsearnedlbl.Location = new System.Drawing.Point(15, 679);
             this.eggsearnedlbl.Name = "eggsearnedlbl";
-            this.eggsearnedlbl.Size = new System.Drawing.Size(229, 25);
+            this.eggsearnedlbl.Size = new System.Drawing.Size(229, 29);
             this.eggsearnedlbl.TabIndex = 39;
             this.eggsearnedlbl.Text = "                               ";
+            this.eggsearnedlbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // eggsearnedvalue
             // 
@@ -234,7 +234,7 @@
             this.eggsearnedvalue.BackColor = System.Drawing.Color.Transparent;
             this.eggsearnedvalue.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eggsearnedvalue.ForeColor = System.Drawing.Color.Bisque;
-            this.eggsearnedvalue.Location = new System.Drawing.Point(250, 675);
+            this.eggsearnedvalue.Location = new System.Drawing.Point(250, 679);
             this.eggsearnedvalue.Name = "eggsearnedvalue";
             this.eggsearnedvalue.Size = new System.Drawing.Size(223, 33);
             this.eggsearnedvalue.TabIndex = 40;
