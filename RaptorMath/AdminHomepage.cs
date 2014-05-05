@@ -84,20 +84,20 @@ namespace RaptorMath
                 ExistingUserDataEditUsersDisplay.CurrentCell = ExistingUserDataEditUsersDisplay[0, 0];
                 SetupEditableUser();
             }
-            // The Add Users tab
-            else if (e.TabPageIndex == 3)
-            {
-                ExportToExcelBtn.Enabled = false;
-                // Refresh the group names
-                RefreshComboBox(GroupNameCmbBox, localManager.GetGroupNames());
-                // Refesh the first names
-                RefreshComboBox(FirstNameCmboBox, localManager.GetUsersFirstNames());
-                // Refesh the last names
-                RefreshComboBox(LastNameCmboBox, localManager.GetUsersLastNames());
-                SaveNewUserBtn.Enabled = false;
-                ExistingUserDataDisplay.Rows.Clear();
-                DisplayFoundStudents(localManager.studentList, ExistingUserDataDisplay);
-            }
+            //// The Add Users tab
+            //else if (e.TabPageIndex == 3)
+            //{
+            //    ExportToExcelBtn.Enabled = false;
+            //    // Refresh the group names
+            //    RefreshComboBox(GroupNameCmbBox, localManager.GetGroupNames());
+            //    // Refesh the first names
+            //    RefreshComboBox(FirstNameCmboBox, localManager.GetUsersFirstNames());
+            //    // Refesh the last names
+            //    RefreshComboBox(LastNameCmboBox, localManager.GetUsersLastNames());
+            //    SaveNewUserBtn.Enabled = false;
+            //    ExistingUserDataDisplay.Rows.Clear();
+            //    DisplayFoundStudents(localManager.studentList, ExistingUserDataDisplay);
+            //}
             // The About tab
             else if (e.TabPageIndex == 3)
             {
@@ -1078,129 +1078,129 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
-        private void SearchAddUsersTxtbox_TextChanged(object sender, EventArgs e)
-        {
-            if (SearchAddUsersTxtBox.Text.Length > 0)
-            {
-                ExistingUserDataDisplay.Rows.Clear();
-                List<Student> matches = localManager.FindLastNameMatches(SearchAddUsersTxtBox.Text);
-                if (matches.Count > 0)
-                {
-                    DisplayFoundStudents(matches, ExistingUserDataDisplay);
-                }
-            }
-            else
-            {
-                ExistingUserDataDisplay.Rows.Clear();
-                DisplayFoundStudents(localManager.studentList, ExistingUserDataDisplay);
-            }
-        }
+        //private void SearchAddUsersTxtbox_TextChanged(object sender, EventArgs e)
+        //{
+        //    if (SearchAddUsersTxtBox.Text.Length > 0)
+        //    {
+        //        ExistingUserDataDisplay.Rows.Clear();
+        //        List<Student> matches = localManager.FindLastNameMatches(SearchAddUsersTxtBox.Text);
+        //        if (matches.Count > 0)
+        //        {
+        //            DisplayFoundStudents(matches, ExistingUserDataDisplay);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        ExistingUserDataDisplay.Rows.Clear();
+        //        DisplayFoundStudents(localManager.studentList, ExistingUserDataDisplay);
+        //    }
+        //}
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
-        private void SaveNewUserBtn_Click(object sender, EventArgs e)
-        {
-            bool isCreatedUser = false;
-            int groupID = localManager.FindGroupIDByName(GroupNameCmbBox.Text.Trim());
+        //private void SaveNewUserBtn_Click(object sender, EventArgs e)
+        //{
+        //    bool isCreatedUser = false;
+        //    int groupID = localManager.FindGroupIDByName(GroupNameCmbBox.Text.Trim());
 
-            if (groupID == 0)
-            {
-                MessageBox.Show("The group entered does not match any groups.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                isCreatedUser = localManager.CreateUser(groupID, FirstNameCmboBox.Text, LastNameCmboBox.Text, "Unknown");
-                if (isCreatedUser)
-                {
-                    // Refresh the group names
-                    RefreshComboBox(GroupNameCmbBox, localManager.GetGroupNames());
-                    // Refesh the first names
-                    RefreshComboBox(FirstNameCmboBox, localManager.GetUsersFirstNames());
-                    // Refesh the last names
-                    RefreshComboBox(LastNameCmboBox, localManager.GetUsersLastNames());
-                    MessageBox.Show("New user created.", "Raptor Math", MessageBoxButtons.OK);
-                    FirstNameCmboBox.Text = string.Empty;
-                    LastNameCmboBox.Text = string.Empty;
-                    if (!LockGroupNameCheckBox.Checked)
-                    {
-                        GroupNameCmbBox.Text = string.Empty;
-                    }
-                    FirstNameCmboBox.Select();
-                    ExistingUserDataDisplay.Rows.Clear();
-                    DisplayFoundStudents(localManager.studentList, ExistingUserDataDisplay);
-                }
-                else
-                {
-                    MessageBox.Show("Entered name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
+        //    if (groupID == 0)
+        //    {
+        //        MessageBox.Show("The group entered does not match any groups.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //    else
+        //    {
+        //        isCreatedUser = localManager.CreateUser(groupID, FirstNameCmboBox.Text, LastNameCmboBox.Text, "Unknown");
+        //        if (isCreatedUser)
+        //        {
+        //            // Refresh the group names
+        //            RefreshComboBox(GroupNameCmbBox, localManager.GetGroupNames());
+        //            // Refesh the first names
+        //            RefreshComboBox(FirstNameCmboBox, localManager.GetUsersFirstNames());
+        //            // Refesh the last names
+        //            RefreshComboBox(LastNameCmboBox, localManager.GetUsersLastNames());
+        //            MessageBox.Show("New user created.", "Raptor Math", MessageBoxButtons.OK);
+        //            FirstNameCmboBox.Text = string.Empty;
+        //            LastNameCmboBox.Text = string.Empty;
+        //            if (!LockGroupNameCheckBox.Checked)
+        //            {
+        //                GroupNameCmbBox.Text = string.Empty;
+        //            }
+        //            FirstNameCmboBox.Select();
+        //            ExistingUserDataDisplay.Rows.Clear();
+        //            DisplayFoundStudents(localManager.studentList, ExistingUserDataDisplay);
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Entered name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //    }
+        //}
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Attempts to import a list of students into the system from a txt file.</summary>
-        private void ImportFromTextFileBtn_Click(object sender, EventArgs e)
-        {
-            openFile = new OpenFileDialog();
-            openFile.Filter = "Text Files|*.txt";
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                Tuple<int, int, int, int> code = localManager.ImportStudents(openFile.FileName);
-                if (code.Item1 == 0 && code.Item4 == 0)
-                {
-                    MessageBox.Show("All users in the file were added.", "Raptor Math", MessageBoxButtons.OK);
-                    // Refresh the group names
-                    RefreshComboBox(GroupNameCmbBox, localManager.GetGroupNames());
-                    // Refesh the first names
-                    RefreshComboBox(FirstNameCmboBox, localManager.GetUsersFirstNames());
-                    // Refesh the last names
-                    RefreshComboBox(LastNameCmboBox, localManager.GetUsersLastNames());
-                }
-                else if (code.Item2 == 1)
-                {
-                    MessageBox.Show("Unable to open the file.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (code.Item3 == 1)
-                {
-                    MessageBox.Show("Provided file is empty.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (code.Item4 == 1 && code.Item1 == 0)
-                {
-                    MessageBox.Show("Unable to add some students but some were added.", "Raptor Math", MessageBoxButtons.OK);
-                    // Refresh the group names
-                    RefreshComboBox(GroupNameCmbBox, localManager.GetGroupNames());
-                    // Refesh the first names
-                    RefreshComboBox(FirstNameCmboBox, localManager.GetUsersFirstNames());
-                    // Refesh the last names
-                    RefreshComboBox(LastNameCmboBox, localManager.GetUsersLastNames());
-                }
-                else if (code.Item4 == 1 && code.Item1 == 1)
-                {
-                    MessageBox.Show("Unable to add any students.", "Raptor Math", MessageBoxButtons.OK);
-                }
-            }
-        }
+        //private void ImportFromTextFileBtn_Click(object sender, EventArgs e)
+        //{
+        //    openFile = new OpenFileDialog();
+        //    openFile.Filter = "Text Files|*.txt";
+        //    if (openFile.ShowDialog() == DialogResult.OK)
+        //    {
+        //        Tuple<int, int, int, int> code = localManager.ImportStudents(openFile.FileName);
+        //        if (code.Item1 == 0 && code.Item4 == 0)
+        //        {
+        //            MessageBox.Show("All users in the file were added.", "Raptor Math", MessageBoxButtons.OK);
+        //            // Refresh the group names
+        //            RefreshComboBox(GroupNameCmbBox, localManager.GetGroupNames());
+        //            // Refesh the first names
+        //            RefreshComboBox(FirstNameCmboBox, localManager.GetUsersFirstNames());
+        //            // Refesh the last names
+        //            RefreshComboBox(LastNameCmboBox, localManager.GetUsersLastNames());
+        //        }
+        //        else if (code.Item2 == 1)
+        //        {
+        //            MessageBox.Show("Unable to open the file.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //        else if (code.Item3 == 1)
+        //        {
+        //            MessageBox.Show("Provided file is empty.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //        else if (code.Item4 == 1 && code.Item1 == 0)
+        //        {
+        //            MessageBox.Show("Unable to add some students but some were added.", "Raptor Math", MessageBoxButtons.OK);
+        //            // Refresh the group names
+        //            RefreshComboBox(GroupNameCmbBox, localManager.GetGroupNames());
+        //            // Refesh the first names
+        //            RefreshComboBox(FirstNameCmboBox, localManager.GetUsersFirstNames());
+        //            // Refesh the last names
+        //            RefreshComboBox(LastNameCmboBox, localManager.GetUsersLastNames());
+        //        }
+        //        else if (code.Item4 == 1 && code.Item1 == 1)
+        //        {
+        //            MessageBox.Show("Unable to add any students.", "Raptor Math", MessageBoxButtons.OK);
+        //        }
+        //    }
+        //}
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Handle Text Change event.</summary>
-        private void FirstAndLastNameCmbo_TextChanged(object sender, EventArgs e)
-        {
-            if ((FirstNameCmboBox.Text.Length > 0) && (LastNameCmboBox.Text.Length > 0))
-            {
-                SaveNewUserBtn.Enabled = true;
-            }
-            else
-            {
-                SaveNewUserBtn.Enabled = false;
-            }
-        }
+        //private void FirstAndLastNameCmbo_TextChanged(object sender, EventArgs e)
+        //{
+        //    if ((FirstNameCmboBox.Text.Length > 0) && (LastNameCmboBox.Text.Length > 0))
+        //    {
+        //        SaveNewUserBtn.Enabled = true;
+        //    }
+        //    else
+        //    {
+        //        SaveNewUserBtn.Enabled = false;
+        //    }
+        //}
 
         /* This part of the code is for utility functions that anyone can use*/
 
@@ -1717,7 +1717,6 @@ namespace RaptorMath
                 if (isGroupAdded)
                 {
                     MessageBox.Show("New group created.", "Raptor Math", MessageBoxButtons.OK);
-                    GroupNameCmbBox.Text = string.Empty;
                 }
                 else
                 {
