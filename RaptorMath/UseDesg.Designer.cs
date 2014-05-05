@@ -78,12 +78,13 @@
             this.UseDesg_LoginCmbo.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.UseDesg_LoginCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.UseDesg_LoginCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.UseDesg_LoginCmbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UseDesg_LoginCmbo.FormattingEnabled = true;
             this.UseDesg_LoginCmbo.Location = new System.Drawing.Point(102, 32);
             this.UseDesg_LoginCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.UseDesg_LoginCmbo.MaxLength = 30;
             this.UseDesg_LoginCmbo.Name = "UseDesg_LoginCmbo";
-            this.UseDesg_LoginCmbo.Size = new System.Drawing.Size(227, 32);
+            this.UseDesg_LoginCmbo.Size = new System.Drawing.Size(227, 28);
             this.UseDesg_LoginCmbo.TabIndex = 18;
             this.UseDesg_LoginCmbo.TextChanged += new System.EventHandler(this.UseDesg_LoginCmbo_TextChanged);
             // 

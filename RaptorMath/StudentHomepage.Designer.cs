@@ -43,6 +43,10 @@
             this.ChooseYourAdventureLbl = new System.Windows.Forms.Label();
             this.StuHome_Timer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.dinoeggspic = new System.Windows.Forms.PictureBox();
+            this.eggsearnedlbl = new System.Windows.Forms.Label();
+            this.eggsearnedvalue = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dinoeggspic)).BeginInit();
             this.SuspendLayout();
             // 
             // StuHome_WindowLbl
@@ -199,6 +203,41 @@
             this.StuHome_Timer.Enabled = true;
             this.StuHome_Timer.Tick += new System.EventHandler(this.StuHome_Timer_Tick);
             // 
+            // dinoeggspic
+            // 
+            this.dinoeggspic.BackColor = System.Drawing.Color.Transparent;
+            this.dinoeggspic.Image = global::RaptorMath.Properties.Resources.dinoegg1;
+            this.dinoeggspic.Location = new System.Drawing.Point(73, 552);
+            this.dinoeggspic.Name = "dinoeggspic";
+            this.dinoeggspic.Size = new System.Drawing.Size(113, 124);
+            this.dinoeggspic.TabIndex = 38;
+            this.dinoeggspic.TabStop = false;
+            // 
+            // eggsearnedlbl
+            // 
+            this.eggsearnedlbl.AutoSize = true;
+            this.eggsearnedlbl.BackColor = System.Drawing.Color.Transparent;
+            this.eggsearnedlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eggsearnedlbl.ForeColor = System.Drawing.Color.Linen;
+            this.eggsearnedlbl.Image = global::RaptorMath.Properties.Resources.eggsearned1;
+            this.eggsearnedlbl.Location = new System.Drawing.Point(15, 679);
+            this.eggsearnedlbl.Name = "eggsearnedlbl";
+            this.eggsearnedlbl.Size = new System.Drawing.Size(229, 25);
+            this.eggsearnedlbl.TabIndex = 39;
+            this.eggsearnedlbl.Text = "                               ";
+            // 
+            // eggsearnedvalue
+            // 
+            this.eggsearnedvalue.AutoSize = true;
+            this.eggsearnedvalue.BackColor = System.Drawing.Color.Transparent;
+            this.eggsearnedvalue.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eggsearnedvalue.ForeColor = System.Drawing.Color.Bisque;
+            this.eggsearnedvalue.Location = new System.Drawing.Point(250, 675);
+            this.eggsearnedvalue.Name = "eggsearnedvalue";
+            this.eggsearnedvalue.Size = new System.Drawing.Size(223, 33);
+            this.eggsearnedvalue.TabIndex = 40;
+            this.eggsearnedvalue.Text = "<eggs earned>";
+            // 
             // StudentHomepage
             // 
             this.AcceptButton = this.StuHome_StartDrillBtn;
@@ -206,6 +245,9 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImage = global::RaptorMath.Properties.Resources.adventure;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.Controls.Add(this.eggsearnedvalue);
+            this.Controls.Add(this.eggsearnedlbl);
+            this.Controls.Add(this.dinoeggspic);
             this.Controls.Add(this.ChooseYourAdventureLbl);
             this.Controls.Add(this.StuHome_LogoutBtn);
             this.Controls.Add(this.StuHome_DrillDdl);
@@ -226,6 +268,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RaptorMath";
             this.Load += new System.EventHandler(this.StudentHomepage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dinoeggspic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,5 +289,8 @@
         private System.Windows.Forms.Label ChooseYourAdventureLbl;
         private System.Windows.Forms.Timer StuHome_Timer;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.PictureBox dinoeggspic;
+        private System.Windows.Forms.Label eggsearnedlbl;
+        private System.Windows.Forms.Label eggsearnedvalue;
     }
 }
