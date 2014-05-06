@@ -121,6 +121,9 @@
   <data name="Submit gray1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Submit gray1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="group-add-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\group-add-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="skip2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\skip2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,8 +160,8 @@
   <data name="go green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\go green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="System-Save-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\System-Save-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="egg2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\egg2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="trash-icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trash-icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,6 +208,9 @@
   <data name="quitdrill1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\quitdrill1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="aboutbackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\aboutbackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="submit green31" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\submit green31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -235,8 +241,8 @@
   <data name="FreeVector-Jungle-Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FreeVector-Jungle-Background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="egg2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\egg2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user-female-add-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-female-add-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="letsplay" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\letsplay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,8 +250,8 @@
   <data name="System-Save-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\System-Save-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logout41" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logout41.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="System-Save-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\System-Save-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eggsearned" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eggsearned.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -255,6 +261,9 @@
   </data>
   <data name="letsplay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\letsplay1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eggsearned1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eggsearned1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Submit Button Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Submit Button Green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,8 +283,8 @@
   <data name="scroll5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\scroll5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="aboutbackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\aboutbackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logout41" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logout41.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="skipquestion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\skipquestion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -313,7 +322,7 @@
   <data name="dinoegg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dinoegg1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eggsearned1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eggsearned1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user-female-add-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-female-add-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

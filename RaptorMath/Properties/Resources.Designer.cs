@@ -263,6 +263,16 @@ namespace RaptorMath.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap group_add_icon {
+            get {
+                object obj = ResourceManager.GetObject("group-add-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap import_icon__1_ {
             get {
                 object obj = ResourceManager.GetObject("import-icon (1)", resourceCulture);
@@ -716,6 +726,26 @@ namespace RaptorMath.Properties {
         internal static System.Drawing.Bitmap trash_icon1 {
             get {
                 object obj = ResourceManager.GetObject("trash-icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_female_add_icon {
+            get {
+                object obj = ResourceManager.GetObject("user-female-add-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_female_add_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("user-female-add-icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

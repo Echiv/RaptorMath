@@ -1731,5 +1731,65 @@ namespace RaptorMath
             DisplayFoundStudents(localManager.studentList, ExistingUserDataEditUsersDisplay);
             SetupEditableUser();
         }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateStudentLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NumberRewardsTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RewardLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GroupNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LastNameTxtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FirstNameTxtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RemoveUserGroupLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SaveChangesLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LastNameLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FirstNameLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GroupNameLbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
