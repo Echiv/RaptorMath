@@ -35,6 +35,8 @@
 //   • Added two functions to support changing a password.                                                          //
 //  Date: 4/24/14                                                                                                   //
 //   • Added function to find student's based on some entered string.                                               //
+//  Date: 4/27/14                                                                                                   //
+//   • Admin password is now normalized so it's not case sensitive.                                                 //
 //  Date: 5/04/14                                                                                                   //
 //   • Finding a group by name now normalizes the group names.                                                      //
 //==================================================================================================================//
@@ -1124,13 +1126,17 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                                            //
         // Date: 3/13/14                                                                                //
         //----------------------------------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/27/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Validate admin's password input.</summary>
         /// <returns>Boolean confirming password.</returns>
         public bool isCorrectAdminPassword()
         {
             if (currentAdmin != null)
             {
-                if (currentAdmin.Password == currentPassword)
+                if (currentAdmin.Password.ToLower() == currentPassword.ToLower())
                     return true;
                 else
                     ClearAdminUser();
