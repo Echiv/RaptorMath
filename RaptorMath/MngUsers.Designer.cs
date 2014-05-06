@@ -86,26 +86,27 @@
             this.MngUsers_UserInfoBox.Margin = new System.Windows.Forms.Padding(15, 2, 15, 10);
             this.MngUsers_UserInfoBox.Name = "MngUsers_UserInfoBox";
             this.MngUsers_UserInfoBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MngUsers_UserInfoBox.Size = new System.Drawing.Size(402, 65);
+            this.MngUsers_UserInfoBox.Size = new System.Drawing.Size(402, 84);
             this.MngUsers_UserInfoBox.TabIndex = 0;
             this.MngUsers_UserInfoBox.TabStop = false;
             // 
             // MngUsers_WindowLbl
             // 
             this.MngUsers_WindowLbl.AutoSize = true;
+            this.MngUsers_WindowLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_WindowLbl.Location = new System.Drawing.Point(5, 10);
             this.MngUsers_WindowLbl.Name = "MngUsers_WindowLbl";
-            this.MngUsers_WindowLbl.Size = new System.Drawing.Size(88, 13);
+            this.MngUsers_WindowLbl.Size = new System.Drawing.Size(125, 20);
             this.MngUsers_WindowLbl.TabIndex = 35;
             this.MngUsers_WindowLbl.Text = "Manage Users";
             // 
             // MngUser_AdminNameLbl
             // 
             this.MngUser_AdminNameLbl.AutoSize = true;
-            this.MngUser_AdminNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUser_AdminNameLbl.Location = new System.Drawing.Point(5, 34);
+            this.MngUser_AdminNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngUser_AdminNameLbl.Location = new System.Drawing.Point(157, 47);
             this.MngUser_AdminNameLbl.Name = "MngUser_AdminNameLbl";
-            this.MngUser_AdminNameLbl.Size = new System.Drawing.Size(48, 13);
+            this.MngUser_AdminNameLbl.Size = new System.Drawing.Size(67, 18);
             this.MngUser_AdminNameLbl.TabIndex = 34;
             this.MngUser_AdminNameLbl.Text = "<Admin>";
             // 
@@ -113,11 +114,11 @@
             // 
             this.MngUsers_TimeLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MngUsers_TimeLbl.AutoSize = true;
-            this.MngUsers_TimeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_TimeLbl.Location = new System.Drawing.Point(316, 36);
+            this.MngUsers_TimeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngUsers_TimeLbl.Location = new System.Drawing.Point(338, 49);
             this.MngUsers_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngUsers_TimeLbl.Name = "MngUsers_TimeLbl";
-            this.MngUsers_TimeLbl.Size = new System.Drawing.Size(42, 13);
+            this.MngUsers_TimeLbl.Size = new System.Drawing.Size(53, 16);
             this.MngUsers_TimeLbl.TabIndex = 33;
             this.MngUsers_TimeLbl.Text = "<Time>";
             // 
@@ -125,11 +126,11 @@
             // 
             this.MngUsers_DateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.MngUsers_DateLbl.AutoSize = true;
-            this.MngUsers_DateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_DateLbl.Location = new System.Drawing.Point(317, 12);
+            this.MngUsers_DateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngUsers_DateLbl.Location = new System.Drawing.Point(339, 25);
             this.MngUsers_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MngUsers_DateLbl.Name = "MngUsers_DateLbl";
-            this.MngUsers_DateLbl.Size = new System.Drawing.Size(42, 13);
+            this.MngUsers_DateLbl.Size = new System.Drawing.Size(51, 16);
             this.MngUsers_DateLbl.TabIndex = 32;
             this.MngUsers_DateLbl.Text = "<Date>";
             // 
@@ -143,7 +144,7 @@
             this.MngUsers_AddUserBox.Controls.Add(this.MngUsers_GroupLbl);
             this.MngUsers_AddUserBox.Controls.Add(this.MngUsers_FirstNameLbl);
             this.MngUsers_AddUserBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MngUsers_AddUserBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngUsers_AddUserBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_AddUserBox.Location = new System.Drawing.Point(15, 98);
             this.MngUsers_AddUserBox.Margin = new System.Windows.Forms.Padding(15, 2, 15, 10);
             this.MngUsers_AddUserBox.Name = "MngUsers_AddUserBox";
@@ -158,13 +159,13 @@
             this.MngUsers_LastNameCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.MngUsers_LastNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.MngUsers_LastNameCmbo.ContextMenuStrip = this.doNothingContextMenu;
-            this.MngUsers_LastNameCmbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngUsers_LastNameCmbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_LastNameCmbo.FormattingEnabled = true;
-            this.MngUsers_LastNameCmbo.Location = new System.Drawing.Point(146, 124);
+            this.MngUsers_LastNameCmbo.Location = new System.Drawing.Point(146, 123);
             this.MngUsers_LastNameCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngUsers_LastNameCmbo.MaxLength = 12;
             this.MngUsers_LastNameCmbo.Name = "MngUsers_LastNameCmbo";
-            this.MngUsers_LastNameCmbo.Size = new System.Drawing.Size(169, 21);
+            this.MngUsers_LastNameCmbo.Size = new System.Drawing.Size(169, 24);
             this.MngUsers_LastNameCmbo.TabIndex = 4;
             this.MngUsers_LastNameCmbo.TextChanged += new System.EventHandler(this.MngUsers_FirstAndLastNameCmbo_TextChanged);
             this.MngUsers_LastNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersKeyDown);
@@ -178,24 +179,25 @@
             // MngUsers_LastNameLbl
             // 
             this.MngUsers_LastNameLbl.AutoSize = true;
-            this.MngUsers_LastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_LastNameLbl.Location = new System.Drawing.Point(50, 122);
+            this.MngUsers_LastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngUsers_LastNameLbl.Location = new System.Drawing.Point(50, 127);
             this.MngUsers_LastNameLbl.Name = "MngUsers_LastNameLbl";
-            this.MngUsers_LastNameLbl.Size = new System.Drawing.Size(58, 13);
+            this.MngUsers_LastNameLbl.Size = new System.Drawing.Size(76, 16);
             this.MngUsers_LastNameLbl.TabIndex = 13;
-            this.MngUsers_LastNameLbl.Text = "Last Name";
+            this.MngUsers_LastNameLbl.Text = "Last Name:";
             // 
             // MngUsers_GroupCmbo
             // 
             this.MngUsers_GroupCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.MngUsers_GroupCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.MngUsers_GroupCmbo.ContextMenuStrip = this.doNothingContextMenu;
+            this.MngUsers_GroupCmbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_GroupCmbo.FormattingEnabled = true;
-            this.MngUsers_GroupCmbo.Location = new System.Drawing.Point(146, 153);
+            this.MngUsers_GroupCmbo.Location = new System.Drawing.Point(146, 188);
             this.MngUsers_GroupCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngUsers_GroupCmbo.MaxLength = 25;
             this.MngUsers_GroupCmbo.Name = "MngUsers_GroupCmbo";
-            this.MngUsers_GroupCmbo.Size = new System.Drawing.Size(169, 21);
+            this.MngUsers_GroupCmbo.Size = new System.Drawing.Size(169, 24);
             this.MngUsers_GroupCmbo.TabIndex = 7;
             this.MngUsers_GroupCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_LettersAndDigitsKeyDown);
             this.MngUsers_GroupCmbo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MngUsers_AddUserBoxTextBoxes_KeyPress);
@@ -206,13 +208,13 @@
             this.MngUsers_FirstNameCmbo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.MngUsers_FirstNameCmbo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.MngUsers_FirstNameCmbo.ContextMenuStrip = this.doNothingContextMenu;
-            this.MngUsers_FirstNameCmbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngUsers_FirstNameCmbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MngUsers_FirstNameCmbo.FormattingEnabled = true;
-            this.MngUsers_FirstNameCmbo.Location = new System.Drawing.Point(146, 92);
+            this.MngUsers_FirstNameCmbo.Location = new System.Drawing.Point(146, 66);
             this.MngUsers_FirstNameCmbo.Margin = new System.Windows.Forms.Padding(4);
             this.MngUsers_FirstNameCmbo.MaxLength = 12;
             this.MngUsers_FirstNameCmbo.Name = "MngUsers_FirstNameCmbo";
-            this.MngUsers_FirstNameCmbo.Size = new System.Drawing.Size(169, 21);
+            this.MngUsers_FirstNameCmbo.Size = new System.Drawing.Size(169, 24);
             this.MngUsers_FirstNameCmbo.TabIndex = 3;
             this.MngUsers_FirstNameCmbo.TextChanged += new System.EventHandler(this.MngUsers_FirstAndLastNameCmbo_TextChanged);
             this.MngUsers_FirstNameCmbo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RaptorMath_KeyUp);
@@ -222,8 +224,8 @@
             // MngUsers_SaveUserBtm
             // 
             this.MngUsers_SaveUserBtm.AutoSize = true;
-            this.MngUsers_SaveUserBtm.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_SaveUserBtm.Location = new System.Drawing.Point(173, 192);
+            this.MngUsers_SaveUserBtm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngUsers_SaveUserBtm.Location = new System.Drawing.Point(137, 257);
             this.MngUsers_SaveUserBtm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MngUsers_SaveUserBtm.Name = "MngUsers_SaveUserBtm";
             this.MngUsers_SaveUserBtm.Size = new System.Drawing.Size(115, 30);
@@ -236,22 +238,22 @@
             // MngUsers_GroupLbl
             // 
             this.MngUsers_GroupLbl.AutoSize = true;
-            this.MngUsers_GroupLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_GroupLbl.Location = new System.Drawing.Point(52, 161);
+            this.MngUsers_GroupLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngUsers_GroupLbl.Location = new System.Drawing.Point(78, 192);
             this.MngUsers_GroupLbl.Name = "MngUsers_GroupLbl";
-            this.MngUsers_GroupLbl.Size = new System.Drawing.Size(36, 13);
+            this.MngUsers_GroupLbl.Size = new System.Drawing.Size(48, 16);
             this.MngUsers_GroupLbl.TabIndex = 6;
-            this.MngUsers_GroupLbl.Text = "Group";
+            this.MngUsers_GroupLbl.Text = "Group:";
             // 
             // MngUsers_FirstNameLbl
             // 
             this.MngUsers_FirstNameLbl.AutoSize = true;
-            this.MngUsers_FirstNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_FirstNameLbl.Location = new System.Drawing.Point(50, 95);
+            this.MngUsers_FirstNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngUsers_FirstNameLbl.Location = new System.Drawing.Point(50, 70);
             this.MngUsers_FirstNameLbl.Name = "MngUsers_FirstNameLbl";
-            this.MngUsers_FirstNameLbl.Size = new System.Drawing.Size(57, 13);
+            this.MngUsers_FirstNameLbl.Size = new System.Drawing.Size(76, 16);
             this.MngUsers_FirstNameLbl.TabIndex = 4;
-            this.MngUsers_FirstNameLbl.Text = "First Name";
+            this.MngUsers_FirstNameLbl.Text = "First Name:";
             // 
             // MngUsers_ButtonBox
             // 
@@ -298,6 +300,7 @@
             // 
             this.AcceptButton = this.MngUsers_SaveUserBtm;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.CancelButton = this.MngUsers_CloseBtn;
             this.ClientSize = new System.Drawing.Size(432, 503);
             this.Controls.Add(this.tableLayoutPanel1);
