@@ -24,7 +24,7 @@ namespace RaptorMath
     public partial class AdminHomepage : Form
     {
         private Microsoft.Office.Interop.Excel.Application excel;
-        // The main class the the UI goes through to get information
+        // Local copy of the class the UI goes to for its data
         Manager localManager;
         // Used when importing students from a txt file
         //OpenFileDialog openFile;

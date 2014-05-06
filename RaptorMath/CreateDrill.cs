@@ -38,6 +38,7 @@ namespace RaptorMath
 {
     public partial class CreateDrill_Form : Form
     {
+        // Local copy of the class the UI goes to for its data
         public Manager localManager;
 
         private bool isKeyPressed = false;

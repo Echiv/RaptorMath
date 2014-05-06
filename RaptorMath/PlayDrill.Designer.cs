@@ -44,7 +44,7 @@
             this.PlayDrillAnswerLbl = new System.Windows.Forms.Label();
             this.MathDrill_QuitBtn = new System.Windows.Forms.Button();
             this.SubmitLbl = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.SkipLbl = new System.Windows.Forms.Label();
             this.PlayDrill_TimeLbl = new System.Windows.Forms.Timer(this.components);
             this.PlayDrillImageList = new System.Windows.Forms.ImageList(this.components);
             this.CloudImageTimeDate = new System.Windows.Forms.PictureBox();
@@ -255,16 +255,16 @@
             this.SubmitLbl.TabIndex = 42;
             this.SubmitLbl.Text = "Submit";
             // 
-            // label2
+            // SkipLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(374, 594);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 25);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "Skip";
+            this.SkipLbl.AutoSize = true;
+            this.SkipLbl.BackColor = System.Drawing.Color.Transparent;
+            this.SkipLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SkipLbl.Location = new System.Drawing.Point(374, 594);
+            this.SkipLbl.Name = "SkipLbl";
+            this.SkipLbl.Size = new System.Drawing.Size(58, 25);
+            this.SkipLbl.TabIndex = 43;
+            this.SkipLbl.Text = "Skip";
             // 
             // PlayDrill_TimeLbl
             // 
@@ -303,7 +303,7 @@
             this.BackgroundImage = global::RaptorMath.Properties.Resources.drillbackground3;
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.MathDrill_StudentNameLbl);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.SkipLbl);
             this.Controls.Add(this.SubmitLbl);
             this.Controls.Add(this.PlayDrillAnswerLbl);
             this.Controls.Add(this.MathDrill_QuitBtn);
@@ -326,7 +326,6 @@
             this.Name = "PlayDrill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raptor Math";
-            this.Load += new System.EventHandler(this.PlayDrill_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CloudImageTimeDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -350,7 +349,7 @@
         private System.Windows.Forms.Label PlayDrillAnswerLbl;
         private System.Windows.Forms.Button MathDrill_QuitBtn;
         private System.Windows.Forms.Label SubmitLbl;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label SkipLbl;
         private System.Windows.Forms.Timer PlayDrill_TimeLbl;
         private System.Windows.Forms.ImageList PlayDrillImageList;
         private System.Windows.Forms.PictureBox CloudImageTimeDate;

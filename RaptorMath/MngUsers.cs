@@ -61,6 +61,7 @@ namespace RaptorMath
 {
     public partial class MngUsers_Form : Form
     {
+        // Local copy of the class the UI goes to for its data
         public Manager localManager;
         private bool isKeyPressed = false;
         // Used when importing students from a txt file

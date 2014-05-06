@@ -54,7 +54,6 @@
             this.NameLbl.TabIndex = 0;
             this.NameLbl.Text = "<Student Name>";
             this.NameLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.NameLbl.Click += new System.EventHandler(this.NameLbl_Click);
             // 
             // TitleLbl
             // 

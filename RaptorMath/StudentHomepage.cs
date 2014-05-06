@@ -11,6 +11,7 @@ namespace RaptorMath
 {
     public partial class StudentHomepage : Form
     {
+        // Local copy of the class the UI goes to for its data
         public Manager localManager;
 
         public StudentHomepage(Manager manager)
