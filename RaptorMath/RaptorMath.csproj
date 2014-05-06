@@ -355,6 +355,18 @@
   <ItemGroup>
     <None Include="Resources\user-female-add-icon1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gray trash-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gray System-Save-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grey user-female-add-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grey group-add-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

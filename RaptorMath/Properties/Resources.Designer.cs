@@ -253,9 +253,49 @@ namespace RaptorMath.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gray_System_Save_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("gray System-Save-icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gray_trash_icon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("gray trash-icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap greenbutton {
             get {
                 object obj = ResourceManager.GetObject("greenbutton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grey_group_add_icon {
+            get {
+                object obj = ResourceManager.GetObject("grey group-add-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grey_user_female_add_icon {
+            get {
+                object obj = ResourceManager.GetObject("grey user-female-add-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
