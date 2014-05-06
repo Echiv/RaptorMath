@@ -11,10 +11,6 @@
 //          settings, and properly stores the results back      //
 //          into their respective XML files.                    //
 //==============================================================//
-/* 
-Authors: Joshua Boone and Justine Dinh                     
-Cycle 3 Changes:
-*/
 
 using System;
 using System.Collections.Generic;
