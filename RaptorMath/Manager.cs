@@ -19,25 +19,25 @@
 //          • Added object (Admin, Student, Group, etc...)      //
 //            creation functions.                               //
 //==============================================================//
-//==============================================================//
-//Authors: Joshua Boone and Justine Dinh                     
-// Cycle 3 Changes:
-//  * Date: 4/12/14
-//   * • Added new methods for editing a student.
-//   * • Added a method to find if there exists any group records within a given date range.
-//  * Date: 4/13/14
-//   * • Added new method for importing students from a text file.
-//   * • Added variables to keep track of students that were not added into the system from a file.
-//  * Date: 4/15/14
-//   * • Changed the the way the student's name from a file is read to read the last name first than the first name.
-//   * • Expaned logic in IsValidEdit() to catch the user trying to assign a student to the group they are already in.
-//  * Date: 4/16/14
-//   * • Added two functions to support changing a password.
-//  * Date: 4/24/14
-//   * • Added function to find student's based on some entered string.
-//  * Date: 5/04/14
-//   * • Finding a group by name now normalizes the group names.
-//==============================================================//
+//==================================================================================================================//
+//Authors: Joshua Boone and Justine Dinh                                                                            //
+// Cycle 3 Changes:                                                                                                 //
+//  Date: 4/12/14                                                                                                   //
+//   • Added new methods for editing a student.                                                                     //
+//   • Added a method to find if there exists any group records within a given date range.                          //
+//  Date: 4/13/14                                                                                                   //
+//   • Added new method for importing students from a text file.                                                    //
+//   • Added variables to keep track of students that were not added into the system from a file.                   //
+//  Date: 4/15/14                                                                                                   //
+//   • Changed the the way the student's name from a file is read to read the last name first than the first name.  //
+//   • Expaned logic in IsValidEdit() to catch the user trying to assign a student to the group they are already in.//
+//  Date: 4/16/14                                                                                                   //
+//   • Added two functions to support changing a password.                                                          //
+//  Date: 4/24/14                                                                                                   //
+//   • Added function to find student's based on some entered string.                                               //
+//  Date: 5/04/14                                                                                                   //
+//   • Finding a group by name now normalizes the group names.                                                      //
+//==================================================================================================================//
 
 using System;
 using System.Collections.Generic;
