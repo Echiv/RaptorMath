@@ -82,5 +82,15 @@ namespace RaptorMath
             NumberIncorretLbl.Text = localManager.currentStudent.curDrill.Wrong;
             RewardsEarnedLbl.Text = (Convert.ToInt32(localManager.currentStudent.curDrill.Questions) - Convert.ToInt32(localManager.currentStudent.curDrill.Wrong)).ToString();
         }
+
+        private void StudentPercentageLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NumberCorrectlbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
