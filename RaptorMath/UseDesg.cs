@@ -38,6 +38,8 @@ Cycle 3 Changes:
  * • Changed the minimal length of a password to 4 and the maximum length to 8
  * Date: 4/17/14
  * • Fixed a small issue where the password box wasn't cleared when selecting a different user after entering a password.
+ * Date: 4/29/14
+ * • Updated the form with a new UI and updated code comments.
 */
 
 using System;
@@ -53,15 +55,20 @@ using System.Xml.Linq;
 
 namespace RaptorMath
 {
+    //------------------------------------------------------------------//
+    // Authors: Joshua Boone and Justine Dinh                           //
+    // Date: 4/12/14                                                    //
+    //------------------------------------------------------------------//
     public partial class UseDesg_Form : Form
     {
+        // Local copy of the class the UI goes to for its data
         Manager localManager;
 
         private bool isKeyPressed = false;
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 4/12/14                                                     //
+        // Date: 4/12/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Disallows closing a window with the window's 'X' button.</summary>
         private const int CP_NOCLOSE_BUTTON = 0x200;
@@ -203,8 +210,8 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/12/14                                                    //
         //------------------------------------------------------------------//
-        /// <summary>User Designation form constructor.</summary>
-        /// <param name="manager">The program management class.</param>
+        /// <summary>Constructor.</summary>
+        /// <param name="manager">Copy of the class the UI talks to for data.</param>
         public UseDesg_Form(Manager manager)
         {
             localManager = manager;
@@ -284,7 +291,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/12/14                                                    //
         //------------------------------------------------------------------//
-        /// <summary>Handle 'Login' button click.</summary>
+        /// <summary>Handles the 'Login' button click.</summary>
         private void UseDesg_LoginBtn_Click(object sender, EventArgs e)
         {
             localManager.currentPassword = UseDesg_passwordBox.Text;
@@ -330,7 +337,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/15/14                                                    //
         //------------------------------------------------------------------//
-        /// <summary>Handle Selection Change event.</summary>
+        /// <summary>Handles the selection change event for the user selection box.</summary>
         private void UseDesg_LoginDdl_SelectionChangeCommitted(object sender, EventArgs e)
         {
             localManager.currentUser = localManager.RemoveExtraWhiteSpace(UseDesg_LoginCmbo.Text);
@@ -354,7 +361,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/15/14                                                    //
         //------------------------------------------------------------------//
-        /// <summary>Enables 'Login' button on 'Password' textbox text change.</summary>
+        /// <summary>Handles the text change event for the password text box.</summary>
         private void passwordBox_TextChanged(object sender, EventArgs e)
         {
             if (!localManager.isStudent())
@@ -374,7 +381,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/15/14                                                    //
         //------------------------------------------------------------------//
-        /// <summary>Handle Text Change event.</summary>
+        /// <summary>Handles the text change event for the user selection box.</summary>
         private void UseDesg_LoginCmbo_TextChanged(object sender, EventArgs e)
         {
             localManager.currentUser = localManager.RemoveExtraWhiteSpace(UseDesg_LoginCmbo.Text);
@@ -409,16 +416,6 @@ namespace RaptorMath
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
-        }
-
-        private void UseDesg_Form_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UseDesg_UserInfoBox_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

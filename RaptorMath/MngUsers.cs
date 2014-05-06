@@ -46,6 +46,8 @@ Cycle 3 Changes:
  * • Updated logic for the radio buttons so the they enable/disbale the save button correctly when clicked.
  * Date: 4/17/14
  * • Changed a UI issue where the confirm password text box was not cleared when the password text box was emptied.
+ * Date: 5/02/14
+ * • Gutted this class as most of it is not needed for the newer updates. We only add students now with this class.
 */
 
 using System;
@@ -333,7 +335,7 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
-        /// <summary>Handle 'Close' button click.</summary>
+        /// <summary>Handles the 'Close' button click.</summary>
         private void MngUsers_CloseBtn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -343,11 +345,11 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
-        /// <summary>Handle 'Exit' button click.</summary>
+        /// <summary>Handlees the 'Exit' button click.</summary>
         private void MngUsers_ExitBtn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.",
-                "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                "Raptor Math", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 localManager.SetIsRunningFalse();
                 this.Close();

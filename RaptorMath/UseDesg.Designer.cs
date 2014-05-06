@@ -33,8 +33,8 @@
             this.UseDesg_DateLbl = new System.Windows.Forms.Label();
             this.UseDesg_TimeLbl = new System.Windows.Forms.Label();
             this.UseDesg_LoginCmbo = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.PasswordLbl = new System.Windows.Forms.Label();
+            this.NameLbl = new System.Windows.Forms.Label();
             this.UseDesg_passwordBox = new System.Windows.Forms.TextBox();
             this.UseDesg_ExitBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -89,27 +89,27 @@
             this.UseDesg_LoginCmbo.TabIndex = 18;
             this.UseDesg_LoginCmbo.TextChanged += new System.EventHandler(this.UseDesg_LoginCmbo_TextChanged);
             // 
-            // label2
+            // PasswordLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(2, 74);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 22);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Password";
+            this.PasswordLbl.AutoSize = true;
+            this.PasswordLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordLbl.Location = new System.Drawing.Point(2, 74);
+            this.PasswordLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PasswordLbl.Name = "PasswordLbl";
+            this.PasswordLbl.Size = new System.Drawing.Size(82, 22);
+            this.PasswordLbl.TabIndex = 24;
+            this.PasswordLbl.Text = "Password";
             // 
-            // label1
+            // NameLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 32);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 22);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Name";
+            this.NameLbl.AutoSize = true;
+            this.NameLbl.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLbl.Location = new System.Drawing.Point(31, 32);
+            this.NameLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.NameLbl.Name = "NameLbl";
+            this.NameLbl.Size = new System.Drawing.Size(53, 22);
+            this.NameLbl.TabIndex = 23;
+            this.NameLbl.Text = "Name";
             // 
             // UseDesg_passwordBox
             // 
@@ -157,8 +157,8 @@
             // 
             this.UserSelectionBox.BackColor = System.Drawing.Color.Ivory;
             this.UserSelectionBox.Controls.Add(this.UseDesg_LoginCmbo);
-            this.UserSelectionBox.Controls.Add(this.label2);
-            this.UserSelectionBox.Controls.Add(this.label1);
+            this.UserSelectionBox.Controls.Add(this.PasswordLbl);
+            this.UserSelectionBox.Controls.Add(this.NameLbl);
             this.UserSelectionBox.Controls.Add(this.UseDesg_passwordBox);
             this.UserSelectionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserSelectionBox.ForeColor = System.Drawing.Color.DarkOliveGreen;
@@ -207,7 +207,6 @@
             this.Name = "UseDesg_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raptor Math";
-            this.Load += new System.EventHandler(this.UseDesg_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.UserSelectionBox.ResumeLayout(false);
             this.UserSelectionBox.PerformLayout();
@@ -221,8 +220,8 @@
         private System.Windows.Forms.Label UseDesg_DateLbl;
         private System.Windows.Forms.Label UseDesg_TimeLbl;
         private System.Windows.Forms.ComboBox UseDesg_LoginCmbo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label PasswordLbl;
+        private System.Windows.Forms.Label NameLbl;
         private System.Windows.Forms.TextBox UseDesg_passwordBox;
         private System.Windows.Forms.Button UseDesg_ExitBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
