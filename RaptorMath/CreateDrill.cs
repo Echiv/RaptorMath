@@ -15,15 +15,17 @@
 //            Admin Home or click the Exit button to end the    //
 //            program.                                          //
 //==============================================================//
-/* 
-Authors: Joshua Boone and Justine Dinh                     
-Cycle 3 Changes:
- * Date: 4/12/14
- * • Added logic to disallow interaction with a form's border close button.
- * • Added logic to disallow copy, paste, and cut.
- * Date: 4/14/14
- * • Added error message boxes instead of just messages boxes.
-*/
+//=============================================================================//
+// Authors: Joshua Boone and Justine Dinh                                      //
+// Cycle 3 Changes:                                                            //
+// Date: 4/12/14                                                               //
+// • Added logic to disallow interaction with a form's border close button.    //
+// • Added logic to disallow copy, paste, and cut.                             //
+// Date: 4/14/14                                                               //
+// • Added error message boxes instead of just messages boxes.                 //
+// Date: 5/03/14                                                               //
+// • Updated the window's look to match the new admin homepage better.         //
+//=============================================================================//
 
 using System;
 using System.Collections.Generic;
@@ -229,16 +231,20 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/1/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
         /// <summary>Handle 'Exit' button click.</summary>
-        private void CreateDrill_ExitBtn_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.",
-                "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
-                localManager.SetIsRunningFalse();
-                this.Close();
-            }
-        }
+        //private void CreateDrill_ExitBtn_Click(object sender, EventArgs e)
+        //{
+        //    if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.",
+        //        "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
+        //    {
+        //        localManager.SetIsRunningFalse();
+        //        this.Close();
+        //    }
+        //}
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
@@ -248,7 +254,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/25/14                                                    //
         //------------------------------------------------------------------//
-        /// <summary>Handle 'Close' button click.</summary>
+        /// <summary>Handles the 'Close' button click.</summary>
         private void CreateDrill_CloseBtn_Click(object sender, EventArgs e)
         {
             //localManager.SetWindow(Window.adminHome);
