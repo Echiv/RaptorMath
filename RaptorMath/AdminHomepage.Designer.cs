@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomepage));
             this.tab1 = new System.Windows.Forms.TabControl();
             this.Statistics = new System.Windows.Forms.TabPage();
@@ -99,6 +99,7 @@
             this.GroupNameEditUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchEditUsersTxtbox = new System.Windows.Forms.TextBox();
             this.ModifyExistingUserBox = new System.Windows.Forms.GroupBox();
+            this.CreateGroupLbl = new System.Windows.Forms.Label();
             this.CreateGroupBtn = new System.Windows.Forms.Button();
             this.CreateStudentLbl = new System.Windows.Forms.Label();
             this.CreateStudentBtn = new System.Windows.Forms.Button();
@@ -141,7 +142,6 @@
             this.ExitBtn = new System.Windows.Forms.Button();
             this.AdminHome = new System.Windows.Forms.Timer(this.components);
             this.AdminHomepageToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.CreateGroupLbl = new System.Windows.Forms.Label();
             this.tab1.SuspendLayout();
             this.Statistics.SuspendLayout();
             this.GroupSearchBox.SuspendLayout();
@@ -221,11 +221,11 @@
             // StatsSearchLbl
             // 
             this.StatsSearchLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatsSearchLbl.Location = new System.Drawing.Point(28, 70);
+            this.StatsSearchLbl.Location = new System.Drawing.Point(6, 70);
             this.StatsSearchLbl.Name = "StatsSearchLbl";
-            this.StatsSearchLbl.Size = new System.Drawing.Size(78, 24);
+            this.StatsSearchLbl.Size = new System.Drawing.Size(120, 24);
             this.StatsSearchLbl.TabIndex = 27;
-            this.StatsSearchLbl.Text = "Search:";
+            this.StatsSearchLbl.Text = "Records Search:";
             this.StatsSearchLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // EndDate
@@ -247,9 +247,9 @@
             this.ReportHome_EndDateLbl.Location = new System.Drawing.Point(790, 50);
             this.ReportHome_EndDateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ReportHome_EndDateLbl.Name = "ReportHome_EndDateLbl";
-            this.ReportHome_EndDateLbl.Size = new System.Drawing.Size(69, 18);
+            this.ReportHome_EndDateLbl.Size = new System.Drawing.Size(73, 18);
             this.ReportHome_EndDateLbl.TabIndex = 26;
-            this.ReportHome_EndDateLbl.Text = "End Date";
+            this.ReportHome_EndDateLbl.Text = "End Date:";
             // 
             // StartDate
             // 
@@ -270,9 +270,9 @@
             this.ReportHome_StartDateLbl.Location = new System.Drawing.Point(424, 46);
             this.ReportHome_StartDateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ReportHome_StartDateLbl.Name = "ReportHome_StartDateLbl";
-            this.ReportHome_StartDateLbl.Size = new System.Drawing.Size(74, 18);
+            this.ReportHome_StartDateLbl.Size = new System.Drawing.Size(78, 18);
             this.ReportHome_StartDateLbl.TabIndex = 24;
-            this.ReportHome_StartDateLbl.Text = "Start Date";
+            this.ReportHome_StartDateLbl.Text = "Start Date:";
             // 
             // SelectReportBtn
             // 
@@ -407,14 +407,14 @@
             // 
             // GroupNameDataDisplay
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.GroupNameDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GroupNameDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GroupName,
@@ -442,7 +442,7 @@
             // 
             // SearchTxtBox
             // 
-            this.SearchTxtBox.Location = new System.Drawing.Point(112, 70);
+            this.SearchTxtBox.Location = new System.Drawing.Point(123, 70);
             this.SearchTxtBox.MaxLength = 12;
             this.SearchTxtBox.Name = "SearchTxtBox";
             this.SearchTxtBox.Size = new System.Drawing.Size(140, 24);
@@ -548,32 +548,32 @@
             // 
             // AvailableDrillDataDisplay
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.AvailableDrillDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AvailableDrillDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DrillName});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle3;
             this.AvailableDrillDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.AvailableDrillDataDisplay.Location = new System.Drawing.Point(3, 90);
             this.AvailableDrillDataDisplay.Name = "AvailableDrillDataDisplay";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.AvailableDrillDataDisplay.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.AvailableDrillDataDisplay.Size = new System.Drawing.Size(324, 468);
             this.AvailableDrillDataDisplay.TabIndex = 0;
@@ -814,7 +814,7 @@
             this.EditUsers.Name = "EditUsers";
             this.EditUsers.Size = new System.Drawing.Size(1362, 613);
             this.EditUsers.TabIndex = 2;
-            this.EditUsers.Text = "Edit Users";
+            this.EditUsers.Text = "Users";
             this.EditUsers.ToolTipText = "Opens the tab that deals with editing existing students.";
             // 
             // EditUsersGroupBox
@@ -922,6 +922,16 @@
             this.ModifyExistingUserBox.TabIndex = 3;
             this.ModifyExistingUserBox.TabStop = false;
             this.ModifyExistingUserBox.Text = "Modify Existing User";
+            // 
+            // CreateGroupLbl
+            // 
+            this.CreateGroupLbl.AutoSize = true;
+            this.CreateGroupLbl.Location = new System.Drawing.Point(411, 234);
+            this.CreateGroupLbl.Name = "CreateGroupLbl";
+            this.CreateGroupLbl.Size = new System.Drawing.Size(98, 18);
+            this.CreateGroupLbl.TabIndex = 17;
+            this.CreateGroupLbl.Text = "Create Group";
+            this.CreateGroupLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CreateGroupBtn
             // 
@@ -1379,16 +1389,6 @@
             // 
             this.AdminHome.Enabled = true;
             this.AdminHome.Tick += new System.EventHandler(this.AdminHome_Tick);
-            // 
-            // CreateGroupLbl
-            // 
-            this.CreateGroupLbl.AutoSize = true;
-            this.CreateGroupLbl.Location = new System.Drawing.Point(411, 234);
-            this.CreateGroupLbl.Name = "CreateGroupLbl";
-            this.CreateGroupLbl.Size = new System.Drawing.Size(98, 18);
-            this.CreateGroupLbl.TabIndex = 17;
-            this.CreateGroupLbl.Text = "Create Group";
-            this.CreateGroupLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AdminHomepage
             // 
