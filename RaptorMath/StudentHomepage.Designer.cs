@@ -268,7 +268,7 @@
             this.MinimizeBox = false;
             this.Name = "StudentHomepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RaptorMath";
+            this.Text = "Raptor Math";
             this.Load += new System.EventHandler(this.StudentHomepage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dinoeggspic)).EndInit();
             this.ResumeLayout(false);

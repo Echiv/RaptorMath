@@ -1647,11 +1647,11 @@ namespace RaptorMath
                             {
                                 wb.SaveAs(fullFileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlOpenXMLWorkbook, System.Reflection.Missing.Value, misValue, false, false, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Microsoft.Office.Interop.Excel.XlSaveConflictResolution.xlUserResolution, true, misValue, misValue, misValue);
                                 wb.Saved = true;
-                                MessageBox.Show("Exported successfully", "Exported to Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Exported successfully.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             catch (System.Runtime.InteropServices.COMException error)
                             {
-                                MessageBox.Show("Error. File is in use.", "Exported to Excel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Error. File is in use.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
