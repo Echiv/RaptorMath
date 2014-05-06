@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomepage));
             this.tab1 = new System.Windows.Forms.TabControl();
             this.Statistics = new System.Windows.Forms.TabPage();
@@ -406,14 +406,14 @@
             // 
             // GroupNameDataDisplay
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.GroupNameDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GroupNameDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GroupName,
@@ -547,32 +547,32 @@
             // 
             // AvailableDrillDataDisplay
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.AvailableDrillDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AvailableDrillDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DrillName});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.AvailableDrillDataDisplay.DefaultCellStyle = dataGridViewCellStyle3;
             this.AvailableDrillDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.AvailableDrillDataDisplay.Location = new System.Drawing.Point(3, 90);
             this.AvailableDrillDataDisplay.Name = "AvailableDrillDataDisplay";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AvailableDrillDataDisplay.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.AvailableDrillDataDisplay.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.AvailableDrillDataDisplay.Size = new System.Drawing.Size(324, 468);
             this.AvailableDrillDataDisplay.TabIndex = 0;
@@ -923,18 +923,21 @@
             // 
             // CreateGroupBtn
             // 
-            this.CreateGroupBtn.Location = new System.Drawing.Point(471, 65);
+            this.CreateGroupBtn.Image = global::RaptorMath.Properties.Resources.group_add_icon;
+            this.CreateGroupBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.CreateGroupBtn.Location = new System.Drawing.Point(400, 174);
             this.CreateGroupBtn.Name = "CreateGroupBtn";
-            this.CreateGroupBtn.Size = new System.Drawing.Size(109, 26);
+            this.CreateGroupBtn.Size = new System.Drawing.Size(117, 57);
             this.CreateGroupBtn.TabIndex = 5;
             this.CreateGroupBtn.Text = "Create Group";
+            this.CreateGroupBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.CreateGroupBtn.UseVisualStyleBackColor = true;
             this.CreateGroupBtn.Click += new System.EventHandler(this.CreateGroupBtn_Click);
             // 
             // CreateStudentLbl
             // 
             this.CreateStudentLbl.AutoSize = true;
-            this.CreateStudentLbl.Location = new System.Drawing.Point(105, 422);
+            this.CreateStudentLbl.Location = new System.Drawing.Point(272, 86);
             this.CreateStudentLbl.Name = "CreateStudentLbl";
             this.CreateStudentLbl.Size = new System.Drawing.Size(106, 18);
             this.CreateStudentLbl.TabIndex = 16;
@@ -943,16 +946,17 @@
             // 
             // CreateStudentBtn
             // 
-            this.CreateStudentBtn.Location = new System.Drawing.Point(110, 365);
+            this.CreateStudentBtn.Image = global::RaptorMath.Properties.Resources.user_female_add_icon;
+            this.CreateStudentBtn.Location = new System.Drawing.Point(267, 28);
             this.CreateStudentBtn.Name = "CreateStudentBtn";
-            this.CreateStudentBtn.Size = new System.Drawing.Size(87, 54);
+            this.CreateStudentBtn.Size = new System.Drawing.Size(117, 57);
             this.CreateStudentBtn.TabIndex = 11;
             this.CreateStudentBtn.UseVisualStyleBackColor = true;
             this.CreateStudentBtn.Click += new System.EventHandler(this.CreateStudentBtn_Click);
             // 
             // NumberRewardsTxt
             // 
-            this.NumberRewardsTxt.Location = new System.Drawing.Point(229, 224);
+            this.NumberRewardsTxt.Location = new System.Drawing.Point(281, 372);
             this.NumberRewardsTxt.MaxLength = 5;
             this.NumberRewardsTxt.Multiline = false;
             this.NumberRewardsTxt.Name = "NumberRewardsTxt";
@@ -965,7 +969,7 @@
             // 
             this.RewardLbl.AutoSize = true;
             this.RewardLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RewardLbl.Location = new System.Drawing.Point(79, 227);
+            this.RewardLbl.Location = new System.Drawing.Point(131, 375);
             this.RewardLbl.Name = "RewardLbl";
             this.RewardLbl.Size = new System.Drawing.Size(118, 18);
             this.RewardLbl.TabIndex = 13;
@@ -974,7 +978,7 @@
             // GroupNameComboBox
             // 
             this.GroupNameComboBox.FormattingEnabled = true;
-            this.GroupNameComboBox.Location = new System.Drawing.Point(229, 65);
+            this.GroupNameComboBox.Location = new System.Drawing.Point(281, 133);
             this.GroupNameComboBox.Name = "GroupNameComboBox";
             this.GroupNameComboBox.Size = new System.Drawing.Size(236, 26);
             this.GroupNameComboBox.TabIndex = 4;
@@ -985,7 +989,7 @@
             // 
             this.RemoveUserGroupBtn.BackgroundImage = global::RaptorMath.Properties.Resources.trash_icon__1_;
             this.RemoveUserGroupBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.RemoveUserGroupBtn.Location = new System.Drawing.Point(378, 285);
+            this.RemoveUserGroupBtn.Location = new System.Drawing.Point(430, 462);
             this.RemoveUserGroupBtn.Name = "RemoveUserGroupBtn";
             this.RemoveUserGroupBtn.Size = new System.Drawing.Size(40, 40);
             this.RemoveUserGroupBtn.TabIndex = 10;
@@ -997,7 +1001,7 @@
             // 
             this.SaveChangesBtn.BackgroundImage = global::RaptorMath.Properties.Resources.System_Save_icon__1_;
             this.SaveChangesBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.SaveChangesBtn.Location = new System.Drawing.Point(135, 285);
+            this.SaveChangesBtn.Location = new System.Drawing.Point(187, 462);
             this.SaveChangesBtn.Name = "SaveChangesBtn";
             this.SaveChangesBtn.Size = new System.Drawing.Size(40, 40);
             this.SaveChangesBtn.TabIndex = 9;
@@ -1007,7 +1011,7 @@
             // 
             // LastNameTxtBox
             // 
-            this.LastNameTxtBox.Location = new System.Drawing.Point(229, 169);
+            this.LastNameTxtBox.Location = new System.Drawing.Point(281, 317);
             this.LastNameTxtBox.MaxLength = 12;
             this.LastNameTxtBox.Multiline = false;
             this.LastNameTxtBox.Name = "LastNameTxtBox";
@@ -1018,7 +1022,7 @@
             // 
             // FirstNameTxtBox
             // 
-            this.FirstNameTxtBox.Location = new System.Drawing.Point(229, 115);
+            this.FirstNameTxtBox.Location = new System.Drawing.Point(281, 263);
             this.FirstNameTxtBox.MaxLength = 12;
             this.FirstNameTxtBox.Multiline = false;
             this.FirstNameTxtBox.Name = "FirstNameTxtBox";
@@ -1031,7 +1035,7 @@
             // 
             this.RemoveUserGroupLbl.AutoSize = true;
             this.RemoveUserGroupLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RemoveUserGroupLbl.Location = new System.Drawing.Point(345, 328);
+            this.RemoveUserGroupLbl.Location = new System.Drawing.Point(397, 505);
             this.RemoveUserGroupLbl.Name = "RemoveUserGroupLbl";
             this.RemoveUserGroupLbl.Size = new System.Drawing.Size(100, 18);
             this.RemoveUserGroupLbl.TabIndex = 5;
@@ -1041,7 +1045,7 @@
             // 
             this.SaveChangesLbl.AutoSize = true;
             this.SaveChangesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveChangesLbl.Location = new System.Drawing.Point(107, 328);
+            this.SaveChangesLbl.Location = new System.Drawing.Point(159, 505);
             this.SaveChangesLbl.Name = "SaveChangesLbl";
             this.SaveChangesLbl.Size = new System.Drawing.Size(104, 18);
             this.SaveChangesLbl.TabIndex = 4;
@@ -1051,7 +1055,7 @@
             // 
             this.LastNameLbl.AutoSize = true;
             this.LastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastNameLbl.Location = new System.Drawing.Point(79, 176);
+            this.LastNameLbl.Location = new System.Drawing.Point(131, 324);
             this.LastNameLbl.Name = "LastNameLbl";
             this.LastNameLbl.Size = new System.Drawing.Size(84, 18);
             this.LastNameLbl.TabIndex = 3;
@@ -1061,7 +1065,7 @@
             // 
             this.FirstNameLbl.AutoSize = true;
             this.FirstNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstNameLbl.Location = new System.Drawing.Point(78, 118);
+            this.FirstNameLbl.Location = new System.Drawing.Point(130, 266);
             this.FirstNameLbl.Name = "FirstNameLbl";
             this.FirstNameLbl.Size = new System.Drawing.Size(85, 18);
             this.FirstNameLbl.TabIndex = 2;
@@ -1071,7 +1075,7 @@
             // 
             this.GroupNameLbl.AutoSize = true;
             this.GroupNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupNameLbl.Location = new System.Drawing.Point(78, 68);
+            this.GroupNameLbl.Location = new System.Drawing.Point(130, 136);
             this.GroupNameLbl.Name = "GroupNameLbl";
             this.GroupNameLbl.Size = new System.Drawing.Size(98, 18);
             this.GroupNameLbl.TabIndex = 0;
