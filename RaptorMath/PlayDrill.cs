@@ -5,7 +5,7 @@
 // Created: 4/24/14                                             //
 // Authors: Joshua Boone and Justine Dinh                       //
 // Purpose: Class is used to provide a means for an user to     //
-//          an assigned drill.                                  //
+//          take an assigned drill.                             //
 //==============================================================//
 
 using System;
