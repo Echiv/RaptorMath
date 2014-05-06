@@ -13,13 +13,14 @@
 // Changes:                                                     //
 //          • Refactored: Accessors and constructors            //
 //==============================================================//
-/* 
-Authors: Joshua Boone and Justine Dinh                     
-Cycle 3 Changes:
- * Date: 5/01/14
- * • Commented out the code to open the old windows.
- * • Added in the new windows
-*/
+//==============================================================//
+// Authors: Joshua Boone and Justine Dinh                       //
+// Cycle 3 Changes:                                             //
+// Date: 5/01/14                                                //
+//  • Commented out the code to open the old windows.           //
+//  • Added in the new windows.                                 //
+//  • Trying a new way to prevent multiple apps from running    //
+//==============================================================//
 
 using System;
 using System.Collections.Generic;
