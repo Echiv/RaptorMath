@@ -13,6 +13,7 @@
 //   • Added new methods for editing a student                      //
 //  Date: 4/14/14                                                   //
 //   • Added helper method for updating a student's rewards total   //
+//   • Deprecated unused code.
 //==================================================================//
 
 using System;
@@ -723,14 +724,18 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        // Deprecated                                                       //
+        //------------------------------------------------------------------//
         /// <summary>Check if a drill has been assigned.</summary>
         /// <param name="student">Student object to be checked.</param>
         /// <param name="drill">Drill object to check for.</param>
         /// <returns>Boolean confirmation.</returns>
-        private bool isDrillAssigned(Student student, Drill drill)
-        {
-            return XMLStudentDriver.isDrillAssigned(student, drill);
-        }
+        //private bool isDrillAssigned(Student student, Drill drill)
+        //{
+        //    return XMLStudentDriver.isDrillAssigned(student, drill);
+        //}
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //
@@ -829,15 +834,19 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        // Deprecated                                                       //
+        //------------------------------------------------------------------//
         /// <summary>Load a list of students from XML to local.</summary>
         /// <param name="studentList">List of student objects to be populated.
         /// </param>
         /// <param name="mainDrillList">List of drill objects</param>
         /// <param name="fileName">XML file name.</param>
-        private void LoadStudentXML(List<Student> studentList, List<Drill> mainDrillList, string fileName)
-        {
-            XMLStudentDriver.LoadStudentXML(studentList, mainDrillList, fileName);
-        }
+        //private void LoadStudentXML(List<Student> studentList, List<Drill> mainDrillList, string fileName)
+        //{
+        //    XMLStudentDriver.LoadStudentXML(studentList, mainDrillList, fileName);
+        //}
 
         //------------------------------------------------------------------//
         // Authors: Cody Jordan, Cian Carota                                //

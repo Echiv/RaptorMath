@@ -254,40 +254,45 @@ namespace RaptorMath
         // Authors: Cody Jordan, Cian Carota                                //
         // Date: 4/5/14                                                     //
         //------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        // Deprecated                                                       //
+        //------------------------------------------------------------------//
         /// <summary>Check for change in data.</summary>
         /// <param name="newFName">Student's first name.</param>
         /// <param name="newLName">Student's last name.</param>
         /// <param name="selectedStudent">Student object to check.</param>
         /// <param name="newGroup">Associated group's name.</param>
         /// <returns>Boolean confirmation of change.</returns>
-        public bool compareOldAndNewStudentInfo(string newFName, string newLName, Student selectedStudent, Group newGroup/*, int oldGroup*/)
-        {
-            bool hasGroupChanged = false;
-            if ((newFName != selectedStudent.FirstName) && (newFName != string.Empty))
-                selectedStudent.FirstName = newFName;
-            if ((newLName != selectedStudent.LastName) && (newLName != string.Empty))
-                selectedStudent.LastName = newLName;
-            if (newGroup != null)
-            { 
-                selectedStudent.GroupID = newGroup.ID;
-                hasGroupChanged = true;
-            }
-            else
-            {
-                selectedStudent.GroupID = 0;
-            }
-            selectedStudent.LoginName = selectedStudent.FirstName + " " + selectedStudent.LastName;
-            return hasGroupChanged;
-        }
+        //public bool compareOldAndNewStudentInfo(string newFName, string newLName, Student selectedStudent, Group newGroup/*, int oldGroup*/)
+        //{
+        //    bool hasGroupChanged = false;
+        //    if ((newFName != selectedStudent.FirstName) && (newFName != string.Empty))
+        //        selectedStudent.FirstName = newFName;
+        //    if ((newLName != selectedStudent.LastName) && (newLName != string.Empty))
+        //        selectedStudent.LastName = newLName;
+        //    if (newGroup != null)
+        //    { 
+        //        selectedStudent.GroupID = newGroup.ID;
+        //        hasGroupChanged = true;
+        //    }
+        //    else
+        //    {
+        //        selectedStudent.GroupID = 0;
+        //    }
+        //    selectedStudent.LoginName = selectedStudent.FirstName + " " + selectedStudent.LastName;
+        //    return hasGroupChanged;
+        //}
 
-        ////------------------------------------------------------------------//
-        //// Authors: Cody Jordan, Cian Carota                                //
-        //// Date: 4/5/14                                                     //
-        ////------------------------------------------------------------------//
-        ////------------------------------------------------------------------//
-        //// Authors: Joshua Boone and Justine Dinh                           //
-        //// Date: 4/14/14                                                    //
-        ////------------------------------------------------------------------//
+        //------------------------------------------------------------------//
+        // Authors: Cody Jordan, Cian Carota                                //
+        // Date: 4/5/14                                                     //
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/14/14                                                    //
+        // Deprecated                                                       //
+        //------------------------------------------------------------------//
         ///// <summary>Update student data in Student XML.</summary>
         ///// <param name="student">Student object to be modified.</param>
         ///// <param name="studentXMLPath">Student XML file path.</param>
@@ -734,6 +739,8 @@ namespace RaptorMath
         // Date: 4/14/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Returns if a element by the passed name exists.</summary>
+        /// <param name="node">The XElement node to check for an element at.</param>
+        /// <param name="atrributeName">Name of element to look for.</param>
         private bool IsNodeExist(XElement node, string atrributeName)
         {
             bool exist = false;
