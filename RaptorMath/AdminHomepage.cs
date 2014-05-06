@@ -1,8 +1,13 @@
-﻿/* 
-Authors: Joshua Boone and Justine Dinh                     
- * Date: 4/24/14
- * • Added the the whole class
-*/
+﻿//==============================================================//
+//				      AdminHomepage.cs			    	        //
+//==============================================================//
+// Program Name: RaptorMath                                     //
+// Created: 4/24/14                                             //
+// Authors: Joshua Boone and Justine Dinh                       //
+// Purpose: Controls that admin's homepage and all of its tabs. //
+//          Used to create students, drill, reports, groups,    //
+//          and to manage all of them.                          //
+//==============================================================//
 
 using System;
 using System.Collections.Generic;
@@ -29,6 +34,12 @@ namespace RaptorMath
         // Used when importing students from a txt file
         //OpenFileDialog openFile;
 
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/24/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Constructor.</summary>
+        /// <param name="manager">Copy of the class the UI talks to for data.</param>
         public AdminHomepage(Manager manager)
         {
             InitializeComponent();
@@ -1074,6 +1085,50 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Handles the button event to create a group.</summary>
+        private void CreateGroupBtn_Click(object sender, EventArgs e)
+        {
+            string newGroupName = localManager.RemoveExtraWhiteSpace(GroupNameComboBox.Text);
+            if (newGroupName != string.Empty)
+            {
+                bool isGroupAdded = localManager.CreateGroup(newGroupName);
+                if (isGroupAdded)
+                {
+                    MessageBox.Show("New group created.", "Raptor Math", MessageBoxButtons.OK);
+                    RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
+                    GroupNameComboBox.Text = newGroupName;
+                }
+                else
+                {
+                    MessageBox.Show("A group with the provided name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("A group name cannot be blank.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/01/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Handles the button event to create a new student.</summary>
+        private void CreateStudentBtn_Click(object sender, EventArgs e)
+        {
+            MngUsers_Form manageUsersDialog = new MngUsers_Form(localManager);
+            manageUsersDialog.ShowDialog(this);
+            manageUsersDialog.Dispose();
+            SearchEditUsersTxtbox.Text = string.Empty;
+            ExistingUserDataEditUsersDisplay.Rows.Clear();
+            DisplayFoundStudents(localManager.studentList, ExistingUserDataEditUsersDisplay);
+            SetupEditableUser();
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
         private void RefreshDataGrid()
@@ -1222,6 +1277,9 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Function to fill any combo box with the passed in list of strings.</summary>
+        /// <param name="box">The ComboBox to fill with strings.</param>
+        /// <param name="items">A list of strings to place in the passed in ComboBox.</param>
         private void RefreshComboBox(ComboBox box, List<string> items)
         {
             box.Items.Clear();
@@ -1264,6 +1322,9 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Function to fill a DataGridView with a single column. Note: the data grid must have one row in it by default</summary>
+        /// <param name="matches">A list of strings to place in the passed in data grid.</param>
+        /// <param name="dataGrid">A data grid to fill.</param>
         private void FillSingleColumnDataGrid(List<string> matches, DataGridView dataGrid)
         {
             dataGrid.Rows.Clear();
@@ -1281,6 +1342,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 5/01/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles the calling the correct excel export function based on if a student is selected or a group.</summary>
         private void ExportToExcelBtn_Click(object sender, EventArgs e)
         {
             if (SelectReportBtn.Text.Equals("View Students"))
@@ -1298,6 +1360,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles the logout button click.</summary>
         private void LogoutBtn_Click(object sender, EventArgs e)
         {
             localManager.ClearAdminUser();
@@ -1310,6 +1373,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles the exit button click.</summary>
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.",
@@ -1446,6 +1510,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 5/01/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles switching between students and groups on the Statistics tab.</summary>
         private void SelectReportBtn_Click(object sender, EventArgs e)
         {
             SearchTxtBox.Text = string.Empty;
@@ -1465,6 +1530,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 5/01/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Enables and disables the columns in the report data grid view to show student data.</summary>
         private void SetupStudentStatisticsGrid()
         {
             GroupSnapshotDataDisplay.Columns[0].Visible = false;
@@ -1485,6 +1551,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 5/01/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Enables and disables the columns in the report data grid view to show group data.</summary>
         private void SetupGroupStatisticsGrid()
         {
             GroupSnapshotDataDisplay.Columns[0].Visible = true;
@@ -1505,6 +1572,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 5/01/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Setups and fills the data grids on the Statistics tab for students.</summary>
         private void SetupStudentReports()
         {
             GroupNameDataDisplay.Columns[1].Visible = true;
@@ -1520,6 +1588,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 5/01/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Setups and fills the data grids on the Statistics tab for groups.</summary>
         private void SetupGroupReports()
         {
             GroupNameDataDisplay.Columns[1].Visible = false;
@@ -1535,7 +1604,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/10/14                                                    //
         //------------------------------------------------------------------//
-        /// <summary>Exports the opened report to an excel file.</summary>
+        /// <summary>Exports the student report to an excel file.</summary>
         private void StudentReportExcel(object sender, EventArgs e)
         {
             System.Windows.Forms.DataGridViewCell studentCell = GroupNameDataDisplay.CurrentCell;
@@ -1608,7 +1677,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/10/14                                                    //
         //------------------------------------------------------------------//
-        /// <summary>Exports the opened report to an excel file.</summary>
+        /// <summary>Exports a group report to an excel file.</summary>
         private void GroupReportExcel(object sender, EventArgs e)
         {
             System.Windows.Forms.DataGridViewCell groupCell = GroupNameDataDisplay.CurrentCell;
@@ -1684,6 +1753,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 5/01/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles enabling the button to export to excel.</summary>
         private void GroupSnapshotDataDisplay_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             if (GroupSnapshotDataDisplay.Rows.Count > 1)
@@ -1696,54 +1766,13 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 5/01/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles disabling the button to export to excel.</summary>
         private void GroupSnapshotDataDisplay_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             if (GroupSnapshotDataDisplay.Rows.Count < 2)
             {
                 ExportToExcelBtn.Enabled = false;
             }
-        }
-
-        //------------------------------------------------------------------//
-        // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 5/01/14                                                    //
-        //------------------------------------------------------------------//
-        private void CreateGroupBtn_Click(object sender, EventArgs e)
-        {
-            string newGroupName = localManager.RemoveExtraWhiteSpace(GroupNameComboBox.Text);
-            if (newGroupName != string.Empty)
-            {
-                bool isGroupAdded = localManager.CreateGroup(newGroupName);
-                if (isGroupAdded)
-                {
-                    MessageBox.Show("New group created.", "Raptor Math", MessageBoxButtons.OK);
-                    RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
-                    GroupNameComboBox.Text = newGroupName;
-                }
-                else
-                {
-                    MessageBox.Show("A group with the provided name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("A group name cannot be blank.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        //------------------------------------------------------------------//
-        // Authors: Joshua Boone and Justine Dinh                           //
-        // Date: 5/01/14                                                    //
-        //------------------------------------------------------------------//
-        private void CreateStudentBtn_Click(object sender, EventArgs e)
-        {
-            MngUsers_Form manageUsersDialog = new MngUsers_Form(localManager);
-            manageUsersDialog.ShowDialog(this);
-            manageUsersDialog.Dispose();
-            SearchEditUsersTxtbox.Text = string.Empty;
-            ExistingUserDataEditUsersDisplay.Rows.Clear();
-            DisplayFoundStudents(localManager.studentList, ExistingUserDataEditUsersDisplay);
-            SetupEditableUser();
         }
     }
 }
