@@ -11,10 +11,6 @@
 // Changes:                                                     //
 //          • Refactored: Accessors and constructors            //
 //==============================================================//
-/* 
-Authors: Joshua Boone and Justine Dinh                     
-Cycle 3 Changes:
-*/
 
 using System;
 using System.Collections.Generic;
