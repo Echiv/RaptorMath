@@ -129,6 +129,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles auto filling data bassed on what is on the search box on the Statistics tab.</summary>
         private void SearchTxtBox_TextChanged(object sender, EventArgs e)
         {
             if (SelectReportBtn.Text.Equals("View Students"))
@@ -175,6 +176,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles the event where an user selects a name for a report.</summary>
         private void GroupNameDataDisplay_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (SelectReportBtn.Text.Equals("View Students"))
@@ -191,6 +193,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 5/01/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Function to do the actually filling of data of a group into the report grid.</summary>
         private void GroupCellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -226,6 +229,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 5/01/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Function to do the actually filling of data of a student into the report grid.</summary>
         private void StudentCellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -260,6 +264,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Function to mimic a cell click. Used to pre-fill the data grid on startup and for refreshing data as it changes without the user having to reclick a name.</summary>
         private void FillStudentStatisticsGrid()
         {
             if (GroupNameDataDisplay.CurrentCell == null)
@@ -285,6 +290,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Function to mimic a cell click. Used to pre-fill the data grid on startup and for refreshing data as it changes without the user having to reclick a name.</summary>
         private void FillGroupStatisticsGrid()
         {
             if (GroupNameDataDisplay.CurrentCell == null)
@@ -358,6 +364,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/25/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Setups up the data display on the Setup tab with student information.</summary>
         private void StudentsRdo_CheckedChanged(object sender, EventArgs e)
         {
             NarrowListTxtBox.Text = string.Empty;
@@ -377,6 +384,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/25/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Setups up the data display on the Setup tab with group information.</summary>
         private void GroupsRdo_CheckedChanged(object sender, EventArgs e)
         {
             NarrowListTxtBox.Text = string.Empty;
@@ -396,6 +404,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/25/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles displaying data when text is entered in thesearch box on the Setup tab.</summary>
         private void NarrowListTxtBox_TextChanged(object sender, EventArgs e)
         {
             if (StudentsRdo.Checked)
@@ -447,6 +456,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Function to do decide if student or group data is filled. Calls the approriate functions to handle that.</summary>
         private void SetupExistingUserDataDisplay_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -477,6 +487,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Function to do decide if student or group drills are filled. Calls the approriate functions to handle that.</summary>
         private void SetupDrills()
         {
             System.Windows.Forms.DataGridViewCell selectedCell = SetupExistingUserDataDisplay.CurrentCell;
@@ -504,6 +515,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Function to control the fill the data grids with the drills of the selected student.</summary>
         private void FillStudentDrills(DataGridViewCellEventArgs e)
         {
             AvailableDrillDataDisplay.Rows.Clear();
@@ -521,6 +533,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Function to control the fill the data grids with the drills of the selected group.</summary>
         private void FillGroupDrills(DataGridViewCellEventArgs e)
         {
             AvailableDrillDataDisplay.Rows.Clear();
@@ -538,6 +551,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Function to actually fill the data grid with the assigned drills of the selected student.</summary>
         private void FillAvailableDrillsStudentDataGrid(Student student)
         {
             foreach (Drill drill in localManager.mainDrillList)
@@ -556,6 +570,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Function to actually fill the data grid with the assigned drills of the selected group.</summary>
         private void FillAssignedDrillsDataGrid(List<Drill> currentDrills)
         {
             foreach (Drill drill in currentDrills)
@@ -570,6 +585,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Function to actually fill the data grid with the available drills.</summary>
         private void FillAvailableDrillsGroupDataGrid(Group group)
         {
             foreach (Drill drill in localManager.mainDrillList)
@@ -588,6 +604,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Function to setup the buttons on the Setup tab depending on the assigned/available drills.</summary>
         private void SetupDrillButtons(DataGridView avialable, DataGridView assigned)
         {
             if (avialable.Rows.Count <= 1)
@@ -619,6 +636,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/25/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles the button click event for the new drill button.</summary>
         private void NewDrillBtn_Click(object sender, EventArgs e)
         {
             CreateDrill_Form createDrillDialog = new CreateDrill_Form(localManager);
@@ -632,6 +650,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/25/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles the button click event for the delete drill button.</summary>
         private void DeleteDrillBtn_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.DataGridViewCell drillCell = AvailableDrillDataDisplay.CurrentCell;
@@ -669,6 +688,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/25/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles the cell click event for the available drills data grid.</summary>
         private void AvailableDrillDataDisplay_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -695,6 +715,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles the cell click event for the assigned drills data grid.</summary>
         private void AssignedDrillDataDisplay_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -718,6 +739,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles the button click event for the assign selected button.</summary>
         private void AssignSelectedBtn_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.DataGridViewCell drillCell = AvailableDrillDataDisplay.CurrentCell;
@@ -748,6 +770,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles the button click event for the remove selected button.</summary>
         private void RemoveSelectedBtn_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.DataGridViewCell drillCell = AssignedDrillDataDisplay.CurrentCell;
@@ -778,6 +801,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles the button click event for the assign all button.</summary>
         private void AssignAllBtn_Click(object sender, EventArgs e)
         {
             List<string> drillNames = new List<string>();
@@ -814,6 +838,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles the button click event for the remove all button.</summary>
         private void RemoveAllBtn_Click(object sender, EventArgs e)
         {
             List<string> drillNames = new List<string>();
@@ -851,6 +876,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Disables all the buttons on the Setup tab.</summary>
         private void DisableSetupButtons()
         {
             DeleteDrillBtn.Enabled = false;
@@ -866,6 +892,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles filling the data grid on the Users tab based on the entered text.</summary>
         private void SearchEditUsersTxtbox_TextChanged(object sender, EventArgs e)
         {
             if (SearchEditUsersTxtbox.Text.Length > 0)
@@ -889,6 +916,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Handles filling the selected student's data when the suer clicks on their name in the data grid.</summary>
         private void ExistingUserDataEditUsersDisplay_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -934,6 +962,7 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/28/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Mimics the cell click event. Used to prefill student data on startup and to refresh and show chagnes so the user doesn't have to reclick the student's name</summary>
         private void SetupEditableUser()
         {
             System.Windows.Forms.DataGridViewCell selectedCell = ExistingUserDataEditUsersDisplay.CurrentCell;
@@ -955,6 +984,9 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Function will fill a datagrid with two columns with the data of th passed in list of students.</summary>
+        /// <param name="matches">The list of students to get the data from.</param>
+        /// <param name="dataGrid">The data grid to fill.</param>
         private void DisplayFoundStudents(List<Student> matches, DataGridView dataGrid)
         {
             string fullName = "";
@@ -972,6 +1004,9 @@ namespace RaptorMath
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/24/14                                                    //
         //------------------------------------------------------------------//
+        /// <summary>Function will fill a datagrid with one column with the data of th passed in list of groups.</summary>
+        /// <param name="matches">The list of groups to get the data from.</param>
+        /// <param name="dataGrid">The data grid to fill.</param>
         private void  DisplayFoundGroups(List<Group> matches, DataGridView dataGrid)
         {
             foreach (Group group in matches)
