@@ -1407,10 +1407,16 @@ namespace RaptorMath
         /// <summary>Handle Text Changed event.</summary>
         private void GroupNameCmbBox_TextChanged(object sender, EventArgs e)
         {
-            if (GroupNameComboBox.Text.Length > 0)
+            if (GroupNameComboBox.Text.Length > 0 && localManager.FindGroupByName(GroupNameComboBox.Text) == null)
+            {
+                CreateGroupBtn.Image = Properties.Resources.group_add_icon;
                 CreateGroupBtn.Enabled = true;
+            }
             else
+            {
+                CreateGroupBtn.Image = Properties.Resources.grey_group_add_icon;
                 CreateGroupBtn.Enabled = false;
+            }
         }
 
         /* The code in this section is for resetting text boxes and the like*/
@@ -1730,66 +1736,6 @@ namespace RaptorMath
             ExistingUserDataEditUsersDisplay.Rows.Clear();
             DisplayFoundStudents(localManager.studentList, ExistingUserDataEditUsersDisplay);
             SetupEditableUser();
-        }
-
-        private void groupBox5_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CreateStudentLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NumberRewardsTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RewardLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GroupNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LastNameTxtBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FirstNameTxtBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RemoveUserGroupLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SaveChangesLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LastNameLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FirstNameLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GroupNameLbl_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
