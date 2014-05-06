@@ -78,7 +78,9 @@ namespace RaptorMath
                 // Refresh the group names
                 RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
                 SaveChangesBtn.Enabled = false;
+                SaveChangesBtn.Image = Properties.Resources.gray_System_Save_icon__1_;
                 RemoveUserGroupBtn.Enabled = false;
+                RemoveUserGroupBtn.Image = Properties.Resources.gray_trash_icon__1_;
                 ExistingUserDataEditUsersDisplay.Rows.Clear();
                 DisplayFoundStudents(localManager.studentList, ExistingUserDataEditUsersDisplay);
                 ExistingUserDataEditUsersDisplay.CurrentCell = ExistingUserDataEditUsersDisplay[0, 0];
@@ -892,12 +894,16 @@ namespace RaptorMath
                         LastNameTxtBox.Text = selectedStudent.LastName;
                         NumberRewardsTxt.Text = selectedStudent.RewardTotal.ToString();
                         SaveChangesBtn.Enabled = true;
+                        SaveChangesBtn.Image = Properties.Resources.System_Save_icon__1_;
                         RemoveUserGroupBtn.Enabled = true;
+                        RemoveUserGroupBtn.Image = Properties.Resources.trash_icon__1_;
                     }
                     else
                     {
                         SaveChangesBtn.Enabled = false;
+                        SaveChangesBtn.Image = Properties.Resources.gray_System_Save_icon__1_;
                         RemoveUserGroupBtn.Enabled = false;
+                        RemoveUserGroupBtn.Image = Properties.Resources.gray_trash_icon__1_;
                     }
                 }
                 else
@@ -906,7 +912,9 @@ namespace RaptorMath
                     FirstNameTxtBox.Text = string.Empty;
                     LastNameTxtBox.Text = string.Empty;
                     SaveChangesBtn.Enabled = false;
+                    SaveChangesBtn.Image = Properties.Resources.gray_System_Save_icon__1_;
                     RemoveUserGroupBtn.Enabled = false;
+                    RemoveUserGroupBtn.Image = Properties.Resources.gray_trash_icon__1_;
                 }
             }
         }
@@ -1305,7 +1313,7 @@ namespace RaptorMath
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to quit Raptor Math? Any settings changes will not be saved.",
-                "Raptor Math", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                "Raptor Math", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 localManager.SetIsRunningFalse();
                 this.Close();
