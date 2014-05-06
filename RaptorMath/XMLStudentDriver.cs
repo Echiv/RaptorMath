@@ -1,19 +1,19 @@
-﻿//==============================================================//
-//					  XMLStudentDriver.cs				        //
-//==============================================================//
-// Program Name: RaptorMath                                     //
-// Authors: Cody Jordan and Cian Carota                         //
-// Purpose: This class is an XML accessor class that            //
-//          specializes in manipulating student data.           //
-//==============================================================//
-/* 
-Authors: Joshua Boone and Justine Dinh                     
-Cycle 3 Changes:
- * Date: 4/12/14
- * • Added new methods for editing a student in a simplier way.
- * Date: 4/14/14
- * • Added support for reading and writing out a student's rewards. 
-*/
+﻿//=====================================================================//
+//					  XMLStudentDriver.cs				               //
+//=====================================================================//
+// Program Name: RaptorMath                                            //
+// Authors: Cody Jordan and Cian Carota                                //
+// Purpose: This class is an XML accessor class that                   //
+//          specializes in manipulating student data.                  //
+//=====================================================================//
+//=====================================================================//
+// Authors: Joshua Boone and Justine Dinh                              //
+// Cycle 3 Changes:                                                    //
+//  Date: 4/12/14                                                      //
+//   • Added new methods for editing a student in a simplier way.      //
+//  Date: 4/14/14                                                      //
+//   • Added support for reading and writing out a student's rewards.  //
+//=====================================================================//
 
 using System;
 using System.Collections.Generic;
