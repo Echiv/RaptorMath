@@ -156,6 +156,9 @@ namespace RaptorMath
             MathDrill_SubmitBtn.Enabled = false;
             localManager.UpdateCurrentNumber();
             MessageBox.Show("Your adventure is over! Let's see how you did!", "Raptor Math", MessageBoxButtons.OK);
+            //CustomMessageBox customMessagepDialog = new CustomMessageBox("Your adventure is over! Let's see how you did!");
+            //customMessagepDialog.ShowDialog(this);
+            //customMessagepDialog.Dispose();
             localManager.SetWindow(Window.drillReport);
             this.Close();
         }

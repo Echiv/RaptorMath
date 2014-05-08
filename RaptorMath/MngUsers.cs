@@ -68,6 +68,7 @@ namespace RaptorMath
         private bool isKeyPressed = false;
         // Used when importing students from a txt file
         OpenFileDialog openFile;
+
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 4/12/14                                                    //

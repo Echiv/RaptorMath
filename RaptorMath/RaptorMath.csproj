@@ -101,6 +101,18 @@
     <Compile Include="CreateDrill.Designer.cs">
       <DependentUpon>CreateDrill.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateGroup.Designer.cs">
+      <DependentUpon>CreateGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomMessageBox.Designer.cs">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Drill.cs" />
     <Compile Include="DrillReport.cs">
       <SubType>Form</SubType>
@@ -146,6 +158,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateDrill.resx">
       <DependentUpon>CreateDrill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateGroup.resx">
+      <DependentUpon>CreateGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateGroup.yo.resx">
+      <DependentUpon>CreateGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomMessageBox.resx">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DrillReport.resx">
       <DependentUpon>DrillReport.cs</DependentUpon>

@@ -87,9 +87,10 @@ namespace RaptorMath
                 SetupDrills();
                 SetupDrillButtons(AvailableDrillDataDisplay, AssignedDrillDataDisplay);
             }
-            // The Edit Users tab
+            // The Users tab
             else if (e.TabPageIndex == 2)
             {
+                CreateGroupBtn.Enabled = true;
                 AvailableDrillDataDisplay.Rows[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 ExportToExcelBtn.Enabled = false;
                 // Refresh the group names
@@ -1145,25 +1146,29 @@ namespace RaptorMath
         /// <summary>Handles the button event to create a group.</summary>
         private void CreateGroupBtn_Click(object sender, EventArgs e)
         {
-            string newGroupName = localManager.RemoveExtraWhiteSpace(GroupNameComboBox.Text);
-            if (newGroupName != string.Empty)
-            {
-                bool isGroupAdded = localManager.CreateGroup(newGroupName);
-                if (isGroupAdded)
-                {
-                    MessageBox.Show("New group created.", "Raptor Math", MessageBoxButtons.OK);
-                    RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
-                    GroupNameComboBox.Text = newGroupName;
-                }
-                else
-                {
-                    MessageBox.Show("A group with the provided name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("A group name cannot be blank.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //string newGroupName = localManager.RemoveExtraWhiteSpace(GroupNameComboBox.Text);
+            //if (newGroupName != string.Empty)
+            //{
+            //    bool isGroupAdded = localManager.CreateGroup(newGroupName);
+            //    if (isGroupAdded)
+            //    {
+            //        MessageBox.Show("New group created.", "Raptor Math", MessageBoxButtons.OK);
+            //        RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
+            //        GroupNameComboBox.Text = newGroupName;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("A group with the provided name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("A group name cannot be blank.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+            CreateGroup createGroupDialog = new CreateGroup(localManager);
+            createGroupDialog.ShowDialog(this);
+            createGroupDialog.Dispose();
+            RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
         }
 
         //------------------------------------------------------------------//
@@ -1534,16 +1539,16 @@ namespace RaptorMath
         /// <summary>Handle Text Changed event.</summary>
         private void GroupNameCmbBox_TextChanged(object sender, EventArgs e)
         {
-            if (GroupNameComboBox.Text.Length > 0 && localManager.FindGroupByName(GroupNameComboBox.Text) == null)
-            {
-                CreateGroupBtn.Image = Properties.Resources.group_add_icon;
-                CreateGroupBtn.Enabled = true;
-            }
-            else
-            {
-                CreateGroupBtn.Image = Properties.Resources.grey_group_add_icon;
-                CreateGroupBtn.Enabled = false;
-            }
+            //if (GroupNameComboBox.Text.Length > 0 && localManager.FindGroupByName(GroupNameComboBox.Text) == null)
+            //{
+            //    CreateGroupBtn.Image = Properties.Resources.group_add_icon;
+            //    CreateGroupBtn.Enabled = true;
+            //}
+            //else
+            //{
+            //    CreateGroupBtn.Image = Properties.Resources.grey_group_add_icon;
+            //    CreateGroupBtn.Enabled = false;
+            //}
         }
 
         /* The code in this section is for resetting text boxes and the like*/

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomepage));
             this.tab1 = new System.Windows.Forms.TabControl();
             this.Statistics = new System.Windows.Forms.TabPage();
@@ -98,14 +98,10 @@
             this.SearchEditUsersTxtbox = new System.Windows.Forms.TextBox();
             this.ModifyExistingUserBox = new System.Windows.Forms.GroupBox();
             this.CreateGroupLbl = new System.Windows.Forms.Label();
-            this.CreateGroupBtn = new System.Windows.Forms.Button();
             this.CreateStudentLbl = new System.Windows.Forms.Label();
-            this.CreateStudentBtn = new System.Windows.Forms.Button();
             this.NumberRewardsTxt = new System.Windows.Forms.RichTextBox();
             this.RewardLbl = new System.Windows.Forms.Label();
             this.GroupNameComboBox = new System.Windows.Forms.ComboBox();
-            this.RemoveUserGroupBtn = new System.Windows.Forms.Button();
-            this.SaveChangesBtn = new System.Windows.Forms.Button();
             this.LastNameTxtBox = new System.Windows.Forms.RichTextBox();
             this.FirstNameTxtBox = new System.Windows.Forms.RichTextBox();
             this.RemoveUserLbl = new System.Windows.Forms.Label();
@@ -113,20 +109,6 @@
             this.LastNameLbl = new System.Windows.Forms.Label();
             this.FirstNameLbl = new System.Windows.Forms.Label();
             this.GroupNameLbl = new System.Windows.Forms.Label();
-            this.About = new System.Windows.Forms.TabPage();
-            this.CopyRightLbl = new System.Windows.Forms.Label();
-            this.SecondProjectNameLbl = new System.Windows.Forms.Label();
-            this.IntroductionLbl = new System.Windows.Forms.Label();
-            this.NoQuestionsLbl = new System.Windows.Forms.Label();
-            this.GoalLbl = new System.Windows.Forms.Label();
-            this.ProductLbl = new System.Windows.Forms.Label();
-            this.IntroLbl = new System.Windows.Forms.Label();
-            this.QuestionsLbl = new System.Windows.Forms.Label();
-            this.StatedGoalLbl = new System.Windows.Forms.Label();
-            this.AboutWelcomeLbl = new System.Windows.Forms.Label();
-            this.AboutLbl = new System.Windows.Forms.Label();
-            this.ProjectNameLbl = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.ExportToExcelBtn = new System.Windows.Forms.Button();
             this.ReportGroupBox = new System.Windows.Forms.GroupBox();
@@ -145,6 +127,24 @@
             this.CurrentRewardsLbl = new System.Windows.Forms.Label();
             this.CurrentInfoLbl = new System.Windows.Forms.Label();
             this.NewInfoLbl = new System.Windows.Forms.Label();
+            this.CreateGroupBtn = new System.Windows.Forms.Button();
+            this.CreateStudentBtn = new System.Windows.Forms.Button();
+            this.RemoveUserGroupBtn = new System.Windows.Forms.Button();
+            this.SaveChangesBtn = new System.Windows.Forms.Button();
+            this.About = new System.Windows.Forms.TabPage();
+            this.CopyRightLbl = new System.Windows.Forms.Label();
+            this.SecondProjectNameLbl = new System.Windows.Forms.Label();
+            this.IntroductionLbl = new System.Windows.Forms.Label();
+            this.NoQuestionsLbl = new System.Windows.Forms.Label();
+            this.GoalLbl = new System.Windows.Forms.Label();
+            this.ProductLbl = new System.Windows.Forms.Label();
+            this.IntroLbl = new System.Windows.Forms.Label();
+            this.QuestionsLbl = new System.Windows.Forms.Label();
+            this.StatedGoalLbl = new System.Windows.Forms.Label();
+            this.AboutWelcomeLbl = new System.Windows.Forms.Label();
+            this.AboutLbl = new System.Windows.Forms.Label();
+            this.ProjectNameLbl = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.tab1.SuspendLayout();
             this.Statistics.SuspendLayout();
             this.GroupSearchBox.SuspendLayout();
@@ -164,8 +164,8 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExistingUserDataEditUsersDisplay)).BeginInit();
             this.ModifyExistingUserBox.SuspendLayout();
-            this.About.SuspendLayout();
             this.ReportGroupBox.SuspendLayout();
+            this.About.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
@@ -410,14 +410,14 @@
             // 
             // GroupNameDataDisplay
             // 
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.GroupNameDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GroupNameDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GroupName,
@@ -551,16 +551,16 @@
             // 
             // AvailableDrillDataDisplay
             // 
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.AvailableDrillDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AvailableDrillDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DrillName});
             this.AvailableDrillDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.AvailableDrillDataDisplay.Location = new System.Drawing.Point(3, 90);
             this.AvailableDrillDataDisplay.Name = "AvailableDrillDataDisplay";
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.AvailableDrillDataDisplay.Size = new System.Drawing.Size(324, 468);
             this.AvailableDrillDataDisplay.TabIndex = 0;
             this.AvailableDrillDataDisplay.TabStop = false;
@@ -760,10 +760,10 @@
             // 
             // NarrowListTxtBox
             // 
-            this.NarrowListTxtBox.Location = new System.Drawing.Point(148, 61);
+            this.NarrowListTxtBox.Location = new System.Drawing.Point(148, 63);
             this.NarrowListTxtBox.MaxLength = 24;
             this.NarrowListTxtBox.Name = "NarrowListTxtBox";
-            this.NarrowListTxtBox.Size = new System.Drawing.Size(187, 24);
+            this.NarrowListTxtBox.Size = new System.Drawing.Size(170, 24);
             this.NarrowListTxtBox.TabIndex = 4;
             this.NarrowListTxtBox.TextChanged += new System.EventHandler(this.NarrowListTxtBox_TextChanged);
             // 
@@ -826,7 +826,7 @@
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(3, 22);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(636, 588);
+            this.groupBox4.Size = new System.Drawing.Size(630, 588);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Existing Users";
@@ -835,7 +835,7 @@
             // 
             this.searchLbl.AutoSize = true;
             this.searchLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLbl.Location = new System.Drawing.Point(137, 31);
+            this.searchLbl.Location = new System.Drawing.Point(176, 33);
             this.searchLbl.Name = "searchLbl";
             this.searchLbl.Size = new System.Drawing.Size(59, 18);
             this.searchLbl.TabIndex = 2;
@@ -850,7 +850,7 @@
             this.ExistingUserDataEditUsersDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ExistingUserDataEditUsersDisplay.Location = new System.Drawing.Point(3, 75);
             this.ExistingUserDataEditUsersDisplay.Name = "ExistingUserDataEditUsersDisplay";
-            this.ExistingUserDataEditUsersDisplay.Size = new System.Drawing.Size(630, 510);
+            this.ExistingUserDataEditUsersDisplay.Size = new System.Drawing.Size(624, 510);
             this.ExistingUserDataEditUsersDisplay.TabIndex = 1;
             this.ExistingUserDataEditUsersDisplay.TabStop = false;
             this.ExistingUserDataEditUsersDisplay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExistingUserDataEditUsersDisplay_CellContentClick);
@@ -873,10 +873,10 @@
             // 
             // SearchEditUsersTxtbox
             // 
-            this.SearchEditUsersTxtbox.Location = new System.Drawing.Point(207, 28);
+            this.SearchEditUsersTxtbox.Location = new System.Drawing.Point(246, 30);
             this.SearchEditUsersTxtbox.MaxLength = 12;
             this.SearchEditUsersTxtbox.Name = "SearchEditUsersTxtbox";
-            this.SearchEditUsersTxtbox.Size = new System.Drawing.Size(196, 24);
+            this.SearchEditUsersTxtbox.Size = new System.Drawing.Size(170, 24);
             this.SearchEditUsersTxtbox.TabIndex = 2;
             this.SearchEditUsersTxtbox.TextChanged += new System.EventHandler(this.SearchEditUsersTxtbox_TextChanged);
             this.SearchEditUsersTxtbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LetterssKeyPressNoSpace);
@@ -886,16 +886,17 @@
             this.ModifyExistingUserBox.BackColor = System.Drawing.Color.LightCoral;
             this.ModifyExistingUserBox.Controls.Add(this.NewInfoLbl);
             this.ModifyExistingUserBox.Controls.Add(this.CurrentInfoLbl);
-            this.ModifyExistingUserBox.Controls.Add(this.CurrentRewardsLbl);
-            this.ModifyExistingUserBox.Controls.Add(this.CurrentLastNameLbl);
-            this.ModifyExistingUserBox.Controls.Add(this.CurrentFirstNameLbl2);
             this.ModifyExistingUserBox.Controls.Add(this.CreateGroupLbl);
+            this.ModifyExistingUserBox.Controls.Add(this.GroupNameLbl);
             this.ModifyExistingUserBox.Controls.Add(this.CreateGroupBtn);
+            this.ModifyExistingUserBox.Controls.Add(this.CurrentRewardsLbl);
             this.ModifyExistingUserBox.Controls.Add(this.CreateStudentLbl);
             this.ModifyExistingUserBox.Controls.Add(this.CreateStudentBtn);
+            this.ModifyExistingUserBox.Controls.Add(this.CurrentLastNameLbl);
+            this.ModifyExistingUserBox.Controls.Add(this.GroupNameComboBox);
+            this.ModifyExistingUserBox.Controls.Add(this.CurrentFirstNameLbl2);
             this.ModifyExistingUserBox.Controls.Add(this.NumberRewardsTxt);
             this.ModifyExistingUserBox.Controls.Add(this.RewardLbl);
-            this.ModifyExistingUserBox.Controls.Add(this.GroupNameComboBox);
             this.ModifyExistingUserBox.Controls.Add(this.RemoveUserGroupBtn);
             this.ModifyExistingUserBox.Controls.Add(this.SaveChangesBtn);
             this.ModifyExistingUserBox.Controls.Add(this.LastNameTxtBox);
@@ -904,7 +905,6 @@
             this.ModifyExistingUserBox.Controls.Add(this.SaveChangesLbl);
             this.ModifyExistingUserBox.Controls.Add(this.LastNameLbl);
             this.ModifyExistingUserBox.Controls.Add(this.FirstNameLbl);
-            this.ModifyExistingUserBox.Controls.Add(this.GroupNameLbl);
             this.ModifyExistingUserBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.ModifyExistingUserBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ModifyExistingUserBox.Location = new System.Drawing.Point(729, 22);
@@ -916,50 +916,25 @@
             // 
             // CreateGroupLbl
             // 
-            this.CreateGroupLbl.AutoSize = true;
-            this.CreateGroupLbl.Location = new System.Drawing.Point(286, 234);
+            this.CreateGroupLbl.Location = new System.Drawing.Point(171, 413);
             this.CreateGroupLbl.Name = "CreateGroupLbl";
-            this.CreateGroupLbl.Size = new System.Drawing.Size(98, 18);
+            this.CreateGroupLbl.Size = new System.Drawing.Size(120, 18);
             this.CreateGroupLbl.TabIndex = 17;
             this.CreateGroupLbl.Text = "Create Group";
             this.CreateGroupLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // CreateGroupBtn
-            // 
-            this.CreateGroupBtn.Image = global::RaptorMath.Properties.Resources.grey_group_add_icon;
-            this.CreateGroupBtn.Location = new System.Drawing.Point(281, 174);
-            this.CreateGroupBtn.Name = "CreateGroupBtn";
-            this.CreateGroupBtn.Size = new System.Drawing.Size(117, 57);
-            this.CreateGroupBtn.TabIndex = 5;
-            this.CreateGroupBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.AdminHomepageToolTip.SetToolTip(this.CreateGroupBtn, "Creates a new unique new group name");
-            this.CreateGroupBtn.UseVisualStyleBackColor = true;
-            this.CreateGroupBtn.Click += new System.EventHandler(this.CreateGroupBtn_Click);
-            // 
             // CreateStudentLbl
             // 
-            this.CreateStudentLbl.AutoSize = true;
-            this.CreateStudentLbl.Location = new System.Drawing.Point(272, 86);
+            this.CreateStudentLbl.Location = new System.Drawing.Point(302, 413);
             this.CreateStudentLbl.Name = "CreateStudentLbl";
-            this.CreateStudentLbl.Size = new System.Drawing.Size(106, 18);
+            this.CreateStudentLbl.Size = new System.Drawing.Size(120, 18);
             this.CreateStudentLbl.TabIndex = 16;
             this.CreateStudentLbl.Text = "Create Student";
             this.CreateStudentLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // CreateStudentBtn
-            // 
-            this.CreateStudentBtn.Image = global::RaptorMath.Properties.Resources.user_female_add_icon;
-            this.CreateStudentBtn.Location = new System.Drawing.Point(267, 28);
-            this.CreateStudentBtn.Name = "CreateStudentBtn";
-            this.CreateStudentBtn.Size = new System.Drawing.Size(117, 57);
-            this.CreateStudentBtn.TabIndex = 11;
-            this.AdminHomepageToolTip.SetToolTip(this.CreateStudentBtn, "Opens window to create the new student. ");
-            this.CreateStudentBtn.UseVisualStyleBackColor = true;
-            this.CreateStudentBtn.Click += new System.EventHandler(this.CreateStudentBtn_Click);
-            // 
             // NumberRewardsTxt
             // 
-            this.NumberRewardsTxt.Location = new System.Drawing.Point(355, 431);
+            this.NumberRewardsTxt.Location = new System.Drawing.Point(355, 159);
             this.NumberRewardsTxt.MaxLength = 5;
             this.NumberRewardsTxt.Multiline = false;
             this.NumberRewardsTxt.Name = "NumberRewardsTxt";
@@ -971,7 +946,7 @@
             // RewardLbl
             // 
             this.RewardLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RewardLbl.Location = new System.Drawing.Point(24, 434);
+            this.RewardLbl.Location = new System.Drawing.Point(46, 162);
             this.RewardLbl.Name = "RewardLbl";
             this.RewardLbl.Size = new System.Drawing.Size(120, 25);
             this.RewardLbl.TabIndex = 13;
@@ -980,7 +955,7 @@
             // GroupNameComboBox
             // 
             this.GroupNameComboBox.FormattingEnabled = true;
-            this.GroupNameComboBox.Location = new System.Drawing.Point(281, 133);
+            this.GroupNameComboBox.Location = new System.Drawing.Point(355, 199);
             this.GroupNameComboBox.MaxLength = 20;
             this.GroupNameComboBox.Name = "GroupNameComboBox";
             this.GroupNameComboBox.Size = new System.Drawing.Size(240, 26);
@@ -988,33 +963,9 @@
             this.GroupNameComboBox.TextChanged += new System.EventHandler(this.GroupNameCmbBox_TextChanged);
             this.GroupNameComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RaptorMath_LettersAndDigitsKeyPress);
             // 
-            // RemoveUserGroupBtn
-            // 
-            this.RemoveUserGroupBtn.BackgroundImage = global::RaptorMath.Properties.Resources.gray_trash_icon__1_;
-            this.RemoveUserGroupBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.RemoveUserGroupBtn.Location = new System.Drawing.Point(431, 497);
-            this.RemoveUserGroupBtn.Name = "RemoveUserGroupBtn";
-            this.RemoveUserGroupBtn.Size = new System.Drawing.Size(40, 40);
-            this.RemoveUserGroupBtn.TabIndex = 10;
-            this.AdminHomepageToolTip.SetToolTip(this.RemoveUserGroupBtn, "Permanently removes the user.");
-            this.RemoveUserGroupBtn.UseVisualStyleBackColor = true;
-            this.RemoveUserGroupBtn.Click += new System.EventHandler(this.RemoveUserGroupBtn_Click);
-            // 
-            // SaveChangesBtn
-            // 
-            this.SaveChangesBtn.BackgroundImage = global::RaptorMath.Properties.Resources.gray_System_Save_icon__1_;
-            this.SaveChangesBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.SaveChangesBtn.Location = new System.Drawing.Point(188, 497);
-            this.SaveChangesBtn.Name = "SaveChangesBtn";
-            this.SaveChangesBtn.Size = new System.Drawing.Size(40, 40);
-            this.SaveChangesBtn.TabIndex = 9;
-            this.AdminHomepageToolTip.SetToolTip(this.SaveChangesBtn, "Saves the changes made to the user.");
-            this.SaveChangesBtn.UseVisualStyleBackColor = true;
-            this.SaveChangesBtn.Click += new System.EventHandler(this.SaveChangesBtn_Click);
-            // 
             // LastNameTxtBox
             // 
-            this.LastNameTxtBox.Location = new System.Drawing.Point(355, 390);
+            this.LastNameTxtBox.Location = new System.Drawing.Point(355, 118);
             this.LastNameTxtBox.MaxLength = 12;
             this.LastNameTxtBox.Multiline = false;
             this.LastNameTxtBox.Name = "LastNameTxtBox";
@@ -1025,7 +976,7 @@
             // 
             // FirstNameTxtBox
             // 
-            this.FirstNameTxtBox.Location = new System.Drawing.Point(355, 347);
+            this.FirstNameTxtBox.Location = new System.Drawing.Point(355, 78);
             this.FirstNameTxtBox.MaxLength = 12;
             this.FirstNameTxtBox.Multiline = false;
             this.FirstNameTxtBox.Name = "FirstNameTxtBox";
@@ -1038,7 +989,7 @@
             // 
             this.RemoveUserLbl.AutoSize = true;
             this.RemoveUserLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RemoveUserLbl.Location = new System.Drawing.Point(398, 540);
+            this.RemoveUserLbl.Location = new System.Drawing.Point(322, 299);
             this.RemoveUserLbl.Name = "RemoveUserLbl";
             this.RemoveUserLbl.Size = new System.Drawing.Size(100, 18);
             this.RemoveUserLbl.TabIndex = 5;
@@ -1048,7 +999,7 @@
             // 
             this.SaveChangesLbl.AutoSize = true;
             this.SaveChangesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveChangesLbl.Location = new System.Drawing.Point(160, 540);
+            this.SaveChangesLbl.Location = new System.Drawing.Point(182, 299);
             this.SaveChangesLbl.Name = "SaveChangesLbl";
             this.SaveChangesLbl.Size = new System.Drawing.Size(104, 18);
             this.SaveChangesLbl.TabIndex = 4;
@@ -1057,7 +1008,7 @@
             // LastNameLbl
             // 
             this.LastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastNameLbl.Location = new System.Drawing.Point(24, 393);
+            this.LastNameLbl.Location = new System.Drawing.Point(46, 121);
             this.LastNameLbl.Name = "LastNameLbl";
             this.LastNameLbl.Size = new System.Drawing.Size(120, 25);
             this.LastNameLbl.TabIndex = 3;
@@ -1066,7 +1017,7 @@
             // FirstNameLbl
             // 
             this.FirstNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstNameLbl.Location = new System.Drawing.Point(24, 350);
+            this.FirstNameLbl.Location = new System.Drawing.Point(46, 78);
             this.FirstNameLbl.Name = "FirstNameLbl";
             this.FirstNameLbl.Size = new System.Drawing.Size(120, 25);
             this.FirstNameLbl.TabIndex = 2;
@@ -1075,11 +1026,242 @@
             // GroupNameLbl
             // 
             this.GroupNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupNameLbl.Location = new System.Drawing.Point(130, 136);
+            this.GroupNameLbl.Location = new System.Drawing.Point(46, 202);
             this.GroupNameLbl.Name = "GroupNameLbl";
             this.GroupNameLbl.Size = new System.Drawing.Size(120, 25);
             this.GroupNameLbl.TabIndex = 0;
             this.GroupNameLbl.Text = "Group Name:";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "GreenR.png");
+            this.imageList1.Images.SetKeyName(1, "Help.jpg");
+            this.imageList1.Images.SetKeyName(2, "AddUser.jpg");
+            this.imageList1.Images.SetKeyName(3, "Settings.jpg");
+            this.imageList1.Images.SetKeyName(4, "Statistics.jpg");
+            this.imageList1.Images.SetKeyName(5, "Users-add-group-icon.png");
+            this.imageList1.Images.SetKeyName(6, "bar-chart-icon.png");
+            this.imageList1.Images.SetKeyName(7, "Sections-of-Website-About-icon.png");
+            this.imageList1.Images.SetKeyName(8, "Users-Add-user-icon.png");
+            this.imageList1.Images.SetKeyName(9, "Users-Edit-user-icon.png");
+            this.imageList1.Images.SetKeyName(10, "Basic-Settings-icon.png");
+            this.imageList1.Images.SetKeyName(11, "settings-icon.png");
+            // 
+            // ExportToExcelBtn
+            // 
+            this.ExportToExcelBtn.Location = new System.Drawing.Point(897, 705);
+            this.ExportToExcelBtn.Name = "ExportToExcelBtn";
+            this.ExportToExcelBtn.Size = new System.Drawing.Size(150, 35);
+            this.ExportToExcelBtn.TabIndex = 14;
+            this.ExportToExcelBtn.Text = "Export to Excel";
+            this.AdminHomepageToolTip.SetToolTip(this.ExportToExcelBtn, "Exports the report to an Excel file.");
+            this.ExportToExcelBtn.UseVisualStyleBackColor = true;
+            this.ExportToExcelBtn.Click += new System.EventHandler(this.ExportToExcelBtn_Click);
+            // 
+            // ReportGroupBox
+            // 
+            this.ReportGroupBox.Controls.Add(this.tab1);
+            this.ReportGroupBox.Controls.Add(this.ExportToExcelBtn);
+            this.ReportGroupBox.Controls.Add(this.LastLoginDateLbl);
+            this.ReportGroupBox.Controls.Add(this.LastLoginLbl);
+            this.ReportGroupBox.Controls.Add(this.TimeLbl);
+            this.ReportGroupBox.Controls.Add(this.DateLbl);
+            this.ReportGroupBox.Controls.Add(this.AdminNameLbl);
+            this.ReportGroupBox.Controls.Add(this.WelcomeLbl);
+            this.ReportGroupBox.Controls.Add(this.LogoutBtn);
+            this.ReportGroupBox.Controls.Add(this.ExitBtn);
+            this.ReportGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ReportGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.ReportGroupBox.Name = "ReportGroupBox";
+            this.ReportGroupBox.Size = new System.Drawing.Size(1370, 750);
+            this.ReportGroupBox.TabIndex = 13;
+            this.ReportGroupBox.TabStop = false;
+            this.ReportGroupBox.Text = "Admin Home";
+            this.ReportGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // LastLoginDateLbl
+            // 
+            this.LastLoginDateLbl.AutoSize = true;
+            this.LastLoginDateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastLoginDateLbl.Location = new System.Drawing.Point(1264, 16);
+            this.LastLoginDateLbl.Name = "LastLoginDateLbl";
+            this.LastLoginDateLbl.Size = new System.Drawing.Size(72, 18);
+            this.LastLoginDateLbl.TabIndex = 8;
+            this.LastLoginDateLbl.Text = "mm/dd/yy";
+            // 
+            // LastLoginLbl
+            // 
+            this.LastLoginLbl.AutoSize = true;
+            this.LastLoginLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastLoginLbl.Location = new System.Drawing.Point(1178, 16);
+            this.LastLoginLbl.Name = "LastLoginLbl";
+            this.LastLoginLbl.Size = new System.Drawing.Size(80, 18);
+            this.LastLoginLbl.TabIndex = 7;
+            this.LastLoginLbl.Text = "Last Login:";
+            // 
+            // TimeLbl
+            // 
+            this.TimeLbl.AutoSize = true;
+            this.TimeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeLbl.Location = new System.Drawing.Point(736, 16);
+            this.TimeLbl.Name = "TimeLbl";
+            this.TimeLbl.Size = new System.Drawing.Size(69, 18);
+            this.TimeLbl.TabIndex = 6;
+            this.TimeLbl.Text = "and Time";
+            // 
+            // DateLbl
+            // 
+            this.DateLbl.AutoSize = true;
+            this.DateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateLbl.Location = new System.Drawing.Point(647, 16);
+            this.DateLbl.Name = "DateLbl";
+            this.DateLbl.Size = new System.Drawing.Size(92, 18);
+            this.DateLbl.TabIndex = 5;
+            this.DateLbl.Text = "Current Date";
+            // 
+            // AdminNameLbl
+            // 
+            this.AdminNameLbl.AutoSize = true;
+            this.AdminNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminNameLbl.Location = new System.Drawing.Point(217, 16);
+            this.AdminNameLbl.Name = "AdminNameLbl";
+            this.AdminNameLbl.Size = new System.Drawing.Size(66, 18);
+            this.AdminNameLbl.TabIndex = 4;
+            this.AdminNameLbl.Text = "<admin>";
+            // 
+            // WelcomeLbl
+            // 
+            this.WelcomeLbl.AutoSize = true;
+            this.WelcomeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WelcomeLbl.Location = new System.Drawing.Point(141, 16);
+            this.WelcomeLbl.Name = "WelcomeLbl";
+            this.WelcomeLbl.Size = new System.Drawing.Size(76, 18);
+            this.WelcomeLbl.TabIndex = 3;
+            this.WelcomeLbl.Text = "Welcome,";
+            // 
+            // LogoutBtn
+            // 
+            this.LogoutBtn.Location = new System.Drawing.Point(1053, 705);
+            this.LogoutBtn.Name = "LogoutBtn";
+            this.LogoutBtn.Size = new System.Drawing.Size(150, 35);
+            this.LogoutBtn.TabIndex = 15;
+            this.LogoutBtn.Text = "Logout";
+            this.AdminHomepageToolTip.SetToolTip(this.LogoutBtn, "Returns you to the login homepage.");
+            this.LogoutBtn.UseVisualStyleBackColor = true;
+            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
+            // 
+            // ExitBtn
+            // 
+            this.ExitBtn.Location = new System.Drawing.Point(1208, 705);
+            this.ExitBtn.Name = "ExitBtn";
+            this.ExitBtn.Size = new System.Drawing.Size(150, 35);
+            this.ExitBtn.TabIndex = 16;
+            this.ExitBtn.Text = "Exit";
+            this.AdminHomepageToolTip.SetToolTip(this.ExitBtn, "Closes the program.");
+            this.ExitBtn.UseVisualStyleBackColor = true;
+            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
+            // 
+            // AdminHome
+            // 
+            this.AdminHome.Enabled = true;
+            this.AdminHome.Tick += new System.EventHandler(this.AdminHome_Tick);
+            // 
+            // CurrentFirstNameLbl2
+            // 
+            this.CurrentFirstNameLbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentFirstNameLbl2.ForeColor = System.Drawing.Color.Blue;
+            this.CurrentFirstNameLbl2.Location = new System.Drawing.Point(172, 78);
+            this.CurrentFirstNameLbl2.Name = "CurrentFirstNameLbl2";
+            this.CurrentFirstNameLbl2.Size = new System.Drawing.Size(170, 25);
+            this.CurrentFirstNameLbl2.TabIndex = 18;
+            // 
+            // CurrentLastNameLbl
+            // 
+            this.CurrentLastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentLastNameLbl.ForeColor = System.Drawing.Color.Blue;
+            this.CurrentLastNameLbl.Location = new System.Drawing.Point(172, 121);
+            this.CurrentLastNameLbl.Name = "CurrentLastNameLbl";
+            this.CurrentLastNameLbl.Size = new System.Drawing.Size(170, 25);
+            this.CurrentLastNameLbl.TabIndex = 19;
+            // 
+            // CurrentRewardsLbl
+            // 
+            this.CurrentRewardsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentRewardsLbl.ForeColor = System.Drawing.Color.Blue;
+            this.CurrentRewardsLbl.Location = new System.Drawing.Point(172, 162);
+            this.CurrentRewardsLbl.Name = "CurrentRewardsLbl";
+            this.CurrentRewardsLbl.Size = new System.Drawing.Size(170, 25);
+            this.CurrentRewardsLbl.TabIndex = 20;
+            // 
+            // CurrentInfoLbl
+            // 
+            this.CurrentInfoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentInfoLbl.Location = new System.Drawing.Point(172, 30);
+            this.CurrentInfoLbl.Name = "CurrentInfoLbl";
+            this.CurrentInfoLbl.Size = new System.Drawing.Size(170, 25);
+            this.CurrentInfoLbl.TabIndex = 21;
+            this.CurrentInfoLbl.Text = "Current Information";
+            this.CurrentInfoLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // NewInfoLbl
+            // 
+            this.NewInfoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewInfoLbl.Location = new System.Drawing.Point(377, 30);
+            this.NewInfoLbl.Name = "NewInfoLbl";
+            this.NewInfoLbl.Size = new System.Drawing.Size(170, 25);
+            this.NewInfoLbl.TabIndex = 22;
+            this.NewInfoLbl.Text = "New Information";
+            this.NewInfoLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CreateGroupBtn
+            // 
+            this.CreateGroupBtn.Image = global::RaptorMath.Properties.Resources.group_add_icon;
+            this.CreateGroupBtn.Location = new System.Drawing.Point(174, 353);
+            this.CreateGroupBtn.Name = "CreateGroupBtn";
+            this.CreateGroupBtn.Size = new System.Drawing.Size(117, 57);
+            this.CreateGroupBtn.TabIndex = 5;
+            this.CreateGroupBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.AdminHomepageToolTip.SetToolTip(this.CreateGroupBtn, "Creates a new unique new group name");
+            this.CreateGroupBtn.UseVisualStyleBackColor = true;
+            this.CreateGroupBtn.Click += new System.EventHandler(this.CreateGroupBtn_Click);
+            // 
+            // CreateStudentBtn
+            // 
+            this.CreateStudentBtn.Image = global::RaptorMath.Properties.Resources.user_female_add_icon;
+            this.CreateStudentBtn.Location = new System.Drawing.Point(305, 353);
+            this.CreateStudentBtn.Name = "CreateStudentBtn";
+            this.CreateStudentBtn.Size = new System.Drawing.Size(117, 57);
+            this.CreateStudentBtn.TabIndex = 11;
+            this.AdminHomepageToolTip.SetToolTip(this.CreateStudentBtn, "Opens window to create the new student. ");
+            this.CreateStudentBtn.UseVisualStyleBackColor = true;
+            this.CreateStudentBtn.Click += new System.EventHandler(this.CreateStudentBtn_Click);
+            // 
+            // RemoveUserGroupBtn
+            // 
+            this.RemoveUserGroupBtn.BackgroundImage = global::RaptorMath.Properties.Resources.gray_trash_icon__1_;
+            this.RemoveUserGroupBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.RemoveUserGroupBtn.Location = new System.Drawing.Point(355, 256);
+            this.RemoveUserGroupBtn.Name = "RemoveUserGroupBtn";
+            this.RemoveUserGroupBtn.Size = new System.Drawing.Size(40, 40);
+            this.RemoveUserGroupBtn.TabIndex = 10;
+            this.AdminHomepageToolTip.SetToolTip(this.RemoveUserGroupBtn, "Permanently removes the user.");
+            this.RemoveUserGroupBtn.UseVisualStyleBackColor = true;
+            this.RemoveUserGroupBtn.Click += new System.EventHandler(this.RemoveUserGroupBtn_Click);
+            // 
+            // SaveChangesBtn
+            // 
+            this.SaveChangesBtn.BackgroundImage = global::RaptorMath.Properties.Resources.gray_System_Save_icon__1_;
+            this.SaveChangesBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.SaveChangesBtn.Location = new System.Drawing.Point(210, 256);
+            this.SaveChangesBtn.Name = "SaveChangesBtn";
+            this.SaveChangesBtn.Size = new System.Drawing.Size(40, 40);
+            this.SaveChangesBtn.TabIndex = 9;
+            this.AdminHomepageToolTip.SetToolTip(this.SaveChangesBtn, "Saves the changes made to the user.");
+            this.SaveChangesBtn.UseVisualStyleBackColor = true;
+            this.SaveChangesBtn.Click += new System.EventHandler(this.SaveChangesBtn_Click);
             // 
             // About
             // 
@@ -1243,190 +1425,6 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "|";
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "GreenR.png");
-            this.imageList1.Images.SetKeyName(1, "Help.jpg");
-            this.imageList1.Images.SetKeyName(2, "AddUser.jpg");
-            this.imageList1.Images.SetKeyName(3, "Settings.jpg");
-            this.imageList1.Images.SetKeyName(4, "Statistics.jpg");
-            this.imageList1.Images.SetKeyName(5, "Users-add-group-icon.png");
-            this.imageList1.Images.SetKeyName(6, "bar-chart-icon.png");
-            this.imageList1.Images.SetKeyName(7, "Sections-of-Website-About-icon.png");
-            this.imageList1.Images.SetKeyName(8, "Users-Add-user-icon.png");
-            this.imageList1.Images.SetKeyName(9, "Users-Edit-user-icon.png");
-            this.imageList1.Images.SetKeyName(10, "Basic-Settings-icon.png");
-            this.imageList1.Images.SetKeyName(11, "settings-icon.png");
-            // 
-            // ExportToExcelBtn
-            // 
-            this.ExportToExcelBtn.Location = new System.Drawing.Point(897, 705);
-            this.ExportToExcelBtn.Name = "ExportToExcelBtn";
-            this.ExportToExcelBtn.Size = new System.Drawing.Size(150, 35);
-            this.ExportToExcelBtn.TabIndex = 14;
-            this.ExportToExcelBtn.Text = "Export to Excel";
-            this.AdminHomepageToolTip.SetToolTip(this.ExportToExcelBtn, "Exports the report to an Excel file.");
-            this.ExportToExcelBtn.UseVisualStyleBackColor = true;
-            this.ExportToExcelBtn.Click += new System.EventHandler(this.ExportToExcelBtn_Click);
-            // 
-            // ReportGroupBox
-            // 
-            this.ReportGroupBox.Controls.Add(this.tab1);
-            this.ReportGroupBox.Controls.Add(this.ExportToExcelBtn);
-            this.ReportGroupBox.Controls.Add(this.LastLoginDateLbl);
-            this.ReportGroupBox.Controls.Add(this.LastLoginLbl);
-            this.ReportGroupBox.Controls.Add(this.TimeLbl);
-            this.ReportGroupBox.Controls.Add(this.DateLbl);
-            this.ReportGroupBox.Controls.Add(this.AdminNameLbl);
-            this.ReportGroupBox.Controls.Add(this.WelcomeLbl);
-            this.ReportGroupBox.Controls.Add(this.LogoutBtn);
-            this.ReportGroupBox.Controls.Add(this.ExitBtn);
-            this.ReportGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ReportGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReportGroupBox.Location = new System.Drawing.Point(0, 0);
-            this.ReportGroupBox.Name = "ReportGroupBox";
-            this.ReportGroupBox.Size = new System.Drawing.Size(1370, 750);
-            this.ReportGroupBox.TabIndex = 13;
-            this.ReportGroupBox.TabStop = false;
-            this.ReportGroupBox.Text = "Admin Home";
-            this.ReportGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // LastLoginDateLbl
-            // 
-            this.LastLoginDateLbl.AutoSize = true;
-            this.LastLoginDateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastLoginDateLbl.Location = new System.Drawing.Point(1264, 16);
-            this.LastLoginDateLbl.Name = "LastLoginDateLbl";
-            this.LastLoginDateLbl.Size = new System.Drawing.Size(72, 18);
-            this.LastLoginDateLbl.TabIndex = 8;
-            this.LastLoginDateLbl.Text = "mm/dd/yy";
-            // 
-            // LastLoginLbl
-            // 
-            this.LastLoginLbl.AutoSize = true;
-            this.LastLoginLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastLoginLbl.Location = new System.Drawing.Point(1178, 16);
-            this.LastLoginLbl.Name = "LastLoginLbl";
-            this.LastLoginLbl.Size = new System.Drawing.Size(80, 18);
-            this.LastLoginLbl.TabIndex = 7;
-            this.LastLoginLbl.Text = "Last Login:";
-            // 
-            // TimeLbl
-            // 
-            this.TimeLbl.AutoSize = true;
-            this.TimeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeLbl.Location = new System.Drawing.Point(736, 16);
-            this.TimeLbl.Name = "TimeLbl";
-            this.TimeLbl.Size = new System.Drawing.Size(69, 18);
-            this.TimeLbl.TabIndex = 6;
-            this.TimeLbl.Text = "and Time";
-            // 
-            // DateLbl
-            // 
-            this.DateLbl.AutoSize = true;
-            this.DateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateLbl.Location = new System.Drawing.Point(647, 16);
-            this.DateLbl.Name = "DateLbl";
-            this.DateLbl.Size = new System.Drawing.Size(92, 18);
-            this.DateLbl.TabIndex = 5;
-            this.DateLbl.Text = "Current Date";
-            // 
-            // AdminNameLbl
-            // 
-            this.AdminNameLbl.AutoSize = true;
-            this.AdminNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdminNameLbl.Location = new System.Drawing.Point(217, 16);
-            this.AdminNameLbl.Name = "AdminNameLbl";
-            this.AdminNameLbl.Size = new System.Drawing.Size(66, 18);
-            this.AdminNameLbl.TabIndex = 4;
-            this.AdminNameLbl.Text = "<admin>";
-            // 
-            // WelcomeLbl
-            // 
-            this.WelcomeLbl.AutoSize = true;
-            this.WelcomeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WelcomeLbl.Location = new System.Drawing.Point(141, 16);
-            this.WelcomeLbl.Name = "WelcomeLbl";
-            this.WelcomeLbl.Size = new System.Drawing.Size(76, 18);
-            this.WelcomeLbl.TabIndex = 3;
-            this.WelcomeLbl.Text = "Welcome,";
-            // 
-            // LogoutBtn
-            // 
-            this.LogoutBtn.Location = new System.Drawing.Point(1053, 705);
-            this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.Size = new System.Drawing.Size(150, 35);
-            this.LogoutBtn.TabIndex = 15;
-            this.LogoutBtn.Text = "Logout";
-            this.AdminHomepageToolTip.SetToolTip(this.LogoutBtn, "Returns you to the login homepage.");
-            this.LogoutBtn.UseVisualStyleBackColor = true;
-            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
-            // 
-            // ExitBtn
-            // 
-            this.ExitBtn.Location = new System.Drawing.Point(1208, 705);
-            this.ExitBtn.Name = "ExitBtn";
-            this.ExitBtn.Size = new System.Drawing.Size(150, 35);
-            this.ExitBtn.TabIndex = 16;
-            this.ExitBtn.Text = "Exit";
-            this.AdminHomepageToolTip.SetToolTip(this.ExitBtn, "Closes the program.");
-            this.ExitBtn.UseVisualStyleBackColor = true;
-            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
-            // 
-            // AdminHome
-            // 
-            this.AdminHome.Enabled = true;
-            this.AdminHome.Tick += new System.EventHandler(this.AdminHome_Tick);
-            // 
-            // CurrentFirstNameLbl2
-            // 
-            this.CurrentFirstNameLbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentFirstNameLbl2.ForeColor = System.Drawing.Color.Blue;
-            this.CurrentFirstNameLbl2.Location = new System.Drawing.Point(150, 350);
-            this.CurrentFirstNameLbl2.Name = "CurrentFirstNameLbl2";
-            this.CurrentFirstNameLbl2.Size = new System.Drawing.Size(170, 25);
-            this.CurrentFirstNameLbl2.TabIndex = 18;
-            // 
-            // CurrentLastNameLbl
-            // 
-            this.CurrentLastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentLastNameLbl.ForeColor = System.Drawing.Color.Blue;
-            this.CurrentLastNameLbl.Location = new System.Drawing.Point(150, 393);
-            this.CurrentLastNameLbl.Name = "CurrentLastNameLbl";
-            this.CurrentLastNameLbl.Size = new System.Drawing.Size(170, 25);
-            this.CurrentLastNameLbl.TabIndex = 19;
-            // 
-            // CurrentRewardsLbl
-            // 
-            this.CurrentRewardsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentRewardsLbl.ForeColor = System.Drawing.Color.Blue;
-            this.CurrentRewardsLbl.Location = new System.Drawing.Point(150, 434);
-            this.CurrentRewardsLbl.Name = "CurrentRewardsLbl";
-            this.CurrentRewardsLbl.Size = new System.Drawing.Size(170, 25);
-            this.CurrentRewardsLbl.TabIndex = 20;
-            // 
-            // CurrentInfoLbl
-            // 
-            this.CurrentInfoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentInfoLbl.Location = new System.Drawing.Point(150, 302);
-            this.CurrentInfoLbl.Name = "CurrentInfoLbl";
-            this.CurrentInfoLbl.Size = new System.Drawing.Size(170, 25);
-            this.CurrentInfoLbl.TabIndex = 21;
-            this.CurrentInfoLbl.Text = "Current Information";
-            this.CurrentInfoLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // NewInfoLbl
-            // 
-            this.NewInfoLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewInfoLbl.Location = new System.Drawing.Point(355, 302);
-            this.NewInfoLbl.Name = "NewInfoLbl";
-            this.NewInfoLbl.Size = new System.Drawing.Size(170, 25);
-            this.NewInfoLbl.TabIndex = 22;
-            this.NewInfoLbl.Text = "New Information";
-            this.NewInfoLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // AdminHomepage
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1464,10 +1462,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ExistingUserDataEditUsersDisplay)).EndInit();
             this.ModifyExistingUserBox.ResumeLayout(false);
             this.ModifyExistingUserBox.PerformLayout();
-            this.About.ResumeLayout(false);
-            this.About.PerformLayout();
             this.ReportGroupBox.ResumeLayout(false);
             this.ReportGroupBox.PerformLayout();
+            this.About.ResumeLayout(false);
+            this.About.PerformLayout();
             this.ResumeLayout(false);
 
         }
