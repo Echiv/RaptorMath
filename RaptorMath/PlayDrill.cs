@@ -159,6 +159,7 @@ namespace RaptorMath
             //CustomMessageBox customMessagepDialog = new CustomMessageBox("Your adventure is over! Let's see how you did!");
             //customMessagepDialog.ShowDialog(this);
             //customMessagepDialog.Dispose();
+            //System.Threading.Thread.Sleep(2000);
             localManager.SetWindow(Window.drillReport);
             this.Close();
         }
