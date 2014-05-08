@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DrillReport));
             this.NameLbl = new System.Windows.Forms.Label();
             this.TitleLbl = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@
             this.FinishBtn = new System.Windows.Forms.Button();
             this.dinoeggsearnedlbl = new System.Windows.Forms.Label();
             this.RewardsEarnedLbl = new System.Windows.Forms.Label();
+            this.DrillReportToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // NameLbl
@@ -143,6 +145,7 @@
             this.FinishBtn.Size = new System.Drawing.Size(96, 44);
             this.FinishBtn.TabIndex = 1;
             this.FinishBtn.Text = "Finish";
+            this.DrillReportToolTip.SetToolTip(this.FinishBtn, "Return to your hompage.");
             this.FinishBtn.UseVisualStyleBackColor = true;
             this.FinishBtn.Click += new System.EventHandler(this.FinishBtn_Click);
             // 
@@ -212,5 +215,6 @@
         private System.Windows.Forms.Button FinishBtn;
         private System.Windows.Forms.Label dinoeggsearnedlbl;
         private System.Windows.Forms.Label RewardsEarnedLbl;
+        private System.Windows.Forms.ToolTip DrillReportToolTip;
     }
 }

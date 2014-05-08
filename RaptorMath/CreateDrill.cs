@@ -283,7 +283,7 @@ namespace RaptorMath
                    CreateDrill_AdditionRdo.Checked, CreateDrill_SubtactionRdo.Checked);
                 if (isDrillAdded)
                 {
-                    MessageBox.Show("The Drill has been succesfully saved!", "Raptor Math", MessageBoxButtons.OK);
+                    MessageBox.Show("The drill has been succesfully saved!", "Raptor Math", MessageBoxButtons.OK);
                     CreateDrill_MinValueTxt.Text = string.Empty;
                     CreateDrill_MaxValueTxt.Text = string.Empty;
                     CreateDrill_NumQuestionsTxt.Text = string.Empty;
