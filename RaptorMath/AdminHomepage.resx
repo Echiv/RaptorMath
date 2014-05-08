@@ -117,33 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="NoQuestionsLbl.Text" xml:space="preserve">
-    <value>Unfortunately this is the product of a class; All the 
-individuals involved in this project have graduated.
-Your luck of reaching them is very low. If you have 
-any questions regarding Raptor Math, please contact 
-Harvey Kreitzer at kreit002@cougars.csusm.edu.
-
-Please contact Harvey Kreitzer for copyright issues. </value>
-  </data>
-  <data name="GoalLbl.Text" xml:space="preserve">
-    <value>Our hope is to offer teachers and their students an 
-easy way to practice math drills and keep track of 
-progress. Helping the children is our first priority. 
-We hope that we were able to provide a program
-that you find useful and a great addition to your
-classroom!</value>
-  </data>
-  <data name="ProductLbl.Text" xml:space="preserve">
-    <value>Thanks for using our product! Raptor Math is intended for 
-elementary school students who want a fun and interactive 
-way to practice math problems. Raptor Math specifically 
-focuses on addition and subtraction. 
-
-Teachers are able to customize their student's drills according to 
-their skill level. Raptor Math also allows the Admin to view the 
-current progress and statistics of each student. </value>
-  </data>
   <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -152,7 +125,7 @@ current progress and statistics of each student. </value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABg
-        KgAAAk1TRnQBSQFMAgEBDAEAAWgBAQFoAQEBHgEAAR4BAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        KgAAAk1TRnQBSQFMAgEBDAEAAXABAQFwAQEBHgEAAR4BAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABeAMAAXgDAAEBAQABCAUAAUABOBgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHc
         AcABAAHwAcoBpgEAATMFAAEzAQABMwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEA
         AzkBAAGAAXwB/wEAAlAB/wEAAZMBAAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEz
@@ -449,6 +422,33 @@ current progress and statistics of each student. </value>
   <metadata name="GroupNameEditUsers.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="NoQuestionsLbl.Text" xml:space="preserve">
+    <value>Unfortunately this is the product of a class; All the 
+individuals involved in this project have graduated.
+Your luck of reaching them is very low. If you have 
+any questions regarding Raptor Math, please contact 
+Harvey Kreitzer at kreit002@cougars.csusm.edu.
+
+Please contact Harvey Kreitzer for copyright issues. </value>
+  </data>
+  <data name="GoalLbl.Text" xml:space="preserve">
+    <value>Our hope is to offer teachers and their students an 
+easy way to practice math drills and keep track of 
+progress. Helping the children is our first priority. 
+We hope that we were able to provide a program
+that you find useful and a great addition to your
+classroom!</value>
+  </data>
+  <data name="ProductLbl.Text" xml:space="preserve">
+    <value>Thanks for using our product! Raptor Math is intended for 
+elementary school students who want a fun and interactive 
+way to practice math problems. Raptor Math specifically 
+focuses on addition and subtraction. 
+
+Teachers are able to customize their student's drills according to 
+their skill level. Raptor Math also allows the Admin to view the 
+current progress and statistics of each student. </value>
+  </data>
   <metadata name="AdminHome.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>127, 17</value>
   </metadata>

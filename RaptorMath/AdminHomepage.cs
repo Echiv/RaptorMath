@@ -930,9 +930,12 @@ namespace RaptorMath
                     if (selectedStudent != null)
                     {
                         //GroupNameComboBox.Text = localManager.FindGroupByID(selectedStudent.GroupID).Name;
-                        FirstNameTxtBox.Text = selectedStudent.FirstName;
-                        LastNameTxtBox.Text = selectedStudent.LastName;
-                        NumberRewardsTxt.Text = selectedStudent.RewardTotal.ToString();
+                        //FirstNameTxtBox.Text = selectedStudent.FirstName;
+                        //LastNameTxtBox.Text = selectedStudent.LastName;
+                        //NumberRewardsTxt.Text = selectedStudent.RewardTotal.ToString();
+                        CurrentFirstNameLbl2.Text = selectedStudent.FirstName;
+                        CurrentLastNameLbl.Text = selectedStudent.LastName;
+                        CurrentRewardsLbl.Text = selectedStudent.RewardTotal.ToString();
                         SaveChangesBtn.Enabled = true;
                         SaveChangesBtn.Image = Properties.Resources.System_Save_icon__1_;
                         RemoveUserGroupBtn.Enabled = true;
@@ -948,9 +951,12 @@ namespace RaptorMath
                 }
                 else
                 {
-                    GroupNameComboBox.Text = string.Empty;
-                    FirstNameTxtBox.Text = string.Empty;
-                    LastNameTxtBox.Text = string.Empty;
+                    //GroupNameComboBox.Text = string.Empty;
+                    //FirstNameTxtBox.Text = string.Empty;
+                    //LastNameTxtBox.Text = string.Empty;
+                    CurrentFirstNameLbl2.Text = string.Empty;
+                    CurrentLastNameLbl.Text = string.Empty;
+                    CurrentRewardsLbl.Text = string.Empty;
                     SaveChangesBtn.Enabled = false;
                     SaveChangesBtn.Image = Properties.Resources.gray_System_Save_icon__1_;
                     RemoveUserGroupBtn.Enabled = false;
@@ -1086,7 +1092,8 @@ namespace RaptorMath
         /// <summary>Handle 'Remove User' button click.</summary>
         private void RemoveUserGroupBtn_Click(object sender, EventArgs e)
         {
-            string userToBeRemoved = FirstNameTxtBox.Text + " " + LastNameTxtBox.Text;
+            //string userToBeRemoved = FirstNameTxtBox.Text + " " + LastNameTxtBox.Text;
+            string userToBeRemoved = CurrentFirstNameLbl2.Text + " " + CurrentLastNameLbl.Text;
             bool isUserRemoved = false;
             string checkForDefaultUser = string.Empty;
 
@@ -1103,11 +1110,18 @@ namespace RaptorMath
                     {
                         MessageBox.Show("The selected user has been removed", "Raptor Math", MessageBoxButtons.OK);
                         RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
-                        GroupNameComboBox.Text = string.Empty;
-                        FirstNameTxtBox.Text = string.Empty;
-                        LastNameTxtBox.Text = string.Empty;
-                        NumberRewardsTxt.Text = string.Empty;
+                        //GroupNameComboBox.Text = string.Empty;
+                        //FirstNameTxtBox.Text = string.Empty;
+                        //LastNameTxtBox.Text = string.Empty;
+                        //NumberRewardsTxt.Text = string.Empty;
+                        CurrentFirstNameLbl2.Text = string.Empty;
+                        CurrentLastNameLbl.Text = string.Empty;
+                        CurrentRewardsLbl.Text = string.Empty;
+
+                        //RefreshDataGrid();
+                        RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
                         RefreshDataGrid();
+                        SetupEditableUser();
                     }
                     else
                     {
@@ -1540,6 +1554,9 @@ namespace RaptorMath
             GroupNameComboBox.Text = string.Empty;
             FirstNameTxtBox.Text = string.Empty;
             LastNameTxtBox.Text = string.Empty;
+            CurrentFirstNameLbl2.Text = string.Empty;
+            CurrentLastNameLbl.Text = string.Empty;
+            CurrentRewardsLbl.Text = string.Empty;
         }
 
         //------------------------------------------------------------------//
