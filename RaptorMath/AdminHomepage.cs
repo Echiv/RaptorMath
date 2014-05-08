@@ -8,6 +8,11 @@
 //          Used to create students, drill, reports, groups,    //
 //          and to manage all of them.                          //
 //==============================================================//
+//==============================================================//
+// Change log:                                                  //
+// Date: 5/07/14                                                //
+//  * Added new UI elements to Users tab                        //
+//==============================================================//
 
 using System;
 using System.Collections.Generic;

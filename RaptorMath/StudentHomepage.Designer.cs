@@ -127,7 +127,9 @@
             // StuHome_DrillDdl
             // 
             this.StuHome_DrillDdl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.StuHome_DrillDdl.BackColor = System.Drawing.SystemColors.Control;
             this.StuHome_DrillDdl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.StuHome_DrillDdl.ForeColor = System.Drawing.SystemColors.WindowText;
             this.StuHome_DrillDdl.FormattingEnabled = true;
             this.StuHome_DrillDdl.Location = new System.Drawing.Point(415, 290);
             this.StuHome_DrillDdl.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);

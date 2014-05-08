@@ -39,6 +39,8 @@
 //   • Admin password is now normalized so it's not case sensitive.                                                 //
 //  Date: 5/04/14                                                                                                   //
 //   • Finding a group by name now normalizes the group names.                                                      //
+//  Date: 5/07/14                                                                                                   //
+//    • Fixed a bug where students could go over their max reward amount.                                           //
 //==================================================================================================================//
 
 using System;
@@ -2088,8 +2090,18 @@ namespace RaptorMath
         /// <summary>Used to update and pass along the current student's rewards.</summary>
         public void UpdateRewards()
         {
-            currentStudent.RewardTotal = currentStudent.RewardTotal + Convert.ToInt32(currentStudent.curDrill.Questions) - Convert.ToInt32(currentStudent.curDrill.Wrong);
-            XMLDriver.EditRewardAmount(currentStudent);
+            // Hard coded value of 99999 as the student cannot earn more rewards than that.
+            // Note: hard coded alues are bad.
+            if ((currentStudent.RewardTotal + Convert.ToInt32(currentStudent.curDrill.Questions) - Convert.ToInt32(currentStudent.curDrill.Wrong)) < 99999)
+            {
+                currentStudent.RewardTotal = currentStudent.RewardTotal + Convert.ToInt32(currentStudent.curDrill.Questions) - Convert.ToInt32(currentStudent.curDrill.Wrong);
+                XMLDriver.EditRewardAmount(currentStudent);
+            }
+            else
+            {
+                currentStudent.RewardTotal = 99999;
+                XMLDriver.EditRewardAmount(currentStudent);
+            }
         }
 
         //------------------------------------------------------------------//
