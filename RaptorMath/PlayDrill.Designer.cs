@@ -145,7 +145,7 @@
             this.MathDrill_ProblemPrompt.AutoSize = true;
             this.MathDrill_ProblemPrompt.BackColor = System.Drawing.Color.Transparent;
             this.MathDrill_ProblemPrompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MathDrill_ProblemPrompt.Location = new System.Drawing.Point(289, 223);
+            this.MathDrill_ProblemPrompt.Location = new System.Drawing.Point(264, 223);
             this.MathDrill_ProblemPrompt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MathDrill_ProblemPrompt.Name = "MathDrill_ProblemPrompt";
             this.MathDrill_ProblemPrompt.Size = new System.Drawing.Size(134, 54);
@@ -179,7 +179,7 @@
             this.MathDrill_InputTxt.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.MathDrill_InputTxt.DetectUrls = false;
             this.MathDrill_InputTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MathDrill_InputTxt.Location = new System.Drawing.Point(530, 223);
+            this.MathDrill_InputTxt.Location = new System.Drawing.Point(538, 223);
             this.MathDrill_InputTxt.Margin = new System.Windows.Forms.Padding(4);
             this.MathDrill_InputTxt.MaxLength = 6;
             this.MathDrill_InputTxt.Multiline = false;

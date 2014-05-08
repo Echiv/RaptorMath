@@ -85,6 +85,7 @@ namespace RaptorMath
             // The Edit Users tab
             else if (e.TabPageIndex == 2)
             {
+                AvailableDrillDataDisplay.Rows[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                 ExportToExcelBtn.Enabled = false;
                 // Refresh the group names
                 RefreshComboBox(GroupNameComboBox, localManager.GetGroupNames());
@@ -928,7 +929,7 @@ namespace RaptorMath
                     selectedStudent = localManager.FindStudentWithName(localManager.GetStudentNameFromCellFormat(ExistingUserDataEditUsersDisplay.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()));
                     if (selectedStudent != null)
                     {
-                        GroupNameComboBox.Text = localManager.FindGroupByID(selectedStudent.GroupID).Name;
+                        //GroupNameComboBox.Text = localManager.FindGroupByID(selectedStudent.GroupID).Name;
                         FirstNameTxtBox.Text = selectedStudent.FirstName;
                         LastNameTxtBox.Text = selectedStudent.LastName;
                         NumberRewardsTxt.Text = selectedStudent.RewardTotal.ToString();

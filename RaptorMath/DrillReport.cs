@@ -30,6 +30,22 @@ namespace RaptorMath
 
         //------------------------------------------------------------------//
         // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 4/12/14                                                     //
+        //------------------------------------------------------------------//
+        /// <summary>Disallows closing a window with the window's 'X' button.</summary>
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
+        } 
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
         // Date: 5/01/14                                                    //
         //------------------------------------------------------------------//
         /// <summary>Constructor.</summary>

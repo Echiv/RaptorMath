@@ -91,6 +91,7 @@ namespace RaptorMath
                 }
                 else
                 {
+                    localManager.currentStudent.curDrill.IncrementWrong();
                     DisplayFeedback(Color.Red, "Incorrect!", false);
                 }
                 // Clear the input

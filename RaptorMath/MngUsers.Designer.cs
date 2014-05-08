@@ -231,7 +231,7 @@
             this.MngUsers_SaveUserBtm.Size = new System.Drawing.Size(115, 30);
             this.MngUsers_SaveUserBtm.TabIndex = 8;
             this.MngUsers_SaveUserBtm.Text = "Save User";
-            this.toolTip1.SetToolTip(this.MngUsers_SaveUserBtm, "Saves the newly created student or admin.");
+            this.toolTip1.SetToolTip(this.MngUsers_SaveUserBtm, "Saves the newly created student.");
             this.MngUsers_SaveUserBtm.UseVisualStyleBackColor = true;
             this.MngUsers_SaveUserBtm.Click += new System.EventHandler(this.MngUsers_SaveUserBtm_Click);
             // 
@@ -274,6 +274,7 @@
             this.MngUsers_ImportBtn.Size = new System.Drawing.Size(160, 30);
             this.MngUsers_ImportBtn.TabIndex = 1;
             this.MngUsers_ImportBtn.Text = "Import Students From Text File";
+            this.toolTip1.SetToolTip(this.MngUsers_ImportBtn, "Add mulitple users with an external file.");
             this.MngUsers_ImportBtn.UseVisualStyleBackColor = true;
             this.MngUsers_ImportBtn.Click += new System.EventHandler(this.MngUsers_ImportBtn_Click);
             // 
