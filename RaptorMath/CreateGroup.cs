@@ -48,6 +48,10 @@ namespace RaptorMath
                     MessageBox.Show("A group with the provided name already exists.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            else
+            {
+                MessageBox.Show("A group name cannot be blank.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //------------------------------------------------------------------//
@@ -76,6 +80,21 @@ namespace RaptorMath
                 myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
                 return myCp;
             }
+        }
+
+        //------------------------------------------------------------------//
+        // Authors: Joshua Boone and Justine Dinh                           //
+        // Date: 5/07/14                                                    //
+        //------------------------------------------------------------------//
+        /// <summary>Disallows copy, paste, cut from keyboard.</summary>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if ((keyData == (Keys.Control | Keys.C)) || (keyData == (Keys.Control | Keys.V)) || (keyData == (Keys.Control | Keys.X)))
+            {
+
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
 
         //------------------------------------------------------------------//

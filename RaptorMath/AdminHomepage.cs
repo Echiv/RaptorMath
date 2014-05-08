@@ -991,6 +991,13 @@ namespace RaptorMath
                     }
                 }
             }
+            else
+            {
+                SaveChangesBtn.Enabled = false;
+                SaveChangesBtn.Image = Properties.Resources.gray_System_Save_icon__1_;
+                RemoveUserGroupBtn.Enabled = false;
+                RemoveUserGroupBtn.Image = Properties.Resources.gray_trash_icon__1_;
+            }
         }
 
         //------------------------------------------------------------------//
@@ -1075,12 +1082,12 @@ namespace RaptorMath
                     else if (isValidEdit == 4)
                     {
                         MessageBox.Show("Error. You cannot save the pre-filled data. Something must be changed.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        GroupNameComboBox.Focus();
+                        FirstNameTxtBox.Focus();
                     }
                     else if (isValidEdit == 5)
                     {
                         MessageBox.Show("Error. You must choose something to change about the student.", "Raptor Math", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        GroupNameComboBox.Focus();
+                        FirstNameTxtBox.Focus();
                     }
                     else if (isValidEdit == 6)
                     {
