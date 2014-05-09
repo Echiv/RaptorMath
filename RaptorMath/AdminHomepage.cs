@@ -257,7 +257,7 @@ namespace RaptorMath
                                 newRow.Cells[7].Value = currentRecord.DrillName;
                                 newRow.Cells[8].Value = currentRecord.DateTaken;
                                 newRow.Cells[9].Value = currentRecord.Question;
-                                newRow.Cells[10].Value = (Convert.ToInt32(currentRecord.Question) - Convert.ToInt32(currentRecord.Wrong)) * 10;
+                                newRow.Cells[10].Value = ((Convert.ToInt32(currentRecord.Question) - Convert.ToInt32(currentRecord.Wrong))/(Convert.ToInt32(currentRecord.Question)) * 100);
                                 newRow.Cells[11].Value = currentRecord.Skipped;
                                 GroupSnapshotDataDisplay.Rows.Add(newRow);
                             }
