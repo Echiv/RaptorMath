@@ -109,7 +109,7 @@ namespace RaptorMath
         public Manager()
         {
             string AppData = Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData);
-            dataDirectory = System.IO.Path.Combine(AppData, "RaptorMath");
+            dataDirectory = System.IO.Path.Combine(AppData, "RaptorMathV3.7");
             if (!System.IO.Directory.Exists(dataDirectory))
                 System.IO.Directory.CreateDirectory(dataDirectory);
             string adminFile = "RaptorMathAdmins.xml";
