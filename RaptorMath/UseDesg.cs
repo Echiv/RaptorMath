@@ -223,7 +223,7 @@ namespace RaptorMath
             UseDesg_passwordBox.Enabled = false;
             UseDesg_passwordBox.PasswordChar = '*';
             UseDesg_LoginCmbo.Select();
-
+            UseDesg_LoginCmbo.IntegralHeight = false;
             this.UseDesg_LoginCmbo.KeyPress += new KeyPressEventHandler(RaptorMath_LettersKeyPress);
             this.UseDesg_passwordBox.KeyPress += new KeyPressEventHandler(RaptorMath_LettersAndDigitsKeyPressNoSpace);
         }
