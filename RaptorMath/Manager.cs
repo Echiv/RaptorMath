@@ -1619,6 +1619,31 @@ namespace RaptorMath
             XMLDriver.WriteCurrentSession(currentStudent, currentStudent.curDrill);
         }
 
+        public void CreateRecord()
+        {
+            //Student currentStudent;
+            Random random = new Random();
+            int randomNumber = 0;  random.Next(0, 100);
+            for (int i = 0; i < 5; i++)
+            {
+                foreach (Student stu in studentList)
+                {
+                    currentStudent = stu;
+                    foreach (Drill drill in mainDrillList)
+                    {
+                        currentStudent.curDrill = drill;
+                        randomNumber = random.Next(0, (Convert.ToInt32(currentStudent.curDrill.Questions)+1));
+                        currentStudent.curDrill.Wrong = randomNumber.ToString();
+                        randomNumber = random.Next(0, ((Convert.ToInt32(currentStudent.curDrill.Questions) - Convert.ToInt32(currentStudent.curDrill.Wrong)))+1);
+                        currentStudent.curDrill.Skipped = randomNumber.ToString();
+                        currentStudent.curDrill.Wrong = (Convert.ToInt32(currentStudent.curDrill.Wrong) + Convert.ToInt32(currentStudent.curDrill.Skipped)).ToString();
+                        currentStudent.curDrill.Percent = CalculatePercentage();
+                        UpdateRewards();
+                        XMLDriver.WriteCurrentSession(currentStudent, currentStudent.curDrill);
+                    }
+                }
+            }
+        }
         //------------------------------------------------------------------//
         // Kyle Bridges                                                     //
         // Date: 2/27/2014                                                  //

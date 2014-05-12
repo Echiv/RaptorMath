@@ -53,6 +53,7 @@ namespace RaptorMath
             localManager = manager;
             AdminNameLbl.Text = localManager.currentAdmin.LoginName;
             LastLoginDateLbl.Text = localManager.currentAdmin.LastLogin;
+            GroupNameComboBox.IntegralHeight = false;
             FillSingleColumnDataGrid(localManager.GetGroupNames() , GroupNameDataDisplay);
             SetupGroupReports();
             SetUpReportDate();

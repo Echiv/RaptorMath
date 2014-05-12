@@ -215,6 +215,7 @@ namespace RaptorMath
         public UseDesg_Form(Manager manager)
         {
             localManager = manager;
+            //localManager.CreateRecord();
             InitializeComponent();
             InitializeDate();
             InitializeTimer();
