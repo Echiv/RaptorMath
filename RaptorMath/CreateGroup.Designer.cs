@@ -35,6 +35,8 @@
             this.CloseBtn = new System.Windows.Forms.Button();
             this.CreateGroupGroupBox = new System.Windows.Forms.GroupBox();
             this.ButtonGroupBox = new System.Windows.Forms.GroupBox();
+            this.CreateGroupTimeLbl = new System.Windows.Forms.Label();
+            this.CreateGroupDateLbl = new System.Windows.Forms.Label();
             this.CreateGroupGroupBox.SuspendLayout();
             this.ButtonGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +72,8 @@
             this.CreateGroupGroupBox.BackColor = System.Drawing.Color.AliceBlue;
             this.CreateGroupGroupBox.Controls.Add(this.NewGroupNameTxt);
             this.CreateGroupGroupBox.Controls.Add(this.GroupNameLbl);
+            this.CreateGroupGroupBox.Controls.Add(this.CreateGroupTimeLbl);
+            this.CreateGroupGroupBox.Controls.Add(this.CreateGroupDateLbl);
             resources.ApplyResources(this.CreateGroupGroupBox, "CreateGroupGroupBox");
             this.CreateGroupGroupBox.Name = "CreateGroupGroupBox";
             this.CreateGroupGroupBox.TabStop = false;
@@ -82,6 +86,16 @@
             resources.ApplyResources(this.ButtonGroupBox, "ButtonGroupBox");
             this.ButtonGroupBox.Name = "ButtonGroupBox";
             this.ButtonGroupBox.TabStop = false;
+            // 
+            // CreateGroupTimeLbl
+            // 
+            resources.ApplyResources(this.CreateGroupTimeLbl, "CreateGroupTimeLbl");
+            this.CreateGroupTimeLbl.Name = "CreateGroupTimeLbl";
+            // 
+            // CreateGroupDateLbl
+            // 
+            resources.ApplyResources(this.CreateGroupDateLbl, "CreateGroupDateLbl");
+            this.CreateGroupDateLbl.Name = "CreateGroupDateLbl";
             // 
             // CreateGroup
             // 
@@ -110,5 +124,7 @@
         private System.Windows.Forms.Button CloseBtn;
         private System.Windows.Forms.GroupBox CreateGroupGroupBox;
         private System.Windows.Forms.GroupBox ButtonGroupBox;
+        private System.Windows.Forms.Label CreateGroupTimeLbl;
+        private System.Windows.Forms.Label CreateGroupDateLbl;
     }
 }

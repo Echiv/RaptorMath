@@ -17,6 +17,8 @@ namespace RaptorMath
         {
             InitializeComponent();
             localManager = manage;
+            CreateGroupDateLbl.Text = DateTime.Now.ToString("M/d/yyyy");
+            CreateGroupTimeLbl.Text = DateTime.Now.ToString("h:mm tt");
         }
 
         //------------------------------------------------------------------//

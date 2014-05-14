@@ -216,6 +216,78 @@
     <value>0</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CreateGroupTimeLbl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="CreateGroupTimeLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CreateGroupTimeLbl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="CreateGroupTimeLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>306, 43</value>
+  </data>
+  <data name="CreateGroupTimeLbl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="CreateGroupTimeLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 16</value>
+  </data>
+  <data name="CreateGroupTimeLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="CreateGroupTimeLbl.Text" xml:space="preserve">
+    <value>&lt;Time&gt;</value>
+  </data>
+  <data name="&gt;&gt;CreateGroupTimeLbl.Name" xml:space="preserve">
+    <value>CreateGroupTimeLbl</value>
+  </data>
+  <data name="&gt;&gt;CreateGroupTimeLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CreateGroupTimeLbl.Parent" xml:space="preserve">
+    <value>CreateGroupGroupBox</value>
+  </data>
+  <data name="&gt;&gt;CreateGroupTimeLbl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="CreateGroupDateLbl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="CreateGroupDateLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CreateGroupDateLbl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="CreateGroupDateLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 19</value>
+  </data>
+  <data name="CreateGroupDateLbl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="CreateGroupDateLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 16</value>
+  </data>
+  <data name="CreateGroupDateLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="CreateGroupDateLbl.Text" xml:space="preserve">
+    <value>&lt;Date&gt;</value>
+  </data>
+  <data name="&gt;&gt;CreateGroupDateLbl.Name" xml:space="preserve">
+    <value>CreateGroupDateLbl</value>
+  </data>
+  <data name="&gt;&gt;CreateGroupDateLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CreateGroupDateLbl.Parent" xml:space="preserve">
+    <value>CreateGroupGroupBox</value>
+  </data>
+  <data name="&gt;&gt;CreateGroupDateLbl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="CreateGroupGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>

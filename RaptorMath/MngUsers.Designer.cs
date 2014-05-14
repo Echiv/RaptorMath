@@ -34,8 +34,6 @@
             this.MngUsers_UserInfoBox = new System.Windows.Forms.GroupBox();
             this.MngUsers_WindowLbl = new System.Windows.Forms.Label();
             this.MngUser_AdminNameLbl = new System.Windows.Forms.Label();
-            this.MngUsers_TimeLbl = new System.Windows.Forms.Label();
-            this.MngUsers_DateLbl = new System.Windows.Forms.Label();
             this.MngUsers_AddUserBox = new System.Windows.Forms.GroupBox();
             this.MngUsers_LastNameCmbo = new System.Windows.Forms.ComboBox();
             this.doNothingContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -50,6 +48,8 @@
             this.MngUsers_CloseBtn = new System.Windows.Forms.Button();
             this.MngUsers_Timer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.MngUsers_DateLbl = new System.Windows.Forms.Label();
+            this.MngUsers_TimeLbl = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.MngUsers_UserInfoBox.SuspendLayout();
             this.MngUsers_AddUserBox.SuspendLayout();
@@ -109,30 +109,6 @@
             this.MngUser_AdminNameLbl.Size = new System.Drawing.Size(67, 18);
             this.MngUser_AdminNameLbl.TabIndex = 34;
             this.MngUser_AdminNameLbl.Text = "<Admin>";
-            // 
-            // MngUsers_TimeLbl
-            // 
-            this.MngUsers_TimeLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MngUsers_TimeLbl.AutoSize = true;
-            this.MngUsers_TimeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_TimeLbl.Location = new System.Drawing.Point(338, 49);
-            this.MngUsers_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.MngUsers_TimeLbl.Name = "MngUsers_TimeLbl";
-            this.MngUsers_TimeLbl.Size = new System.Drawing.Size(53, 16);
-            this.MngUsers_TimeLbl.TabIndex = 33;
-            this.MngUsers_TimeLbl.Text = "<Time>";
-            // 
-            // MngUsers_DateLbl
-            // 
-            this.MngUsers_DateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MngUsers_DateLbl.AutoSize = true;
-            this.MngUsers_DateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MngUsers_DateLbl.Location = new System.Drawing.Point(339, 25);
-            this.MngUsers_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.MngUsers_DateLbl.Name = "MngUsers_DateLbl";
-            this.MngUsers_DateLbl.Size = new System.Drawing.Size(51, 16);
-            this.MngUsers_DateLbl.TabIndex = 32;
-            this.MngUsers_DateLbl.Text = "<Date>";
             // 
             // MngUsers_AddUserBox
             // 
@@ -297,6 +273,30 @@
             this.MngUsers_Timer.Interval = 1000;
             this.MngUsers_Timer.Tick += new System.EventHandler(this.MngUsers_Timer_Tick);
             // 
+            // MngUsers_DateLbl
+            // 
+            this.MngUsers_DateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MngUsers_DateLbl.AutoSize = true;
+            this.MngUsers_DateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngUsers_DateLbl.Location = new System.Drawing.Point(316, 25);
+            this.MngUsers_DateLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.MngUsers_DateLbl.Name = "MngUsers_DateLbl";
+            this.MngUsers_DateLbl.Size = new System.Drawing.Size(51, 16);
+            this.MngUsers_DateLbl.TabIndex = 32;
+            this.MngUsers_DateLbl.Text = "<Date>";
+            // 
+            // MngUsers_TimeLbl
+            // 
+            this.MngUsers_TimeLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MngUsers_TimeLbl.AutoSize = true;
+            this.MngUsers_TimeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MngUsers_TimeLbl.Location = new System.Drawing.Point(315, 49);
+            this.MngUsers_TimeLbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.MngUsers_TimeLbl.Name = "MngUsers_TimeLbl";
+            this.MngUsers_TimeLbl.Size = new System.Drawing.Size(53, 16);
+            this.MngUsers_TimeLbl.TabIndex = 33;
+            this.MngUsers_TimeLbl.Text = "<Time>";
+            // 
             // MngUsers_Form
             // 
             this.AcceptButton = this.MngUsers_SaveUserBtm;
@@ -330,8 +330,6 @@
         private System.Windows.Forms.GroupBox MngUsers_AddUserBox;
         private System.Windows.Forms.GroupBox MngUsers_ButtonBox;
         private System.Windows.Forms.Timer MngUsers_Timer;
-        private System.Windows.Forms.Label MngUsers_DateLbl;
-        private System.Windows.Forms.Label MngUsers_TimeLbl;
         private System.Windows.Forms.Button MngUsers_CloseBtn;
         private System.Windows.Forms.Label MngUsers_GroupLbl;
         private System.Windows.Forms.Label MngUsers_FirstNameLbl;
@@ -345,5 +343,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ContextMenuStrip doNothingContextMenu;
         private System.Windows.Forms.Button MngUsers_ImportBtn;
+        private System.Windows.Forms.Label MngUsers_TimeLbl;
+        private System.Windows.Forms.Label MngUsers_DateLbl;
     }
 }
