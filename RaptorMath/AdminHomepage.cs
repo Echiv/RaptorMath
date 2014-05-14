@@ -51,6 +51,7 @@ namespace RaptorMath
             InitializeTimer();
             InitializeDate();
             localManager = manager;
+            localManager.SaveLoginDate(localManager.adminXMLPath, localManager.currentAdmin.LoginName, DateTime.Now.ToString("M/d/yyyy"), true);
             AdminNameLbl.Text = localManager.currentAdmin.LoginName;
             LastLoginDateLbl.Text = localManager.currentAdmin.LastLogin;
             GroupNameComboBox.IntegralHeight = false;

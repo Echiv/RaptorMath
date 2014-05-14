@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminHomepage));
             this.tab1 = new System.Windows.Forms.TabControl();
             this.Statistics = new System.Windows.Forms.TabPage();
@@ -56,6 +56,8 @@
             this.PercentCorrect = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumSkipped = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupNameDataDisplay = new System.Windows.Forms.DataGridView();
+            this.GroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentGroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchTxtBox = new System.Windows.Forms.TextBox();
             this.Setup = new System.Windows.Forms.TabPage();
             this.ManageDrillsBox = new System.Windows.Forms.GroupBox();
@@ -143,8 +145,6 @@
             this.ExitBtn = new System.Windows.Forms.Button();
             this.AdminHome = new System.Windows.Forms.Timer(this.components);
             this.AdminHomepageToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.GroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StudentGroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab1.SuspendLayout();
             this.Statistics.SuspendLayout();
             this.GroupSearchBox.SuspendLayout();
@@ -410,14 +410,14 @@
             // 
             // GroupNameDataDisplay
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GroupNameDataDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GroupNameDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GroupNameDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GroupName,
@@ -430,6 +430,21 @@
             this.GroupNameDataDisplay.TabStop = false;
             this.GroupNameDataDisplay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GroupNameDataDisplay_CellContentClick);
             this.GroupNameDataDisplay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Control_KeyDown);
+            // 
+            // GroupName
+            // 
+            this.GroupName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GroupName.HeaderText = "Student Name";
+            this.GroupName.Name = "GroupName";
+            this.GroupName.ReadOnly = true;
+            this.GroupName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // StudentGroupName
+            // 
+            this.StudentGroupName.HeaderText = "Group Name";
+            this.StudentGroupName.Name = "StudentGroupName";
+            this.StudentGroupName.ReadOnly = true;
+            this.StudentGroupName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // SearchTxtBox
             // 
@@ -540,16 +555,16 @@
             // 
             // AvailableDrillDataDisplay
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.AvailableDrillDataDisplay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.AvailableDrillDataDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AvailableDrillDataDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DrillName});
             this.AvailableDrillDataDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.AvailableDrillDataDisplay.Location = new System.Drawing.Point(3, 90);
             this.AvailableDrillDataDisplay.Name = "AvailableDrillDataDisplay";
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AvailableDrillDataDisplay.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.AvailableDrillDataDisplay.Size = new System.Drawing.Size(324, 468);
             this.AvailableDrillDataDisplay.TabIndex = 0;
             this.AvailableDrillDataDisplay.TabStop = false;
@@ -1414,21 +1429,6 @@
             // 
             this.AdminHome.Enabled = true;
             this.AdminHome.Tick += new System.EventHandler(this.AdminHome_Tick);
-            // 
-            // GroupName
-            // 
-            this.GroupName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GroupName.HeaderText = "Student Name";
-            this.GroupName.Name = "GroupName";
-            this.GroupName.ReadOnly = true;
-            this.GroupName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // StudentGroupName
-            // 
-            this.StudentGroupName.HeaderText = "Group Name";
-            this.StudentGroupName.Name = "StudentGroupName";
-            this.StudentGroupName.ReadOnly = true;
-            this.StudentGroupName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // AdminHomepage
             // 
